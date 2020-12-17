@@ -7,9 +7,9 @@ using UnityEngine.AI;
 public class EnemyBase : MonoBehaviour
 {
     [Header("Nav Vars")]
-    [SerializeField] private UnityEngine.AI.NavMeshAgent agent;
+    [SerializeField] protected UnityEngine.AI.NavMeshAgent agent;
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private Animator animator;
+    //[SerializeField] private Animator animator;
     //[SerializeField] protected Player player;
     [SerializeField] protected GameObject player;
 
@@ -66,13 +66,15 @@ public class EnemyBase : MonoBehaviour
         if (!dead)
         {
             chasing = false;
-            float distance = Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.z), new Vector2(transform.position.x, transform.position.z));
+            float distance = GetDistanceFromPlayer();
+            Debug.Log(distance);
             if(distance < rangeToAttack)
             {
                 if(timeToAttack <= Time.timeSinceLevelLoad)
                 {
                     // Attack
-                    animator.SetTrigger("attack");
+                    //animator.SetTrigger("attack");
+                    Debug.Log("Attack");
                     timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
                     //Attack?.Invoke();
                 }
@@ -87,13 +89,14 @@ public class EnemyBase : MonoBehaviour
                     Physics.Raycast(transform.position, player.transform.position - transform.position, out hit,chaseRange, playerMask);
                     if (hit.transform.CompareTag("Player"))
                     {
-                        //Chase?.Invoke();
-                        agent.SetDestination(player.transform.position);
+                        chasing = true;
+                        Chase?.Invoke();
                     }
                 }
             }
-            if (chasing) { animator.SetBool("moving", false); }
+            //if (chasing) { animator.SetBool("moving", false); }
         }
+
         //else if(distance < detectionRange)
         //{
         //    if (!detected) detected = true;
@@ -117,6 +120,7 @@ public class EnemyBase : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward);
         if (attackPoint == null) return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
 
@@ -137,17 +141,22 @@ public class EnemyBase : MonoBehaviour
         Destroy(gameObject);
     }
 
-    //public void MeleeAttack()
-    //{
-    //    Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerMask);
-    //    if (hits.Length != 0) hits[0].GetComponent<Player>().TakeDamage();
+    public void DamagePlayerTouched()
+    {
+        Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackRange, playerMask);
+        //if (hits.Length != 0) hits[0].GetComponent<Player>().TakeDamage();
 
-    //    if (Vector2.Distance(player.transform.position, transform.position) >= 2.5f) timeToAttack = Time.timeSinceLevelLoad;
-    //}
-    //public void RangeAttack()
+        if (GetDistanceFromPlayer() >= 2.5f) timeToAttack = Time.timeSinceLevelLoad;
+    }
+    //public void ThrowProjectile()
     //{
     //    GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
     //    Projectile proj = projectile.GetComponent<Projectile>();
     //    proj.direction = (player.transform.position - transform.position).normalized;
     //}
+
+    private float GetDistanceFromPlayer()
+    {
+        return Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.z), new Vector2(transform.position.x, transform.position.z));
+    }
 }
