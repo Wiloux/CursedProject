@@ -21,6 +21,7 @@ public class EnemyBase : MonoBehaviour
 
     [Space]
     [Header("Chase")]
+    [Tooltip("Does the enemy chase the player")]
     [SerializeField] private bool chase;
     protected bool chasing;
     [SerializeField] protected float detectionRange = 10f;
@@ -28,7 +29,16 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] protected float chaseRange = 15f;
 
     [Space]
+    [Tooltip("Does the enemy run after hitting the player")]
+    [SerializeField] private bool run;
+    private bool running;
+    [SerializeField] private Transform runningPointsParent;
+    private Transform latestRunningPoint;
+    [SerializeField] private float runningRange;
+
+    [Space]
     [Header("Attack vars")]
+    [Tooltip("Does the enemy attack from distance")]
     [SerializeField] private bool range;
     [SerializeField] protected GameObject projectilePrefab;
 
@@ -65,36 +75,58 @@ public class EnemyBase : MonoBehaviour
     {
         if (!dead)
         {
-            chasing = false;
             float distance = GetDistanceFromPlayer();
-            Debug.Log(distance);
-            if(distance < rangeToAttack)
+            chasing = false;
+            //Debug.Log(distance);
+            if(run && running)
             {
-                if(timeToAttack <= Time.timeSinceLevelLoad)
+                if(distance >= runningRange)
                 {
-                    // Attack
-                    //animator.SetTrigger("attack");
-                    Debug.Log("Attack");
-                    timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
-                    //Attack?.Invoke();
+                    running = false;
+                }
+                if(GetDistanceFromPosition(agent.destination) < 0.5f && distance < runningRange)
+                {
+                    agent.SetDestination(GetRunningPoint());
                 }
             }
-            else if(chase)
+            else
             {
-                if (!detected && distance < detectionRange) detected = true;
-                else if(detected && distance < chaseRange)
+                if(distance < rangeToAttack)
                 {
-                    // Chase
-                    RaycastHit hit;
-                    Physics.Raycast(transform.position, player.transform.position - transform.position, out hit,chaseRange, playerMask);
-                    if (hit.transform.CompareTag("Player"))
+                    if(timeToAttack <= Time.timeSinceLevelLoad)
                     {
-                        chasing = true;
-                        Chase?.Invoke();
+                        // Attack
+                        //animator.SetTrigger("attack");
+                        Debug.Log("Attack");
+                        timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
+                        //Attack?.Invoke();
+                        if (run)
+                        {
+                            running = true;
+                            agent.SetDestination(GetRunningPoint());
+                        }
                     }
                 }
+                else if(chase)
+                {
+                    if (!detected && distance < detectionRange) detected = true;
+                    else if(detected && distance < chaseRange)
+                    {
+                        // Chase
+                        RaycastHit hit;
+                        Physics.Raycast(transform.position, player.transform.position - transform.position, out hit,chaseRange, playerMask);
+                        if(hit.transform != null)
+                        {
+                            if (hit.transform.CompareTag("Player"))
+                            {
+                                chasing = true;
+                                Chase?.Invoke();
+                            }
+                        }
+                    }
+                }
+                //if (chasing) { animator.SetBool("moving", false); }
             }
-            //if (chasing) { animator.SetBool("moving", false); }
         }
     }
 
@@ -138,5 +170,30 @@ public class EnemyBase : MonoBehaviour
     private float GetDistanceFromPlayer()
     {
         return Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.z), new Vector2(transform.position.x, transform.position.z));
+    }
+    private float GetDistanceFromPosition(Vector3 target)
+    {
+        return Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(target.x, target.z));
+    }
+
+    private Vector3 GetRunningPoint()
+    {
+        Vector2 direction = (transform.position - player.transform.position).normalized;
+
+        Transform closestRunningPoint = null;
+        float shortestAngle = Mathf.Infinity;
+        for(int i = 0; i < runningPointsParent.childCount; i++)
+        {
+            Transform runningPoint = runningPointsParent.GetChild(i);
+            float angle = Vector3.Angle((runningPoint.position - transform.position).normalized, direction);
+
+            if(runningPoint != latestRunningPoint && (closestRunningPoint == null || angle < shortestAngle))
+            {
+                closestRunningPoint = runningPoint;
+                shortestAngle = angle;
+            }
+        }
+        latestRunningPoint = closestRunningPoint;
+        return closestRunningPoint.position;
     }
 }
