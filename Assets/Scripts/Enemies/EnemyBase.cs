@@ -96,26 +96,6 @@ public class EnemyBase : MonoBehaviour
             }
             //if (chasing) { animator.SetBool("moving", false); }
         }
-
-        //else if(distance < detectionRange)
-        //{
-        //    if (!detected) detected = true;
-        //}
-        //else if(distance < chaseRange)
-        //{
-        //    if (chase && detected)
-        //    {
-        //        Vector2 direction = player.transform.position - transform.position;
-        //        direction.y = 0;
-        //        direction.Normalize();
-
-        //        rb.MovePosition(rb.position + direction * movementSpeed * Time.deltaTime);
-        //    }
-        //}
-        //else
-        //{
-        //    if (detected) detected = false;
-        //}
     }
 
     private void OnDrawGizmosSelected()
