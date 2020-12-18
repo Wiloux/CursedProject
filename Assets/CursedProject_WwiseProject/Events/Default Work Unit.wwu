@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{CB632102-A8C5-4EBC-80A7-4D3B369C93CA}" SchemaVersion="97">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{CB632102-A8C5-4EBC-80A7-4D3B369C93CA}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Test" ID="{6684B1AD-88B3-471E-8C65-91C8F828D3CB}">
+					<ChildrenList>
+						<Action Name="" ID="{C15280F4-B7D4-492E-A02B-1DCFF0241F45}" ShortID="744998388">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="beartrap trigger" ID="{DC1D09D4-EFA6-4608-A201-702F324B6366}" WorkUnitID="{5950947F-9FAF-49AA-98A4-15F2419BC6A8}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayX" ID="{2BDF3AE9-C040-47AB-B6C2-9FD905DC8F76}">
+					<ChildrenList>
+						<Action Name="" ID="{07862569-1C19-478F-A2B8-9527350FD99C}" ShortID="180467013">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="X" ID="{F918D427-A8B0-4F32-9BBF-012E1C74F253}" WorkUnitID="{8A617D9D-D8C1-4EEE-8BDA-2F11F537FF21}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

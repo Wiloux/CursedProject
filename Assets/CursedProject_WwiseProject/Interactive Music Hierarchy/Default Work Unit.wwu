@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8A617D9D-D8C1-4EEE-8BDA-2F11F537FF21}" SchemaVersion="97">
+	<InteractiveMusic>
+		<WorkUnit Name="Default Work Unit" ID="{8A617D9D-D8C1-4EEE-8BDA-2F11F537FF21}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="X" ID="{F918D427-A8B0-4F32-9BBF-012E1C74F253}" ShortID="428740453">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="chase bass" ID="{03CDE996-8FD2-4B41-BBDB-02015ED2EA43}" ShortID="459903504">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="25500"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="chase bass" ID="{FE4880D8-F482-4CE1-BAA6-BB7CE1803E28}" ShortID="539358996">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="chase bass" ID="{CFBC63EB-B2EE-4D1C-BC83-B6DC3400A622}">
+											<Language>SFX</Language>
+											<AudioFile>chase bass.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="479465834"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{6A466F52-AD14-4BD8-886F-7B584F927220}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{2123DB53-A937-412A-84BA-4D16D09D179D}">
+											<ClipList>
+												<MusicClip Name="chase bass" ID="{7F20DD10-BB8E-4FC1-A10B-4D3468DEE69E}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="25500"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="chase bass" ID="{CFBC63EB-B2EE-4D1C-BC83-B6DC3400A622}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{32021BF6-76D9-46B1-9034-0185AA6E6316}"/>
+								<MusicCue Name="Exit Cue" ID="{608DC6C6-4E8A-46EB-81FF-CD842640E3B3}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="25500"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{F5024123-D9A6-4FB9-80E2-41DCD9B69169}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{BCAB4930-4DCF-4B90-A4E1-E6517779A979}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{3A1E3CA5-0BB2-481F-965F-A848A940B5CF}" ShortID="584274010">
+							<PropertyList>
+								<Property Name="LoopCount" Type="int16" Value="0"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{3AD1FEFC-DC40-4DC5-9F8C-49F2D9C7DED4}" ShortID="792333043">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="chase bass" ID="{03CDE996-8FD2-4B41-BBDB-02015ED2EA43}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	500558165	PlayX			\Default Work Unit\PlayX	
+	3157003241	Test			\Default Work Unit\Test	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	177710672	beartrap trigger	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\beartrap trigger_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\beartrap trigger		119608
+	479465834	chase bass	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\chase bass_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\X\chase bass\chase bass		4498264
+
