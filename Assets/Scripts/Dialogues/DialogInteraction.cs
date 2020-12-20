@@ -11,14 +11,16 @@ public class DialogInteraction: MonoBehaviour
     private static float timeBetweenLetters = 0.02f;
 
     private TMP_Text dialogDisplayer;
-    private AudioSource audioSource;
+    private AudioSource dialogAudioSource;
+    private AudioSource sfxAudioSource;
 
     private bool talking;
 
     private void Start()
     {
         dialogDisplayer = DialogueManager.instance.dialogDisplayer;
-        audioSource = DialogueManager.instance.audioSource;
+        dialogAudioSource = DialogueManager.instance.dialogAudioSource;
+        sfxAudioSource = DialogueManager.instance.sfxAudioSource;
     }
 
     public void Talk()
@@ -33,8 +35,13 @@ public class DialogInteraction: MonoBehaviour
 
     private IEnumerator TypeSentence()
     {
-        audioSource.clip = dialogue.dialoguesAndVoicelines[index].voiceline;
-        audioSource.Play();
+        if(dialogue.dialoguesAndVoicelines[index].SFX != null)
+        {
+            sfxAudioSource.clip = dialogue.dialoguesAndVoicelines[index].SFX;
+            sfxAudioSource.Play();
+        }
+        dialogAudioSource.clip = dialogue.dialoguesAndVoicelines[index].voiceline;
+        dialogAudioSource.Play();
         foreach(char character in dialogue.dialoguesAndVoicelines[index].script.ToCharArray())
         {
             dialogDisplayer.text += character;
@@ -49,7 +56,8 @@ public class DialogInteraction: MonoBehaviour
         {
             index++;
             StopAllCoroutines();
-            audioSource.Stop();
+            if(dialogAudioSource.isPlaying) dialogAudioSource.Stop();
+            if(sfxAudioSource.isPlaying) sfxAudioSource.Stop();
             StartCoroutine(TypeSentence());
         }
         else
