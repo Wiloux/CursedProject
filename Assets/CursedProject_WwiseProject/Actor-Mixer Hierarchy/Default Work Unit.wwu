@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5950947F-9FAF-49AA-98A4-15F2419BC6A8}" SchemaVersion="97">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{5950947F-9FAF-49AA-98A4-15F2419BC6A8}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="beartrap trigger" ID="{DC1D09D4-EFA6-4608-A201-702F324B6366}" ShortID="1020645253">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="X" ID="{306AB54C-D4C4-4148-B965-3BB7219F56B8}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="beartrap trigger" ID="{98208147-48F8-44AD-98C8-227E6AEE96BC}">
+							<Language>SFX</Language>
+							<AudioFile>beartrap trigger.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="177710672"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="beartrap trigger" ID="{98208147-48F8-44AD-98C8-227E6AEE96BC}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
