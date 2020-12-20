@@ -11,6 +11,8 @@ public class Player_Movement : MonoBehaviour
     public float _rotSpeed = 20;
     public float _verticalSpeed = 10f;
     public float _verticalSpeedNeg = 5f;
+
+    public bool stopControlls;
     void Start()
     {
 
@@ -19,34 +21,44 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotatePlayerWithMouse();
-        Movement();
-    }
-
-
-    void Movement()
-    {
-        float verticalMove = 0;
-        Vector3 moveDirection;
-        if (Input.GetAxis("Vertical") > 0.1)
+        if (!stopControlls)
         {
-            verticalMove = Input.GetAxis("Vertical") * Time.deltaTime * _verticalSpeed;
-            moveDirection = transform.TransformDirection(Vector3.forward) * verticalMove;
-            _characterController.Move(moveDirection);
+            RotatePlayerWithMouse();
+            Movement();
 
-        }
 
-        if (Input.GetAxis("Vertical") < -0.1)
-        {
-            verticalMove = Input.GetAxis("Vertical") * Time.deltaTime * _verticalSpeedNeg;
-            moveDirection = transform.TransformDirection(Vector3.forward) * verticalMove;
-            _characterController.Move(moveDirection);
+            RaycastHit hit;
+            Physics.Raycast(transform.position, transform.forward, out hit, 5f);
+            if (hit.transform != null && hit.transform.GetComponent<DoorScript>() != null && Input.GetKeyDown(KeyCode.E))
+            {
+                hit.transform.GetComponent<DoorScript>().UseDoor(transform);
+            }
         }
     }
 
-    void RotatePlayerWithMouse()
-    {
-        rotX = Input.GetAxis("Mouse X") * _rotSpeed * Mathf.Deg2Rad;
-        transform.Rotate(Vector3.up, rotX);
+        void Movement()
+        {
+            float verticalMove = 0;
+            Vector3 moveDirection;
+            if (Input.GetAxis("Vertical") > 0.1)
+            {
+                verticalMove = Input.GetAxis("Vertical") * Time.deltaTime * _verticalSpeed;
+                moveDirection = transform.TransformDirection(Vector3.forward) * verticalMove;
+                _characterController.Move(moveDirection);
+
+            }
+
+            if (Input.GetAxis("Vertical") < -0.1)
+            {
+                verticalMove = Input.GetAxis("Vertical") * Time.deltaTime * _verticalSpeedNeg;
+                moveDirection = transform.TransformDirection(Vector3.forward) * verticalMove;
+                _characterController.Move(moveDirection);
+            }
+        }
+
+        void RotatePlayerWithMouse()
+        {
+            rotX = Input.GetAxis("Mouse X") * _rotSpeed * Mathf.Deg2Rad;
+            transform.Rotate(Vector3.up, rotX);
+        }
     }
-}
