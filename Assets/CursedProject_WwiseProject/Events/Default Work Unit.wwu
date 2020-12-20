@@ -25,6 +25,18 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="DialogueExp" ID="{C273A0CB-4E30-4344-9C80-59F636B585ED}" ShortID="1036407082"/>
+				<Event Name="PlayExpDialogue" ID="{24919819-F6DB-4A72-819C-0173E6E8565C}">
+					<ChildrenList>
+						<Action Name="" ID="{81D32DA7-DE40-4A0D-B427-29C0E65FB648}" ShortID="975051704">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ExpDialogue" ID="{452027B1-A414-48C0-A265-36597506F293}" WorkUnitID="{5950947F-9FAF-49AA-98A4-15F2419BC6A8}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

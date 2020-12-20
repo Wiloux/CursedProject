@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{83ACCB31-2967-4D24-8641-2F02E6E0863D}" SchemaVersion="97">
 	<DynamicDialogue>
-		<WorkUnit Name="Default Work Unit" ID="{83ACCB31-2967-4D24-8641-2F02E6E0863D}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{83ACCB31-2967-4D24-8641-2F02E6E0863D}" PersistMode="Standalone">
+			<ChildrenList>
+				<DialogueEvent Name="DialogueExp" ID="{CDCE9B15-74F0-42CF-ACA2-02DDF838131D}">
+					<ArgumentList>
+						<ArgumentRef Name="DialogueExp" ID="{C24CAC7B-991D-4C3D-B809-2C322194B976}"/>
+					</ArgumentList>
+					<EntryList>
+						<Entry>
+							<Path>
+								<PathElementRef Name="DialogueExp" ID="{C24CAC7B-991D-4C3D-B809-2C322194B976}"/>
+							</Path>
+							<AudioNodeInfo>
+								<AudioNodeRef Name="voe board 1" ID="{FC27D12E-3AA7-4BC0-92C6-AEC9E04E866A}" WorkUnitID="{5950947F-9FAF-49AA-98A4-15F2419BC6A8}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+					</EntryList>
+				</DialogueEvent>
+			</ChildrenList>
+		</WorkUnit>
 	</DynamicDialogue>
 </WwiseDocument>
