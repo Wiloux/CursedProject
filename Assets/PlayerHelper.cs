@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerHelper : MonoBehaviour
 {
-    public static PlayerHelper instance;
     public Player_Movement playerMovement;
+    public static PlayerHelper instance;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -13,7 +13,7 @@ public class PlayerHelper : MonoBehaviour
     }
 
 
-    public void StopControls() {
+    public void ToggleControls() {
         playerMovement.stopControlls = !playerMovement.stopControlls;
     }
 }

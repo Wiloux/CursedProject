@@ -35,7 +35,7 @@ public class TransitionManager : MonoBehaviour
         Time.timeScale = 0;
         var tempColor = FadeImage.color;
         float t = 0;
-        PlayerHelper.instance.StopControls();
+        PlayerHelper.instance.ToggleControls();
 
         while (t < dur)
         {
@@ -67,7 +67,7 @@ public class TransitionManager : MonoBehaviour
 
             yield return null;
         }
-        PlayerHelper.instance.StopControls();
+        PlayerHelper.instance.ToggleControls();
         Fading = null;
         Time.timeScale = 1;
     }

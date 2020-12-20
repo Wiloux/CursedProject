@@ -27,6 +27,7 @@ public class DialogInteraction: MonoBehaviour
     {
         if (talking) return;
 
+        PlayerHelper.instance.ToggleControls();
         talking = true;
         dialogDisplayer.gameObject.SetActive(true);
         dialogDisplayer.text = "";
@@ -40,8 +41,11 @@ public class DialogInteraction: MonoBehaviour
             sfxAudioSource.clip = dialogue.dialoguesAndVoicelines[index].SFX;
             sfxAudioSource.Play();
         }
-        dialogAudioSource.clip = dialogue.dialoguesAndVoicelines[index].voiceline;
-        dialogAudioSource.Play();
+        if(dialogue.dialoguesAndVoicelines[index].voiceline != null)
+        {
+            dialogAudioSource.clip = dialogue.dialoguesAndVoicelines[index].voiceline;
+            dialogAudioSource.Play();
+        }
         foreach(char character in dialogue.dialoguesAndVoicelines[index].script.ToCharArray())
         {
             dialogDisplayer.text += character;
@@ -68,8 +72,18 @@ public class DialogInteraction: MonoBehaviour
 
     public void StopTalking()
     {
+        PlayerHelper.instance.ToggleControls();
         talking = false;
         dialogDisplayer.gameObject.SetActive(false);
         index = 0;
+    }
+
+    public void WwiseSoundManaging()
+    {
+
+    }
+    public void WwiseBeforeNextSentence()
+    {
+
     }
 }
