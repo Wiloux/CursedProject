@@ -14,6 +14,7 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="Test" ID="{6684B1AD-88B3-471E-8C65-91C8F828D3CB}" WorkUnitID="{CB632102-A8C5-4EBC-80A7-4D3B369C93CA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayX" ID="{2BDF3AE9-C040-47AB-B6C2-9FD905DC8F76}" WorkUnitID="{CB632102-A8C5-4EBC-80A7-4D3B369C93CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayExpDialogue" ID="{24919819-F6DB-4A72-819C-0173E6E8565C}" WorkUnitID="{CB632102-A8C5-4EBC-80A7-4D3B369C93CA}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
