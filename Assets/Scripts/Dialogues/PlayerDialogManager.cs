@@ -5,16 +5,21 @@ using TMPro;
 
 public class PlayerDialogManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text dialog;
-    private DialogManager currentDialog;
+    private DialogInteraction currentDialog;
+    private TMP_Text dialogDisplayer;
 
     private bool talking;
+
+    private void Start()
+    {
+        dialogDisplayer = DialogueManager.instance.dialogDisplayer;
+    }
     // Update is called once per frame
     void Update()
     {
         if (talking)
         {
-            if (!dialog.gameObject.activeSelf) talking = false;
+            if (!dialogDisplayer.gameObject.activeSelf) talking = false;
             else if (Input.anyKeyDown)
             {
                 currentDialog.NextSentence();
@@ -26,10 +31,10 @@ public class PlayerDialogManager : MonoBehaviour
             Physics.Raycast(transform.position, transform.forward, out hit, 5f);
             if(hit.transform != null)
             {
-                DialogManager dialogManager = hit.transform.GetComponent<DialogManager>();
-                if (dialogManager != null)
+                DialogInteraction dialogInteraction= hit.transform.GetComponent<DialogInteraction>();
+                if (dialogInteraction != null)
                 {
-                    currentDialog = dialogManager;
+                    currentDialog = dialogInteraction;
                     currentDialog.Talk();
                     talking = true;
                 }
