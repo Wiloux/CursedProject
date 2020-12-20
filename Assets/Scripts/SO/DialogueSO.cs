@@ -15,10 +15,12 @@ public class DialogueSO : ScriptableObject
     [TextArea(1,7)] public string script;
     [Space]
     public AudioClip voiceline;
+    public AudioClip SFX;
 
-    public DialogueAndVoiceline(string script, AudioClip voiceline)
+    public DialogueAndVoiceline(string script, AudioClip voiceline, AudioClip SFX)
     {
         this.script = script;
         this.voiceline = voiceline;
+        this.SFX = SFX;
     }
 }

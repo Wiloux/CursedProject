@@ -5,7 +5,8 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public AudioSource audioSource;
+    public AudioSource dialogAudioSource;
+    public AudioSource sfxAudioSource;
     public TMP_Text dialogDisplayer;
 
     public static DialogueManager instance;
