@@ -11,7 +11,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     //[SerializeField] private Animator animator;
     //[SerializeField] protected Player player;
-    [SerializeField] protected GameObject player;
+    protected GameObject player;
 
     [Space]
     [Header("Health")]
@@ -68,11 +68,13 @@ public class EnemyBase : MonoBehaviour
         agent.speed = movementSpeed;
         //player = GameObject.FindObjectOfType<Player>();
         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
+        player = PlayerHelper.instance.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (player == null) player = PlayerHelper.instance.gameObject;
         if (!dead)
         {
             float distance = GetDistanceFromPlayer();
