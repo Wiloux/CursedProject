@@ -353,7 +353,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22262
+  m_Name: pb_Mesh33496
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -540,8 +540,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 100000
+  m_Color: {r: 0.3539516, g: 0.56419945, b: 0.7735849, a: 1}
+  m_Intensity: 8622.981
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -582,9 +582,9 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 2
-  m_AreaSize: {x: 1, y: 1}
+  m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
+  m_ColorTemperature: 11347
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 100000
+  m_Intensity: 8622.981
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -763,7 +763,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22278
+  m_Name: pb_Mesh33512
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -937,6 +937,7 @@ GameObject:
   - component: {fileID: 390932597}
   - component: {fileID: 390932604}
   - component: {fileID: 390932603}
+  - component: {fileID: 390932605}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1008,7 +1009,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390932596}
-  m_LocalRotation: {x: 0.09154022, y: -0.7567491, z: 0.108562134, w: 0.6380952}
+  m_LocalRotation: {x: 0.09154024, y: -0.7567491, z: 0.108562164, w: 0.6380952}
   m_LocalPosition: {x: 33.77, y: -6.42, z: -3.9959948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1378,6 +1379,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &390932605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390932596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: b2a521d3537f01c4a9ee3401a07b441e, type: 2}
 --- !u!1 &395077028
 GameObject:
   m_ObjectHideFlags: 3
@@ -2350,7 +2368,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22318
+  m_Name: pb_Mesh33552
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7515,7 +7533,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338461059}
-  m_LocalRotation: {x: 0.09154022, y: -0.7567491, z: 0.108562134, w: 0.6380952}
+  m_LocalRotation: {x: 0.09154024, y: -0.7567491, z: 0.108562164, w: 0.6380952}
   m_LocalPosition: {x: 23.72, y: 13.65, z: -0.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10014,7 +10032,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416660153}
-  m_LocalRotation: {x: 0.027688487, y: -0.062428493, z: 0.0017325984, w: 0.9976638}
+  m_LocalRotation: {x: 0.027688516, y: -0.06242853, z: 0.0017326014, w: 0.9976638}
   m_LocalPosition: {x: 20.37, y: 13.65, z: -55.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10225,7 +10243,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22364
+  m_Name: pb_Mesh33598
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10495,7 +10513,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a79996bed15f0de4a92b1a5e9aac4422, type: 2}
+  - {fileID: 2100000, guid: 1f244999acfe9c14da86a9a0714d0bce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
