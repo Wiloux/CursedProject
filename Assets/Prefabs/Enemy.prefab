@@ -182,22 +182,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 4308134389288796763}
   rb: {fileID: 4308134389288796760}
-  player: {fileID: 0}
-  maxHealth: 100
-  health: 100
-  chase: 1
-  detectionRange: 15
-  chaseRange: 20
-  run: 1
+  enemyStats: {fileID: 11400000, guid: 8134a081a9b847041a02106ea1ec471e, type: 2}
   runningPointsParent: {fileID: 0}
-  runningRange: 10
-  range: 0
-  projectilePrefab: {fileID: 0}
-  rangeToAttack: 2
   attackPoint: {fileID: 4308134388783727562}
-  attackRange: 0.5
   playerMask:
     serializedVersion: 2
     m_Bits: 64
-  attackCooldown: 2
-  movementSpeed: 5

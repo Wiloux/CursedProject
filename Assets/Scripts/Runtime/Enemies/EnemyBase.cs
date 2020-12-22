@@ -9,55 +9,43 @@ public class EnemyBase : MonoBehaviour
     [Header("Nav Vars")]
     [SerializeField] protected UnityEngine.AI.NavMeshAgent agent;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private EnemyStatsSO enemyStats;
     //[SerializeField] private Animator animator;
     //[SerializeField] protected Player player;
     protected GameObject player;
 
-    [Space]
-    [Header("Health")]
-    [SerializeField] private int maxHealth;
-    [SerializeField] private int health;
+    private int maxHealth;
+    private int health;
     private bool dead;
 
-    [Space]
-    [Header("Chase")]
-    [Tooltip("Does the enemy chase the player")]
-    [SerializeField] private bool chase;
+    // Chase vars
+    private bool chase;
     protected bool chasing;
-    [SerializeField] protected float detectionRange = 10f;
+    protected float detectionRange = 10f;
     private bool detected;
-    [SerializeField] protected float chaseRange = 15f;
+    protected float chaseRange = 15f;
 
-    [Space]
-    [Tooltip("Does the enemy run after hitting the player")]
-    [SerializeField] private bool run;
+    // Run vars
+    private bool run;
     private bool running;
     [SerializeField] private Transform runningPointsParent;
     private Transform latestRunningPoint;
-    [SerializeField] private float runningRange;
+    private float runningRange;
 
-    [Space]
-    [Header("Attack vars")]
-    [Tooltip("Does the enemy attack from distance")]
-    [SerializeField] private bool range;
-    [SerializeField] protected GameObject projectilePrefab;
+    private bool range;
+    protected GameObject projectilePrefab;
 
-    [Space]
-    [Tooltip("The range at which the enemy starts to attack")]
-    [SerializeField] private float rangeToAttack = 2f;
+    private float rangeToAttack = 2f;
     [Tooltip("The point where colliders will be detected for the attack")]
     [SerializeField] private Transform attackPoint;
-    [Tooltip("Max range between attackPoint and hit colliders")]
-    [SerializeField] private float attackRange = 0.5f;
+    private float attackRange = 0.5f;
     [Tooltip("Layer Mask used for the colliders detecttion")]
     [SerializeField] private LayerMask playerMask;
 
-    [Space]
-    [Tooltip("Cooldown of the attack")]
-    [SerializeField] private float attackCooldown;
+    private float attackCooldown;
     private float timeToAttack;
 
-    [SerializeField] private float movementSpeed = 2f;
+    private float movementSpeed = 2f;
 
     protected Action Attack;
     protected Action Chase;
@@ -65,6 +53,8 @@ public class EnemyBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetStatsFromSo();
+
         agent.speed = movementSpeed;
         //player = GameObject.FindObjectOfType<Player>();
         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
@@ -130,6 +120,26 @@ public class EnemyBase : MonoBehaviour
                 //if (chasing) { animator.SetBool("moving", false); }
             }
         }
+    }
+
+    private void GetStatsFromSo()
+    {
+        maxHealth = enemyStats.maxHealth;
+
+        chase = enemyStats.chase;
+        detectionRange = enemyStats.detectionRange;
+        chaseRange = enemyStats.chaseRange;
+
+        run = enemyStats.run;
+        runningRange = enemyStats.runningRange;
+
+        range = enemyStats.range;
+        projectilePrefab = enemyStats.projectilePrefab;
+
+        rangeToAttack = enemyStats.rangeToAttack;
+        attackRange = enemyStats.attackRange;
+        attackCooldown = enemyStats.attackCooldown;
+        movementSpeed = enemyStats.movementSpeed;
     }
 
     private void OnDrawGizmosSelected()
