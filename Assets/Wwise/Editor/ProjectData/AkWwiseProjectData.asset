@@ -49,7 +49,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585929531696729749
+    m_lastTime: -8585929452873515854
     List:
     - name: Main
       guid: d42373aad2a3754fbc414a0497701429
@@ -68,8 +68,32 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585929531696729749
+    m_lastTime: -8585929452873545804
     List:
+    - name: DialogueExp
+      guid: cba073c2304e44439c8059f636b585ed
+      id: 90263024
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: DialogueExp
+        ObjectType: 4
+      Path: Default Work Unit\DialogueExp
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayExpDialogue
+      guid: 19989124dbf6724a819c0173e6e8565c
+      id: 1701780106
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlayExpDialogue
+        ObjectType: 3
+      Path: Default Work Unit\PlayExpDialogue
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: PlayX
       guid: e93adf2b40c0ab47b6c29fd905dc8f76
       id: 500558165
@@ -122,7 +146,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f528942bed683349be7cda8752e78d33
     GuidInternal: 
-    m_lastTime: -8585929531696720128
+    m_lastTime: -8585929452873495882
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class RoomSpawner : MonoBehaviour
+public class RoomManager : MonoBehaviour
 {
     public List<EnemyToSpawn> enemiesToSpawn;
     private List<EnemyBase> enemies = new List<EnemyBase>();

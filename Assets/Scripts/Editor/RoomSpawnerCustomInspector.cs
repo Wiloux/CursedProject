@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(RoomSpawner))]
+[CustomEditor(typeof(RoomManager))]
 public class RoomSpawnerCustomInspector : Editor
 {
     public override void OnInspectorGUI()
@@ -13,7 +13,7 @@ public class RoomSpawnerCustomInspector : Editor
 
         serializedObject.Update();
 
-        RoomSpawner roomSpawner = target as RoomSpawner;
+        RoomManager roomSpawner = target as RoomManager;
 
         if (GUILayout.Button("Help"))
         {

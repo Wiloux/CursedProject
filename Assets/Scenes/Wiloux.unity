@@ -353,7 +353,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33496
+  m_Name: pb_Mesh23926
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -763,7 +763,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33512
+  m_Name: pb_Mesh23942
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1009,7 +1009,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390932596}
-  m_LocalRotation: {x: 0.09154024, y: -0.7567491, z: 0.108562164, w: 0.6380952}
+  m_LocalRotation: {x: 0.091540225, y: -0.7567491, z: 0.10856214, w: 0.6380952}
   m_LocalPosition: {x: 33.77, y: -6.42, z: -3.9959948}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1955,6 +1955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherDoorScript: {fileID: 0}
   SpawnPoint: {fileID: 0}
+  roomManager: {fileID: 1380868748}
 --- !u!65 &508159336
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2185,6 +2186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherDoorScript: {fileID: 508159335}
   SpawnPoint: {fileID: 0}
+  roomManager: {fileID: 0}
 --- !u!65 &615404679
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2368,7 +2370,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33552
+  m_Name: pb_Mesh23982
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7533,7 +7535,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338461059}
-  m_LocalRotation: {x: 0.09154024, y: -0.7567491, z: 0.108562164, w: 0.6380952}
+  m_LocalRotation: {x: 0.091540225, y: -0.7567491, z: 0.10856214, w: 0.6380952}
   m_LocalPosition: {x: 23.72, y: 13.65, z: -0.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7614,6 +7616,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1380868747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1380868749}
+  - component: {fileID: 1380868748}
+  m_Layer: 0
+  m_Name: BlueRoomManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1380868748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380868747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f59567f2835b01498a2942138075dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesToSpawn:
+  - enemy: {fileID: 4308134389288796757, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
+    spawnPos: {x: 3.75, y: -9.43, z: -54.68}
+    spawnRot: {x: -0, y: 50.3063, z: -0}
+  - enemy: {fileID: 4308134389288796757, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
+    spawnPos: {x: 23.84, y: -9.43, z: -49.74}
+    spawnRot: {x: -0, y: 50.3063, z: -0}
+--- !u!4 &1380868749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380868747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.732414, y: -8.93, z: -51.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1382711437
 GameObject:
   m_ObjectHideFlags: 0
@@ -10032,7 +10084,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416660153}
-  m_LocalRotation: {x: 0.027688516, y: -0.06242853, z: 0.0017326014, w: 0.9976638}
+  m_LocalRotation: {x: 0.027688487, y: -0.062428493, z: 0.0017325984, w: 0.9976638}
   m_LocalPosition: {x: 20.37, y: 13.65, z: -55.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10243,7 +10295,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33598
+  m_Name: pb_Mesh24028
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
