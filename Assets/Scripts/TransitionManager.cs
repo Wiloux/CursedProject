@@ -23,7 +23,6 @@ public class TransitionManager : MonoBehaviour
     {
         if (Fading == null)
         {
-            Debug.Log("douleur");
             target.position = new Vector3(DestinationDoor.SpawnPoint.position.x, (Using.transform.position.y - DestinationDoor.SpawnPoint.position.y) + DestinationDoor.SpawnPoint.position.y, DestinationDoor.SpawnPoint.position.z);
             Fading = StartCoroutine(FadeTo(Using, dur, DestinationDoor, CurrentDoor));
         }

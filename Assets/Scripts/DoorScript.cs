@@ -7,6 +7,8 @@ public class DoorScript : MonoBehaviour
     public DoorScript otherDoorScript;
     public Transform SpawnPoint;
     public RoomManager roomManager;
+    public int nextRoomInt;
+    public int currentRoomInt;
 
 
     // Start is called before the first frame update
@@ -21,15 +23,16 @@ public class DoorScript : MonoBehaviour
 
     public void UseDoor(Transform Using)
     {
+        otherDoorScript.currentRoomInt = nextRoomInt;
         #region Destroy the enemies of the current room
-        if(roomManager != null) { roomManager.DestroyEnemies(); }
+        if (roomManager != null) { roomManager.DestroyEnemies(currentRoomInt); }
         #endregion
 
         TransitionManager.instance.StartFade(Using, otherDoorScript.SpawnPoint, 1, otherDoorScript, this);
 
         #region Spawn enemies of the new room
         RoomManager _roomManager = otherDoorScript.roomManager;
-        if(_roomManager!= null){_roomManager.SpawnEnemies();}
+        if(_roomManager!= null){_roomManager.SpawnEnemies(nextRoomInt);}
         #endregion
     }
 }

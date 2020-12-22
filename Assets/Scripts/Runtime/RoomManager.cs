@@ -6,13 +6,14 @@ using UnityEditor;
 
 public class RoomManager : MonoBehaviour
 {
-    public List<EnemyToSpawn> enemiesToSpawn;
-    private List<EnemyBase> enemies = new List<EnemyBase>();
+
+    public List<RoomInfo> AllRooms = new List<RoomInfo>();
+
 
     #region Custom Inspector Method
-    public void HelpReferencement()
+    public void HelpReferencement(int roomInt)
     {
-        foreach(EnemyToSpawn enemyToSpawn in enemiesToSpawn)
+        foreach(EnemyToSpawn enemyToSpawn in AllRooms[roomInt].enemiesToSpawn)
         {
             if(enemyToSpawn.enemy != null)
             {
@@ -24,23 +25,33 @@ public class RoomManager : MonoBehaviour
     #endregion
 
     #region Enemies Management
-    public void SpawnEnemies()
+    public void SpawnEnemies(int roomInt)
     {
-        foreach(EnemyToSpawn enemyToSpawn in enemiesToSpawn)
+        foreach(EnemyToSpawn enemyToSpawn in AllRooms[roomInt].enemiesToSpawn)
         {
             EnemyBase enemy = Instantiate(enemyToSpawn.enemy, enemyToSpawn.spawnPos, Quaternion.Euler(enemyToSpawn.spawnRot));
-            enemies.Add(enemy);
+            AllRooms[roomInt].enemies.Add(enemy);
         }
     }
-    public void DestroyEnemies()
+    public void DestroyEnemies(int roomInt)
     {
-        foreach(EnemyBase enemy in enemies)
+        foreach(EnemyBase enemy in AllRooms[roomInt].enemies)
         {
             Destroy(enemy.gameObject);
         }
-        enemies.Clear();
+        AllRooms[roomInt].enemies.Clear();
     }
     #endregion
+}
+
+[Serializable]public class RoomInfo
+{
+
+    public string RoomName;
+    public List<EnemyToSpawn> enemiesToSpawn;
+    [HideInInspector]
+    public List<EnemyBase> enemies = new List<EnemyBase>();
+
 }
 
 [Serializable]public class EnemyToSpawn 
