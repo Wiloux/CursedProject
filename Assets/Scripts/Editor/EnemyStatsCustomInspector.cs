@@ -11,7 +11,6 @@ public class EnemyStatsCustomInspector : Editor
     private bool showRunStats;
     private bool showRangeStats;
     private bool showAttacksStats;
-
     public override void OnInspectorGUI()
     {
         EnemyStatsSO so = target as EnemyStatsSO;

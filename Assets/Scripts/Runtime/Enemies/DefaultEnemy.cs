@@ -5,11 +5,12 @@ using UnityEngine.AI;
 
 public class DefaultEnemy : EnemyBase
 {
-    void Start()
+    public override void Start()
     {
+        base.Start();
+
         Attack = DamagePlayerTouched;
         Chase = ChasePlayer;
-
     }
 
     private void ChasePlayer()
