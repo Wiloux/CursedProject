@@ -36,17 +36,20 @@ public class DialogInteraction: MonoBehaviour
 
     private IEnumerator TypeSentence()
     {
-        if(dialogue.dialoguesAndVoicelines[index].SFX != null)
-        {
-            sfxAudioSource.clip = dialogue.dialoguesAndVoicelines[index].SFX;
-            sfxAudioSource.Play();
-        }
-        if(dialogue.dialoguesAndVoicelines[index].voiceline != null)
-        {
-            dialogAudioSource.clip = dialogue.dialoguesAndVoicelines[index].voiceline;
-            dialogAudioSource.Play();
-        }
-        foreach(char character in dialogue.dialoguesAndVoicelines[index].script.ToCharArray())
+        //if(dialogue.dialoguesAndVoicelines[index].SFX != null)
+        //{
+        //    sfxAudioSource.clip = dialogue.dialoguesAndVoicelines[index].SFX;
+        //    sfxAudioSource.Play();
+        //}
+        //if(dialogue.dialoguesAndVoicelines[index].voiceline != null)
+        //{
+        //    dialogAudioSource.clip = dialogue.dialoguesAndVoicelines[index].voiceline;
+        //    dialogAudioSource.Play();
+        //}
+
+        if (dialogue.dialoguesAndVoicelines[index].dialogueStart != null){dialogue.dialoguesAndVoicelines[index].dialogueStart.Post(gameObject);}
+
+        foreach (char character in dialogue.dialoguesAndVoicelines[index].script.ToCharArray())
         {
             dialogDisplayer.text += character;
             yield return new WaitForSeconds(timeBetweenLetters);
@@ -66,6 +69,7 @@ public class DialogInteraction: MonoBehaviour
         }
         else
         {
+            if(dialogue.dialoguesAndVoicelines[index].dialogueEnd != null){ dialogue.dialoguesAndVoicelines[index].dialogueEnd.Post(gameObject);}
             StopTalking();
         }
     }

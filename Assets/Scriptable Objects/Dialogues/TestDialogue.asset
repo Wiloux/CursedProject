@@ -16,6 +16,28 @@ MonoBehaviour:
   - script: Hello World !
     voiceline: {fileID: 8300000, guid: 79f51c73d7418ee45b95e4c8ecc918ba, type: 3}
     SFX: {fileID: 0}
+    dialogueStart:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 0}
   - script: Having a great time ?
     voiceline: {fileID: 8300000, guid: da3c4ee06a7f8d94abf700eebb9b4006, type: 3}
     SFX: {fileID: 8300000, guid: 2bbaf09a13da0644e93fb6f12054387e, type: 3}
+    dialogueStart:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 0}
+  - script: gjrhifhrokdg
+    voiceline: {fileID: 8300000, guid: da3c4ee06a7f8d94abf700eebb9b4006, type: 3}
+    SFX: {fileID: 8300000, guid: 2bbaf09a13da0644e93fb6f12054387e, type: 3}
+    dialogueStart:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 0}
+  - script: Having a great time ?
+    voiceline: {fileID: 8300000, guid: da3c4ee06a7f8d94abf700eebb9b4006, type: 3}
+    SFX: {fileID: 8300000, guid: 2bbaf09a13da0644e93fb6f12054387e, type: 3}
+    dialogueStart:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 0}

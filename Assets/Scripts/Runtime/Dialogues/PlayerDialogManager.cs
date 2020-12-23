@@ -38,10 +38,6 @@ public class PlayerDialogManager : MonoBehaviour
                     currentDialog.Talk();
                     talking = true;
                 }
-                else
-                {
-                    Debug.LogWarning("No Dialog Manager there");
-                }
             }
         }
     }
