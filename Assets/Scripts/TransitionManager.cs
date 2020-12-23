@@ -34,6 +34,7 @@ public class TransitionManager : MonoBehaviour
         Time.timeScale = 0;
         var tempColor = FadeImage.color;
         float t = 0;
+        target.GetComponent<CharacterController>().enabled = false;
         PlayerHelper.instance.ToggleControls();
 
         while (t < dur)
@@ -50,6 +51,10 @@ public class TransitionManager : MonoBehaviour
         }
 
         target.position = new Vector3(DestinationDoor.SpawnPoint.position.x, DestinationDoor.SpawnPoint.position.y, DestinationDoor.SpawnPoint.position.z);
+        Vector3 relativePos = target.position - DestinationDoor.transform.position;
+        target.LookAt(-relativePos);
+        target.rotation = Quaternion.Euler(0, target.rotation.y, target.rotation.z);
+
         t = 0;
 
         yield return new WaitForSecondsRealtime(1);
@@ -68,6 +73,7 @@ public class TransitionManager : MonoBehaviour
         }
         PlayerHelper.instance.ToggleControls();
         Fading = null;
+        target.GetComponent<CharacterController>().enabled = true;
         Time.timeScale = 1;
     }
 }
