@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 4308134389288796763}
   rb: {fileID: 4308134389288796760}
-  enemyStats: {fileID: 11400000, guid: 8134a081a9b847041a02106ea1ec471e, type: 2}
+  enemyStats: {fileID: 11400000, guid: fd4d0e2d22262a641814f07d6bc659b3, type: 2}
   runningPointsParent: {fileID: 0}
   attackPoint: {fileID: 4308134388783727562}
   playerMask:

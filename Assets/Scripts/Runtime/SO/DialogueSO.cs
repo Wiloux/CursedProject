@@ -16,6 +16,8 @@ public class DialogueSO : ScriptableObject
     [Space]
     public AudioClip voiceline;
     public AudioClip SFX;
+    public AK.Wwise.Event dialogueStart;
+    public AK.Wwise.Event dialogueEnd;
 
     public DialogueAndVoiceline(string script, AudioClip voiceline, AudioClip SFX)
     {
