@@ -160,5 +160,7 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /CursedProject_WwiseProject
+  - /CursedProject_WwiseProject/Events
+  - /CursedProject_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

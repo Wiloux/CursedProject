@@ -8,11 +8,13 @@ public class DialogInteraction: MonoBehaviour
     [SerializeField] private DialogueSO dialogue;
     private int index = 0;
     [Tooltip("Script yield return this float between the writing of two letters")]
-    private static float timeBetweenLetters = 0.02f;
+    private static float timeBetweenLetters = 0.04f;
 
     private TMP_Text dialogDisplayer;
     private AudioSource dialogAudioSource;
     private AudioSource sfxAudioSource;
+
+    private string clue;
 
     private bool talking;
 
@@ -21,6 +23,7 @@ public class DialogInteraction: MonoBehaviour
         dialogDisplayer = DialogueManager.instance.dialogDisplayer;
         dialogAudioSource = DialogueManager.instance.dialogAudioSource;
         sfxAudioSource = DialogueManager.instance.sfxAudioSource;
+       clue = dialogue.clueName;
     }
 
     public void Talk()
@@ -80,6 +83,12 @@ public class DialogInteraction: MonoBehaviour
         talking = false;
         dialogDisplayer.gameObject.SetActive(false);
         index = 0;
+
+        if(clue != "")
+        {
+            PlayerHelper.instance.AddClueToInventory(clue);
+            Destroy(gameObject);
+        }
     }
 
     public void WwiseSoundManaging()

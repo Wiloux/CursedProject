@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Scriptable Objects/Dialogue")]
 public class DialogueSO : ScriptableObject
 {
+    public string clueName;
     public List<DialogueAndVoiceline> dialoguesAndVoicelines;
 }
 
@@ -18,6 +19,8 @@ public class DialogueSO : ScriptableObject
     public AudioClip SFX;
     public AK.Wwise.Event dialogueStart;
     public AK.Wwise.Event dialogueEnd;
+
+
 
     public DialogueAndVoiceline(string script, AudioClip voiceline, AudioClip SFX)
     {
