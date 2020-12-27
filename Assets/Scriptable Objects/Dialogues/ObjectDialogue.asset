@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6a656f15cb4be44fb6e188c31667abd, type: 3}
-  m_Name: DoorDialogue
+  m_Name: ObjectDialogue
   m_EditorClassIdentifier: 
+  clueName: Finger
   dialoguesAndVoicelines:
-  - script: 'Hey Miguel!
+  - script: 'There''s something under the dresser
 
 '
     voiceline: {fileID: 0}
@@ -21,19 +22,19 @@ MonoBehaviour:
     dialogueStart:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 83bbb456a21b8e4499c9c4442613bd4c, type: 2}
+      WwiseObjectReference: {fileID: 0}
     dialogueEnd:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 6baec29526f20574b911d02041d367f1, type: 2}
-  - script: AZERTY
+      WwiseObjectReference: {fileID: 0}
+  - script: You found a finger
     voiceline: {fileID: 0}
     SFX: {fileID: 0}
     dialogueStart:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 83bbb456a21b8e4499c9c4442613bd4c, type: 2}
+      WwiseObjectReference: {fileID: 0}
     dialogueEnd:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: 6baec29526f20574b911d02041d367f1, type: 2}
+      WwiseObjectReference: {fileID: 0}
