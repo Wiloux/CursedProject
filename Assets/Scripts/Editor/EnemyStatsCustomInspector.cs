@@ -89,6 +89,7 @@ public class EnemyStatsCustomInspector : Editor
                 if (so.run)
                 {
                     CreatePropertyField("runningRange");
+                    CreatePropertyField("runSpeed");
                 }
             }
             EditorGUILayout.EndFoldoutHeaderGroup();

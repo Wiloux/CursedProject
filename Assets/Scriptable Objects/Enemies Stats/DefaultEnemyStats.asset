@@ -24,3 +24,4 @@ MonoBehaviour:
   attackRange: 0.5
   attackCooldown: 0
   movementSpeed: 4
+  runSpeed: 8

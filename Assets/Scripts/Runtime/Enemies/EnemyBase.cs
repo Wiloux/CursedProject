@@ -9,6 +9,7 @@ public class EnemyBase : MonoBehaviour
     [Header("Nav Vars")]
     [SerializeField] protected UnityEngine.AI.NavMeshAgent agent;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private Animator animator;
     [SerializeField] private EnemyStatsSO enemyStats;
     //[SerializeField] private Animator animator;
     //[SerializeField] protected Player player;
@@ -46,6 +47,7 @@ public class EnemyBase : MonoBehaviour
     private float timeToAttack;
 
     private float movementSpeed = 2f;
+    private float runSpeed;
 
     protected Action Attack;
     protected Action Chase;
@@ -67,6 +69,15 @@ public class EnemyBase : MonoBehaviour
         if (player == null) player = PlayerHelper.instance.gameObject;
         if (!dead)
         {
+            if(agent.velocity != Vector3.zero)
+            {
+                animator.SetBool("moving", true);
+            }
+            else
+            {
+                animator.SetBool("moving", false);
+            }
+            Debug.Log(agent.isStopped);
             float distance = GetDistanceFromPlayer();
             chasing = false;
             //Debug.Log(distance);
@@ -75,6 +86,7 @@ public class EnemyBase : MonoBehaviour
                 if(distance >= runningRange)
                 {
                     running = false;
+                    agent.speed = movementSpeed;
                 }
                 if(GetDistanceFromPosition(agent.destination) < 0.5f && distance < runningRange)
                 {
@@ -88,13 +100,15 @@ public class EnemyBase : MonoBehaviour
                     if(timeToAttack <= Time.timeSinceLevelLoad)
                     {
                         // Attack
-                        //animator.SetTrigger("attack");
+                        animator.SetInteger("attackType", UnityEngine.Random.Range(0, 3));
+                        animator.SetTrigger("attack");
                         Debug.Log("Attack");
                         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
-                        //Attack?.Invoke();
+                        Attack?.Invoke();
                         if (run)
                         {
                             running = true;
+                            agent.speed = runSpeed;
                             agent.SetDestination(GetRunningPoint());
                         }
                     }
@@ -139,7 +153,9 @@ public class EnemyBase : MonoBehaviour
         rangeToAttack = enemyStats.rangeToAttack;
         attackRange = enemyStats.attackRange;
         attackCooldown = enemyStats.attackCooldown;
+
         movementSpeed = enemyStats.movementSpeed;
+        runSpeed = enemyStats.runSpeed;
     }
 
     private void OnDrawGizmosSelected()
@@ -156,12 +172,17 @@ public class EnemyBase : MonoBehaviour
         Debug.Log("Damage took");
         health--;
         if (health <= 0) { Die(); }
+        else
+        {
+            animator.SetTrigger("hit");
+            animator.SetInteger("randomHurt", UnityEngine.Random.Range(0, 3));
+        }
     }
 
     public void Die()
     {
         dead = true;
-        // Death Animation
+        animator.SetBool("dead", true);
         Destroy(gameObject);
     }
 

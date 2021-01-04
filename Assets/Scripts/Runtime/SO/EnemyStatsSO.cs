@@ -29,4 +29,5 @@ public class EnemyStatsSO : ScriptableObject
     public float attackCooldown;
 
     public float movementSpeed = 2f;
+    public float runSpeed = 4f;
 }
