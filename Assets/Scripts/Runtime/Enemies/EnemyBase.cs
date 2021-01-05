@@ -8,6 +8,7 @@ public class EnemyBase : MonoBehaviour
 {
     [Header("Nav Vars")]
     [SerializeField] protected UnityEngine.AI.NavMeshAgent agent;
+    [SerializeField] private LayerMask navMeshMask;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Animator animator;
     [SerializeField] private EnemyStatsSO enemyStats;
@@ -29,18 +30,16 @@ public class EnemyBase : MonoBehaviour
     // Run vars
     private bool run;
     private bool running;
-    [SerializeField] private Transform runningPointsParent;
-    private Transform latestRunningPoint;
     private float runningRange;
 
     private bool range;
     protected GameObject projectilePrefab;
 
     private float rangeToAttack = 2f;
-    [Tooltip("The point where colliders will be detected for the attack")]
+    // The point where colliders will be detected for the attack
     [SerializeField] private Transform attackPoint;
     private float attackRange = 0.5f;
-    [Tooltip("Layer Mask used for the colliders detecttion")]
+    // Layer Mask used for the colliders detecttion
     [SerializeField] private LayerMask playerMask;
 
     private float attackCooldown;
@@ -198,7 +197,7 @@ public class EnemyBase : MonoBehaviour
     public void Die()
     {
         dead = true;
-        animator.SetBool("dead", true);
+        animator.SetTrigger("dead");
         Destroy(gameObject);
     }
 
@@ -227,23 +226,23 @@ public class EnemyBase : MonoBehaviour
 
     private Vector3 GetRunningPoint()
     {
-        Vector2 direction = (transform.position - player.transform.position).normalized;
+        Vector3 runningPointPos = transform.position;
+        Vector2 direction = new Vector2(UnityEngine.Random.Range(-1f, 1.01f), UnityEngine.Random.Range(-1f, 1.01f)).normalized;
 
-        Transform closestRunningPoint = null;
-        float shortestAngle = Mathf.Infinity;
-        for(int i = 0; i < runningPointsParent.childCount; i++)
+        Debug.Log(direction);
+        Debug.Log(transform.position + new Vector3(direction.x, 0, direction.y) * runningRange);
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(runningPointPos, out hit, runningRange/4, navMeshMask))
         {
-            Transform runningPoint = runningPointsParent.GetChild(i);
-            float angle = Vector3.Angle((runningPoint.position - transform.position).normalized, direction);
-
-            if(runningPoint != latestRunningPoint && (closestRunningPoint == null || angle < shortestAngle))
-            {
-                closestRunningPoint = runningPoint;
-                shortestAngle = angle;
-            }
+            runningPointPos = transform.position + new Vector3(direction.x, 0, direction.y) * runningRange;
+            Debug.Log("found");
         }
-        latestRunningPoint = closestRunningPoint;
-        return closestRunningPoint.position;
+        else
+        {
+            Debug.Log("bruh");
+        }
+        return runningPointPos;
+
     }
 
     private void EnableAgent() { agent.isStopped = false; }

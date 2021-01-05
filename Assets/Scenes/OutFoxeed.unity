@@ -1867,7 +1867,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1834031363
 MeshCollider:
@@ -2121,6 +2121,10 @@ PrefabInstance:
     - target: {fileID: 4308134389288796756, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308134389288796757, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
+      propertyPath: navMeshMask.m_Bits
+      value: 1025
       objectReference: {fileID: 0}
     - target: {fileID: 4308134389288796757, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
       propertyPath: runningPointsParent
