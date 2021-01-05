@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1bee3f608efddb4494b847774e8f08a, type: 3}
-  m_Name: DefaultEnemyStats
+  m_Name: ChickenMonsterProfile
   m_EditorClassIdentifier: 
   maxHealth: 100
   movementSpeed: 4

@@ -2122,14 +2122,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4308134389288796757, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
-      propertyPath: navMeshMask.m_Bits
-      value: 1025
-      objectReference: {fileID: 0}
-    - target: {fileID: 4308134389288796757, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
-      propertyPath: runningPointsParent
-      value: 
-      objectReference: {fileID: 954938820}
     - target: {fileID: 4308134389288796762, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
       propertyPath: m_Name
       value: Enemy
