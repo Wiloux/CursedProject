@@ -17,7 +17,7 @@ public class EnemyBase : MonoBehaviour
 
     [Space]
     [Header("Enemy stats")]
-    [SerializeField] private EnemyStatsSO enemyStats;
+    [SerializeField] private EnemyProfileSO enemyProfil;
 
     protected GameObject player;
 
@@ -170,38 +170,38 @@ public class EnemyBase : MonoBehaviour
     private void GetStatsFromSo()
     {
         // General vars
-        maxHealth = enemyStats.maxHealth;
+        maxHealth = enemyProfil.maxHealth;
 
         // Chase vars
-        chase = enemyStats.chase;
-        detectionRange = enemyStats.detectionRange;
-        chaseRange = enemyStats.chaseRange;
+        chase = enemyProfil.chase;
+        detectionRange = enemyProfil.detectionRange;
+        chaseRange = enemyProfil.chaseRange;
 
         // Run vars
-        run = enemyStats.run;
-        runningRange = enemyStats.runningRange;
-        watchingDuration = enemyStats.watchingDuration;
+        run = enemyProfil.run;
+        runningRange = enemyProfil.runningRange;
+        watchingDuration = enemyProfil.watchingDuration;
 
         // Range vars
-        range = enemyStats.range;
-        projectilePrefab = enemyStats.projectilePrefab;
+        range = enemyProfil.range;
+        projectilePrefab = enemyProfil.projectilePrefab;
 
         // Attack vars
-        rangeToAttack = enemyStats.rangeToAttack;
-        attackRange = enemyStats.attackRange;
-        attackCooldown = enemyStats.attackCooldown;
+        rangeToAttack = enemyProfil.rangeToAttack;
+        attackRange = enemyProfil.attackRange;
+        attackCooldown = enemyProfil.attackCooldown;
 
         // Speed vars
-        movementSpeed = enemyStats.movementSpeed;
-        runSpeed = enemyStats.runSpeed;
+        movementSpeed = enemyProfil.movementSpeed;
+        runSpeed = enemyProfil.runSpeed;
 
         // Wwise events
-        attackWEvent = enemyStats.attackWEvent;
-        chaseWEvent = enemyStats.chaseWEvent;
-        runWEvent = enemyStats.runWEvent;
-        watchWEvent = enemyStats.watchWEvent;
-        hitWEvent = enemyStats.hitWEvent;
-        deathWEvent = enemyStats.deathWEvent;
+        attackWEvent = enemyProfil.attackWEvent;
+        chaseWEvent = enemyProfil.chaseWEvent;
+        runWEvent = enemyProfil.runWEvent;
+        watchWEvent = enemyProfil.watchWEvent;
+        hitWEvent = enemyProfil.hitWEvent;
+        deathWEvent = enemyProfil.deathWEvent;
         
     }
 

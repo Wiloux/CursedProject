@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(EnemyStatsSO))]
-public class EnemyStatsCustomInspector : Editor
+[CustomEditor(typeof(EnemyProfileSO))]
+public class EnemyProfileCustomInspector : Editor
 {
     private bool showHealthStats;
     private bool showChaseStats;
@@ -14,7 +14,7 @@ public class EnemyStatsCustomInspector : Editor
     private bool showWwiseEvents;
     public override void OnInspectorGUI()
     {
-        EnemyStatsSO so = target as EnemyStatsSO;
+        EnemyProfileSO so = target as EnemyProfileSO;
 
         serializedObject.Update();
 
@@ -92,6 +92,8 @@ public class EnemyStatsCustomInspector : Editor
         #endregion
 
         GUILayout.Space(30);
+
+        #region Wwise Events
         showWwiseEvents = EditorGUILayout.BeginFoldoutHeaderGroup(showWwiseEvents, "Wwise Events");
         if (showWwiseEvents)
         {
@@ -104,7 +106,7 @@ public class EnemyStatsCustomInspector : Editor
                 if (so.run) { CreatePropertyField("runWEvent"); CreatePropertyField("watchWEvent"); }
             }
         }
-        
+        #endregion
 
         serializedObject.ApplyModifiedProperties();
     }

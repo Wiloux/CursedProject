@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/EnemyStats")]
-public class EnemyStatsSO : ScriptableObject
+public class EnemyProfileSO : ScriptableObject
 {
     public int maxHealth;
     public float movementSpeed = 2f;
