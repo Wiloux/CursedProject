@@ -9,11 +9,16 @@ public class EnemyBase : MonoBehaviour
     [Header("Nav Vars")]
     [SerializeField] protected UnityEngine.AI.NavMeshAgent agent;
     [SerializeField] private LayerMask navMeshMask;
+    
+    [Space]
+    [Header("Components Vars")]
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Animator animator;
+
+    [Space]
+    [Header("Enemy stats")]
     [SerializeField] private EnemyStatsSO enemyStats;
-    //[SerializeField] private Animator animator;
-    //[SerializeField] protected Player player;
+
     protected GameObject player;
 
     private int maxHealth;
@@ -48,6 +53,16 @@ public class EnemyBase : MonoBehaviour
     private float movementSpeed = 2f;
     private float runSpeed;
     private float watchingDuration;
+
+    #region Wwise Event
+    private AK.Wwise.Event attackWEvent;
+    private AK.Wwise.Event chaseWEvent;
+    private AK.Wwise.Event runWEvent;
+    private AK.Wwise.Event watchWEvent;
+
+    private AK.Wwise.Event hitWEvent;
+    private AK.Wwise.Event deathWEvent;
+    #endregion
 
     protected Action Attack;
     protected Action Chase;
@@ -112,6 +127,8 @@ public class EnemyBase : MonoBehaviour
                             //Animations
                         animator.SetInteger("attackType", UnityEngine.Random.Range(0, 3));
                         animator.SetTrigger("attack");
+                        // Post Wwise Event
+                        attackWEvent?.Post(gameObject);
                             // Cooldown attack gestion
                         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
                             // Attack action
@@ -152,25 +169,40 @@ public class EnemyBase : MonoBehaviour
 
     private void GetStatsFromSo()
     {
+        // General vars
         maxHealth = enemyStats.maxHealth;
 
+        // Chase vars
         chase = enemyStats.chase;
         detectionRange = enemyStats.detectionRange;
         chaseRange = enemyStats.chaseRange;
 
+        // Run vars
         run = enemyStats.run;
         runningRange = enemyStats.runningRange;
+        watchingDuration = enemyStats.watchingDuration;
 
+        // Range vars
         range = enemyStats.range;
         projectilePrefab = enemyStats.projectilePrefab;
 
+        // Attack vars
         rangeToAttack = enemyStats.rangeToAttack;
         attackRange = enemyStats.attackRange;
         attackCooldown = enemyStats.attackCooldown;
 
+        // Speed vars
         movementSpeed = enemyStats.movementSpeed;
         runSpeed = enemyStats.runSpeed;
-        watchingDuration = enemyStats.watchingDuration;
+
+        // Wwise events
+        attackWEvent = enemyStats.attackWEvent;
+        chaseWEvent = enemyStats.chaseWEvent;
+        runWEvent = enemyStats.runWEvent;
+        watchWEvent = enemyStats.watchWEvent;
+        hitWEvent = enemyStats.hitWEvent;
+        deathWEvent = enemyStats.deathWEvent;
+        
     }
 
     private void OnDrawGizmosSelected()
@@ -191,6 +223,7 @@ public class EnemyBase : MonoBehaviour
         {
             animator.SetTrigger("hit");
             animator.SetInteger("randomHurt", UnityEngine.Random.Range(0, 3));
+            hitWEvent?.Post(gameObject);
         }
     }
 
@@ -198,7 +231,8 @@ public class EnemyBase : MonoBehaviour
     {
         dead = true;
         animator.SetTrigger("dead");
-        Destroy(gameObject);
+        deathWEvent?.Post(gameObject);
+        //Destroy(gameObject);
     }
 
     public void DamagePlayerTouched()
@@ -248,5 +282,5 @@ public class EnemyBase : MonoBehaviour
     private void EnableAgent() { agent.isStopped = false; }
     private void DisableAgent() { agent.isStopped = true; }
     private void StopWatchingPlayer() { agent.speed = movementSpeed; }
-    private void WatchPlayer() { transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.up); }
+    private void WatchPlayer() { transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.up); watchWEvent?.Post(gameObject); }
 }

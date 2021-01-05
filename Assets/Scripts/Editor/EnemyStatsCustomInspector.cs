@@ -11,6 +11,7 @@ public class EnemyStatsCustomInspector : Editor
     private bool showRunStats;
     private bool showRangeStats;
     private bool showAttacksStats;
+    private bool showWwiseEvents;
     public override void OnInspectorGUI()
     {
         EnemyStatsSO so = target as EnemyStatsSO;
@@ -18,8 +19,7 @@ public class EnemyStatsCustomInspector : Editor
         serializedObject.Update();
 
         #region Health stats
-        GUILayout.Label("Health ------------------");
-        showHealthStats = EditorGUILayout.BeginFoldoutHeaderGroup(showHealthStats, "Health stats");
+        showHealthStats = EditorGUILayout.BeginFoldoutHeaderGroup(showHealthStats, "Health stats ------------------");
         if (showHealthStats)
         {
             CreatePropertyField("maxHealth");
@@ -28,11 +28,10 @@ public class EnemyStatsCustomInspector : Editor
         EditorGUILayout.EndFoldoutHeaderGroup();
         #endregion
 
-        GUILayout.Space(10);
+        GUILayout.Space(20);
 
         #region Attack stats
-        GUILayout.Label("Attack ------------------");
-        showAttacksStats = EditorGUILayout.BeginFoldoutHeaderGroup(showAttacksStats, "Attack stats");
+        showAttacksStats = EditorGUILayout.BeginFoldoutHeaderGroup(showAttacksStats, "Attack stats ------------------");
         if (showAttacksStats)
         {
             CreatePropertyField("rangeToAttack");
@@ -42,14 +41,13 @@ public class EnemyStatsCustomInspector : Editor
         EditorGUILayout.EndFoldoutHeaderGroup();
         #endregion
 
-        GUILayout.Space(10);
+        GUILayout.Space(20);
 
         #region Range stats
-        GUILayout.Label("Range ------------------");
         CreatePropertyField("range");
         if (so.range)
         {
-            showRangeStats = EditorGUILayout.BeginFoldoutHeaderGroup(showRangeStats, "Range stats");
+            showRangeStats = EditorGUILayout.BeginFoldoutHeaderGroup(showRangeStats, "Range stats ------------------");
             if (showRangeStats)
             {
                 CreatePropertyField("projectilePrefab");
@@ -58,35 +56,31 @@ public class EnemyStatsCustomInspector : Editor
         }
         #endregion
 
-        GUILayout.Space(10);
+        GUILayout.Space(20);
 
         #region Chase stats
-        GUILayout.Label("Chase ------------------");
-        GUILayout.Space(5);
         CreatePropertyField("chase");
         if (so.chase)
         {
-            showChaseStats = EditorGUILayout.BeginFoldoutHeaderGroup(showChaseStats, "Chase stats");
+            showChaseStats = EditorGUILayout.BeginFoldoutHeaderGroup(showChaseStats, "Chase stats ------------------");
             if (showChaseStats)
             {
                 CreatePropertyField("detectionRange");
                 CreatePropertyField("chaseRange");
             }
             EditorGUILayout.EndFoldoutHeaderGroup();
-            GUILayout.Space(10);
+            GUILayout.Space(20);
         }
         #endregion
 
         #region Run stats
         if (so.chase)
         {
-            GUILayout.Label("Run ------------------");
-            GUILayout.Space(5);
-            showRunStats = EditorGUILayout.BeginFoldoutHeaderGroup(showRunStats, "Run stats");
-            if (showRunStats)
+            CreatePropertyField("run");
+            if (so.run)
             {
-                CreatePropertyField("run");
-                if (so.run)
+                showRunStats = EditorGUILayout.BeginFoldoutHeaderGroup(showRunStats, "Run stats ------------------");
+                if (showRunStats)
                 {
                     CreatePropertyField("runningRange");
                     CreatePropertyField("runSpeed");
@@ -96,6 +90,21 @@ public class EnemyStatsCustomInspector : Editor
             EditorGUILayout.EndFoldoutHeaderGroup();
         }
         #endregion
+
+        GUILayout.Space(30);
+        showWwiseEvents = EditorGUILayout.BeginFoldoutHeaderGroup(showWwiseEvents, "Wwise Events");
+        if (showWwiseEvents)
+        {
+            CreatePropertyField("attackWEvent");
+            if(so.maxHealth > 1) CreatePropertyField("hitWEvent");
+            CreatePropertyField("deathWEvent");
+            if (so.chase)
+            {
+                CreatePropertyField("chaseWEvent");
+                if (so.run) { CreatePropertyField("runWEvent"); CreatePropertyField("watchWEvent"); }
+            }
+        }
+        
 
         serializedObject.ApplyModifiedProperties();
     }

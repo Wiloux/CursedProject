@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyStatsSO : ScriptableObject
 {
     public int maxHealth;
+    public float movementSpeed = 2f;
 
     [Tooltip("Does the enemy chase the player")]
     public bool chase;
@@ -26,9 +27,17 @@ public class EnemyStatsSO : ScriptableObject
     public float rangeToAttack = 2f;
     [Tooltip("Max range between attackPoint and hit colliders")]
     public float attackRange = 0.5f;
-
     [Tooltip("Cooldown of the attack")]
     public float attackCooldown;
 
-    public float movementSpeed = 2f;
+
+    #region Wwwise events
+    public AK.Wwise.Event attackWEvent;
+    public AK.Wwise.Event chaseWEvent;
+    public AK.Wwise.Event runWEvent;
+    public AK.Wwise.Event watchWEvent;
+
+    public AK.Wwise.Event hitWEvent;
+    public AK.Wwise.Event deathWEvent;
+    #endregion
 }

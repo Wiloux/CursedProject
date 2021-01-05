@@ -14,18 +14,15 @@ public class DialogueSO : ScriptableObject
 [Serializable] public class DialogueAndVoiceline
 {
     [TextArea(1,7)] public string script;
+
     [Space]
-    public AudioClip voiceline;
-    public AudioClip SFX;
     public AK.Wwise.Event dialogueStart;
     public AK.Wwise.Event dialogueEnd;
 
-
-
-    public DialogueAndVoiceline(string script, AudioClip voiceline, AudioClip SFX)
+    public DialogueAndVoiceline(string script, AK.Wwise.Event dialogueStart, AK.Wwise.Event dialogueEnd)
     {
         this.script = script;
-        this.voiceline = voiceline;
-        this.SFX = SFX;
+        this.dialogueStart = dialogueStart;
+        this.dialogueEnd = dialogueEnd;
     }
 }

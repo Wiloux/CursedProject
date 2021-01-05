@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DefaultEnemyStats
   m_EditorClassIdentifier: 
   maxHealth: 100
+  movementSpeed: 4
   chase: 1
   detectionRange: 15
   chaseRange: 20
@@ -25,4 +26,27 @@ MonoBehaviour:
   rangeToAttack: 2
   attackRange: 0.5
   attackCooldown: 0
-  movementSpeed: 4
+  attackWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  chaseWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  runWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  watchWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  hitWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  deathWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
