@@ -48,6 +48,7 @@ public class EnemyBase : MonoBehaviour
 
     private float movementSpeed = 2f;
     private float runSpeed;
+    private float watchingDuration;
 
     protected Action Attack;
     protected Action Chase;
@@ -55,41 +56,49 @@ public class EnemyBase : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
+        // Use the vars of the EnemyStats scriptable object
         GetStatsFromSo();
 
+        // Set agent speed
         agent.speed = movementSpeed;
-        //player = GameObject.FindObjectOfType<Player>();
+        // Set cooldown attack
         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
+        // Reference the player
         player = PlayerHelper.instance.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player == null) player = PlayerHelper.instance.gameObject;
         if (!dead)
         {
-            if(agent.velocity != Vector3.zero)
-            {
-                animator.SetBool("moving", true);
-            }
-            else
-            {
-                animator.SetBool("moving", false);
-            }
-            Debug.Log(agent.isStopped);
+            // Moving animation handler
+            if(agent.velocity != Vector3.zero){animator.SetBool("moving", true);}
+            else{animator.SetBool("moving", false);}
+
             float distance = GetDistanceFromPlayer();
             chasing = false;
             //Debug.Log(distance);
-            if(run && running)
+
+            if(run && running) // If the behaviour wants to run and the enemy is running
             {
                 if(distance >= runningRange)
                 {
+                    // Stop running
                     running = false;
-                    agent.speed = movementSpeed;
+                    agent.speed = 0;
+                    DisableAgent();
+                    //agent.SetDestination(player.transform.position);
+
+                    Invoke("WatchPlayer", 1f);
+                    Invoke("StopWatchingPlayer", 1f + watchingDuration);
+                    Invoke("EnableAgent", 1f + watchingDuration);
+                    //transform.LookAt(player.transform);
+                    //transform.eulerAngles
                 }
-                if(GetDistanceFromPosition(agent.destination) < 0.5f && distance < runningRange)
+                if(GetDistanceFromPosition(agent.destination) < 0.5f && distance < runningRange) // If agent destination reached and the enemy is too close from the player
                 {
+                    // Run to another point
                     agent.SetDestination(GetRunningPoint());
                 }
             }
@@ -97,41 +106,47 @@ public class EnemyBase : MonoBehaviour
             {
                 if(distance < rangeToAttack)
                 {
-                    if(timeToAttack <= Time.timeSinceLevelLoad)
+                    if(timeToAttack <= Time.timeSinceLevelLoad) // Check attack cooldown condition
                     {
                         // Attack
+                        Debug.Log("Attack");
+                            //Animations
                         animator.SetInteger("attackType", UnityEngine.Random.Range(0, 3));
                         animator.SetTrigger("attack");
-                        Debug.Log("Attack");
+                            // Cooldown attack gestion
                         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
+                            // Attack action
                         Attack?.Invoke();
+                            // Start running if behaviour need
                         if (run)
                         {
+                            agent.isStopped = true;
+                            Invoke("EnableAgent", 1.5f);
                             running = true;
                             agent.speed = runSpeed;
                             agent.SetDestination(GetRunningPoint());
                         }
                     }
                 }
-                else if(chase)
+                else if(chase) // If the behaviour wants to chase the player
                 {
-                    if (!detected && distance < detectionRange) detected = true;
-                    else if(detected && distance < chaseRange)
+                    if (!detected && distance < detectionRange) detected = true; // The enemy needs to detect the player
+                    else if(detected && distance < chaseRange) // Then if the player is still in a range, it will chase him
                     {
-                        // Chase
+                        // Raycast verification
                         RaycastHit hit;
                         Physics.Raycast(transform.position, player.transform.position - transform.position, out hit,chaseRange, playerMask);
                         if(hit.transform != null)
                         {
                             if (hit.transform.CompareTag("Player"))
                             {
+                                // Chase
                                 chasing = true;
                                 Chase?.Invoke();
                             }
                         }
                     }
                 }
-                //if (chasing) { animator.SetBool("moving", false); }
             }
         }
     }
@@ -156,6 +171,7 @@ public class EnemyBase : MonoBehaviour
 
         movementSpeed = enemyStats.movementSpeed;
         runSpeed = enemyStats.runSpeed;
+        watchingDuration = enemyStats.watchingDuration;
     }
 
     private void OnDrawGizmosSelected()
@@ -229,4 +245,9 @@ public class EnemyBase : MonoBehaviour
         latestRunningPoint = closestRunningPoint;
         return closestRunningPoint.position;
     }
+
+    private void EnableAgent() { agent.isStopped = false; }
+    private void DisableAgent() { agent.isStopped = true; }
+    private void StopWatchingPlayer() { agent.speed = movementSpeed; }
+    private void WatchPlayer() { transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.up); }
 }

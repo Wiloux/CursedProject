@@ -15,6 +15,8 @@ public class EnemyStatsSO : ScriptableObject
     [Tooltip("Does the enemy run after hitting the player")]
     public bool run;
     public float runningRange;
+    public float runSpeed = 4f;
+    public float watchingDuration;
 
     [Tooltip("Does the enemy attack from distance")]
     public bool range;
@@ -29,5 +31,4 @@ public class EnemyStatsSO : ScriptableObject
     public float attackCooldown;
 
     public float movementSpeed = 2f;
-    public float runSpeed = 4f;
 }

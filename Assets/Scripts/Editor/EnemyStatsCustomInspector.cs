@@ -90,6 +90,7 @@ public class EnemyStatsCustomInspector : Editor
                 {
                     CreatePropertyField("runningRange");
                     CreatePropertyField("runSpeed");
+                    CreatePropertyField("watchingDuration");
                 }
             }
             EditorGUILayout.EndFoldoutHeaderGroup();
