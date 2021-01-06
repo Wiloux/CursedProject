@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" SchemaVersion="97">
+	<Events>
+		<WorkUnit Name="Tests" ID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="TestBass" ID="{2BDF3AE9-C040-47AB-B6C2-9FD905DC8F76}">
+					<ChildrenList>
+						<Action Name="" ID="{07862569-1C19-478F-A2B8-9527350FD99C}" ShortID="180467013">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="X" ID="{F918D427-A8B0-4F32-9BBF-012E1C74F253}" WorkUnitID="{8A617D9D-D8C1-4EEE-8BDA-2F11F537FF21}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Folder Name="DialogueExp" ID="{C273A0CB-4E30-4344-9C80-59F636B585ED}" ShortID="1036407082">
+					<ChildrenList>
+						<Event Name="PlayExpDialogue" ID="{24919819-F6DB-4A72-819C-0173E6E8565C}">
+							<ChildrenList>
+								<Action Name="" ID="{58350B51-058F-4B21-B36A-B44B0C949D56}" ShortID="1006125127">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ExpDialogue" ID="{452027B1-A414-48C0-A265-36597506F293}" WorkUnitID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{81D32DA7-DE40-4A0D-B427-29C0E65FB648}" ShortID="975051704">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ExpDialogue" ID="{452027B1-A414-48C0-A265-36597506F293}" WorkUnitID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="StopExpDialogue" ID="{21C83AE9-81ED-4D35-8601-723FE3B7377B}">
+							<ChildrenList>
+								<Action Name="" ID="{25CC0E20-1D32-4612-A17C-8D7365FBB45C}" ShortID="102733254">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ExpDialogue" ID="{452027B1-A414-48C0-A265-36597506F293}" WorkUnitID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Chicken" ID="{5607BF90-7BF0-4541-8E68-DD708F9190CE}" ShortID="509687982">
+					<ChildrenList>
+						<Event Name="PlayFSChicken" ID="{2244B6BA-6555-4F2C-8FFC-F9C95CBDE82D}">
+							<ChildrenList>
+								<Action Name="" ID="{F1788BC4-36AF-4722-B4D5-0B28B2A126AD}" ShortID="598553570">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="fsgalinha" ID="{33B25020-BB3E-444E-8BD1-3ED9FCE9DD8B}" WorkUnitID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayGiggleChicken" ID="{9CB0E16E-B2A0-4E69-80F2-1AD854124C64}">
+							<ChildrenList>
+								<Action Name="" ID="{D21DDD72-8744-4FEE-86AD-D98B326BD24D}" ShortID="748055241">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GiggleRun" ID="{7A140540-24F3-4B5D-97A3-5AAF9B17CC33}" WorkUnitID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="WeirdAttack" ID="{6684B1AD-88B3-471E-8C65-91C8F828D3CB}">
+							<ChildrenList>
+								<Action Name="" ID="{C15280F4-B7D4-492E-A02B-1DCFF0241F45}" ShortID="744998388">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="beartrap trigger" ID="{DC1D09D4-EFA6-4608-A201-702F324B6366}" WorkUnitID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayHitChicken" ID="{0888F6E2-E055-4B00-B2AE-2C045D7C5B2B}">
+							<ChildrenList>
+								<Action Name="" ID="{D2244C3F-B9C5-4198-BAB0-4C834EB6CC32}" ShortID="587485836">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="NotHittingPlayer" ID="{42CAF2B3-FF38-41E1-B2CA-ED2874CB0C44}" WorkUnitID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

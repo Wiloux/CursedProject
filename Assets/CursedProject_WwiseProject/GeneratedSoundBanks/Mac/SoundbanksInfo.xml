@@ -16,12 +16,61 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3780170971">
-			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
-			<ShortName>Main</ShortName>
-			<Path>Main.bnk</Path>
+		<SoundBank Id="2879190521" Language="SFX" Hash="3574047270">
+			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
+			<ShortName>ForTests</ShortName>
+			<Path>ForTests.bnk</Path>
 			<IncludedEvents>
-				<Event Id="500558165" Name="PlayX" ObjectPath="\Events\Default Work Unit\PlayX" DurationType="Infinite">
+				<Event Id="1701780106" Name="PlayExpDialogue" ObjectPath="\Events\Tests\DialogueExp\PlayExpDialogue" DurationType="OneShot" DurationMin="4.500000" DurationMax="8.500000">
+					<IncludedMemoryFiles>
+						<File Id="223542517" Language="SFX">
+							<ShortName>voe player 2.wav</ShortName>
+							<Path>SFX\voe player 2_10C4C929.wem</Path>
+						</File>
+						<File Id="239106664" Language="SFX">
+							<ShortName>voe board 2.wav</ShortName>
+							<Path>SFX\voe board 2_10C4C929.wem</Path>
+						</File>
+						<File Id="711640135" Language="SFX">
+							<ShortName>voe board 3.wav</ShortName>
+							<Path>SFX\voe board 3_10C4C929.wem</Path>
+						</File>
+						<File Id="758882226" Language="SFX">
+							<ShortName>voe board 1.wav</ShortName>
+							<Path>SFX\voe board 1_10C4C929.wem</Path>
+						</File>
+						<File Id="957116134" Language="SFX">
+							<ShortName>voe player 1.wav</ShortName>
+							<Path>SFX\voe player 1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4106886787" Name="PlayFSChicken" ObjectPath="\Events\Tests\Chicken\PlayFSChicken" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+					<IncludedMemoryFiles>
+						<File Id="254891926" Language="SFX">
+							<ShortName>1.wav</ShortName>
+							<Path>SFX\1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2613825061" Name="PlayGiggleChicken" ObjectPath="\Events\Tests\Chicken\PlayGiggleChicken" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="1.750771" DurationMax="1.750771">
+					<IncludedMemoryFiles>
+						<File Id="713697455" Language="SFX">
+							<ShortName>gf1.wav</ShortName>
+							<Path>SFX\gf1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4251718543" Name="PlayHitChicken" ObjectPath="\Events\Tests\Chicken\PlayHitChicken" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.308390" DurationMax="0.308390">
+					<IncludedMemoryFiles>
+						<File Id="768588542" Language="SFX">
+							<ShortName>NotHittingPlayer.wav</ShortName>
+							<Path>SFX\NotHittingPlayer_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1672325348" Name="StopExpDialogue" ObjectPath="\Events\Tests\DialogueExp\StopExpDialogue" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3241046308" Name="TestBass" ObjectPath="\Events\Tests\TestBass" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="479465834" Language="SFX">
 							<ShortName>chase bass.wav</ShortName>
@@ -29,11 +78,11 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3157003241" Name="Test" ObjectPath="\Events\Default Work Unit\Test" MaxAttenuation="100.000000" DurationType="Infinite">
+				<Event Id="1813814736" Name="WeirdAttack" ObjectPath="\Events\Tests\Chicken\WeirdAttack" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.677687" DurationMax="0.677687">
 					<IncludedMemoryFiles>
 						<File Id="177710672" Language="SFX">
 							<ShortName>beartrap trigger.wav</ShortName>
-							<Path>SFX\beartrap trigger_D79FB2B7.wem</Path>
+							<Path>SFX\beartrap trigger_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

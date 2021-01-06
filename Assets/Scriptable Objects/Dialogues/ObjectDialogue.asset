@@ -17,23 +17,19 @@ MonoBehaviour:
   - script: 'There''s something under the dresser
 
 '
-    voiceline: {fileID: 0}
-    SFX: {fileID: 0}
     dialogueStart:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: a86347565ee18944db94a62631c7295a, type: 2}
     dialogueEnd:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 0}
   - script: You found a finger
-    voiceline: {fileID: 0}
-    SFX: {fileID: 0}
     dialogueStart:
       idInternal: 0
       valueGuidInternal: 
-      WwiseObjectReference: {fileID: 0}
+      WwiseObjectReference: {fileID: 11400000, guid: a86347565ee18944db94a62631c7295a, type: 2}
     dialogueEnd:
       idInternal: 0
       valueGuidInternal: 

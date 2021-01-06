@@ -13,7 +13,7 @@
 								<PathElementRef Name="DialogueExp" ID="{C24CAC7B-991D-4C3D-B809-2C322194B976}"/>
 							</Path>
 							<AudioNodeInfo>
-								<AudioNodeRef Name="voe board 1" ID="{FC27D12E-3AA7-4BC0-92C6-AEC9E04E866A}" WorkUnitID="{5950947F-9FAF-49AA-98A4-15F2419BC6A8}" Platform="Linked"/>
+								<AudioNodeRef Name="voe board 1" ID="{FC27D12E-3AA7-4BC0-92C6-AEC9E04E866A}" WorkUnitID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}" Platform="Linked"/>
 							</AudioNodeInfo>
 						</Entry>
 					</EntryList>

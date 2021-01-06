@@ -13,14 +13,32 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAYX = 500558165U;
-        static const AkUniqueID TEST = 3157003241U;
+        static const AkUniqueID PLAYEXPDIALOGUE = 1701780106U;
+        static const AkUniqueID PLAYFSCHICKEN = 4106886787U;
+        static const AkUniqueID PLAYGIGGLECHICKEN = 2613825061U;
+        static const AkUniqueID PLAYHITCHICKEN = 4251718543U;
+        static const AkUniqueID STOPEXPDIALOGUE = 1672325348U;
+        static const AkUniqueID TESTBASS = 3241046308U;
+        static const AkUniqueID WEIRDATTACK = 1813814736U;
     } // namespace EVENTS
+
+    namespace SWITCHES
+    {
+        namespace DIALOGUEEXP
+        {
+            static const AkUniqueID GROUP = 90263024U;
+
+            namespace SWITCH
+            {
+            } // namespace SWITCH
+        } // namespace DIALOGUEEXP
+
+    } // namespace SWITCHES
 
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID MAIN = 3161908922U;
+        static const AkUniqueID FORTESTS = 2879190521U;
     } // namespace BANKS
 
     namespace BUSSES

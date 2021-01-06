@@ -49,17 +49,17 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585929452873515854
+    m_lastTime: -8585917196083539350
     List:
-    - name: Main
-      guid: d42373aad2a3754fbc414a0497701429
-      id: 3161908922
+    - name: ForTests
+      guid: 930a1ef764e1044faf693e72ae63be23
+      id: 2879190521
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Main
+      - ElementName: ForTests
         ObjectType: 7
-      Path: Default Work Unit\Main
+      Path: Default Work Unit\ForTests
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -68,17 +68,38 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585929452873545804
+    m_lastTime: -8585917196081268473
+    List: []
+  - PhysicalPath: Events\Tests.wwu
+    PathAndIcons:
+    - ElementName: Tests
+      ObjectType: 12
+    ParentPath: Tests
+    guid: 7e1e99e9ec97634b9be4486f5e454591
+    GuidInternal: 
+    m_lastTime: -8585917196081208645
     List:
+    - name: Chicken
+      guid: 90bf0756f07b41458e68dd708f9190ce
+      id: 4251222990
+      PathAndIcons:
+      - ElementName: Tests
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      Path: Tests\Chicken
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: DialogueExp
       guid: cba073c2304e44439c8059f636b585ed
       id: 90263024
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: Tests
         ObjectType: 12
       - ElementName: DialogueExp
         ObjectType: 4
-      Path: Default Work Unit\DialogueExp
+      Path: Tests\DialogueExp
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -86,35 +107,95 @@ MonoBehaviour:
       guid: 19989124dbf6724a819c0173e6e8565c
       id: 1701780106
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: Tests
         ObjectType: 12
+      - ElementName: DialogueExp
+        ObjectType: 4
       - ElementName: PlayExpDialogue
         ObjectType: 3
-      Path: Default Work Unit\PlayExpDialogue
+      Path: Tests\DialogueExp\PlayExpDialogue
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: PlayX
+    - name: PlayFSChicken
+      guid: bab6442255652c4f8ffcf9c95cbde82d
+      id: 4106886787
+      PathAndIcons:
+      - ElementName: Tests
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: PlayFSChicken
+        ObjectType: 3
+      Path: Tests\Chicken\PlayFSChicken
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayGiggleChicken
+      guid: 6ee1b09ca0b2694e80f21ad854124c64
+      id: 2613825061
+      PathAndIcons:
+      - ElementName: Tests
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: PlayGiggleChicken
+        ObjectType: 3
+      Path: Tests\Chicken\PlayGiggleChicken
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayHitChicken
+      guid: e2f6880855e0004bb2ae2c045d7c5b2b
+      id: 4251718543
+      PathAndIcons:
+      - ElementName: Tests
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: PlayHitChicken
+        ObjectType: 3
+      Path: Tests\Chicken\PlayHitChicken
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: StopExpDialogue
+      guid: e93ac821ed81354d8601723fe3b7377b
+      id: 1672325348
+      PathAndIcons:
+      - ElementName: Tests
+        ObjectType: 12
+      - ElementName: DialogueExp
+        ObjectType: 4
+      - ElementName: StopExpDialogue
+        ObjectType: 3
+      Path: Tests\DialogueExp\StopExpDialogue
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: TestBass
       guid: e93adf2b40c0ab47b6c29fd905dc8f76
-      id: 500558165
+      id: 3241046308
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: Tests
         ObjectType: 12
-      - ElementName: PlayX
+      - ElementName: TestBass
         ObjectType: 3
-      Path: Default Work Unit\PlayX
+      Path: Tests\TestBass
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Test
+    - name: WeirdAttack
       guid: adb18466b3881e478c6591c8f828d3cb
-      id: 3157003241
+      id: 1813814736
       PathAndIcons:
-      - ElementName: Default Work Unit
+      - ElementName: Tests
         ObjectType: 12
-      - ElementName: Test
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: WeirdAttack
         ObjectType: 3
-      Path: Default Work Unit\Test
+      Path: Tests\Chicken\WeirdAttack
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -160,7 +241,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /CursedProject_WwiseProject
-  - /CursedProject_WwiseProject/Events
-  - /CursedProject_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
