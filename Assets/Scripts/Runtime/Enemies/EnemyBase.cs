@@ -7,23 +7,24 @@ using UnityEngine.AI;
 public class EnemyBase : MonoBehaviour
 {
     [Header("Nav Vars")]
-    [SerializeField] protected UnityEngine.AI.NavMeshAgent agent;
+    public UnityEngine.AI.NavMeshAgent agent;
     [SerializeField] private LayerMask navMeshMask;
     
     [Space]
     [Header("Components Vars")]
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private Animator animator;
+    public Animator animator;
 
     [Space]
     [Header("Enemy stats")]
-    [SerializeField] private EnemyProfileSO enemyProfil;
+    [SerializeField] private EnemyProfileSO enemyProfile;
 
     protected GameObject player;
 
     private int maxHealth;
     private int health;
     private bool dead;
+    public bool pause;
 
     // Chase vars
     private bool chase;
@@ -85,7 +86,7 @@ public class EnemyBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!dead)
+        if (!dead && !pause)
         {
             // Moving animation handler
             if(agent.velocity != Vector3.zero){animator.SetBool("moving", true);}
@@ -172,39 +173,39 @@ public class EnemyBase : MonoBehaviour
     private void GetProfileFromSo()
     {
         // General vars
-        maxHealth = enemyProfil.maxHealth;
+        maxHealth = enemyProfile.maxHealth;
 
         // Chase vars
-        chase = enemyProfil.chase;
-        detectionRange = enemyProfil.detectionRange;
-        chaseRange = enemyProfil.chaseRange;
+        chase = enemyProfile.chase;
+        detectionRange = enemyProfile.detectionRange;
+        chaseRange = enemyProfile.chaseRange;
 
         // Run vars
-        run = enemyProfil.run;
-        runningRange = enemyProfil.runningRange;
-        watchingDuration = enemyProfil.watchingDuration;
+        run = enemyProfile.run;
+        runningRange = enemyProfile.runningRange;
+        watchingDuration = enemyProfile.watchingDuration;
 
         // Range vars
-        range = enemyProfil.range;
-        projectilePrefab = enemyProfil.projectilePrefab;
+        range = enemyProfile.range;
+        projectilePrefab = enemyProfile.projectilePrefab;
 
         // Attack vars
-        rangeToAttack = enemyProfil.rangeToAttack;
-        attackRange = enemyProfil.attackRange;
-        attackCooldown = enemyProfil.attackCooldown;
-        backstab = enemyProfil.backstab;
+        rangeToAttack = enemyProfile.rangeToAttack;
+        attackRange = enemyProfile.attackRange;
+        attackCooldown = enemyProfile.attackCooldown;
+        backstab = enemyProfile.backstab;
 
         // Speed vars
-        movementSpeed = enemyProfil.movementSpeed;
-        runSpeed = enemyProfil.runSpeed;
+        movementSpeed = enemyProfile.movementSpeed;
+        runSpeed = enemyProfile.runSpeed;
 
         // Wwise events
-        attackWEvent = enemyProfil.attackWEvent;
-        chaseWEvent = enemyProfil.chaseWEvent;
-        runWEvent = enemyProfil.runWEvent;
-        watchWEvent = enemyProfil.watchWEvent;
-        hitWEvent = enemyProfil.hitWEvent;
-        deathWEvent = enemyProfil.deathWEvent;
+        attackWEvent = enemyProfile.attackWEvent;
+        chaseWEvent = enemyProfile.chaseWEvent;
+        runWEvent = enemyProfile.runWEvent;
+        watchWEvent = enemyProfile.watchWEvent;
+        hitWEvent = enemyProfile.hitWEvent;
+        deathWEvent = enemyProfile.deathWEvent;
         
     }
 
