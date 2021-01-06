@@ -17,7 +17,7 @@ public class EnemyProfileSO : ScriptableObject
     public bool run;
     public float runningRange;
     public float runSpeed = 4f;
-    public float watchingDuration;
+    public Vector2 watchingDurationMinMax;
 
     [Tooltip("Does the enemy attack from distance")]
     public bool range;

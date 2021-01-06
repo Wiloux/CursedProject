@@ -37,6 +37,7 @@ public class Player_Movement : MonoBehaviour
                     {
                         GameHandler.instance.TogglePause();
                         GameHandler.instance.ToggleSaveMenu();
+                        MouseManagement.instance.ToggleMouseLock();
                     }
                 }
             }

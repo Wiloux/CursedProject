@@ -54,7 +54,7 @@ public class EnemyBase : MonoBehaviour
 
     private float movementSpeed = 2f;
     private float runSpeed;
-    private float watchingDuration;
+    private Vector2 watchingDurationMinMax;
 
     #region Wwise Event
     private AK.Wwise.Event attackWEvent;
@@ -107,6 +107,7 @@ public class EnemyBase : MonoBehaviour
                     //agent.SetDestination(player.transform.position);
 
                     Invoke("WatchPlayer", 1f);
+                    float watchingDuration = UnityEngine.Random.Range(watchingDurationMinMax.x, watchingDurationMinMax.y);
                     Invoke("StopWatchingPlayer", 1f + watchingDuration);
                     Invoke("EnableAgent", 1f + watchingDuration);
                     //transform.LookAt(player.transform);
@@ -183,7 +184,7 @@ public class EnemyBase : MonoBehaviour
         // Run vars
         run = enemyProfile.run;
         runningRange = enemyProfile.runningRange;
-        watchingDuration = enemyProfile.watchingDuration;
+        watchingDurationMinMax = enemyProfile.watchingDurationMinMax;
 
         // Range vars
         range = enemyProfile.range;

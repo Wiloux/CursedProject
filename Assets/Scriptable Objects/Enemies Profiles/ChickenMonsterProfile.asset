@@ -20,7 +20,7 @@ MonoBehaviour:
   run: 1
   runningRange: 10
   runSpeed: 8
-  watchingDuration: 5
+  watchingDurationMinMax: {x: 1, y: 5}
   range: 0
   projectilePrefab: {fileID: 0}
   rangeToAttack: 2

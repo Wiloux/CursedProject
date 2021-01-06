@@ -21,6 +21,7 @@ public class GameHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
+            MouseManagement.instance.ToggleMouseLock();
             TogglePauseMenu();
             if (saveMenu.activeSelf) { ToggleSaveMenu(); }
         }
@@ -55,9 +56,6 @@ public class GameHandler : MonoBehaviour
 
             }
         }
-
-        if (Cursor.lockState == CursorLockMode.Locked) { Cursor.lockState = CursorLockMode.None; }
-        else Cursor.lockState = CursorLockMode.None;
     }
 
     public void TogglePauseMenu() { pauseMenu.SetActive(!pauseMenu.activeSelf);}

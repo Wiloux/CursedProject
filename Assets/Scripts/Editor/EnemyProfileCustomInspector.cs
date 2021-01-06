@@ -85,7 +85,7 @@ public class EnemyProfileCustomInspector : Editor
                 {
                     CreatePropertyField("runningRange");
                     CreatePropertyField("runSpeed");
-                    CreatePropertyField("watchingDuration");
+                    CreatePropertyField("watchingDurationMinMax");
                 }
             }
             EditorGUILayout.EndFoldoutHeaderGroup();

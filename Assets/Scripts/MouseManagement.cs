@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class MouseManagement : MonoBehaviour
 {
+    public static MouseManagement instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -11,9 +18,10 @@ public class MouseManagement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ToggleMouseLock()
     {
-
+        Cursor.visible = !Cursor.visible;
+        if (Cursor.lockState == CursorLockMode.Locked) { Cursor.lockState = CursorLockMode.None; }
+        else Cursor.lockState = CursorLockMode.Locked;
     }
 }

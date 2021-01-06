@@ -56,6 +56,8 @@ public class WorldProgressCustomInspector : Editor
             FileStream stream = new FileStream(SaveSystem.paths[indexSaveToRemove - 1], FileMode.Create);
             formatter.Serialize(stream, data);
             stream.Close();
+
+            if (File.Exists(SaveSystem.paths[indexSaveToRemove - 1])) { File.Delete(SaveSystem.paths[indexSaveToRemove - 1]); }
         }
         EditorGUILayout.EndHorizontal();
         #endregion
