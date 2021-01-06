@@ -249,7 +249,7 @@ public class EnemyBase : MonoBehaviour
                 float angle = Vector3.Angle(hits[0].transform.forward, transform.forward);
                 Debug.Log(angle);
 
-                if (angle < 90f) { Debug.Log("backstab = double damage"); animator.SetInteger("attackType", 2)); }
+                if (angle < 90f) { Debug.Log("backstab = double damage"); animator.SetInteger("attackType", 2); }
             }
             else
             {
