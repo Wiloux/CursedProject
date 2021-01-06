@@ -6,6 +6,9 @@ using UnityEditor;
 
 public class RoomManager : MonoBehaviour
 {
+    public static RoomManager instance;
+    private void Awake(){instance = this;}
+
 
     public List<RoomInfo> AllRooms = new List<RoomInfo>();
 

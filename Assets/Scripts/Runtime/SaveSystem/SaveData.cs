@@ -8,10 +8,12 @@ public class SaveData
     public float playerLife;
     public float gameTime;
     public string locationName;
+    public string characterName;
 
     public SaveData(WorldProgress progress){
         playerLife = progress.playerLife;
         gameTime = progress.gameTime;
         locationName = progress.locationName;
+        characterName = progress.characterName;
     }
 }

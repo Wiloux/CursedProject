@@ -8,7 +8,8 @@ public class GameHandler : MonoBehaviour
 {
     public static GameHandler instance;
 
-    private bool isPaused;
+    public bool isPaused;
+    private bool isSaveMenuOpen;
 
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject saveMenu;
@@ -22,18 +23,17 @@ public class GameHandler : MonoBehaviour
         {
             TogglePause();
             MouseManagement.instance.ToggleMouseLock();
-            TogglePauseMenu();
-            if (saveMenu.activeSelf) { ToggleSaveMenu(); }
+            if (isSaveMenuOpen)
+            {
+                ToggleSaveMenu();
+            }
+            else { TogglePauseMenu(); }
         }
-    }
-
-    private void OnGUI()
-    {
-        if(isPaused)GUI.Label(new Rect(50, 50, Screen.width / 2, Screen.width / 4), "Pause");
     }
 
     public void TogglePause()
     {
+        isPaused = !isPaused;
         GameObject[] objects = SceneManager.GetActiveScene().GetRootGameObjects();
         foreach(GameObject go in objects)
         {
@@ -59,5 +59,5 @@ public class GameHandler : MonoBehaviour
     }
 
     public void TogglePauseMenu() { pauseMenu.SetActive(!pauseMenu.activeSelf);}
-    public void ToggleSaveMenu() { saveMenu.SetActive(!saveMenu.activeSelf); }
+    public void ToggleSaveMenu() { saveMenu.SetActive(!saveMenu.activeSelf); isSaveMenuOpen = !isSaveMenuOpen; }
 }

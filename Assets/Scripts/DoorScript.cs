@@ -19,11 +19,15 @@ public class DoorScript : MonoBehaviour
         {
             otherDoorScript.otherDoorScript = this;
         }
+        roomManager = RoomManager.instance;
     }
 
     public void UseDoor(Transform Using)
     {
         otherDoorScript.currentRoomInt = nextRoomInt;
+
+        WorldProgress.instance.locationName = roomManager.AllRooms[nextRoomInt].RoomName;
+
         #region Destroy the enemies of the current room
         if (roomManager != null) { roomManager.DestroyEnemies(currentRoomInt); }
         #endregion
