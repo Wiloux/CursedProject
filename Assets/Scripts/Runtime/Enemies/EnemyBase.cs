@@ -125,70 +125,62 @@ public class EnemyBase : MonoBehaviour
                 {
                     if (timeToAttack <= Time.timeSinceLevelLoad) // Check attack cooldown condition
                     {
-                        // Attack
-                        Debug.Log("Attack");
-                        //Animations
-
-                        animator.SetTrigger("attack");
-                        // Post Wwise Event
-                        attackWEvent?.Post(gameObject);
-                        // Cooldown attack gestion
-                        timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
-                        // Stop moving if range
-                        if (range)
+                        if (isPlayerVisible(rangeToAttack))
                         {
-                            Debug.Log(player.transform.position);
-                            RaycastHit hit;
-                            Vector3 dir = (player.transform.position - transform.position).normalized;
-                            Physics.Raycast(transform.position, dir, out hit, attackRange);
-                            if(hit.transform != null)
-                            {
-                                Debug.Log(hit.transform.name);
-                                if(hit.transform.CompareTag("Player"))
-                                {
-                                    Debug.Log("yes");
-                                    agent.isStopped = true;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            // Attack action
+                            Debug.Log("Attack");
+                            //Animations
+                            animator.SetTrigger("attack");
+                            // Post Wwise Event
+                            attackWEvent?.Post(gameObject);
+                            // Cooldown attack gestion
+                            timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
+                            // Stop moving if range
+                            if (range) agent.isStopped = true;
+                            // Attack Action
                             Attack?.Invoke();
-                        }
-                        // Start running if behaviour need
-                        if (run)
-                        {
-                            agent.isStopped = true;
-                            Invoke("EnableAgent", 1.5f);
-                            running = true;
-                            agent.speed = runSpeed;
-                            if (runWEvent != null) runWEvent.Post(gameObject);
-                            agent.SetDestination(GetRunningPoint());
+                            // Start running if behaviour need
+                            if (run)
+                            {
+                                agent.isStopped = true;
+                                Invoke("EnableAgent", 1.5f);
+                                running = true;
+                                agent.speed = runSpeed;
+                                if (runWEvent != null) runWEvent.Post(gameObject);
+                                agent.SetDestination(GetRunningPoint());
+                            }
                         }
                     }
                 }
                 else if (chase) // If the behaviour wants to chase the player
                 {
-                    if (!detected && distance < detectionRange) detected = true; // The enemy needs to detect the player
+                    if (!detected && distance < detectionRange) if(isPlayerVisible(detectionRange)) detected = true; // The enemy needs to detect the player
                     else if (detected && distance < chaseRange) // Then if the player is still in a range, it will chase him
                     {
-                        // Raycast verification
-                        RaycastHit hit;
-                        Physics.Raycast(transform.position, player.transform.position - transform.position, out hit, chaseRange, playerMask);
-                        if (hit.transform != null)
-                        {
-                            if (hit.transform.CompareTag("Player"))
-                            {
-                                // Chase
-                                chasing = true;
-                                Chase?.Invoke();
-                            }
-                        }
+                        chasing = true;
+                        Chase?.Invoke();
                     }
                 }
             }
         }
+    }
+
+    private bool isPlayerVisible(float range)
+    {
+        bool boolean = false;
+        RaycastHit hit;
+        Vector3 dir = (player.transform.position - transform.position).normalized;
+        Physics.Raycast(transform.position, dir, out hit, range);
+        Debug.DrawRay(transform.position, dir * range, Color.red, 0.1f);
+        if (hit.transform != null)
+        {
+            Debug.Log(hit.transform.name);
+            if (hit.transform.CompareTag("Player"))
+            {
+                Debug.Log("yes");
+                boolean = true;
+            }
+        }
+        return boolean;
     }
 
     private void GetProfileFromSo()
