@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1bee3f608efddb4494b847774e8f08a, type: 3}
+  m_Name: ChickenMonsterProfile
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  movementSpeed: 4
+  chase: 1
+  detectionRange: 15
+  chaseRange: 20
+  run: 1
+  runningRange: 10
+  runSpeed: 8
+  watchingDuration: 5
+  range: 0
+  projectilePrefab: {fileID: 0}
+  rangeToAttack: 2
+  attackRange: 0.5
+  attackCooldown: 0
+  backstab: 1
+  attackWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  chaseWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  runWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: de309c18c07e4b6448e73be407b0da3c, type: 2}
+  watchWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  hitWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2615d381866f0134ca3ef82eaa8a96e4, type: 2}
+  deathWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}

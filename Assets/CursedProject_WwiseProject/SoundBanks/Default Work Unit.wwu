@@ -3,18 +3,15 @@
 	<SoundBanks>
 		<WorkUnit Name="Default Work Unit" ID="{003F9EC7-A5D8-4089-B8E9-9A0BB69EEFDE}" PersistMode="Standalone">
 			<ChildrenList>
-				<SoundBank Name="Main" ID="{AA7323D4-A3D2-4F75-BC41-4A0497701429}">
-					<PropertyList>
-						<Property Name="Maximum" Type="int32">
-							<ValueList>
-								<Value>10000000</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
+				<SoundBank Name="ForTests" ID="{F71E0A93-E164-4F04-AF69-3E72AE63BE23}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Test" ID="{6684B1AD-88B3-471E-8C65-91C8F828D3CB}" WorkUnitID="{CB632102-A8C5-4EBC-80A7-4D3B369C93CA}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="PlayX" ID="{2BDF3AE9-C040-47AB-B6C2-9FD905DC8F76}" WorkUnitID="{CB632102-A8C5-4EBC-80A7-4D3B369C93CA}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="PlayExpDialogue" ID="{24919819-F6DB-4A72-819C-0173E6E8565C}" WorkUnitID="{CB632102-A8C5-4EBC-80A7-4D3B369C93CA}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="WeirdAttack" ID="{6684B1AD-88B3-471E-8C65-91C8F828D3CB}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="TestBass" ID="{2BDF3AE9-C040-47AB-B6C2-9FD905DC8F76}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayExpDialogue" ID="{24919819-F6DB-4A72-819C-0173E6E8565C}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayHitChicken" ID="{0888F6E2-E055-4B00-B2AE-2C045D7C5B2B}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="StopExpDialogue" ID="{21C83AE9-81ED-4D35-8601-723FE3B7377B}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayGiggleChicken" ID="{9CB0E16E-B2A0-4E69-80F2-1AD854124C64}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayFSChicken" ID="{2244B6BA-6555-4F2C-8FFC-F9C95CBDE82D}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

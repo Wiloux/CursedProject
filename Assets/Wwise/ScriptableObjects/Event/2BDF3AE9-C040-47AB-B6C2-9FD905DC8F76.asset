@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eefb43985ef95445943655c05f0e38e, type: 3}
   m_Name: 2BDF3AE9-C040-47AB-B6C2-9FD905DC8F76
   m_EditorClassIdentifier: 
-  objectName: PlayX
-  id: 500558165
+  objectName: TestBass
+  id: 3241046308
   guid: 2BDF3AE9-C040-47AB-B6C2-9FD905DC8F76

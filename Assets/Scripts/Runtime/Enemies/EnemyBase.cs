@@ -7,17 +7,24 @@ using UnityEngine.AI;
 public class EnemyBase : MonoBehaviour
 {
     [Header("Nav Vars")]
-    [SerializeField] protected UnityEngine.AI.NavMeshAgent agent;
+    public UnityEngine.AI.NavMeshAgent agent;
+    [SerializeField] private LayerMask navMeshMask;
+    
+    [Space]
+    [Header("Components Vars")]
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private Animator animator;
-    [SerializeField] private EnemyStatsSO enemyStats;
-    //[SerializeField] private Animator animator;
-    //[SerializeField] protected Player player;
+    public Animator animator;
+
+    [Space]
+    [Header("Enemy stats")]
+    [SerializeField] private EnemyProfileSO enemyProfile;
+
     protected GameObject player;
 
     private int maxHealth;
     private int health;
     private bool dead;
+    public bool pause;
 
     // Chase vars
     private bool chase;
@@ -29,26 +36,35 @@ public class EnemyBase : MonoBehaviour
     // Run vars
     private bool run;
     private bool running;
-    [SerializeField] private Transform runningPointsParent;
-    private Transform latestRunningPoint;
     private float runningRange;
 
     private bool range;
     protected GameObject projectilePrefab;
 
     private float rangeToAttack = 2f;
-    [Tooltip("The point where colliders will be detected for the attack")]
+    // The point where colliders will be detected for the attack
     [SerializeField] private Transform attackPoint;
     private float attackRange = 0.5f;
-    [Tooltip("Layer Mask used for the colliders detecttion")]
+    // Layer Mask used for the colliders detecttion
     [SerializeField] private LayerMask playerMask;
 
     private float attackCooldown;
     private float timeToAttack;
+    private bool backstab;
 
     private float movementSpeed = 2f;
     private float runSpeed;
     private float watchingDuration;
+
+    #region Wwise Event
+    private AK.Wwise.Event attackWEvent;
+    private AK.Wwise.Event chaseWEvent;
+    private AK.Wwise.Event runWEvent;
+    private AK.Wwise.Event watchWEvent;
+
+    private AK.Wwise.Event hitWEvent;
+    private AK.Wwise.Event deathWEvent;
+    #endregion
 
     protected Action Attack;
     protected Action Chase;
@@ -56,8 +72,8 @@ public class EnemyBase : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        // Use the vars of the EnemyStats scriptable object
-        GetStatsFromSo();
+        // Use the vars of the EnemyProfile scriptable object
+        GetProfileFromSo();
 
         // Set agent speed
         agent.speed = movementSpeed;
@@ -70,7 +86,7 @@ public class EnemyBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!dead)
+        if (!dead && !pause)
         {
             // Moving animation handler
             if(agent.velocity != Vector3.zero){animator.SetBool("moving", true);}
@@ -113,6 +129,8 @@ public class EnemyBase : MonoBehaviour
                             //Animations
                         animator.SetInteger("attackType", UnityEngine.Random.Range(0, 3));
                         animator.SetTrigger("attack");
+                        // Post Wwise Event
+                        attackWEvent?.Post(gameObject);
                             // Cooldown attack gestion
                         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
                             // Attack action
@@ -124,6 +142,7 @@ public class EnemyBase : MonoBehaviour
                             Invoke("EnableAgent", 1.5f);
                             running = true;
                             agent.speed = runSpeed;
+                            if (runWEvent != null) runWEvent.Post(gameObject);
                             agent.SetDestination(GetRunningPoint());
                         }
                     }
@@ -151,27 +170,43 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    private void GetStatsFromSo()
+    private void GetProfileFromSo()
     {
-        maxHealth = enemyStats.maxHealth;
+        // General vars
+        maxHealth = enemyProfile.maxHealth;
 
-        chase = enemyStats.chase;
-        detectionRange = enemyStats.detectionRange;
-        chaseRange = enemyStats.chaseRange;
+        // Chase vars
+        chase = enemyProfile.chase;
+        detectionRange = enemyProfile.detectionRange;
+        chaseRange = enemyProfile.chaseRange;
 
-        run = enemyStats.run;
-        runningRange = enemyStats.runningRange;
+        // Run vars
+        run = enemyProfile.run;
+        runningRange = enemyProfile.runningRange;
+        watchingDuration = enemyProfile.watchingDuration;
 
-        range = enemyStats.range;
-        projectilePrefab = enemyStats.projectilePrefab;
+        // Range vars
+        range = enemyProfile.range;
+        projectilePrefab = enemyProfile.projectilePrefab;
 
-        rangeToAttack = enemyStats.rangeToAttack;
-        attackRange = enemyStats.attackRange;
-        attackCooldown = enemyStats.attackCooldown;
+        // Attack vars
+        rangeToAttack = enemyProfile.rangeToAttack;
+        attackRange = enemyProfile.attackRange;
+        attackCooldown = enemyProfile.attackCooldown;
+        backstab = enemyProfile.backstab;
 
-        movementSpeed = enemyStats.movementSpeed;
-        runSpeed = enemyStats.runSpeed;
-        watchingDuration = enemyStats.watchingDuration;
+        // Speed vars
+        movementSpeed = enemyProfile.movementSpeed;
+        runSpeed = enemyProfile.runSpeed;
+
+        // Wwise events
+        attackWEvent = enemyProfile.attackWEvent;
+        chaseWEvent = enemyProfile.chaseWEvent;
+        runWEvent = enemyProfile.runWEvent;
+        watchWEvent = enemyProfile.watchWEvent;
+        hitWEvent = enemyProfile.hitWEvent;
+        deathWEvent = enemyProfile.deathWEvent;
+        
     }
 
     private void OnDrawGizmosSelected()
@@ -192,20 +227,31 @@ public class EnemyBase : MonoBehaviour
         {
             animator.SetTrigger("hit");
             animator.SetInteger("randomHurt", UnityEngine.Random.Range(0, 3));
+            hitWEvent?.Post(gameObject);
         }
     }
 
     public void Die()
     {
         dead = true;
-        animator.SetBool("dead", true);
-        Destroy(gameObject);
+        animator.SetTrigger("dead");
+        deathWEvent?.Post(gameObject);
+        //Destroy(gameObject);
     }
 
     public void DamagePlayerTouched()
     {
         Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackRange, playerMask);
-        //if (hits.Length != 0) hits[0].GetComponent<Player>().TakeDamage();
+        if(hits[0].transform != null)
+        {
+            if (backstab)
+            {
+                float angle = Vector3.Angle(hits[0].transform.forward, transform.forward);
+                Debug.Log(angle);
+                if (angle < 90f) { Debug.Log("backstab = double damage"); }
+            }
+            else Debug.Log("player hit");
+        }
 
         if (GetDistanceFromPlayer() >= 2.5f) timeToAttack = Time.timeSinceLevelLoad;
     }
@@ -227,27 +273,27 @@ public class EnemyBase : MonoBehaviour
 
     private Vector3 GetRunningPoint()
     {
-        Vector2 direction = (transform.position - player.transform.position).normalized;
+        Vector3 runningPointPos = transform.position;
+        Vector2 direction = new Vector2(UnityEngine.Random.Range(-1f, 1.01f), UnityEngine.Random.Range(-1f, 1.01f)).normalized;
 
-        Transform closestRunningPoint = null;
-        float shortestAngle = Mathf.Infinity;
-        for(int i = 0; i < runningPointsParent.childCount; i++)
+        Debug.Log(direction);
+        Debug.Log(transform.position + new Vector3(direction.x, 0, direction.y) * runningRange);
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(runningPointPos, out hit, runningRange/4, navMeshMask))
         {
-            Transform runningPoint = runningPointsParent.GetChild(i);
-            float angle = Vector3.Angle((runningPoint.position - transform.position).normalized, direction);
-
-            if(runningPoint != latestRunningPoint && (closestRunningPoint == null || angle < shortestAngle))
-            {
-                closestRunningPoint = runningPoint;
-                shortestAngle = angle;
-            }
+            runningPointPos = transform.position + new Vector3(direction.x, 0, direction.y) * runningRange;
+            Debug.Log("found");
         }
-        latestRunningPoint = closestRunningPoint;
-        return closestRunningPoint.position;
+        else
+        {
+            Debug.Log("bruh");
+        }
+        return runningPointPos;
+
     }
 
     private void EnableAgent() { agent.isStopped = false; }
     private void DisableAgent() { agent.isStopped = true; }
     private void StopWatchingPlayer() { agent.speed = movementSpeed; }
-    private void WatchPlayer() { transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.up); }
+    private void WatchPlayer() { transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.up); watchWEvent?.Post(gameObject); }
 }

@@ -39,17 +39,6 @@ public class DialogInteraction: MonoBehaviour
 
     private IEnumerator TypeSentence()
     {
-        //if(dialogue.dialoguesAndVoicelines[index].SFX != null)
-        //{
-        //    sfxAudioSource.clip = dialogue.dialoguesAndVoicelines[index].SFX;
-        //    sfxAudioSource.Play();
-        //}
-        //if(dialogue.dialoguesAndVoicelines[index].voiceline != null)
-        //{
-        //    dialogAudioSource.clip = dialogue.dialoguesAndVoicelines[index].voiceline;
-        //    dialogAudioSource.Play();
-        //}
-
         if (dialogue.dialoguesAndVoicelines[index].dialogueStart != null){dialogue.dialoguesAndVoicelines[index].dialogueStart.Post(gameObject);}
 
         foreach (char character in dialogue.dialoguesAndVoicelines[index].script.ToCharArray())

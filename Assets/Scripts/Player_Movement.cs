@@ -26,12 +26,19 @@ public class Player_Movement : MonoBehaviour
             RotatePlayerWithMouse();
             Movement();
 
-
-            RaycastHit hit;
-            Physics.Raycast(transform.position, transform.forward, out hit, 5f);
-            if (hit.transform != null && hit.transform.GetComponent<DoorScript>() != null && Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                hit.transform.GetComponent<DoorScript>().UseDoor(transform);
+                RaycastHit hit;
+                Physics.Raycast(transform.position, transform.forward, out hit, 5f);
+                if (hit.transform != null)
+                {
+                    if(hit.transform.GetComponent<DoorScript>() != null) hit.transform.GetComponent<DoorScript>().UseDoor(transform);
+                    else if (hit.transform.CompareTag("SavePoint"))
+                    {
+                        GameHandler.instance.TogglePause();
+                        GameHandler.instance.ToggleSaveMenu();
+                    }
+                }
             }
         }
     }
