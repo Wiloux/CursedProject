@@ -265,6 +265,54 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Menu" ID="{CFA30176-DC62-48BE-984A-F3A1BC29D8C5}" ShortID="694250367">
+					<ChildrenList>
+						<Sound Name="Main Menu Highlight" ID="{2055F3E5-D3B5-4116-BD9D-1C72D18A41E1}" ShortID="623508361">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Main Menu Highlight" ID="{E9CF2275-8ACD-4F97-A71C-18C0E439674B}">
+									<Language>SFX</Language>
+									<AudioFile>Main Menu Highlight.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="697333511"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Main Menu Highlight" ID="{E9CF2275-8ACD-4F97-A71C-18C0E439674B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Main Menu Keypress" ID="{E7390F9B-384C-4842-9FCB-403DD80FC40E}" ShortID="836686782">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Main Menu Keypress" ID="{8503596A-64FA-4451-9DA6-AD7A9B8DBC90}">
+									<Language>SFX</Language>
+									<AudioFile>Main Menu Keypress.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="26955166"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Main Menu Keypress" ID="{8503596A-64FA-4451-9DA6-AD7A9B8DBC90}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

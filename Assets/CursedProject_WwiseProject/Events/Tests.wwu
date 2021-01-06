@@ -101,6 +101,32 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Menu" ID="{B1489B17-D9F3-4242-A0EE-12C8B76FBDDF}" ShortID="583981948">
+					<ChildrenList>
+						<Event Name="PlayHighlight" ID="{CF4A09C0-A989-449D-8511-3213A5CE61AA}">
+							<ChildrenList>
+								<Action Name="" ID="{9FF61734-FA58-491D-A42D-85F0F0E07144}" ShortID="719376752">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Main Menu Highlight" ID="{2055F3E5-D3B5-4116-BD9D-1C72D18A41E1}" WorkUnitID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayKeypress" ID="{EE2E3C1A-40A0-487A-B481-15E994166494}">
+							<ChildrenList>
+								<Action Name="" ID="{44151B19-A2CE-4293-A0EB-886221D7F99C}" ShortID="150835905">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Main Menu Keypress" ID="{E7390F9B-384C-4842-9FCB-403DD80FC40E}" WorkUnitID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

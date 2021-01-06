@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="3574047270">
+		<SoundBank Id="2879190521" Language="SFX" Hash="576434481">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -61,11 +61,27 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="145167493" Name="PlayHighlight" ObjectPath="\Events\Tests\Menu\PlayHighlight" DurationType="OneShot" DurationMin="0.266259" DurationMax="0.266259">
+					<IncludedMemoryFiles>
+						<File Id="697333511" Language="SFX">
+							<ShortName>Main Menu Highlight.wav</ShortName>
+							<Path>SFX\Main Menu Highlight_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="4251718543" Name="PlayHitChicken" ObjectPath="\Events\Tests\Chicken\PlayHitChicken" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.308390" DurationMax="0.308390">
 					<IncludedMemoryFiles>
 						<File Id="768588542" Language="SFX">
 							<ShortName>NotHittingPlayer.wav</ShortName>
 							<Path>SFX\NotHittingPlayer_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1168436793" Name="PlayKeypress" ObjectPath="\Events\Tests\Menu\PlayKeypress" DurationType="OneShot" DurationMin="0.149773" DurationMax="0.149773">
+					<IncludedMemoryFiles>
+						<File Id="26955166" Language="SFX">
+							<ShortName>Main Menu Keypress.wav</ShortName>
+							<Path>SFX\Main Menu Keypress_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

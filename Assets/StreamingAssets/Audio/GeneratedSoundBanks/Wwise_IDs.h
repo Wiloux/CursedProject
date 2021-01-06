@@ -16,7 +16,9 @@ namespace AK
         static const AkUniqueID PLAYEXPDIALOGUE = 1701780106U;
         static const AkUniqueID PLAYFSCHICKEN = 4106886787U;
         static const AkUniqueID PLAYGIGGLECHICKEN = 2613825061U;
+        static const AkUniqueID PLAYHIGHLIGHT = 145167493U;
         static const AkUniqueID PLAYHITCHICKEN = 4251718543U;
+        static const AkUniqueID PLAYKEYPRESS = 1168436793U;
         static const AkUniqueID STOPEXPDIALOGUE = 1672325348U;
         static const AkUniqueID TESTBASS = 3241046308U;
         static const AkUniqueID WEIRDATTACK = 1813814736U;

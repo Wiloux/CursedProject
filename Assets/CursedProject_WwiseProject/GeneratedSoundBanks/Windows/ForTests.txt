@@ -1,4 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
+	145167493	PlayHighlight			\Tests\Menu\PlayHighlight	
+	1168436793	PlayKeypress			\Tests\Menu\PlayKeypress	
 	1672325348	StopExpDialogue			\Tests\DialogueExp\StopExpDialogue	
 	1701780106	PlayExpDialogue			\Tests\DialogueExp\PlayExpDialogue	
 	1813814736	WeirdAttack			\Tests\Chicken\WeirdAttack	
@@ -8,11 +10,13 @@ Event	ID	Name			Wwise Object Path	Notes
 	4251718543	PlayHitChicken			\Tests\Chicken\PlayHitChicken	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	26955166	Main Menu Keypress	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Main Menu Keypress_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Menu\Main Menu Keypress		26484
 	177710672	beartrap trigger	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\beartrap trigger_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Galinha\beartrap trigger		119608
 	223542517	voe player 2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\voe player 2_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\ExpDialogue\ExpDialogue\voe player 2		1234864
 	239106664	voe board 2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\voe board 2_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\ExpDialogue\ExpDialogue\voe board 2		1499464
 	254891926	fsgalinha	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\1_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Galinha\fsgalinha		88264
 	479465834	chase bass	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\chase bass_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\X\chase bass\chase bass		4498264
+	697333511	Main Menu Highlight	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Main Menu Highlight_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Menu\Main Menu Highlight		47032
 	711640135	voe board 3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\voe board 3_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\ExpDialogue\ExpDialogue\voe board 3		793864
 	713697455	GiggleRun	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\gf1_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Galinha\GiggleRun		308900
 	758882226	voe board 1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\voe board 1_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\ExpDialogue\ExpDialogue\voe board 1		1323064
