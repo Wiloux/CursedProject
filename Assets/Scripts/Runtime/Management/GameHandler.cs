@@ -11,22 +11,18 @@ public class GameHandler : MonoBehaviour
     private bool isPaused;
 
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject saveMenu;
 
     private void Awake(){instance = this;}
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseGame();
+            TogglePause();
+            TogglePauseMenu();
+            if (saveMenu.activeSelf) { ToggleSaveMenu(); }
         }
     }
 
@@ -35,11 +31,8 @@ public class GameHandler : MonoBehaviour
         if(isPaused)GUI.Label(new Rect(50, 50, Screen.width / 2, Screen.width / 4), "Pause");
     }
 
-    public void PauseGame()
+    public void TogglePause()
     {
-        isPaused = !isPaused;
-        pauseMenu.SetActive(!pauseMenu.activeSelf);
-
         GameObject[] objects = SceneManager.GetActiveScene().GetRootGameObjects();
         foreach(GameObject go in objects)
         {
@@ -62,5 +55,11 @@ public class GameHandler : MonoBehaviour
 
             }
         }
+
+        if (Cursor.lockState == CursorLockMode.Locked) { Cursor.lockState = CursorLockMode.None; }
+        else Cursor.lockState = CursorLockMode.None;
     }
+
+    public void TogglePauseMenu() { pauseMenu.SetActive(!pauseMenu.activeSelf);}
+    public void ToggleSaveMenu() { saveMenu.SetActive(!saveMenu.activeSelf); }
 }

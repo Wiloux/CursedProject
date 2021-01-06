@@ -10,26 +10,28 @@ public class WorldProgress : MonoBehaviour
 
     // ------------------------------- VARS ----------------------------------------- //
     public float playerLife;
+    public float gameTime;
+    public string locationName;
 
 
     // --------------------------------------- Monobehaviours Methods --------------------------------------- //
     private void Awake(){instance = this;}
-    void Start(){
-        LoadProgressData();
-    }
 
     #region SaveMethods
     // --------------------------------------- SAVE METHODS ---------------------------------------- //
 
-    public void SaveWorldProgress(){
-        SaveSystem.SaveWorldProgress(this);
+    public void SaveWorldProgress(int saveIndex){
+        SaveSystem.SaveWorldData(this, saveIndex);
+        Debug.Log(locationName);
     }
 
-    public void LoadProgressData(){
+    public void LoadProgressData(int saveIndex){
         isInventoryLoaded = true;
-        SaveData data = SaveSystem.LoadWorldProgress();
+        SaveData data = SaveSystem.LoadWorldData(saveIndex);
 
         playerLife = data.playerLife;
+        gameTime = data.gameTime;
+        locationName = data.locationName;
     }
 
     #endregion

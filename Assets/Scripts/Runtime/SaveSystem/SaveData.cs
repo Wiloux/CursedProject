@@ -6,8 +6,12 @@ using UnityEngine;
 public class SaveData
 {
     public float playerLife;
+    public float gameTime;
+    public string locationName;
 
     public SaveData(WorldProgress progress){
         playerLife = progress.playerLife;
+        gameTime = progress.gameTime;
+        locationName = progress.locationName;
     }
 }

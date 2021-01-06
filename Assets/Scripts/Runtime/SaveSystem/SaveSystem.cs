@@ -6,11 +6,20 @@ using UnityEngine;
 
 public static class SaveSystem
 {
-    public static string path = Application.persistentDataPath + "/playerinventory.data";
-    public static void SaveWorldProgress(WorldProgress progress){
+    public static string[] paths =
+    {
+        Application.persistentDataPath + "/Save01.data",
+        Application.persistentDataPath + "/Save02.data",
+        Application.persistentDataPath + "/Save03.data",
+        Application.persistentDataPath + "/Save04.data",
+        Application.persistentDataPath + "/Save05.data",
+        Application.persistentDataPath + "/Save06.data"
+    };
+
+    public static void SaveWorldData(WorldProgress progress, int saveIndex){
         BinaryFormatter formatter = new BinaryFormatter();
         
-        FileStream stream = new FileStream(path, FileMode.Create);
+        FileStream stream = new FileStream(paths[saveIndex], FileMode.Create);
 
         SaveData data = new SaveData(progress);
 
@@ -18,17 +27,17 @@ public static class SaveSystem
         stream.Close();
     }
 
-    public static SaveData LoadWorldProgress(){
-        if(File.Exists(path)){
+    public static SaveData LoadWorldData(int saveIndex){
+        if(File.Exists(paths[saveIndex])){
             BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
+            FileStream stream = new FileStream(paths[saveIndex], FileMode.Open);
 
             SaveData data = formatter.Deserialize(stream) as SaveData;
             stream.Close();
             return data;
         }
         else{
-            Debug.LogError("File not found in " + path);
+            Debug.LogError("File not found in " + paths[saveIndex]);
             return null;
         }
     }
