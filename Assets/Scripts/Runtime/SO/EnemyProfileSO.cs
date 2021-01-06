@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scriptable Objects/EnemyStats")]
+[CreateAssetMenu(menuName = "Scriptable Objects/EnemyProfile")]
 public class EnemyProfileSO : ScriptableObject
 {
     public int maxHealth;

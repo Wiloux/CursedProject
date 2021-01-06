@@ -134,8 +134,28 @@ public class EnemyBase : MonoBehaviour
                         attackWEvent?.Post(gameObject);
                         // Cooldown attack gestion
                         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
-                        // Attack action
-                        Attack?.Invoke();
+                        // Stop moving if range
+                        if (range)
+                        {
+                            Debug.Log(player.transform.position);
+                            RaycastHit hit;
+                            Vector3 dir = (player.transform.position - transform.position).normalized;
+                            Physics.Raycast(transform.position, dir, out hit, attackRange);
+                            if(hit.transform != null)
+                            {
+                                Debug.Log(hit.transform.name);
+                                if(hit.transform.CompareTag("Player"))
+                                {
+                                    Debug.Log("yes");
+                                    agent.isStopped = true;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            // Attack action
+                            Attack?.Invoke();
+                        }
                         // Start running if behaviour need
                         if (run)
                         {
