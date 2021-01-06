@@ -9,7 +9,7 @@ public class EnemyBase : MonoBehaviour
     [Header("Nav Vars")]
     public UnityEngine.AI.NavMeshAgent agent;
     [SerializeField] private LayerMask navMeshMask;
-    
+
     [Space]
     [Header("Components Vars")]
     [SerializeField] private Rigidbody rb;
@@ -89,16 +89,16 @@ public class EnemyBase : MonoBehaviour
         if (!dead && !pause)
         {
             // Moving animation handler
-            if(agent.velocity != Vector3.zero){animator.SetBool("moving", true);}
-            else{animator.SetBool("moving", false);}
+            if (agent.velocity != Vector3.zero) { animator.SetBool("moving", true); }
+            else { animator.SetBool("moving", false); }
 
             float distance = GetDistanceFromPlayer();
             chasing = false;
             //Debug.Log(distance);
 
-            if(run && running) // If the behaviour wants to run and the enemy is running
+            if (run && running) // If the behaviour wants to run and the enemy is running
             {
-                if(distance >= runningRange)
+                if (distance >= runningRange)
                 {
                     // Stop running
                     running = false;
@@ -112,7 +112,7 @@ public class EnemyBase : MonoBehaviour
                     //transform.LookAt(player.transform);
                     //transform.eulerAngles
                 }
-                if(GetDistanceFromPosition(agent.destination) < 0.5f && distance < runningRange) // If agent destination reached and the enemy is too close from the player
+                if (GetDistanceFromPosition(agent.destination) < 0.5f && distance < runningRange) // If agent destination reached and the enemy is too close from the player
                 {
                     // Run to another point
                     agent.SetDestination(GetRunningPoint());
@@ -120,22 +120,22 @@ public class EnemyBase : MonoBehaviour
             }
             else
             {
-                if(distance < rangeToAttack)
+                if (distance < rangeToAttack)
                 {
-                    if(timeToAttack <= Time.timeSinceLevelLoad) // Check attack cooldown condition
+                    if (timeToAttack <= Time.timeSinceLevelLoad) // Check attack cooldown condition
                     {
                         // Attack
                         Debug.Log("Attack");
-                            //Animations
-                        animator.SetInteger("attackType", UnityEngine.Random.Range(0, 3));
+                        //Animations
+
                         animator.SetTrigger("attack");
                         // Post Wwise Event
                         attackWEvent?.Post(gameObject);
-                            // Cooldown attack gestion
+                        // Cooldown attack gestion
                         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
-                            // Attack action
+                        // Attack action
                         Attack?.Invoke();
-                            // Start running if behaviour need
+                        // Start running if behaviour need
                         if (run)
                         {
                             agent.isStopped = true;
@@ -147,15 +147,15 @@ public class EnemyBase : MonoBehaviour
                         }
                     }
                 }
-                else if(chase) // If the behaviour wants to chase the player
+                else if (chase) // If the behaviour wants to chase the player
                 {
                     if (!detected && distance < detectionRange) detected = true; // The enemy needs to detect the player
-                    else if(detected && distance < chaseRange) // Then if the player is still in a range, it will chase him
+                    else if (detected && distance < chaseRange) // Then if the player is still in a range, it will chase him
                     {
                         // Raycast verification
                         RaycastHit hit;
-                        Physics.Raycast(transform.position, player.transform.position - transform.position, out hit,chaseRange, playerMask);
-                        if(hit.transform != null)
+                        Physics.Raycast(transform.position, player.transform.position - transform.position, out hit, chaseRange, playerMask);
+                        if (hit.transform != null)
                         {
                             if (hit.transform.CompareTag("Player"))
                             {
@@ -206,7 +206,7 @@ public class EnemyBase : MonoBehaviour
         watchWEvent = enemyProfile.watchWEvent;
         hitWEvent = enemyProfile.hitWEvent;
         deathWEvent = enemyProfile.deathWEvent;
-        
+
     }
 
     private void OnDrawGizmosSelected()
@@ -242,15 +242,20 @@ public class EnemyBase : MonoBehaviour
     public void DamagePlayerTouched()
     {
         Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackRange, playerMask);
-        if(hits[0].transform != null)
+        if (hits[0].transform != null)
         {
             if (backstab)
             {
                 float angle = Vector3.Angle(hits[0].transform.forward, transform.forward);
                 Debug.Log(angle);
-                if (angle < 90f) { Debug.Log("backstab = double damage"); }
+
+                if (angle < 90f) { Debug.Log("backstab = double damage"); animator.SetInteger("attackType", 2)); }
             }
-            else Debug.Log("player hit");
+            else
+            {
+                Debug.Log("player hit");
+                animator.SetInteger("attackType", UnityEngine.Random.Range(0, 2));
+            }
         }
 
         if (GetDistanceFromPlayer() >= 2.5f) timeToAttack = Time.timeSinceLevelLoad;
@@ -279,7 +284,7 @@ public class EnemyBase : MonoBehaviour
         Debug.Log(direction);
         Debug.Log(transform.position + new Vector3(direction.x, 0, direction.y) * runningRange);
         NavMeshHit hit;
-        if (NavMesh.SamplePosition(runningPointPos, out hit, runningRange/4, navMeshMask))
+        if (NavMesh.SamplePosition(runningPointPos, out hit, runningRange / 4, navMeshMask))
         {
             runningPointPos = transform.position + new Vector3(direction.x, 0, direction.y) * runningRange;
             Debug.Log("found");
