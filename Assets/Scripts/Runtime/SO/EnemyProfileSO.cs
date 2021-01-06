@@ -29,6 +29,8 @@ public class EnemyProfileSO : ScriptableObject
     public float attackRange = 0.5f;
     [Tooltip("Cooldown of the attack")]
     public float attackCooldown;
+    [Tooltip("Is the enemy able to backstab the player")]
+    public bool backstab;
 
 
     #region Wwwise events

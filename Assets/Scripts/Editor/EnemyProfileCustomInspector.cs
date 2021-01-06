@@ -37,6 +37,7 @@ public class EnemyProfileCustomInspector : Editor
             CreatePropertyField("rangeToAttack");
             CreatePropertyField("attackRange");
             CreatePropertyField("attackCooldown");
+            CreatePropertyField("backstab");
         }
         EditorGUILayout.EndFoldoutHeaderGroup();
         #endregion

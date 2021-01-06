@@ -49,6 +49,7 @@ public class EnemyBase : MonoBehaviour
 
     private float attackCooldown;
     private float timeToAttack;
+    private bool backstab;
 
     private float movementSpeed = 2f;
     private float runSpeed;
@@ -70,8 +71,8 @@ public class EnemyBase : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        // Use the vars of the EnemyStats scriptable object
-        GetStatsFromSo();
+        // Use the vars of the EnemyProfile scriptable object
+        GetProfileFromSo();
 
         // Set agent speed
         agent.speed = movementSpeed;
@@ -140,6 +141,7 @@ public class EnemyBase : MonoBehaviour
                             Invoke("EnableAgent", 1.5f);
                             running = true;
                             agent.speed = runSpeed;
+                            if (runWEvent != null) runWEvent.Post(gameObject);
                             agent.SetDestination(GetRunningPoint());
                         }
                     }
@@ -167,7 +169,7 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    private void GetStatsFromSo()
+    private void GetProfileFromSo()
     {
         // General vars
         maxHealth = enemyProfil.maxHealth;
@@ -190,6 +192,7 @@ public class EnemyBase : MonoBehaviour
         rangeToAttack = enemyProfil.rangeToAttack;
         attackRange = enemyProfil.attackRange;
         attackCooldown = enemyProfil.attackCooldown;
+        backstab = enemyProfil.backstab;
 
         // Speed vars
         movementSpeed = enemyProfil.movementSpeed;
@@ -238,7 +241,16 @@ public class EnemyBase : MonoBehaviour
     public void DamagePlayerTouched()
     {
         Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackRange, playerMask);
-        //if (hits.Length != 0) hits[0].GetComponent<Player>().TakeDamage();
+        if(hits[0].transform != null)
+        {
+            if (backstab)
+            {
+                float angle = Vector3.Angle(hits[0].transform.forward, transform.forward);
+                Debug.Log(angle);
+                if (angle < 90f) { Debug.Log("backstab = double damage"); }
+            }
+            else Debug.Log("player hit");
+        }
 
         if (GetDistanceFromPlayer() >= 2.5f) timeToAttack = Time.timeSinceLevelLoad;
     }
