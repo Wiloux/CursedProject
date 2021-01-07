@@ -37,6 +37,7 @@ public class EnemyProfileSO : ScriptableObject
     public AK.Wwise.Event attackWEvent;
     public AK.Wwise.Event chaseWEvent;
     public AK.Wwise.Event runWEvent;
+    public float timeToPostRunEvent;
     public AK.Wwise.Event watchWEvent;
 
     public AK.Wwise.Event hitWEvent;

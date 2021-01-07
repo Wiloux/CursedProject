@@ -22,8 +22,8 @@ public class EnemyProfileCustomInspector : Editor
         showHealthStats = EditorGUILayout.BeginFoldoutHeaderGroup(showHealthStats, "Health stats ------------------");
         if (showHealthStats)
         {
-            CreatePropertyField("maxHealth");
-            CreatePropertyField("movementSpeed");
+            CreatePropertyField(nameof(so.maxHealth));
+            CreatePropertyField(nameof(so.movementSpeed));
         }
         EditorGUILayout.EndFoldoutHeaderGroup();
         #endregion
@@ -34,10 +34,10 @@ public class EnemyProfileCustomInspector : Editor
         showAttacksStats = EditorGUILayout.BeginFoldoutHeaderGroup(showAttacksStats, "Attack stats ------------------");
         if (showAttacksStats)
         {
-            CreatePropertyField("rangeToAttack");
-            CreatePropertyField("attackRange");
-            CreatePropertyField("attackCooldown");
-            CreatePropertyField("backstab");
+            CreatePropertyField(nameof(so.rangeToAttack));
+            CreatePropertyField(nameof(so.attackRange));
+            CreatePropertyField(nameof(so.attackCooldown));
+            CreatePropertyField(nameof(so.backstab));
         }
         EditorGUILayout.EndFoldoutHeaderGroup();
         #endregion
@@ -45,13 +45,13 @@ public class EnemyProfileCustomInspector : Editor
         GUILayout.Space(20);
 
         #region Range stats
-        CreatePropertyField("range");
+        CreatePropertyField(nameof(so.range));
         if (so.range)
         {
             showRangeStats = EditorGUILayout.BeginFoldoutHeaderGroup(showRangeStats, "Range stats ------------------");
             if (showRangeStats)
             {
-                CreatePropertyField("projectilePrefab");
+                CreatePropertyField(nameof(so.projectilePrefab));
             }
             EditorGUILayout.EndFoldoutHeaderGroup();
         }
@@ -60,14 +60,14 @@ public class EnemyProfileCustomInspector : Editor
         GUILayout.Space(20);
 
         #region Chase stats
-        CreatePropertyField("chase");
+        CreatePropertyField(nameof(so.chase));
         if (so.chase)
         {
             showChaseStats = EditorGUILayout.BeginFoldoutHeaderGroup(showChaseStats, "Chase stats ------------------");
             if (showChaseStats)
             {
-                CreatePropertyField("detectionRange");
-                CreatePropertyField("chaseRange");
+                CreatePropertyField(nameof(so.detectionRange));
+                CreatePropertyField(nameof(so.chaseRange));
             }
             EditorGUILayout.EndFoldoutHeaderGroup();
             GUILayout.Space(20);
@@ -77,15 +77,15 @@ public class EnemyProfileCustomInspector : Editor
         #region Run stats
         if (so.chase)
         {
-            CreatePropertyField("run");
+            CreatePropertyField(nameof(so.run));
             if (so.run)
             {
                 showRunStats = EditorGUILayout.BeginFoldoutHeaderGroup(showRunStats, "Run stats ------------------");
                 if (showRunStats)
                 {
-                    CreatePropertyField("runningRange");
-                    CreatePropertyField("runSpeed");
-                    CreatePropertyField("watchingDurationMinMax");
+                    CreatePropertyField(nameof(so.runningRange));
+                    CreatePropertyField(nameof(so.runSpeed));
+                    CreatePropertyField(nameof(so.watchingDurationMinMax));
                 }
             }
             EditorGUILayout.EndFoldoutHeaderGroup();
@@ -98,13 +98,13 @@ public class EnemyProfileCustomInspector : Editor
         showWwiseEvents = EditorGUILayout.BeginFoldoutHeaderGroup(showWwiseEvents, "Wwise Events");
         if (showWwiseEvents)
         {
-            CreatePropertyField("attackWEvent");
-            if(so.maxHealth > 1) CreatePropertyField("hitWEvent");
-            CreatePropertyField("deathWEvent");
+            CreatePropertyField(nameof(so.attackWEvent));
+            if(so.maxHealth > 1) CreatePropertyField(nameof(so.hitWEvent));
+            CreatePropertyField(nameof(so.deathWEvent));
             if (so.chase)
             {
-                CreatePropertyField("chaseWEvent");
-                if (so.run) { CreatePropertyField("runWEvent"); CreatePropertyField("watchWEvent"); }
+                CreatePropertyField(nameof(so.chaseWEvent));
+                if (so.run) { CreatePropertyField(nameof(so.runWEvent)); CreatePropertyField(nameof(so.timeToPostRunEvent)); CreatePropertyField(nameof(so.watchWEvent)); }
             }
         }
         #endregion

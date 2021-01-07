@@ -21,6 +21,7 @@ public class EnemyBase : MonoBehaviour
 
     protected GameObject player;
 
+    #region EnemyProfile vars
     private int maxHealth;
     private int health;
     private bool dead;
@@ -60,6 +61,7 @@ public class EnemyBase : MonoBehaviour
     private AK.Wwise.Event attackWEvent;
     private AK.Wwise.Event chaseWEvent;
     private AK.Wwise.Event runWEvent;
+    private float timeToPostRunEvent;
     private AK.Wwise.Event watchWEvent;
 
     private AK.Wwise.Event hitWEvent;
@@ -68,7 +70,9 @@ public class EnemyBase : MonoBehaviour
 
     protected Action Attack;
     protected Action Chase;
+    #endregion
 
+    #region Monobehaviours methods
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -147,7 +151,7 @@ public class EnemyBase : MonoBehaviour
                                 Invoke("EnableAgent", 1.5f);
                                 running = true;
                                 agent.speed = runSpeed;
-                                Invoke("PlayRunWEvent", 1f);
+                                Invoke("PlayRunWEvent", timeToPostRunEvent);
                                 agent.SetDestination(GetRunningPoint());
                             }
                         }
@@ -173,41 +177,15 @@ public class EnemyBase : MonoBehaviour
             }
         }
     }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward);
+        if (attackPoint == null) return;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
 
-    private bool isPlayerVisible(float range)
-    {
-        bool boolean = false;
-        RaycastHit hit;
-        Vector3 dir = (player.transform.position - transform.position).normalized;
-        Physics.Raycast(transform.position, dir, out hit, range);
-        Debug.DrawRay(transform.position, dir * range, Color.red, 0.1f);
-        if (hit.transform != null)
-        {
-            Debug.Log(hit.transform.name);
-            if (hit.transform.CompareTag("Player"))
-            {
-                Debug.Log("yes");
-                boolean = true;
-            }
-        }
-        return boolean;
+        Gizmos.DrawWireSphere(transform.position, rangeToAttack);
     }
-    private bool isPlayerAimable()
-    {
-        Vector3 dir = (player.transform.position - transform.position).normalized;
-        RaycastHit[] hits;
-        hits = Physics.SphereCastAll(transform.position, 1.25f, dir, rangeToAttack);
-        if(hits.Length > 0) 
-        { 
-            foreach(RaycastHit hit in hits)
-            {
-                string tag = hit.transform.tag;
-                if(tag == "Player") { return true; }
-                else if(tag != "Ground" && tag != "Enemy") { return false; }
-            }
-        }
-        return false;
-    }
+    #endregion
 
     private void GetProfileFromSo()
     {
@@ -242,6 +220,7 @@ public class EnemyBase : MonoBehaviour
         attackWEvent = enemyProfile.attackWEvent;
         chaseWEvent = enemyProfile.chaseWEvent;
         runWEvent = enemyProfile.runWEvent;
+        timeToPostRunEvent = enemyProfile.timeToPostRunEvent;
         //PlayRunWEvent = () => runWEvent?.Post(gameObject);
 
         watchWEvent = enemyProfile.watchWEvent;
@@ -250,15 +229,44 @@ public class EnemyBase : MonoBehaviour
 
     }
 
-    private void OnDrawGizmosSelected()
+    #region Cast checks
+    private bool isPlayerVisible(float range)
     {
-        Gizmos.DrawLine(transform.position, transform.position + transform.forward);
-        if (attackPoint == null) return;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-
-        Gizmos.DrawWireSphere(transform.position, rangeToAttack);
+        bool boolean = false;
+        RaycastHit hit;
+        Vector3 dir = (player.transform.position - transform.position).normalized;
+        Physics.Raycast(transform.position, dir, out hit, range);
+        Debug.DrawRay(transform.position, dir * range, Color.red, 0.1f);
+        if (hit.transform != null)
+        {
+            Debug.Log(hit.transform.name);
+            if (hit.transform.CompareTag("Player"))
+            {
+                Debug.Log("yes");
+                boolean = true;
+            }
+        }
+        return boolean;
     }
+    private bool isPlayerAimable()
+    {
+        Vector3 dir = (player.transform.position - transform.position).normalized;
+        RaycastHit[] hits;
+        hits = Physics.SphereCastAll(transform.position, 1.25f, dir, rangeToAttack);
+        if(hits.Length > 0) 
+        { 
+            foreach(RaycastHit hit in hits)
+            {
+                string tag = hit.transform.tag;
+                if(tag == "Player") { return true; }
+                else if(tag != "Ground" && tag != "Enemy") { return false; }
+            }
+        }
+        return false;
+    }
+    #endregion
 
+    #region Health methods
     public void TakeDamage()
     {
         Debug.Log("Damage took");
@@ -271,7 +279,6 @@ public class EnemyBase : MonoBehaviour
             hitWEvent?.Post(gameObject);
         }
     }
-
     public void Die()
     {
         dead = true;
@@ -279,7 +286,9 @@ public class EnemyBase : MonoBehaviour
         deathWEvent?.Post(gameObject);
         //Destroy(gameObject);
     }
+    #endregion
 
+    #region Attack methods
     public void DamagePlayerTouched()
     {
         Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackRange, playerMask);
@@ -310,7 +319,9 @@ public class EnemyBase : MonoBehaviour
     //    Projectile proj = projectile.GetComponent<Projectile>();
     //    proj.direction = (player.transform.position - transform.position).normalized;
     //}
+    #endregion
 
+    #region GetDistance methods
     private float GetDistanceFromPlayer()
     {
         return Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.z), new Vector2(transform.position.x, transform.position.z));
@@ -319,6 +330,7 @@ public class EnemyBase : MonoBehaviour
     {
         return Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(target.x, target.z));
     }
+    #endregion
 
     private Vector3 GetRunningPoint()
     {
@@ -340,11 +352,15 @@ public class EnemyBase : MonoBehaviour
         return runningPointPos;
 
     }
-
     public void PlayRunWEvent() { runWEvent?.Post(gameObject); }
 
+    #region Agent methods
     private void EnableAgent() { agent.isStopped = false; }
     private void DisableAgent() { agent.isStopped = true; }
+    #endregion
+
+    #region Watch methods
     private void StopWatchingPlayer() { agent.speed = movementSpeed; }
     private void WatchPlayer() { transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.up); watchWEvent?.Post(gameObject); }
+    #endregion
 }
