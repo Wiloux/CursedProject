@@ -147,7 +147,7 @@ public class EnemyBase : MonoBehaviour
                                 Invoke("EnableAgent", 1.5f);
                                 running = true;
                                 agent.speed = runSpeed;
-                                if (runWEvent != null) runWEvent.Post(gameObject);
+                                Invoke("PlayRunWEvent", 1f);
                                 agent.SetDestination(GetRunningPoint());
                             }
                         }
@@ -242,6 +242,8 @@ public class EnemyBase : MonoBehaviour
         attackWEvent = enemyProfile.attackWEvent;
         chaseWEvent = enemyProfile.chaseWEvent;
         runWEvent = enemyProfile.runWEvent;
+        //PlayRunWEvent = () => runWEvent?.Post(gameObject);
+
         watchWEvent = enemyProfile.watchWEvent;
         hitWEvent = enemyProfile.hitWEvent;
         deathWEvent = enemyProfile.deathWEvent;
@@ -281,19 +283,22 @@ public class EnemyBase : MonoBehaviour
     public void DamagePlayerTouched()
     {
         Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackRange, playerMask);
-        if (hits[0].transform != null)
+        if(hits.Length > 0)
         {
-            if (backstab)
+            if (hits[0].transform != null)
             {
-                float angle = Vector3.Angle(hits[0].transform.forward, transform.forward);
-                Debug.Log(angle);
+                if (backstab)
+                {
+                    float angle = Vector3.Angle(hits[0].transform.forward, transform.forward);
+                    Debug.Log(angle);
 
-                if (angle < 90f) { Debug.Log("backstab = double damage"); animator.SetInteger("attackType", 2); }
-            }
-            else
-            {
-                Debug.Log("player hit");
-                animator.SetInteger("attackType", UnityEngine.Random.Range(0, 2));
+                    if (angle < 90f) { Debug.Log("backstab = double damage"); animator.SetInteger("attackType", 2); }
+                }
+                else
+                {
+                    Debug.Log("player hit");
+                    animator.SetInteger("attackType", UnityEngine.Random.Range(0, 2));
+                }
             }
         }
 
@@ -335,6 +340,8 @@ public class EnemyBase : MonoBehaviour
         return runningPointPos;
 
     }
+
+    public void PlayRunWEvent() { runWEvent?.Post(gameObject); }
 
     private void EnableAgent() { agent.isStopped = false; }
     private void DisableAgent() { agent.isStopped = true; }
