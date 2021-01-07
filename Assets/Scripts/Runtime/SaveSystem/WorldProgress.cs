@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WorldProgress : MonoBehaviour
 {
@@ -15,9 +16,15 @@ public class WorldProgress : MonoBehaviour
 
     #region Monobehaviours Methods
     // --------------------------------------- Monobehaviours Methods --------------------------------------- //
-    private void Awake(){instance = this;}
+    private void Awake(){instance = this; DontDestroyOnLoad(this.gameObject); }
 
-    private void Update() { if (!GameHandler.instance.isPaused) gameTime += Time.deltaTime; }
+    private void Update() 
+    { 
+        if(SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            if (!GameHandler.instance.isPaused) gameTime += Time.deltaTime; 
+        }
+    }
     #endregion
 
     #region SaveMethods
@@ -38,5 +45,10 @@ public class WorldProgress : MonoBehaviour
         characterName = data.characterName;
     }
 
+    public void ReplaceProgressData(int saveIndex)
+    {
+        SaveSystem.DeleteWorldData(saveIndex);
+        SaveWorldProgress(saveIndex);
+    }
     #endregion
 }
