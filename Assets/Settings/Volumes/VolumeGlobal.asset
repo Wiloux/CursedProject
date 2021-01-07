@@ -93,7 +93,7 @@ MonoBehaviour:
     min: 0
     max: 1
   tint:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 0
     showAlpha: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 13.5
+    m_Value: 13.31
   multiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -252,8 +252,8 @@ MonoBehaviour:
   m_Name: VolumeGlobal
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 1359070828411649799}
   - {fileID: -1167143466653396744}
+  - {fileID: 1359070828411649799}
   - {fileID: 8049981929359091865}
   - {fileID: 6640133647794636954}
   - {fileID: 2759069934644561995}
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   skyType:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 3
   skyAmbientMode:
     m_OverrideState: 1
     m_Value: 1
@@ -546,7 +546,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0.468
     min: 0
     max: 4
   directLightingStrength:
@@ -645,7 +645,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 11.721393
+    m_Value: 0.38
   compensation:
     m_OverrideState: 1
     m_Value: 0
