@@ -41,4 +41,12 @@ public static class SaveSystem
             return null;
         }
     }
+
+    public static void DeleteWorldData(int saveIndex)
+    {
+        if (File.Exists(paths[saveIndex]))
+        {
+            File.Delete(paths[saveIndex]);
+        }
+    }
 }
