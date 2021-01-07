@@ -34,11 +34,11 @@ MonoBehaviour:
   Footsteps:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 5a710e116e98d7347878261eed62c06e, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 4f144668e7e149a4aad6c4418ebeb32a, type: 2}
   Attack:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 83bbb456a21b8e4499c9c4442613bd4c, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 9b0f3c2b08e26234686756c7d3f37d26, type: 2}
 --- !u!1 &4308134388783727565
 GameObject:
   m_ObjectHideFlags: 0

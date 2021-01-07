@@ -38,7 +38,7 @@ MonoBehaviour:
   runWEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: de309c18c07e4b6448e73be407b0da3c, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: d04943c8a1f7bc540974892373969c72, type: 2}
   watchWEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -46,7 +46,7 @@ MonoBehaviour:
   hitWEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 2615d381866f0134ca3ef82eaa8a96e4, type: 2}
+    WwiseObjectReference: {fileID: 0}
   deathWEvent:
     idInternal: 0
     valueGuidInternal: 
