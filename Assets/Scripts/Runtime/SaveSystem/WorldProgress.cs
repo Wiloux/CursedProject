@@ -9,10 +9,10 @@ public class WorldProgress : MonoBehaviour
     public bool isInventoryLoaded = false;
 
     // ------------------------------- VARS ----------------------------------------- //
-    public float playerLife;
-    public float gameTime;
-    public string locationName;
-    public string characterName;
+    public float playerLife = 1;
+    public float gameTime = 0;
+    public string locationName = "Spawn";
+    public string characterName = "Nerd";
 
     #region Monobehaviours Methods
     // --------------------------------------- Monobehaviours Methods --------------------------------------- //
