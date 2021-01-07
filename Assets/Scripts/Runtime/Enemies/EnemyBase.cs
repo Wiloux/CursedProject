@@ -12,7 +12,7 @@ public class EnemyBase : MonoBehaviour
 
     [Space]
     [Header("Components Vars")]
-    [SerializeField] private Rigidbody rb;
+    [SerializeField] protected Rigidbody rb;
     public Animator animator;
 
     [Space]
@@ -84,7 +84,7 @@ public class EnemyBase : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if (!dead && !pause)
         {
@@ -127,8 +127,10 @@ public class EnemyBase : MonoBehaviour
                     {
                         if (isPlayerVisible(rangeToAttack))
                         {
+                            if (range) { if (!isPlayerAimable()) return; }
                             Debug.Log("Attack");
                             //Animations
+                            animator.SetInteger("attackType", UnityEngine.Random.Range(0, 2));
                             animator.SetTrigger("attack");
                             // Post Wwise Event
                             attackWEvent?.Post(gameObject);
@@ -153,10 +155,18 @@ public class EnemyBase : MonoBehaviour
                 }
                 else if (chase) // If the behaviour wants to chase the player
                 {
-                    if (!detected && distance < detectionRange) if(isPlayerVisible(detectionRange)) detected = true; // The enemy needs to detect the player
+                    if (!detected && distance < detectionRange)
+                    {
+                        if (isPlayerVisible(detectionRange))
+                        {
+                            detected = true; // The enemy needs to detect the player
+                            Debug.Log("detected");
+                        }
+                    }
                     else if (detected && distance < chaseRange) // Then if the player is still in a range, it will chase him
                     {
                         chasing = true;
+                        agent.isStopped = false;
                         Chase?.Invoke();
                     }
                 }
@@ -181,6 +191,22 @@ public class EnemyBase : MonoBehaviour
             }
         }
         return boolean;
+    }
+    private bool isPlayerAimable()
+    {
+        Vector3 dir = (player.transform.position - transform.position).normalized;
+        RaycastHit[] hits;
+        hits = Physics.SphereCastAll(transform.position, 1.25f, dir, rangeToAttack);
+        if(hits.Length > 0) 
+        { 
+            foreach(RaycastHit hit in hits)
+            {
+                string tag = hit.transform.tag;
+                if(tag == "Player") { return true; }
+                else if(tag != "Ground" && tag != "Enemy") { return false; }
+            }
+        }
+        return false;
     }
 
     private void GetProfileFromSo()

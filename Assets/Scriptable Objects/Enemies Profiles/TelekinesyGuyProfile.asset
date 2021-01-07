@@ -25,7 +25,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8628481070499395770, guid: 5ee1738b9ffbc4643865c8a453f1f69b, type: 3}
   rangeToAttack: 10
   attackRange: 0.5
-  attackCooldown: 5
+  attackCooldown: 2.5
   backstab: 0
   attackWEvent:
     idInternal: 0
