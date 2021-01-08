@@ -39,6 +39,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: d04943c8a1f7bc540974892373969c72, type: 2}
+  timeToPostRunEvent: 2
   watchWEvent:
     idInternal: 0
     valueGuidInternal: 

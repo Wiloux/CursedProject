@@ -53,6 +53,10 @@ public class GameHandler : MonoBehaviour
                 case "Player":
                     PlayerHelper.instance.ToggleControls();
                     break;
+                case "Mirror":
+                    MirrorCam mirroCam = go.GetComponent<MirrorCam>();
+                    if (mirroCam != null) mirroCam.enabled = !mirroCam.enabled;
+                    break;
 
             }
         }
