@@ -20,6 +20,7 @@ public class DoorScript : MonoBehaviour
             otherDoorScript.otherDoorScript = this;
         }
         roomManager = RoomManager.instance;
+       
     }
 
     public void UseDoor(Transform Using)

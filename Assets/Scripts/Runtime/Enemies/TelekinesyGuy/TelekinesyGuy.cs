@@ -34,6 +34,7 @@ public class TelekinesyGuy : EnemyBase
     {
         if(other.gameObject.layer == 10)
         {
+            animator.SetTrigger("endSpawn");
             isActive = true;
             agent.enabled = true;
             rb.useGravity = true;
