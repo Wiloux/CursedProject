@@ -5,16 +5,25 @@
 			<ChildrenList>
 				<SoundBank Name="ForTests" ID="{F71E0A93-E164-4F04-AF69-3E72AE63BE23}">
 					<ObjectInclusionList>
+						<ObjectRef Name="PlayAttack2" ID="{20A101CE-2670-41D9-9766-D9EB52D0F555}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayChickenFootsteps" ID="{377CB89E-1AD2-42D0-A801-74917BE099BA}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayHighlight" ID="{CF4A09C0-A989-449D-8511-3213A5CE61AA}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayAttack3" ID="{02BC7C02-0409-4580-AE17-63395674C15E}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="WeirdAttack" ID="{6684B1AD-88B3-471E-8C65-91C8F828D3CB}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TestBass" ID="{2BDF3AE9-C040-47AB-B6C2-9FD905DC8F76}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayKeypress" ID="{EE2E3C1A-40A0-487A-B481-15E994166494}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayExpDialogue" ID="{24919819-F6DB-4A72-819C-0173E6E8565C}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayHitChicken" ID="{0888F6E2-E055-4B00-B2AE-2C045D7C5B2B}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayBackstab" ID="{9982C33B-092F-4BF3-8E8E-17921D652E90}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="StopExpDialogue" ID="{21C83AE9-81ED-4D35-8601-723FE3B7377B}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayGiggleChicken" ID="{9CB0E16E-B2A0-4E69-80F2-1AD854124C64}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayFSChicken" ID="{2244B6BA-6555-4F2C-8FFC-F9C95CBDE82D}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="Main" ID="{49B2672B-A238-4E95-AA92-4FE230EA6EAC}">
+					<ObjectInclusionList/>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>

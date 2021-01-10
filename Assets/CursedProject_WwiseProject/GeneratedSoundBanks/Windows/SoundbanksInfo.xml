@@ -11,16 +11,67 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="4204904655">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1613864075">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<GameParameters>
+				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="576434481">
+		<SoundBank Id="2879190521" Language="SFX" Hash="1904142433">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
 			<IncludedEvents>
+				<Event Id="204688551" Name="PlayAttack2" ObjectPath="\Events\Enemies\Chicken\PlayAttack2" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+					<IncludedMemoryFiles>
+						<File Id="51034049" Language="SFX">
+							<ShortName>Chicken\Attack\atack 2.wav</ShortName>
+							<Path>SFX\Chicken\Attack\atack 2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="204688550" Name="PlayAttack3" ObjectPath="\Events\Enemies\Chicken\PlayAttack3" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+					<IncludedMemoryFiles>
+						<File Id="856417953" Language="SFX">
+							<ShortName>Chicken\Attack\atack 3.1.wav</ShortName>
+							<Path>SFX\Chicken\Attack\atack 3.1_10C4C929.wem</Path>
+						</File>
+						<File Id="899381549" Language="SFX">
+							<ShortName>Chicken\Attack\atack 3.2.wav</ShortName>
+							<Path>SFX\Chicken\Attack\atack 3.2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2629272678" Name="PlayBackstab" ObjectPath="\Events\Enemies\Chicken\PlayBackstab" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+					<IncludedMemoryFiles>
+						<File Id="1023060161" Language="SFX">
+							<ShortName>Chicken\Attack\Backstab2.wav</ShortName>
+							<Path>SFX\Chicken\Attack\Backstab2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="196258217" Name="PlayChickenFootsteps" ObjectPath="\Events\Enemies\Chicken\PlayChickenFootsteps" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.485766" DurationMax="0.514651">
+					<IncludedMemoryFiles>
+						<File Id="134553406" Language="SFX">
+							<ShortName>Chicken\Footstep\chicken fs2.wav</ShortName>
+							<Path>SFX\Chicken\Footstep\chicken fs2_10C4C929.wem</Path>
+						</File>
+						<File Id="615928074" Language="SFX">
+							<ShortName>Chicken\Footstep\chicken fs1.wav</ShortName>
+							<Path>SFX\Chicken\Footstep\chicken fs1_10C4C929.wem</Path>
+						</File>
+						<File Id="747551622" Language="SFX">
+							<ShortName>Chicken\Footstep\chicken fs4.wav</ShortName>
+							<Path>SFX\Chicken\Footstep\chicken fs4_10C4C929.wem</Path>
+						</File>
+						<File Id="864817520" Language="SFX">
+							<ShortName>Chicken\Footstep\chicken fs3.wav</ShortName>
+							<Path>SFX\Chicken\Footstep\chicken fs3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1701780106" Name="PlayExpDialogue" ObjectPath="\Events\Tests\DialogueExp\PlayExpDialogue" DurationType="OneShot" DurationMin="4.500000" DurationMax="8.500000">
 					<IncludedMemoryFiles>
 						<File Id="223542517" Language="SFX">
@@ -103,6 +154,11 @@
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX" Hash="2348770020">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

@@ -1,25 +1,37 @@
 Event	ID	Name			Wwise Object Path	Notes
 	145167493	PlayHighlight			\Tests\Menu\PlayHighlight	
+	196258217	PlayChickenFootsteps			\Enemies\Chicken\PlayChickenFootsteps	
+	204688550	PlayAttack3			\Enemies\Chicken\PlayAttack3	
+	204688551	PlayAttack2			\Enemies\Chicken\PlayAttack2	
 	1168436793	PlayKeypress			\Tests\Menu\PlayKeypress	
 	1672325348	StopExpDialogue			\Tests\DialogueExp\StopExpDialogue	
 	1701780106	PlayExpDialogue			\Tests\DialogueExp\PlayExpDialogue	
 	1813814736	WeirdAttack			\Tests\Chicken\WeirdAttack	
 	2613825061	PlayGiggleChicken			\Tests\Chicken\PlayGiggleChicken	
+	2629272678	PlayBackstab			\Enemies\Chicken\PlayBackstab	
 	3241046308	TestBass			\Tests\TestBass	
 	4106886787	PlayFSChicken			\Tests\Chicken\PlayFSChicken	
 	4251718543	PlayHitChicken			\Tests\Chicken\PlayHitChicken	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	26955166	Main Menu Keypress	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Main Menu Keypress_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Menu\Main Menu Keypress		26484
+	51034049	atack 2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Attack\atack 2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Attack\atack 2		88264
+	134553406	chicken fs2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Footstep\chicken fs2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\ChickenFootsteps\chicken fs2		88264
 	177710672	beartrap trigger	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\beartrap trigger_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Galinha\beartrap trigger		119608
 	223542517	voe player 2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\voe player 2_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\ExpDialogue\ExpDialogue\voe player 2		1234864
 	239106664	voe board 2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\voe board 2_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\ExpDialogue\ExpDialogue\voe board 2		1499464
 	254891926	fsgalinha	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\1_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Galinha\fsgalinha		88264
 	479465834	chase bass	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\chase bass_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\X\chase bass\chase bass		4498264
+	615928074	chicken fs1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Footstep\chicken fs1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\ChickenFootsteps\chicken fs1		88264
 	697333511	Main Menu Highlight	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Main Menu Highlight_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Menu\Main Menu Highlight		47032
 	711640135	voe board 3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\voe board 3_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\ExpDialogue\ExpDialogue\voe board 3		793864
 	713697455	GiggleRun	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\gf1_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Galinha\GiggleRun		308900
+	747551622	chicken fs4	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Footstep\chicken fs4_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\ChickenFootsteps\chicken fs4		88264
 	758882226	voe board 1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\voe board 1_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\ExpDialogue\ExpDialogue\voe board 1		1323064
 	768588542	NotHittingPlayer	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\NotHittingPlayer_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Galinha\NotHittingPlayer		54464
+	856417953	atack 3_1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Attack\atack 3.1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Attack\Attack3\atack 3_1		88264
+	864817520	chicken fs3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Footstep\chicken fs3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\ChickenFootsteps\chicken fs3		88264
+	899381549	atack 3_2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Attack\atack 3.2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Attack\Attack3\atack 3_2		88264
 	957116134	voe player 1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\voe player 1_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\ExpDialogue\ExpDialogue\voe player 1		970264
+	1023060161	Backstab2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Attack\Backstab2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Attack\Backstab2		88264
 

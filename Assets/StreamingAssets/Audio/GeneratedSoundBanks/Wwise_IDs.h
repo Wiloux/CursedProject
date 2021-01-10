@@ -13,6 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAYATTACK2 = 204688551U;
+        static const AkUniqueID PLAYATTACK3 = 204688550U;
+        static const AkUniqueID PLAYBACKSTAB = 2629272678U;
+        static const AkUniqueID PLAYCHICKENFOOTSTEPS = 196258217U;
         static const AkUniqueID PLAYEXPDIALOGUE = 1701780106U;
         static const AkUniqueID PLAYFSCHICKEN = 4106886787U;
         static const AkUniqueID PLAYGIGGLECHICKEN = 2613825061U;
@@ -37,15 +41,22 @@ namespace AK
 
     } // namespace SWITCHES
 
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID SFXVOLUME = 988953028U;
+    } // namespace GAME_PARAMETERS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
         static const AkUniqueID FORTESTS = 2879190521U;
+        static const AkUniqueID MAIN = 3161908922U;
     } // namespace BANKS
 
     namespace BUSSES
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID SFX = 393239870U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" SchemaVersion="97">
+	<Events>
+		<WorkUnit Name="Enemies" ID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Chicken" ID="{6D605CB9-2AC4-4759-BEA9-F0E934524F5D}" ShortID="367453508">
+					<ChildrenList>
+						<Event Name="PlayAttack3" ID="{02BC7C02-0409-4580-AE17-63395674C15E}">
+							<ChildrenList>
+								<Action Name="" ID="{636139CB-A6AB-4ECC-8E63-9A5EADDB42BC}" ShortID="830066077">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Attack3" ID="{E140CEDB-6317-4684-9A39-FDE7CC87236E}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayChickenFootsteps" ID="{377CB89E-1AD2-42D0-A801-74917BE099BA}">
+							<ChildrenList>
+								<Action Name="" ID="{C8B14ECA-0619-4708-9831-024BF8412C0D}" ShortID="1034856882">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ChickenFootsteps" ID="{45F7553B-9858-4BC3-9ED4-71332D4A1E27}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayAttack2" ID="{20A101CE-2670-41D9-9766-D9EB52D0F555}">
+							<ChildrenList>
+								<Action Name="" ID="{E9419D64-494F-4CF9-AE3F-603573130B66}" ShortID="463559994">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="atack 2" ID="{3DC56925-7320-4959-B078-2BCC1B153D43}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayBackstab" ID="{9982C33B-092F-4BF3-8E8E-17921D652E90}">
+							<ChildrenList>
+								<Action Name="" ID="{0498912E-4491-4889-9974-E78CA68501E8}" ShortID="402943444">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Backstab2" ID="{39D605F4-2522-4C08-B513-0E3C496021FB}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

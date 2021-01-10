@@ -34,11 +34,19 @@ MonoBehaviour:
   Footsteps:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4f144668e7e149a4aad6c4418ebeb32a, type: 2}
-  Attack:
+    WwiseObjectReference: {fileID: 11400000, guid: 160c7fc4a05dc264985c0eff368f2852, type: 2}
+  Attack1:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9b0f3c2b08e26234686756c7d3f37d26, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: d8a5baa61afa65c4e812e390624b594a, type: 2}
+  Attack2:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ecf7b6f65f9b06b4abfe979339297a8d, type: 2}
+  Attack3:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f2e660995a52e1c458b9676b872b187b, type: 2}
 --- !u!1 &4308134388783727565
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +98,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4308134389288796756
 Transform:
   m_ObjectHideFlags: 0

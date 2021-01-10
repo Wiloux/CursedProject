@@ -2,6 +2,10 @@
 <WwiseDocument Type="WorkUnit" ID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}" SchemaVersion="97">
 	<AudioObjects>
 		<WorkUnit Name="Tests" ID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="12"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
 			<ChildrenList>
 				<Folder Name="ExpDialogue" ID="{39702112-0CCD-4D44-9ED8-F6AC0D1302F2}" ShortID="318986760">
 					<ChildrenList>

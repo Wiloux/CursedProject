@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5cf24529c5ae0c4fb7d461ec6430a707
     GuidInternal: 
-    m_lastTime: -8585931272637417886
+    m_lastTime: -8585913175294292343
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -41,6 +41,17 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
+    - name: SFX
+      guid: 5dd5fe7ddb31274d90f6ece3ed9d7ebb
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: SFX
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\SFX
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -49,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585915518226915951
+    m_lastTime: -8585913175294831710
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -60,6 +71,15 @@ MonoBehaviour:
       - ElementName: ForTests
         ObjectType: 7
       Path: Default Work Unit\ForTests
+    - name: Main
+      guid: 2b67b24938a2954eaa924fe230ea6eac
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main
+        ObjectType: 7
+      Path: Default Work Unit\Main
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -68,8 +88,85 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585916601798841655
+    m_lastTime: -8585913175294004454
     List: []
+  - PhysicalPath: Events\Enemies.wwu
+    PathAndIcons:
+    - ElementName: Enemies
+      ObjectType: 12
+    ParentPath: Enemies
+    guid: 7833dd357f5437458dde67e4bfd1d3f1
+    GuidInternal: 
+    m_lastTime: -8585913175293825352
+    List:
+    - name: Chicken
+      guid: b95c606dc42a5947bea9f0e934524f5d
+      id: 4251222990
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      Path: Enemies\Chicken
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayAttack2
+      guid: ce01a1207026d9419766d9eb52d0f555
+      id: 204688551
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: PlayAttack2
+        ObjectType: 3
+      Path: Enemies\Chicken\PlayAttack2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayAttack3
+      guid: 027cbc0209048045ae1763395674c15e
+      id: 204688550
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: PlayAttack3
+        ObjectType: 3
+      Path: Enemies\Chicken\PlayAttack3
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayBackstab
+      guid: 3bc382992f09f34b8e8e17921d652e90
+      id: 2629272678
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: PlayBackstab
+        ObjectType: 3
+      Path: Enemies\Chicken\PlayBackstab
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayChickenFootsteps
+      guid: 9eb87c37d21ad042a80174917be099ba
+      id: 196258217
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: PlayChickenFootsteps
+        ObjectType: 3
+      Path: Enemies\Chicken\PlayChickenFootsteps
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Tests.wwu
     PathAndIcons:
     - ElementName: Tests
@@ -247,8 +344,17 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3f87fc84d75f844293f581868cfb0aa6
     GuidInternal: 
-    m_lastTime: -8585931272638185834
-    List: []
+    m_lastTime: -8585913175295641401
+    List:
+    - name: SFXVolume
+      guid: 96a824d36af9db4e927d196920f86b9f
+      id: 988953028
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFXVolume
+        ObjectType: 13
+      Path: Default Work Unit\SFXVolume
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -279,6 +385,10 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585931272637318154
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /CursedProject_WwiseProject
+  - /CursedProject_WwiseProject/Events
+  - /CursedProject_WwiseProject/Events/Enemies
+  - /CursedProject_WwiseProject/Events/Enemies/Chicken
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
