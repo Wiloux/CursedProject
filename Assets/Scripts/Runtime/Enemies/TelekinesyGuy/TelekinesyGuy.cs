@@ -8,6 +8,7 @@ public class TelekinesyGuy : EnemyBase
     private new Collider collider;
     private bool isActive;
     public bool isTrigger;
+    public bool isSpawningSpikes;
 
     public override void Start()
     {
@@ -15,6 +16,11 @@ public class TelekinesyGuy : EnemyBase
 
         Attack = SpawnSpike;
         Chase = ChasePlayer;
+
+        attackAnimation = () => animator.SetTrigger("summon");
+
+        hitAnimation = () => animator.SetTrigger("hit");
+        hitAnimation = () => animator.SetInteger("randomHurt", UnityEngine.Random.Range(0, 2));
 
         agent.enabled = false;
         rb.useGravity = false;
@@ -24,10 +30,14 @@ public class TelekinesyGuy : EnemyBase
 
     public override void Update()
     {
-        if(isActive){
+        if (isActive)
+        {
             base.Update();
         }
-        else if (isTrigger) { transform.position += Vector3.up * 0.5f * Time.deltaTime; }
+        else if (isTrigger) { transform.position += Vector3.up * 1.25f * Time.deltaTime; }
+        Debug.Log(agent.isStopped);
+        if (isSpawningSpikes)
+        {agent.isStopped = true;}
     }
 
     private void OnTriggerExit(Collider other)
@@ -39,6 +49,8 @@ public class TelekinesyGuy : EnemyBase
             agent.enabled = true;
             rb.useGravity = true;
             collider.isTrigger = false;
+            // Set cooldown attack
+            timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
         }
     }
 
@@ -48,6 +60,8 @@ public class TelekinesyGuy : EnemyBase
     }
     private void SpawnSpike() 
     {
+        isSpawningSpikes = true;
+
         Vector2 temp = UnityEngine.Random.insideUnitCircle * 2.5f;
         Vector3 insideSphere = new Vector3(temp.x, Random.Range(-1f,1.01f), temp.y);
         Vector3 spikeSpawnPos = transform.position + insideSphere - 2f * Vector3.up;
@@ -58,7 +72,6 @@ public class TelekinesyGuy : EnemyBase
 
         GameObject go = Instantiate(projectilePrefab, spikeSpawnPos, spikeSpawnRot);
         Spike spike = go.GetComponent<Spike>();
-        spike.preparationDuration = Random.Range(spikeSpawnDurationMinMax.x, spikeSpawnDurationMinMax.y);
         spike.enemy = this;
     }
 }
