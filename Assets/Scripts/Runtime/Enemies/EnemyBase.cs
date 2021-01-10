@@ -21,6 +21,12 @@ public class EnemyBase : MonoBehaviour
 
     protected GameObject player;
 
+    #region Animations Actions
+    protected Action attackAnimation;
+    protected Action backstabAnimation;
+    protected Action hitAnimation;
+    #endregion
+
     #region EnemyProfile vars
     private int maxHealth;
     private int health;
@@ -49,8 +55,8 @@ public class EnemyBase : MonoBehaviour
     // Layer Mask used for the colliders detecttion
     [SerializeField] private LayerMask playerMask;
 
-    private float attackCooldown;
-    private float timeToAttack;
+    protected float attackCooldown;
+    protected float timeToAttack;
     private bool backstab;
 
     private float movementSpeed = 2f;
@@ -125,37 +131,33 @@ public class EnemyBase : MonoBehaviour
             }
             else
             {
-                if (distance < rangeToAttack)
+                if (distance < rangeToAttack && isPlayerVisible(rangeToAttack))
                 {
                     if (timeToAttack <= Time.timeSinceLevelLoad) // Check attack cooldown condition
                     {
-                        if (isPlayerVisible(rangeToAttack))
+                        if (range) { if (!isPlayerAimable()) return; }
+                        Debug.Log("Attack");
+                        //Animations
+                        attackAnimation?.Invoke();
+                        // Post Wwise Event
+                        attackWEvent?.Post(gameObject);
+                        // Cooldown attack gestion
+                        timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
+                        // Attack Action
+                        Attack?.Invoke();
+                        // Start running if behaviour need
+                        if (run)
                         {
-                            if (range) { if (!isPlayerAimable()) return; }
-                            Debug.Log("Attack");
-                            //Animations
-                            animator.SetInteger("attackType", UnityEngine.Random.Range(0, 2));
-                            animator.SetTrigger("attack");
-                            // Post Wwise Event
-                            attackWEvent?.Post(gameObject);
-                            // Cooldown attack gestion
-                            timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
-                            // Stop moving if range
-                            if (range) agent.isStopped = true;
-                            // Attack Action
-                            Attack?.Invoke();
-                            // Start running if behaviour need
-                            if (run)
-                            {
-                                agent.isStopped = true;
-                                Invoke("EnableAgent", 1.5f);
-                                running = true;
-                                agent.speed = runSpeed;
-                                Invoke("PlayRunWEvent", timeToPostRunEvent);
-                                agent.SetDestination(GetRunningPoint());
-                            }
+                            agent.isStopped = true;
+                            Invoke("EnableAgent", 1.5f);
+                            running = true;
+                            agent.speed = runSpeed;
+                            Invoke("PlayRunWEvent", timeToPostRunEvent);
+                            agent.SetDestination(GetRunningPoint());
                         }
                     }
+                    // Stop moving if range
+                    if (range) { agent.isStopped = true; agent.SetDestination(transform.position); }
                 }
                 else if (chase) // If the behaviour wants to chase the player
                 {
@@ -184,6 +186,12 @@ public class EnemyBase : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
 
         Gizmos.DrawWireSphere(transform.position, rangeToAttack);
+
+        Gizmos.color = Color.green;
+        for(float i = 0f; i < GetDistanceFromPlayer(); i+= 2.5f)
+        {
+            Gizmos.DrawSphere((player.transform.position - transform.position).normalized, 1.25f);
+        }
     }
     #endregion
 
@@ -252,13 +260,13 @@ public class EnemyBase : MonoBehaviour
     {
         Vector3 dir = (player.transform.position - transform.position).normalized;
         RaycastHit[] hits;
-        hits = Physics.SphereCastAll(transform.position, 1.25f, dir, rangeToAttack);
+        hits = Physics.SphereCastAll(transform.position, 0.2f, dir, rangeToAttack);
         if(hits.Length > 0) 
         { 
             foreach(RaycastHit hit in hits)
             {
                 string tag = hit.transform.tag;
-                if(tag == "Player") { return true; }
+                if(tag == "Player") { Debug.Log("aimable"); return true; }
                 else if(tag != "Ground" && tag != "Enemy") { return false; }
             }
         }
@@ -274,8 +282,7 @@ public class EnemyBase : MonoBehaviour
         if (health <= 0) { Die(); }
         else
         {
-            animator.SetTrigger("hit");
-            animator.SetInteger("randomHurt", UnityEngine.Random.Range(0, 3));
+            hitAnimation?.Invoke();
             hitWEvent?.Post(gameObject);
         }
     }
@@ -299,14 +306,8 @@ public class EnemyBase : MonoBehaviour
                 if (backstab)
                 {
                     float angle = Vector3.Angle(hits[0].transform.forward, transform.forward);
-                    Debug.Log(angle);
 
-                    if (angle < 90f) { Debug.Log("backstab = double damage"); animator.SetInteger("attackType", 2); }
-                }
-                else
-                {
-                    Debug.Log("player hit");
-                    animator.SetInteger("attackType", UnityEngine.Random.Range(0, 2));
+                    if (angle < 90f) { backstabAnimation?.Invoke(); } // faire truc de vies
                 }
             }
         }
@@ -355,8 +356,8 @@ public class EnemyBase : MonoBehaviour
     public void PlayRunWEvent() { runWEvent?.Post(gameObject); }
 
     #region Agent methods
-    private void EnableAgent() { agent.isStopped = false; }
-    private void DisableAgent() { agent.isStopped = true; }
+    protected void EnableAgent() { agent.isStopped = false; }
+    protected void DisableAgent() { agent.isStopped = true; }
     #endregion
 
     #region Watch methods

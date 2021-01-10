@@ -6,7 +6,7 @@ public class Spike : MonoBehaviour
 {
     private new Collider collider;
     private Rigidbody rb;
-    public EnemyBase enemy;
+    public TelekinesyGuy enemy;
 
     private bool isReady;
     private bool isThrowed;
@@ -31,7 +31,7 @@ public class Spike : MonoBehaviour
         spawnPos = transform.position;
         spawnRot = transform.rotation;
 
-        posTarget = spawnPos + 3f * Vector3.up;
+        posTarget = spawnPos + 6f * Vector3.up;
         dir = (posTarget - spawnPos);
 
         preparationTimer = preparationDuration;
@@ -55,13 +55,15 @@ public class Spike : MonoBehaviour
             }
             else
             {
-                transform.position += (dir / preparationDuration) * Time.deltaTime;
+                transform.position = Vector3.Lerp(spawnPos, posTarget, 1 - (preparationTimer/preparationDuration));
                 transform.rotation = Quaternion.Lerp(spawnRot, Quaternion.LookRotation(PlayerHelper.instance.transform.position - posTarget), 1 - (preparationTimer / preparationDuration));
             }
+            enemy.isSpawningSpikes = true;
         }
         else if(!isThrowed)
         {
             transform.Rotate(randomRotationAxis, 360f * 2 * (Time.deltaTime / 0.5f));
+            enemy.isSpawningSpikes = true;
         }
         //Debug.DrawRay(transform.position, transform.forward * 2f, Color.red, 0.1f);
         //Debug.DrawRay(transform.position, transform.up * 2f, Color.green, 0.1f);
@@ -70,7 +72,7 @@ public class Spike : MonoBehaviour
 
     private void Throw()
     {
-        enemy.animator.SetInteger("attackType",2);
+        enemy.animator.SetInteger("attackType",Random.Range(0,2));
         enemy.animator.SetTrigger("attack");
         isThrowed = true;
         collider.enabled = true;
@@ -88,6 +90,12 @@ public class Spike : MonoBehaviour
             else { /* simple damage on player */}
         }
         else if (!other.transform.CompareTag("Enemy")) { Destroy(gameObject); }
+    }
+
+    private void OnDestroy()
+    {
+        enemy.isSpawningSpikes = false;
+        enemy.agent.isStopped = false;
     }
 }
 
