@@ -271,7 +271,6 @@ GameObject:
   - component: {fileID: 19232481}
   - component: {fileID: 19232482}
   - component: {fileID: 19232483}
-  - component: {fileID: 19232484}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -364,23 +363,6 @@ MonoBehaviour:
   isPaused: 0
   pauseMenu: {fileID: 1635309587}
   saveMenu: {fileID: 7698801977216756564}
---- !u!114 &19232484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19232478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da5f841be28b5194e87a6115db5cde56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInventoryLoaded: 1
-  playerLife: 1
-  gameTime: 0
-  locationName: Junji Ito Room
-  characterName: Nerd
 --- !u!1 &130639507
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +615,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22730
+  m_Name: pb_Mesh56296
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1416,7 +1398,7 @@ Transform:
   m_Children:
   - {fileID: 557507764}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &390932600
 MonoBehaviour:
@@ -3328,6 +3310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7dd31f117d47a45aeded62baf2894e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutsceneSaveIndex: 0
   Cutscene_timeline: {fileID: 680627925}
   cutscene_duration: 7
 --- !u!1 &1216665334
@@ -3468,7 +3451,6 @@ GameObject:
   - component: {fileID: 1263228715}
   - component: {fileID: 1263228714}
   - component: {fileID: 1263228713}
-  - component: {fileID: 1263228719}
   - component: {fileID: 1263228721}
   - component: {fileID: 1263228720}
   m_Layer: 0
@@ -5808,19 +5790,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1263228719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263228712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a811c54d21b14704e84c84f49a85b936, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: f78c9cef25f34c3419ed837ca9760eca, type: 2}
 --- !u!114 &1263228720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8436,6 +8405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a811c54d21b14704e84c84f49a85b936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasToBeFocused: 0
   dialogue: {fileID: 11400000, guid: 7e3200c7030a345429fc8bcab60b10ab, type: 2}
 --- !u!65 &1333196841
 BoxCollider:
@@ -11809,7 +11779,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22868
+  m_Name: pb_Mesh56426
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11975,18 +11945,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 557507764}
     m_Modifications:
     - target: {fileID: 8265054560305535266, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265054560305535266, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265054560305535266, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265054560305535266, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 19232483}
@@ -11998,45 +11956,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 19232479}
-    - target: {fileID: 8265054560305535266, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265054560305535266, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265054560305535266, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TogglePause
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265054560305535266, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: TogglePauseMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265054560305535266, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: ToggleMouseLock
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265054560305535266, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: GameHandler, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265054560305535266, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: MouseManagement, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265054560305535266, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265054560305535266, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8265054561469484740, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8265054561469484740, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8265054561469484741, guid: 3324a76bae028c645b90f5ac1273a7d0, type: 3}
       propertyPath: m_Pivot.x
@@ -14528,7 +14454,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22804
+  m_Name: pb_Mesh56362
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14897,7 +14823,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22710
+  m_Name: pb_Mesh56276
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15320,6 +15246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a811c54d21b14704e84c84f49a85b936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasToBeFocused: 1
   dialogue: {fileID: 11400000, guid: 3544fcc56f5480346ab5e386fea82401, type: 2}
 --- !u!65 &2048750623
 BoxCollider:
@@ -15390,13 +15317,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048750621}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.34, y: -7.81, z: -1.88}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000002533197}
+  m_LocalPosition: {x: 27.51, y: -8.68, z: -1.88}
   m_LocalScale: {x: 7.192296, y: 3.8163, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &97386583429129911
 Transform:
   m_ObjectHideFlags: 0
@@ -16673,7 +16600,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16758,7 +16685,7 @@ Transform:
   - {fileID: 1102455531}
   - {fileID: 400026504}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5809203964078236722
 Transform:
@@ -17386,7 +17313,7 @@ Transform:
   - {fileID: 889789052}
   - {fileID: 1417076750}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &7817703496067986079
 GameObject:

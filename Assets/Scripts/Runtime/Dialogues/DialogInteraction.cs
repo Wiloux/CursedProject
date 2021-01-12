@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Cinemachine;
 
 public class DialogInteraction: MonoBehaviour
 {
+    [SerializeField] private bool hasToBeFocused;
+    private string camState;
     [SerializeField] private DialogueSO dialogue;
     private int index = 0;
     [Tooltip("Script yield return this float between the writing of two letters")]
@@ -23,12 +26,14 @@ public class DialogInteraction: MonoBehaviour
         dialogDisplayer = DialogueManager.instance.dialogDisplayer;
         dialogAudioSource = DialogueManager.instance.dialogAudioSource;
         sfxAudioSource = DialogueManager.instance.sfxAudioSource;
-       clue = dialogue.clueName;
+        clue = dialogue.clueName;
     }
 
     public void Talk()
     {
         if (talking) return;
+
+        if(hasToBeFocused) SetCameraWatchingPlayer();
 
         PlayerHelper.instance.ToggleControls();
         talking = true;
@@ -50,6 +55,11 @@ public class DialogInteraction: MonoBehaviour
 
     public void NextSentence()
     {
+        if (hasToBeFocused)
+        {
+            if(camState == "this") { SetCameraWatchingPlayer(); }
+            else { SetCameraWatchingThis(); }
+        }
         dialogDisplayer.text = "";
         if(index < dialogue.dialoguesAndVoicelines.Count - 1)
         {
@@ -78,14 +88,26 @@ public class DialogInteraction: MonoBehaviour
             PlayerHelper.instance.AddClueToInventory(clue);
             Destroy(gameObject);
         }
+
+        Camera mainCam = Camera.main;
+        mainCam.GetComponent<Cinemachine.CinemachineBrain>().enabled = true;
     }
 
-    public void WwiseSoundManaging()
+    private void SetCameraWatchingPlayer()
     {
-
+        camState = "player";
+        Transform player = PlayerHelper.instance.transform;
+        Camera mainCam = Camera.main;
+        mainCam.GetComponent<Cinemachine.CinemachineBrain>().enabled = false;
+        mainCam.transform.position = player.position + player.forward * 5f + player.up * 1f + player.right * 0.5f;
+        mainCam.transform.rotation = Quaternion.LookRotation((player.position - mainCam.transform.position).normalized);
     }
-    public void WwiseBeforeNextSentence()
+    private void SetCameraWatchingThis()
     {
-
+        Camera mainCam = Camera.main;
+        mainCam.GetComponent<Cinemachine.CinemachineBrain>().enabled = false;
+        mainCam.transform.position = transform.position + transform.forward * 5f + transform.up * 1f + transform.right * 0.5f;
+        mainCam.transform.rotation = Quaternion.LookRotation((transform.position - mainCam.transform.position).normalized);
+        camState = "this";
     }
 }

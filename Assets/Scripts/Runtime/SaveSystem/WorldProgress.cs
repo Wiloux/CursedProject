@@ -14,9 +14,11 @@ public class WorldProgress : MonoBehaviour
     public string locationName = "Spawn";
     public string characterName = "Nerd";
 
+    public bool[] isCutscenesPlayed;
+
     #region Monobehaviours Methods
     // --------------------------------------- Monobehaviours Methods --------------------------------------- //
-    private void Awake(){instance = this; DontDestroyOnLoad(this.gameObject); }
+    private void Awake(){instance = this; DontDestroyOnLoad(this.gameObject); Initialize(); }
 
     private void Update() 
     { 
@@ -27,8 +29,19 @@ public class WorldProgress : MonoBehaviour
     }
     #endregion
 
-    #region SaveMethods
+    private void Initialize()
+    {
+        playerLife = 1;
+        gameTime = 0;
+        locationName = "Spawn";
+        characterName = "Nerd";
+
+        isCutscenesPlayed = new bool[5];
+}
+
+    #region Save Functions
     // --------------------------------------- SAVE METHODS ---------------------------------------- //
+
 
     public void SaveWorldProgress(int saveIndex){
         SaveSystem.SaveWorldData(this, saveIndex);
@@ -43,6 +56,8 @@ public class WorldProgress : MonoBehaviour
         gameTime = data.gameTime;
         locationName = data.locationName;
         characterName = data.characterName;
+
+        isCutscenesPlayed = data.isCutscenesPlayed;
     }
 
     public void ReplaceProgressData(int saveIndex)

@@ -10,10 +10,14 @@ public class SaveData
     public string locationName;
     public string characterName;
 
+    public bool[] isCutscenesPlayed;
+
     public SaveData(WorldProgress progress){
         playerLife = progress.playerLife;
         gameTime = progress.gameTime;
         locationName = progress.locationName;
         characterName = progress.characterName;
+
+        isCutscenesPlayed = progress.isCutscenesPlayed;
     }
 }
