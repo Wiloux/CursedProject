@@ -317,6 +317,89 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<SwitchContainer Name="PlayerHit" ID="{EE8AAC62-F464-4300-9D16-C17B10524246}" ShortID="493833246">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="PlayerHitSwitch" ID="{E00AA6F6-54BC-4D45-AECF-58F367B789FA}" WorkUnitID="{2B9428F5-68ED-4933-BE7C-DA8752E78D33}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="PlayerHitChicken" ID="{272DFBAF-C637-4CAA-ABA1-327533515564}" ShortID="713492180">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="JK_PRC_05" ID="{6718BCE6-4585-458B-9D19-CD6F37AC322F}">
+									<Language>SFX</Language>
+									<AudioFile>SwitchTest\JK_PRC_05.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="821982476"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="JK_PRC_05" ID="{6718BCE6-4585-458B-9D19-CD6F37AC322F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="PlayerHitShard" ID="{9EE1346A-2871-409C-99F9-AB4E7F5F1D81}" ShortID="52186099">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="JK_SNR_01" ID="{48C93AA5-781A-480C-9349-5816B7CD2109}">
+									<Language>SFX</Language>
+									<AudioFile>SwitchTest\JK_SNR_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="25364946"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="JK_SNR_01" ID="{48C93AA5-781A-480C-9349-5816B7CD2109}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="PlayerHitShard" ID="{9EE1346A-2871-409C-99F9-AB4E7F5F1D81}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="PlayerHitChicken" ID="{272DFBAF-C637-4CAA-ABA1-327533515564}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Shard" ID="{3A2B8A51-89F7-4E53-A5E7-4F05BB0FD04F}"/>
+								<ItemList>
+									<ItemRef Name="PlayerHitShard" ID="{9EE1346A-2871-409C-99F9-AB4E7F5F1D81}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Chicken" ID="{A938E3BF-7195-4CAF-8DD8-F2B12A66A2AD}"/>
+								<ItemList>
+									<ItemRef Name="PlayerHitChicken" ID="{272DFBAF-C637-4CAA-ABA1-327533515564}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

@@ -17,6 +17,7 @@ namespace AK
         static const AkUniqueID PLAYATTACK3 = 204688550U;
         static const AkUniqueID PLAYBACKSTAB = 2629272678U;
         static const AkUniqueID PLAYCHICKENFOOTSTEPS = 196258217U;
+        static const AkUniqueID PLAYERHIT = 3831688773U;
         static const AkUniqueID PLAYEXPDIALOGUE = 1701780106U;
         static const AkUniqueID PLAYFSCHICKEN = 4106886787U;
         static const AkUniqueID PLAYGIGGLECHICKEN = 2613825061U;
@@ -38,6 +39,17 @@ namespace AK
             {
             } // namespace SWITCH
         } // namespace DIALOGUEEXP
+
+        namespace PLAYERHITSWITCH
+        {
+            static const AkUniqueID GROUP = 3765388645U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID CHICKEN = 4251222990U;
+                static const AkUniqueID SHARD = 2986888339U;
+            } // namespace SWITCH
+        } // namespace PLAYERHITSWITCH
 
     } // namespace SWITCHES
 

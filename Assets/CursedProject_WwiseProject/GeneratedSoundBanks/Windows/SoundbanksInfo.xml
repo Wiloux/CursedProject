@@ -19,7 +19,7 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="1904142433">
+		<SoundBank Id="2879190521" Language="SFX" Hash="1183691646">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -71,6 +71,30 @@
 							<Path>SFX\Chicken\Footstep\chicken fs3_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3831688773" Name="PlayerHit" ObjectPath="\Events\Tests\PlayerHit" DurationType="OneShot" DurationMin="0.179660" DurationMax="0.351111">
+					<IncludedMemoryFiles>
+						<File Id="25364946" Language="SFX">
+							<ShortName>SwitchTest\JK_SNR_01.wav</ShortName>
+							<Path>SFX\SwitchTest\JK_SNR_01_10C4C929.wem</Path>
+						</File>
+						<File Id="821982476" Language="SFX">
+							<ShortName>SwitchTest\JK_PRC_05.wav</ShortName>
+							<Path>SFX\SwitchTest\JK_PRC_05_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{A938E3BF-7195-4CAF-8DD8-F2B12A66A2AD}">
+							<Media>
+								<File Id="821982476"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{3A2B8A51-89F7-4E53-A5E7-4F05BB0FD04F}">
+							<Media>
+								<File Id="25364946"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="1701780106" Name="PlayExpDialogue" ObjectPath="\Events\Tests\DialogueExp\PlayExpDialogue" DurationType="OneShot" DurationMin="4.500000" DurationMax="8.500000">
 					<IncludedMemoryFiles>
@@ -154,6 +178,14 @@
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+			<SwitchGroups>
+				<SwitchGroup Id="3765388645" Name="PlayerHitSwitch" ObjectPath="\Switches\Default Work Unit\PlayerHitSwitch">
+					<Switches>
+						<Switch Id="4251222990" Name="Chicken" ObjectPath="\Switches\Default Work Unit\PlayerHitSwitch\Chicken"/>
+						<Switch Id="2986888339" Name="Shard" ObjectPath="\Switches\Default Work Unit\PlayerHitSwitch\Shard"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 		<SoundBank Id="3161908922" Language="SFX" Hash="2348770020">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>

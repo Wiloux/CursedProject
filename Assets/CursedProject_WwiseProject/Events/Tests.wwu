@@ -127,6 +127,17 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="PlayerHit" ID="{5BE8C486-7C82-4F3F-8124-CD1E0EBB35A5}">
+					<ChildrenList>
+						<Action Name="" ID="{545C3EB3-A306-4A2E-8BB8-AEE9AF31ED9C}" ShortID="847548913">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PlayerHit" ID="{EE8AAC62-F464-4300-9D16-C17B10524246}" WorkUnitID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

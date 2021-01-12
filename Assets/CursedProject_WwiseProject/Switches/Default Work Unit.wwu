@@ -4,6 +4,12 @@
 		<WorkUnit Name="Default Work Unit" ID="{2B9428F5-68ED-4933-BE7C-DA8752E78D33}" PersistMode="Standalone">
 			<ChildrenList>
 				<SwitchGroup Name="DialogueExp" ID="{C24CAC7B-991D-4C3D-B809-2C322194B976}"/>
+				<SwitchGroup Name="PlayerHitSwitch" ID="{E00AA6F6-54BC-4D45-AECF-58F367B789FA}">
+					<ChildrenList>
+						<Switch Name="Chicken" ID="{A938E3BF-7195-4CAF-8DD8-F2B12A66A2AD}"/>
+						<Switch Name="Shard" ID="{3A2B8A51-89F7-4E53-A5E7-4F05BB0FD04F}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>
