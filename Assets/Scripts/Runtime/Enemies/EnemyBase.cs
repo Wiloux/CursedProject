@@ -79,6 +79,11 @@ public class EnemyBase : MonoBehaviour
     #endregion
 
     #region Monobehaviours methods
+    private void Awake()
+    {
+        // Reference the player
+        player = PlayerHelper.instance.gameObject;
+    }
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -89,8 +94,6 @@ public class EnemyBase : MonoBehaviour
         agent.speed = movementSpeed;
         // Set cooldown attack
         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
-        // Reference the player
-        player = PlayerHelper.instance.gameObject;
     }
 
     // Update is called once per frame
@@ -188,6 +191,7 @@ public class EnemyBase : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, rangeToAttack);
 
         Gizmos.color = Color.green;
+        if (player == null) return;
         for(float i = 0f; i < GetDistanceFromPlayer(); i+= 2.5f)
         {
             Gizmos.DrawSphere((player.transform.position - transform.position).normalized, 1.25f);
@@ -325,6 +329,7 @@ public class EnemyBase : MonoBehaviour
     #region GetDistance methods
     private float GetDistanceFromPlayer()
     {
+        if (player == null) return 10^5;
         return Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.z), new Vector2(transform.position.x, transform.position.z));
     }
     private float GetDistanceFromPosition(Vector3 target)

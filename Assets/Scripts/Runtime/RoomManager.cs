@@ -24,6 +24,7 @@ public class RoomManager : MonoBehaviour
                 enemyToSpawn.spawnRot = enemyToSpawn.enemy.transform.eulerAngles;
             }
         }
+        Debug.Log("Done");
     }
     #endregion
 

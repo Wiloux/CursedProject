@@ -16,10 +16,13 @@ public class RoomSpawnerCustomInspector : Editor
 
         RoomManager roomSpawner = target as RoomManager;
 
+        EditorGUILayout.BeginHorizontal();
+        CurrentRoom = EditorGUILayout.IntField(CurrentRoom);
         if (GUILayout.Button("Help"))
         {
             roomSpawner.HelpReferencement(CurrentRoom);
         }
+        EditorGUILayout.EndHorizontal();
 
         serializedObject.ApplyModifiedProperties();
     }
