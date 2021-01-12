@@ -40,7 +40,10 @@ public class EnemyProfileSO : ScriptableObject
     public float timeToPostRunEvent;
     public AK.Wwise.Event watchWEvent;
 
-    public AK.Wwise.Event hitWEvent;
+    public AK.Wwise.Event getHitWEvent;
     public AK.Wwise.Event deathWEvent;
+
+    [Tooltip("The switch that allows to the player to detect from with type of enemy the attack comes from")]
+    public string hitPlayerWEventSwitch; 
     #endregion
 }

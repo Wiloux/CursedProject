@@ -83,11 +83,15 @@ public class Spike : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("Player"))
+        if (other.transform.CompareTag("Player") && isReady)
         {
+            Player_Movement player = other.gameObject.GetComponent<Player_Movement>();
+            if (player != null) player.OnHit("Shard");
+
             float angle = Vector3.Angle(other.transform.forward, transform.forward);
             if (angle <= 85f) { /* Back stab */}
             else { /* simple damage on player */}
+
         }
         else if (!other.transform.CompareTag("Enemy")) { Destroy(gameObject); }
     }

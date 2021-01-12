@@ -23,7 +23,6 @@ public class EnemyBase : MonoBehaviour
 
     #region Animations Actions
     protected Action attackAnimation;
-    protected Action backstabAnimation;
     protected Action hitAnimation;
     #endregion
 
@@ -65,28 +64,30 @@ public class EnemyBase : MonoBehaviour
 
     #region Wwise Event
     private AK.Wwise.Event attackWEvent;
+    private string hitPlayerWEventSwitch;
     private AK.Wwise.Event chaseWEvent;
     private AK.Wwise.Event runWEvent;
     private float timeToPostRunEvent;
     private AK.Wwise.Event watchWEvent;
 
-    private AK.Wwise.Event hitWEvent;
+    private AK.Wwise.Event getHitWEvent;
     private AK.Wwise.Event deathWEvent;
+
     #endregion
 
-    protected Action Attack;
+    public Action Attack;
     protected Action Chase;
     #endregion
 
     #region Monobehaviours methods
     private void Awake()
     {
-        // Reference the player
-        player = PlayerHelper.instance.gameObject;
     }
     // Start is called before the first frame update
     public virtual void Start()
     {
+        // Reference the player
+        player = PlayerHelper.instance.gameObject;
         // Use the vars of the EnemyProfile scriptable object
         GetProfileFromSo();
 
@@ -119,10 +120,10 @@ public class EnemyBase : MonoBehaviour
                     DisableAgent();
                     //agent.SetDestination(player.transform.position);
 
-                    Invoke("WatchPlayer", 1f);
+                    Invoke(nameof(WatchPlayer), 1f);
                     float watchingDuration = UnityEngine.Random.Range(watchingDurationMinMax.x, watchingDurationMinMax.y);
-                    Invoke("StopWatchingPlayer", 1f + watchingDuration);
-                    Invoke("EnableAgent", 1f + watchingDuration);
+                    Invoke(nameof(StopWatchingPlayer), 1f + watchingDuration);
+                    Invoke(nameof(EnableAgent), 1f + watchingDuration);
                     //transform.LookAt(player.transform);
                     //transform.eulerAngles
                 }
@@ -139,7 +140,7 @@ public class EnemyBase : MonoBehaviour
                     if (timeToAttack <= Time.timeSinceLevelLoad) // Check attack cooldown condition
                     {
                         if (range) { if (!isPlayerAimable()) return; }
-                        Debug.Log("Attack");
+                        //Debug.Log("Enemy attack");
                         //Animations
                         attackAnimation?.Invoke();
                         // Post Wwise Event
@@ -147,15 +148,15 @@ public class EnemyBase : MonoBehaviour
                         // Cooldown attack gestion
                         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
                         // Attack Action
-                        Attack?.Invoke();
+                        if (range) { Attack?.Invoke(); } // if melee attack player detection and the func will be called during the attack animation
                         // Start running if behaviour need
                         if (run)
                         {
                             agent.isStopped = true;
-                            Invoke("EnableAgent", 1.5f);
+                            Invoke(nameof(EnableAgent), 1.5f);
                             running = true;
                             agent.speed = runSpeed;
-                            Invoke("PlayRunWEvent", timeToPostRunEvent);
+                            Invoke(nameof(PlayRunWEvent), timeToPostRunEvent);
                             agent.SetDestination(GetRunningPoint());
                         }
                     }
@@ -169,7 +170,7 @@ public class EnemyBase : MonoBehaviour
                         if (isPlayerVisible(detectionRange))
                         {
                             detected = true; // The enemy needs to detect the player
-                            Debug.Log("detected");
+                            //Debug.Log("Player is detected");
                         }
                     }
                     else if (detected && distance < chaseRange) // Then if the player is still in a range, it will chase him
@@ -189,13 +190,6 @@ public class EnemyBase : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
 
         Gizmos.DrawWireSphere(transform.position, rangeToAttack);
-
-        Gizmos.color = Color.green;
-        if (player == null) return;
-        for(float i = 0f; i < GetDistanceFromPlayer(); i+= 2.5f)
-        {
-            Gizmos.DrawSphere((player.transform.position - transform.position).normalized, 1.25f);
-        }
     }
     #endregion
 
@@ -236,8 +230,9 @@ public class EnemyBase : MonoBehaviour
         //PlayRunWEvent = () => runWEvent?.Post(gameObject);
 
         watchWEvent = enemyProfile.watchWEvent;
-        hitWEvent = enemyProfile.hitWEvent;
+        getHitWEvent = enemyProfile.getHitWEvent;
         deathWEvent = enemyProfile.deathWEvent;
+        hitPlayerWEventSwitch = enemyProfile.hitPlayerWEventSwitch;
 
     }
 
@@ -251,10 +246,10 @@ public class EnemyBase : MonoBehaviour
         Debug.DrawRay(transform.position, dir * range, Color.red, 0.1f);
         if (hit.transform != null)
         {
-            Debug.Log(hit.transform.name);
+            //Debug.Log("Object hit by is : " + hit.transform.name);
             if (hit.transform.CompareTag("Player"))
             {
-                Debug.Log("yes");
+                //Debug.Log("The player is visible");
                 boolean = true;
             }
         }
@@ -287,7 +282,7 @@ public class EnemyBase : MonoBehaviour
         else
         {
             hitAnimation?.Invoke();
-            hitWEvent?.Post(gameObject);
+            getHitWEvent?.Post(gameObject);
         }
     }
     public void Die()
@@ -307,13 +302,20 @@ public class EnemyBase : MonoBehaviour
         {
             if (hits[0].transform != null)
             {
+                Debug.Log(hits[0].transform.name);
+                Player_Movement player = hits[0].transform.GetComponent<Player_Movement>();
+                if(player!= null) player.OnHit(hitPlayerWEventSwitch);
                 if (backstab)
                 {
                     float angle = Vector3.Angle(hits[0].transform.forward, transform.forward);
 
-                    if (angle < 90f) { backstabAnimation?.Invoke(); } // faire truc de vies
+                    if (angle < 90f) {  } // faire truc de vies
                 }
             }
+        }
+        else
+        {
+            Debug.Log("No gameobject touched with Player layer");
         }
 
         if (GetDistanceFromPlayer() >= 2.5f) timeToAttack = Time.timeSinceLevelLoad;
@@ -343,17 +345,17 @@ public class EnemyBase : MonoBehaviour
         Vector3 runningPointPos = transform.position;
         Vector2 direction = new Vector2(UnityEngine.Random.Range(-1f, 1.01f), UnityEngine.Random.Range(-1f, 1.01f)).normalized;
 
-        Debug.Log(direction);
-        Debug.Log(transform.position + new Vector3(direction.x, 0, direction.y) * runningRange);
+        //Debug.Log(direction);
+        //Debug.Log(transform.position + new Vector3(direction.x, 0, direction.y) * runningRange);
         NavMeshHit hit;
         if (NavMesh.SamplePosition(runningPointPos, out hit, runningRange / 4, navMeshMask))
         {
             runningPointPos = transform.position + new Vector3(direction.x, 0, direction.y) * runningRange;
-            Debug.Log("found");
+            //Debug.Log("Running point found");
         }
         else
         {
-            Debug.Log("bruh");
+            //Debug.Log("Running point not found bruh");
         }
         return runningPointPos;
 

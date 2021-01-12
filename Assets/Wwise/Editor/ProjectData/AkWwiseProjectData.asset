@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5cf24529c5ae0c4fb7d461ec6430a707
     GuidInternal: 
-    m_lastTime: -8585913068750517045
+    m_lastTime: -8585911296042338257
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585913068749899022
+    m_lastTime: -8585911293060059358
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -97,7 +97,7 @@ MonoBehaviour:
     ParentPath: Enemies
     guid: 7833dd357f5437458dde67e4bfd1d3f1
     GuidInternal: 
-    m_lastTime: -8585913068751414984
+    m_lastTime: -8585911296043325614
     List:
     - name: Chicken
       guid: b95c606dc42a5947bea9f0e934524f5d
@@ -174,7 +174,7 @@ MonoBehaviour:
     ParentPath: Tests
     guid: 7e1e99e9ec97634b9be4486f5e454591
     GuidInternal: 
-    m_lastTime: -8585915518228271998
+    m_lastTime: -8585911293061246166
     List:
     - name: Chicken
       guid: 90bf0756f07b41458e68dd708f9190ce
@@ -209,6 +209,18 @@ MonoBehaviour:
       - ElementName: Menu
         ObjectType: 4
       Path: Tests\Menu
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayerHit
+      guid: 86c4e85b827c3f4f8124cd1e0ebb35a5
+      id: 3831688773
+      PathAndIcons:
+      - ElementName: Tests
+        ObjectType: 12
+      - ElementName: PlayerHit
+        ObjectType: 3
+      Path: Tests\PlayerHit
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -344,7 +356,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3f87fc84d75f844293f581868cfb0aa6
     GuidInternal: 
-    m_lastTime: -8585913068751405012
+    m_lastTime: -8585911296043315640
     List:
     - name: SFXVolume
       guid: 96a824d36af9db4e927d196920f86b9f
@@ -373,8 +385,33 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f528942bed683349be7cda8752e78d33
     GuidInternal: 
-    m_lastTime: -8585929452873495882
-    List: []
+    m_lastTime: -8585911293060049383
+    List:
+    - name: PlayerHitSwitch
+      guid: f6a60ae0bc54454daecf58f367b789fa
+      id: 3765388645
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlayerHitSwitch
+        ObjectType: 11
+      Path: Default Work Unit\PlayerHitSwitch
+      values:
+      - name: Chicken
+        guid: bfe338a99571af4c8dd8f2b12a66a2ad
+        id: 4251222990
+        PathAndIcons:
+        - ElementName: Chicken
+          ObjectType: 10
+      - name: Shard
+        guid: 518a2b3af789534ea5e74f05bb0fd04f
+        id: 2986888339
+        PathAndIcons:
+        - ElementName: Shard
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
@@ -390,5 +427,6 @@ MonoBehaviour:
   - /CursedProject_WwiseProject/Events
   - /CursedProject_WwiseProject/Events/Enemies
   - /CursedProject_WwiseProject/Events/Enemies/Chicken
+  - /CursedProject_WwiseProject/Events/Tests
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

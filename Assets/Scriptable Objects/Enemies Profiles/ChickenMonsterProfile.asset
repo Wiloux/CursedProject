@@ -24,7 +24,7 @@ MonoBehaviour:
   range: 0
   projectilePrefab: {fileID: 0}
   rangeToAttack: 2
-  attackRange: 0.5
+  attackRange: 2
   attackCooldown: 0
   backstab: 1
   attackWEvent:
@@ -44,7 +44,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  hitWEvent:
+  getHitWEvent:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
@@ -52,3 +52,4 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  hitPlayerWEventSwitch: Chicken

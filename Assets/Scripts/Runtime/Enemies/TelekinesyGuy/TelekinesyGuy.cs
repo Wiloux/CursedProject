@@ -35,7 +35,6 @@ public class TelekinesyGuy : EnemyBase
             base.Update();
         }
         else if (isTrigger) { transform.position += Vector3.up * 1.25f * Time.deltaTime; }
-        Debug.Log(agent.isStopped);
         if (isSpawningSpikes)
         {agent.isStopped = true;}
     }
