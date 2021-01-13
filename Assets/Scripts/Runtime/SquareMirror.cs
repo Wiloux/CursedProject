@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mirror : MonoBehaviour
+public class SquareMirror : MonoBehaviour
 {
     private Camera mainCam;
     [SerializeField] private Transform cameraRotation;
