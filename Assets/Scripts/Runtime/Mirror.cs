@@ -32,8 +32,8 @@ public class Mirror : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (room == WorldProgress.instance.locationName)
-        {
+        //if (room == WorldProgress.instance.locationName)
+        //{
             Vector3 mainCamDir = (mainCam.transform.position - transform.position).normalized;
             Quaternion rot = Quaternion.LookRotation(mainCamDir);
             Debug.Log("mainCamDir : " + mainCamDir);
@@ -41,10 +41,11 @@ public class Mirror : MonoBehaviour
             rot.eulerAngles = transform.eulerAngles - rot.eulerAngles;
 
             cameraRotation.localRotation = rot;
+            Debug.Log("ahahhaha");
             //Vector3 dir = new Vector3(mainCamDir.x * -1f, mainCamDir.y, mainCamDir.z);
             //Debug.Log("dir = " + dir);
             //transform.rotation = Quaternion.LookRotation(dir);
-        }
+        //}
     }
 
     //private Vector2 SetRenderTextureDimension(float resolution)
