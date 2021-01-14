@@ -19,7 +19,7 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="1183691646">
+		<SoundBank Id="2879190521" Language="SFX" Hash="4150054863">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -72,15 +72,35 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3831688773" Name="PlayerHit" ObjectPath="\Events\Tests\PlayerHit" DurationType="OneShot" DurationMin="0.179660" DurationMax="0.351111">
+				<Event Id="3831688773" Name="PlayerHit" ObjectPath="\Events\Tests\PlayerHit" DurationType="OneShot" DurationMin="0.179660" DurationMax="0.500000">
 					<IncludedMemoryFiles>
-						<File Id="25364946" Language="SFX">
-							<ShortName>SwitchTest\JK_SNR_01.wav</ShortName>
-							<Path>SFX\SwitchTest\JK_SNR_01_10C4C929.wem</Path>
+						<File Id="44541559" Language="SFX">
+							<ShortName>Shards\shards hit1.wav</ShortName>
+							<Path>SFX\Shards\shards hit1_10C4C929.wem</Path>
+						</File>
+						<File Id="229165378" Language="SFX">
+							<ShortName>Shards\shards hit3.wav</ShortName>
+							<Path>SFX\Shards\shards hit3_10C4C929.wem</Path>
+						</File>
+						<File Id="468032026" Language="SFX">
+							<ShortName>Shards\shards hit6.wav</ShortName>
+							<Path>SFX\Shards\shards hit6_10C4C929.wem</Path>
+						</File>
+						<File Id="709017288" Language="SFX">
+							<ShortName>Shards\shards hit2.wav</ShortName>
+							<Path>SFX\Shards\shards hit2_10C4C929.wem</Path>
+						</File>
+						<File Id="715216894" Language="SFX">
+							<ShortName>Shards\shards hit4.wav</ShortName>
+							<Path>SFX\Shards\shards hit4_10C4C929.wem</Path>
 						</File>
 						<File Id="821982476" Language="SFX">
 							<ShortName>SwitchTest\JK_PRC_05.wav</ShortName>
 							<Path>SFX\SwitchTest\JK_PRC_05_10C4C929.wem</Path>
+						</File>
+						<File Id="835120531" Language="SFX">
+							<ShortName>Shards\shards hit5.wav</ShortName>
+							<Path>SFX\Shards\shards hit5_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<SwitchContainers>
@@ -91,7 +111,12 @@
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{3A2B8A51-89F7-4E53-A5E7-4F05BB0FD04F}">
 							<Media>
-								<File Id="25364946"/>
+								<File Id="44541559"/>
+								<File Id="229165378"/>
+								<File Id="468032026"/>
+								<File Id="709017288"/>
+								<File Id="715216894"/>
+								<File Id="835120531"/>
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -157,6 +182,46 @@
 						<File Id="26955166" Language="SFX">
 							<ShortName>Main Menu Keypress.wav</ShortName>
 							<Path>SFX\Main Menu Keypress_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2951433145" Name="ShardsRise" ObjectPath="\Events\Enemies\Shards\ShardsRise" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="5.000000" DurationMax="8.500000">
+					<IncludedMemoryFiles>
+						<File Id="784850670" Language="SFX">
+							<ShortName>Shards\shards rising 3.wav</ShortName>
+							<Path>SFX\Shards\shards rising 3_10C4C929.wem</Path>
+						</File>
+						<File Id="795602171" Language="SFX">
+							<ShortName>Shards\shards rising.wav</ShortName>
+							<Path>SFX\Shards\shards rising_10C4C929.wem</Path>
+						</File>
+						<File Id="1073491051" Language="SFX">
+							<ShortName>Shards\shards rising 2.wav</ShortName>
+							<Path>SFX\Shards\shards rising 2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="617402058" Name="ShardsThrow" ObjectPath="\Events\Enemies\Shards\ShardsThrow" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="3.303560" DurationMax="5.297316">
+					<IncludedMemoryFiles>
+						<File Id="243879499" Language="SFX">
+							<ShortName>Shards\shards throw5.wav</ShortName>
+							<Path>SFX\Shards\shards throw5_10C4C929.wem</Path>
+						</File>
+						<File Id="504518702" Language="SFX">
+							<ShortName>Shards\shards throw4.wav</ShortName>
+							<Path>SFX\Shards\shards throw4_10C4C929.wem</Path>
+						</File>
+						<File Id="628974826" Language="SFX">
+							<ShortName>Shards\shards throw2.wav</ShortName>
+							<Path>SFX\Shards\shards throw2_10C4C929.wem</Path>
+						</File>
+						<File Id="648114941" Language="SFX">
+							<ShortName>Shards\shards throw1.wav</ShortName>
+							<Path>SFX\Shards\shards throw1_10C4C929.wem</Path>
+						</File>
+						<File Id="685506779" Language="SFX">
+							<ShortName>Shards\shards throw3.wav</ShortName>
+							<Path>SFX\Shards\shards throw3_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

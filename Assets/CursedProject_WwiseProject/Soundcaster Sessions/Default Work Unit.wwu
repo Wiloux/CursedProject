@@ -46,7 +46,7 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Shard" ID="{3A2B8A51-89F7-4E53-A5E7-4F05BB0FD04F}"/>
+						<CurrentSwitchRef Name="Chicken" ID="{A938E3BF-7195-4CAF-8DD8-F2B12A66A2AD}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

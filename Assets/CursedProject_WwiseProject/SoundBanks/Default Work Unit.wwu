@@ -5,11 +5,13 @@
 			<ChildrenList>
 				<SoundBank Name="ForTests" ID="{F71E0A93-E164-4F04-AF69-3E72AE63BE23}">
 					<ObjectInclusionList>
+						<ObjectRef Name="ShardsThrow" ID="{338398C4-8993-413F-9E59-9D502244B811}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayAttack2" ID="{20A101CE-2670-41D9-9766-D9EB52D0F555}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenFootsteps" ID="{377CB89E-1AD2-42D0-A801-74917BE099BA}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayHighlight" ID="{CF4A09C0-A989-449D-8511-3213A5CE61AA}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayAttack3" ID="{02BC7C02-0409-4580-AE17-63395674C15E}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="WeirdAttack" ID="{6684B1AD-88B3-471E-8C65-91C8F828D3CB}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ShardsRise" ID="{B4749122-34EF-4754-8624-049814B67E77}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TestBass" ID="{2BDF3AE9-C040-47AB-B6C2-9FD905DC8F76}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayKeypress" ID="{EE2E3C1A-40A0-487A-B481-15E994166494}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayExpDialogue" ID="{24919819-F6DB-4A72-819C-0173E6E8565C}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>

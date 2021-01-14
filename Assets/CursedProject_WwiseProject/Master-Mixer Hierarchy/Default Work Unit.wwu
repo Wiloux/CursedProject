@@ -27,7 +27,7 @@
 												<PointList>
 													<Point>
 														<XPos>0</XPos>
-														<YPos>-0</YPos>
+														<YPos>0</YPos>
 														<Flags>5</Flags>
 													</Point>
 													<Point>
@@ -41,6 +41,7 @@
 									</RTPCList>
 								</Property>
 							</PropertyList>
+							<ReferenceList/>
 						</Bus>
 					</ChildrenList>
 				</Bus>

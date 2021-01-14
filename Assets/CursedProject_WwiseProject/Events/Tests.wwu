@@ -129,10 +129,16 @@
 				</Folder>
 				<Event Name="PlayerHit" ID="{5BE8C486-7C82-4F3F-8124-CD1E0EBB35A5}">
 					<ChildrenList>
+						<Action Name="" ID="{511F0321-0F28-4732-914B-F6DFE7505479}" ShortID="812282263">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
 						<Action Name="" ID="{545C3EB3-A306-4A2E-8BB8-AEE9AF31ED9C}" ShortID="847548913">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="PlayerHit" ID="{EE8AAC62-F464-4300-9D16-C17B10524246}" WorkUnitID="{376F52A9-007C-4E6B-A4FB-9A0A8185C7AE}"/>
+									<ObjectRef Name="PlayerHit" ID="{EE8AAC62-F464-4300-9D16-C17B10524246}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

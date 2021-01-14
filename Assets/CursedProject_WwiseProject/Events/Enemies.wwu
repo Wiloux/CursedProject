@@ -51,6 +51,46 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Shards" ID="{B4D641E0-FBF5-4FF3-ADDD-3F7956FEA4AD}" ShortID="496058268">
+					<ChildrenList>
+						<Event Name="ShardsRise" ID="{B4749122-34EF-4754-8624-049814B67E77}">
+							<ChildrenList>
+								<Action Name="" ID="{708954D1-C0C6-49FA-9744-33157DAC09A1}" ShortID="447647248">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ShardsRise" ID="{DE5DDF18-6A1B-41EF-A614-AF6DECD1997F}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ShardsThrow" ID="{338398C4-8993-413F-9E59-9D502244B811}">
+							<ChildrenList>
+								<Action Name="" ID="{885040FF-E91E-4ADC-8C97-2EDC77B1BAB1}" ShortID="589787976">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ShardsRise" ID="{DE5DDF18-6A1B-41EF-A614-AF6DECD1997F}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F18C11D3-9BD6-42B6-8F56-DED0A4A22D3C}" ShortID="1030577149">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ShardsThrow" ID="{866A39A1-9DA9-46C2-8DBD-847880E077F1}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

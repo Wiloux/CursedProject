@@ -24,6 +24,8 @@ namespace AK
         static const AkUniqueID PLAYHIGHLIGHT = 145167493U;
         static const AkUniqueID PLAYHITCHICKEN = 4251718543U;
         static const AkUniqueID PLAYKEYPRESS = 1168436793U;
+        static const AkUniqueID SHARDSRISE = 2951433145U;
+        static const AkUniqueID SHARDSTHROW = 617402058U;
         static const AkUniqueID STOPEXPDIALOGUE = 1672325348U;
         static const AkUniqueID TESTBASS = 3241046308U;
         static const AkUniqueID WEIRDATTACK = 1813814736U;
