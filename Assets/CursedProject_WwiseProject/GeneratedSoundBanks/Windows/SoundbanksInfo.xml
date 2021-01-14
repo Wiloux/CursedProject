@@ -19,7 +19,7 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="4150054863">
+		<SoundBank Id="2879190521" Language="SFX" Hash="2010473059">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -72,7 +72,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3831688773" Name="PlayerHit" ObjectPath="\Events\Tests\PlayerHit" DurationType="OneShot" DurationMin="0.179660" DurationMax="0.500000">
+				<Event Id="3831688773" Name="PlayerHit" ObjectPath="\Events\Tests\PlayerHit" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.179660" DurationMax="1.500000">
 					<IncludedMemoryFiles>
 						<File Id="44541559" Language="SFX">
 							<ShortName>Shards\shards hit1.wav</ShortName>
@@ -222,6 +222,34 @@
 						<File Id="685506779" Language="SFX">
 							<ShortName>Shards\shards throw3.wav</ShortName>
 							<Path>SFX\Shards\shards throw3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3796699282" Name="ShardWallHit" ObjectPath="\Events\Enemies\Shards\ShardWallHit" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000">
+					<IncludedMemoryFiles>
+						<File Id="179151226" Language="SFX">
+							<ShortName>Shards\shard wall hit 5.wav</ShortName>
+							<Path>SFX\Shards\shard wall hit 5_10C4C929.wem</Path>
+						</File>
+						<File Id="264203001" Language="SFX">
+							<ShortName>Shards\shard wall hit 1.wav</ShortName>
+							<Path>SFX\Shards\shard wall hit 1_10C4C929.wem</Path>
+						</File>
+						<File Id="509966098" Language="SFX">
+							<ShortName>Shards\shard wall hit 3.wav</ShortName>
+							<Path>SFX\Shards\shard wall hit 3_10C4C929.wem</Path>
+						</File>
+						<File Id="792448310" Language="SFX">
+							<ShortName>Shards\shard wall hit 4.wav</ShortName>
+							<Path>SFX\Shards\shard wall hit 4_10C4C929.wem</Path>
+						</File>
+						<File Id="1003048111" Language="SFX">
+							<ShortName>Shards\shard wall hit 6.wav</ShortName>
+							<Path>SFX\Shards\shard wall hit 6_10C4C929.wem</Path>
+						</File>
+						<File Id="1064002268" Language="SFX">
+							<ShortName>Shards\shard wall hit 2.wav</ShortName>
+							<Path>SFX\Shards\shard wall hit 2_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

@@ -604,10 +604,157 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="ShardWallHit" ID="{69434EEB-27C5-4B6B-9E5F-C2F5E95D9EE8}" ShortID="11892343">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="shard wall hit 1" ID="{868CD272-CA54-472A-9673-7537E03C1D46}" ShortID="354890953">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="shard wall hit 1" ID="{AF90FAE5-6F8A-4352-831B-7DAFBE6EDDF8}">
+											<Language>SFX</Language>
+											<AudioFile>Shards\shard wall hit 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="264203001"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="shard wall hit 1" ID="{AF90FAE5-6F8A-4352-831B-7DAFBE6EDDF8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="shard wall hit 2" ID="{360B6C31-38BA-404C-BF65-D7AC5BDA83D0}" ShortID="104599429">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="shard wall hit 2" ID="{A052F15F-1BC2-4C68-A92B-C9B42DC4F50A}">
+											<Language>SFX</Language>
+											<AudioFile>Shards\shard wall hit 2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1064002268"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="shard wall hit 2" ID="{A052F15F-1BC2-4C68-A92B-C9B42DC4F50A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="shard wall hit 3" ID="{E0A62AFF-15AB-4807-99AE-B07BB06AC321}" ShortID="19416634">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="shard wall hit 3" ID="{A1C4BC3A-09AD-41F0-B1C7-9BC299E345E9}">
+											<Language>SFX</Language>
+											<AudioFile>Shards\shard wall hit 3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="509966098"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="shard wall hit 3" ID="{A1C4BC3A-09AD-41F0-B1C7-9BC299E345E9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="shard wall hit 4" ID="{F6D6BDBE-91F3-4FB0-91CB-886D068129C9}" ShortID="369458491">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="shard wall hit 4" ID="{9AAFC888-C7F8-4C49-8A7F-51F17E01F5D4}">
+											<Language>SFX</Language>
+											<AudioFile>Shards\shard wall hit 4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="792448310"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="shard wall hit 4" ID="{9AAFC888-C7F8-4C49-8A7F-51F17E01F5D4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="shard wall hit 5" ID="{ADD1197B-0271-41DD-92F7-8E34673E0D64}" ShortID="917806803">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="shard wall hit 5" ID="{2A70B3B8-68F3-4D63-8397-2CE4E4DCBFA4}">
+											<Language>SFX</Language>
+											<AudioFile>Shards\shard wall hit 5.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="179151226"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="shard wall hit 5" ID="{2A70B3B8-68F3-4D63-8397-2CE4E4DCBFA4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="shard wall hit 6" ID="{4949D4B4-6BE1-4DF8-BF7B-A041756C2C5D}" ShortID="750679193">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="shard wall hit 6" ID="{54D98D39-8877-40D1-A5BB-4B7B6FF392DB}">
+											<Language>SFX</Language>
+											<AudioFile>Shards\shard wall hit 6.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1003048111"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="shard wall hit 6" ID="{54D98D39-8877-40D1-A5BB-4B7B6FF392DB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
 				<SwitchContainer Name="PlayerHit" ID="{EE8AAC62-F464-4300-9D16-C17B10524246}" ShortID="493833246">
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
 						</Reference>

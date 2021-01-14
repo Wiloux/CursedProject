@@ -14,6 +14,7 @@
 						<ObjectRef Name="ShardsRise" ID="{B4749122-34EF-4754-8624-049814B67E77}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TestBass" ID="{2BDF3AE9-C040-47AB-B6C2-9FD905DC8F76}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayKeypress" ID="{EE2E3C1A-40A0-487A-B481-15E994166494}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ShardWallHit" ID="{B6FA27F7-C0CF-48D6-92BA-20AE1166934E}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayExpDialogue" ID="{24919819-F6DB-4A72-819C-0173E6E8565C}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayHitChicken" ID="{0888F6E2-E055-4B00-B2AE-2C045D7C5B2B}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayBackstab" ID="{9982C33B-092F-4BF3-8E8E-17921D652E90}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>

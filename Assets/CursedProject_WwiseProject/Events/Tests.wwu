@@ -129,12 +129,6 @@
 				</Folder>
 				<Event Name="PlayerHit" ID="{5BE8C486-7C82-4F3F-8124-CD1E0EBB35A5}">
 					<ChildrenList>
-						<Action Name="" ID="{511F0321-0F28-4732-914B-F6DFE7505479}" ShortID="812282263">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList/>
-						</Action>
 						<Action Name="" ID="{545C3EB3-A306-4A2E-8BB8-AEE9AF31ED9C}" ShortID="847548913">
 							<ReferenceList>
 								<Reference Name="Target">

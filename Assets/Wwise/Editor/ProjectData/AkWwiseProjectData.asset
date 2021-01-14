@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585909517753992794
+    m_lastTime: -8585909448950851748
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -88,7 +88,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585909517754192259
+    m_lastTime: -8585909448951150652
     List: []
   - PhysicalPath: Events\Enemies.wwu
     PathAndIcons:
@@ -97,7 +97,7 @@ MonoBehaviour:
     ParentPath: Enemies
     guid: 7833dd357f5437458dde67e4bfd1d3f1
     GuidInternal: 
-    m_lastTime: -8585909511034190065
+    m_lastTime: -8585909448951081149
     List:
     - name: Chicken
       guid: b95c606dc42a5947bea9f0e934524f5d
@@ -207,6 +207,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: ShardWallHit
+      guid: f727fab6cfc0d64892ba20ae1166934e
+      id: 3796699282
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Shards
+        ObjectType: 4
+      - ElementName: ShardWallHit
+        ObjectType: 3
+      Path: Enemies\Shards\ShardWallHit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Tests.wwu
     PathAndIcons:
     - ElementName: Tests
@@ -214,7 +228,7 @@ MonoBehaviour:
     ParentPath: Tests
     guid: 7e1e99e9ec97634b9be4486f5e454591
     GuidInternal: 
-    m_lastTime: -8585909511034020962
+    m_lastTime: -8585909448555206859
     List:
     - name: Chicken
       guid: 90bf0756f07b41458e68dd708f9190ce
@@ -467,6 +481,7 @@ MonoBehaviour:
   - /CursedProject_WwiseProject/Events
   - /CursedProject_WwiseProject/Events/Enemies
   - /CursedProject_WwiseProject/Events/Enemies/Chicken
+  - /CursedProject_WwiseProject/Events/Enemies/Shards
   - /CursedProject_WwiseProject/Events/Tests
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
