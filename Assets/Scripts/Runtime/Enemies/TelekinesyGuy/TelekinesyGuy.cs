@@ -70,7 +70,7 @@ public class TelekinesyGuy : EnemyBase
 
 
         GameObject go = Instantiate(projectilePrefab, spikeSpawnPos, spikeSpawnRot);
-        Spike spike = go.GetComponent<Spike>();
+        Shard spike = go.GetComponent<Shard>();
         spike.enemy = this;
     }
 }

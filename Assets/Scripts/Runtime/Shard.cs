@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spike : MonoBehaviour
+public class Shard : MonoBehaviour
 {
     private new Collider collider;
     private Rigidbody rb;
@@ -12,6 +12,9 @@ public class Spike : MonoBehaviour
     private bool isThrowed;
     public float preparationDuration;
     private float preparationTimer;
+
+    [Header("Wwise Events")]
+    [SerializeField] private AK.Wwise.Event hitWall;
 
     Vector3 spawnPos;
     Quaternion spawnRot;
@@ -93,7 +96,7 @@ public class Spike : MonoBehaviour
             else { /* simple damage on player */}
 
         }
-        else if (!other.transform.CompareTag("Enemy")) { Destroy(gameObject); }
+        else if (!other.transform.CompareTag("Enemy")) { Destroy(gameObject); hitWall?.Post(gameObject); }
     }
 
     private void OnDestroy()
