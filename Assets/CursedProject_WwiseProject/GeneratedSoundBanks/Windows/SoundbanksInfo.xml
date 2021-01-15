@@ -19,7 +19,7 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="2010473059">
+		<SoundBank Id="2879190521" Language="SFX" Hash="2542427445">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -52,6 +52,14 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1470550983" Name="PlayChickenChasing" ObjectPath="\Events\Default Work Unit\PlayChickenChasing" DurationType="OneShot" DurationMin="1.393379" DurationMax="1.393379">
+					<IncludedMemoryFiles>
+						<File Id="516819807" Language="SFX">
+							<ShortName>Chicken\Vocal\chasing1.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\chasing1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="196258217" Name="PlayChickenFootsteps" ObjectPath="\Events\Enemies\Chicken\PlayChickenFootsteps" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.485766" DurationMax="0.514651">
 					<IncludedMemoryFiles>
 						<File Id="134553406" Language="SFX">
@@ -69,6 +77,14 @@
 						<File Id="864817520" Language="SFX">
 							<ShortName>Chicken\Footstep\chicken fs3.wav</ShortName>
 							<Path>SFX\Chicken\Footstep\chicken fs3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1378272331" Name="PlayChickenWatching" ObjectPath="\Events\Enemies\Chicken\PlayChickenWatching" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="1.406757" DurationMax="1.406757">
+					<IncludedMemoryFiles>
+						<File Id="695167136" Language="SFX">
+							<ShortName>Chicken\Vocal\watching1.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\watching1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

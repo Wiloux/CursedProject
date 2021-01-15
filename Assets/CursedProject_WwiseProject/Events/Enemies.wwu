@@ -49,6 +49,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="PlayChickenWatching" ID="{8E4C7547-3554-4CBB-B24B-C93BEEFB76B9}">
+							<ChildrenList>
+								<Action Name="" ID="{2C55667E-8E47-4879-8581-36F52FCA30BB}" ShortID="536850212">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Watching" ID="{D4C67B7B-3D77-4303-B7B6-2FFAADC4229B}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Shards" ID="{B4D641E0-FBF5-4FF3-ADDD-3F7956FEA4AD}" ShortID="496058268">

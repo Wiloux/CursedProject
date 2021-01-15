@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585909153994503444
+    m_lastTime: -8585908633580769446
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -88,8 +88,20 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585909448951150652
-    List: []
+    m_lastTime: -8585908633584323879
+    List:
+    - name: PlayChickenChasing
+      guid: 6ce48a107b3fdb4d910500fb2fc4e86b
+      id: 1470550983
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlayChickenChasing
+        ObjectType: 3
+      Path: Default Work Unit\PlayChickenChasing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Enemies.wwu
     PathAndIcons:
     - ElementName: Enemies
@@ -97,7 +109,7 @@ MonoBehaviour:
     ParentPath: Enemies
     guid: 7833dd357f5437458dde67e4bfd1d3f1
     GuidInternal: 
-    m_lastTime: -8585909153996887192
+    m_lastTime: -8585908638574610373
     List:
     - name: Chicken
       guid: b95c606dc42a5947bea9f0e934524f5d
@@ -164,6 +176,20 @@ MonoBehaviour:
       - ElementName: PlayChickenFootsteps
         ObjectType: 3
       Path: Enemies\Chicken\PlayChickenFootsteps
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayChickenWatching
+      guid: 47754c8e5435bb4cb24bc93beefb76b9
+      id: 1378272331
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: PlayChickenWatching
+        ObjectType: 3
+      Path: Enemies\Chicken\PlayChickenWatching
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -479,8 +505,6 @@ MonoBehaviour:
   ExpandedItems:
   - /CursedProject_WwiseProject
   - /CursedProject_WwiseProject/Events
-  - /CursedProject_WwiseProject/Events/Enemies
-  - /CursedProject_WwiseProject/Events/Enemies/Chicken
-  - /CursedProject_WwiseProject/Events/Enemies/Shards
+  - /CursedProject_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

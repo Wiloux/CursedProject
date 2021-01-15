@@ -16,7 +16,9 @@ namespace AK
         static const AkUniqueID PLAYATTACK2 = 204688551U;
         static const AkUniqueID PLAYATTACK3 = 204688550U;
         static const AkUniqueID PLAYBACKSTAB = 2629272678U;
+        static const AkUniqueID PLAYCHICKENCHASING = 1470550983U;
         static const AkUniqueID PLAYCHICKENFOOTSTEPS = 196258217U;
+        static const AkUniqueID PLAYCHICKENWATCHING = 1378272331U;
         static const AkUniqueID PLAYERHIT = 3831688773U;
         static const AkUniqueID PLAYEXPDIALOGUE = 1701780106U;
         static const AkUniqueID PLAYFSCHICKEN = 4106886787U;

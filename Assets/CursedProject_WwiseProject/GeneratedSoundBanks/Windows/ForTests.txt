@@ -5,6 +5,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	204688551	PlayAttack2			\Enemies\Chicken\PlayAttack2	
 	617402058	ShardsThrow			\Enemies\Shards\ShardsThrow	
 	1168436793	PlayKeypress			\Tests\Menu\PlayKeypress	
+	1378272331	PlayChickenWatching			\Enemies\Chicken\PlayChickenWatching	
+	1470550983	PlayChickenChasing			\Default Work Unit\PlayChickenChasing	
 	1672325348	StopExpDialogue			\Tests\DialogueExp\StopExpDialogue	
 	1701780106	PlayExpDialogue			\Tests\DialogueExp\PlayExpDialogue	
 	1813814736	WeirdAttack			\Tests\Chicken\WeirdAttack	
@@ -41,10 +43,12 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	479465834	chase bass	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\chase bass_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\X\chase bass\chase bass		4498264
 	504518702	shards throw4	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shards throw4_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Shards\ShardsThrow\shards throw4		617464
 	509966098	shard wall hit 3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shard wall hit 3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Shards\ShardWallHit\shard wall hit 3		264664
+	516819807	chasing1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\chasing1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Chasing\chasing1		245856
 	615928074	chicken fs1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Footstep\chicken fs1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\ChickenFootsteps\chicken fs1		88264
 	628974826	shards throw2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shards throw2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Shards\ShardsThrow\shards throw2		793864
 	648114941	shards throw1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shards throw1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Shards\ShardsThrow\shards throw1		705664
 	685506779	shards throw3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shards throw3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Shards\ShardsThrow\shards throw3		617464
+	695167136	watching1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\watching1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Watching\watching1		248216
 	697333511	Main Menu Highlight	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Main Menu Highlight_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Menu\Main Menu Highlight		47032
 	709017288	shards hit2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shards hit2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\PlayerHit\PlayerHitShard\shards hit2		176464
 	711640135	voe board 3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\voe board 3_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\ExpDialogue\ExpDialogue\voe board 3		793864

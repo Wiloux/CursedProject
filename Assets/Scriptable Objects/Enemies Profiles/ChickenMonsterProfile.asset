@@ -34,16 +34,16 @@ MonoBehaviour:
   chaseWEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 3254eeac34597c7439e5cd29de6daa68, type: 2}
   runWEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d04943c8a1f7bc540974892373969c72, type: 2}
+    WwiseObjectReference: {fileID: 0}
   timeToPostRunEvent: 2
   watchWEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: f0a61a1d18cefca498e19d833f22158e, type: 2}
   getHitWEvent:
     idInternal: 0
     valueGuidInternal: 

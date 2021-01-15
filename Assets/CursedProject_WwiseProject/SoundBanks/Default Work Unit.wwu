@@ -18,7 +18,9 @@
 						<ObjectRef Name="PlayExpDialogue" ID="{24919819-F6DB-4A72-819C-0173E6E8565C}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayHitChicken" ID="{0888F6E2-E055-4B00-B2AE-2C045D7C5B2B}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayBackstab" ID="{9982C33B-092F-4BF3-8E8E-17921D652E90}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayChickenWatching" ID="{8E4C7547-3554-4CBB-B24B-C93BEEFB76B9}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="StopExpDialogue" ID="{21C83AE9-81ED-4D35-8601-723FE3B7377B}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayChickenChasing" ID="{108AE46C-3F7B-4DDB-9105-00FB2FC4E86B}" WorkUnitID="{CB632102-A8C5-4EBC-80A7-4D3B369C93CA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayGiggleChicken" ID="{9CB0E16E-B2A0-4E69-80F2-1AD854124C64}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayFSChicken" ID="{2244B6BA-6555-4F2C-8FFC-F9C95CBDE82D}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayerHit" ID="{5BE8C486-7C82-4F3F-8124-CD1E0EBB35A5}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
