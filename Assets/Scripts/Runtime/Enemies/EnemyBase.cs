@@ -170,6 +170,7 @@ public class EnemyBase : MonoBehaviour
                         if (isPlayerVisible(detectionRange))
                         {
                             detected = true; // The enemy needs to detect the player
+                            Invoke(nameof(PlayChaseWEvent), 0.5f);
                             //Debug.Log("Player is detected");
                         }
                     }
@@ -361,6 +362,7 @@ public class EnemyBase : MonoBehaviour
 
     }
     public void PlayRunWEvent() { runWEvent?.Post(gameObject); }
+    public void PlayChaseWEvent() { chaseWEvent?.Post(gameObject); }
 
     #region Agent methods
     protected void EnableAgent() { agent.isStopped = false; }
