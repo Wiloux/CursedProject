@@ -41,12 +41,12 @@ public class GameHandler : MonoBehaviour
             {
                 case "Enemy":
                     EnemyBase enemy = go.GetComponent<EnemyBase>();
-                    if(enemy != null){EnemyHelper.Pause(enemy);}
+                    if(enemy != null){EnemyHelper.TogglePause(enemy);}
                     else{
                         for(int i = 0; i < go.transform.childCount;i ++)
                         {
                             enemy = go.transform.GetChild(i).GetComponent<EnemyBase>();
-                            if(enemy != null) { EnemyHelper.Pause(enemy); }
+                            if(enemy != null) { EnemyHelper.TogglePause(enemy); }
                         }
                     }
                     break;

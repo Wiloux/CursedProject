@@ -8,6 +8,8 @@ public class EnemyBase : MonoBehaviour
 {
     [Header("Nav Vars")]
     public UnityEngine.AI.NavMeshAgent agent;
+    public bool wasAgentStopped;
+    public Vector3 wasAgentDestination;
     [SerializeField] private LayerMask navMeshMask;
 
     [Space]
