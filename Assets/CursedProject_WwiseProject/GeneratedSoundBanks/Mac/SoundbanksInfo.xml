@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="652813001">
+		<SoundBank Id="1355168291" Language="SFX" Hash="3044373309">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -19,7 +19,7 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="2196946191">
+		<SoundBank Id="2879190521" Language="SFX" Hash="1843574717">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -117,6 +117,70 @@
 						<File Id="864817520" Language="SFX">
 							<ShortName>Chicken\Footstep\chicken fs3.wav</ShortName>
 							<Path>SFX\Chicken\Footstep\chicken fs3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2039287504" Name="PlayChickenOnSpawn" ObjectPath="\Events\Enemies\Chicken\PlayChickenOnSpawn" MaxAttenuation="30.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="1876340" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\EagerFinal1.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\EagerFinal1_10C4C929.wem</Path>
+						</File>
+						<File Id="15091794" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\EagerFinal3.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\EagerFinal3_10C4C929.wem</Path>
+						</File>
+						<File Id="25723946" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\Eager5.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\Eager5_10C4C929.wem</Path>
+						</File>
+						<File Id="230421140" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\Eager10.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\Eager10_10C4C929.wem</Path>
+						</File>
+						<File Id="234818940" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\Eager4.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\Eager4_10C4C929.wem</Path>
+						</File>
+						<File Id="290978038" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\Eager3.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\Eager3_10C4C929.wem</Path>
+						</File>
+						<File Id="436521656" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\Eager12.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\Eager12_10C4C929.wem</Path>
+						</File>
+						<File Id="476393637" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\Eager7.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\Eager7_10C4C929.wem</Path>
+						</File>
+						<File Id="562183493" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\Eager11.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\Eager11_10C4C929.wem</Path>
+						</File>
+						<File Id="697692854" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\Eager9.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\Eager9_10C4C929.wem</Path>
+						</File>
+						<File Id="701243151" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\EagerFinal2.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\EagerFinal2_10C4C929.wem</Path>
+						</File>
+						<File Id="831035638" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\Eager1.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\Eager1_10C4C929.wem</Path>
+						</File>
+						<File Id="895691896" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\Eager2.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\Eager2_10C4C929.wem</Path>
+						</File>
+						<File Id="1023437812" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\Eager6.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\Eager6_10C4C929.wem</Path>
+						</File>
+						<File Id="1037537274" Language="SFX">
+							<ShortName>Chicken\Vocal\Eager\Eager8.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Eager\Eager8_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

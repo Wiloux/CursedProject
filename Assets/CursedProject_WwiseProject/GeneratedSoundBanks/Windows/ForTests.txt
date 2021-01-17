@@ -10,6 +10,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1672325348	StopExpDialogue			\Tests\DialogueExp\StopExpDialogue	
 	1701780106	PlayExpDialogue			\Tests\DialogueExp\PlayExpDialogue	
 	1813814736	WeirdAttack			\Tests\Chicken\WeirdAttack	
+	2039287504	PlayChickenOnSpawn			\Enemies\Chicken\PlayChickenOnSpawn	
 	2613825061	PlayGiggleChicken			\Tests\Chicken\PlayGiggleChicken	
 	2629272678	PlayBackstab			\Enemies\Chicken\PlayBackstab	
 	2892866942	PlayChickenDie			\Enemies\Chicken\PlayChickenDie	
@@ -27,6 +28,11 @@ Switch Group	ID	Name			Wwise Object Path	Notes
 Switch	ID	Name	Switch Group			Notes
 	2986888339	Shard	PlayerHitSwitch			
 	4251222990	Chicken	PlayerHitSwitch			
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	507627291	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\EagerOnSpawn\EagerMiddle_01\Silence\Wwise Silence	
+	986362522	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\EagerOnSpawn\EagerMiddle\Silence\Wwise Silence	
+	1025034814	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\EagerOnSpawn\FinalSilence\Wwise Silence	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	1876340	EagerFinal1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\Eager\EagerFinal1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\Eager\EagerEnd\EagerFinal1		298760

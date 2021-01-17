@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5cf24529c5ae0c4fb7d461ec6430a707
     GuidInternal: 
-    m_lastTime: -8585907931439894179
+    m_lastTime: -8585906823873503521
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585906844372276450
+    m_lastTime: -8585906830239459062
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -88,7 +88,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585906844376096236
+    m_lastTime: -8585906833966676973
     List: []
   - PhysicalPath: Events\Enemies.wwu
     PathAndIcons:
@@ -97,7 +97,7 @@ MonoBehaviour:
     ParentPath: Enemies
     guid: 7833dd357f5437458dde67e4bfd1d3f1
     GuidInternal: 
-    m_lastTime: -8585906844376086258
+    m_lastTime: -8585906828419770711
     List:
     - name: Chicken
       guid: b95c606dc42a5947bea9f0e934524f5d
@@ -192,6 +192,20 @@ MonoBehaviour:
       - ElementName: PlayChickenFootsteps
         ObjectType: 3
       Path: Enemies\Chicken\PlayChickenFootsteps
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayChickenOnSpawn
+      guid: da82a608b487924283b3291cf26245ba
+      id: 2039287504
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: PlayChickenOnSpawn
+        ObjectType: 3
+      Path: Enemies\Chicken\PlayChickenOnSpawn
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -535,5 +549,7 @@ MonoBehaviour:
   ExpandedItems:
   - /CursedProject_WwiseProject
   - /CursedProject_WwiseProject/Events
+  - /CursedProject_WwiseProject/Events/Enemies
+  - /CursedProject_WwiseProject/Events/Enemies/Chicken
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

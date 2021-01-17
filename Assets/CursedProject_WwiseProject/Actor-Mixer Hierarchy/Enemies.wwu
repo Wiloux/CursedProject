@@ -1210,6 +1210,1109 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="EagerOnSpawn" ID="{A7218750-54A7-46A3-B89E-20A95D0D91C8}" ShortID="92452478">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<RandomSequenceContainer Name="EagerStart" ID="{A6D5D2B0-7EF0-4AD9-9E7E-0CFD9C0B6F87}" ShortID="336477465">
+											<PropertyList>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{6F5C46F5-923B-4D63-9E16-B606E4052B3A}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="100"/>
+																	<Property Name="Min" Type="Real64" Value="-100"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Eager6" ID="{677CA857-25A6-4BA5-B27B-8DE9456DAF62}" ShortID="845330470">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager6" ID="{0301A216-6804-4423-8156-70E549E00076}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager6.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1023437812"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager6" ID="{0301A216-6804-4423-8156-70E549E00076}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager12" ID="{E4BF8910-FB94-4865-810E-55AA85B1AEF2}" ShortID="309860259">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager12" ID="{1850A797-BA11-4D1A-9031-57FDB5442BA2}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager12.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="436521656"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager12" ID="{1850A797-BA11-4D1A-9031-57FDB5442BA2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager1" ID="{A827B24D-B488-48D1-90BA-FAF69544DB78}" ShortID="395754638">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager1" ID="{CE403642-C9E3-44EF-8306-B1DBE07443C5}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="831035638"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager1" ID="{CE403642-C9E3-44EF-8306-B1DBE07443C5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager5" ID="{604DD7E1-F872-46E8-BD9D-75EF7DA294D4}" ShortID="601896334">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager5" ID="{985BC88C-7F0C-4D63-B945-132963FD61BC}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager5.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="25723946"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager5" ID="{985BC88C-7F0C-4D63-B945-132963FD61BC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager11" ID="{C0DEB6EC-08F2-4F75-A5EA-FA83857FFE93}" ShortID="983802310">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager11" ID="{A84BD44E-9E35-42C0-BEAC-82D1869022A9}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager11.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="562183493"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager11" ID="{A84BD44E-9E35-42C0-BEAC-82D1869022A9}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager3" ID="{C4582AD0-C223-4B87-A515-A41F0C1A3727}" ShortID="633630385">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager3" ID="{A294B896-491D-49D6-A2CA-9CD233A7A638}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="290978038"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager3" ID="{A294B896-491D-49D6-A2CA-9CD233A7A638}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager9" ID="{53F6A5FD-B72C-4814-B145-F374AC11121B}" ShortID="327695974">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager9" ID="{F1E02262-4FFB-4B54-9FD4-E5A83F8D3BD5}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager9.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="697692854"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager9" ID="{F1E02262-4FFB-4B54-9FD4-E5A83F8D3BD5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager4" ID="{EC44489B-D28D-4A55-933F-9A3A61AF9A9A}" ShortID="495283855">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager4" ID="{CC561F03-F800-4556-A59E-52B42D4E7790}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager4.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="234818940"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager4" ID="{CC561F03-F800-4556-A59E-52B42D4E7790}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager8" ID="{B192F2BF-0BDB-41FF-B74A-054B771DA843}" ShortID="306894601">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager8" ID="{FD3BD587-15BF-482F-81AF-CFCD7D06E97A}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager8.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1037537274"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager8" ID="{FD3BD587-15BF-482F-81AF-CFCD7D06E97A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager2" ID="{2E719EEC-0E0C-43AE-9AD5-41335D856B4F}" ShortID="30078960">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager2" ID="{ACF4AB61-3D9E-4C26-934D-FDB2176F905B}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="895691896"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager2" ID="{ACF4AB61-3D9E-4C26-934D-FDB2176F905B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager10" ID="{7272546D-0F38-4378-B5FF-7B8394460204}" ShortID="152567155">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager10" ID="{E087B94F-A990-49F0-9463-152006A4701F}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager10.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="230421140"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager10" ID="{E087B94F-A990-49F0-9463-152006A4701F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager7" ID="{56F5E4FE-C2CF-45D3-83AE-1CC8FABF67C0}" ShortID="80115307">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager7" ID="{2CFEFEC7-4EB4-49EF-9ABA-4EFA1EBD743B}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager7.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="476393637"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager7" ID="{2CFEFEC7-4EB4-49EF-9ABA-4EFA1EBD743B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="EagerEnd" ID="{B867936F-DD72-4DF9-8B2A-D234B2DACB77}" ShortID="662535387">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{D6FA4B02-391B-4B40-A939-500750382FEA}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="100"/>
+																	<Property Name="Min" Type="Real64" Value="-100"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="EagerFinal1" ID="{C2854806-1449-46E3-B575-B97FED607E87}" ShortID="622004959">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="EagerFinal1" ID="{F8CF45FC-79C3-4647-B6D8-C2979B20A199}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\EagerFinal1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1876340"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="EagerFinal1" ID="{F8CF45FC-79C3-4647-B6D8-C2979B20A199}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="EagerFinal2" ID="{E32EF762-F863-4043-A40C-9760EFC0AEEB}" ShortID="339900076">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="EagerFinal2" ID="{18C295D3-90E0-46D2-9010-725DD6DF0583}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\EagerFinal2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="701243151"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="EagerFinal2" ID="{18C295D3-90E0-46D2-9010-725DD6DF0583}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="EagerFinal3" ID="{18493614-3F55-4CCC-8BE2-E0202354E052}" ShortID="616976846">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="EagerFinal3" ID="{0EA8E849-72F4-4B81-B52A-CCD66B3F55BC}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\EagerFinal3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="15091794"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="EagerFinal3" ID="{0EA8E849-72F4-4B81-B52A-CCD66B3F55BC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="EagerMiddle" ID="{2D17430B-F0C8-41DD-9323-75C7EF68B368}" ShortID="374033762">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="EagerStart" ID="{1D808DDA-67D5-40DB-A23D-09762DF558BD}" ShortID="670665327">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="2"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{CC18D6A4-B1E5-4959-8F82-457EEAC0EBE7}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="100"/>
+																			<Property Name="Min" Type="Real64" Value="-100"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Eager6" ID="{EF91778F-53B2-4087-ABA4-0597A7D62559}" ShortID="26648040">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager6" ID="{70896235-4DB2-4074-AA5E-5B895A262845}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager6.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1023437812"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager6" ID="{70896235-4DB2-4074-AA5E-5B895A262845}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager12" ID="{92B53C5D-2122-4392-9E4D-05373CAE8DC1}" ShortID="630906269">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager12" ID="{191D3677-464E-448C-82E9-0FE0BF37CAFD}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager12.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="436521656"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager12" ID="{191D3677-464E-448C-82E9-0FE0BF37CAFD}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager1" ID="{99CC60AA-DE7D-46DE-9DEC-1E2FCE550813}" ShortID="224061392">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager1" ID="{C9D3322E-FFF1-45E2-AC00-46197C1BBF72}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="831035638"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager1" ID="{C9D3322E-FFF1-45E2-AC00-46197C1BBF72}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager5" ID="{2B079D31-BE30-422D-A6D9-CA94FA09DC4C}" ShortID="559055379">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager5" ID="{70EE633C-EF18-42B3-9361-4DCD6E55D0A3}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager5.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="25723946"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager5" ID="{70EE633C-EF18-42B3-9361-4DCD6E55D0A3}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager11" ID="{6FB8BCDB-F10E-4F99-BD42-102AAC1A23BC}" ShortID="1009434475">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager11" ID="{9B6BC899-8C7A-4AD1-B88F-E76A5530BD2B}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager11.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="562183493"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager11" ID="{9B6BC899-8C7A-4AD1-B88F-E76A5530BD2B}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager3" ID="{DE92891E-641C-47D0-996B-5A776B1297E2}" ShortID="76627238">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager3" ID="{BFD1D73D-DB92-408D-B478-6FB1FA023155}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager3.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="290978038"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager3" ID="{BFD1D73D-DB92-408D-B478-6FB1FA023155}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager9" ID="{F9353693-D98A-467A-9CF5-25F1DD653637}" ShortID="759715324">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager9" ID="{7CDC3ED5-E88A-4BBC-BE52-5269D838DDA1}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager9.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="697692854"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager9" ID="{7CDC3ED5-E88A-4BBC-BE52-5269D838DDA1}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager4" ID="{0BCDD803-62B3-4C10-84D2-98B12A044E56}" ShortID="407104509">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager4" ID="{79D5112B-22A9-49DA-88D1-E213FC314A7C}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager4.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="234818940"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager4" ID="{79D5112B-22A9-49DA-88D1-E213FC314A7C}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager8" ID="{F3A30786-75E7-4059-87FD-32174D4C86F1}" ShortID="641513140">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager8" ID="{03D38427-FB02-464E-817D-E678713EA2A1}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager8.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1037537274"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager8" ID="{03D38427-FB02-464E-817D-E678713EA2A1}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager2" ID="{41BF8E39-F62D-444A-B4AE-3839D5784A0A}" ShortID="515332681">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager2" ID="{280862A0-32C4-4C4C-99B1-2020FDDB9EE7}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="895691896"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager2" ID="{280862A0-32C4-4C4C-99B1-2020FDDB9EE7}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager10" ID="{53E4C9AC-E166-4E33-B30E-30717B258301}" ShortID="436512963">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager10" ID="{9B76A187-707B-49EA-8553-A2C827D5AB7A}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager10.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="230421140"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager10" ID="{9B76A187-707B-49EA-8553-A2C827D5AB7A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager7" ID="{7D54A7F5-22E6-4EEA-B663-9D7DB9E00E32}" ShortID="1042850709">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager7" ID="{D6B1CB60-A2F5-4F22-A0B8-4FD54CBA359A}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager7.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="476393637"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager7" ID="{D6B1CB60-A2F5-4F22-A0B8-4FD54CBA359A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<Sound Name="Silence" ID="{2431CA51-B4B6-4851-831D-721AEF58E8E4}" ShortID="619607795">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<SourcePlugin Name="Wwise Silence" ID="{F198B34A-4093-4E62-8852-7B3AE0752396}" ShortID="986362522" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+															<PropertyList>
+																<Property Name="Length" Type="Real32" Value="0.1"/>
+															</PropertyList>
+															<Language>SFX</Language>
+														</SourcePlugin>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Wwise Silence" ID="{F198B34A-4093-4E62-8852-7B3AE0752396}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="EagerMiddle_01" ID="{FDE24935-0F74-4307-83B3-933D002571CF}" ShortID="811578846">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="EagerStart" ID="{9621CE91-0C8E-439A-B08B-D60F0F261F7D}" ShortID="846008334">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="2"/>
+														<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{5C8F4FF5-DDFF-426D-A192-A3070D287FDA}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="100"/>
+																			<Property Name="Min" Type="Real64" Value="-100"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="Eager6" ID="{18697B7A-C2BA-4F51-90D9-97DD0DD3F518}" ShortID="405559028">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager6" ID="{245B6BAE-4B7C-422F-BE8E-BE512D0DB6BE}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager6.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1023437812"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager6" ID="{245B6BAE-4B7C-422F-BE8E-BE512D0DB6BE}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager12" ID="{F75722B8-0757-4210-884A-4024604A340B}" ShortID="428781560">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager12" ID="{4D0AD027-CA93-4FB2-9FF1-CA05B2B23FDA}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager12.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="436521656"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager12" ID="{4D0AD027-CA93-4FB2-9FF1-CA05B2B23FDA}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager1" ID="{2C21DB28-80DD-4C45-92EE-B7E13D59EA63}" ShortID="574281016">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager1" ID="{FF632D9C-22BF-49F4-B05D-7CF5F90FB78A}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="831035638"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager1" ID="{FF632D9C-22BF-49F4-B05D-7CF5F90FB78A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager5" ID="{E5D2CF69-28D9-4C2C-83F4-376EA12A842A}" ShortID="747377582">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager5" ID="{F0AA82F4-381D-465E-AF51-36768D461E80}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager5.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="25723946"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager5" ID="{F0AA82F4-381D-465E-AF51-36768D461E80}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager11" ID="{A3CD608E-B933-4250-B472-D80E59CC6EE3}" ShortID="313181291">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager11" ID="{193174B4-65CE-477F-B470-C5A5789CB7BF}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager11.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="562183493"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager11" ID="{193174B4-65CE-477F-B470-C5A5789CB7BF}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager3" ID="{C9D06BDE-6CEB-428E-95DA-FFF56729E25F}" ShortID="724997370">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager3" ID="{B5139C8C-E224-4578-825A-A7099E781FD4}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager3.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="290978038"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager3" ID="{B5139C8C-E224-4578-825A-A7099E781FD4}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager9" ID="{87334735-71AA-4B38-AEB7-9D93EB5A4FD0}" ShortID="895786335">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager9" ID="{DEA90E8C-06E6-4DDE-B7CB-220D517DCB5A}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager9.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="697692854"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager9" ID="{DEA90E8C-06E6-4DDE-B7CB-220D517DCB5A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager4" ID="{E383FF33-34B1-41A5-8747-0AD6B4B1F91B}" ShortID="886592569">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager4" ID="{1F2E1F09-9605-4ECB-A739-722A4BB1B0F1}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager4.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="234818940"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager4" ID="{1F2E1F09-9605-4ECB-A739-722A4BB1B0F1}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager8" ID="{191C824C-2AF0-411E-85FA-428037331227}" ShortID="576169976">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager8" ID="{B1E4802A-3B4A-43C4-AB59-97E450281B66}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager8.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1037537274"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager8" ID="{B1E4802A-3B4A-43C4-AB59-97E450281B66}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager2" ID="{8C04EB46-A92A-4E52-8665-B026F0D1590F}" ShortID="697719192">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager2" ID="{DF1C1F74-3F9B-40D6-88E3-74DF6303CABE}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="895691896"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager2" ID="{DF1C1F74-3F9B-40D6-88E3-74DF6303CABE}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager10" ID="{9688B331-68B9-413C-9C92-115C2AE7F7DC}" ShortID="181095347">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager10" ID="{D47FB0BA-76D7-4ED5-9261-52CFFC5017EA}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager10.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="230421140"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager10" ID="{D47FB0BA-76D7-4ED5-9261-52CFFC5017EA}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="Eager7" ID="{32ED58C9-F7BC-4DF0-A7D9-9D4D4ACB81D0}" ShortID="1031876962">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="Eager7" ID="{CFA8F409-91E6-4E8F-A9B8-222C5E429EF0}">
+																	<Language>SFX</Language>
+																	<AudioFile>Chicken\Vocal\Eager\Eager7.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="476393637"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="Eager7" ID="{CFA8F409-91E6-4E8F-A9B8-222C5E429EF0}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<Sound Name="Silence" ID="{645C718C-6ECB-47CB-AE90-7BB10517F22D}" ShortID="924669010">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<SourcePlugin Name="Wwise Silence" ID="{12630B65-2D57-43FE-BB9E-6C65455CE78E}" ShortID="507627291" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+															<PropertyList>
+																<Property Name="Length" Type="Real32" Value="0.1"/>
+															</PropertyList>
+															<Language>SFX</Language>
+														</SourcePlugin>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Wwise Silence" ID="{12630B65-2D57-43FE-BB9E-6C65455CE78E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<Sound Name="FinalSilence" ID="{4C544065-185F-4DA5-AD72-579F084C64E3}" ShortID="80564844">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<SourcePlugin Name="Wwise Silence" ID="{05125699-FA1E-40DC-ADDB-C6F453EB26A8}" ShortID="1025034814" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+													<PropertyList>
+														<Property Name="LengthMax" Type="Real32" Value="0.5"/>
+														<Property Name="LengthMin" Type="Real32" Value="-0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+												</SourcePlugin>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Wwise Silence" ID="{05125699-FA1E-40DC-ADDB-C6F453EB26A8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="EagerStart" ID="{A6D5D2B0-7EF0-4AD9-9E7E-0CFD9C0B6F87}"/>
+										<ItemRef Name="EagerMiddle" ID="{2D17430B-F0C8-41DD-9323-75C7EF68B368}"/>
+										<ItemRef Name="EagerMiddle_01" ID="{FDE24935-0F74-4307-83B3-933D002571CF}"/>
+										<ItemRef Name="EagerEnd" ID="{B867936F-DD72-4DF9-8B2A-D234B2DACB77}"/>
+										<ItemRef Name="FinalSilence" ID="{4C544065-185F-4DA5-AD72-579F084C64E3}"/>
+									</Playlist>
+								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>

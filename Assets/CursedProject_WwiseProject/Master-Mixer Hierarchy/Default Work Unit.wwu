@@ -8,6 +8,9 @@
 						<Reference Name="AudioDevice">
 							<ObjectRef Name="System" ID="{AA0F0415-8E6C-4936-A5F9-245113507920}" WorkUnitID="{AD2DBEE3-74DE-41B0-B566-583E9A61AC21}"/>
 						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Church_Small_Wood" ID="{940CCB47-F031-4C6A-B0E6-726CAC418C02}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<Bus Name="SFX" ID="{7DFED55D-31DB-4D27-90F6-ECE3ED9D7EBB}">
@@ -41,7 +44,6 @@
 									</RTPCList>
 								</Property>
 							</PropertyList>
-							<ReferenceList/>
 						</Bus>
 					</ChildrenList>
 				</Bus>
