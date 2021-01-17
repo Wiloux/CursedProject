@@ -101,6 +101,7 @@ public class EnemyProfileCustomInspector : Editor
             CreatePropertyField(nameof(so.attackWEvent));
             if(!so.range)CreatePropertyField(nameof(so.hitPlayerWEventSwitch));
             GUILayout.Space(5);
+            CreatePropertyField(nameof(so.onSpawnWEvent));
             if(so.maxHealth > 1) CreatePropertyField(nameof(so.getHitWEvent));
             CreatePropertyField(nameof(so.deathWEvent));
             GUILayout.Space(5);

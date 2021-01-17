@@ -72,6 +72,7 @@ public class EnemyBase : MonoBehaviour
     private float timeToPostRunEvent;
     private AK.Wwise.Event watchWEvent;
 
+    private AK.Wwise.Event onSpawnWEvent;
     private AK.Wwise.Event getHitWEvent;
     private AK.Wwise.Event deathWEvent;
 
@@ -82,9 +83,6 @@ public class EnemyBase : MonoBehaviour
     #endregion
 
     #region Monobehaviours methods
-    private void Awake()
-    {
-    }
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -97,6 +95,8 @@ public class EnemyBase : MonoBehaviour
         agent.speed = movementSpeed;
         // Set cooldown attack
         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
+
+        onSpawnWEvent?.Post(gameObject);
     }
 
     // Update is called once per frame
@@ -233,6 +233,7 @@ public class EnemyBase : MonoBehaviour
         //PlayRunWEvent = () => runWEvent?.Post(gameObject);
 
         watchWEvent = enemyProfile.watchWEvent;
+        onSpawnWEvent = enemyProfile.onSpawnWEvent;
         getHitWEvent = enemyProfile.getHitWEvent;
         deathWEvent = enemyProfile.deathWEvent;
         hitPlayerWEventSwitch = enemyProfile.hitPlayerWEventSwitch;

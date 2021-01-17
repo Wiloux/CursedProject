@@ -40,6 +40,7 @@ public class EnemyProfileSO : ScriptableObject
     public float timeToPostRunEvent;
     public AK.Wwise.Event watchWEvent;
 
+    public AK.Wwise.Event onSpawnWEvent;
     public AK.Wwise.Event getHitWEvent;
     public AK.Wwise.Event deathWEvent;
 
