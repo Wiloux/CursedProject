@@ -126,6 +126,7 @@ public class EnemyBase : MonoBehaviour
                     float watchingDuration = UnityEngine.Random.Range(watchingDurationMinMax.x, watchingDurationMinMax.y);
                     Invoke(nameof(StopWatchingPlayer), 1f + watchingDuration);
                     Invoke(nameof(EnableAgent), 1f + watchingDuration);
+                    Invoke(nameof(PlayChaseWEvent), 1f + watchingDuration + 0.5f);
                     //transform.LookAt(player.transform);
                     //transform.eulerAngles
                 }
@@ -373,7 +374,7 @@ public class EnemyBase : MonoBehaviour
     #endregion
 
     #region Watch methods
-    private void StopWatchingPlayer() { agent.speed = movementSpeed; }
+    private void StopWatchingPlayer() { agent.speed = movementSpeed;}
     private void WatchPlayer() { transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.up); watchWEvent?.Post(gameObject); }
     #endregion
 }
