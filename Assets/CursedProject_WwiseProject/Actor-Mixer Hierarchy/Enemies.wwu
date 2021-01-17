@@ -222,6 +222,13 @@
 								<RandomSequenceContainer Name="Attack3" ID="{E140CEDB-6317-4684-9A39-FDE7CC87236E}" ShortID="753592634">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{22459665-0CF2-4517-84AA-CCE5F7294B9A}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
 										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
@@ -293,24 +300,29 @@
 								</RandomSequenceContainer>
 							</ChildrenList>
 						</Folder>
-						<RandomSequenceContainer Name="Watching" ID="{D4C67B7B-3D77-4303-B7B6-2FFAADC4229B}" ShortID="551665266">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-								</Reference>
-							</ReferenceList>
+						<Folder Name="Vocalizations" ID="{04FF05BB-3D4A-491A-8962-FD31B175ECCF}" ShortID="410190404">
 							<ChildrenList>
-								<Sound Name="watching1" ID="{FB312FE8-CBB0-4A1E-84BF-4D98B09C413F}" ShortID="698294086">
+								<RandomSequenceContainer Name="Chase" ID="{D4C67B7B-3D77-4303-B7B6-2FFAADC4229B}" ShortID="551665266">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{000903AD-245D-4D76-B8E4-7D945A85EAC7}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="100"/>
+															<Property Name="Min" Type="Real64" Value="-100"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
 										</Reference>
@@ -319,32 +331,242 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="watching1" ID="{83AD9168-9599-4DC3-B3B8-3AD75196FDF1}">
-											<Language>SFX</Language>
-											<AudioFile>Chicken\Vocal\watching1.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="695167136"/>
-											</MediaIDList>
-										</AudioFileSource>
+										<Sound Name="Chase1" ID="{6D3CE131-ABA5-4FBA-9FAE-85DDAB18CCD9}" ShortID="842807550">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{8439A302-D783-4775-9ADD-451B14EF9C03}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Chase1" ID="{09306D09-F9B7-4C51-9FF2-19FBD7464FCE}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Chase\Chase1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="525871147"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Chase1" ID="{09306D09-F9B7-4C51-9FF2-19FBD7464FCE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Chase2" ID="{673C9AD5-58F3-4D60-A940-CFAFA9AC163C}" ShortID="966306127">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{4018478E-50EA-4B63-8B3C-E5493AF79A2A}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Chase2" ID="{794B6B25-A944-4D97-ADA7-5A88B0EEF189}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Chase\Chase2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1030892577"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Chase2" ID="{794B6B25-A944-4D97-ADA7-5A88B0EEF189}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Chase3" ID="{FE139EF7-89A2-4854-A95E-8C8625AAFFE9}" ShortID="1052728669">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{54252A17-DF29-4E41-9A3E-1C602DACC102}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Chase3" ID="{1B9245FD-026F-4E4C-8EC4-E7447C7ECCDC}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Chase\Chase3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="406351538"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Chase3" ID="{1B9245FD-026F-4E4C-8EC4-E7447C7ECCDC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Chase4" ID="{E21A1FA0-059D-46BF-8579-4CB9D226ED55}" ShortID="1068678090">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{62D9BCDE-2602-42B7-AA8A-86DD40A8E384}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Chase4" ID="{E5BE6A8B-9E63-4508-BCAB-FA020551995F}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Chase\Chase4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="405905271"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Chase4" ID="{E5BE6A8B-9E63-4508-BCAB-FA020551995F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Chase5" ID="{CEFBE7DF-2F63-4C93-B243-67EDED05F89E}" ShortID="799931574">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{ED5EC370-56DD-4007-BD73-C60E7D7C0FDD}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Chase5" ID="{BA8451B9-20AF-4B11-BD50-AA17E5B060D7}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Chase\Chase5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="551745069"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Chase5" ID="{BA8451B9-20AF-4B11-BD50-AA17E5B060D7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Chase6" ID="{9A257AF0-252E-4097-8DAC-3D1A329A64B3}" ShortID="426985677">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{935968D6-CACA-458E-80A8-7AFD3B1B0C82}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Chase6" ID="{6EEADE7F-73AD-4362-AE28-25C81D42E370}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Chase\Chase6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="557898274"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Chase6" ID="{6EEADE7F-73AD-4362-AE28-25C81D42E370}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Chase7" ID="{5E865484-CE1E-4D70-9EEE-35BAB3380685}" ShortID="419300487">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{44D52A0A-F8FA-48D8-9699-7FDB7469982E}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Chase7" ID="{15A52BC0-4012-436B-9684-D7FEBC92C18D}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Chase\Chase7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="128794003"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Chase7" ID="{15A52BC0-4012-436B-9684-D7FEBC92C18D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="watching1" ID="{83AD9168-9599-4DC3-B3B8-3AD75196FDF1}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
-						</RandomSequenceContainer>
-						<RandomSequenceContainer Name="Chasing" ID="{0836434F-7C04-4488-8CF9-612B3D72AD48}" ShortID="549079473">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="chasing1" ID="{13619586-B12A-4919-8339-4DFE51908972}" ShortID="19813679">
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Eager" ID="{F65D5499-F498-4F2D-A768-7A62114B456D}" ShortID="358573594">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{BF2ABEC6-4BD5-4285-B829-84562B91355E}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
 										</Reference>
@@ -353,20 +575,643 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="chasing1" ID="{8BE48191-A86F-44C6-86FA-D46C32AF28A0}">
-											<Language>SFX</Language>
-											<AudioFile>Chicken\Vocal\chasing1.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="516819807"/>
-											</MediaIDList>
-										</AudioFileSource>
+										<RandomSequenceContainer Name="EagerStart" ID="{1691DADA-A324-4F3A-B75E-DEBB885E6BFC}" ShortID="574894051">
+											<PropertyList>
+												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{CA3F7550-D8FD-4A0C-B3C0-834888E26BEC}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="100"/>
+																	<Property Name="Min" Type="Real64" Value="-100"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Eager6" ID="{7DB7865C-71E5-4518-921D-B5FC188DBBD1}" ShortID="273813310">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager6" ID="{EE8EF36B-326B-49A0-AB35-D1A683CB7965}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager6.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1023437812"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager6" ID="{EE8EF36B-326B-49A0-AB35-D1A683CB7965}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager12" ID="{1B466F5A-7E71-43C0-9DC0-099513E1D3EA}" ShortID="815296979">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager12" ID="{A73244DB-FF0D-417D-9507-7DBBF5F1B61A}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager12.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="436521656"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager12" ID="{A73244DB-FF0D-417D-9507-7DBBF5F1B61A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager1" ID="{B5641A03-D74B-458A-86DC-CB13835FE57A}" ShortID="987434682">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager1" ID="{1B8EEBB3-5663-4F9B-B71C-56E44275D9DA}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="831035638"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager1" ID="{1B8EEBB3-5663-4F9B-B71C-56E44275D9DA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager5" ID="{42972264-E4EA-4E10-91E4-17C36016877E}" ShortID="959075200">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager5" ID="{7926AF99-5908-4D19-8162-351FAB9F104E}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager5.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="25723946"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager5" ID="{7926AF99-5908-4D19-8162-351FAB9F104E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager11" ID="{B33FFC9F-2A61-4315-BD52-A1727540AAAE}" ShortID="13045783">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager11" ID="{9ED5FF81-42A5-44AB-9988-3154D4DE50F8}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager11.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="562183493"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager11" ID="{9ED5FF81-42A5-44AB-9988-3154D4DE50F8}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager3" ID="{4039F35C-F61C-4633-8D39-97E773DA6A31}" ShortID="1020844078">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager3" ID="{BFEFF313-4058-483B-A60B-C51F2B59C72D}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="290978038"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager3" ID="{BFEFF313-4058-483B-A60B-C51F2B59C72D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager9" ID="{5F062319-7381-454F-BE52-9A8B6B604CFC}" ShortID="43010532">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager9" ID="{59A7D3DF-511A-421D-94DB-0D5527FFE528}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager9.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="697692854"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager9" ID="{59A7D3DF-511A-421D-94DB-0D5527FFE528}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager4" ID="{30011C8B-0839-4523-A289-D8DD62CA60ED}" ShortID="683819053">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager4" ID="{594733C4-3892-4B75-A948-8C6AD3EFAAD5}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager4.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="234818940"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager4" ID="{594733C4-3892-4B75-A948-8C6AD3EFAAD5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager8" ID="{0B2E89C1-CA76-4AD2-93DB-488F7C4A7AAF}" ShortID="247701985">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager8" ID="{C4A71F98-EABA-438F-AD50-E047203CC1D3}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager8.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1037537274"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager8" ID="{C4A71F98-EABA-438F-AD50-E047203CC1D3}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager2" ID="{36FD2CE0-B0B3-43CE-83CF-4E76F7958BD1}" ShortID="238666329">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager2" ID="{D57E1BF2-F696-42B6-B4E5-956C3AC4D9C6}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="895691896"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager2" ID="{D57E1BF2-F696-42B6-B4E5-956C3AC4D9C6}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager10" ID="{63A36AB5-703D-4287-93CA-A47D4CEA9F1A}" ShortID="996383144">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager10" ID="{330E2E51-8DAF-41E4-9472-4EA954FCDD51}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager10.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="230421140"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager10" ID="{330E2E51-8DAF-41E4-9472-4EA954FCDD51}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Eager7" ID="{C572A78F-6B7A-4830-8F2F-087DAED7CF1D}" ShortID="48991514">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Eager7" ID="{D0B5F811-030E-45ED-B07A-3653AC6B7564}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\Eager7.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="476393637"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Eager7" ID="{D0B5F811-030E-45ED-B07A-3653AC6B7564}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="EagerEnd" ID="{4E418BEA-32EF-4342-A089-EBC58317CEA3}" ShortID="931195179">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{C409C151-C80B-4A80-A31F-AA86ABB4912E}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="100"/>
+																	<Property Name="Min" Type="Real64" Value="-100"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="EagerFinal1" ID="{7392394B-6EDE-4CE9-A384-CBD331050AA7}" ShortID="175781646">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="EagerFinal1" ID="{DBC6E76B-DC9D-410E-BD24-C8B33C06A07D}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\EagerFinal1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1876340"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="EagerFinal1" ID="{DBC6E76B-DC9D-410E-BD24-C8B33C06A07D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="EagerFinal2" ID="{83C504CE-EE08-4A64-B7AD-D3154FD85346}" ShortID="234020614">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="EagerFinal2" ID="{6E9FC2B6-9029-421A-9A0D-E7C37BE2DDC1}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\EagerFinal2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="701243151"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="EagerFinal2" ID="{6E9FC2B6-9029-421A-9A0D-E7C37BE2DDC1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="EagerFinal3" ID="{52ECD61F-9D7B-4D2A-828E-16EB6BFD8302}" ShortID="945568912">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="EagerFinal3" ID="{9FBC7FAB-0BE0-45D0-9838-51E4E40197EE}">
+															<Language>SFX</Language>
+															<AudioFile>Chicken\Vocal\Eager\EagerFinal3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="15091794"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="EagerFinal3" ID="{9FBC7FAB-0BE0-45D0-9838-51E4E40197EE}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
 									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="chasing1" ID="{8BE48191-A86F-44C6-86FA-D46C32AF28A0}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
+									<Playlist>
+										<ItemRef Name="EagerStart" ID="{1691DADA-A324-4F3A-B75E-DEBB885E6BFC}"/>
+										<ItemRef Name="EagerEnd" ID="{4E418BEA-32EF-4342-A089-EBC58317CEA3}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="RunAway" ID="{68019C6E-63F2-4C59-9DCD-A1EDCB7D0406}" ShortID="874346282">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{3C3D8F7B-1585-4E2F-9972-9A6E45D61061}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="200"/>
+															<Property Name="Min" Type="Real64" Value="-100"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="RunAway1" ID="{2CBDCF09-9001-4877-BE02-682F106E2375}" ShortID="298033710">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="RunAway1" ID="{FEDA35F8-8CB5-4AEC-A27A-7192941E5532}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Run Away\RunAway1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="246445162"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="RunAway1" ID="{FEDA35F8-8CB5-4AEC-A27A-7192941E5532}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="RunAway2" ID="{709F0955-F6BD-4F5E-9E7D-5ACF6D0D6A98}" ShortID="565950046">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="RunAway2" ID="{796EDB11-12CD-4E70-B622-A5C60AF43272}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Run Away\RunAway2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="986628007"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="RunAway2" ID="{796EDB11-12CD-4E70-B622-A5C60AF43272}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="RunAway3" ID="{757DCA7D-F928-4D0E-94E6-84CF7B802390}" ShortID="885761127">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="RunAway3" ID="{4E6489C5-18D7-4DCF-B18E-8109F23129C4}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Run Away\RunAway3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="540739948"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="RunAway3" ID="{4E6489C5-18D7-4DCF-B18E-8109F23129C4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="RunAway4" ID="{05333F4A-8C98-4495-81A4-EC5C0012EC8A}" ShortID="225536562">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="RunAway4" ID="{E9651F77-1232-4FA1-BF47-7531B10DE643}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Run Away\RunAway4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="312019833"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="RunAway4" ID="{E9651F77-1232-4FA1-BF47-7531B10DE643}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="RunAway5" ID="{4EE090E9-E267-4498-B089-E0786B7F0032}" ShortID="1015778004">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="RunAway5" ID="{5AA8C4BA-B5BA-4007-AA51-3B8975F8FD72}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Run Away\RunAway5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="833753326"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="RunAway5" ID="{5AA8C4BA-B5BA-4007-AA51-3B8975F8FD72}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Die" ID="{CA620D08-55BC-4AB1-9788-DD1A579DC72B}" ShortID="77277378">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>250</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{7E9A6C9B-9659-4D29-B55D-DF839B644824}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Die1" ID="{A2352CB6-D6A7-4160-8DCB-DC39E259A423}" ShortID="282810210">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Die1" ID="{7FA15A6E-ED51-478F-A86F-0F03E432D64C}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Die\Die1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="407949984"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Die1" ID="{7FA15A6E-ED51-478F-A86F-0F03E432D64C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Die2" ID="{48BF6FFD-2D8E-4523-8B11-E9BD420AD972}" ShortID="101885470">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Die2" ID="{F4056B70-AE32-4F9C-AE68-6BA24E64FD79}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Die\Die2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="930833694"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Die2" ID="{F4056B70-AE32-4F9C-AE68-6BA24E64FD79}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Die3" ID="{CF14712A-541B-4966-9005-4F5C342A2301}" ShortID="816201100">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Die3" ID="{73F89FB5-C3C2-4434-88A1-9C35B06E2EE1}">
+													<Language>SFX</Language>
+													<AudioFile>Chicken\Vocal\Die\Die3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="170623511"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Die3" ID="{73F89FB5-C3C2-4434-88A1-9C35B06E2EE1}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
 							</ChildrenList>
-						</RandomSequenceContainer>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Shards" ID="{90566663-6DC7-4CF4-8431-215B5343A1C5}" ShortID="409661661">

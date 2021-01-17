@@ -7,6 +7,17 @@
 					<ChildrenList>
 						<Event Name="PlayAttack3" ID="{02BC7C02-0409-4580-AE17-63395674C15E}">
 							<ChildrenList>
+								<Action Name="" ID="{1F696BC8-7DA9-46BB-88D8-C7DC9040896B}" ShortID="902310792">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Chase" ID="{D4C67B7B-3D77-4303-B7B6-2FFAADC4229B}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{636139CB-A6AB-4ECC-8E63-9A5EADDB42BC}" ShortID="830066077">
 									<ReferenceList>
 										<Reference Name="Target">
@@ -29,6 +40,17 @@
 						</Event>
 						<Event Name="PlayAttack2" ID="{20A101CE-2670-41D9-9766-D9EB52D0F555}">
 							<ChildrenList>
+								<Action Name="" ID="{F0275CC2-2018-4B2D-AD6C-0452B2A437A8}" ShortID="69079306">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Chase" ID="{D4C67B7B-3D77-4303-B7B6-2FFAADC4229B}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{E9419D64-494F-4CF9-AE3F-603573130B66}" ShortID="463559994">
 									<ReferenceList>
 										<Reference Name="Target">
@@ -40,6 +62,18 @@
 						</Event>
 						<Event Name="PlayBackstab" ID="{9982C33B-092F-4BF3-8E8E-17921D652E90}">
 							<ChildrenList>
+								<Action Name="" ID="{27E74548-C950-4629-932E-DE08C7BDF5D0}" ShortID="993564651">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Delay" Type="Real64" Value="0.5"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Chase" ID="{D4C67B7B-3D77-4303-B7B6-2FFAADC4229B}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{0498912E-4491-4889-9974-E78CA68501E8}" ShortID="402943444">
 									<ReferenceList>
 										<Reference Name="Target">
@@ -51,10 +85,71 @@
 						</Event>
 						<Event Name="PlayChickenWatching" ID="{8E4C7547-3554-4CBB-B24B-C93BEEFB76B9}">
 							<ChildrenList>
-								<Action Name="" ID="{2C55667E-8E47-4879-8581-36F52FCA30BB}" ShortID="536850212">
+								<Action Name="" ID="{42715871-941C-48F6-87CC-975B61F557B4}" ShortID="265380126">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Watching" ID="{D4C67B7B-3D77-4303-B7B6-2FFAADC4229B}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+											<ObjectRef Name="Eager" ID="{F65D5499-F498-4F2D-A768-7A62114B456D}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayChickenRunAway" ID="{86820FAC-14FB-494D-AC08-317EA4595E8F}">
+							<ChildrenList>
+								<Action Name="" ID="{A21C7E17-0309-4370-806F-AAD184D90701}" ShortID="884872711">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Chase" ID="{D4C67B7B-3D77-4303-B7B6-2FFAADC4229B}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F1B783C3-4729-44EC-AADD-C75156466B8B}" ShortID="82901431">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="RunAway" ID="{68019C6E-63F2-4C59-9DCD-A1EDCB7D0406}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayChickenDie" ID="{39815A2B-9229-49D7-90E0-0B87BBBB94E7}">
+							<ChildrenList>
+								<Action Name="" ID="{450D4105-8E1F-4EAC-A9F4-B67A79BD003F}" ShortID="147475116">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="3"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
+								<Action Name="" ID="{19027424-2930-4546-9200-E9C4412FE09F}" ShortID="154505541">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Die" ID="{CA620D08-55BC-4AB1-9788-DD1A579DC72B}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayChickenChasing" ID="{108AE46C-3F7B-4DDB-9105-00FB2FC4E86B}">
+							<ChildrenList>
+								<Action Name="" ID="{2564CD37-1073-47CC-A981-D73212BD579D}" ShortID="416017539">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Eager" ID="{F65D5499-F498-4F2D-A768-7A62114B456D}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F242546B-9366-4BA4-A69C-DFF3EC593592}" ShortID="414203211">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Chase" ID="{D4C67B7B-3D77-4303-B7B6-2FFAADC4229B}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

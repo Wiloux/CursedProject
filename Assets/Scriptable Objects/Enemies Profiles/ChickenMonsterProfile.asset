@@ -38,7 +38,7 @@ MonoBehaviour:
   runWEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: bb0db3423c4b57c45986c43148a565fc, type: 2}
   timeToPostRunEvent: 2
   watchWEvent:
     idInternal: 0
@@ -51,5 +51,5 @@ MonoBehaviour:
   deathWEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 0d086104e1b7a2841b4e34acec08d2ff, type: 2}
   hitPlayerWEventSwitch: Chicken

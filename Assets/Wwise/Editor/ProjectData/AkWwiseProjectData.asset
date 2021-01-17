@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585907931439714238
+    m_lastTime: -8585906866159166699
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -88,20 +88,8 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585907931442601739
-    List:
-    - name: PlayChickenChasing
-      guid: 6ce48a107b3fdb4d910500fb2fc4e86b
-      id: 1470550983
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: PlayChickenChasing
-        ObjectType: 3
-      Path: Default Work Unit\PlayChickenChasing
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+    m_lastTime: -8585906866159396239
+    List: []
   - PhysicalPath: Events\Enemies.wwu
     PathAndIcons:
     - ElementName: Enemies
@@ -109,7 +97,7 @@ MonoBehaviour:
     ParentPath: Enemies
     guid: 7833dd357f5437458dde67e4bfd1d3f1
     GuidInternal: 
-    m_lastTime: -8585907931442601739
+    m_lastTime: -8585906866159296747
     List:
     - name: Chicken
       guid: b95c606dc42a5947bea9f0e934524f5d
@@ -165,6 +153,34 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: PlayChickenChasing
+      guid: 6ce48a107b3fdb4d910500fb2fc4e86b
+      id: 1470550983
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: PlayChickenChasing
+        ObjectType: 3
+      Path: Enemies\Chicken\PlayChickenChasing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayChickenDie
+      guid: 2b5a81392992d74990e00b87bbbb94e7
+      id: 2892866942
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: PlayChickenDie
+        ObjectType: 3
+      Path: Enemies\Chicken\PlayChickenDie
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: PlayChickenFootsteps
       guid: 9eb87c37d21ad042a80174917be099ba
       id: 196258217
@@ -176,6 +192,20 @@ MonoBehaviour:
       - ElementName: PlayChickenFootsteps
         ObjectType: 3
       Path: Enemies\Chicken\PlayChickenFootsteps
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayChickenRunAway
+      guid: ac0f8286fb144d49ac08317ea4595e8f
+      id: 4042026069
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: PlayChickenRunAway
+        ObjectType: 3
+      Path: Enemies\Chicken\PlayChickenRunAway
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -505,6 +535,5 @@ MonoBehaviour:
   ExpandedItems:
   - /CursedProject_WwiseProject
   - /CursedProject_WwiseProject/Events
-  - /CursedProject_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
