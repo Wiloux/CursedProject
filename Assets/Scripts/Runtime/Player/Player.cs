@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
                         if (hit.CompareTag("Enemy"))
                         {
                             EnemyBase enemy = hits[0].GetComponent<EnemyBase>();
-                            if (enemy != null) EnemyHelper.TakeDamage(enemy);
+                            if (enemy != null) { EnemyHelper.TakeDamage(enemy); Debug.Log("tryingtodamage"); }
                         }
                     }
                 }

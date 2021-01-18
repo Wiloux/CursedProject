@@ -33,6 +33,8 @@ public class EnemyBase : MonoBehaviour
     private int health;
     private bool dead;
     public bool pause;
+    private bool stagger;
+    private float timeToStopStagger;
 
     // Chase vars
     private bool chase;
@@ -91,6 +93,8 @@ public class EnemyBase : MonoBehaviour
         // Use the vars of the EnemyProfile scriptable object
         GetProfileFromSo();
 
+
+        health = maxHealth;
         // Set agent speed
         agent.speed = movementSpeed;
         // Set cooldown attack
@@ -102,7 +106,7 @@ public class EnemyBase : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        if (!dead && !pause)
+        if (!dead && !pause &&!stagger)
         {
             // Moving animation handler
             if (agent.velocity != Vector3.zero) { animator.SetBool("moving", true); }
@@ -185,6 +189,11 @@ public class EnemyBase : MonoBehaviour
                     }
                 }
             }
+        }
+        else if (stagger)
+        {
+            timeToStopStagger -= Time.deltaTime;
+            if(timeToStopStagger < 0) { stagger = false; }
         }
     }
     private void OnDrawGizmosSelected()
@@ -286,6 +295,10 @@ public class EnemyBase : MonoBehaviour
         if (health <= 0) { Die(); }
         else
         {
+            DisableAgent();
+            Invoke(nameof(EnableAgent), 0.2f);
+            stagger = true;
+            timeToStopStagger = Time.timeSinceLevelLoad + 0.2f;
             hitAnimation?.Invoke();
             getHitWEvent?.Post(gameObject);
         }
