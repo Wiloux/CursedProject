@@ -281,7 +281,7 @@ public class EnemyBase : MonoBehaviour
     #region Health methods
     public void TakeDamage()
     {
-        Debug.Log("Damage took");
+        Debug.Log(gameObject.name + " took damage");
         health--;
         if (health <= 0) { Die(); }
         else
@@ -293,6 +293,10 @@ public class EnemyBase : MonoBehaviour
     public void Die()
     {
         dead = true;
+
+        agent.SetDestination(transform.position);
+        agent.isStopped = true;
+
         animator.SetTrigger("dead");
         deathWEvent?.Post(gameObject);
         //Destroy(gameObject);
@@ -308,7 +312,7 @@ public class EnemyBase : MonoBehaviour
             if (hits[0].transform != null)
             {
                 Debug.Log(hits[0].transform.name);
-                Player_Movement player = hits[0].transform.GetComponent<Player_Movement>();
+                Player player = hits[0].transform.GetComponent<Player>();
                 if(player!= null) player.OnHit(hitPlayerWEventSwitch);
                 if (backstab)
                 {

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(Player_Movement))]
-public class PlayerMovementCustomInspector : Editor
+[CustomEditor(typeof(Player))]
+public class PlayerCustomInspector : Editor
 {
     private string text;
     public override void OnInspectorGUI()
@@ -13,7 +13,9 @@ public class PlayerMovementCustomInspector : Editor
 
         serializedObject.Update();
 
-        Player_Movement player = target as Player_Movement;
+        GUILayout.Space(15);
+
+        Player player = target as Player;
 
         EditorGUILayout.BeginHorizontal();
         text = EditorGUILayout.TextField(text);

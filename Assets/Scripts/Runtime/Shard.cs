@@ -88,7 +88,7 @@ public class Shard : MonoBehaviour
     {
         if (other.transform.CompareTag("Player") && isReady)
         {
-            Player_Movement player = other.gameObject.GetComponent<Player_Movement>();
+            Player player = other.gameObject.GetComponent<Player>();
             if (player != null) player.OnHit("Shard");
 
             float angle = Vector3.Angle(other.transform.forward, transform.forward);
