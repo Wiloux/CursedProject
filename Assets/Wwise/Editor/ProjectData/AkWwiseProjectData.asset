@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585905986051336332
+    m_lastTime: -8585905932353718850
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -88,20 +88,8 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585905986054916755
-    List:
-    - name: PlayChickenHit
-      guid: f0301195ec726143bd1fa3d4af13d725
-      id: 3029059251
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: PlayChickenHit
-        ObjectType: 3
-      Path: Default Work Unit\PlayChickenHit
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+    m_lastTime: -8585905943524824814
+    List: []
   - PhysicalPath: Events\Enemies.wwu
     PathAndIcons:
     - ElementName: Enemies
@@ -109,7 +97,7 @@ MonoBehaviour:
     ParentPath: Enemies
     guid: 7833dd357f5437458dde67e4bfd1d3f1
     GuidInternal: 
-    m_lastTime: -8585906168817866396
+    m_lastTime: -8585905932419167156
     List:
     - name: Chicken
       guid: b95c606dc42a5947bea9f0e934524f5d
@@ -207,6 +195,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: PlayChickenHit
+      guid: f0301195ec726143bd1fa3d4af13d725
+      id: 3029059251
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 4
+      - ElementName: PlayChickenHit
+        ObjectType: 3
+      Path: Enemies\Chicken\PlayChickenHit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: PlayChickenOnSpawn
       guid: da82a608b487924283b3291cf26245ba
       id: 2039287504
@@ -249,15 +251,45 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Shards
-      guid: e041d6b4f5fbf34faddd3f7956fea4ad
-      id: 3591408410
+    - name: PlayWardenIdle
+      guid: 26a34809648f0344a61cb406400e343b
+      id: 2920750754
       PathAndIcons:
       - ElementName: Enemies
         ObjectType: 12
-      - ElementName: Shards
+      - ElementName: Warden
         ObjectType: 4
-      Path: Enemies\Shards
+      - ElementName: PlayWardenIdle
+        ObjectType: 3
+      Path: Enemies\Warden\PlayWardenIdle
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayWardenMove
+      guid: f23794aff0782f4c9721441450a833c1
+      id: 3781044531
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Warden
+        ObjectType: 4
+      - ElementName: PlayWardenMove
+        ObjectType: 3
+      Path: Enemies\Warden\PlayWardenMove
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayWardenSpawn
+      guid: 86748258572e874bb9adfd376816ec6a
+      id: 1171015393
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Warden
+        ObjectType: 4
+      - ElementName: PlayWardenSpawn
+        ObjectType: 3
+      Path: Enemies\Warden\PlayWardenSpawn
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -267,11 +299,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Enemies
         ObjectType: 12
-      - ElementName: Shards
+      - ElementName: Warden
         ObjectType: 4
       - ElementName: ShardsRise
         ObjectType: 3
-      Path: Enemies\Shards\ShardsRise
+      Path: Enemies\Warden\ShardsRise
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -281,11 +313,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Enemies
         ObjectType: 12
-      - ElementName: Shards
+      - ElementName: Warden
         ObjectType: 4
       - ElementName: ShardsThrow
         ObjectType: 3
-      Path: Enemies\Shards\ShardsThrow
+      Path: Enemies\Warden\ShardsThrow
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -295,11 +327,37 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Enemies
         ObjectType: 12
-      - ElementName: Shards
+      - ElementName: Warden
         ObjectType: 4
       - ElementName: ShardWallHit
         ObjectType: 3
-      Path: Enemies\Shards\ShardWallHit
+      Path: Enemies\Warden\ShardWallHit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: StopMovementSound
+      guid: ef37217e09b82249849ceef35b498afd
+      id: 4217165871
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Warden
+        ObjectType: 4
+      - ElementName: StopMovementSound
+        ObjectType: 3
+      Path: Enemies\Warden\StopMovementSound
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Warden
+      guid: e041d6b4f5fbf34faddd3f7956fea4ad
+      id: 2548284838
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Warden
+        ObjectType: 4
+      Path: Enemies\Warden
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -563,5 +621,6 @@ MonoBehaviour:
   - /CursedProject_WwiseProject/Events
   - /CursedProject_WwiseProject/Events/Enemies
   - /CursedProject_WwiseProject/Events/Enemies/Chicken
+  - /CursedProject_WwiseProject/Events/Enemies/Warden
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -2401,461 +2401,6 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="Shards" ID="{90566663-6DC7-4CF4-8431-215B5343A1C5}" ShortID="409661661">
-					<ChildrenList>
-						<RandomSequenceContainer Name="ShardsRise" ID="{DE5DDF18-6A1B-41EF-A614-AF6DECD1997F}" ShortID="1024180615">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="2"/>
-								<Property Name="Pitch" Type="int32">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{9930E1EE-75E4-45DB-9536-2219DD09EB95}"/>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="shards rising 2" ID="{5F3480CE-4BC0-4751-A5B0-51B35D33425E}" ShortID="972073567">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{1D14D06E-D623-49C4-8570-7CF25FD48071}"/>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shards rising 2" ID="{2D30EAC7-696B-4228-970A-47615EB0E6F6}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shards rising 2.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="1073491051"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shards rising 2" ID="{2D30EAC7-696B-4228-970A-47615EB0E6F6}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="shards rising 3" ID="{935D54B5-47D0-46E5-867E-5AEACC7B56D5}" ShortID="423517109">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{15853E3E-5057-4224-89B3-BAD165F81986}"/>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shards rising 3" ID="{23FC1D7D-A777-4EF0-8163-412007C31631}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shards rising 3.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="784850670"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shards rising 3" ID="{23FC1D7D-A777-4EF0-8163-412007C31631}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="shards rising" ID="{7696C2F6-A6C8-4762-A8C1-E3FF4C23249F}" ShortID="91790573">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{5E3B857D-DB47-4AD2-B6E5-F47AFF0F8678}"/>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shards rising" ID="{1E05788B-07B4-41C0-A403-767375B1B928}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shards rising.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="795602171"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shards rising" ID="{1E05788B-07B4-41C0-A403-767375B1B928}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
-						</RandomSequenceContainer>
-						<RandomSequenceContainer Name="ShardsThrow" ID="{866A39A1-9DA9-46C2-8DBD-847880E077F1}" ShortID="325271470">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="2"/>
-								<Property Name="Pitch" Type="int32">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{519FD2C1-087E-4F70-B268-3F1BCDA14F78}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="100"/>
-													<Property Name="Min" Type="Real64" Value="-100"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="shards throw1" ID="{4AEAD13C-30E8-4036-98A0-E4B316D2B9F4}" ShortID="362982974">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ValueList>
-												<Value>-350</Value>
-											</ValueList>
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{33729232-FE19-4B19-8200-6FB38B98F805}"/>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shards throw1" ID="{0B821F5A-822D-47A1-9469-5E2017C777C6}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shards throw1.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="648114941"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shards throw1" ID="{0B821F5A-822D-47A1-9469-5E2017C777C6}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="shards throw2" ID="{02F3D6D8-6E1E-4ADE-B351-EB9B623CA78B}" ShortID="218262991">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{42AEBDE7-9973-4FB6-93C8-125DE3BA31D9}"/>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shards throw2" ID="{CE2D4A52-9A94-4C24-B801-65F3AE7C9812}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shards throw2.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="628974826"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shards throw2" ID="{CE2D4A52-9A94-4C24-B801-65F3AE7C9812}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="shards throw3" ID="{BAB274D8-6593-40BF-A99D-8C853FAB7B7E}" ShortID="233033618">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{C0A2A81C-B8E2-4913-BAE0-E213EBAAA839}"/>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shards throw3" ID="{99FB9FFA-8E05-459D-B972-2DDFA270F187}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shards throw3.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="685506779"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shards throw3" ID="{99FB9FFA-8E05-459D-B972-2DDFA270F187}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="shards throw4" ID="{92362894-E4A5-4C01-A07F-B7117E825780}" ShortID="731623">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{AEFAB56C-C88E-4C4A-A771-BFA0BB2D14BD}"/>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shards throw4" ID="{5D8CA190-FA3E-4D3A-9E50-2DC85915AECD}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shards throw4.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="504518702"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shards throw4" ID="{5D8CA190-FA3E-4D3A-9E50-2DC85915AECD}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="shards throw5" ID="{9AE274CC-A9EC-4911-BC93-6E4B84697B1C}" ShortID="149164056">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{D7760C14-1B5F-442A-8300-CC6A03BF7E38}"/>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shards throw5" ID="{E421170C-9266-4792-8C39-1EE2D780192A}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shards throw5.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="243879499"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shards throw5" ID="{E421170C-9266-4792-8C39-1EE2D780192A}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
-						</RandomSequenceContainer>
-						<RandomSequenceContainer Name="ShardWallHit" ID="{69434EEB-27C5-4B6B-9E5F-C2F5E95D9EE8}" ShortID="11892343">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="shard wall hit 1" ID="{868CD272-CA54-472A-9673-7537E03C1D46}" ShortID="354890953">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shard wall hit 1" ID="{AF90FAE5-6F8A-4352-831B-7DAFBE6EDDF8}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shard wall hit 1.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="264203001"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shard wall hit 1" ID="{AF90FAE5-6F8A-4352-831B-7DAFBE6EDDF8}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="shard wall hit 2" ID="{360B6C31-38BA-404C-BF65-D7AC5BDA83D0}" ShortID="104599429">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shard wall hit 2" ID="{A052F15F-1BC2-4C68-A92B-C9B42DC4F50A}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shard wall hit 2.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="1064002268"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shard wall hit 2" ID="{A052F15F-1BC2-4C68-A92B-C9B42DC4F50A}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="shard wall hit 3" ID="{E0A62AFF-15AB-4807-99AE-B07BB06AC321}" ShortID="19416634">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shard wall hit 3" ID="{A1C4BC3A-09AD-41F0-B1C7-9BC299E345E9}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shard wall hit 3.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="509966098"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shard wall hit 3" ID="{A1C4BC3A-09AD-41F0-B1C7-9BC299E345E9}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="shard wall hit 4" ID="{F6D6BDBE-91F3-4FB0-91CB-886D068129C9}" ShortID="369458491">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shard wall hit 4" ID="{9AAFC888-C7F8-4C49-8A7F-51F17E01F5D4}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shard wall hit 4.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="792448310"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shard wall hit 4" ID="{9AAFC888-C7F8-4C49-8A7F-51F17E01F5D4}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="shard wall hit 5" ID="{ADD1197B-0271-41DD-92F7-8E34673E0D64}" ShortID="917806803">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shard wall hit 5" ID="{2A70B3B8-68F3-4D63-8397-2CE4E4DCBFA4}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shard wall hit 5.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="179151226"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shard wall hit 5" ID="{2A70B3B8-68F3-4D63-8397-2CE4E4DCBFA4}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="shard wall hit 6" ID="{4949D4B4-6BE1-4DF8-BF7B-A041756C2C5D}" ShortID="750679193">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="shard wall hit 6" ID="{54D98D39-8877-40D1-A5BB-4B7B6FF392DB}">
-											<Language>SFX</Language>
-											<AudioFile>Shards\shard wall hit 6.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="1003048111"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="shard wall hit 6" ID="{54D98D39-8877-40D1-A5BB-4B7B6FF392DB}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
-						</RandomSequenceContainer>
-					</ChildrenList>
-				</Folder>
 				<SwitchContainer Name="PlayerHit" ID="{EE8AAC62-F464-4300-9D16-C17B10524246}" ShortID="493833246">
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -3104,6 +2649,567 @@
 						</GroupingList>
 					</GroupingInfo>
 				</SwitchContainer>
+				<Folder Name="Warden" ID="{7FF22878-158A-4B12-A092-FAFAD9C49F99}" ShortID="320757619">
+					<ChildrenList>
+						<Folder Name="Shards" ID="{90566663-6DC7-4CF4-8431-215B5343A1C5}" ShortID="409661661">
+							<ChildrenList>
+								<RandomSequenceContainer Name="ShardsRise" ID="{DE5DDF18-6A1B-41EF-A614-AF6DECD1997F}" ShortID="1024180615">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{9930E1EE-75E4-45DB-9536-2219DD09EB95}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="shards rising 2" ID="{5F3480CE-4BC0-4751-A5B0-51B35D33425E}" ShortID="972073567">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{1D14D06E-D623-49C4-8570-7CF25FD48071}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shards rising 2" ID="{2D30EAC7-696B-4228-970A-47615EB0E6F6}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shards rising 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1073491051"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shards rising 2" ID="{2D30EAC7-696B-4228-970A-47615EB0E6F6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="shards rising 3" ID="{935D54B5-47D0-46E5-867E-5AEACC7B56D5}" ShortID="423517109">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{15853E3E-5057-4224-89B3-BAD165F81986}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shards rising 3" ID="{23FC1D7D-A777-4EF0-8163-412007C31631}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shards rising 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="784850670"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shards rising 3" ID="{23FC1D7D-A777-4EF0-8163-412007C31631}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="shards rising" ID="{7696C2F6-A6C8-4762-A8C1-E3FF4C23249F}" ShortID="91790573">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{5E3B857D-DB47-4AD2-B6E5-F47AFF0F8678}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shards rising" ID="{1E05788B-07B4-41C0-A403-767375B1B928}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shards rising.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="795602171"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shards rising" ID="{1E05788B-07B4-41C0-A403-767375B1B928}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="ShardsThrow" ID="{866A39A1-9DA9-46C2-8DBD-847880E077F1}" ShortID="325271470">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{519FD2C1-087E-4F70-B268-3F1BCDA14F78}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="100"/>
+															<Property Name="Min" Type="Real64" Value="-100"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="shards throw1" ID="{4AEAD13C-30E8-4036-98A0-E4B316D2B9F4}" ShortID="362982974">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-350</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{33729232-FE19-4B19-8200-6FB38B98F805}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shards throw1" ID="{0B821F5A-822D-47A1-9469-5E2017C777C6}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shards throw1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="648114941"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shards throw1" ID="{0B821F5A-822D-47A1-9469-5E2017C777C6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="shards throw2" ID="{02F3D6D8-6E1E-4ADE-B351-EB9B623CA78B}" ShortID="218262991">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{42AEBDE7-9973-4FB6-93C8-125DE3BA31D9}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shards throw2" ID="{CE2D4A52-9A94-4C24-B801-65F3AE7C9812}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shards throw2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="628974826"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shards throw2" ID="{CE2D4A52-9A94-4C24-B801-65F3AE7C9812}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="shards throw3" ID="{BAB274D8-6593-40BF-A99D-8C853FAB7B7E}" ShortID="233033618">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{C0A2A81C-B8E2-4913-BAE0-E213EBAAA839}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shards throw3" ID="{99FB9FFA-8E05-459D-B972-2DDFA270F187}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shards throw3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="685506779"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shards throw3" ID="{99FB9FFA-8E05-459D-B972-2DDFA270F187}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="shards throw4" ID="{92362894-E4A5-4C01-A07F-B7117E825780}" ShortID="731623">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{AEFAB56C-C88E-4C4A-A771-BFA0BB2D14BD}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shards throw4" ID="{5D8CA190-FA3E-4D3A-9E50-2DC85915AECD}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shards throw4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="504518702"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shards throw4" ID="{5D8CA190-FA3E-4D3A-9E50-2DC85915AECD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="shards throw5" ID="{9AE274CC-A9EC-4911-BC93-6E4B84697B1C}" ShortID="149164056">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{D7760C14-1B5F-442A-8300-CC6A03BF7E38}"/>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shards throw5" ID="{E421170C-9266-4792-8C39-1EE2D780192A}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shards throw5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="243879499"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shards throw5" ID="{E421170C-9266-4792-8C39-1EE2D780192A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="ShardWallHit" ID="{69434EEB-27C5-4B6B-9E5F-C2F5E95D9EE8}" ShortID="11892343">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="shard wall hit 1" ID="{868CD272-CA54-472A-9673-7537E03C1D46}" ShortID="354890953">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shard wall hit 1" ID="{AF90FAE5-6F8A-4352-831B-7DAFBE6EDDF8}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shard wall hit 1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="264203001"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shard wall hit 1" ID="{AF90FAE5-6F8A-4352-831B-7DAFBE6EDDF8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="shard wall hit 2" ID="{360B6C31-38BA-404C-BF65-D7AC5BDA83D0}" ShortID="104599429">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shard wall hit 2" ID="{A052F15F-1BC2-4C68-A92B-C9B42DC4F50A}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shard wall hit 2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1064002268"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shard wall hit 2" ID="{A052F15F-1BC2-4C68-A92B-C9B42DC4F50A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="shard wall hit 3" ID="{E0A62AFF-15AB-4807-99AE-B07BB06AC321}" ShortID="19416634">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shard wall hit 3" ID="{A1C4BC3A-09AD-41F0-B1C7-9BC299E345E9}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shard wall hit 3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="509966098"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shard wall hit 3" ID="{A1C4BC3A-09AD-41F0-B1C7-9BC299E345E9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="shard wall hit 4" ID="{F6D6BDBE-91F3-4FB0-91CB-886D068129C9}" ShortID="369458491">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shard wall hit 4" ID="{9AAFC888-C7F8-4C49-8A7F-51F17E01F5D4}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shard wall hit 4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="792448310"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shard wall hit 4" ID="{9AAFC888-C7F8-4C49-8A7F-51F17E01F5D4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="shard wall hit 5" ID="{ADD1197B-0271-41DD-92F7-8E34673E0D64}" ShortID="917806803">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shard wall hit 5" ID="{2A70B3B8-68F3-4D63-8397-2CE4E4DCBFA4}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shard wall hit 5.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="179151226"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shard wall hit 5" ID="{2A70B3B8-68F3-4D63-8397-2CE4E4DCBFA4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="shard wall hit 6" ID="{4949D4B4-6BE1-4DF8-BF7B-A041756C2C5D}" ShortID="750679193">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="shard wall hit 6" ID="{54D98D39-8877-40D1-A5BB-4B7B6FF392DB}">
+													<Language>SFX</Language>
+													<AudioFile>Shards\shard wall hit 6.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1003048111"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="shard wall hit 6" ID="{54D98D39-8877-40D1-A5BB-4B7B6FF392DB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Movement" ID="{2D573DEA-F9E2-437C-B1EE-AAD186A67D4D}" ShortID="409789379">
+							<ChildrenList>
+								<Sound Name="warden idle" ID="{951D9EAE-9720-46FA-A653-D9868055ED26}" ShortID="929644645">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="warden idle" ID="{CDDACF3E-65CE-404E-89F1-6DA0F9D36F34}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="502.219"/>
+												<Property Name="LoopBegin" Type="Real64" Value="1.10009327905535"/>
+												<Property Name="LoopEnd" Type="Real64" Value="4.85874531582778"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Shards\warden idle.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="535913784"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="warden idle" ID="{CDDACF3E-65CE-404E-89F1-6DA0F9D36F34}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="warden move" ID="{7A80CB2B-9484-4A1D-86AF-680657C76A4E}" ShortID="474057244">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="warden move" ID="{4A354839-E5B8-487E-9F23-98BEEFD31B30}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="229.347"/>
+												<Property Name="LoopBegin" Type="Real64" Value="1.13561306947021"/>
+												<Property Name="LoopEnd" Type="Real64" Value="4.74932752697038"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Shards\warden move.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="731462982"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="warden move" ID="{4A354839-E5B8-487E-9F23-98BEEFD31B30}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="warden spawn" ID="{EC3224F5-C973-4962-9554-D954CFF17192}" ShortID="115932897">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="warden spawn" ID="{9E933B09-587C-4E6C-960C-CE1FD8FD0367}">
+											<Language>SFX</Language>
+											<AudioFile>Shards\warden spawn.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="832214079"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="warden spawn" ID="{9E933B09-587C-4E6C-960C-CE1FD8FD0367}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

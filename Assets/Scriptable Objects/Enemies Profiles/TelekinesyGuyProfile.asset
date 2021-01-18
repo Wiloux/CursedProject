@@ -34,7 +34,7 @@ MonoBehaviour:
   chaseWEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 273c55c607ec47d478e3b249c0de1083, type: 2}
   runWEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -47,7 +47,7 @@ MonoBehaviour:
   onSpawnWEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 0655ee6a33e855f40b824173c53d4f3a, type: 2}
   getHitWEvent:
     idInternal: 0
     valueGuidInternal: 

@@ -192,9 +192,26 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="PlayChickenHit" ID="{951130F0-72EC-4361-BD1F-A3D4AF13D725}">
+							<ChildrenList>
+								<Action Name="" ID="{6DF19DDB-DDE1-4AE7-9566-2A66EF47A9CF}" ShortID="1021517063">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="3"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
+								<Action Name="" ID="{5E6EBDD9-2270-4E9C-B90C-30B09B9F5482}" ShortID="810674921">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ChickenHit" ID="{8FB5BE45-4756-41C4-B472-BD2BF2BB429D}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="Shards" ID="{B4D641E0-FBF5-4FF3-ADDD-3F7956FEA4AD}" ShortID="496058268">
+				<Folder Name="Warden" ID="{B4D641E0-FBF5-4FF3-ADDD-3F7956FEA4AD}" ShortID="496058268">
 					<ChildrenList>
 						<Event Name="ShardsRise" ID="{B4749122-34EF-4754-8624-049814B67E77}">
 							<ChildrenList>
@@ -240,6 +257,94 @@
 											<ObjectRef Name="ShardWallHit" ID="{69434EEB-27C5-4B6B-9E5F-C2F5E95D9EE8}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
 										</Reference>
 									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayWardenSpawn" ID="{58827486-2E57-4B87-B9AD-FD376816EC6A}">
+							<ChildrenList>
+								<Action Name="" ID="{6230D5E7-2A3E-4F4D-9301-8C2695A1FFA5}" ShortID="716379403">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="warden spawn" ID="{EC3224F5-C973-4962-9554-D954CFF17192}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayWardenIdle" ID="{0948A326-8F64-4403-A61C-B406400E343B}">
+							<ChildrenList>
+								<Action Name="" ID="{9B9F963F-1E00-4ED7-B012-C03210D2C257}" ShortID="952465779">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="warden spawn" ID="{EC3224F5-C973-4962-9554-D954CFF17192}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{797C01C4-2F52-493C-AF2F-AB8F07EC4A34}" ShortID="478395141">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="warden move" ID="{7A80CB2B-9484-4A1D-86AF-680657C76A4E}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{BB0DF68E-20F7-46C5-8DDF-F8A2632826FF}" ShortID="764674140">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="warden idle" ID="{951D9EAE-9720-46FA-A653-D9868055ED26}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayWardenMove" ID="{AF9437F2-78F0-4C2F-9721-441450A833C1}">
+							<ChildrenList>
+								<Action Name="" ID="{20CD9B7E-23F7-456F-BC1D-77A3C0DE86E7}" ShortID="722348617">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="warden spawn" ID="{EC3224F5-C973-4962-9554-D954CFF17192}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{962A4DE6-275C-4FA8-B58F-97B91049D9A6}" ShortID="186328448">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="warden idle" ID="{951D9EAE-9720-46FA-A653-D9868055ED26}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{4E0EA550-A175-456C-B671-9F2E9CE7EB17}" ShortID="836444040">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="warden move" ID="{7A80CB2B-9484-4A1D-86AF-680657C76A4E}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="StopMovementSound" ID="{7E2137EF-B809-4922-849C-EEF35B498AFD}">
+							<ChildrenList>
+								<Action Name="" ID="{F5D8D332-8A26-4075-8ED7-710BF9C23172}" ShortID="876101095">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="3"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList/>
 								</Action>
 							</ChildrenList>
 						</Event>
