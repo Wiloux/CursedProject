@@ -74,7 +74,7 @@ public class EnemyBase : MonoBehaviour
     private float timeToPostRunEvent;
     private AK.Wwise.Event watchWEvent;
 
-    private AK.Wwise.Event onSpawnWEvent;
+    protected AK.Wwise.Event onSpawnWEvent;
     private AK.Wwise.Event getHitWEvent;
     private AK.Wwise.Event deathWEvent;
 
@@ -99,8 +99,6 @@ public class EnemyBase : MonoBehaviour
         agent.speed = movementSpeed;
         // Set cooldown attack
         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
-
-        onSpawnWEvent?.Post(gameObject);
     }
 
     // Update is called once per frame

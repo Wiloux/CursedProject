@@ -26,6 +26,8 @@ public class ChickenMonster : EnemyBase
 
         Attack = DamagePlayerTouched;
         Chase = ChasePlayer;
+
+        onSpawnWEvent?.Post(gameObject);
     }
 
     private void ChasePlayer()
