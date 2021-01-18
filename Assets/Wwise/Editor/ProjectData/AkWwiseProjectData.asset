@@ -20,7 +20,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 49ff7bcc979ad940b68b76a26d9b8032
     GuidInternal: 
-    m_lastTime: -8585931272637308185
+    m_lastTime: -8585906168820160657
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5cf24529c5ae0c4fb7d461ec6430a707
     GuidInternal: 
-    m_lastTime: -8585906823873503521
+    m_lastTime: -8585906168818025970
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585906830239459062
+    m_lastTime: -8585905989620899949
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -88,8 +88,20 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585906833966676973
-    List: []
+    m_lastTime: -8585905989989371141
+    List:
+    - name: PlayChickenHit
+      guid: f0301195ec726143bd1fa3d4af13d725
+      id: 3029059251
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlayChickenHit
+        ObjectType: 3
+      Path: Default Work Unit\PlayChickenHit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Enemies.wwu
     PathAndIcons:
     - ElementName: Enemies
@@ -97,7 +109,7 @@ MonoBehaviour:
     ParentPath: Enemies
     guid: 7833dd357f5437458dde67e4bfd1d3f1
     GuidInternal: 
-    m_lastTime: -8585906828419770711
+    m_lastTime: -8585906168817866396
     List:
     - name: Chicken
       guid: b95c606dc42a5947bea9f0e934524f5d
@@ -298,7 +310,7 @@ MonoBehaviour:
     ParentPath: Tests
     guid: 7e1e99e9ec97634b9be4486f5e454591
     GuidInternal: 
-    m_lastTime: -8585907931442591741
+    m_lastTime: -8585906168818894030
     List:
     - name: Chicken
       guid: 90bf0756f07b41458e68dd708f9190ce
@@ -480,7 +492,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3f87fc84d75f844293f581868cfb0aa6
     GuidInternal: 
-    m_lastTime: -8585910301241631920
+    m_lastTime: -8585906168819711843
     List:
     - name: SFXVolume
       guid: 96a824d36af9db4e927d196920f86b9f
@@ -499,7 +511,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5600d4ec28ebe74084a4c24ece5ac1b5
     GuidInternal: 
-    m_lastTime: -8585931272637328128
+    m_lastTime: -8585906168819033258
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -509,7 +521,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f528942bed683349be7cda8752e78d33
     GuidInternal: 
-    m_lastTime: -8585910301237936626
+    m_lastTime: -8585906168824080171
     List:
     - name: PlayerHitSwitch
       guid: f6a60ae0bc54454daecf58f367b789fa
@@ -544,7 +556,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: cbbc1c536ac7334db81be44afd780643
     GuidInternal: 
-    m_lastTime: -8585931272637318154
+    m_lastTime: -8585906168817408006
     List: []
   ExpandedItems:
   - /CursedProject_WwiseProject

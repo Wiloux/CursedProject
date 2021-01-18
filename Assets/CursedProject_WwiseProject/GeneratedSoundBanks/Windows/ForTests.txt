@@ -15,6 +15,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2629272678	PlayBackstab			\Enemies\Chicken\PlayBackstab	
 	2892866942	PlayChickenDie			\Enemies\Chicken\PlayChickenDie	
 	2951433145	ShardsRise			\Enemies\Shards\ShardsRise	
+	3029059251	PlayChickenHit			\Default Work Unit\PlayChickenHit	
 	3241046308	TestBass			\Tests\TestBass	
 	3796699282	ShardWallHit			\Enemies\Shards\ShardWallHit	
 	3831688773	PlayerHit			\Tests\PlayerHit	
@@ -46,6 +47,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	170623511	Die3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\Die\Die3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\Die\Die3		352864
 	177710672	beartrap trigger	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\beartrap trigger_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Galinha\beartrap trigger		119608
 	179151226	shard wall hit 5	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shard wall hit 5_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Shards\ShardWallHit\shard wall hit 5		264664
+	203460149	Hit3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\Hit\Hit3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\ChickenHit\Hit3		60972
 	223542517	voe player 2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\voe player 2_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\ExpDialogue\ExpDialogue\voe player 2		1234864
 	229165378	shards hit3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shards hit3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\PlayerHit\PlayerHitShard\shards hit3		176464
 	230421140	Eager10	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\Eager\Eager10_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\Eager\EagerStart\Eager10		280908
@@ -67,6 +69,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	504518702	shards throw4	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shards throw4_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Shards\ShardsThrow\shards throw4		617464
 	509966098	shard wall hit 3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shard wall hit 3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Shards\ShardWallHit\shard wall hit 3		264664
 	525871147	Chase1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\Chase\Chase1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\Chase\Chase1		201180
+	528793756	Hit1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\Hit\Hit1_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\ChickenHit\Hit1		107836
 	540739948	RunAway3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\Run Away\RunAway3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\RunAway\RunAway3		352864
 	551745069	Chase5	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\Chase\Chase5_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\Chase\Chase5		302192
 	557898274	Chase6	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\Chase\Chase6_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\Chase\Chase6		309416
@@ -86,6 +89,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	758882226	voe board 1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\voe board 1_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\ExpDialogue\ExpDialogue\voe board 1		1323064
 	768588542	NotHittingPlayer	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\NotHittingPlayer_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Galinha\NotHittingPlayer		54464
 	784850670	shards rising 3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shards rising 3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Shards\ShardsRise\shards rising 3		1499464
+	788155044	Hit2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\Hit\Hit2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\ChickenHit\Hit2		88264
 	792448310	shard wall hit 4	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shard wall hit 4_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Shards\ShardWallHit\shard wall hit 4		264664
 	795602171	shards rising	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shards rising_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Shards\ShardsRise\shards rising		882064
 	821982476	PlayerHitChicken	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\SwitchTest\JK_PRC_05_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\PlayerHit\PlayerHitChicken		31756

@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID PLAYCHICKENCHASING = 1470550983U;
         static const AkUniqueID PLAYCHICKENDIE = 2892866942U;
         static const AkUniqueID PLAYCHICKENFOOTSTEPS = 196258217U;
+        static const AkUniqueID PLAYCHICKENHIT = 3029059251U;
         static const AkUniqueID PLAYCHICKENONSPAWN = 2039287504U;
         static const AkUniqueID PLAYCHICKENRUNAWAY = 4042026069U;
         static const AkUniqueID PLAYCHICKENWATCHING = 1378272331U;

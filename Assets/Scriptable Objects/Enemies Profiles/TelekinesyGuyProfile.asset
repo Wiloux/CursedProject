@@ -44,10 +44,14 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  onSpawnWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   getHitWEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: b6c735b9e2467a140bc92878ecca5837, type: 2}
+    WwiseObjectReference: {fileID: 0}
   deathWEvent:
     idInternal: 0
     valueGuidInternal: 

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="Project" SchemaVersion="97" WwiseVersion="v2019.2.8" WwiseBuild="7432">
+<WwiseDocument Type="Project" SchemaVersion="97" WwiseVersion="v2019.2.7" WwiseBuild="7402">
 	<ProjectInfo>
 		<Project Name="CursedProject_WwiseProject" ID="{318F191C-7E9C-4E67-AF48-1F7FB23CE627}">
 			<Platforms>
-				<Platform Name="iOS" ReferencePlatform="iOS" ID="{43D43357-382C-4CC5-8177-B4015BDCC79B}"/>
 				<Platform Name="Mac" ReferencePlatform="Mac" ID="{60C40D91-E80B-4DC3-B89B-3C9616D0CC5E}"/>
 				<Platform Name="Windows" ReferencePlatform="Windows" ID="{F8820D6B-BA81-42E2-99D7-2390DF7C4E1B}"/>
 			</Platforms>
@@ -17,21 +16,18 @@
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
 						<Value Platform="Windows"></Value>
-						<Value Platform="iOS"></Value>
 						<Value Platform="Mac"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="ExternalSourcesOutputPath" Type="string">
 					<ValueList>
 						<Value Platform="Windows">GeneratedSoundBanks\Windows</Value>
-						<Value Platform="iOS">GeneratedSoundBanks\iOS</Value>
 						<Value Platform="Mac">GeneratedSoundBanks\Mac</Value>
 					</ValueList>
 				</Property>
 				<Property Name="GlobalVoiceInstancesLimit" Type="int16">
 					<ValueList>
 						<Value Platform="Windows">256</Value>
-						<Value Platform="iOS">256</Value>
 						<Value Platform="Mac">256</Value>
 					</ValueList>
 				</Property>
@@ -42,42 +38,36 @@
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
 						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
-						<Value Platform="iOS">GeneratedSoundBanks\iOS\</Value>
 						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
 					<ValueList>
 						<Value Platform="Windows">Copy Streamed Files</Value>
-						<Value Platform="iOS">Copy Streamed Files</Value>
 						<Value Platform="Mac">Copy Streamed Files</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdLines" Type="string">
 					<ValueList>
 						<Value Platform="Windows">"$(CopyStreamedFilesExePath)" -info "$(InfoFilePath)" -outputpath "$(SoundBankPath)" -banks "$(SoundBankListAsTextFile)" -languages "$(LanguageList)"</Value>
-						<Value Platform="iOS">"$(CopyStreamedFilesExePath)" -info "$(InfoFilePath)" -outputpath "$(SoundBankPath)" -banks "$(SoundBankListAsTextFile)" -languages "$(LanguageList)"</Value>
 						<Value Platform="Mac">"$(CopyStreamedFilesExePath)" -info "$(InfoFilePath)" -outputpath "$(SoundBankPath)" -banks "$(SoundBankListAsTextFile)" -languages "$(LanguageList)"</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPreGenerateCustomCmdDescription" Type="string">
 					<ValueList>
 						<Value Platform="Windows"></Value>
-						<Value Platform="iOS"></Value>
 						<Value Platform="Mac"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPreGenerateCustomCmdLines" Type="string">
 					<ValueList>
 						<Value Platform="Windows"></Value>
-						<Value Platform="iOS"></Value>
 						<Value Platform="Mac"></Value>
 					</ValueList>
 				</Property>
 				<Property Name="VolumeThreshold" Type="Real64">
 					<ValueList>
 						<Value Platform="Windows">-80</Value>
-						<Value Platform="iOS">-80</Value>
 						<Value Platform="Mac">-80</Value>
 					</ValueList>
 				</Property>
@@ -9021,7 +9011,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="Mastering Suite" PluginType="3" CompanyID="0" PluginID="186">
+				<SharedPropertyList ClassName="" PluginType="3" CompanyID="0" PluginID="186">
 					<PropertyList>
 						<Property Name="Color" Type="int16">
 							<ValueList>

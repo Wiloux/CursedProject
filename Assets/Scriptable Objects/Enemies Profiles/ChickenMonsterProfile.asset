@@ -51,7 +51,7 @@ MonoBehaviour:
   getHitWEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: e512900b759a4064d907d10b21e86d0d, type: 2}
   deathWEvent:
     idInternal: 0
     valueGuidInternal: 

@@ -19,7 +19,7 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="1843574717">
+		<SoundBank Id="2879190521" Language="SFX" Hash="303295588">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -117,6 +117,22 @@
 						<File Id="864817520" Language="SFX">
 							<ShortName>Chicken\Footstep\chicken fs3.wav</ShortName>
 							<Path>SFX\Chicken\Footstep\chicken fs3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3029059251" Name="PlayChickenHit" ObjectPath="\Events\Default Work Unit\PlayChickenHit" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.345283" DurationMax="0.610952">
+					<IncludedMemoryFiles>
+						<File Id="203460149" Language="SFX">
+							<ShortName>Chicken\Vocal\Hit\Hit3.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Hit\Hit3_10C4C929.wem</Path>
+						</File>
+						<File Id="528793756" Language="SFX">
+							<ShortName>Chicken\Vocal\Hit\Hit1.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Hit\Hit1_10C4C929.wem</Path>
+						</File>
+						<File Id="788155044" Language="SFX">
+							<ShortName>Chicken\Vocal\Hit\Hit2.wav</ShortName>
+							<Path>SFX\Chicken\Vocal\Hit\Hit2_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
