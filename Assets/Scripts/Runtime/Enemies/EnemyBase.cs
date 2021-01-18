@@ -382,8 +382,8 @@ public class EnemyBase : MonoBehaviour
         return runningPointPos;
 
     }
-    public void PlayRunWEvent() { runWEvent?.Post(gameObject); }
-    public void PlayChaseWEvent() { chaseWEvent?.Post(gameObject); }
+    public void PlayRunWEvent() { if(!dead) runWEvent?.Post(gameObject); }
+    public void PlayChaseWEvent() { if(!dead) chaseWEvent?.Post(gameObject); }
 
     #region Agent methods
     protected void EnableAgent() { agent.isStopped = false; }
