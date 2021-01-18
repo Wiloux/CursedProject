@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHelper : MonoBehaviour
 {
     public Player_Movement playerMovement;
+    public Player player;
     public Inventory inventory;
     public static PlayerHelper instance;
     // Start is called before the first frame update
@@ -40,7 +41,7 @@ public class PlayerHelper : MonoBehaviour
 
     #region Player
     public void ToggleControls() {
-        playerMovement.stopControlls = !playerMovement.stopControlls;
+        player.stopControlls = !player.stopControlls;
     }
     #endregion
 }
