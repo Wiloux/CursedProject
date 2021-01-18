@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
     private float timeToAttack;
     [SerializeField] private float attackRange;
 
-    public AK.Wwise.Event PlayerHitEvent;
+    [SerializeField] private AK.Wwise.Event playerAttackWEvent;
+    [SerializeField] private AK.Wwise.Event PlayerHitEvent;
 
     private Action UseAbility;
 
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.C) && timeToAttack <= Time.timeSinceLevelLoad)
             {
                 Debug.Log("Player attacks");
+                playerAttackWEvent?.Post(gameObject);
                 Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackPointRange, attackLayerMask);
                 if(hits.Length > 0)
                 {

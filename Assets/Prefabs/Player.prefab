@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aadcef2814d3fa54b9e38391d1869eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: 0
   stopControlls: 0
   attackPoint: {fileID: 652953129}
   attackPointRange: 0.5
@@ -255,6 +256,10 @@ MonoBehaviour:
     m_Bits: 1
   attackCooldown: 2
   attackRange: 2
+  playerAttackWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   PlayerHitEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -303,7 +308,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5570753806488649908}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f4cf1650ea9ffd48912c7a77ac4e70e, type: 3}
   m_Name: 
@@ -321,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 5570753806488649902}
-  player: {fileID: 0}
+  player: {fileID: 8536683932730595807}
   inventory: {fileID: 5570753806488649891}
 --- !u!114 &3728557137432105148
 MonoBehaviour:
