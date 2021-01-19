@@ -19,7 +19,7 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="47007282">
+		<SoundBank Id="2879190521" Language="SFX" Hash="2281044782">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -288,11 +288,15 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3831688773" Name="PlayerHit" ObjectPath="\Events\Tests\PlayerHit" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.179660" DurationMax="1.500000">
+				<Event Id="3831688773" Name="PlayerHit" ObjectPath="\Events\Tests\PlayerHit" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.334966" DurationMax="1.500000">
 					<IncludedMemoryFiles>
 						<File Id="44541559" Language="SFX">
 							<ShortName>Shards\shards hit1.wav</ShortName>
 							<Path>SFX\Shards\shards hit1_10C4C929.wem</Path>
+						</File>
+						<File Id="218867492" Language="SFX">
+							<ShortName>Chicken\Attack\PlayerHitByChicken2.wav</ShortName>
+							<Path>SFX\Chicken\Attack\PlayerHitByChicken2_10C4C929.wem</Path>
 						</File>
 						<File Id="229165378" Language="SFX">
 							<ShortName>Shards\shards hit3.wav</ShortName>
@@ -310,21 +314,16 @@
 							<ShortName>Shards\shards hit4.wav</ShortName>
 							<Path>SFX\Shards\shards hit4_10C4C929.wem</Path>
 						</File>
-						<File Id="821982476" Language="SFX">
-							<ShortName>SwitchTest\JK_PRC_05.wav</ShortName>
-							<Path>SFX\SwitchTest\JK_PRC_05_10C4C929.wem</Path>
-						</File>
 						<File Id="835120531" Language="SFX">
 							<ShortName>Shards\shards hit5.wav</ShortName>
 							<Path>SFX\Shards\shards hit5_10C4C929.wem</Path>
 						</File>
+						<File Id="898080531" Language="SFX">
+							<ShortName>Chicken\Attack\PlayerHitByChicken1.wav</ShortName>
+							<Path>SFX\Chicken\Attack\PlayerHitByChicken1_10C4C929.wem</Path>
+						</File>
 					</IncludedMemoryFiles>
 					<SwitchContainers>
-						<SwitchContainer SwitchValue="{A938E3BF-7195-4CAF-8DD8-F2B12A66A2AD}">
-							<Media>
-								<File Id="821982476"/>
-							</Media>
-						</SwitchContainer>
 						<SwitchContainer SwitchValue="{3A2B8A51-89F7-4E53-A5E7-4F05BB0FD04F}">
 							<Media>
 								<File Id="44541559"/>
@@ -333,6 +332,12 @@
 								<File Id="709017288"/>
 								<File Id="715216894"/>
 								<File Id="835120531"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{A938E3BF-7195-4CAF-8DD8-F2B12A66A2AD}">
+							<Media>
+								<File Id="218867492"/>
+								<File Id="898080531"/>
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -417,11 +422,11 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1171015393" Name="PlayWardenSpawn" ObjectPath="\Events\Enemies\Warden\PlayWardenSpawn" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="5.775487" DurationMax="5.775487">
+				<Event Id="1171015393" Name="PlayWardenSpawn" ObjectPath="\Events\Enemies\Warden\PlayWardenSpawn" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="7.525202" DurationMax="7.525202">
 					<IncludedMemoryFiles>
 						<File Id="832214079" Language="SFX">
 							<ShortName>Shards\warden spawn.wav</ShortName>
-							<Path>SFX\Shards\warden spawn_10C4C929.wem</Path>
+							<Path>SFX\Shards\warden spawn_6D288257.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

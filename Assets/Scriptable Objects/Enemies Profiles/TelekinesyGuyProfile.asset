@@ -47,7 +47,7 @@ MonoBehaviour:
   onSpawnWEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 0655ee6a33e855f40b824173c53d4f3a, type: 2}
+    WwiseObjectReference: {fileID: 0}
   getHitWEvent:
     idInternal: 0
     valueGuidInternal: 

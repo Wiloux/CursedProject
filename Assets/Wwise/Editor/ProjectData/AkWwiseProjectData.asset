@@ -97,7 +97,7 @@ MonoBehaviour:
     ParentPath: Enemies
     guid: 7833dd357f5437458dde67e4bfd1d3f1
     GuidInternal: 
-    m_lastTime: -8585905932419167156
+    m_lastTime: -8585905305716461962
     List:
     - name: Chicken
       guid: b95c606dc42a5947bea9f0e934524f5d
@@ -368,7 +368,7 @@ MonoBehaviour:
     ParentPath: Tests
     guid: 7e1e99e9ec97634b9be4486f5e454591
     GuidInternal: 
-    m_lastTime: -8585906168818894030
+    m_lastTime: -8585905250707321841
     List:
     - name: Chicken
       guid: 90bf0756f07b41458e68dd708f9190ce
@@ -620,7 +620,6 @@ MonoBehaviour:
   - /CursedProject_WwiseProject
   - /CursedProject_WwiseProject/Events
   - /CursedProject_WwiseProject/Events/Enemies
-  - /CursedProject_WwiseProject/Events/Enemies/Chicken
   - /CursedProject_WwiseProject/Events/Enemies/Warden
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -1964,7 +1964,7 @@ MonoBehaviour:
   Attack3:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 14b8ff53d27aff3448e3c90a7ae84f17, type: 2}
 --- !u!1 &1280317782457181350
 GameObject:
   m_ObjectHideFlags: 0
@@ -10293,7 +10293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6202440737812501114
 Transform:
   m_ObjectHideFlags: 0
@@ -10424,6 +10424,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 6202440737812501109}
+  wasAgentStopped: 0
+  wasAgentDestination: {x: 0, y: 0, z: 0}
   navMeshMask:
     serializedVersion: 2
     m_Bits: 1089
@@ -10438,6 +10440,14 @@ MonoBehaviour:
   spikeSpawnDurationMinMax: {x: 1, y: 3}
   isTrigger: 0
   isSpawningSpikes: 0
+  riseWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0655ee6a33e855f40b824173c53d4f3a, type: 2}
+  onIdleEnterWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2b2b0634275f7d64fa5e6dd927c65ae3, type: 2}
 --- !u!1 &6234781069538172660
 GameObject:
   m_ObjectHideFlags: 0
