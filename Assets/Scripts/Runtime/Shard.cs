@@ -10,6 +10,7 @@ public class Shard : MonoBehaviour
 
     private bool isReady;
     private bool isThrowed;
+    private bool isDestroyed;
     public float preparationDuration;
     private float preparationTimer;
 
@@ -40,7 +41,7 @@ public class Shard : MonoBehaviour
         preparationTimer = preparationDuration;
 
         randomRotationAxis = Vector3.zero;
-        while(randomRotationAxis == Vector3.zero) { randomRotationAxis = new Vector3(Random.Range(0, 2f), Random.Range(0, 2f), Random.Range(0, 2f)); }
+        while (randomRotationAxis == Vector3.zero) { randomRotationAxis = new Vector3(Random.Range(0, 2f), Random.Range(0, 2f), Random.Range(0, 2f)); }
     }
 
     // Update is called once per frame
@@ -54,7 +55,7 @@ public class Shard : MonoBehaviour
                 transform.position = posTarget;
                 transform.rotation = Quaternion.LookRotation(PlayerHelper.instance.transform.position - posTarget);
                 isReady = true;
-                Invoke("Throw", 0.5f);
+                Invoke(nameof(Throw), 0.5f);
             }
             else
             {
@@ -67,10 +68,17 @@ public class Shard : MonoBehaviour
         {
             transform.Rotate(randomRotationAxis, 360f * 2 * (Time.deltaTime / 0.5f));
             enemy.isSpawningSpikes = true;
+            if (isDestroyed)
+            {
+                if (!IsInvoking())
+                {
+                    Destroy(gameObject);
+                }
+                Debug.Log(IsInvoking());
+            }
         }
         //Debug.DrawRay(transform.position, transform.forward * 2f, Color.red, 0.1f);
         //Debug.DrawRay(transform.position, transform.up * 2f, Color.green, 0.1f);
-
     }
 
     private void Throw()
@@ -82,6 +90,8 @@ public class Shard : MonoBehaviour
         Vector3 throwDir = (PlayerHelper.instance.transform.position - transform.position).normalized;
         transform.rotation = Quaternion.LookRotation(throwDir);
         rb.AddForce(throwDir * 2f, ForceMode.Impulse);
+
+        Invoke(nameof(enemy.PlayOnIdleEnterWEvent), 0.4f);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -96,7 +106,14 @@ public class Shard : MonoBehaviour
             else { /* simple damage on player */}
 
         }
-        else if (!other.transform.CompareTag("Enemy")) { Destroy(gameObject); hitWall?.Post(gameObject); }
+        else if (!other.transform.CompareTag("Enemy"))
+        {
+            isDestroyed = true;
+            Destroy(GetComponent<Renderer>());
+            Destroy(collider);
+            rb.velocity = Vector3.zero;
+            hitWall?.Post(gameObject); 
+        }
     }
 
     private void OnDestroy()

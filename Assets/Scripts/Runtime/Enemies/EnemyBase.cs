@@ -30,8 +30,8 @@ public class EnemyBase : MonoBehaviour
 
     #region EnemyProfile vars
     private int maxHealth;
-    private int health;
-    private bool dead;
+    protected int health;
+    protected bool dead;
     public bool pause;
     private bool stagger;
     private float timeToStopStagger;
@@ -99,6 +99,8 @@ public class EnemyBase : MonoBehaviour
         agent.speed = movementSpeed;
         // Set cooldown attack
         timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
+
+        onSpawnWEvent?.Post(gameObject);
     }
 
     // Update is called once per frame
@@ -277,7 +279,11 @@ public class EnemyBase : MonoBehaviour
             foreach(RaycastHit hit in hits)
             {
                 string tag = hit.transform.tag;
-                if(tag == "Player") { Debug.Log("aimable"); return true; }
+                if(tag == "Player") 
+                { 
+                    //Debug.Log("aimable"); 
+                    return true; 
+                }
                 else if(tag != "Ground" && tag != "Enemy") { return false; }
             }
         }
@@ -286,7 +292,7 @@ public class EnemyBase : MonoBehaviour
     #endregion
 
     #region Health methods
-    public void TakeDamage()
+    public virtual void TakeDamage()
     {
         Debug.Log(gameObject.name + " took damage");
         health--;

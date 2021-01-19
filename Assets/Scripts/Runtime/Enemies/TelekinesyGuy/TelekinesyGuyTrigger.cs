@@ -8,7 +8,7 @@ public class TelekinesyGuyTrigger : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            transform.parent.GetComponent<TelekinesyGuy>().isTrigger = true;
+            transform.parent.GetComponent<TelekinesyGuy>().TriggerRise();
             Destroy(gameObject);
         }
     }

@@ -10,6 +10,10 @@ public class TelekinesyGuy : EnemyBase
     public bool isTrigger;
     public bool isSpawningSpikes;
 
+    [Header("Wwise Events")]
+    [SerializeField] private AK.Wwise.Event riseWEvent;
+    [SerializeField] private AK.Wwise.Event onIdleEnterWEvent;
+
     public override void Start()
     {
         base.Start();
@@ -44,8 +48,8 @@ public class TelekinesyGuy : EnemyBase
         if(other.gameObject.layer == 10)
         {
             animator.SetTrigger("endSpawn");
+            Invoke(nameof(PlayOnIdleEnterWEvent), 2.4f);
 
-            onSpawnWEvent?.Post(gameObject);
             isActive = true;
             agent.enabled = true;
             rb.useGravity = true;
@@ -74,5 +78,26 @@ public class TelekinesyGuy : EnemyBase
         GameObject go = Instantiate(projectilePrefab, spikeSpawnPos, spikeSpawnRot);
         Shard spike = go.GetComponent<Shard>();
         spike.enemy = this;
+    }
+
+    public void TriggerRise()
+    {
+        riseWEvent?.Post(gameObject);
+        isTrigger = true;
+    }
+
+    public void PlayOnIdleEnterWEvent()
+    {
+        if (!dead) onIdleEnterWEvent?.Post(gameObject);
+        Debug.Log("playin entering idle");
+    }
+
+    public override void TakeDamage()
+    {
+        base.TakeDamage();
+        if(health <= 0)
+        {
+            Invoke(nameof(PlayOnIdleEnterWEvent), 0.4f);
+        }
     }
 }
