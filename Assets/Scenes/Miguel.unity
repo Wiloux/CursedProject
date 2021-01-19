@@ -2466,6 +2466,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChickenMonster
       objectReference: {fileID: 0}
+    - target: {fileID: 4308134389288796762, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4319786317964529277, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 15.659485

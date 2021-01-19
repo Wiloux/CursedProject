@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eefb43985ef95445943655c05f0e38e, type: 3}
+  m_Name: B3A3504E-DE92-4435-83EC-0574E547AFF4
+  m_EditorClassIdentifier: 
+  objectName: PlayWardenDie
+  id: 1870077814
+  guid: B3A3504E-DE92-4435-83EC-0574E547AFF4

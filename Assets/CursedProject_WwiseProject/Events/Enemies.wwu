@@ -326,6 +326,35 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="PlayWardenHurt" ID="{1A17A08F-3700-4DAE-A247-4E1C9ED93C95}">
+							<ChildrenList>
+								<Action Name="" ID="{82C4C75F-3A34-475D-AB7E-EED7CD8CCF23}" ShortID="879269239">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Hurt" ID="{0BF02D91-5B09-48B3-96A9-1626D1E03A17}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayWardenDie" ID="{B3A3504E-DE92-4435-83EC-0574E547AFF4}">
+							<ChildrenList>
+								<Action Name="" ID="{E5A4C055-2543-4C38-A7CC-545EAA9FCBF8}" ShortID="567844118">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="3"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
+								<Action Name="" ID="{2C56C2E0-E768-47FF-9E67-5020B9261B7F}" ShortID="236144686">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ImDie" ID="{72F0D33C-2905-444A-97C1-E6A34C542FB3}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

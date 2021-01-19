@@ -11,6 +11,7 @@
 						<ObjectRef Name="PlayChickenFootsteps" ID="{377CB89E-1AD2-42D0-A801-74917BE099BA}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenHit" ID="{951130F0-72EC-4361-BD1F-A3D4AF13D725}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayWardenIdle" ID="{0948A326-8F64-4403-A61C-B406400E343B}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayWardenDie" ID="{B3A3504E-DE92-4435-83EC-0574E547AFF4}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayHighlight" ID="{CF4A09C0-A989-449D-8511-3213A5CE61AA}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayAttack3" ID="{02BC7C02-0409-4580-AE17-63395674C15E}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="WeirdAttack" ID="{6684B1AD-88B3-471E-8C65-91C8F828D3CB}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
@@ -28,6 +29,7 @@
 						<ObjectRef Name="PlayWardenMove" ID="{AF9437F2-78F0-4C2F-9721-441450A833C1}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenWatching" ID="{8E4C7547-3554-4CBB-B24B-C93BEEFB76B9}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="StopExpDialogue" ID="{21C83AE9-81ED-4D35-8601-723FE3B7377B}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayWardenHurt" ID="{1A17A08F-3700-4DAE-A247-4E1C9ED93C95}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenChasing" ID="{108AE46C-3F7B-4DDB-9105-00FB2FC4E86B}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayGiggleChicken" ID="{9CB0E16E-B2A0-4E69-80F2-1AD854124C64}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayFSChicken" ID="{2244B6BA-6555-4F2C-8FFC-F9C95CBDE82D}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>

@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585905932353718850
+    m_lastTime: -8585905089660774364
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -97,7 +97,7 @@ MonoBehaviour:
     ParentPath: Enemies
     guid: 7833dd357f5437458dde67e4bfd1d3f1
     GuidInternal: 
-    m_lastTime: -8585905305716461962
+    m_lastTime: -8585905089660604786
     List:
     - name: Chicken
       guid: b95c606dc42a5947bea9f0e934524f5d
@@ -248,6 +248,34 @@ MonoBehaviour:
       - ElementName: PlayChickenWatching
         ObjectType: 3
       Path: Enemies\Chicken\PlayChickenWatching
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayWardenDie
+      guid: 4e50a3b392de354483ec0574e547aff4
+      id: 1870077814
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Warden
+        ObjectType: 4
+      - ElementName: PlayWardenDie
+        ObjectType: 3
+      Path: Enemies\Warden\PlayWardenDie
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayWardenHurt
+      guid: 8fa0171a0037ae4da2474e1c9ed93c95
+      id: 933827407
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: Warden
+        ObjectType: 4
+      - ElementName: PlayWardenHurt
+        ObjectType: 3
+      Path: Enemies\Warden\PlayWardenHurt
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
