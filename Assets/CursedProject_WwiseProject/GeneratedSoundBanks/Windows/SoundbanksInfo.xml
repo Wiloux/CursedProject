@@ -19,7 +19,7 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="303295588">
+		<SoundBank Id="2879190521" Language="SFX" Hash="47007282">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -120,7 +120,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3029059251" Name="PlayChickenHit" ObjectPath="\Events\Default Work Unit\PlayChickenHit" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.345283" DurationMax="0.610952">
+				<Event Id="3029059251" Name="PlayChickenHit" ObjectPath="\Events\Enemies\Chicken\PlayChickenHit" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.345283" DurationMax="0.610952">
 					<IncludedMemoryFiles>
 						<File Id="203460149" Language="SFX">
 							<ShortName>Chicken\Vocal\Hit\Hit3.wav</ShortName>
@@ -401,7 +401,31 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2951433145" Name="ShardsRise" ObjectPath="\Events\Enemies\Shards\ShardsRise" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="5.000000" DurationMax="8.500000">
+				<Event Id="2920750754" Name="PlayWardenIdle" ObjectPath="\Events\Enemies\Warden\PlayWardenIdle" MaxAttenuation="30.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="535913784" Language="SFX">
+							<ShortName>Shards\warden idle.wav</ShortName>
+							<Path>SFX\Shards\warden idle_C0BF7146.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3781044531" Name="PlayWardenMove" ObjectPath="\Events\Enemies\Warden\PlayWardenMove" MaxAttenuation="30.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="731462982" Language="SFX">
+							<ShortName>Shards\warden move.wav</ShortName>
+							<Path>SFX\Shards\warden move_C95F6BD6.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1171015393" Name="PlayWardenSpawn" ObjectPath="\Events\Enemies\Warden\PlayWardenSpawn" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="5.775487" DurationMax="5.775487">
+					<IncludedMemoryFiles>
+						<File Id="832214079" Language="SFX">
+							<ShortName>Shards\warden spawn.wav</ShortName>
+							<Path>SFX\Shards\warden spawn_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2951433145" Name="ShardsRise" ObjectPath="\Events\Enemies\Warden\ShardsRise" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="5.000000" DurationMax="8.500000">
 					<IncludedMemoryFiles>
 						<File Id="784850670" Language="SFX">
 							<ShortName>Shards\shards rising 3.wav</ShortName>
@@ -417,7 +441,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="617402058" Name="ShardsThrow" ObjectPath="\Events\Enemies\Shards\ShardsThrow" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="3.303560" DurationMax="5.297316">
+				<Event Id="617402058" Name="ShardsThrow" ObjectPath="\Events\Enemies\Warden\ShardsThrow" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="3.303560" DurationMax="5.297316">
 					<IncludedMemoryFiles>
 						<File Id="243879499" Language="SFX">
 							<ShortName>Shards\shards throw5.wav</ShortName>
@@ -441,7 +465,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3796699282" Name="ShardWallHit" ObjectPath="\Events\Enemies\Shards\ShardWallHit" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000">
+				<Event Id="3796699282" Name="ShardWallHit" ObjectPath="\Events\Enemies\Warden\ShardWallHit" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000">
 					<IncludedMemoryFiles>
 						<File Id="179151226" Language="SFX">
 							<ShortName>Shards\shard wall hit 5.wav</ShortName>
@@ -470,6 +494,7 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="1672325348" Name="StopExpDialogue" ObjectPath="\Events\Tests\DialogueExp\StopExpDialogue" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="4217165871" Name="StopMovementSound" ObjectPath="\Events\Enemies\Warden\StopMovementSound" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3241046308" Name="TestBass" ObjectPath="\Events\Tests\TestBass" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="479465834" Language="SFX">

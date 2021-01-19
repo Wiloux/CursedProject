@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bee3f608efddb4494b847774e8f08a, type: 3}
   m_Name: ChickenMonsterProfile
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 1
   movementSpeed: 4
   chase: 1
   detectionRange: 15

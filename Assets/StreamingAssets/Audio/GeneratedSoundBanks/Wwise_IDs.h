@@ -30,10 +30,14 @@ namespace AK
         static const AkUniqueID PLAYHIGHLIGHT = 145167493U;
         static const AkUniqueID PLAYHITCHICKEN = 4251718543U;
         static const AkUniqueID PLAYKEYPRESS = 1168436793U;
+        static const AkUniqueID PLAYWARDENIDLE = 2920750754U;
+        static const AkUniqueID PLAYWARDENMOVE = 3781044531U;
+        static const AkUniqueID PLAYWARDENSPAWN = 1171015393U;
         static const AkUniqueID SHARDSRISE = 2951433145U;
         static const AkUniqueID SHARDSTHROW = 617402058U;
         static const AkUniqueID SHARDWALLHIT = 3796699282U;
         static const AkUniqueID STOPEXPDIALOGUE = 1672325348U;
+        static const AkUniqueID STOPMOVEMENTSOUND = 4217165871U;
         static const AkUniqueID TESTBASS = 3241046308U;
         static const AkUniqueID WEIRDATTACK = 1813814736U;
     } // namespace EVENTS

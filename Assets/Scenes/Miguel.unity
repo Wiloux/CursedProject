@@ -842,6 +842,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9085878396442411420, guid: 6c16cf962ac860d4f97d03a4ca9744cb, type: 3}
+      propertyPath: Attack3.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 14b8ff53d27aff3448e3c90a7ae84f17, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c16cf962ac860d4f97d03a4ca9744cb, type: 3}
 --- !u!4 &863698405 stripped
@@ -1369,7 +1373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.39
+      value: 0.29
       objectReference: {fileID: 0}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1377,7 +1381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.54
+      value: 6.54
       objectReference: {fileID: 0}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1411,6 +1415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8536683932730595807, guid: a190e9222e2f94e458b5fac796614412, type: 3}
+      propertyPath: playerAttackWEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: cb86575e6c591334889d3172d7b7761a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a190e9222e2f94e458b5fac796614412, type: 3}
 --- !u!1 &1630557118
@@ -1753,6 +1761,10 @@ PrefabInstance:
     - target: {fileID: 4308134389288796762, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
       propertyPath: m_Name
       value: ChickenMonster
+      objectReference: {fileID: 0}
+    - target: {fileID: 4308134389288796762, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
