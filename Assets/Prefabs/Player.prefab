@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aadcef2814d3fa54b9e38391d1869eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 5570753806488649902}
   character: 0
   stopControlls: 0
   attackPoint: {fileID: 652953129}
@@ -287,6 +288,7 @@ MonoBehaviour:
   _rotSpeed: 70
   _verticalSpeed: 3
   _verticalSpeedNeg: 1.5
+  isMoving: 0
 --- !u!114 &5570753806488649891
 MonoBehaviour:
   m_ObjectHideFlags: 0

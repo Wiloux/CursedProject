@@ -49,16 +49,18 @@ public class GameHandler : MonoBehaviour
                             if(enemy != null) { EnemyHelper.TogglePause(enemy); }
                         }
                     }
-                    break;
+                    continue;
                 case "Player":
                     PlayerHelper.instance.ToggleControls();
-                    break;
+                    continue;
                 case "Mirror":
                     SquareMirror mirroCam = go.GetComponent<SquareMirror>();
                     if (mirroCam != null) mirroCam.enabled = !mirroCam.enabled;
-                    break;
+                    continue;
 
             }
+            Shard shard = go.GetComponent<Shard>();
+            if (shard != null) { shard.TogglePause(); continue; }
         }
     }
 

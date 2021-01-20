@@ -7,13 +7,17 @@ public class Shard : MonoBehaviour
     private new Collider collider;
     private Rigidbody rb;
     public TelekinesyGuy enemy;
-    public  GameObject PS;
+    public GameObject PS;
+
+    public bool isPaused;
+    private Vector3 pausedVelocity;
 
     private bool isReady;
     private bool isThrowed;
     private bool isDestroyed;
     public float preparationDuration;
     private float preparationTimer;
+    private bool invoking;
 
     [Header("Wwise Events")]
     [SerializeField] private AK.Wwise.Event hitWall;
@@ -49,51 +53,61 @@ public class Shard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isReady)
+        if (!isPaused)
         {
-            preparationTimer -= Time.deltaTime;
-            if (preparationTimer < 0)
+            if (!isReady)
             {
-                transform.position = posTarget;
-                transform.rotation = Quaternion.LookRotation(PlayerHelper.instance.transform.position - posTarget);
-                isReady = true;
-                Invoke(nameof(Throw), 0.5f);
+                preparationTimer -= Time.deltaTime;
+                if (preparationTimer < 0)
+                {
+                    transform.position = posTarget;
+                    transform.rotation = Quaternion.LookRotation(PlayerHelper.instance.transform.position - posTarget);
+                    isReady = true;
+                    Invoke(nameof(Throw), 0.5f);
+                }
+                else
+                {
+                    transform.position = Vector3.Lerp(spawnPos, posTarget, 1 - (preparationTimer / preparationDuration));
+                    transform.rotation = Quaternion.Lerp(spawnRot, Quaternion.LookRotation(PlayerHelper.instance.transform.position - posTarget), 1 - (preparationTimer / preparationDuration));
+                }
+                enemy.isSpawningSpikes = true;
             }
-            else
+            else if (!isThrowed)
             {
-                transform.position = Vector3.Lerp(spawnPos, posTarget, 1 - (preparationTimer/preparationDuration));
-                transform.rotation = Quaternion.Lerp(spawnRot, Quaternion.LookRotation(PlayerHelper.instance.transform.position - posTarget), 1 - (preparationTimer / preparationDuration));
+                transform.Rotate(randomRotationAxis, 360f * 2 * (Time.deltaTime / 0.5f));
+                enemy.isSpawningSpikes = true;
             }
-            enemy.isSpawningSpikes = true;
-        }
-        else if(!isThrowed)
-        {
-            transform.Rotate(randomRotationAxis, 360f * 2 * (Time.deltaTime / 0.5f));
-            enemy.isSpawningSpikes = true;
-            if (isDestroyed)
+            else if (isDestroyed)
             {
-                if (!IsInvoking())
+                if (!invoking)
                 {
                     Destroy(gameObject);
                 }
                 Debug.Log(IsInvoking());
             }
+            //Debug.DrawRay(transform.position, transform.forward * 2f, Color.red, 0.1f);
+            //Debug.DrawRay(transform.position, transform.up * 2f, Color.green, 0.1f);
         }
-        //Debug.DrawRay(transform.position, transform.forward * 2f, Color.red, 0.1f);
-        //Debug.DrawRay(transform.position, transform.up * 2f, Color.green, 0.1f);
     }
 
     private void Throw()
     {
-        enemy.animator.SetInteger("attackType",Random.Range(0,2));
-        enemy.animator.SetTrigger("attack");
-        isThrowed = true;
-        collider.enabled = true;
+        if (!isPaused)
+        {
+            enemy.animator.SetInteger("attackType", Random.Range(0, 2));
+            enemy.animator.SetTrigger("attack");
+            isThrowed = true;
+            collider.enabled = true;
+            ImpulseShard();
+
+            StartCoroutine(PlayOnIdleEnterWEventLater(4f));
+        }
+    }
+    private void ImpulseShard()
+    {
         Vector3 throwDir = (PlayerHelper.instance.transform.position - transform.position).normalized;
         transform.rotation = Quaternion.LookRotation(throwDir);
         rb.AddForce(throwDir * 2f, ForceMode.Impulse);
-
-        Invoke(nameof(enemy.PlayOnIdleEnterWEvent), 0.4f);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -125,5 +139,32 @@ public class Shard : MonoBehaviour
         enemy.isSpawningSpikes = false;
         enemy.agent.isStopped = false;
     }
+
+    private IEnumerator PlayOnIdleEnterWEventLater(float time)
+    {
+        invoking = true;
+        yield return new WaitForSeconds(time);
+        enemy.PlayOnIdleEnterWEvent();
+        invoking = false;
+    }
+
+    #region Pause Handling
+    public void TogglePause()
+    {
+        if (!isPaused) Pause();
+    }
+    private void Pause()
+    {
+        isPaused = true;
+        pausedVelocity = rb.velocity;
+        rb.velocity = Vector3.zero;
+    }
+    private void Unpause()
+    {
+        isPaused = false;
+        ImpulseShard();
+        rb.velocity = pausedVelocity;
+    }
+    #endregion
 }
 
