@@ -7,6 +7,7 @@ public class Shard : MonoBehaviour
     private new Collider collider;
     private Rigidbody rb;
     public TelekinesyGuy enemy;
+    public  GameObject PS;
 
     private bool isReady;
     private bool isThrowed;
@@ -25,6 +26,7 @@ public class Shard : MonoBehaviour
 
     Vector3 throwTarget;
     Vector3 randomRotationAxis;
+
 
     // Start is called before the first frame update
     void Start()
@@ -109,10 +111,12 @@ public class Shard : MonoBehaviour
         else if (!other.transform.CompareTag("Enemy"))
         {
             isDestroyed = true;
-            Destroy(GetComponent<Renderer>());
+            Destroy(GetComponentInChildren<Renderer>());
             Destroy(collider);
+
             rb.velocity = Vector3.zero;
-            hitWall?.Post(gameObject); 
+            hitWall?.Post(gameObject);
+            PS.SetActive(true);
         }
     }
 

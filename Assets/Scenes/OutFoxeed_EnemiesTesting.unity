@@ -2016,7 +2016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6202440737812501108, guid: 6c16cf962ac860d4f97d03a4ca9744cb, type: 3}
       propertyPath: m_Name
-      value: ProtoTelekinesyGuy
+      value: Warden
       objectReference: {fileID: 0}
     - target: {fileID: 6202440737812501109, guid: 6c16cf962ac860d4f97d03a4ca9744cb, type: 3}
       propertyPath: m_BaseOffset

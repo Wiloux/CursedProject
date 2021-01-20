@@ -10288,7 +10288,7 @@ GameObject:
   - component: {fileID: 6202440737812501109}
   - component: {fileID: 6202440737812501115}
   m_Layer: 0
-  m_Name: ProtoTelekinesyGuy
+  m_Name: Warden
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
