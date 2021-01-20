@@ -21,13 +21,16 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private float _verticalSpeedNeg = 5f;
     float rotX;
 
+    public bool isMoving;
     // Update is called once per frame
     void Update()
     {
+        isMoving = false;
         if (!player.stopControlls)
         {
             RotatePlayerWithMouse();
             Movement();
+            if(Input.GetAxis("Horizontal") != 0) { isMoving = true; }
         }
     }
 
