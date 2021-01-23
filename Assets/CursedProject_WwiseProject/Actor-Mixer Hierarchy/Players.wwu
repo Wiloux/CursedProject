@@ -7,7 +7,89 @@
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
 			<ChildrenList>
-				<Folder Name="Gyaru" ID="{241DB5C1-A300-47D6-9796-D06F43B38DCD}" ShortID="155823083"/>
+				<Folder Name="Gyaru" ID="{241DB5C1-A300-47D6-9796-D06F43B38DCD}" ShortID="155823083">
+					<ChildrenList>
+						<Folder Name="Taser" ID="{6EF88E92-98E3-456B-B3F9-688704CC3A7A}" ShortID="288993624">
+							<ChildrenList>
+								<Sound Name="LongTail" ID="{BA9AC111-4931-4224-AC67-18BFE3EFFFB9}" ShortID="522077901">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="LongTail" ID="{198181F8-B045-49DF-BB76-93054C848AEB}">
+											<Language>SFX</Language>
+											<AudioFile>PlayerWeapons\Gyaru\LongTail.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="823667250"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="LongTail" ID="{198181F8-B045-49DF-BB76-93054C848AEB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Short" ID="{CE1B3CA8-58CA-4603-90CE-7FE97B005D94}" ShortID="673724534">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Short" ID="{68B050B7-4D99-471A-8ACE-6D713A2B3D4E}">
+											<Language>SFX</Language>
+											<AudioFile>PlayerWeapons\Gyaru\Short.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="153084191"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Short" ID="{68B050B7-4D99-471A-8ACE-6D713A2B3D4E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Long" ID="{9F761C2B-E91F-4731-9323-A3DF020CFCF4}" ShortID="62419735">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Long" ID="{855A9D98-B637-4F30-B583-824A4AD3B0A0}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="136.842"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0.502857142857143"/>
+												<Property Name="LoopEnd" Type="Real64" Value="1.86285714285714"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PlayerWeapons\Gyaru\Long.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="321833020"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Long" ID="{855A9D98-B637-4F30-B583-824A4AD3B0A0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 				<SwitchContainer Name="FootstepsPlayer" ID="{B9148C28-E300-4A9B-8E29-EF47C7818ED2}" ShortID="63908252">
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -96,7 +178,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="SapatoFormalWalk1" ID="{6D3C8F40-E2A9-4C79-B637-872FFDBC9581}" ShortID="542686532">
+												<Sound Name="SapatoFormalWalk1" ID="{18BA9164-4A30-4FFD-98DF-247716CCA7B2}" ShortID="858854791">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -106,19 +188,19 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalWalk1" ID="{5F42EABB-E78D-4E77-8B24-E236545E8627}">
+														<AudioFileSource Name="SapatoFormalWalk1" ID="{FD512233-BBD5-4865-9128-EDEB4BB2F15D}">
 															<Language>SFX</Language>
-															<AudioFile>PlayerWeapons\SapatoFormalWalk1.wav</AudioFile>
+															<AudioFile>PlayerMovement\SapatoFormalWalk1.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="951969098"/>
+																<MediaID ID="424694783"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalWalk1" ID="{5F42EABB-E78D-4E77-8B24-E236545E8627}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalWalk1" ID="{FD512233-BBD5-4865-9128-EDEB4BB2F15D}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SapatoFormalWalk2" ID="{F72F8A09-C200-4105-A2D5-A5F2111B2730}" ShortID="17525432">
+												<Sound Name="SapatoFormalWalk2" ID="{FEE32026-0DE0-42AD-BEF4-D2699C49221A}" ShortID="991820702">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -128,22 +210,22 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalWalk2" ID="{9AC952A9-1B27-489D-BCF8-3E1B98CCC2A3}">
+														<AudioFileSource Name="SapatoFormalWalk2" ID="{99B9ECDE-CA1B-48EB-B49C-33F52EB6ED78}">
 															<Language>SFX</Language>
-															<AudioFile>PlayerWeapons\SapatoFormalWalk2.wav</AudioFile>
+															<AudioFile>PlayerMovement\SapatoFormalWalk2.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="604878874"/>
+																<MediaID ID="535356293"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalWalk2" ID="{9AC952A9-1B27-489D-BCF8-3E1B98CCC2A3}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalWalk2" ID="{99B9ECDE-CA1B-48EB-B49C-33F52EB6ED78}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
 											<Playlist>
-												<ItemRef Name="SapatoFormalWalk1" ID="{6D3C8F40-E2A9-4C79-B637-872FFDBC9581}"/>
-												<ItemRef Name="SapatoFormalWalk2" ID="{F72F8A09-C200-4105-A2D5-A5F2111B2730}"/>
+												<ItemRef Name="SapatoFormalWalk1" ID="{18BA9164-4A30-4FFD-98DF-247716CCA7B2}"/>
+												<ItemRef Name="SapatoFormalWalk2" ID="{FEE32026-0DE0-42AD-BEF4-D2699C49221A}"/>
 											</Playlist>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Run" ID="{098EA2A3-E99C-4AEA-B4DA-E71B89FF44B1}" ShortID="430207226">
@@ -164,7 +246,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="SapatoFormalRun3" ID="{7681F79C-0359-48F0-AE6C-B20C217383AB}" ShortID="640406302">
+												<Sound Name="SapatoFormalRun3" ID="{1E1D6B82-CF53-4C71-A996-96C0B4590D3E}" ShortID="229850671">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -174,19 +256,19 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalRun3" ID="{37DCEDA5-E5FF-44CB-A753-9B1ACB81323D}">
+														<AudioFileSource Name="SapatoFormalRun3" ID="{E393CB45-CD26-4F62-A3FB-A18E970E71F4}">
 															<Language>SFX</Language>
-															<AudioFile>PlayerWeapons\SapatoFormalRun3.wav</AudioFile>
+															<AudioFile>PlayerMovement\SapatoFormalRun3.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="788021191"/>
+																<MediaID ID="180616038"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalRun3" ID="{37DCEDA5-E5FF-44CB-A753-9B1ACB81323D}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalRun3" ID="{E393CB45-CD26-4F62-A3FB-A18E970E71F4}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SapatoFormalRun4" ID="{A44EA42C-BEBE-4312-90CA-9D73AA044E43}" ShortID="406740490">
+												<Sound Name="SapatoFormalRun4" ID="{1C76E973-3D9A-40ED-A303-3575E35D4A8E}" ShortID="601753299">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -196,22 +278,22 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalRun4" ID="{EDB23A6B-FFEA-4A7F-BD9A-B325F28BBEC9}">
+														<AudioFileSource Name="SapatoFormalRun4" ID="{28A2316B-AEE4-4085-813A-F665C6745842}">
 															<Language>SFX</Language>
-															<AudioFile>PlayerWeapons\SapatoFormalRun4.wav</AudioFile>
+															<AudioFile>PlayerMovement\SapatoFormalRun4.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="747835338"/>
+																<MediaID ID="285970420"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalRun4" ID="{EDB23A6B-FFEA-4A7F-BD9A-B325F28BBEC9}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalRun4" ID="{28A2316B-AEE4-4085-813A-F665C6745842}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
 											<Playlist>
-												<ItemRef Name="SapatoFormalRun3" ID="{7681F79C-0359-48F0-AE6C-B20C217383AB}"/>
-												<ItemRef Name="SapatoFormalRun4" ID="{A44EA42C-BEBE-4312-90CA-9D73AA044E43}"/>
+												<ItemRef Name="SapatoFormalRun3" ID="{1E1D6B82-CF53-4C71-A996-96C0B4590D3E}"/>
+												<ItemRef Name="SapatoFormalRun4" ID="{1C76E973-3D9A-40ED-A303-3575E35D4A8E}"/>
 											</Playlist>
 										</RandomSequenceContainer>
 									</ChildrenList>

@@ -52,6 +52,35 @@
 						<CurrentSwitchRef Name="Chicken" ID="{A938E3BF-7195-4CAF-8DD8-F2B12A66A2AD}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
+				<SoundcasterSession Name="Gyaru" ID="{CD171EDA-2DBE-478F-812E-98DDB247D40B}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="GyaruPlayAttackLong" ID="{13E86C1F-DA32-414C-9E16-B97CB7862D5E}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="GyaruPlayAttackShort" ID="{4DA006D0-1C77-4F05-A0B2-32D800F0FD33}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="GyaruStopAttackLong" ID="{4E6123C1-E06F-4204-8E2E-3DB435CC83DB}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="SFXVolume" ID="{D324A896-F96A-4EDB-927D-196920F86B9F}"/>
+							<Value>50</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Forest" ID="{CC89284F-9036-4382-ADE6-BC3DAA5D8D81}"/>
+						<CurrentSwitchRef Name="Run" ID="{685B8CBA-54CD-41E3-A875-055E33058A9F}"/>
+						<CurrentSwitchRef Name="Gyaru" ID="{FE874951-659B-4E08-AC9B-A2268D72415F}"/>
+						<CurrentSwitchRef Name="Chicken" ID="{A938E3BF-7195-4CAF-8DD8-F2B12A66A2AD}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>

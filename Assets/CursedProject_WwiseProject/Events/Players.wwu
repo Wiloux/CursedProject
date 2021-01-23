@@ -14,6 +14,54 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="Gyaru" ID="{041A4E47-4F61-4F9F-A20C-FB27E9CA7C35}" ShortID="356393824">
+					<ChildrenList>
+						<Event Name="GyaruPlayAttackLong" ID="{13E86C1F-DA32-414C-9E16-B97CB7862D5E}">
+							<ChildrenList>
+								<Action Name="" ID="{52064AE4-53C5-401B-B5F6-AD99897F3C35}" ShortID="168906037">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Long" ID="{9F761C2B-E91F-4731-9323-A3DF020CFCF4}" WorkUnitID="{6BFC5D53-6FAA-4B0E-9A11-64FF6144C235}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="GyaruStopAttackLong" ID="{4E6123C1-E06F-4204-8E2E-3DB435CC83DB}">
+							<ChildrenList>
+								<Action Name="" ID="{33B95A27-66EE-4378-AB63-C283F2327E68}" ShortID="944403534">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Long" ID="{9F761C2B-E91F-4731-9323-A3DF020CFCF4}" WorkUnitID="{6BFC5D53-6FAA-4B0E-9A11-64FF6144C235}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{8E73D497-5731-4A1B-8B5C-7C261EB91203}" ShortID="609973004">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LongTail" ID="{BA9AC111-4931-4224-AC67-18BFE3EFFFB9}" WorkUnitID="{6BFC5D53-6FAA-4B0E-9A11-64FF6144C235}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="GyaruPlayAttackShort" ID="{4DA006D0-1C77-4F05-A0B2-32D800F0FD33}">
+							<ChildrenList>
+								<Action Name="" ID="{D607AB5F-DBF8-4EB6-8376-282A935E1321}" ShortID="930586654">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Short" ID="{CE1B3CA8-58CA-4603-90CE-7FE97B005D94}" WorkUnitID="{6BFC5D53-6FAA-4B0E-9A11-64FF6144C235}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

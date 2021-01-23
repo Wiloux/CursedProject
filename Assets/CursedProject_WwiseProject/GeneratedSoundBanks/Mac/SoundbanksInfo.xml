@@ -19,11 +19,35 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="2611172886">
+		<SoundBank Id="2879190521" Language="SFX" Hash="4170689983">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
 			<IncludedEvents>
+				<Event Id="369930381" Name="GyaruPlayAttackLong" ObjectPath="\Events\Players\Gyaru\GyaruPlayAttackLong" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="321833020" Language="SFX">
+							<ShortName>PlayerWeapons\Gyaru\Long.wav</ShortName>
+							<Path>SFX\PlayerWeapons\Gyaru\Long_2DA98C47.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="166469259" Name="GyaruPlayAttackShort" ObjectPath="\Events\Players\Gyaru\GyaruPlayAttackShort" DurationType="OneShot" DurationMin="0.222086" DurationMax="0.222086">
+					<IncludedMemoryFiles>
+						<File Id="153084191" Language="SFX">
+							<ShortName>PlayerWeapons\Gyaru\Short.wav</ShortName>
+							<Path>SFX\PlayerWeapons\Gyaru\Short_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3302019815" Name="GyaruStopAttackLong" ObjectPath="\Events\Players\Gyaru\GyaruStopAttackLong" DurationType="OneShot" DurationMin="0.112177" DurationMax="0.112177">
+					<IncludedMemoryFiles>
+						<File Id="823667250" Language="SFX">
+							<ShortName>PlayerWeapons\Gyaru\LongTail.wav</ShortName>
+							<Path>SFX\PlayerWeapons\Gyaru\LongTail_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="204688551" Name="PlayAttack2" ObjectPath="\Events\Enemies\Chicken\PlayAttack2" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>
 						<File Id="51034049" Language="SFX">
@@ -368,21 +392,21 @@
 				</Event>
 				<Event Id="1241118191" Name="PlayFootstepsPlayer" ObjectPath="\Events\Players\PlayFootstepsPlayer" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.231414">
 					<IncludedMemoryFiles>
-						<File Id="604878874" Language="SFX">
-							<ShortName>PlayerWeapons\SapatoFormalWalk2.wav</ShortName>
-							<Path>SFX\PlayerWeapons\SapatoFormalWalk2_10C4C929.wem</Path>
+						<File Id="180616038" Language="SFX">
+							<ShortName>PlayerMovement\SapatoFormalRun3.wav</ShortName>
+							<Path>SFX\PlayerMovement\SapatoFormalRun3_10C4C929.wem</Path>
 						</File>
-						<File Id="747835338" Language="SFX">
-							<ShortName>PlayerWeapons\SapatoFormalRun4.wav</ShortName>
-							<Path>SFX\PlayerWeapons\SapatoFormalRun4_10C4C929.wem</Path>
+						<File Id="285970420" Language="SFX">
+							<ShortName>PlayerMovement\SapatoFormalRun4.wav</ShortName>
+							<Path>SFX\PlayerMovement\SapatoFormalRun4_10C4C929.wem</Path>
 						</File>
-						<File Id="788021191" Language="SFX">
-							<ShortName>PlayerWeapons\SapatoFormalRun3.wav</ShortName>
-							<Path>SFX\PlayerWeapons\SapatoFormalRun3_10C4C929.wem</Path>
+						<File Id="424694783" Language="SFX">
+							<ShortName>PlayerMovement\SapatoFormalWalk1.wav</ShortName>
+							<Path>SFX\PlayerMovement\SapatoFormalWalk1_10C4C929.wem</Path>
 						</File>
-						<File Id="951969098" Language="SFX">
-							<ShortName>PlayerWeapons\SapatoFormalWalk1.wav</ShortName>
-							<Path>SFX\PlayerWeapons\SapatoFormalWalk1_10C4C929.wem</Path>
+						<File Id="535356293" Language="SFX">
+							<ShortName>PlayerMovement\SapatoFormalWalk2.wav</ShortName>
+							<Path>SFX\PlayerMovement\SapatoFormalWalk2_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<DefaultSwitchValue>{FE874951-659B-4E08-AC9B-A2268D72415F}</DefaultSwitchValue>
@@ -395,14 +419,14 @@
 									<Children>
 										<SwitchContainer SwitchValue="{C561F1D4-D0FA-459F-86B1-F067C3B54EDC}">
 											<Media>
-												<File Id="604878874"/>
-												<File Id="951969098"/>
+												<File Id="424694783"/>
+												<File Id="535356293"/>
 											</Media>
 										</SwitchContainer>
 										<SwitchContainer SwitchValue="{685B8CBA-54CD-41E3-A875-055E33058A9F}">
 											<Media>
-												<File Id="747835338"/>
-												<File Id="788021191"/>
+												<File Id="180616038"/>
+												<File Id="285970420"/>
 											</Media>
 										</SwitchContainer>
 									</Children>

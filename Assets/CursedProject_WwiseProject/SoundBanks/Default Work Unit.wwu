@@ -6,7 +6,9 @@
 				<SoundBank Name="ForTests" ID="{F71E0A93-E164-4F04-AF69-3E72AE63BE23}">
 					<ObjectInclusionList>
 						<ObjectRef Name="ShardsThrow" ID="{338398C4-8993-413F-9E59-9D502244B811}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="GyaruPlayAttackLong" ID="{13E86C1F-DA32-414C-9E16-B97CB7862D5E}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayAttack2" ID="{20A101CE-2670-41D9-9766-D9EB52D0F555}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="GyaruStopAttackLong" ID="{4E6123C1-E06F-4204-8E2E-3DB435CC83DB}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenOnSpawn" ID="{08A682DA-87B4-4292-83B3-291CF26245BA}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenFootsteps" ID="{377CB89E-1AD2-42D0-A801-74917BE099BA}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenHit" ID="{951130F0-72EC-4361-BD1F-A3D4AF13D725}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
@@ -33,6 +35,7 @@
 						<ObjectRef Name="PlayWardenHurt" ID="{1A17A08F-3700-4DAE-A247-4E1C9ED93C95}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenChasing" ID="{108AE46C-3F7B-4DDB-9105-00FB2FC4E86B}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayGiggleChicken" ID="{9CB0E16E-B2A0-4E69-80F2-1AD854124C64}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="GyaruPlayAttackShort" ID="{4DA006D0-1C77-4F05-A0B2-32D800F0FD33}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayFSChicken" ID="{2244B6BA-6555-4F2C-8FFC-F9C95CBDE82D}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayerHit" ID="{5BE8C486-7C82-4F3F-8124-CD1E0EBB35A5}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
