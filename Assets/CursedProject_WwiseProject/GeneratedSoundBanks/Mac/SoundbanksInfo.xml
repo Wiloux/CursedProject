@@ -19,7 +19,7 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="2281044782">
+		<SoundBank Id="2879190521" Language="SFX" Hash="2611172886">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -366,6 +366,51 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1241118191" Name="PlayFootstepsPlayer" ObjectPath="\Events\Players\PlayFootstepsPlayer" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.231414">
+					<IncludedMemoryFiles>
+						<File Id="604878874" Language="SFX">
+							<ShortName>PlayerWeapons\SapatoFormalWalk2.wav</ShortName>
+							<Path>SFX\PlayerWeapons\SapatoFormalWalk2_10C4C929.wem</Path>
+						</File>
+						<File Id="747835338" Language="SFX">
+							<ShortName>PlayerWeapons\SapatoFormalRun4.wav</ShortName>
+							<Path>SFX\PlayerWeapons\SapatoFormalRun4_10C4C929.wem</Path>
+						</File>
+						<File Id="788021191" Language="SFX">
+							<ShortName>PlayerWeapons\SapatoFormalRun3.wav</ShortName>
+							<Path>SFX\PlayerWeapons\SapatoFormalRun3_10C4C929.wem</Path>
+						</File>
+						<File Id="951969098" Language="SFX">
+							<ShortName>PlayerWeapons\SapatoFormalWalk1.wav</ShortName>
+							<Path>SFX\PlayerWeapons\SapatoFormalWalk1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{FE874951-659B-4E08-AC9B-A2268D72415F}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{FE874951-659B-4E08-AC9B-A2268D72415F}">
+							<DefaultSwitchValue>{EADB2145-6556-4F1E-8CEE-2F298442AE74}</DefaultSwitchValue>
+							<Children>
+								<SwitchContainer SwitchValue="{EADB2145-6556-4F1E-8CEE-2F298442AE74}">
+									<DefaultSwitchValue>{C561F1D4-D0FA-459F-86B1-F067C3B54EDC}</DefaultSwitchValue>
+									<Children>
+										<SwitchContainer SwitchValue="{C561F1D4-D0FA-459F-86B1-F067C3B54EDC}">
+											<Media>
+												<File Id="604878874"/>
+												<File Id="951969098"/>
+											</Media>
+										</SwitchContainer>
+										<SwitchContainer SwitchValue="{685B8CBA-54CD-41E3-A875-055E33058A9F}">
+											<Media>
+												<File Id="747835338"/>
+												<File Id="788021191"/>
+											</Media>
+										</SwitchContainer>
+									</Children>
+								</SwitchContainer>
+							</Children>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="4106886787" Name="PlayFSChicken" ObjectPath="\Events\Tests\Chicken\PlayFSChicken" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>
 						<File Id="254891926" Language="SFX">
@@ -406,6 +451,26 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1870077814" Name="PlayWardenDie" ObjectPath="\Events\Enemies\Warden\PlayWardenDie" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="1.035170" DurationMax="1.035170">
+					<IncludedMemoryFiles>
+						<File Id="707779245" Language="SFX">
+							<ShortName>Shards\Vocalization\ImDie.wav</ShortName>
+							<Path>SFX\Shards\Vocalization\ImDie_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="933827407" Name="PlayWardenHurt" ObjectPath="\Events\Enemies\Warden\PlayWardenHurt" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.458502" DurationMax="0.545254">
+					<IncludedMemoryFiles>
+						<File Id="366868527" Language="SFX">
+							<ShortName>Shards\Vocalization\Hurt1.2.wav</ShortName>
+							<Path>SFX\Shards\Vocalization\Hurt1.2_800E7558.wem</Path>
+						</File>
+						<File Id="875954542" Language="SFX">
+							<ShortName>Shards\Vocalization\Hurt2.2.wav</ShortName>
+							<Path>SFX\Shards\Vocalization\Hurt2.2_427CEEB8.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2920750754" Name="PlayWardenIdle" ObjectPath="\Events\Enemies\Warden\PlayWardenIdle" MaxAttenuation="30.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="535913784" Language="SFX">
@@ -426,7 +491,7 @@
 					<IncludedMemoryFiles>
 						<File Id="832214079" Language="SFX">
 							<ShortName>Shards\warden spawn.wav</ShortName>
-							<Path>SFX\Shards\warden spawn_6D288257.wem</Path>
+							<Path>SFX\Shards\warden spawn_E1760C21.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -518,6 +583,23 @@
 				</Event>
 			</IncludedEvents>
 			<SwitchGroups>
+				<SwitchGroup Id="690777561" Name="WalkRun" ObjectPath="\Switches\Default Work Unit\WalkRun">
+					<Switches>
+						<Switch Id="2108779966" Name="Walk" ObjectPath="\Switches\Default Work Unit\WalkRun\Walk"/>
+						<Switch Id="712161704" Name="Run" ObjectPath="\Switches\Default Work Unit\WalkRun\Run"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="977351599" Name="PlayerName" ObjectPath="\Switches\Default Work Unit\PlayerName">
+					<Switches>
+						<Switch Id="414889065" Name="Gyaru" ObjectPath="\Switches\Default Work Unit\PlayerName\Gyaru"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="3072116243" Name="GroundMaterial" ObjectPath="\Switches\Default Work Unit\GroundMaterial">
+					<Switches>
+						<Switch Id="1160234136" Name="Normal" ObjectPath="\Switches\Default Work Unit\GroundMaterial\Normal"/>
+						<Switch Id="491961918" Name="Forest" ObjectPath="\Switches\Default Work Unit\GroundMaterial\Forest"/>
+					</Switches>
+				</SwitchGroup>
 				<SwitchGroup Id="3765388645" Name="PlayerHitSwitch" ObjectPath="\Switches\Default Work Unit\PlayerHitSwitch">
 					<Switches>
 						<Switch Id="4251222990" Name="Chicken" ObjectPath="\Switches\Default Work Unit\PlayerHitSwitch\Chicken"/>

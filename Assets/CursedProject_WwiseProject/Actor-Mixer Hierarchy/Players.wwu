@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{6BFC5D53-6FAA-4B0E-9A11-64FF6144C235}" SchemaVersion="97">
+	<AudioObjects>
+		<WorkUnit Name="Players" ID="{6BFC5D53-6FAA-4B0E-9A11-64FF6144C235}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="10"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Folder Name="Gyaru" ID="{241DB5C1-A300-47D6-9796-D06F43B38DCD}" ShortID="155823083"/>
+				<SwitchContainer Name="FootstepsPlayer" ID="{B9148C28-E300-4A9B-8E29-EF47C7818ED2}" ShortID="63908252">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Gyaru" ID="{FE874951-659B-4E08-AC9B-A2268D72415F}" WorkUnitID="{2B9428F5-68ED-4933-BE7C-DA8752E78D33}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="PlayerName" ID="{244699E3-AA8D-4C33-94DE-27BF5A130BB3}" WorkUnitID="{2B9428F5-68ED-4933-BE7C-DA8752E78D33}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<SwitchContainer Name="Gyaru" ID="{3054EFDA-92A3-41F4-A886-705D806762E1}" ShortID="742479544">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>250</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{CE96E25C-C447-432E-8E62-33F544D628B1}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="100"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Normal" ID="{EADB2145-6556-4F1E-8CEE-2F298442AE74}" WorkUnitID="{2B9428F5-68ED-4933-BE7C-DA8752E78D33}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="GroundMaterial" ID="{FABC25E1-FFCD-45D0-ABFC-9A9228B1F1BD}" WorkUnitID="{2B9428F5-68ED-4933-BE7C-DA8752E78D33}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<SwitchContainer Name="Normal" ID="{F80D7C0C-F313-44CC-B196-1A0078B88EA8}" ShortID="411987601">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="DefaultSwitchOrState">
+											<ObjectRef Name="Walk" ID="{C561F1D4-D0FA-459F-86B1-F067C3B54EDC}" WorkUnitID="{2B9428F5-68ED-4933-BE7C-DA8752E78D33}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+										<Reference Name="SwitchGroupOrStateGroup">
+											<ObjectRef Name="WalkRun" ID="{A1C6E3DD-E8FA-4939-BCAC-D93B560FC442}" WorkUnitID="{2B9428F5-68ED-4933-BE7C-DA8752E78D33}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<RandomSequenceContainer Name="Walk" ID="{51B6CB34-F92F-4B4D-8C09-D4836721015A}" ShortID="486027140">
+											<PropertyList>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="SapatoFormalWalk1" ID="{6D3C8F40-E2A9-4C79-B637-872FFDBC9581}" ShortID="542686532">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SapatoFormalWalk1" ID="{5F42EABB-E78D-4E77-8B24-E236545E8627}">
+															<Language>SFX</Language>
+															<AudioFile>PlayerWeapons\SapatoFormalWalk1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="951969098"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SapatoFormalWalk1" ID="{5F42EABB-E78D-4E77-8B24-E236545E8627}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SapatoFormalWalk2" ID="{F72F8A09-C200-4105-A2D5-A5F2111B2730}" ShortID="17525432">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SapatoFormalWalk2" ID="{9AC952A9-1B27-489D-BCF8-3E1B98CCC2A3}">
+															<Language>SFX</Language>
+															<AudioFile>PlayerWeapons\SapatoFormalWalk2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="604878874"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SapatoFormalWalk2" ID="{9AC952A9-1B27-489D-BCF8-3E1B98CCC2A3}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<Playlist>
+												<ItemRef Name="SapatoFormalWalk1" ID="{6D3C8F40-E2A9-4C79-B637-872FFDBC9581}"/>
+												<ItemRef Name="SapatoFormalWalk2" ID="{F72F8A09-C200-4105-A2D5-A5F2111B2730}"/>
+											</Playlist>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="Run" ID="{098EA2A3-E99C-4AEA-B4DA-E71B89FF44B1}" ShortID="430207226">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>23</Value>
+													</ValueList>
+												</Property>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="SapatoFormalRun3" ID="{7681F79C-0359-48F0-AE6C-B20C217383AB}" ShortID="640406302">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SapatoFormalRun3" ID="{37DCEDA5-E5FF-44CB-A753-9B1ACB81323D}">
+															<Language>SFX</Language>
+															<AudioFile>PlayerWeapons\SapatoFormalRun3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="788021191"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SapatoFormalRun3" ID="{37DCEDA5-E5FF-44CB-A753-9B1ACB81323D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SapatoFormalRun4" ID="{A44EA42C-BEBE-4312-90CA-9D73AA044E43}" ShortID="406740490">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SapatoFormalRun4" ID="{EDB23A6B-FFEA-4A7F-BD9A-B325F28BBEC9}">
+															<Language>SFX</Language>
+															<AudioFile>PlayerWeapons\SapatoFormalRun4.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="747835338"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SapatoFormalRun4" ID="{EDB23A6B-FFEA-4A7F-BD9A-B325F28BBEC9}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<Playlist>
+												<ItemRef Name="SapatoFormalRun3" ID="{7681F79C-0359-48F0-AE6C-B20C217383AB}"/>
+												<ItemRef Name="SapatoFormalRun4" ID="{A44EA42C-BEBE-4312-90CA-9D73AA044E43}"/>
+											</Playlist>
+										</RandomSequenceContainer>
+									</ChildrenList>
+									<GroupingInfo>
+										<GroupingBehaviorList>
+											<GroupingBehavior>
+												<ItemRef Name="Walk" ID="{51B6CB34-F92F-4B4D-8C09-D4836721015A}"/>
+											</GroupingBehavior>
+											<GroupingBehavior>
+												<ItemRef Name="Run" ID="{098EA2A3-E99C-4AEA-B4DA-E71B89FF44B1}"/>
+											</GroupingBehavior>
+										</GroupingBehaviorList>
+										<GroupingList>
+											<Grouping>
+												<SwitchRef Name="Run" ID="{685B8CBA-54CD-41E3-A875-055E33058A9F}"/>
+												<ItemList>
+													<ItemRef Name="Run" ID="{098EA2A3-E99C-4AEA-B4DA-E71B89FF44B1}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Walk" ID="{C561F1D4-D0FA-459F-86B1-F067C3B54EDC}"/>
+												<ItemList>
+													<ItemRef Name="Walk" ID="{51B6CB34-F92F-4B4D-8C09-D4836721015A}"/>
+												</ItemList>
+											</Grouping>
+										</GroupingList>
+									</GroupingInfo>
+								</SwitchContainer>
+								<SwitchContainer Name="Forest" ID="{900F76F2-A596-4B89-850A-AF1A728F1B2B}" ShortID="291271954">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<GroupingInfo/>
+								</SwitchContainer>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Normal" ID="{F80D7C0C-F313-44CC-B196-1A0078B88EA8}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Forest" ID="{900F76F2-A596-4B89-850A-AF1A728F1B2B}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Normal" ID="{EADB2145-6556-4F1E-8CEE-2F298442AE74}"/>
+										<ItemList>
+											<ItemRef Name="Normal" ID="{F80D7C0C-F313-44CC-B196-1A0078B88EA8}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Forest" ID="{CC89284F-9036-4382-ADE6-BC3DAA5D8D81}"/>
+										<ItemList>
+											<ItemRef Name="Forest" ID="{900F76F2-A596-4B89-850A-AF1A728F1B2B}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="Gyaru" ID="{3054EFDA-92A3-41F4-A886-705D806762E1}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Gyaru" ID="{FE874951-659B-4E08-AC9B-A2268D72415F}"/>
+								<ItemList>
+									<ItemRef Name="Gyaru" ID="{3054EFDA-92A3-41F4-A886-705D806762E1}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -10,6 +10,23 @@
 						<Switch Name="Shard" ID="{3A2B8A51-89F7-4E53-A5E7-4F05BB0FD04F}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="WalkRun" ID="{A1C6E3DD-E8FA-4939-BCAC-D93B560FC442}">
+					<ChildrenList>
+						<Switch Name="Walk" ID="{C561F1D4-D0FA-459F-86B1-F067C3B54EDC}"/>
+						<Switch Name="Run" ID="{685B8CBA-54CD-41E3-A875-055E33058A9F}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="GroundMaterial" ID="{FABC25E1-FFCD-45D0-ABFC-9A9228B1F1BD}">
+					<ChildrenList>
+						<Switch Name="Normal" ID="{EADB2145-6556-4F1E-8CEE-2F298442AE74}"/>
+						<Switch Name="Forest" ID="{CC89284F-9036-4382-ADE6-BC3DAA5D8D81}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="PlayerName" ID="{244699E3-AA8D-4C33-94DE-27BF5A130BB3}">
+					<ChildrenList>
+						<Switch Name="Gyaru" ID="{FE874951-659B-4E08-AC9B-A2268D72415F}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>

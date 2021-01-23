@@ -25,11 +25,14 @@ namespace AK
         static const AkUniqueID PLAYCHICKENWATCHING = 1378272331U;
         static const AkUniqueID PLAYERHIT = 3831688773U;
         static const AkUniqueID PLAYEXPDIALOGUE = 1701780106U;
+        static const AkUniqueID PLAYFOOTSTEPSPLAYER = 1241118191U;
         static const AkUniqueID PLAYFSCHICKEN = 4106886787U;
         static const AkUniqueID PLAYGIGGLECHICKEN = 2613825061U;
         static const AkUniqueID PLAYHIGHLIGHT = 145167493U;
         static const AkUniqueID PLAYHITCHICKEN = 4251718543U;
         static const AkUniqueID PLAYKEYPRESS = 1168436793U;
+        static const AkUniqueID PLAYWARDENDIE = 1870077814U;
+        static const AkUniqueID PLAYWARDENHURT = 933827407U;
         static const AkUniqueID PLAYWARDENIDLE = 2920750754U;
         static const AkUniqueID PLAYWARDENMOVE = 3781044531U;
         static const AkUniqueID PLAYWARDENSPAWN = 1171015393U;
@@ -53,6 +56,17 @@ namespace AK
             } // namespace SWITCH
         } // namespace DIALOGUEEXP
 
+        namespace GROUNDMATERIAL
+        {
+            static const AkUniqueID GROUP = 3072116243U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID FOREST = 491961918U;
+                static const AkUniqueID NORMAL = 1160234136U;
+            } // namespace SWITCH
+        } // namespace GROUNDMATERIAL
+
         namespace PLAYERHITSWITCH
         {
             static const AkUniqueID GROUP = 3765388645U;
@@ -63,6 +77,27 @@ namespace AK
                 static const AkUniqueID SHARD = 2986888339U;
             } // namespace SWITCH
         } // namespace PLAYERHITSWITCH
+
+        namespace PLAYERNAME
+        {
+            static const AkUniqueID GROUP = 977351599U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID GYARU = 414889065U;
+            } // namespace SWITCH
+        } // namespace PLAYERNAME
+
+        namespace WALKRUN
+        {
+            static const AkUniqueID GROUP = 690777561U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID RUN = 712161704U;
+                static const AkUniqueID WALK = 2108779966U;
+            } // namespace SWITCH
+        } // namespace WALKRUN
 
     } // namespace SWITCHES
 

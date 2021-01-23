@@ -46,6 +46,9 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Normal" ID="{EADB2145-6556-4F1E-8CEE-2F298442AE74}"/>
+						<CurrentSwitchRef Name="Run" ID="{685B8CBA-54CD-41E3-A875-055E33058A9F}"/>
+						<CurrentSwitchRef Name="Gyaru" ID="{FE874951-659B-4E08-AC9B-A2268D72415F}"/>
 						<CurrentSwitchRef Name="Chicken" ID="{A938E3BF-7195-4CAF-8DD8-F2B12A66A2AD}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
