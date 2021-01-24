@@ -59,7 +59,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
 
     protected float attackCooldown;
-    protected float timeToAttack;
+    protected float attackTimer;
     private bool backstab;
 
     private float movementSpeed = 2f;
@@ -98,7 +98,7 @@ public class EnemyBase : MonoBehaviour
         // Set agent speed
         agent.speed = movementSpeed;
         // Set cooldown attack
-        timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
+        attackTimer = attackCooldown;
 
         onSpawnWEvent?.Post(gameObject);
     }
@@ -126,11 +126,11 @@ public class EnemyBase : MonoBehaviour
                     DisableAgent();
                     //agent.SetDestination(player.transform.position);
 
-                    Invoke(nameof(WatchPlayer), 1f);
+                    BetterInvoke(nameof(WatchPlayer), 1f);
                     float watchingDuration = UnityEngine.Random.Range(watchingDurationMinMax.x, watchingDurationMinMax.y);
-                    Invoke(nameof(StopWatchingPlayer), 1f + watchingDuration);
-                    Invoke(nameof(EnableAgent), 1f + watchingDuration);
-                    Invoke(nameof(PlayChaseWEvent), 1f + watchingDuration + 0.5f);
+                    BetterInvoke(nameof(StopWatchingPlayer), 1f + watchingDuration);
+                    BetterInvoke(nameof(EnableAgent), 1f + watchingDuration);
+                    BetterInvoke(nameof(PlayChaseWEvent), 1f + watchingDuration + 0.5f);
                     //transform.LookAt(player.transform);
                     //transform.eulerAngles
                 }
@@ -144,7 +144,7 @@ public class EnemyBase : MonoBehaviour
             {
                 if (distance < rangeToAttack && isPlayerVisible(rangeToAttack))
                 {
-                    if (timeToAttack <= Time.timeSinceLevelLoad) // Check attack cooldown condition
+                    if (attackTimer <= 0) // Check attack cooldown condition
                     {
                         if (range) { if (!isPlayerAimable()) return; }
                         //Debug.Log("Enemy attack");
@@ -153,17 +153,17 @@ public class EnemyBase : MonoBehaviour
                         // Post Wwise Event
                         attackWEvent?.Post(gameObject);
                         // Cooldown attack gestion
-                        timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
+                        attackTimer = attackCooldown;
                         // Attack Action
                         if (range) { Attack?.Invoke(); } // if melee attack player detection and the func will be called during the attack animation
                         // Start running if behaviour need
                         if (run)
                         {
                             agent.isStopped = true;
-                            Invoke(nameof(EnableAgent), 1.5f);
+                            BetterInvoke(nameof(EnableAgent), 1.5f);
                             running = true;
                             agent.speed = runSpeed;
-                            Invoke(nameof(PlayRunWEvent), timeToPostRunEvent);
+                            BetterInvoke(nameof(PlayRunWEvent), timeToPostRunEvent);
                             agent.SetDestination(GetRunningPoint());
                         }
                     }
@@ -177,7 +177,7 @@ public class EnemyBase : MonoBehaviour
                         if (isPlayerVisible(detectionRange))
                         {
                             detected = true; // The enemy needs to detect the player
-                            Invoke(nameof(PlayChaseWEvent), 0.5f);
+                            BetterInvoke(nameof(PlayChaseWEvent), 0.5f);
                             //Debug.Log("Player is detected");
                         }
                     }
@@ -189,6 +189,7 @@ public class EnemyBase : MonoBehaviour
                     }
                 }
             }
+            if (attackTimer > 0) attackTimer -= Time.deltaTime;
         }
         else if (stagger)
         {
@@ -300,7 +301,7 @@ public class EnemyBase : MonoBehaviour
         else
         {
             DisableAgent();
-            Invoke(nameof(EnableAgent), 0.2f);
+            BetterInvoke(nameof(EnableAgent), 0.2f);
             stagger = true;
             timeToStopStagger = Time.timeSinceLevelLoad + 0.2f;
             hitAnimation?.Invoke();
@@ -344,7 +345,7 @@ public class EnemyBase : MonoBehaviour
             Debug.Log("No gameobject touched with Player layer");
         }
 
-        if (GetDistanceFromPlayer() >= 2.5f) timeToAttack = Time.timeSinceLevelLoad;
+        if (GetDistanceFromPlayer() >= 2.5f) attackTimer = attackCooldown;
     }
     //public void ThrowProjectile()
     //{
@@ -397,5 +398,22 @@ public class EnemyBase : MonoBehaviour
     #region Watch methods
     private void StopWatchingPlayer() { agent.speed = movementSpeed;}
     private void WatchPlayer() { transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position, transform.up); watchWEvent?.Post(gameObject); }
+    #endregion
+
+    #region BetterInvoke
+    private void BetterInvoke(string funcName, float time, int checks = 10)
+    {
+        StartCoroutine(CoroutineWithPauses(funcName, time, checks));
+    }
+
+    private IEnumerator CoroutineWithPauses(string funcName, float time,int checks)
+    {
+        for(int i = 0; i < checks; i++)
+        {
+            while(pause) { yield return null; }
+            yield return new WaitForSecondsRealtime(time / (float)checks);
+        }
+        Invoke(funcName,0);
+    }
     #endregion
 }

@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     private bool dead;
 
     public bool stopControlls;
+
+    // Attack vars
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackPointRange;
     [SerializeField] private LayerMask attackLayerMask;
@@ -22,13 +24,17 @@ public class Player : MonoBehaviour
     private float timeToAttack;
     [SerializeField] private float attackRange;
 
+    [SerializeField] private float chargedAttackCooldown;
+    private float timeToChargedAttack;
+
     [SerializeField] private AK.Wwise.Event playerAttackWEvent;
     [SerializeField] private AK.Wwise.Event PlayerHitEvent;
 
 
     private Action UseAbility;
     #region Animator related Actions
-    private Action AttackAnimation;
+    private Action SimpleAttackAnimation;
+    private Action ChargedAttackAnimation;
     private Action GetHitAnimation;
     private Action DeathAnimation;
     private Action RunAnimation;
@@ -54,9 +60,10 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C) && timeToAttack <= Time.timeSinceLevelLoad)
             {
+
                 Debug.Log("Player attacks");
                 playerAttackWEvent?.Post(gameObject);
-                AttackAnimation?.Invoke();
+                SimpleAttackAnimation?.Invoke();
                 Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackPointRange, attackLayerMask);
                 if(hits.Length > 0)
                 {
@@ -103,6 +110,13 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+    #region Attack Methods
+    private void SimpleAttack()
+    {
+
+    }
+    #endregion
+
     #region Helath related methods
     public void TakeDamage()
     {
@@ -139,7 +153,7 @@ public class Player : MonoBehaviour
         switch (character)
         {
             case Character.gyaru:
-                AttackAnimation = () => Debug.Log("Gyaru attack animation");
+                SimpleAttackAnimation = () => Debug.Log("Gyaru attack animation");
                 GetHitAnimation = () => Debug.Log("Gyaru get hit animation");
                 DeathAnimation = () => Debug.Log("Gyaru death animation");
                 RunAnimation = () => Debug.Log("Gyaru running animation");
@@ -147,7 +161,7 @@ public class Player : MonoBehaviour
                 InteractAnimation = () => Debug.Log("Gyaru interact animation");
                 break;
             case Character.mysterious:
-                AttackAnimation = () => Debug.Log("mysterious attack animation");
+                SimpleAttackAnimation = () => Debug.Log("mysterious attack animation");
                 GetHitAnimation = () => Debug.Log("mysterious get hit animation");
                 DeathAnimation = () => Debug.Log("mysterious death animation");
                 RunAnimation = () => Debug.Log("mysterious running animation");
@@ -155,7 +169,7 @@ public class Player : MonoBehaviour
                 InteractAnimation = () => Debug.Log("mysterious interact animation");
                 break;
             case Character.officeworker:
-                AttackAnimation = () => Debug.Log("officeworker attack animation");
+                SimpleAttackAnimation = () => Debug.Log("officeworker attack animation");
                 GetHitAnimation = () => Debug.Log("officeworker get hit animation");
                 DeathAnimation = () => Debug.Log("officeworker death animation");
                 RunAnimation = () => Debug.Log("officeworker running animation");

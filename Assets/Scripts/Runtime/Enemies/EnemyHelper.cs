@@ -31,7 +31,7 @@ public static class EnemyHelper
         enemy.pause = false;
         enemy.agent.isStopped = enemy.wasAgentStopped;
         enemy.agent.SetDestination(enemy.wasAgentDestination);
-        Debug.Log(enemy.wasAgentDestination);
+        //Debug.Log(enemy.wasAgentDestination);
         enemy.wasAgentStopped = false;
     }
 }

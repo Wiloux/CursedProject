@@ -22,7 +22,7 @@ public class GameHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
-            MouseManagement.instance.ToggleMouseLock();
+            if(MouseManagement.instance != null) MouseManagement.instance.ToggleMouseLock();
             if (isSaveMenuOpen)
             {
                 ToggleSaveMenu();

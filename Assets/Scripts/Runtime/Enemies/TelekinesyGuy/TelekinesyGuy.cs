@@ -55,7 +55,7 @@ public class TelekinesyGuy : EnemyBase
             rb.useGravity = true;
             collider.isTrigger = false;
             // Set cooldown attack
-            timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
+            attackTimer = attackCooldown;
         }
     }
 

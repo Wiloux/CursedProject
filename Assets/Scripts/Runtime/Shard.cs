@@ -12,11 +12,13 @@ public class Shard : MonoBehaviour
     public bool isPaused;
     private Vector3 pausedVelocity;
 
+
     private bool isReady;
     private bool isThrowed;
     private bool isDestroyed;
     public float preparationDuration;
     private float preparationTimer;
+    private float randomRotationDuration = 0.5f;
     private bool invoking;
 
     [Header("Wwise Events")]
@@ -63,7 +65,7 @@ public class Shard : MonoBehaviour
                     transform.position = posTarget;
                     transform.rotation = Quaternion.LookRotation(PlayerHelper.instance.transform.position - posTarget);
                     isReady = true;
-                    Invoke(nameof(Throw), 0.5f);
+                    StartCoroutine(Throw(0.5f));
                 }
                 else
                 {
@@ -74,34 +76,33 @@ public class Shard : MonoBehaviour
             }
             else if (!isThrowed)
             {
-                transform.Rotate(randomRotationAxis, 360f * 2 * (Time.deltaTime / 0.5f));
-                enemy.isSpawningSpikes = true;
-            }
-            else if (isDestroyed)
-            {
-                if (!invoking)
+                if(randomRotationDuration > 0)
                 {
-                    Destroy(gameObject);
+                    transform.Rotate(randomRotationAxis, 360f * 2 * (Time.deltaTime / 0.5f));
+                    enemy.isSpawningSpikes = true;
+                    randomRotationDuration -= Time.deltaTime;
                 }
-                Debug.Log(IsInvoking());
             }
             //Debug.DrawRay(transform.position, transform.forward * 2f, Color.red, 0.1f);
             //Debug.DrawRay(transform.position, transform.up * 2f, Color.green, 0.1f);
         }
     }
 
-    private void Throw()
+    private IEnumerator Throw(float seconds)
     {
-        if (!isPaused)
+        for(int i = 0; i < 10; i++)
         {
-            enemy.animator.SetInteger("attackType", Random.Range(0, 2));
-            enemy.animator.SetTrigger("attack");
-            isThrowed = true;
-            collider.enabled = true;
-            ImpulseShard();
-
-            StartCoroutine(PlayOnIdleEnterWEventLater(4f));
+            while (isPaused) { Debug.Log("retaining"); yield return null; }
+            Debug.Log(seconds / 10f);
+            yield return new WaitForSecondsRealtime(seconds / 10f);
         }
+        enemy.animator.SetInteger("attackType", Random.Range(0, 2));
+        enemy.animator.SetTrigger("attack");
+        isThrowed = true;
+        collider.enabled = true;
+        ImpulseShard();
+
+        StartCoroutine(PlayOnIdleEnterWEventLater(4f));
     }
     private void ImpulseShard()
     {
@@ -127,6 +128,7 @@ public class Shard : MonoBehaviour
             isDestroyed = true;
             Destroy(GetComponentInChildren<Renderer>());
             Destroy(collider);
+            Destroy(gameObject, 4f);
 
             rb.velocity = Vector3.zero;
             hitWall?.Post(gameObject);
@@ -143,7 +145,11 @@ public class Shard : MonoBehaviour
     private IEnumerator PlayOnIdleEnterWEventLater(float time)
     {
         invoking = true;
-        yield return new WaitForSeconds(time);
+        for (int i = 0; i < 10; i++)
+        {
+            while (isPaused) { yield return null; }
+            yield return new WaitForSeconds(time / 10f);
+        }
         enemy.PlayOnIdleEnterWEvent();
         invoking = false;
     }
@@ -152,6 +158,7 @@ public class Shard : MonoBehaviour
     public void TogglePause()
     {
         if (!isPaused) Pause();
+        else Unpause();
     }
     private void Pause()
     {
@@ -162,7 +169,7 @@ public class Shard : MonoBehaviour
     private void Unpause()
     {
         isPaused = false;
-        ImpulseShard();
+        if(!isDestroyed) ImpulseShard();
         rb.velocity = pausedVelocity;
     }
     #endregion
