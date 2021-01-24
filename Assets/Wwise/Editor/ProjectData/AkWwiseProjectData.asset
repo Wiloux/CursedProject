@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585904467151107509
+    m_lastTime: -8585901534922451592
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -389,6 +389,81 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+  - PhysicalPath: Events\Players.wwu
+    PathAndIcons:
+    - ElementName: Players
+      ObjectType: 12
+    ParentPath: Players
+    guid: 84878f6dc9542744bdce26203903b0f0
+    GuidInternal: 
+    m_lastTime: -8585901534928852755
+    List:
+    - name: Gyaru
+      guid: 474e1a04614f9f4fa20cfb27e9ca7c35
+      id: 414889065
+      PathAndIcons:
+      - ElementName: Players
+        ObjectType: 12
+      - ElementName: Gyaru
+        ObjectType: 4
+      Path: Players\Gyaru
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: GyaruPlayAttackLong
+      guid: 1f6ce81332da4c419e16b97cb7862d5e
+      id: 369930381
+      PathAndIcons:
+      - ElementName: Players
+        ObjectType: 12
+      - ElementName: Gyaru
+        ObjectType: 4
+      - ElementName: GyaruPlayAttackLong
+        ObjectType: 3
+      Path: Players\Gyaru\GyaruPlayAttackLong
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: GyaruPlayAttackShort
+      guid: d006a04d771c054fa0b232d800f0fd33
+      id: 166469259
+      PathAndIcons:
+      - ElementName: Players
+        ObjectType: 12
+      - ElementName: Gyaru
+        ObjectType: 4
+      - ElementName: GyaruPlayAttackShort
+        ObjectType: 3
+      Path: Players\Gyaru\GyaruPlayAttackShort
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: GyaruStopAttackLong
+      guid: c123614e6fe004428e2e3db435cc83db
+      id: 3302019815
+      PathAndIcons:
+      - ElementName: Players
+        ObjectType: 12
+      - ElementName: Gyaru
+        ObjectType: 4
+      - ElementName: GyaruStopAttackLong
+        ObjectType: 3
+      Path: Players\Gyaru\GyaruStopAttackLong
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayFootstepsPlayer
+      guid: f9a85a5fb096654b92dfa60189849541
+      id: 1241118191
+      PathAndIcons:
+      - ElementName: Players
+        ObjectType: 12
+      - ElementName: PlayFootstepsPlayer
+        ObjectType: 3
+      Path: Players\PlayFootstepsPlayer
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Tests.wwu
     PathAndIcons:
     - ElementName: Tests
@@ -607,8 +682,33 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f528942bed683349be7cda8752e78d33
     GuidInternal: 
-    m_lastTime: -8585906168824080171
+    m_lastTime: -8585901534921949744
     List:
+    - name: GroundMaterial
+      guid: e125bcfacdffd045abfc9a9228b1f1bd
+      id: 3072116243
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GroundMaterial
+        ObjectType: 11
+      Path: Default Work Unit\GroundMaterial
+      values:
+      - name: Forest
+        guid: 4f2889cc36908243ade6bc3daa5d8d81
+        id: 491961918
+        PathAndIcons:
+        - ElementName: Forest
+          ObjectType: 10
+      - name: Normal
+        guid: 4521dbea56651e4f8cee2f298442ae74
+        id: 1160234136
+        PathAndIcons:
+        - ElementName: Normal
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: PlayerHitSwitch
       guid: f6a60ae0bc54454daecf58f367b789fa
       id: 3765388645
@@ -630,6 +730,50 @@ MonoBehaviour:
         id: 2986888339
         PathAndIcons:
         - ElementName: Shard
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: PlayerName
+      guid: e39946248daa334c94de27bf5a130bb3
+      id: 977351599
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlayerName
+        ObjectType: 11
+      Path: Default Work Unit\PlayerName
+      values:
+      - name: Gyaru
+        guid: 514987fe9b65084eac9ba2268d72415f
+        id: 414889065
+        PathAndIcons:
+        - ElementName: Gyaru
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: WalkRun
+      guid: dde3c6a1fae83949bcacd93b560fc442
+      id: 690777561
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: WalkRun
+        ObjectType: 11
+      Path: Default Work Unit\WalkRun
+      values:
+      - name: Run
+        guid: ba8c5b68cd54e341a875055e33058a9f
+        id: 712161704
+        PathAndIcons:
+        - ElementName: Run
+          ObjectType: 10
+      - name: Walk
+        guid: d4f161c5fad09f4586b1f067c3b54edc
+        id: 2108779966
+        PathAndIcons:
+        - ElementName: Walk
           ObjectType: 10
       ValueGuids: []
       ValueIcons: []
