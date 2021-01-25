@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     private Action UseAbility;
     #region Animator related Actions
     private Action SimpleAttackAnimation;
+    private Action ChargingAttackAnimation;
     private Action ChargedAttackAnimation;
     private Action GetHitAnimation;
     private Action DeathAnimation;
@@ -60,7 +61,6 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C) && timeToAttack <= Time.timeSinceLevelLoad)
             {
-
                 Debug.Log("Player attacks");
                 playerAttackWEvent?.Post(gameObject);
                 SimpleAttackAnimation?.Invoke();
@@ -112,6 +112,10 @@ public class Player : MonoBehaviour
 
     #region Attack Methods
     private void SimpleAttack()
+    {
+
+    }
+    private void ChargedAttack()
     {
 
     }
