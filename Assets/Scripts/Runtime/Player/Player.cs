@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     #region Vars
     [SerializeField] private Player_Movement controller;
+    [SerializeField] private Animator animator;
 
     public enum Character { gyaru, mysterious, officeworker};
     public Character character;
@@ -24,8 +25,11 @@ public class Player : MonoBehaviour
     private float timeToAttack;
     [SerializeField] private float attackRange;
 
+    private bool isChargingAttack;
     [SerializeField] private float chargedAttackCooldown;
-    private float timeToChargedAttack;
+    private float timeToChargeAttack;
+    [SerializeField] private float attackChargingDuration;
+    private float attackChargingTimer;
 
     [SerializeField] private AK.Wwise.Event playerAttackWEvent;
     [SerializeField] private AK.Wwise.Event PlayerHitEvent;
@@ -39,8 +43,20 @@ public class Player : MonoBehaviour
     private Action GetHitAnimation;
     private Action DeathAnimation;
     private Action RunAnimation;
+    private Action WalkAnimation;
+    private Action WalkArmedAnimation;
     private Action AbilityAnimation;
     private Action InteractAnimation;
+    #endregion
+
+    #region Wwise Events
+    [Header("Wwise Events")]
+    [Space(10)]
+    [SerializeField] private AK.Wwise.Event WalkRunWSwitch;
+    [Header("Charged ATtack")] 
+    [SerializeField] private AK.Wwise.Event startChargingAttackWEvent;
+    [SerializeField] private AK.Wwise.Event chargedAttackWEvent;
+    [SerializeField] private AK.Wwise.Event simpleAttackWEvent;
     #endregion
     #endregion
 
@@ -53,30 +69,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (controller.isMoving)
-        {
-            RunAnimation?.Invoke();
-        }
+        WalkAnimation?.Invoke();
+        //if (controller.isMoving)
+        //{
+        //}
         if (!stopControlls && !dead)
         {
-            if (Input.GetKeyDown(KeyCode.C) && timeToAttack <= Time.timeSinceLevelLoad)
+            if (Input.GetKeyDown(KeyCode.C))
             {
-                Debug.Log("Player attacks");
-                playerAttackWEvent?.Post(gameObject);
-                SimpleAttackAnimation?.Invoke();
-                Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackPointRange, attackLayerMask);
-                if(hits.Length > 0)
-                {
-                    foreach(Collider hit in hits)
-                    {
-                        if (hit.CompareTag("Enemy"))
-                        {
-                            EnemyBase enemy = hits[0].GetComponent<EnemyBase>();
-                            if (enemy != null) { EnemyHelper.TakeDamage(enemy); Debug.Log("tryingtodamage"); }
-                        }
-                    }
-                }
-                timeToAttack = Time.timeSinceLevelLoad + attackCooldown;
+                StartCoroutine(ChargeOrAttack());
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
@@ -99,6 +100,14 @@ public class Player : MonoBehaviour
                 AbilityAnimation?.Invoke();
                 UseAbility?.Invoke();
             }
+
+            if (timeToAttack >= 0) timeToAttack -= Time.deltaTime;
+            if (timeToChargeAttack >= 0) timeToChargeAttack -= Time.deltaTime;
+            if (isChargingAttack)
+            {
+                if (attackChargingTimer >= 0) attackChargingTimer -= Time.deltaTime;
+                else { isChargingAttack = false; timeToChargeAttack = chargedAttackCooldown; ChargedAttackAnimation?.Invoke(); chargedAttackWEvent?.Post(gameObject); }
+            }
         }
     }
 
@@ -111,13 +120,61 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Attack Methods
+    private IEnumerator ChargeOrAttack()
+    {
+        yield return new WaitForSeconds(0.3f);
+        if (Input.GetKey(KeyCode.C))
+        {
+            if(timeToChargeAttack < 0)
+            {
+                isChargingAttack = true;
+                attackChargingTimer = attackChargingDuration;
+                ChargingAttackAnimation?.Invoke();
+                Debug.Log("charged attack");
+
+            }
+        }
+        else if (timeToAttack < 0)
+        {
+            timeToAttack = attackCooldown; SimpleAttackAnimation?.Invoke(); simpleAttackWEvent?.Post(gameObject); Debug.Log("simple attack");
+
+        } // simple attack method attached to the animation
+    }
     private void SimpleAttack()
     {
+        EnemyBase enemy = GetEnemyToAttack();
+        if (enemy == null) return;
 
+        EnemyHelper.TakeDamage(enemy); 
+        Debug.Log("Simple attack");
     }
     private void ChargedAttack()
     {
+        EnemyBase enemy = GetEnemyToAttack();
+        if (enemy == null) return;
 
+        // Do more damage to the enemy
+        EnemyHelper.TakeDamage(enemy); // temp
+        Debug.Log("Charged attack");
+
+    }
+
+    private EnemyBase GetEnemyToAttack()
+    {
+        Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackPointRange, attackLayerMask);
+        if (hits.Length > 0)
+        {
+            for(int i = 0;i < hits.Length; i++)
+            {
+                Collider hit = hits[i];
+                if (hit.CompareTag("Enemy"))
+                {
+                    EnemyBase enemy = hits[0].GetComponent<EnemyBase>();
+                    if (enemy != null) { return enemy; }
+                }
+            }
+        }
+        return null;
     }
     #endregion
 
@@ -157,28 +214,37 @@ public class Player : MonoBehaviour
         switch (character)
         {
             case Character.gyaru:
-                SimpleAttackAnimation = () => Debug.Log("Gyaru attack animation");
-                GetHitAnimation = () => Debug.Log("Gyaru get hit animation");
-                DeathAnimation = () => Debug.Log("Gyaru death animation");
-                RunAnimation = () => Debug.Log("Gyaru running animation");
+                SimpleAttackAnimation = () => { animator.SetTrigger("Attack"); animator.SetInteger("AttackAnim", UnityEngine.Random.Range(1, 4)); Debug.Log("Gyaru attack animation"); };
+                ChargedAttackAnimation = () => { animator.SetTrigger("Attack"); animator.SetInteger("AttackAnim", 0); Debug.Log("Gyaru big attack animation"); };
+                GetHitAnimation = () => { animator.SetTrigger("Hurt"); animator.SetInteger("HurtAnim", UnityEngine.Random.Range(1, 4)); Debug.Log("Gyaru get hit animation"); };
+                DeathAnimation = () => { animator.SetTrigger("Hurt"); animator.SetFloat("HP", -1); Debug.Log("Gyaru death animation"); };
+                RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); Debug.Log("Gyaru running animation"); };
                 AbilityAnimation = () => Debug.Log("Gyaru ability use animation");
-                InteractAnimation = () => Debug.Log("Gyaru interact animation");
+                InteractAnimation = () => { animator.SetTrigger("Action"); Debug.Log("Gyaru interact animation"); };
+                WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("isArmed", false); Debug.Log("Gyaru walking animation"); };
+                WalkArmedAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("isArmed", true); Debug.Log("Gyaru walk armed animation"); };
                 break;
             case Character.mysterious:
                 SimpleAttackAnimation = () => Debug.Log("mysterious attack animation");
+                ChargedAttackAnimation = () => Debug.Log("mysterious big attack animation");
                 GetHitAnimation = () => Debug.Log("mysterious get hit animation");
                 DeathAnimation = () => Debug.Log("mysterious death animation");
                 RunAnimation = () => Debug.Log("mysterious running animation");
                 AbilityAnimation = () => Debug.Log("mysterious ability use animation");
                 InteractAnimation = () => Debug.Log("mysterious interact animation");
+                WalkAnimation = () => { Debug.Log("mysterious walking animation"); };
+                WalkArmedAnimation = () => { Debug.Log("mysterious walk armed animation"); };
                 break;
             case Character.officeworker:
                 SimpleAttackAnimation = () => Debug.Log("officeworker attack animation");
+                ChargedAttackAnimation = () => Debug.Log("officeworker big attack animation");
                 GetHitAnimation = () => Debug.Log("officeworker get hit animation");
                 DeathAnimation = () => Debug.Log("officeworker death animation");
                 RunAnimation = () => Debug.Log("officeworker running animation");
                 AbilityAnimation = () => Debug.Log("officeworker ability use animation");
                 InteractAnimation = () => Debug.Log("officeworker interact animation");
+                WalkAnimation = () => { Debug.Log("officeworker walking animation"); };
+                WalkArmedAnimation = () => { Debug.Log("officeworker walk armed animation"); };
                 break;
         }
     }
