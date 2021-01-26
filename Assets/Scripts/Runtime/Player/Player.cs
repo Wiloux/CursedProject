@@ -178,7 +178,7 @@ public class Player : MonoBehaviour
     }
     #endregion
 
-    #region Helath related methods
+    #region Health related methods
     public void TakeDamage()
     {
         health--;

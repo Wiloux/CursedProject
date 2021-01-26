@@ -788,10 +788,6 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585906168817408006
     List: []
-  ExpandedItems:
-  - /CursedProject_WwiseProject
-  - /CursedProject_WwiseProject/Events
-  - /CursedProject_WwiseProject/Events/Enemies
-  - /CursedProject_WwiseProject/Events/Enemies/Warden
+  ExpandedItems: []
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
