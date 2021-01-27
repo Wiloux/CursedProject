@@ -23,27 +23,22 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask attackLayerMask;
     [SerializeField] private float attackCooldown;
     private float timeToAttack;
+
+    [SerializeField] private float secondaryAttackCooldown;
+    private float timeToSecondaryAttack;
     [SerializeField] private float attackRange;
 
-    private bool isChargingAttack;
-    [SerializeField] private float chargedAttackCooldown;
-    private float timeToChargeAttack;
-    [SerializeField] private float attackChargingDuration;
-    private float attackChargingTimer;
-
-    [SerializeField] private AK.Wwise.Event playerAttackWEvent;
-    [SerializeField] private AK.Wwise.Event PlayerHitEvent;
 
 
     private Action UseAbility;
     #region Animator related Actions
     private Action SimpleAttackAnimation;
-    private Action ChargingAttackAnimation;
-    private Action ChargedAttackAnimation;
+    private Action SecondaryAttackAnimation;
     private Action GetHitAnimation;
     private Action DeathAnimation;
-    private Action RunAnimation;
     private Action WalkAnimation;
+    private Action StopWalkingAnimation;
+    private Action RunAnimation;
     private Action WalkArmedAnimation;
     private Action AbilityAnimation;
     private Action InteractAnimation;
@@ -51,11 +46,13 @@ public class Player : MonoBehaviour
 
     #region Wwise Events
     [Header("Wwise Events")]
+    [SerializeField] private AK.Wwise.Event playerAttackWEvent;
+    [SerializeField] private AK.Wwise.Event PlayerHitEvent;
     [Space(10)]
     [SerializeField] private AK.Wwise.Event WalkRunWSwitch;
-    [Header("Charged ATtack")] 
-    [SerializeField] private AK.Wwise.Event startChargingAttackWEvent;
-    [SerializeField] private AK.Wwise.Event chargedAttackWEvent;
+    [Header("Charged Attack")] 
+    //[SerializeField] private AK.Wwise.Event startChargingAttackWEvent;
+    [SerializeField] private AK.Wwise.Event secondaryAttackWEvent;
     [SerializeField] private AK.Wwise.Event simpleAttackWEvent;
     #endregion
     #endregion
@@ -69,15 +66,27 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WalkAnimation?.Invoke();
-        //if (controller.isMoving)
-        //{
-        //}
+        if (controller.isMoving) WalkAnimation?.Invoke();
+        else StopWalkingAnimation?.Invoke();
+        Debug.Log(controller.isMoving);
+
+
         if (!stopControlls && !dead)
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetMouseButtonDown(0) && timeToAttack < 0)
             {
-                StartCoroutine(ChargeOrAttack());
+                timeToAttack = attackCooldown; 
+                SimpleAttackAnimation?.Invoke(); 
+                simpleAttackWEvent?.Post(gameObject);
+                //controller.canRotate = false;
+                Debug.Log("starting simple attack");
+            }
+            else if (Input.GetMouseButtonDown(1) && timeToSecondaryAttack < 0)
+            {
+                timeToSecondaryAttack = secondaryAttackCooldown;
+                SecondaryAttackAnimation?.Invoke();
+                secondaryAttackWEvent?.Post(gameObject);
+                Debug.Log("starting charged attack");
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
@@ -102,12 +111,7 @@ public class Player : MonoBehaviour
             }
 
             if (timeToAttack >= 0) timeToAttack -= Time.deltaTime;
-            if (timeToChargeAttack >= 0) timeToChargeAttack -= Time.deltaTime;
-            if (isChargingAttack)
-            {
-                if (attackChargingTimer >= 0) attackChargingTimer -= Time.deltaTime;
-                else { isChargingAttack = false; timeToChargeAttack = chargedAttackCooldown; ChargedAttackAnimation?.Invoke(); chargedAttackWEvent?.Post(gameObject); }
-            }
+            if (timeToSecondaryAttack >= 0) timeToSecondaryAttack -= Time.deltaTime;
         }
     }
 
@@ -120,33 +124,13 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Attack Methods
-    private IEnumerator ChargeOrAttack()
-    {
-        yield return new WaitForSeconds(0.3f);
-        if (Input.GetKey(KeyCode.C))
-        {
-            if(timeToChargeAttack < 0)
-            {
-                isChargingAttack = true;
-                attackChargingTimer = attackChargingDuration;
-                ChargingAttackAnimation?.Invoke();
-                Debug.Log("charged attack");
-
-            }
-        }
-        else if (timeToAttack < 0)
-        {
-            timeToAttack = attackCooldown; SimpleAttackAnimation?.Invoke(); simpleAttackWEvent?.Post(gameObject); Debug.Log("simple attack");
-
-        } // simple attack method attached to the animation
-    }
     private void SimpleAttack()
     {
         EnemyBase enemy = GetEnemyToAttack();
         if (enemy == null) return;
 
         EnemyHelper.TakeDamage(enemy); 
-        Debug.Log("Simple attack");
+        Debug.Log("Simple attack consideration");
     }
     private void ChargedAttack()
     {
@@ -155,7 +139,7 @@ public class Player : MonoBehaviour
 
         // Do more damage to the enemy
         EnemyHelper.TakeDamage(enemy); // temp
-        Debug.Log("Charged attack");
+        Debug.Log("Charged attack consideration");
 
     }
 
@@ -215,35 +199,38 @@ public class Player : MonoBehaviour
         {
             case Character.gyaru:
                 SimpleAttackAnimation = () => { animator.SetTrigger("Attack"); animator.SetInteger("AttackAnim", UnityEngine.Random.Range(1, 4)); Debug.Log("Gyaru attack animation"); };
-                ChargedAttackAnimation = () => { animator.SetTrigger("Attack"); animator.SetInteger("AttackAnim", 0); Debug.Log("Gyaru big attack animation"); };
+                SecondaryAttackAnimation = () => { animator.SetTrigger("BigAttack");  Debug.Log("Gyaru big attack animation"); };
                 GetHitAnimation = () => { animator.SetTrigger("Hurt"); animator.SetInteger("HurtAnim", UnityEngine.Random.Range(1, 4)); Debug.Log("Gyaru get hit animation"); };
                 DeathAnimation = () => { animator.SetTrigger("Hurt"); animator.SetFloat("HP", -1); Debug.Log("Gyaru death animation"); };
                 RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); Debug.Log("Gyaru running animation"); };
                 AbilityAnimation = () => Debug.Log("Gyaru ability use animation");
                 InteractAnimation = () => { animator.SetTrigger("Action"); Debug.Log("Gyaru interact animation"); };
                 WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("isArmed", false); Debug.Log("Gyaru walking animation"); };
+                StopWalkingAnimation = () => { animator.SetBool("isMoving", false); animator.SetBool("isRunning", false); Debug.Log("Gyaru stopped walking "); };
                 WalkArmedAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("isArmed", true); Debug.Log("Gyaru walk armed animation"); };
                 break;
             case Character.mysterious:
                 SimpleAttackAnimation = () => Debug.Log("mysterious attack animation");
-                ChargedAttackAnimation = () => Debug.Log("mysterious big attack animation");
+                SecondaryAttackAnimation = () => Debug.Log("mysterious big attack animation");
                 GetHitAnimation = () => Debug.Log("mysterious get hit animation");
                 DeathAnimation = () => Debug.Log("mysterious death animation");
                 RunAnimation = () => Debug.Log("mysterious running animation");
                 AbilityAnimation = () => Debug.Log("mysterious ability use animation");
                 InteractAnimation = () => Debug.Log("mysterious interact animation");
-                WalkAnimation = () => { Debug.Log("mysterious walking animation"); };
-                WalkArmedAnimation = () => { Debug.Log("mysterious walk armed animation"); };
+                WalkAnimation = () =>  Debug.Log("mysterious walking animation"); 
+                StopWalkingAnimation = () => Debug.Log("mysterious stopped walking "); 
+                WalkArmedAnimation = () =>  Debug.Log("mysterious walk armed animation"); 
                 break;
             case Character.officeworker:
                 SimpleAttackAnimation = () => Debug.Log("officeworker attack animation");
-                ChargedAttackAnimation = () => Debug.Log("officeworker big attack animation");
+                SecondaryAttackAnimation = () => Debug.Log("officeworker big attack animation");
                 GetHitAnimation = () => Debug.Log("officeworker get hit animation");
                 DeathAnimation = () => Debug.Log("officeworker death animation");
                 RunAnimation = () => Debug.Log("officeworker running animation");
                 AbilityAnimation = () => Debug.Log("officeworker ability use animation");
                 InteractAnimation = () => Debug.Log("officeworker interact animation");
                 WalkAnimation = () => { Debug.Log("officeworker walking animation"); };
+                StopWalkingAnimation = () => Debug.Log("officeworker stopped walking "); 
                 WalkArmedAnimation = () => { Debug.Log("officeworker walk armed animation"); };
                 break;
         }
