@@ -28,7 +28,9 @@ public class Player : MonoBehaviour
     private float timeToSecondaryAttack;
     [SerializeField] private float attackRange;
 
-
+    private bool isArmed;
+    [SerializeField] private float beingArmedDuration;
+    private float unarmTimer;
 
     private Action UseAbility;
     #region Animator related Actions
@@ -39,7 +41,6 @@ public class Player : MonoBehaviour
     private Action WalkAnimation;
     private Action StopWalkingAnimation;
     private Action RunAnimation;
-    private Action WalkArmedAnimation;
     private Action AbilityAnimation;
     private Action InteractAnimation;
     #endregion
@@ -68,24 +69,33 @@ public class Player : MonoBehaviour
     {
         if (controller.isMoving) WalkAnimation?.Invoke();
         else StopWalkingAnimation?.Invoke();
-        Debug.Log(controller.isMoving);
 
 
         if (!stopControlls && !dead)
         {
             if (Input.GetMouseButtonDown(0) && timeToAttack < 0)
             {
+                // Cooldown gestion
                 timeToAttack = attackCooldown; 
-                SimpleAttackAnimation?.Invoke(); 
+                // Animation
+                SimpleAttackAnimation?.Invoke();
+                ArmPlayer();
+                // Sound
                 simpleAttackWEvent?.Post(gameObject);
+
                 //controller.canRotate = false;
                 Debug.Log("starting simple attack");
             }
             else if (Input.GetMouseButtonDown(1) && timeToSecondaryAttack < 0)
             {
+                // Cooldown gestion
                 timeToSecondaryAttack = secondaryAttackCooldown;
+                // Animation
                 SecondaryAttackAnimation?.Invoke();
+                ArmPlayer();
+                // Sound
                 secondaryAttackWEvent?.Post(gameObject);
+
                 Debug.Log("starting charged attack");
             }
             else if (Input.GetKeyDown(KeyCode.E))
@@ -112,6 +122,14 @@ public class Player : MonoBehaviour
 
             if (timeToAttack >= 0) timeToAttack -= Time.deltaTime;
             if (timeToSecondaryAttack >= 0) timeToSecondaryAttack -= Time.deltaTime;
+            if (isArmed)
+            {
+                if (unarmTimer > 0) unarmTimer -= Time.deltaTime;
+                else
+                {
+                    UnarmPlayer();
+                }
+            }
         }
     }
 
@@ -162,6 +180,22 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+    private void ArmPlayer()
+    {
+        if (animator == null) return;
+        animator.SetBool("isArmed", true);
+        isArmed = true;
+        unarmTimer = beingArmedDuration;
+        Debug.Log("player is armed now");
+    }
+    private void UnarmPlayer()
+    {
+        if (animator == null) return;
+        animator.SetBool("isArmed", false);
+        isArmed = false;
+        Debug.Log("player is unarmed now");
+    }
+
     #region Health related methods
     public void TakeDamage()
     {
@@ -205,9 +239,8 @@ public class Player : MonoBehaviour
                 RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); Debug.Log("Gyaru running animation"); };
                 AbilityAnimation = () => Debug.Log("Gyaru ability use animation");
                 InteractAnimation = () => { animator.SetTrigger("Action"); Debug.Log("Gyaru interact animation"); };
-                WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("isArmed", false); Debug.Log("Gyaru walking animation"); };
-                StopWalkingAnimation = () => { animator.SetBool("isMoving", false); animator.SetBool("isRunning", false); Debug.Log("Gyaru stopped walking "); };
-                WalkArmedAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("isArmed", true); Debug.Log("Gyaru walk armed animation"); };
+                WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); };
+                StopWalkingAnimation = () => { animator.SetBool("isMoving", false); animator.SetBool("isRunning", false); };
                 break;
             case Character.mysterious:
                 SimpleAttackAnimation = () => Debug.Log("mysterious attack animation");
@@ -219,7 +252,6 @@ public class Player : MonoBehaviour
                 InteractAnimation = () => Debug.Log("mysterious interact animation");
                 WalkAnimation = () =>  Debug.Log("mysterious walking animation"); 
                 StopWalkingAnimation = () => Debug.Log("mysterious stopped walking "); 
-                WalkArmedAnimation = () =>  Debug.Log("mysterious walk armed animation"); 
                 break;
             case Character.officeworker:
                 SimpleAttackAnimation = () => Debug.Log("officeworker attack animation");
@@ -231,7 +263,6 @@ public class Player : MonoBehaviour
                 InteractAnimation = () => Debug.Log("officeworker interact animation");
                 WalkAnimation = () => { Debug.Log("officeworker walking animation"); };
                 StopWalkingAnimation = () => Debug.Log("officeworker stopped walking "); 
-                WalkArmedAnimation = () => { Debug.Log("officeworker walk armed animation"); };
                 break;
         }
     }

@@ -1521,6 +1521,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1190228801}
     - target: {fileID: 8536683932730595807, guid: a190e9222e2f94e458b5fac796614412, type: 3}
+      propertyPath: beingArmedDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8536683932730595807, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: chargedAttackCooldown
       value: 2
       objectReference: {fileID: 0}
