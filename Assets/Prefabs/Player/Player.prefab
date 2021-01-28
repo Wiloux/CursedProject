@@ -6024,7 +6024,7 @@ MonoBehaviour:
   simpleAttackWEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 34ba6947f9194e44e8f945ba74ee4e52, type: 2}
 --- !u!114 &5570753806488649902
 MonoBehaviour:
   m_ObjectHideFlags: 0

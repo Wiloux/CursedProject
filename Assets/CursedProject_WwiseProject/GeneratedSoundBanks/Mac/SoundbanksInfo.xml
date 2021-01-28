@@ -19,7 +19,7 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="763118669">
+		<SoundBank Id="2879190521" Language="SFX" Hash="4091338453">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -36,7 +36,7 @@
 					<IncludedMemoryFiles>
 						<File Id="153084191" Language="SFX">
 							<ShortName>PlayerWeapons\Gyaru\Short.wav</ShortName>
-							<Path>SFX\PlayerWeapons\Gyaru\Short_D5E60479.wem</Path>
+							<Path>SFX\PlayerWeapons\Gyaru\Short_234839FD.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -390,11 +390,23 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1241118191" Name="PlayFootstepsPlayer" ObjectPath="\Events\Players\PlayFootstepsPlayer" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.231414">
+				<Event Id="1241118191" Name="PlayFootstepsPlayer" ObjectPath="\Events\Players\PlayFootstepsPlayer" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.142217" DurationMax="0.473162">
 					<IncludedMemoryFiles>
+						<File Id="153900718" Language="SFX">
+							<ShortName>SapatoFormalGrassRun2.wav</ShortName>
+							<Path>SFX\SapatoFormalGrassRun2_10C4C929.wem</Path>
+						</File>
 						<File Id="180616038" Language="SFX">
 							<ShortName>PlayerMovement\SapatoFormalRun3.wav</ShortName>
 							<Path>SFX\PlayerMovement\SapatoFormalRun3_10C4C929.wem</Path>
+						</File>
+						<File Id="225548034" Language="SFX">
+							<ShortName>SapatoFormalGrassWalk2.wav</ShortName>
+							<Path>SFX\SapatoFormalGrassWalk2_10C4C929.wem</Path>
+						</File>
+						<File Id="245844105" Language="SFX">
+							<ShortName>SapatoFormalGrassWalk4.wav</ShortName>
+							<Path>SFX\SapatoFormalGrassWalk4_10C4C929.wem</Path>
 						</File>
 						<File Id="285970420" Language="SFX">
 							<ShortName>PlayerMovement\SapatoFormalRun4.wav</ShortName>
@@ -404,9 +416,25 @@
 							<ShortName>PlayerMovement\SapatoFormalWalk1.wav</ShortName>
 							<Path>SFX\PlayerMovement\SapatoFormalWalk1_10C4C929.wem</Path>
 						</File>
+						<File Id="468841530" Language="SFX">
+							<ShortName>SapatoFormalGrassRun3.wav</ShortName>
+							<Path>SFX\SapatoFormalGrassRun3_10C4C929.wem</Path>
+						</File>
 						<File Id="535356293" Language="SFX">
 							<ShortName>PlayerMovement\SapatoFormalWalk2.wav</ShortName>
 							<Path>SFX\PlayerMovement\SapatoFormalWalk2_10C4C929.wem</Path>
+						</File>
+						<File Id="954465849" Language="SFX">
+							<ShortName>SapatoFormalGrassWalk1.wav</ShortName>
+							<Path>SFX\SapatoFormalGrassWalk1_10C4C929.wem</Path>
+						</File>
+						<File Id="956693672" Language="SFX">
+							<ShortName>SapatoFormalGrassWalk3.wav</ShortName>
+							<Path>SFX\SapatoFormalGrassWalk3_10C4C929.wem</Path>
+						</File>
+						<File Id="1006629129" Language="SFX">
+							<ShortName>SapatoFormalGrassRun1.wav</ShortName>
+							<Path>SFX\SapatoFormalGrassRun1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<DefaultSwitchValue>{FE874951-659B-4E08-AC9B-A2268D72415F}</DefaultSwitchValue>
@@ -427,6 +455,26 @@
 											<Media>
 												<File Id="180616038"/>
 												<File Id="285970420"/>
+											</Media>
+										</SwitchContainer>
+									</Children>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{CC89284F-9036-4382-ADE6-BC3DAA5D8D81}">
+									<DefaultSwitchValue>{C561F1D4-D0FA-459F-86B1-F067C3B54EDC}</DefaultSwitchValue>
+									<Children>
+										<SwitchContainer SwitchValue="{685B8CBA-54CD-41E3-A875-055E33058A9F}">
+											<Media>
+												<File Id="153900718"/>
+												<File Id="468841530"/>
+												<File Id="1006629129"/>
+											</Media>
+										</SwitchContainer>
+										<SwitchContainer SwitchValue="{C561F1D4-D0FA-459F-86B1-F067C3B54EDC}">
+											<Media>
+												<File Id="225548034"/>
+												<File Id="245844105"/>
+												<File Id="954465849"/>
+												<File Id="956693672"/>
 											</Media>
 										</SwitchContainer>
 									</Children>
