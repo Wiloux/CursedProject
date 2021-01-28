@@ -6004,6 +6004,7 @@ MonoBehaviour:
   secondaryAttackCooldown: 0
   attackRange: 2
   beingArmedDuration: 5
+  idleBreakTimerMinMax: {x: 10, y: 15}
   playerAttackWEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -6048,7 +6049,8 @@ MonoBehaviour:
   _verticalSpeed: 3
   _verticalSpeedNeg: 1.5
   isMoving: 0
-  canRotate: 1
+  isRunning: 0
+  canMove: 0
 --- !u!114 &5570753806488649891
 MonoBehaviour:
   m_ObjectHideFlags: 0

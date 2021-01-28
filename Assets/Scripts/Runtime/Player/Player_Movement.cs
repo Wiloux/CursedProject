@@ -22,12 +22,14 @@ public class Player_Movement : MonoBehaviour
     float rotX;
 
     public bool isMoving;
-    public bool canRotate = true;
+    public bool isRunning;
+    public bool canMove;
     // Update is called once per frame
     void Update()
     {
         isMoving = false;
-        if (!player.stopControlls)
+        isRunning = false;
+        if (!player.stopControlls && canMove)
         {
             RotatePlayerWithMouse();
             Movement();
@@ -45,6 +47,7 @@ public class Player_Movement : MonoBehaviour
         if (Input.GetAxis("Vertical") > 0.1)
         {
             verticalMove = Input.GetAxis("Vertical") * Time.deltaTime * _verticalSpeed;
+            if (Input.GetKey(KeyCode.LeftShift)) { isRunning = true; verticalMove *= 2;  }
             moveDirection = transform.TransformDirection(Vector3.forward) * verticalMove;
         }
         else if (Input.GetAxis("Vertical") < -0.1)
@@ -58,10 +61,7 @@ public class Player_Movement : MonoBehaviour
 
     void RotatePlayerWithMouse()
     {
-        if (canRotate)
-        {
-            rotX = Input.GetAxis("Mouse X") * _rotSpeed * Mathf.Deg2Rad;
-            transform.Rotate(Vector3.up, rotX);
-        }
+        rotX = Input.GetAxis("Mouse X") * _rotSpeed * Mathf.Deg2Rad;
+        transform.Rotate(Vector3.up, rotX);
     }
 }

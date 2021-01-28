@@ -32,6 +32,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float beingArmedDuration;
     private float unarmTimer;
 
+    private bool isIdle;
+    [SerializeField] private Vector2 idleBreakTimerMinMax;
+    private float idleTimer;
+
     private Action UseAbility;
     #region Animator related Actions
     private Action SimpleAttackAnimation;
@@ -43,6 +47,7 @@ public class Player : MonoBehaviour
     private Action RunAnimation;
     private Action AbilityAnimation;
     private Action InteractAnimation;
+    private Action IdleBreakAnimation;
     #endregion
 
     #region Wwise Events
@@ -67,8 +72,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (controller.isMoving) WalkAnimation?.Invoke();
-        else StopWalkingAnimation?.Invoke();
+        if (controller.isMoving) 
+        { 
+            if(controller.isRunning){ SetRunningSound(); RunAnimation?.Invoke();}
+            else { SetWalkingSound(); WalkAnimation?.Invoke(); }
+
+            isIdle = false;
+        }
+        else { StopWalkingAnimation?.Invoke(); if (!isIdle) { isIdle = true; idleTimer = UnityEngine.Random.Range(idleBreakTimerMinMax.x, idleBreakTimerMinMax.y); } }
 
 
         if (!stopControlls && !dead)
@@ -76,7 +87,8 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && timeToAttack < 0)
             {
                 // Cooldown gestion
-                timeToAttack = attackCooldown; 
+                timeToAttack = attackCooldown;
+                StartCoroutine(BlockMovementForPeriod(2f));
                 // Animation
                 SimpleAttackAnimation?.Invoke();
                 ArmPlayer();
@@ -90,6 +102,7 @@ public class Player : MonoBehaviour
             {
                 // Cooldown gestion
                 timeToSecondaryAttack = secondaryAttackCooldown;
+                StartCoroutine(BlockMovementForPeriod(2f));
                 // Animation
                 SecondaryAttackAnimation?.Invoke();
                 ArmPlayer();
@@ -129,6 +142,11 @@ public class Player : MonoBehaviour
                 {
                     UnarmPlayer();
                 }
+            }
+            if (isIdle)
+            {
+                if (idleTimer > 0) idleTimer -= Time.deltaTime;
+                else { IdleBreakAnimation?.Invoke(); idleTimer = UnityEngine.Random.Range(idleBreakTimerMinMax.x, idleBreakTimerMinMax.y); }
             }
         }
     }
@@ -196,6 +214,17 @@ public class Player : MonoBehaviour
         Debug.Log("player is unarmed now");
     }
 
+    private IEnumerator BlockMovementForPeriod(float seconds)
+    {
+        controller.canMove = false;
+        for(int i = 0; i <10; i++)
+        {
+            // while(isPaused) return yield null;
+            yield return new WaitForSeconds(seconds / 10f);
+        }
+        controller.canMove = true;
+    }
+
     #region Health related methods
     public void TakeDamage()
     {
@@ -220,6 +249,9 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+    private void SetWalkingSound() { AkSoundEngine.SetSwitch("WalkRun", "Walk", gameObject);}
+    private void SetRunningSound() { AkSoundEngine.SetSwitch("WalkRun", "Run", gameObject);}
+
     #region Switch Character Methods
     public void SwitchCharacter(Character character)
     {
@@ -236,11 +268,12 @@ public class Player : MonoBehaviour
                 SecondaryAttackAnimation = () => { animator.SetTrigger("BigAttack");  Debug.Log("Gyaru big attack animation"); };
                 GetHitAnimation = () => { animator.SetTrigger("Hurt"); animator.SetInteger("HurtAnim", UnityEngine.Random.Range(1, 4)); Debug.Log("Gyaru get hit animation"); };
                 DeathAnimation = () => { animator.SetTrigger("Hurt"); animator.SetFloat("HP", -1); Debug.Log("Gyaru death animation"); };
-                RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); Debug.Log("Gyaru running animation"); AkSoundEngine.SetSwitch("WalkRun", "Run", gameObject); };
+                RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); Debug.Log("Gyaru running animation");  };
                 AbilityAnimation = () => Debug.Log("Gyaru ability use animation");
                 InteractAnimation = () => { animator.SetTrigger("Action"); Debug.Log("Gyaru interact animation"); };
-                WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); AkSoundEngine.SetSwitch("WalkRun", "Walk", gameObject); };
+                WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); };
                 StopWalkingAnimation = () => { animator.SetBool("isMoving", false); animator.SetBool("isRunning", false); };
+                IdleBreakAnimation = () => { animator.SetTrigger("IdleBreak"); animator.SetInteger("IdleBreakAnim", UnityEngine.Random.Range(0, 2)); Debug.Log("Gyaru idle break"); };
                 break;
             case Character.mysterious:
                 SimpleAttackAnimation = () => Debug.Log("mysterious attack animation");
@@ -252,6 +285,7 @@ public class Player : MonoBehaviour
                 InteractAnimation = () => Debug.Log("mysterious interact animation");
                 WalkAnimation = () =>  Debug.Log("mysterious walking animation"); 
                 StopWalkingAnimation = () => Debug.Log("mysterious stopped walking "); 
+                IdleBreakAnimation = () =>  Debug.Log("mysterious idle break");
                 break;
             case Character.officeworker:
                 SimpleAttackAnimation = () => Debug.Log("officeworker attack animation");
@@ -263,6 +297,7 @@ public class Player : MonoBehaviour
                 InteractAnimation = () => Debug.Log("officeworker interact animation");
                 WalkAnimation = () => { Debug.Log("officeworker walking animation"); };
                 StopWalkingAnimation = () => Debug.Log("officeworker stopped walking "); 
+                IdleBreakAnimation = () =>  Debug.Log("officeworker idle break");
                 break;
         }
     }
