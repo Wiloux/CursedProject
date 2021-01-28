@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8174f48aca65aa2408dd19002bb3ab44, type: 3}
+  m_Name: FE874951-659B-4E08-AC9B-A2268D72415F
+  m_EditorClassIdentifier: 
+  objectName: Gyaru
+  id: 414889065
+  guid: FE874951-659B-4E08-AC9B-A2268D72415F
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: e1556f62030dcbf4faa7771ee5bf7d3e, type: 2}

@@ -29,6 +29,17 @@
 						</Event>
 						<Event Name="GyaruStopAttackLong" ID="{4E6123C1-E06F-4204-8E2E-3DB435CC83DB}">
 							<ChildrenList>
+								<Action Name="" ID="{D30195CC-AE7F-4510-ACAE-830341FCF901}" ShortID="867794893">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Short" ID="{CE1B3CA8-58CA-4603-90CE-7FE97B005D94}" WorkUnitID="{6BFC5D53-6FAA-4B0E-9A11-64FF6144C235}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{33B95A27-66EE-4378-AB63-C283F2327E68}" ShortID="944403534">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>

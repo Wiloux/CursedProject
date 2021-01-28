@@ -236,10 +236,10 @@ public class Player : MonoBehaviour
                 SecondaryAttackAnimation = () => { animator.SetTrigger("BigAttack");  Debug.Log("Gyaru big attack animation"); };
                 GetHitAnimation = () => { animator.SetTrigger("Hurt"); animator.SetInteger("HurtAnim", UnityEngine.Random.Range(1, 4)); Debug.Log("Gyaru get hit animation"); };
                 DeathAnimation = () => { animator.SetTrigger("Hurt"); animator.SetFloat("HP", -1); Debug.Log("Gyaru death animation"); };
-                RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); Debug.Log("Gyaru running animation"); };
+                RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); Debug.Log("Gyaru running animation"); AkSoundEngine.SetSwitch("WalkRun", "Run", gameObject); };
                 AbilityAnimation = () => Debug.Log("Gyaru ability use animation");
                 InteractAnimation = () => { animator.SetTrigger("Action"); Debug.Log("Gyaru interact animation"); };
-                WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); };
+                WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); AkSoundEngine.SetSwitch("WalkRun", "Walk", gameObject); };
                 StopWalkingAnimation = () => { animator.SetBool("isMoving", false); animator.SetBool("isRunning", false); };
                 break;
             case Character.mysterious:

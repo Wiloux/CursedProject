@@ -19,28 +19,28 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="4170689983">
+		<SoundBank Id="2879190521" Language="SFX" Hash="763118669">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
 			<IncludedEvents>
-				<Event Id="369930381" Name="GyaruPlayAttackLong" ObjectPath="\Events\Players\Gyaru\GyaruPlayAttackLong" DurationType="Infinite">
+				<Event Id="369930381" Name="GyaruPlayAttackLong" ObjectPath="\Events\Players\Gyaru\GyaruPlayAttackLong" MaxAttenuation="30.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="321833020" Language="SFX">
 							<ShortName>PlayerWeapons\Gyaru\Long.wav</ShortName>
-							<Path>SFX\PlayerWeapons\Gyaru\Long_2DA98C47.wem</Path>
+							<Path>SFX\PlayerWeapons\Gyaru\Long_7AFCE640.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="166469259" Name="GyaruPlayAttackShort" ObjectPath="\Events\Players\Gyaru\GyaruPlayAttackShort" DurationType="OneShot" DurationMin="0.222086" DurationMax="0.222086">
+				<Event Id="166469259" Name="GyaruPlayAttackShort" ObjectPath="\Events\Players\Gyaru\GyaruPlayAttackShort" MaxAttenuation="30.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="153084191" Language="SFX">
 							<ShortName>PlayerWeapons\Gyaru\Short.wav</ShortName>
-							<Path>SFX\PlayerWeapons\Gyaru\Short_10C4C929.wem</Path>
+							<Path>SFX\PlayerWeapons\Gyaru\Short_D5E60479.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3302019815" Name="GyaruStopAttackLong" ObjectPath="\Events\Players\Gyaru\GyaruStopAttackLong" DurationType="OneShot" DurationMin="0.112177" DurationMax="0.112177">
+				<Event Id="3302019815" Name="GyaruStopAttackLong" ObjectPath="\Events\Players\Gyaru\GyaruStopAttackLong" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.112177" DurationMax="0.112177">
 					<IncludedMemoryFiles>
 						<File Id="823667250" Language="SFX">
 							<ShortName>PlayerWeapons\Gyaru\LongTail.wav</ShortName>

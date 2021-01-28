@@ -12,7 +12,13 @@
 						<Folder Name="Taser" ID="{6EF88E92-98E3-456B-B3F9-688704CC3A7A}" ShortID="288993624">
 							<ChildrenList>
 								<Sound Name="LongTail" ID="{BA9AC111-4931-4224-AC67-18BFE3EFFFB9}" ShortID="522077901">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
 										</Reference>
@@ -34,7 +40,15 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Short" ID="{CE1B3CA8-58CA-4603-90CE-7FE97B005D94}" ShortID="673724534">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="LoopCount" Type="int32" Value="3"/>
+									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
 										</Reference>
@@ -44,6 +58,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Short" ID="{68B050B7-4D99-471A-8ACE-6D713A2B3D4E}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="50.262"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0.0355337868480726"/>
+												<Property Name="LoopEnd" Type="Real64" Value="0.145365491651206"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>PlayerWeapons\Gyaru\Short.wav</AudioFile>
 											<MediaIDList>
@@ -57,9 +77,13 @@
 								</Sound>
 								<Sound Name="Long" ID="{9F761C2B-E91F-4731-9323-A3DF020CFCF4}" ShortID="62419735">
 									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
 										</Reference>
