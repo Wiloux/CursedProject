@@ -14,7 +14,11 @@ public class GameHandler : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject saveMenu;
 
-    private void Awake(){instance = this;}
+    private void Awake()
+    {
+        if (instance != null) Destroy(gameObject);
+        else instance = this;
+    }
 
     // Update is called once per frame
     void Update()
@@ -22,46 +26,48 @@ public class GameHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
-            if(MouseManagement.instance != null) MouseManagement.instance.ToggleMouseLock();
-            if (isSaveMenuOpen)
-            {
-                ToggleSaveMenu();
-            }
+            if (isSaveMenuOpen){ToggleSaveMenu();}
             else { TogglePauseMenu(); }
+            if(MouseManagement.instance != null) MouseManagement.instance.ToggleMouseLock();
         }
     }
 
+    public bool IsPaused() { return isPaused; }
+
     public void TogglePause()
     {
+        if (isPaused) Time.timeScale = 1f;
+        else Time.timeScale = 0f;
         isPaused = !isPaused;
-        GameObject[] objects = SceneManager.GetActiveScene().GetRootGameObjects();
-        foreach(GameObject go in objects)
-        {
-            switch (go.tag)
-            {
-                case "Enemy":
-                    EnemyBase enemy = go.GetComponent<EnemyBase>();
-                    if(enemy != null){EnemyHelper.TogglePause(enemy);}
-                    else{
-                        for(int i = 0; i < go.transform.childCount;i ++)
-                        {
-                            enemy = go.transform.GetChild(i).GetComponent<EnemyBase>();
-                            if(enemy != null) { EnemyHelper.TogglePause(enemy); }
-                        }
-                    }
-                    continue;
-                case "Player":
-                    PlayerHelper.instance.ToggleControls();
-                    continue;
-                case "Mirror":
-                    SquareMirror mirroCam = go.GetComponent<SquareMirror>();
-                    if (mirroCam != null) mirroCam.enabled = !mirroCam.enabled;
-                    continue;
+        //isPaused = !isPaused;
+        //GameObject[] objects = SceneManager.GetActiveScene().GetRootGameObjects();
+        //foreach(GameObject go in objects)
+        //{
+        //    switch (go.tag)
+        //    {
+        //        case "Enemy":
+        //            EnemyBase enemy = go.GetComponent<EnemyBase>();
+        //            if(enemy != null){EnemyHelper.TogglePause(enemy);}
+        //            else{
+        //                for(int i = 0; i < go.transform.childCount;i ++)
+        //                {
+        //                    enemy = go.transform.GetChild(i).GetComponent<EnemyBase>();
+        //                    if(enemy != null) { EnemyHelper.TogglePause(enemy); }
+        //                }
+        //            }
+        //            continue;
+        //        case "Player":
+        //            PlayerHelper.instance.ToggleControls();
+        //            continue;
+        //        case "Mirror":
+        //            SquareMirror mirroCam = go.GetComponent<SquareMirror>();
+        //            if (mirroCam != null) mirroCam.enabled = !mirroCam.enabled;
+        //            continue;
 
-            }
-            Shard shard = go.GetComponent<Shard>();
-            if (shard != null) { shard.TogglePause(); continue; }
-        }
+        //    }
+        //    Shard shard = go.GetComponent<Shard>();
+        //    if (shard != null) { shard.TogglePause(); continue; }
+        //}
     }
 
     public void TogglePauseMenu() { pauseMenu.SetActive(!pauseMenu.activeSelf);}

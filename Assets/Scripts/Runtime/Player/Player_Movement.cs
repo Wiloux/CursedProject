@@ -27,13 +27,16 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isMoving = false;
-        isRunning = false;
-        if (!player.stopControlls && canMove)
+        if (!GameHandler.instance.IsPaused())
         {
-            RotatePlayerWithMouse();
-            Movement();
-            if (Input.GetAxis("Vertical") != 0) { isMoving = true; }
+            isMoving = false;
+            isRunning = false;
+            if (!player.stopControlls && canMove)
+            {
+                RotatePlayerWithMouse();
+                Movement();
+                if (Input.GetAxis("Vertical") != 0) { isMoving = true; }
+            }
         }
     }
 

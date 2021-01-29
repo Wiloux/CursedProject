@@ -72,18 +72,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (controller.isMoving) 
-        { 
-            if(controller.isRunning){ SetRunningSound(); RunAnimation?.Invoke();}
-            else { SetWalkingSound(); WalkAnimation?.Invoke(); }
-
-            isIdle = false;
-        }
-        else { StopWalkingAnimation?.Invoke(); if (!isIdle) { isIdle = true; idleTimer = UnityEngine.Random.Range(idleBreakTimerMinMax.x, idleBreakTimerMinMax.y); } }
-
-
-        if (!stopControlls && !dead)
+        if (!stopControlls && !dead && !GameHandler.instance.IsPaused())
         {
+            if (controller.isMoving) 
+            { 
+                if(controller.isRunning){ SetRunningSound(); RunAnimation?.Invoke();}
+                else { SetWalkingSound(); WalkAnimation?.Invoke(); }
+
+                isIdle = false;
+            }
+            else { StopWalkingAnimation?.Invoke(); if (!isIdle) { isIdle = true; idleTimer = UnityEngine.Random.Range(idleBreakTimerMinMax.x, idleBreakTimerMinMax.y); } }
+
+
             if (Input.GetMouseButtonDown(0) && timeToAttack < 0)
             {
                 // Cooldown gestion

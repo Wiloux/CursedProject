@@ -1598,7 +1598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &399718471
 Transform:
   m_ObjectHideFlags: 0
@@ -2835,30 +2835,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &841587972 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5570753806488649908, guid: a190e9222e2f94e458b5fac796614412, type: 3}
-  m_PrefabInstance: {fileID: 5570753806854640123}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &841587983
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841587972}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7932a189d2e4d4b42a79ceea11f15975, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &861497225
 GameObject:
   m_ObjectHideFlags: 3
@@ -18421,10 +18397,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5570753806488649902, guid: a190e9222e2f94e458b5fac796614412, type: 3}
-      propertyPath: PlayerHitEvent.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: b6c735b9e2467a140bc92878ecca5837, type: 2}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_RootOrder
       value: 2

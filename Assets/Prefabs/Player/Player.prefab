@@ -5919,9 +5919,9 @@ GameObject:
   - component: {fileID: 5570753806488649900}
   - component: {fileID: 5570753806488649899}
   - component: {fileID: 3728557137432105148}
-  - component: {fileID: 841587983}
   - component: {fileID: 1446531079}
   - component: {fileID: 1446531080}
+  - component: {fileID: 6664270546565872518}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -5992,7 +5992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 5570753806488649902}
-  animator: {fileID: 841587983}
+  animator: {fileID: 6664270546565872518}
   character: 0
   stopControlls: 0
   attackPoint: {fileID: 652953129}
@@ -6114,25 +6114,6 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!95 &841587983
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5570753806488649908}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5bf8f453226fd844fb3a95034bd543ac, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1446531079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6186,6 +6167,25 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 4c2574acc7996b445a63f30db5d27870, type: 2}
+--- !u!95 &6664270546565872518
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5570753806488649908}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5bf8f453226fd844fb3a95034bd543ac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5570753806531694815
 GameObject:
   m_ObjectHideFlags: 0
