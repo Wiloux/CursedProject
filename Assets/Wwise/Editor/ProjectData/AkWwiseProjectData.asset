@@ -396,7 +396,7 @@ MonoBehaviour:
     ParentPath: Players
     guid: 84878f6dc9542744bdce26203903b0f0
     GuidInternal: 
-    m_lastTime: -8585897308038833383
+    m_lastTime: -8585896610938006325
     List:
     - name: Gyaru
       guid: 474e1a04614f9f4fa20cfb27e9ca7c35
@@ -790,10 +790,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /CursedProject_WwiseProject
-  - /CursedProject_WwiseProject/Events
-  - /CursedProject_WwiseProject/Events/Enemies
-  - /CursedProject_WwiseProject/Events/Enemies/Chicken
-  - /CursedProject_WwiseProject/Events/Players
-  - /CursedProject_WwiseProject/Events/Players/Gyaru
+  - /CursedProject_WwiseProject/Switches
+  - /CursedProject_WwiseProject/Switches/Default Work Unit
+  - /CursedProject_WwiseProject/Switches/Default Work Unit/PlayerName
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
