@@ -81,8 +81,12 @@ public class Player : MonoBehaviour
             if (controller.isMoving) 
             { 
                 if(controller.isRunning){ SetRunningSound(); RunAnimation?.Invoke();}
-                else { SetWalkingSound(); WalkAnimation?.Invoke(); }
-                animator.SetBool("Backwards", controller.isMovingBackwards);
+                else 
+                { 
+                    SetWalkingSound();
+                    if (!controller.isMovingBackwards) WalkAnimation?.Invoke();
+                    else WalkBackwardsAnimation?.Invoke();
+                }
 
                 isIdle = false;
             }
@@ -299,7 +303,7 @@ public class Player : MonoBehaviour
                 SecondaryAttackAnimation = () => { animator.SetTrigger("BigAttack");  Debug.Log("Gyaru big attack animation"); };
                 GetHitAnimation = () => { animator.SetTrigger("Hurt"); animator.SetInteger("HurtAnim", UnityEngine.Random.Range(1, 4)); Debug.Log("Gyaru get hit animation"); };
                 DeathAnimation = () => { animator.SetTrigger("Hurt"); animator.SetFloat("HP", -1); Debug.Log("Gyaru death animation"); };
-                RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); Debug.Log("Gyaru running animation");  };
+                RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); animator.SetBool("Backwards", false); Debug.Log("Gyaru running animation");  };
                 AbilityAnimation = () => Debug.Log("Gyaru ability use animation");
                 InteractAnimation = () => { animator.SetTrigger("Action"); Debug.Log("Gyaru interact animation"); };
                 WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("Backwards", false); };
@@ -321,7 +325,8 @@ public class Player : MonoBehaviour
                 RunAnimation = () => Debug.Log("mysterious running animation");
                 AbilityAnimation = () => Debug.Log("mysterious ability use animation");
                 InteractAnimation = () => Debug.Log("mysterious interact animation");
-                WalkAnimation = () =>  Debug.Log("mysterious walking animation"); 
+                WalkAnimation = () =>  Debug.Log("mysterious walking animation");
+                WalkBackwardsAnimation = () => Debug.Log("myserious walking backwards animation");
                 StopWalkingAnimation = () => Debug.Log("mysterious stopped walking "); 
                 IdleBreakAnimation = () =>  Debug.Log("mysterious idle break");
                 break;
@@ -334,6 +339,7 @@ public class Player : MonoBehaviour
                 AbilityAnimation = () => Debug.Log("officeworker ability use animation");
                 InteractAnimation = () => Debug.Log("officeworker interact animation");
                 WalkAnimation = () => { Debug.Log("officeworker walking animation"); };
+                WalkBackwardsAnimation = () => Debug.Log("officeworker walking backwards animation");
                 StopWalkingAnimation = () => Debug.Log("officeworker stopped walking "); 
                 IdleBreakAnimation = () =>  Debug.Log("officeworker idle break");
                 break;
