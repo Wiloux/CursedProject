@@ -97,6 +97,7 @@ namespace AK
 
             namespace SWITCH
             {
+                static const AkUniqueID BACKWARDS = 3876169137U;
                 static const AkUniqueID RUN = 712161704U;
                 static const AkUniqueID WALK = 2108779966U;
             } // namespace SWITCH

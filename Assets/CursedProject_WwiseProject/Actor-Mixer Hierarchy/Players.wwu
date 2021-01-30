@@ -208,7 +208,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="SapatoFormalWalk1" ID="{18BA9164-4A30-4FFD-98DF-247716CCA7B2}" ShortID="858854791">
+												<Sound Name="SapatoFormalWalk1" ID="{BE4D3F2B-68EF-4CFC-AD9C-EC33A54CA63C}" ShortID="588708250">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -218,19 +218,19 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalWalk1" ID="{FD512233-BBD5-4865-9128-EDEB4BB2F15D}">
+														<AudioFileSource Name="SapatoFormalWalk1" ID="{95798C33-FBE1-4FE4-896C-313672D6531E}">
 															<Language>SFX</Language>
-															<AudioFile>PlayerMovement\SapatoFormalWalk1.wav</AudioFile>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalWalk1.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="424694783"/>
+																<MediaID ID="415192423"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalWalk1" ID="{FD512233-BBD5-4865-9128-EDEB4BB2F15D}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalWalk1" ID="{95798C33-FBE1-4FE4-896C-313672D6531E}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SapatoFormalWalk2" ID="{FEE32026-0DE0-42AD-BEF4-D2699C49221A}" ShortID="991820702">
+												<Sound Name="SapatoFormalWalk2" ID="{D9F77140-B2E2-417F-AC75-7FD9CC432180}" ShortID="438695997">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -240,22 +240,22 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalWalk2" ID="{99B9ECDE-CA1B-48EB-B49C-33F52EB6ED78}">
+														<AudioFileSource Name="SapatoFormalWalk2" ID="{C20C7518-8614-4F06-BDA5-AD6019C38FB5}">
 															<Language>SFX</Language>
-															<AudioFile>PlayerMovement\SapatoFormalWalk2.wav</AudioFile>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalWalk2.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="535356293"/>
+																<MediaID ID="770698417"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalWalk2" ID="{99B9ECDE-CA1B-48EB-B49C-33F52EB6ED78}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalWalk2" ID="{C20C7518-8614-4F06-BDA5-AD6019C38FB5}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
 											<Playlist>
-												<ItemRef Name="SapatoFormalWalk1" ID="{18BA9164-4A30-4FFD-98DF-247716CCA7B2}"/>
-												<ItemRef Name="SapatoFormalWalk2" ID="{FEE32026-0DE0-42AD-BEF4-D2699C49221A}"/>
+												<ItemRef Name="SapatoFormalWalk1" ID="{BE4D3F2B-68EF-4CFC-AD9C-EC33A54CA63C}"/>
+												<ItemRef Name="SapatoFormalWalk2" ID="{D9F77140-B2E2-417F-AC75-7FD9CC432180}"/>
 											</Playlist>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Run" ID="{098EA2A3-E99C-4AEA-B4DA-E71B89FF44B1}" ShortID="430207226">
@@ -276,7 +276,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="SapatoFormalRun3" ID="{1E1D6B82-CF53-4C71-A996-96C0B4590D3E}" ShortID="229850671">
+												<Sound Name="SapatoFormalRun3" ID="{44E6F0CA-B306-48DB-9AC0-300D6FBA431D}" ShortID="1068041337">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -286,19 +286,19 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalRun3" ID="{E393CB45-CD26-4F62-A3FB-A18E970E71F4}">
+														<AudioFileSource Name="SapatoFormalRun3" ID="{41A5F150-0CA5-48C5-AAA6-63B233AF892A}">
 															<Language>SFX</Language>
-															<AudioFile>PlayerMovement\SapatoFormalRun3.wav</AudioFile>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalRun3.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="180616038"/>
+																<MediaID ID="866266268"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalRun3" ID="{E393CB45-CD26-4F62-A3FB-A18E970E71F4}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalRun3" ID="{41A5F150-0CA5-48C5-AAA6-63B233AF892A}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SapatoFormalRun4" ID="{1C76E973-3D9A-40ED-A303-3575E35D4A8E}" ShortID="601753299">
+												<Sound Name="SapatoFormalRun4" ID="{51E33088-A374-4BDB-87FB-644909ADC880}" ShortID="829320771">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -308,27 +308,93 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalRun4" ID="{28A2316B-AEE4-4085-813A-F665C6745842}">
+														<AudioFileSource Name="SapatoFormalRun4" ID="{3EACE2B3-F80F-4524-979F-A58C5018504C}">
 															<Language>SFX</Language>
-															<AudioFile>PlayerMovement\SapatoFormalRun4.wav</AudioFile>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalRun4.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="285970420"/>
+																<MediaID ID="93558507"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalRun4" ID="{28A2316B-AEE4-4085-813A-F665C6745842}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalRun4" ID="{3EACE2B3-F80F-4524-979F-A58C5018504C}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
 											<Playlist>
-												<ItemRef Name="SapatoFormalRun3" ID="{1E1D6B82-CF53-4C71-A996-96C0B4590D3E}"/>
-												<ItemRef Name="SapatoFormalRun4" ID="{1C76E973-3D9A-40ED-A303-3575E35D4A8E}"/>
+												<ItemRef Name="SapatoFormalRun3" ID="{44E6F0CA-B306-48DB-9AC0-300D6FBA431D}"/>
+												<ItemRef Name="SapatoFormalRun4" ID="{51E33088-A374-4BDB-87FB-644909ADC880}"/>
+											</Playlist>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="Backwards" ID="{3A8B7923-A6C7-4FD7-A555-9E3FF4F5BC38}" ShortID="977356486">
+											<PropertyList>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="SapatoFormalBackwards1" ID="{96C04221-23FD-4193-B39C-E2558DB832F9}" ShortID="474518018">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SapatoFormalBackwards1" ID="{5B76D915-B9D4-4FBE-BC4A-23247769D872}">
+															<Language>SFX</Language>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalBackwards1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="92101835"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SapatoFormalBackwards1" ID="{5B76D915-B9D4-4FBE-BC4A-23247769D872}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SapatoFormalBackwards2" ID="{E62E65DB-AF2F-42A3-982A-053A3D69304F}" ShortID="526195252">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SapatoFormalBackwards2" ID="{41781956-E198-4B1C-9173-67519B958F86}">
+															<Language>SFX</Language>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalBackwards2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="488739457"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SapatoFormalBackwards2" ID="{41781956-E198-4B1C-9173-67519B958F86}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<Playlist>
+												<ItemRef Name="SapatoFormalBackwards1" ID="{96C04221-23FD-4193-B39C-E2558DB832F9}"/>
+												<ItemRef Name="SapatoFormalBackwards2" ID="{E62E65DB-AF2F-42A3-982A-053A3D69304F}"/>
 											</Playlist>
 										</RandomSequenceContainer>
 									</ChildrenList>
 									<GroupingInfo>
 										<GroupingBehaviorList>
+											<GroupingBehavior>
+												<ItemRef Name="Backwards" ID="{3A8B7923-A6C7-4FD7-A555-9E3FF4F5BC38}"/>
+											</GroupingBehavior>
 											<GroupingBehavior>
 												<ItemRef Name="Walk" ID="{51B6CB34-F92F-4B4D-8C09-D4836721015A}"/>
 											</GroupingBehavior>
@@ -337,6 +403,12 @@
 											</GroupingBehavior>
 										</GroupingBehaviorList>
 										<GroupingList>
+											<Grouping>
+												<SwitchRef Name="Backwards" ID="{6F7D7988-C6AF-4AE1-9021-9D0E65AEDBB8}"/>
+												<ItemList>
+													<ItemRef Name="Backwards" ID="{3A8B7923-A6C7-4FD7-A555-9E3FF4F5BC38}"/>
+												</ItemList>
+											</Grouping>
 											<Grouping>
 												<SwitchRef Name="Run" ID="{685B8CBA-54CD-41E3-A875-055E33058A9F}"/>
 												<ItemList>
@@ -378,7 +450,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="SapatoFormalGrassRun1" ID="{ABC8DC78-A90B-492C-88E4-11902A79FDEA}" ShortID="927134669">
+												<Sound Name="SapatoFormalGrassRun1" ID="{B028D41F-A977-4B2B-8B98-D6D39C91339D}" ShortID="78461213">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -388,19 +460,19 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalGrassRun1" ID="{F2FD967B-A4D8-4D9D-BDB0-1ADBBD7E4093}">
+														<AudioFileSource Name="SapatoFormalGrassRun1" ID="{CE075FD8-F106-429D-B9D4-134C310946BF}">
 															<Language>SFX</Language>
-															<AudioFile>SapatoFormalGrassRun1.wav</AudioFile>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalGrassRun1.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="1006629129"/>
+																<MediaID ID="430418663"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalGrassRun1" ID="{F2FD967B-A4D8-4D9D-BDB0-1ADBBD7E4093}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalGrassRun1" ID="{CE075FD8-F106-429D-B9D4-134C310946BF}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SapatoFormalGrassRun2" ID="{DEA736E0-FDBD-42C0-AA18-0526F19EE745}" ShortID="491945670">
+												<Sound Name="SapatoFormalGrassRun2" ID="{79269F33-8868-4DC8-AAD1-6ACF8AF27476}" ShortID="303832065">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -410,19 +482,19 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalGrassRun2" ID="{412B7ADC-C503-4E4B-BC7C-876EBFB54338}">
+														<AudioFileSource Name="SapatoFormalGrassRun2" ID="{A1BFF163-11CD-41B5-8409-9063B026B20A}">
 															<Language>SFX</Language>
-															<AudioFile>SapatoFormalGrassRun2.wav</AudioFile>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalGrassRun2.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="153900718"/>
+																<MediaID ID="618783911"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalGrassRun2" ID="{412B7ADC-C503-4E4B-BC7C-876EBFB54338}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalGrassRun2" ID="{A1BFF163-11CD-41B5-8409-9063B026B20A}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SapatoFormalGrassRun3" ID="{9D38C27B-6118-462C-84D1-439A9DCAAF39}" ShortID="306415735">
+												<Sound Name="SapatoFormalGrassRun3" ID="{E610C9D2-7BD5-4752-808B-F71A1D1B7B0B}" ShortID="459819023">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -432,16 +504,16 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalGrassRun3" ID="{661C7CE0-185A-4518-A161-9DD5D3BFC795}">
+														<AudioFileSource Name="SapatoFormalGrassRun3" ID="{394825A9-B1BA-49E3-AC04-5878DAA29F75}">
 															<Language>SFX</Language>
-															<AudioFile>SapatoFormalGrassRun3.wav</AudioFile>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalGrassRun3.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="468841530"/>
+																<MediaID ID="802531233"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalGrassRun3" ID="{661C7CE0-185A-4518-A161-9DD5D3BFC795}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalGrassRun3" ID="{394825A9-B1BA-49E3-AC04-5878DAA29F75}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -456,7 +528,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="SapatoFormalGrassWalk1" ID="{6BB4709C-7248-450F-A635-722841317F47}" ShortID="34118970">
+												<Sound Name="SapatoFormalGrassWalk1" ID="{791827F6-851A-42F0-AB0F-D098120AAE76}" ShortID="602330420">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -466,19 +538,19 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalGrassWalk1" ID="{ED11F719-A0B0-4F04-8581-1B3D539B4421}">
+														<AudioFileSource Name="SapatoFormalGrassWalk1" ID="{E624EF66-7F98-48B8-B88E-C22EA03515E9}">
 															<Language>SFX</Language>
-															<AudioFile>SapatoFormalGrassWalk1.wav</AudioFile>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalGrassWalk1.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="954465849"/>
+																<MediaID ID="845557366"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalGrassWalk1" ID="{ED11F719-A0B0-4F04-8581-1B3D539B4421}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalGrassWalk1" ID="{E624EF66-7F98-48B8-B88E-C22EA03515E9}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SapatoFormalGrassWalk2" ID="{79B6CB94-EB35-475F-AE84-454CC73EA7FD}" ShortID="591752032">
+												<Sound Name="SapatoFormalGrassWalk2" ID="{710CCCC2-D678-4F2D-8FEA-EE0A4570730F}" ShortID="18888456">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -488,19 +560,19 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalGrassWalk2" ID="{8A6EF647-1BE1-46AA-9D57-6A20BCC591BF}">
+														<AudioFileSource Name="SapatoFormalGrassWalk2" ID="{C5FF2D9F-3A3E-4CA1-8FDB-910AC239091C}">
 															<Language>SFX</Language>
-															<AudioFile>SapatoFormalGrassWalk2.wav</AudioFile>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalGrassWalk2.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="225548034"/>
+																<MediaID ID="604779897"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalGrassWalk2" ID="{8A6EF647-1BE1-46AA-9D57-6A20BCC591BF}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalGrassWalk2" ID="{C5FF2D9F-3A3E-4CA1-8FDB-910AC239091C}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SapatoFormalGrassWalk3" ID="{CB63316D-AF77-471B-A1F7-E7E772F236AD}" ShortID="194112098">
+												<Sound Name="SapatoFormalGrassWalk3" ID="{B3F79DB8-A04C-4BEA-A52F-FA2752EBC0EA}" ShortID="417260111">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -510,19 +582,19 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalGrassWalk3" ID="{5F0353BB-866B-401A-A33C-46576EFDD3AB}">
+														<AudioFileSource Name="SapatoFormalGrassWalk3" ID="{111A4D0F-F41C-458C-827E-E1B7D016B232}">
 															<Language>SFX</Language>
-															<AudioFile>SapatoFormalGrassWalk3.wav</AudioFile>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalGrassWalk3.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="956693672"/>
+																<MediaID ID="973497115"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalGrassWalk3" ID="{5F0353BB-866B-401A-A33C-46576EFDD3AB}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalGrassWalk3" ID="{111A4D0F-F41C-458C-827E-E1B7D016B232}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SapatoFormalGrassWalk4" ID="{9C9E4A75-760A-4D87-9428-BAA5977F1711}" ShortID="147088787">
+												<Sound Name="SapatoFormalGrassWalk4" ID="{B4174833-6C0B-4489-AF13-DC72166D0E07}" ShortID="640885471">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -532,19 +604,82 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalGrassWalk4" ID="{6658FDC0-8608-4C59-8CD4-74E142513F7B}">
+														<AudioFileSource Name="SapatoFormalGrassWalk4" ID="{7AD352A6-4ED8-4560-BECE-5E917694CD49}">
 															<Language>SFX</Language>
-															<AudioFile>SapatoFormalGrassWalk4.wav</AudioFile>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalGrassWalk4.wav</AudioFile>
 															<MediaIDList>
-																<MediaID ID="245844105"/>
+																<MediaID ID="108683262"/>
 															</MediaIDList>
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalGrassWalk4" ID="{6658FDC0-8608-4C59-8CD4-74E142513F7B}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalGrassWalk4" ID="{7AD352A6-4ED8-4560-BECE-5E917694CD49}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="Backwards" ID="{FC5C6422-F731-4D30-AB4E-D182412FC7B1}" ShortID="953624861">
+											<PropertyList>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="SapatoFormalGrassBackwards1" ID="{1E3F228E-A1C2-409A-B7BE-82DFA13E6FF8}" ShortID="306395911">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SapatoFormalGrassBackwards1" ID="{9D117946-6F56-4CF6-BC3F-E75AA5919610}">
+															<Language>SFX</Language>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalGrassBackwards1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="47477698"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SapatoFormalGrassBackwards1" ID="{9D117946-6F56-4CF6-BC3F-E75AA5919610}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SapatoFormalGrassBackwards2" ID="{4B00B04B-E48D-4247-8C5D-365596D93CB8}" ShortID="72261134">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SapatoFormalGrassBackwards2" ID="{6EB9B5B0-EDFE-4D61-8769-A66A8193724F}">
+															<Language>SFX</Language>
+															<AudioFile>PlayerMovement\Gyaru\SapatoFormalGrassBackwards2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="830714985"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SapatoFormalGrassBackwards2" ID="{6EB9B5B0-EDFE-4D61-8769-A66A8193724F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<Playlist>
+												<ItemRef Name="SapatoFormalGrassBackwards1" ID="{1E3F228E-A1C2-409A-B7BE-82DFA13E6FF8}"/>
+												<ItemRef Name="SapatoFormalGrassBackwards2" ID="{4B00B04B-E48D-4247-8C5D-365596D93CB8}"/>
+											</Playlist>
 										</RandomSequenceContainer>
 									</ChildrenList>
 									<GroupingInfo>
@@ -553,10 +688,19 @@
 												<ItemRef Name="Walk" ID="{9E211003-5B6D-421D-B3C6-D5D67C5BF2FD}"/>
 											</GroupingBehavior>
 											<GroupingBehavior>
+												<ItemRef Name="Backwards" ID="{FC5C6422-F731-4D30-AB4E-D182412FC7B1}"/>
+											</GroupingBehavior>
+											<GroupingBehavior>
 												<ItemRef Name="Run" ID="{1DCAF037-655B-459D-8500-67EC404D9823}"/>
 											</GroupingBehavior>
 										</GroupingBehaviorList>
 										<GroupingList>
+											<Grouping>
+												<SwitchRef Name="Backwards" ID="{6F7D7988-C6AF-4AE1-9021-9D0E65AEDBB8}"/>
+												<ItemList>
+													<ItemRef Name="Backwards" ID="{FC5C6422-F731-4D30-AB4E-D182412FC7B1}"/>
+												</ItemList>
+											</Grouping>
 											<Grouping>
 												<SwitchRef Name="Run" ID="{685B8CBA-54CD-41E3-A875-055E33058A9F}"/>
 												<ItemList>

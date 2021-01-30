@@ -14,6 +14,7 @@
 					<ChildrenList>
 						<Switch Name="Walk" ID="{C561F1D4-D0FA-459F-86B1-F067C3B54EDC}"/>
 						<Switch Name="Run" ID="{685B8CBA-54CD-41E3-A875-055E33058A9F}"/>
+						<Switch Name="Backwards" ID="{6F7D7988-C6AF-4AE1-9021-9D0E65AEDBB8}"/>
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="GroundMaterial" ID="{FABC25E1-FFCD-45D0-ABFC-9A9228B1F1BD}">
