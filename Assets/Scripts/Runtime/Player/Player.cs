@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Player_Movement controller;
     [SerializeField] private Animator animator;
 
-    public enum Character { gyaru, mysterious, officeworker};
+    public enum Character { gyaru, mysterious, officeworker };
     public Character character;
 
     int health = 3;
@@ -23,6 +23,9 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask attackLayerMask;
     [SerializeField] private float attackCooldown;
     private float timeToAttack;
+
+    [SerializeField] private GameObject attackWeapon;
+    [SerializeField] private ObjectDuration[] idleBreaksObjects;
 
     [SerializeField] private float secondaryAttackCooldown;
     private float timeToSecondaryAttack;
@@ -43,6 +46,7 @@ public class Player : MonoBehaviour
     private Action GetHitAnimation;
     private Action DeathAnimation;
     private Action WalkAnimation;
+    private Action WalkBackwardsAnimation;
     private Action StopWalkingAnimation;
     private Action RunAnimation;
     private Action AbilityAnimation;
@@ -78,11 +82,11 @@ public class Player : MonoBehaviour
             { 
                 if(controller.isRunning){ SetRunningSound(); RunAnimation?.Invoke();}
                 else { SetWalkingSound(); WalkAnimation?.Invoke(); }
+                animator.SetBool("Backwards", controller.isMovingBackwards);
 
                 isIdle = false;
             }
             else { StopWalkingAnimation?.Invoke(); if (!isIdle) { isIdle = true; idleTimer = UnityEngine.Random.Range(idleBreakTimerMinMax.x, idleBreakTimerMinMax.y); } }
-
 
             if (Input.GetMouseButtonDown(0) && timeToAttack < 0)
             {
@@ -145,8 +149,12 @@ public class Player : MonoBehaviour
             }
             if (isIdle)
             {
-                if (idleTimer > 0) idleTimer -= Time.deltaTime;
-                else { IdleBreakAnimation?.Invoke(); idleTimer = UnityEngine.Random.Range(idleBreakTimerMinMax.x, idleBreakTimerMinMax.y); }
+                if (Input.anyKey) isIdle = false;
+                else
+                {
+                    if (idleTimer > 0) idleTimer -= Time.deltaTime;
+                    else { IdleBreakAnimation?.Invoke(); idleTimer = UnityEngine.Random.Range(idleBreakTimerMinMax.x, idleBreakTimerMinMax.y); }
+                }
             }
         }
     }
@@ -164,6 +172,7 @@ public class Player : MonoBehaviour
     {
         EnemyBase enemy = GetEnemyToAttack();
         if (enemy == null) return;
+        isIdle = false;
 
         EnemyHelper.TakeDamage(enemy); 
         Debug.Log("Simple attack consideration");
@@ -172,6 +181,7 @@ public class Player : MonoBehaviour
     {
         EnemyBase enemy = GetEnemyToAttack();
         if (enemy == null) return;
+        isIdle = false;
 
         // Do more damage to the enemy
         EnemyHelper.TakeDamage(enemy); // temp
@@ -198,8 +208,10 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+    #region Arm / Unarm Methods
     private void ArmPlayer()
     {
+        attackWeapon.SetActive(true);
         if (animator == null) return;
         animator.SetBool("isArmed", true);
         isArmed = true;
@@ -208,11 +220,30 @@ public class Player : MonoBehaviour
     }
     private void UnarmPlayer()
     {
+        attackWeapon.SetActive(false);
         if (animator == null) return;
         animator.SetBool("isArmed", false);
         isArmed = false;
         Debug.Log("player is unarmed now");
     }
+    #endregion
+
+    #region Idle Breaks Objects gestion methods
+    private void PutAndRemoveIdleBreakObject(int index)
+    {
+        PutIdleBreakObject(index);
+        StartCoroutine(RemoveIdleBreakObject(index, idleBreaksObjects[index].duration));
+    }
+    private void PutIdleBreakObject(int index)
+    {
+        idleBreaksObjects[index].go.SetActive(true);
+    }
+    private IEnumerator RemoveIdleBreakObject(int index, float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        idleBreaksObjects[index].go.SetActive(false);
+    }
+    #endregion
 
     private IEnumerator BlockMovementForPeriod(float seconds)
     {
@@ -271,9 +302,16 @@ public class Player : MonoBehaviour
                 RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); Debug.Log("Gyaru running animation");  };
                 AbilityAnimation = () => Debug.Log("Gyaru ability use animation");
                 InteractAnimation = () => { animator.SetTrigger("Action"); Debug.Log("Gyaru interact animation"); };
-                WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); };
-                StopWalkingAnimation = () => { animator.SetBool("isMoving", false); animator.SetBool("isRunning", false); };
-                IdleBreakAnimation = () => { animator.SetTrigger("IdleBreak"); animator.SetInteger("IdleBreakAnim", UnityEngine.Random.Range(0, 2)); Debug.Log("Gyaru idle break"); };
+                WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("Backwards", false); };
+                WalkBackwardsAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("Backwards", true); };
+                StopWalkingAnimation = () => { animator.SetBool("isMoving", false); animator.SetBool("isRunning", false); animator.SetBool("Backwards", false); };
+                IdleBreakAnimation = () => { 
+                    animator.SetTrigger("IdleBreak");
+                    int random = UnityEngine.Random.Range(0, 2);
+                    animator.SetInteger("IdleBreakAnim", random);
+                    PutAndRemoveIdleBreakObject(random);
+                    Debug.Log("Gyaru idle break"); 
+                };
                 break;
             case Character.mysterious:
                 SimpleAttackAnimation = () => Debug.Log("mysterious attack animation");
@@ -318,4 +356,16 @@ public class Player : MonoBehaviour
         }
     }
     #endregion
+}
+
+[Serializable] public class ObjectDuration
+{
+    public GameObject go;
+    public float duration;
+
+    public ObjectDuration(GameObject go, float duration)
+    {
+        this.go = go;
+        this.duration = duration;
+    }
 }

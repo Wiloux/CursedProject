@@ -790,8 +790,10 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /CursedProject_WwiseProject
-  - /CursedProject_WwiseProject/Switches
-  - /CursedProject_WwiseProject/Switches/Default Work Unit
-  - /CursedProject_WwiseProject/Switches/Default Work Unit/PlayerName
+  - /CursedProject_WwiseProject/Events
+  - /CursedProject_WwiseProject/Events/Enemies
+  - /CursedProject_WwiseProject/Events/Enemies/Chicken
+  - /CursedProject_WwiseProject/Events/Players
+  - /CursedProject_WwiseProject/Events/Players/Gyaru
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

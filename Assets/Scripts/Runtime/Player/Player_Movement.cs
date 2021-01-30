@@ -22,6 +22,7 @@ public class Player_Movement : MonoBehaviour
     float rotX;
 
     public bool isMoving;
+    public bool isMovingBackwards;
     public bool isRunning;
     public bool canMove;
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class Player_Movement : MonoBehaviour
         if (!GameHandler.instance.IsPaused())
         {
             isMoving = false;
+            isMovingBackwards = false;
             isRunning = false;
             if (!player.stopControlls && canMove)
             {
@@ -55,6 +57,7 @@ public class Player_Movement : MonoBehaviour
         }
         else if (Input.GetAxis("Vertical") < -0.1)
         {
+            isMovingBackwards = true;
             verticalMove = Input.GetAxis("Vertical") * Time.deltaTime * _verticalSpeedNeg;
             moveDirection = transform.TransformDirection(Vector3.forward) * verticalMove;
         }
