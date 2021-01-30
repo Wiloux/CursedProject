@@ -82,10 +82,17 @@ public class Player : MonoBehaviour
             { 
                 if(controller.isRunning){ SetRunningSound(); RunAnimation?.Invoke();}
                 else 
-                { 
-                    SetWalkingSound();
-                    if (!controller.isMovingBackwards) WalkAnimation?.Invoke();
-                    else WalkBackwardsAnimation?.Invoke();
+                {
+                    if (!controller.isMovingBackwards)
+                    {
+                        SetWalkingSound();
+                        WalkAnimation?.Invoke();
+                    }
+                    else
+                    {
+                        SetWalkingBackwardSound();
+                        WalkBackwardsAnimation?.Invoke();
+                    }
                 }
 
                 isIdle = false;
@@ -285,6 +292,7 @@ public class Player : MonoBehaviour
     #endregion
 
     private void SetWalkingSound() { AkSoundEngine.SetSwitch("WalkRun", "Walk", gameObject);}
+    private void SetWalkingBackwardSound() { AkSoundEngine.SetSwitch("WalkRun", "Backwards", gameObject);}
     private void SetRunningSound() { AkSoundEngine.SetSwitch("WalkRun", "Run", gameObject);}
 
     #region Switch Character Methods
