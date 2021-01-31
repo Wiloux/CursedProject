@@ -13,22 +13,25 @@ public class MonsterAnimationStuff : MonoBehaviour
     {
         Footsteps.Post(gameObject);
     }
+
     public AK.Wwise.Event Attack1;
     // Use this for initialization..
     public void PlayAttack1()
     {
         Attack1.Post(gameObject);
     }
-    public AK.Wwise.Event Attack2;
+
+    public AK.Wwise.Event Attack2Sound;
     // Use this for initialization..
     public void PlayAttack2()
     {
-        Attack2.Post(gameObject);
+        Attack2Sound.Post(gameObject);
     }
-    public AK.Wwise.Event Attack3;
+
+    public AK.Wwise.Event Attack3Sound;
     // Use this for initialization..
     public void PlayAttack3()
     {
-        Attack3.Post(gameObject);
+        Attack3Sound.Post(gameObject);
     }
 }

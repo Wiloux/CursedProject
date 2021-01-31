@@ -24,6 +24,7 @@ public class Player_Movement : MonoBehaviour
     public bool isMoving;
     public bool isMovingBackwards;
     public bool isRunning;
+    public bool isRotating;
     public bool canMove;
     // Update is called once per frame
     void Update()
@@ -33,11 +34,13 @@ public class Player_Movement : MonoBehaviour
             isMoving = false;
             isMovingBackwards = false;
             isRunning = false;
+            isRotating = false;
             if (!player.stopControlls && canMove)
             {
                 RotatePlayerWithMouse();
                 Movement();
                 if (Input.GetAxis("Vertical") != 0) { isMoving = true; }
+                if (Input.GetAxis("Mouse X") != 0) { isRotating = true; }
             }
         }
     }

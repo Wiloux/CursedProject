@@ -18,13 +18,12 @@ public class Player : MonoBehaviour
     public bool stopControlls;
 
     // Attack vars
-    [SerializeField] private Transform attackPoint;
+    [SerializeField] private Transform attackWeapon;
     [SerializeField] private float attackPointRange;
     [SerializeField] private LayerMask attackLayerMask;
     [SerializeField] private float attackCooldown;
     private float timeToAttack;
 
-    [SerializeField] private GameObject attackWeapon;
     [SerializeField] private ObjectDuration[] idleBreaksObjects;
 
     [SerializeField] private float secondaryAttackCooldown;
@@ -94,8 +93,6 @@ public class Player : MonoBehaviour
                         WalkBackwardsAnimation?.Invoke();
                     }
                 }
-
-                isIdle = false;
             }
             else { StopWalkingAnimation?.Invoke(); if (!isIdle) { isIdle = true; idleTimer = UnityEngine.Random.Range(idleBreakTimerMinMax.x, idleBreakTimerMinMax.y); } }
 
@@ -103,26 +100,27 @@ public class Player : MonoBehaviour
             {
                 // Cooldown gestion
                 timeToAttack = attackCooldown;
-                StartCoroutine(BlockMovementForPeriod(2f));
+                StartCoroutine(BlockMovementForPeriod(1.5f));
                 // Animation
                 SimpleAttackAnimation?.Invoke();
                 ArmPlayer();
                 // Sound
-                simpleAttackWEvent?.Post(gameObject);
+                //simpleAttackWEvent?.Post(gameObject);  // DONE BY ANIMATION
 
                 //controller.canRotate = false;
                 Debug.Log("starting simple attack");
             }
-            else if (Input.GetMouseButtonDown(1) && timeToSecondaryAttack < 0)
+            else if (Input.GetMouseButtonDown(1) && timeToSecondaryAttack < 0 && timeToAttack < 0)
             {
                 // Cooldown gestion
                 timeToSecondaryAttack = secondaryAttackCooldown;
-                StartCoroutine(BlockMovementForPeriod(2f));
+                timeToAttack = attackCooldown;
+                StartCoroutine(BlockMovementForPeriod(2.2f));
                 // Animation
                 SecondaryAttackAnimation?.Invoke();
                 ArmPlayer();
                 // Sound
-                secondaryAttackWEvent?.Post(gameObject);
+                //secondaryAttackWEvent?.Post(gameObject); // DONE BY ANIMATION
 
                 Debug.Log("starting charged attack");
             }
@@ -160,7 +158,7 @@ public class Player : MonoBehaviour
             }
             if (isIdle)
             {
-                if (Input.anyKey) isIdle = false;
+                if (Input.anyKey || controller.isRotating) isIdle = false;
                 else
                 {
                     if (idleTimer > 0) idleTimer -= Time.deltaTime;
@@ -173,26 +171,24 @@ public class Player : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, attackRange);
-        if (attackPoint == null) return;
-        Gizmos.DrawWireSphere(attackPoint.position, attackPointRange);
+        if (attackWeapon == null) return;
+        Gizmos.DrawWireSphere(attackWeapon.position, attackPointRange);
     }
     #endregion
 
     #region Attack Methods
-    private void SimpleAttack()
+    public void SimpleAttack() // CALLED BY ANIMATION
     {
         EnemyBase enemy = GetEnemyToAttack();
         if (enemy == null) return;
-        isIdle = false;
 
         EnemyHelper.TakeDamage(enemy); 
         Debug.Log("Simple attack consideration");
     }
-    private void ChargedAttack()
+    public void SecondaryAttack() // CALLED BY ANIMATION
     {
         EnemyBase enemy = GetEnemyToAttack();
         if (enemy == null) return;
-        isIdle = false;
 
         // Do more damage to the enemy
         EnemyHelper.TakeDamage(enemy); // temp
@@ -202,7 +198,7 @@ public class Player : MonoBehaviour
 
     private EnemyBase GetEnemyToAttack()
     {
-        Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackPointRange, attackLayerMask);
+        Collider[] hits = Physics.OverlapSphere(attackWeapon.position, attackPointRange, attackLayerMask);
         if (hits.Length > 0)
         {
             for(int i = 0;i < hits.Length; i++)
@@ -222,7 +218,7 @@ public class Player : MonoBehaviour
     #region Arm / Unarm Methods
     private void ArmPlayer()
     {
-        attackWeapon.SetActive(true);
+        attackWeapon.gameObject.SetActive(true);
         if (animator == null) return;
         animator.SetBool("isArmed", true);
         isArmed = true;
@@ -231,7 +227,7 @@ public class Player : MonoBehaviour
     }
     private void UnarmPlayer()
     {
-        attackWeapon.SetActive(false);
+        attackWeapon.gameObject.SetActive(false);
         if (animator == null) return;
         animator.SetBool("isArmed", false);
         isArmed = false;

@@ -1948,7 +1948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b108d445fd1aaad4dafec57db2ce237e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBase: {fileID: 0}
+  enemyBase: {fileID: 6202440737812501115}
   Footsteps:
     idInternal: 0
     valueGuidInternal: 
@@ -1957,14 +1957,14 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: f0e611591f421b147bbc353fefb4d56f, type: 2}
-  Attack2:
+  Attack2Sound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 279e2415394828f438ef629a678e1f58, type: 2}
-  Attack3:
+    WwiseObjectReference: {fileID: 0}
+  Attack3Sound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 14b8ff53d27aff3448e3c90a7ae84f17, type: 2}
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &1280317782457181350
 GameObject:
   m_ObjectHideFlags: 0
