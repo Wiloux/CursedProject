@@ -6038,7 +6038,7 @@ MonoBehaviour:
   attackWeapon: {fileID: 4723751282702002939}
   idleBreaksObjects:
   - go: {fileID: 1451321414}
-    duration: 5
+    duration: 4.2
   - go: {fileID: 4723751283659115955}
     duration: 6.2
   secondaryAttackCooldown: 0
