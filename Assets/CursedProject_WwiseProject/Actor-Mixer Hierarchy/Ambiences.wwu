@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{64F0878F-2662-4761-A084-F8C42986EFF7}" SchemaVersion="97">
+	<AudioObjects>
+		<WorkUnit Name="Ambiences" ID="{64F0878F-2662-4761-A084-F8C42986EFF7}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="2"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Sound Name="WindCity1" ID="{618A7913-B276-4358-A0ED-4723947EF610}" ShortID="129926262">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="WindCity1" ID="{85592EA5-5FF6-46DE-86AB-92330BCDB4CD}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="1330.316"/>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.743411764705882"/>
+								<Property Name="LoopBegin" Type="Real64" Value="3.36721799307958"/>
+								<Property Name="LoopEnd" Type="Real64" Value="61.3970657439446"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Ambiances\WindCity1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="387338394"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="WindCity1" ID="{85592EA5-5FF6-46DE-86AB-92330BCDB4CD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585899933982329045
+    m_lastTime: -8585894043119313686
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -81,6 +81,27 @@ MonoBehaviour:
         ObjectType: 7
       Path: Default Work Unit\Main
   EventWwu:
+  - PhysicalPath: Events\Ambiances.wwu
+    PathAndIcons:
+    - ElementName: Ambiances
+      ObjectType: 12
+    ParentPath: Ambiances
+    guid: afe1d25d64bef34386b4f24de10966ec
+    GuidInternal: 
+    m_lastTime: -8585894043119572937
+    List:
+    - name: PlayAmbiance1
+      guid: 07d1cb22bf8926438f2cee98c6ba5edc
+      id: 2650513656
+      PathAndIcons:
+      - ElementName: Ambiances
+        ObjectType: 12
+      - ElementName: PlayAmbiance1
+        ObjectType: 3
+      Path: Ambiances\PlayAmbiance1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
@@ -88,7 +109,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585901641907824218
+    m_lastTime: -8585894043119473228
     List: []
   - PhysicalPath: Events\Enemies.wwu
     PathAndIcons:
@@ -396,7 +417,7 @@ MonoBehaviour:
     ParentPath: Players
     guid: 84878f6dc9542744bdce26203903b0f0
     GuidInternal: 
-    m_lastTime: -8585896610938006325
+    m_lastTime: -8585894043119423377
     List:
     - name: Gyaru
       guid: 474e1a04614f9f4fa20cfb27e9ca7c35
@@ -461,6 +482,34 @@ MonoBehaviour:
       - ElementName: PlayFootstepsPlayer
         ObjectType: 3
       Path: Players\PlayFootstepsPlayer
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayMirrorProp
+      guid: 42b3c5b359462844b2bb3ac2acf03c6f
+      id: 539806209
+      PathAndIcons:
+      - ElementName: Players
+        ObjectType: 12
+      - ElementName: Gyaru
+        ObjectType: 4
+      - ElementName: PlayMirrorProp
+        ObjectType: 3
+      Path: Players\Gyaru\PlayMirrorProp
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayPhoneProp
+      guid: 097b55490de17c4c9a1b196c6ecd59aa
+      id: 2575517534
+      PathAndIcons:
+      - ElementName: Players
+        ObjectType: 12
+      - ElementName: Gyaru
+        ObjectType: 4
+      - ElementName: PlayPhoneProp
+        ObjectType: 3
+      Path: Players\Gyaru\PlayPhoneProp
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -682,7 +731,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f528942bed683349be7cda8752e78d33
     GuidInternal: 
-    m_lastTime: -8585895243922240790
+    m_lastTime: -8585894008766314516
     List:
     - name: GroundMaterial
       guid: e125bcfacdffd045abfc9a9228b1f1bd
@@ -694,6 +743,12 @@ MonoBehaviour:
         ObjectType: 11
       Path: Default Work Unit\GroundMaterial
       values:
+      - name: Dirt
+        guid: 13dfda8e69de1a4faf53f9daffb4ea70
+        id: 2195636714
+        PathAndIcons:
+        - ElementName: Dirt
+          ObjectType: 10
       - name: Forest
         guid: 4f2889cc36908243ade6bc3daa5d8d81
         id: 491961918
@@ -705,6 +760,18 @@ MonoBehaviour:
         id: 1160234136
         PathAndIcons:
         - ElementName: Normal
+          ObjectType: 10
+      - name: Pavement
+        guid: f50ac0a50a76ac43adc827752d9ff735
+        id: 2830102203
+        PathAndIcons:
+        - ElementName: Pavement
+          ObjectType: 10
+      - name: Sidewalk
+        guid: bf730be47f19944b86ef69ce4b898531
+        id: 3137249879
+        PathAndIcons:
+        - ElementName: Sidewalk
           ObjectType: 10
       ValueGuids: []
       ValueIcons: []
@@ -797,9 +864,6 @@ MonoBehaviour:
   ExpandedItems:
   - /CursedProject_WwiseProject
   - /CursedProject_WwiseProject/Events
-  - /CursedProject_WwiseProject/Events/Enemies
-  - /CursedProject_WwiseProject/Events/Enemies/Chicken
-  - /CursedProject_WwiseProject/Events/Players
-  - /CursedProject_WwiseProject/Events/Players/Gyaru
+  - /CursedProject_WwiseProject/Events/Ambiances
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

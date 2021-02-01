@@ -34,4 +34,16 @@ public class MonsterAnimationStuff : MonoBehaviour
     {
         Attack3Sound.Post(gameObject);
     }
+    public AK.Wwise.Event Other1Sound;
+    // Use this for initialization..
+    public void PlayOther1()
+    {
+        Other1Sound.Post(gameObject);
+    }
+    public AK.Wwise.Event Other2Sound;
+    // Use this for initialization..
+    public void PlayOther2()
+    {
+        Other2Sound.Post(gameObject);
+    }
 }

@@ -71,6 +71,28 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="PlayMirrorProp" ID="{B3C5B342-4659-4428-B2BB-3AC2ACF03C6F}">
+							<ChildrenList>
+								<Action Name="" ID="{1A605807-2322-4ACC-A818-9C8B9D7AFCE8}" ShortID="911290378">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="espelho" ID="{122C6977-1AFB-467A-87AD-CF3F334AC554}" WorkUnitID="{6BFC5D53-6FAA-4B0E-9A11-64FF6144C235}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayPhoneProp" ID="{49557B09-E10D-4C7C-9A1B-196C6ECD59AA}">
+							<ChildrenList>
+								<Action Name="" ID="{B56BB297-71E9-4FE2-9811-25F1E3D6786B}" ShortID="902853882">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="teclado" ID="{5CC57908-07B0-4BF4-87A8-F1A54A737E8B}" WorkUnitID="{6BFC5D53-6FAA-4B0E-9A11-64FF6144C235}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

@@ -21,6 +21,9 @@
 					<ChildrenList>
 						<Switch Name="Normal" ID="{EADB2145-6556-4F1E-8CEE-2F298442AE74}"/>
 						<Switch Name="Forest" ID="{CC89284F-9036-4382-ADE6-BC3DAA5D8D81}"/>
+						<Switch Name="Pavement" ID="{A5C00AF5-760A-43AC-ADC8-27752D9FF735}"/>
+						<Switch Name="Sidewalk" ID="{E40B73BF-197F-4B94-86EF-69CE4B898531}"/>
+						<Switch Name="Dirt" ID="{8EDADF13-DE69-4F1A-AF53-F9DAFFB4EA70}"/>
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="PlayerName" ID="{244699E3-AA8D-4C33-94DE-27BF5A130BB3}">

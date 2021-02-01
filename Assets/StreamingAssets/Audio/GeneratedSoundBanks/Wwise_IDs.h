@@ -16,6 +16,7 @@ namespace AK
         static const AkUniqueID GYARUPLAYATTACKLONG = 369930381U;
         static const AkUniqueID GYARUPLAYATTACKSHORT = 166469259U;
         static const AkUniqueID GYARUSTOPATTACKLONG = 3302019815U;
+        static const AkUniqueID PLAYAMBIANCE1 = 2650513656U;
         static const AkUniqueID PLAYATTACK2 = 204688551U;
         static const AkUniqueID PLAYATTACK3 = 204688550U;
         static const AkUniqueID PLAYBACKSTAB = 2629272678U;
@@ -34,6 +35,8 @@ namespace AK
         static const AkUniqueID PLAYHIGHLIGHT = 145167493U;
         static const AkUniqueID PLAYHITCHICKEN = 4251718543U;
         static const AkUniqueID PLAYKEYPRESS = 1168436793U;
+        static const AkUniqueID PLAYMIRRORPROP = 539806209U;
+        static const AkUniqueID PLAYPHONEPROP = 2575517534U;
         static const AkUniqueID PLAYWARDENDIE = 1870077814U;
         static const AkUniqueID PLAYWARDENHURT = 933827407U;
         static const AkUniqueID PLAYWARDENIDLE = 2920750754U;
@@ -65,8 +68,11 @@ namespace AK
 
             namespace SWITCH
             {
+                static const AkUniqueID DIRT = 2195636714U;
                 static const AkUniqueID FOREST = 491961918U;
                 static const AkUniqueID NORMAL = 1160234136U;
+                static const AkUniqueID PAVEMENT = 2830102203U;
+                static const AkUniqueID SIDEWALK = 3137249879U;
             } // namespace SWITCH
         } // namespace GROUNDMATERIAL
 

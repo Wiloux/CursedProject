@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5DD2E1AF-BE64-43F3-86B4-F24DE10966EC}" SchemaVersion="97">
+	<Events>
+		<WorkUnit Name="Ambiances" ID="{5DD2E1AF-BE64-43F3-86B4-F24DE10966EC}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="PlayAmbiance1" ID="{22CBD107-89BF-4326-8F2C-EE98C6BA5EDC}">
+					<ChildrenList>
+						<Action Name="" ID="{B4031B9C-4CB9-4D6F-B6A5-A1434B5CAE46}" ShortID="238855557">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="WindCity1" ID="{618A7913-B276-4358-A0ED-4723947EF610}" WorkUnitID="{64F0878F-2662-4761-A084-F8C42986EFF7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

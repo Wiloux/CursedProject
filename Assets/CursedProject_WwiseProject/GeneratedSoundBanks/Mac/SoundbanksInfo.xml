@@ -19,7 +19,7 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="2470304660">
+		<SoundBank Id="2879190521" Language="SFX" Hash="819308909">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -45,6 +45,14 @@
 						<File Id="823667250" Language="SFX">
 							<ShortName>PlayerWeapons\Gyaru\LongTail.wav</ShortName>
 							<Path>SFX\PlayerWeapons\Gyaru\LongTail_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2650513656" Name="PlayAmbiance1" ObjectPath="\Events\Ambiances\PlayAmbiance1" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="387338394" Language="SFX">
+							<ShortName>Ambiances\WindCity1.wav</ShortName>
+							<Path>SFX\Ambiances\WindCity1_77FE18DF.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -396,6 +404,14 @@
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalGrassBackwards1.wav</ShortName>
 							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalGrassBackwards1_10C4C929.wem</Path>
 						</File>
+						<File Id="50675186" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalDirtWalk1.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalDirtWalk1_10C4C929.wem</Path>
+						</File>
+						<File Id="55011284" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalDirtRun1.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalDirtRun1_10C4C929.wem</Path>
+						</File>
 						<File Id="92101835" Language="SFX">
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalBackwards1.wav</ShortName>
 							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalBackwards1_10C4C929.wem</Path>
@@ -408,9 +424,29 @@
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalGrassWalk4.wav</ShortName>
 							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalGrassWalk4_10C4C929.wem</Path>
 						</File>
+						<File Id="155334950" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalDirtBack1.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalDirtBack1_10C4C929.wem</Path>
+						</File>
+						<File Id="284649697" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalAlcatrãoWalk1.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalAlcatrãoWalk1_10C4C929.wem</Path>
+						</File>
+						<File Id="388498135" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalDirtBack2.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalDirtBack2_10C4C929.wem</Path>
+						</File>
+						<File Id="397601067" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalAlcatrãoRun2.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalAlcatrãoRun2_10C4C929.wem</Path>
+						</File>
 						<File Id="415192423" Language="SFX">
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalWalk1.wav</ShortName>
 							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalWalk1_10C4C929.wem</Path>
+						</File>
+						<File Id="427787522" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalSidewalkWalk2.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalSidewalkWalk2_10C4C929.wem</Path>
 						</File>
 						<File Id="430418663" Language="SFX">
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalGrassRun1.wav</ShortName>
@@ -424,9 +460,25 @@
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalGrassWalk2.wav</ShortName>
 							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalGrassWalk2_10C4C929.wem</Path>
 						</File>
+						<File Id="607877876" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalSidewalkRun2.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalSidewalkRun2_10C4C929.wem</Path>
+						</File>
 						<File Id="618783911" Language="SFX">
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalGrassRun2.wav</ShortName>
 							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalGrassRun2_10C4C929.wem</Path>
+						</File>
+						<File Id="662521244" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalAlcatrãoWalk2.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalAlcatrãoWalk2_10C4C929.wem</Path>
+						</File>
+						<File Id="669793138" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalSidewalkWalk1.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalSidewalkWalk1_10C4C929.wem</Path>
+						</File>
+						<File Id="734962289" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalAlcatrãoRun1.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalAlcatrãoRun1_10C4C929.wem</Path>
 						</File>
 						<File Id="770698417" Language="SFX">
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalWalk2.wav</ShortName>
@@ -444,13 +496,41 @@
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalGrassWalk1.wav</ShortName>
 							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalGrassWalk1_10C4C929.wem</Path>
 						</File>
+						<File Id="854749403" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalSidewalkBack2.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalSidewalkBack2_10C4C929.wem</Path>
+						</File>
+						<File Id="854826965" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalDirtWalk2.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalDirtWalk2_10C4C929.wem</Path>
+						</File>
 						<File Id="866266268" Language="SFX">
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalRun3.wav</ShortName>
 							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalRun3_10C4C929.wem</Path>
 						</File>
+						<File Id="921916641" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalSidewalkRun1.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalSidewalkRun1_10C4C929.wem</Path>
+						</File>
+						<File Id="955760206" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalAlcatrãoBack2.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalAlcatrãoBack2_10C4C929.wem</Path>
+						</File>
 						<File Id="973497115" Language="SFX">
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalGrassWalk3.wav</ShortName>
 							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalGrassWalk3_10C4C929.wem</Path>
+						</File>
+						<File Id="976003160" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalDirtRun2.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalDirtRun2_10C4C929.wem</Path>
+						</File>
+						<File Id="990394786" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalSidewalkBack1.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalSidewalkBack1_10C4C929.wem</Path>
+						</File>
+						<File Id="1072860399" Language="SFX">
+							<ShortName>PlayerMovement\Gyaru\SapatoFormalAlcatrãoBack1.wav</ShortName>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalAlcatrãoBack1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<DefaultSwitchValue>{FE874951-659B-4E08-AC9B-A2268D72415F}</DefaultSwitchValue>
@@ -507,6 +587,72 @@
 										</SwitchContainer>
 									</Children>
 								</SwitchContainer>
+								<SwitchContainer SwitchValue="{A5C00AF5-760A-43AC-ADC8-27752D9FF735}">
+									<Children>
+										<SwitchContainer SwitchValue="{C561F1D4-D0FA-459F-86B1-F067C3B54EDC}">
+											<Media>
+												<File Id="284649697"/>
+												<File Id="662521244"/>
+											</Media>
+										</SwitchContainer>
+										<SwitchContainer SwitchValue="{685B8CBA-54CD-41E3-A875-055E33058A9F}">
+											<Media>
+												<File Id="397601067"/>
+												<File Id="734962289"/>
+											</Media>
+										</SwitchContainer>
+										<SwitchContainer SwitchValue="{6F7D7988-C6AF-4AE1-9021-9D0E65AEDBB8}">
+											<Media>
+												<File Id="955760206"/>
+												<File Id="1072860399"/>
+											</Media>
+										</SwitchContainer>
+									</Children>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{8EDADF13-DE69-4F1A-AF53-F9DAFFB4EA70}">
+									<Children>
+										<SwitchContainer SwitchValue="{C561F1D4-D0FA-459F-86B1-F067C3B54EDC}">
+											<Media>
+												<File Id="50675186"/>
+												<File Id="854826965"/>
+											</Media>
+										</SwitchContainer>
+										<SwitchContainer SwitchValue="{685B8CBA-54CD-41E3-A875-055E33058A9F}">
+											<Media>
+												<File Id="55011284"/>
+												<File Id="976003160"/>
+											</Media>
+										</SwitchContainer>
+										<SwitchContainer SwitchValue="{6F7D7988-C6AF-4AE1-9021-9D0E65AEDBB8}">
+											<Media>
+												<File Id="155334950"/>
+												<File Id="388498135"/>
+											</Media>
+										</SwitchContainer>
+									</Children>
+								</SwitchContainer>
+								<SwitchContainer SwitchValue="{E40B73BF-197F-4B94-86EF-69CE4B898531}">
+									<Children>
+										<SwitchContainer SwitchValue="{C561F1D4-D0FA-459F-86B1-F067C3B54EDC}">
+											<Media>
+												<File Id="427787522"/>
+												<File Id="669793138"/>
+											</Media>
+										</SwitchContainer>
+										<SwitchContainer SwitchValue="{685B8CBA-54CD-41E3-A875-055E33058A9F}">
+											<Media>
+												<File Id="607877876"/>
+												<File Id="921916641"/>
+											</Media>
+										</SwitchContainer>
+										<SwitchContainer SwitchValue="{6F7D7988-C6AF-4AE1-9021-9D0E65AEDBB8}">
+											<Media>
+												<File Id="854749403"/>
+												<File Id="990394786"/>
+											</Media>
+										</SwitchContainer>
+									</Children>
+								</SwitchContainer>
 							</Children>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -548,6 +694,22 @@
 						<File Id="26955166" Language="SFX">
 							<ShortName>Main Menu Keypress.wav</ShortName>
 							<Path>SFX\Main Menu Keypress_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="539806209" Name="PlayMirrorProp" ObjectPath="\Events\Players\Gyaru\PlayMirrorProp" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+					<IncludedMemoryFiles>
+						<File Id="434715277" Language="SFX">
+							<ShortName>Player props\espelho.wav</ShortName>
+							<Path>SFX\Player props\espelho_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2575517534" Name="PlayPhoneProp" ObjectPath="\Events\Players\Gyaru\PlayPhoneProp" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.097800" DurationMax="0.097800">
+					<IncludedMemoryFiles>
+						<File Id="394513528" Language="SFX">
+							<ShortName>Player props\teclado.wav</ShortName>
+							<Path>SFX\Player props\teclado_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -699,6 +861,9 @@
 					<Switches>
 						<Switch Id="1160234136" Name="Normal" ObjectPath="\Switches\Default Work Unit\GroundMaterial\Normal"/>
 						<Switch Id="491961918" Name="Forest" ObjectPath="\Switches\Default Work Unit\GroundMaterial\Forest"/>
+						<Switch Id="2830102203" Name="Pavement" ObjectPath="\Switches\Default Work Unit\GroundMaterial\Pavement"/>
+						<Switch Id="3137249879" Name="Sidewalk" ObjectPath="\Switches\Default Work Unit\GroundMaterial\Sidewalk"/>
+						<Switch Id="2195636714" Name="Dirt" ObjectPath="\Switches\Default Work Unit\GroundMaterial\Dirt"/>
 					</Switches>
 				</SwitchGroup>
 				<SwitchGroup Id="3765388645" Name="PlayerHitSwitch" ObjectPath="\Switches\Default Work Unit\PlayerHitSwitch">
