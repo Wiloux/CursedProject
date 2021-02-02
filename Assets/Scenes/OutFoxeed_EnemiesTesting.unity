@@ -1464,6 +1464,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 438958040, guid: a190e9222e2f94e458b5fac796614412, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1446531080, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: Attack2Sound.WwiseObjectReference
       value: 
@@ -3565,6 +3569,10 @@ PrefabInstance:
       value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 8536683932730595807, guid: a190e9222e2f94e458b5fac796614412, type: 3}
+      propertyPath: attackWeaponParticles
+      value: 
+      objectReference: {fileID: 1625777460}
+    - target: {fileID: 8536683932730595807, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: secondaryAttackCooldown
       value: 7
       objectReference: {fileID: 0}
@@ -3718,6 +3726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a190e9222e2f94e458b5fac796614412, type: 3}
+--- !u!1 &1625777460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 438958040, guid: a190e9222e2f94e458b5fac796614412, type: 3}
+  m_PrefabInstance: {fileID: 1625777459}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1630557118
 GameObject:
   m_ObjectHideFlags: 0

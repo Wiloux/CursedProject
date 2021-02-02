@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     // Attack vars
     [SerializeField] private Transform attackWeapon;
+    [SerializeField] private GameObject attackWeaponParticles;
     [SerializeField] private float attackPointRange;
     [SerializeField] private LayerMask attackLayerMask;
     [SerializeField] private float attackCooldown;
@@ -274,6 +275,11 @@ public class Player : MonoBehaviour
         controller.canMove = true;
     }
 
+    #region Weapon particles toggle methods
+    public void EnableAttackWeaponParticles() { attackWeaponParticles.SetActive(true); }
+    public void DisableAttackWeaponParticles() { attackWeaponParticles.SetActive(false); }
+    #endregion
+
     #region Health related methods
     public void TakeDamage()
     {
@@ -298,9 +304,11 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+    #region Wwise swicthes methods
     private void SetWalkingSound() { AkSoundEngine.SetSwitch("WalkRun", "Walk", gameObject);}
     private void SetWalkingBackwardSound() { AkSoundEngine.SetSwitch("WalkRun", "Backwards", gameObject);}
     private void SetRunningSound() { AkSoundEngine.SetSwitch("WalkRun", "Run", gameObject);}
+    #endregion
 
     #region Switch Character Methods
     public void SwitchCharacter(Character character)
