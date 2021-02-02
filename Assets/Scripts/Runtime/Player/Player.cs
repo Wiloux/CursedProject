@@ -19,7 +19,6 @@ public class Player : MonoBehaviour
 
     // Attack vars
     [SerializeField] private Transform attackWeapon;
-    [SerializeField] private GameObject attackWeaponParticles;
     [SerializeField] private float attackPointRange;
     [SerializeField] private LayerMask attackLayerMask;
     [SerializeField] private float attackCooldown;
@@ -64,6 +63,12 @@ public class Player : MonoBehaviour
     //[SerializeField] private AK.Wwise.Event startChargingAttackWEvent;
     [SerializeField] private AK.Wwise.Event secondaryAttackWEvent;
     [SerializeField] private AK.Wwise.Event simpleAttackWEvent;
+    #endregion
+
+    #region VFX
+    [Header("VFX")]
+    [SerializeField] private GameObject attackWeaponParticles;
+    [SerializeField] private GameObject weaponImpactParticles;
     #endregion
     #endregion
 
@@ -191,6 +196,7 @@ public class Player : MonoBehaviour
             return;
         }
 
+        ToggleImpactParticles();
         EnemyHelper.TakeDamage(enemy); 
         Debug.Log("Simple attack consideration");
     }
@@ -202,6 +208,7 @@ public class Player : MonoBehaviour
             Debug.Log("wtf");
             return; }
 
+        ToggleImpactParticles();
         // Do more damage to the enemy
         EnemyHelper.TakeDamage(enemy); // temp
         Debug.Log("Charged attack consideration");
@@ -278,6 +285,8 @@ public class Player : MonoBehaviour
     #region Weapon particles toggle methods
     public void EnableAttackWeaponParticles() { attackWeaponParticles.SetActive(true); }
     public void DisableAttackWeaponParticles() { attackWeaponParticles.SetActive(false); }
+
+    private void ToggleImpactParticles() { GameObject impactParticles = Instantiate(weaponImpactParticles, attackWeapon.position, Quaternion.identity); Destroy(impactParticles, 1.5f); }
     #endregion
 
     #region Health related methods

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.33374104, g: 0.49984264, b: 0.8330078, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3572,6 +3572,10 @@ PrefabInstance:
       propertyPath: attackWeaponParticles
       value: 
       objectReference: {fileID: 1625777460}
+    - target: {fileID: 8536683932730595807, guid: a190e9222e2f94e458b5fac796614412, type: 3}
+      propertyPath: weaponImpactParticles
+      value: 
+      objectReference: {fileID: 5644249320780305048, guid: 1c7916de1381af340a419f9bba17511e, type: 3}
     - target: {fileID: 8536683932730595807, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: secondaryAttackCooldown
       value: 7
