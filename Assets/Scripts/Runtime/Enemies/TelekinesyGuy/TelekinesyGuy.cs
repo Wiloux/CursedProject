@@ -24,7 +24,7 @@ public class TelekinesyGuy : EnemyBase
         attackAnimation = () => animator.SetTrigger("summon");
 
         hitAnimation = () => animator.SetTrigger("hit");
-        hitAnimation = () => animator.SetInteger("randomHurt", UnityEngine.Random.Range(0, 2));
+        hitAnimation += () => animator.SetInteger("randomHurt", UnityEngine.Random.Range(0, 2));
 
         agent.enabled = false;
         rb.useGravity = false;

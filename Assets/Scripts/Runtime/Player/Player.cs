@@ -96,54 +96,57 @@ public class Player : MonoBehaviour
             }
             else { StopWalkingAnimation?.Invoke(); if (!isIdle) { isIdle = true; idleTimer = UnityEngine.Random.Range(idleBreakTimerMinMax.x, idleBreakTimerMinMax.y); } }
 
-            if (Input.GetMouseButtonDown(0) && timeToAttack < 0)
+            if (controller.canMove)
             {
-                // Cooldown gestion
-                timeToAttack = attackCooldown;
-                StartCoroutine(BlockMovementForPeriod(1.5f));
-                // Animation
-                SimpleAttackAnimation?.Invoke();
-                ArmPlayer();
-                // Sound
-                //simpleAttackWEvent?.Post(gameObject);  // DONE BY ANIMATION
-
-                //controller.canRotate = false;
-                Debug.Log("starting simple attack");
-            }
-            else if (Input.GetMouseButtonDown(1) && timeToSecondaryAttack < 0 && timeToAttack < 0)
-            {
-                // Cooldown gestion
-                timeToSecondaryAttack = secondaryAttackCooldown;
-                timeToAttack = attackCooldown;
-                StartCoroutine(BlockMovementForPeriod(2.2f));
-                // Animation
-                SecondaryAttackAnimation?.Invoke();
-                ArmPlayer();
-                // Sound
-                //secondaryAttackWEvent?.Post(gameObject); // DONE BY ANIMATION
-
-                Debug.Log("starting charged attack");
-            }
-            else if (Input.GetKeyDown(KeyCode.E))
-            {
-                RaycastHit hit;
-                Physics.Raycast(transform.position, transform.forward, out hit, 5f);
-                if (hit.transform != null)
+                if (Input.GetMouseButtonDown(0) && timeToAttack < 0)
                 {
-                    if (hit.transform.GetComponent<DoorScript>() != null) { hit.transform.GetComponent<DoorScript>().UseDoor(transform); InteractAnimation?.Invoke(); }
-                    else if (hit.transform.CompareTag("SavePoint"))
+                    // Cooldown gestion
+                    timeToAttack = attackCooldown;
+                    StartCoroutine(BlockMovementForPeriod(1.5f));
+                    // Animation
+                    SimpleAttackAnimation?.Invoke();
+                    ArmPlayer();
+                    // Sound
+                    //simpleAttackWEvent?.Post(gameObject);  // DONE BY ANIMATION
+
+                    //controller.canRotate = false;
+                    Debug.Log("starting simple attack");
+                }
+                else if (Input.GetMouseButtonDown(1) && timeToSecondaryAttack < 0 && timeToAttack < 0)
+                {
+                    // Cooldown gestion
+                    timeToSecondaryAttack = secondaryAttackCooldown;
+                    timeToAttack = attackCooldown;
+                    StartCoroutine(BlockMovementForPeriod(3f));
+                    // Animation
+                    SecondaryAttackAnimation?.Invoke();
+                    ArmPlayer();
+                    // Sound
+                    //secondaryAttackWEvent?.Post(gameObject); // DONE BY ANIMATION
+
+                    Debug.Log("starting charged attack");
+                }
+                else if (Input.GetKeyDown(KeyCode.E))
+                {
+                    RaycastHit hit;
+                    Physics.Raycast(transform.position, transform.forward, out hit, 5f);
+                    if (hit.transform != null)
                     {
-                        GameHandler.instance.TogglePause();
-                        GameHandler.instance.ToggleSaveMenu();
-                        MouseManagement.instance.ToggleMouseLock();
+                        if (hit.transform.GetComponent<DoorScript>() != null) { hit.transform.GetComponent<DoorScript>().UseDoor(transform); InteractAnimation?.Invoke(); }
+                        else if (hit.transform.CompareTag("SavePoint"))
+                        {
+                            GameHandler.instance.TogglePause();
+                            GameHandler.instance.ToggleSaveMenu();
+                            MouseManagement.instance.ToggleMouseLock();
+                        }
                     }
                 }
-            }
-            else if (Input.GetKeyDown(KeyCode.F))
-            {
-                Debug.Log("Player use his ability");
-                AbilityAnimation?.Invoke();
-                UseAbility?.Invoke();
+                else if (Input.GetKeyDown(KeyCode.F))
+                {
+                    Debug.Log("Player use his ability");
+                    AbilityAnimation?.Invoke();
+                    UseAbility?.Invoke();
+                }
             }
 
             if (timeToAttack >= 0) timeToAttack -= Time.deltaTime;
@@ -180,7 +183,12 @@ public class Player : MonoBehaviour
     public void SimpleAttack() // CALLED BY ANIMATION
     {
         EnemyBase enemy = GetEnemyToAttack();
-        if (enemy == null) return;
+        if (enemy == null)
+        {
+            Debug.Log("wtf");
+
+            return;
+        }
 
         EnemyHelper.TakeDamage(enemy); 
         Debug.Log("Simple attack consideration");
@@ -188,7 +196,10 @@ public class Player : MonoBehaviour
     public void SecondaryAttack() // CALLED BY ANIMATION
     {
         EnemyBase enemy = GetEnemyToAttack();
-        if (enemy == null) return;
+        if (enemy == null)
+        {
+            Debug.Log("wtf");
+            return; }
 
         // Do more damage to the enemy
         EnemyHelper.TakeDamage(enemy); // temp

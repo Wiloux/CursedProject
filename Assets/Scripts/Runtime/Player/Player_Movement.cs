@@ -25,7 +25,7 @@ public class Player_Movement : MonoBehaviour
     public bool isMovingBackwards;
     public bool isRunning;
     public bool isRotating;
-    public bool canMove;
+    public bool canMove = true;
     // Update is called once per frame
     void Update()
     {

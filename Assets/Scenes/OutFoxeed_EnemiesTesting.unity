@@ -2720,6 +2720,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 15.026895
       objectReference: {fileID: 0}
+    - target: {fileID: 5570753806488649902, guid: a190e9222e2f94e458b5fac796614412, type: 3}
+      propertyPath: canMove
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -3558,7 +3562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8536683932730595807, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: attackPointRange
-      value: 0.8
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 8536683932730595807, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: secondaryAttackCooldown

@@ -314,6 +314,7 @@ public class EnemyBase : MonoBehaviour
 
         agent.SetDestination(transform.position);
         agent.isStopped = true;
+        GetComponent<Collider>().enabled = false;
 
         animator.SetTrigger("dead");
         deathWEvent?.Post(gameObject);
