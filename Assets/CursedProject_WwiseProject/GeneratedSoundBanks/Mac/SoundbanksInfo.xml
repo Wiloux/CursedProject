@@ -19,7 +19,7 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="819308909">
+		<SoundBank Id="2879190521" Language="SFX" Hash="440758687">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -426,7 +426,7 @@
 						</File>
 						<File Id="155334950" Language="SFX">
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalDirtBack1.wav</ShortName>
-							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalDirtBack1_10C4C929.wem</Path>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalDirtBack1_1AACC8C1.wem</Path>
 						</File>
 						<File Id="284649697" Language="SFX">
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalAlcatrãoWalk1.wav</ShortName>

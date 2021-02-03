@@ -75,7 +75,7 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Forest" ID="{CC89284F-9036-4382-ADE6-BC3DAA5D8D81}"/>
+						<CurrentSwitchRef Name="Dirt" ID="{8EDADF13-DE69-4F1A-AF53-F9DAFFB4EA70}"/>
 						<CurrentSwitchRef Name="Backwards" ID="{6F7D7988-C6AF-4AE1-9021-9D0E65AEDBB8}"/>
 						<CurrentSwitchRef Name="Gyaru" ID="{FE874951-659B-4E08-AC9B-A2268D72415F}"/>
 						<CurrentSwitchRef Name="Chicken" ID="{A938E3BF-7195-4CAF-8DD8-F2B12A66A2AD}"/>

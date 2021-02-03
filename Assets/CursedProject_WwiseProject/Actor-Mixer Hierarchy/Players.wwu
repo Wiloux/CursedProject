@@ -388,7 +388,17 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Backwards" ID="{3A8B7923-A6C7-4FD7-A555-9E3FF4F5BC38}" ShortID="977356486">
 											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>13</Value>
+													</ValueList>
+												</Property>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -681,6 +691,11 @@
 										<RandomSequenceContainer Name="Backwards" ID="{FC5C6422-F731-4D30-AB4E-D182412FC7B1}" ShortID="953624861">
 											<PropertyList>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -918,6 +933,11 @@
 										<RandomSequenceContainer Name="Backwards" ID="{8C0B95AA-6645-4D3A-835D-64591B113E1B}" ShortID="186395432">
 											<PropertyList>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -1016,6 +1036,7 @@
 								<SwitchContainer Name="Dirt" ID="{89E074D7-61C3-4CEB-A0E0-AD1FE7B1124F}" ShortID="344340829">
 									<PropertyList>
 										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
@@ -1045,7 +1066,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="SapatoFormalDirtWalk1" ID="{6F5E932E-514E-407C-8C9C-56B6B7D812D6}" ShortID="903123854">
+												<Sound Name="SapatoFormalDirtWalk1" ID="{B0436DA5-34AE-44EC-A9FE-CEA9FEEA245F}" ShortID="914591339">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -1055,7 +1076,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalDirtWalk1" ID="{B8536B25-34F7-4258-8D68-D4BC54F8FB1C}">
+														<AudioFileSource Name="SapatoFormalDirtWalk1" ID="{FC412A65-9324-4573-9AA0-EB4F7648CDD2}">
 															<Language>SFX</Language>
 															<AudioFile>PlayerMovement\Gyaru\SapatoFormalDirtWalk1.wav</AudioFile>
 															<MediaIDList>
@@ -1064,10 +1085,10 @@
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalDirtWalk1" ID="{B8536B25-34F7-4258-8D68-D4BC54F8FB1C}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalDirtWalk1" ID="{FC412A65-9324-4573-9AA0-EB4F7648CDD2}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SapatoFormalDirtWalk2" ID="{01A7AF1D-8558-4F6D-A8A9-8AE3AC732F35}" ShortID="215125419">
+												<Sound Name="SapatoFormalDirtWalk2" ID="{F3BD44E3-97BB-477D-BE52-7343C2357C23}" ShortID="592162543">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -1077,7 +1098,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalDirtWalk2" ID="{41155D23-251A-48E9-9EB0-BAAFE68698A7}">
+														<AudioFileSource Name="SapatoFormalDirtWalk2" ID="{2CB2B2B6-2C72-43CD-AAD8-964624DFBCE2}">
 															<Language>SFX</Language>
 															<AudioFile>PlayerMovement\Gyaru\SapatoFormalDirtWalk2.wav</AudioFile>
 															<MediaIDList>
@@ -1086,13 +1107,13 @@
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalDirtWalk2" ID="{41155D23-251A-48E9-9EB0-BAAFE68698A7}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalDirtWalk2" ID="{2CB2B2B6-2C72-43CD-AAD8-964624DFBCE2}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
 											<Playlist>
-												<ItemRef Name="SapatoFormalDirtWalk1" ID="{6F5E932E-514E-407C-8C9C-56B6B7D812D6}"/>
-												<ItemRef Name="SapatoFormalDirtWalk2" ID="{01A7AF1D-8558-4F6D-A8A9-8AE3AC732F35}"/>
+												<ItemRef Name="SapatoFormalDirtWalk1" ID="{B0436DA5-34AE-44EC-A9FE-CEA9FEEA245F}"/>
+												<ItemRef Name="SapatoFormalDirtWalk2" ID="{F3BD44E3-97BB-477D-BE52-7343C2357C23}"/>
 											</Playlist>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Run" ID="{6CFF0F2D-5A03-47A7-8A1C-2D7D94559AEE}" ShortID="413096698">
@@ -1108,7 +1129,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="SapatoFormalDirtRun1" ID="{BC5710C6-0DE7-4D9D-8B4A-B5AC3D8FB97A}" ShortID="157465773">
+												<Sound Name="SapatoFormalDirtRun1" ID="{811C7F1F-CE92-48A9-A1A5-CCC219F61F84}" ShortID="244605523">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -1118,7 +1139,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalDirtRun1" ID="{8B6D8573-D97E-476D-866B-4D9A0592A54D}">
+														<AudioFileSource Name="SapatoFormalDirtRun1" ID="{33CDC527-22E2-46B5-85BD-23FA5E09331F}">
 															<Language>SFX</Language>
 															<AudioFile>PlayerMovement\Gyaru\SapatoFormalDirtRun1.wav</AudioFile>
 															<MediaIDList>
@@ -1127,10 +1148,10 @@
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalDirtRun1" ID="{8B6D8573-D97E-476D-866B-4D9A0592A54D}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalDirtRun1" ID="{33CDC527-22E2-46B5-85BD-23FA5E09331F}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SapatoFormalDirtRun2" ID="{DF79ACDC-22B9-4A0F-B33E-4802552BD2FB}" ShortID="366858347">
+												<Sound Name="SapatoFormalDirtRun2" ID="{16D51E77-C309-4F90-8207-F6F1D422687D}" ShortID="330336387">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -1140,7 +1161,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalDirtRun2" ID="{DA4F4064-E331-4E0B-B170-A9196B066C63}">
+														<AudioFileSource Name="SapatoFormalDirtRun2" ID="{2085D2A5-BBE2-429D-9A23-B69C7B42058C}">
 															<Language>SFX</Language>
 															<AudioFile>PlayerMovement\Gyaru\SapatoFormalDirtRun2.wav</AudioFile>
 															<MediaIDList>
@@ -1149,18 +1170,23 @@
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalDirtRun2" ID="{DA4F4064-E331-4E0B-B170-A9196B066C63}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalDirtRun2" ID="{2085D2A5-BBE2-429D-9A23-B69C7B42058C}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
 											<Playlist>
-												<ItemRef Name="SapatoFormalDirtRun1" ID="{BC5710C6-0DE7-4D9D-8B4A-B5AC3D8FB97A}"/>
-												<ItemRef Name="SapatoFormalDirtRun2" ID="{DF79ACDC-22B9-4A0F-B33E-4802552BD2FB}"/>
+												<ItemRef Name="SapatoFormalDirtRun1" ID="{811C7F1F-CE92-48A9-A1A5-CCC219F61F84}"/>
+												<ItemRef Name="SapatoFormalDirtRun2" ID="{16D51E77-C309-4F90-8207-F6F1D422687D}"/>
 											</Playlist>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Backwards" ID="{4457D41C-A656-4B04-8EFB-CCF61CED1267}" ShortID="875800566">
 											<PropertyList>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -1171,7 +1197,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="SapatoFormalDirtBack1" ID="{E054AD97-83E0-4D4A-8528-CE388640FE21}" ShortID="55652707">
+												<Sound Name="SapatoFormalDirtBack1" ID="{01878A48-31F2-4243-97BA-4865E337DAB5}" ShortID="778783848">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -1181,7 +1207,12 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalDirtBack1" ID="{39631292-5D35-4F0C-96C2-CF03B92E4A40}">
+														<AudioFileSource Name="SapatoFormalDirtBack1" ID="{3551D0A5-A516-4641-A6CF-79FE1ACA0915}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.391349480968859"/>
+																<Property Name="LoopBegin" Type="Real64" Value="0"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
 															<Language>SFX</Language>
 															<AudioFile>PlayerMovement\Gyaru\SapatoFormalDirtBack1.wav</AudioFile>
 															<MediaIDList>
@@ -1190,10 +1221,10 @@
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalDirtBack1" ID="{39631292-5D35-4F0C-96C2-CF03B92E4A40}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalDirtBack1" ID="{3551D0A5-A516-4641-A6CF-79FE1ACA0915}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="SapatoFormalDirtBack2" ID="{668AB649-54C9-4397-97E6-3DDB19D3455C}" ShortID="11136098">
+												<Sound Name="SapatoFormalDirtBack2" ID="{79512A09-E27F-46FB-9C05-DC62D4D2463C}" ShortID="1016981206">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -1203,7 +1234,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="SapatoFormalDirtBack2" ID="{EB1C4D14-27B0-4EB7-B9F9-0C1C294B193B}">
+														<AudioFileSource Name="SapatoFormalDirtBack2" ID="{F74D4A0A-EAF2-4ABF-9ADE-81139E1B1A2C}">
 															<Language>SFX</Language>
 															<AudioFile>PlayerMovement\Gyaru\SapatoFormalDirtBack2.wav</AudioFile>
 															<MediaIDList>
@@ -1212,13 +1243,13 @@
 														</AudioFileSource>
 													</ChildrenList>
 													<ActiveSourceList>
-														<ActiveSource Name="SapatoFormalDirtBack2" ID="{EB1C4D14-27B0-4EB7-B9F9-0C1C294B193B}" Platform="Linked"/>
+														<ActiveSource Name="SapatoFormalDirtBack2" ID="{F74D4A0A-EAF2-4ABF-9ADE-81139E1B1A2C}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
 											<Playlist>
-												<ItemRef Name="SapatoFormalDirtBack1" ID="{E054AD97-83E0-4D4A-8528-CE388640FE21}"/>
-												<ItemRef Name="SapatoFormalDirtBack2" ID="{668AB649-54C9-4397-97E6-3DDB19D3455C}"/>
+												<ItemRef Name="SapatoFormalDirtBack1" ID="{01878A48-31F2-4243-97BA-4865E337DAB5}"/>
+												<ItemRef Name="SapatoFormalDirtBack2" ID="{79512A09-E27F-46FB-9C05-DC62D4D2463C}"/>
 											</Playlist>
 										</RandomSequenceContainer>
 									</ChildrenList>
@@ -1404,6 +1435,11 @@
 										<RandomSequenceContainer Name="Backwards" ID="{0234C23A-8594-4911-B19E-552B65F59052}" ShortID="1025439757">
 											<PropertyList>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
