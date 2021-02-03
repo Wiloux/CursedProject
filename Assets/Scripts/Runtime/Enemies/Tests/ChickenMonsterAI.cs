@@ -18,7 +18,7 @@ public class ChickenMonsterAI : MonoBehaviour
     private Transform player;
 
     [SerializeField] private EnemyProfileSO enemyProfile;
-    private 
+ //   private 
     private int health;
 
     private void Awake()
