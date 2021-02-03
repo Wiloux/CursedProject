@@ -62,14 +62,22 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: d8a5baa61afa65c4e812e390624b594a, type: 2}
-  Attack2:
+  Attack2Sound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: ecf7b6f65f9b06b4abfe979339297a8d, type: 2}
-  Attack3:
+    WwiseObjectReference: {fileID: 0}
+  Attack3Sound:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: f2e660995a52e1c458b9676b872b187b, type: 2}
+    WwiseObjectReference: {fileID: 0}
+  Other1Sound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  Other2Sound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &4308134388783727565
 GameObject:
   m_ObjectHideFlags: 0
