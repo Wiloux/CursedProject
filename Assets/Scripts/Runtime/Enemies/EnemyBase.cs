@@ -77,7 +77,6 @@ public class EnemyBase : MonoBehaviour
     protected AK.Wwise.Event onSpawnWEvent;
     private AK.Wwise.Event getHitWEvent;
     private AK.Wwise.Event deathWEvent;
-
     #endregion
 
     public Action Attack;
@@ -386,7 +385,6 @@ public class EnemyBase : MonoBehaviour
             //Debug.Log("Running point not found bruh");
         }
         return runningPointPos;
-
     }
     public void PlayRunWEvent() { if(!dead) runWEvent?.Post(gameObject); }
     public void PlayChaseWEvent() { if(!dead) chaseWEvent?.Post(gameObject); }

@@ -502,6 +502,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square_mirror
       objectReference: {fileID: 0}
+    - target: {fileID: 8772132267876333587, guid: 469194195ff1b3741a1437d78bf2f572, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 469194195ff1b3741a1437d78bf2f572, type: 3}
 --- !u!1 &130639507
@@ -19380,22 +19384,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 438958042, guid: a190e9222e2f94e458b5fac796614412, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 03fc5914fddcf4a4fb182c1483ced2b7, type: 2}
-    - target: {fileID: 438958043, guid: a190e9222e2f94e458b5fac796614412, type: 3}
-      propertyPath: TrailModule.textureMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 438958043, guid: a190e9222e2f94e458b5fac796614412, type: 3}
-      propertyPath: TrailModule.colorOverTrail.minMaxState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1698242633, guid: a190e9222e2f94e458b5fac796614412, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 8c3603a9b4b97154e928980189eb9a10, type: 2}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_RootOrder
       value: 4

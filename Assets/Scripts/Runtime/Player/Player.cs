@@ -223,11 +223,14 @@ public class Player : MonoBehaviour
             for(int i = 0;i < hits.Length; i++)
             {
                 Collider hit = hits[i];
+                //Debug.Log(hit.name);
+
                 if (hit.CompareTag("Enemy"))
                 {
-                    EnemyBase enemy = hits[0].GetComponent<EnemyBase>();
-                    if (enemy != null) { return enemy; }
+                    EnemyBase enemy = hits[i].GetComponent<EnemyBase>();
+                    if (enemy != null){return enemy; }
                 }
+                //Debug.Log("---------------");
             }
         }
         return null;
