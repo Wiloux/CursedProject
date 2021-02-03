@@ -26,6 +26,7 @@ public class EnemyProfileSO : ScriptableObject
     public bool range;
     public GameObject projectilePrefab;
 
+    public int attackDamage = 1;
     [Tooltip("The range at which the enemy starts to attack")]
     public float rangeToAttack = 2f;
     [Tooltip("Max range between attackPoint and hit colliders")]
@@ -76,6 +77,7 @@ public class EnemyProfileSOInspector : Editor
                 break;
             case 1: // Attack
                 #region Attack stats
+                CreatePropertyField(nameof(so.attackDamage));
                 CreatePropertyField(nameof(so.rangeToAttack));
                 CreatePropertyField(nameof(so.attackRange));
                 CreatePropertyField(nameof(so.attackCooldown));

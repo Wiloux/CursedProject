@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public enum Character { gyaru, mysterious, officeworker };
     public Character character;
 
-    int health = 3;
+    public int health = 3;
     private bool dead;
 
     public bool stopControlls;
@@ -191,7 +191,7 @@ public class Player : MonoBehaviour
         EnemyBase enemy = GetEnemyToAttack();
         if (enemy == null)
         {
-            Debug.Log("wtf");
+            Debug.Log("No enemy has been found");
 
             return;
         }
@@ -205,7 +205,7 @@ public class Player : MonoBehaviour
         EnemyBase enemy = GetEnemyToAttack();
         if (enemy == null)
         {
-            Debug.Log("wtf");
+            Debug.Log("No enemy has been found");
             return; }
 
         ToggleImpactParticles();
@@ -293,9 +293,9 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Health related methods
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        health--;
+        health -= damage;
         if(health <= 0) { Die(); }
         else
         {

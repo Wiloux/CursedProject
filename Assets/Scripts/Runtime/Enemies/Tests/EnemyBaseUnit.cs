@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyBaseUnit : MonoBehaviour, IUnit
+public class EnemyBaseUnit : MonoBehaviour
 {
     private enum State
     {
@@ -68,9 +68,9 @@ public class EnemyBaseUnit : MonoBehaviour, IUnit
     #region Unit methods
     // UNIT METHODS ---------------------------------------------------------------------
     public bool IsIdle() { return state == State.Idle; }
-    public void ChaseThePlayer(Vector3 position, float stopDistance, Action onArrivedAtPosition)
+    public void ChaseThePlayer(float stopDistance, Action onArrivedAtPosition)
     {
-        agent.SetDestination(position);
+        agent.SetDestination(player.position);
         this.stopDistance = stopDistance;
         this.onActionFinished = onArrivedAtPosition;
         state = State.Chasing;
@@ -91,9 +91,12 @@ public class EnemyBaseUnit : MonoBehaviour, IUnit
 
     public void WatchThePlayer(Action onStoppedWatching)
     {
-        timer = UnityEngine.Random.Range(enemyProfile.watchingDurationMinMax.x, enemyProfile.watchingDurationMinMax.y);
-        onActionFinished = onStoppedWatching;
-        state = State.Watching;
+        if(timer < 0)
+        {
+            timer = UnityEngine.Random.Range(enemyProfile.watchingDurationMinMax.x, enemyProfile.watchingDurationMinMax.y);
+            onActionFinished = onStoppedWatching;
+            state = State.Watching;
+        }
     }
 
     public void Attack(Action onAttackFinished) { onActionFinished = onAttackFinished; state = State.Attacking; }
@@ -103,8 +106,7 @@ public class EnemyBaseUnit : MonoBehaviour, IUnit
     // HANDLE METHODS --------------------------------------------------------------------- 
     private void HandleLooking()
     {
-        float playerDistance = Vector3.Distance(transform.position, player.position);
-        if (playerDistance < enemyProfile.detectionRange)
+        if (GetDistanceFromPlayer() < enemyProfile.detectionRange)
         {
             if (isPlayerVisible(enemyProfile.detectionRange))
             {
@@ -114,8 +116,7 @@ public class EnemyBaseUnit : MonoBehaviour, IUnit
     }
     private void HandleChase()
     {
-        float playerDistance = Vector3.Distance(agent.destination, player.position);
-        if (playerDistance < stopDistance)
+        if (GetDistanceFromPlayer() < stopDistance)
         {
             if (isPlayerAimable())
             {
@@ -130,18 +131,13 @@ public class EnemyBaseUnit : MonoBehaviour, IUnit
     }
     private void HandleRunning()
     {
-        float playerDistance = Vector3.Distance(transform.position, player.position);
-        if (playerDistance > enemyProfile.runningRange)
+        if (GetDistanceFromPlayer() > enemyProfile.runningRange)
         {
             state = State.Idle;
             onActionFinished?.Invoke();
             onActionFinished = null;
         }
-        else
-        {
-            float destinationDistance = Vector3.Distance(transform.position, agent.destination);
-            if (destinationDistance < stopDistance) { agent.SetDestination(GetRunningPoint()); }
-        }
+        else if (GetDistanceFromPosition(agent.destination) < stopDistance) { agent.SetDestination(GetRunningPoint()); }
     }
     private void HandleWatching()
     {

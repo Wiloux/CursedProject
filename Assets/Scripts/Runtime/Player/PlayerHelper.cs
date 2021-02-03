@@ -43,5 +43,10 @@ public class PlayerHelper : MonoBehaviour
     public void ToggleControls() {
         player.stopControlls = !player.stopControlls;
     }
+
+    public void TakeDamage(int damage)
+    {
+        player.TakeDamage(damage);
+    }
     #endregion
 }
