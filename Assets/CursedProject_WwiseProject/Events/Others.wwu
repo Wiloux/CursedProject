@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{0640A6EF-6429-4AD5-8FFE-7B161B1B8706}" SchemaVersion="97">
+	<Events>
+		<WorkUnit Name="Others" ID="{0640A6EF-6429-4AD5-8FFE-7B161B1B8706}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="StopAllGameObject" ID="{2011AD77-7572-42E4-809C-B4620C80EC05}">
+					<ChildrenList>
+						<Action Name="" ID="{19DC6319-BB08-4EFA-8F20-F04E27BF803C}" ShortID="697433931">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
