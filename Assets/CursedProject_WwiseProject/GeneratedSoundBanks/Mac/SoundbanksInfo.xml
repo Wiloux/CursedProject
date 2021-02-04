@@ -19,12 +19,12 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="440758687">
+		<SoundBank Id="2879190521" Language="SFX" Hash="354492103">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
 			<IncludedEvents>
-				<Event Id="369930381" Name="GyaruPlayAttackLong" ObjectPath="\Events\Players\Gyaru\GyaruPlayAttackLong" MaxAttenuation="30.000000" DurationType="Infinite">
+				<Event Id="369930381" Name="GyaruPlayAttackLong" ObjectPath="\Events\Players\Gyaru\GyaruPlayAttackLong" MaxAttenuation="40.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="321833020" Language="SFX">
 							<ShortName>PlayerWeapons\Gyaru\Long.wav</ShortName>
@@ -32,7 +32,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="166469259" Name="GyaruPlayAttackShort" ObjectPath="\Events\Players\Gyaru\GyaruPlayAttackShort" MaxAttenuation="30.000000" DurationType="Infinite">
+				<Event Id="166469259" Name="GyaruPlayAttackShort" ObjectPath="\Events\Players\Gyaru\GyaruPlayAttackShort" MaxAttenuation="40.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="153084191" Language="SFX">
 							<ShortName>PlayerWeapons\Gyaru\Short.wav</ShortName>
@@ -40,7 +40,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3302019815" Name="GyaruStopAttackLong" ObjectPath="\Events\Players\Gyaru\GyaruStopAttackLong" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.112177" DurationMax="0.112177">
+				<Event Id="3302019815" Name="GyaruStopAttackLong" ObjectPath="\Events\Players\Gyaru\GyaruStopAttackLong" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.112177" DurationMax="0.112177">
 					<IncludedMemoryFiles>
 						<File Id="823667250" Language="SFX">
 							<ShortName>PlayerWeapons\Gyaru\LongTail.wav</ShortName>
@@ -56,7 +56,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="204688551" Name="PlayAttack2" ObjectPath="\Events\Enemies\Chicken\PlayAttack2" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+				<Event Id="204688551" Name="PlayAttack2" ObjectPath="\Events\Enemies\Chicken\PlayAttack2" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>
 						<File Id="51034049" Language="SFX">
 							<ShortName>Chicken\Attack\atack 2.wav</ShortName>
@@ -64,7 +64,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="204688550" Name="PlayAttack3" ObjectPath="\Events\Enemies\Chicken\PlayAttack3" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+				<Event Id="204688550" Name="PlayAttack3" ObjectPath="\Events\Enemies\Chicken\PlayAttack3" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>
 						<File Id="856417953" Language="SFX">
 							<ShortName>Chicken\Attack\atack 3.1.wav</ShortName>
@@ -76,7 +76,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2629272678" Name="PlayBackstab" ObjectPath="\Events\Enemies\Chicken\PlayBackstab" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+				<Event Id="2629272678" Name="PlayBackstab" ObjectPath="\Events\Enemies\Chicken\PlayBackstab" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>
 						<File Id="1023060161" Language="SFX">
 							<ShortName>Chicken\Attack\Backstab2.wav</ShortName>
@@ -84,7 +84,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1470550983" Name="PlayChickenChasing" ObjectPath="\Events\Enemies\Chicken\PlayChickenChasing" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="1.076124" DurationMax="2.648658">
+				<Event Id="1470550983" Name="PlayChickenChasing" ObjectPath="\Events\Enemies\Chicken\PlayChickenChasing" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.076124" DurationMax="2.648658">
 					<IncludedMemoryFiles>
 						<File Id="128794003" Language="SFX">
 							<ShortName>Chicken\Vocal\Chase\Chase7.wav</ShortName>
@@ -116,7 +116,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2892866942" Name="PlayChickenDie" ObjectPath="\Events\Enemies\Chicken\PlayChickenDie" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="1.102966" DurationMax="1.781797">
+				<Event Id="2892866942" Name="PlayChickenDie" ObjectPath="\Events\Enemies\Chicken\PlayChickenDie" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.102966" DurationMax="1.781797">
 					<IncludedMemoryFiles>
 						<File Id="170623511" Language="SFX">
 							<ShortName>Chicken\Vocal\Die\Die3.wav</ShortName>
@@ -132,7 +132,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="196258217" Name="PlayChickenFootsteps" ObjectPath="\Events\Enemies\Chicken\PlayChickenFootsteps" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.485766" DurationMax="0.514651">
+				<Event Id="196258217" Name="PlayChickenFootsteps" ObjectPath="\Events\Enemies\Chicken\PlayChickenFootsteps" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.485766" DurationMax="0.514651">
 					<IncludedMemoryFiles>
 						<File Id="134553406" Language="SFX">
 							<ShortName>Chicken\Footstep\chicken fs2.wav</ShortName>
@@ -152,7 +152,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3029059251" Name="PlayChickenHit" ObjectPath="\Events\Enemies\Chicken\PlayChickenHit" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.345283" DurationMax="0.610952">
+				<Event Id="3029059251" Name="PlayChickenHit" ObjectPath="\Events\Enemies\Chicken\PlayChickenHit" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.345283" DurationMax="0.610952">
 					<IncludedMemoryFiles>
 						<File Id="203460149" Language="SFX">
 							<ShortName>Chicken\Vocal\Hit\Hit3.wav</ShortName>
@@ -168,7 +168,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2039287504" Name="PlayChickenOnSpawn" ObjectPath="\Events\Enemies\Chicken\PlayChickenOnSpawn" MaxAttenuation="30.000000" DurationType="Infinite">
+				<Event Id="2039287504" Name="PlayChickenOnSpawn" ObjectPath="\Events\Enemies\Chicken\PlayChickenOnSpawn" MaxAttenuation="40.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="1876340" Language="SFX">
 							<ShortName>Chicken\Vocal\Eager\EagerFinal1.wav</ShortName>
@@ -232,7 +232,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4042026069" Name="PlayChickenRunAway" ObjectPath="\Events\Enemies\Chicken\PlayChickenRunAway" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="1.196269" DurationMax="2.118926">
+				<Event Id="4042026069" Name="PlayChickenRunAway" ObjectPath="\Events\Enemies\Chicken\PlayChickenRunAway" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.196269" DurationMax="2.118926">
 					<IncludedMemoryFiles>
 						<File Id="246445162" Language="SFX">
 							<ShortName>Chicken\Vocal\Run Away\RunAway1.wav</ShortName>
@@ -256,7 +256,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1378272331" Name="PlayChickenWatching" ObjectPath="\Events\Enemies\Chicken\PlayChickenWatching" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="2.442601" DurationMax="5.786951">
+				<Event Id="1378272331" Name="PlayChickenWatching" ObjectPath="\Events\Enemies\Chicken\PlayChickenWatching" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="2.442601" DurationMax="5.786951">
 					<IncludedMemoryFiles>
 						<File Id="1876340" Language="SFX">
 							<ShortName>Chicken\Vocal\Eager\EagerFinal1.wav</ShortName>
@@ -320,7 +320,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3831688773" Name="PlayerHit" ObjectPath="\Events\Tests\PlayerHit" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.334966" DurationMax="1.500000">
+				<Event Id="3831688773" Name="PlayerHit" ObjectPath="\Events\Players\PlayerHit" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.334966" DurationMax="1.500000">
 					<IncludedMemoryFiles>
 						<File Id="44541559" Language="SFX">
 							<ShortName>Shards\shards hit1.wav</ShortName>
@@ -398,7 +398,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1241118191" Name="PlayFootstepsPlayer" ObjectPath="\Events\Players\PlayFootstepsPlayer" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.142217" DurationMax="0.473162">
+				<Event Id="1241118191" Name="PlayFootstepsPlayer" ObjectPath="\Events\Players\PlayFootstepsPlayer" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.142217" DurationMax="0.473162">
 					<IncludedMemoryFiles>
 						<File Id="47477698" Language="SFX">
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalGrassBackwards1.wav</ShortName>
@@ -426,7 +426,7 @@
 						</File>
 						<File Id="155334950" Language="SFX">
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalDirtBack1.wav</ShortName>
-							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalDirtBack1_1AACC8C1.wem</Path>
+							<Path>SFX\PlayerMovement\Gyaru\SapatoFormalDirtBack1_7D283704.wem</Path>
 						</File>
 						<File Id="284649697" Language="SFX">
 							<ShortName>PlayerMovement\Gyaru\SapatoFormalAlcatrãoWalk1.wav</ShortName>
@@ -657,7 +657,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="4106886787" Name="PlayFSChicken" ObjectPath="\Events\Tests\Chicken\PlayFSChicken" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+				<Event Id="4106886787" Name="PlayFSChicken" ObjectPath="\Events\Tests\Chicken\PlayFSChicken" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>
 						<File Id="254891926" Language="SFX">
 							<ShortName>1.wav</ShortName>
@@ -665,7 +665,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2613825061" Name="PlayGiggleChicken" ObjectPath="\Events\Tests\Chicken\PlayGiggleChicken" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="1.750771" DurationMax="1.750771">
+				<Event Id="2613825061" Name="PlayGiggleChicken" ObjectPath="\Events\Tests\Chicken\PlayGiggleChicken" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.750771" DurationMax="1.750771">
 					<IncludedMemoryFiles>
 						<File Id="713697455" Language="SFX">
 							<ShortName>gf1.wav</ShortName>
@@ -681,7 +681,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4251718543" Name="PlayHitChicken" ObjectPath="\Events\Tests\Chicken\PlayHitChicken" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.308390" DurationMax="0.308390">
+				<Event Id="4251718543" Name="PlayHitChicken" ObjectPath="\Events\Tests\Chicken\PlayHitChicken" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.308390" DurationMax="0.308390">
 					<IncludedMemoryFiles>
 						<File Id="768588542" Language="SFX">
 							<ShortName>NotHittingPlayer.wav</ShortName>
@@ -697,7 +697,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="539806209" Name="PlayMirrorProp" ObjectPath="\Events\Players\Gyaru\PlayMirrorProp" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+				<Event Id="539806209" Name="PlayMirrorProp" ObjectPath="\Events\Players\Gyaru\PlayMirrorProp" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>
 						<File Id="434715277" Language="SFX">
 							<ShortName>Player props\espelho.wav</ShortName>
@@ -705,7 +705,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2575517534" Name="PlayPhoneProp" ObjectPath="\Events\Players\Gyaru\PlayPhoneProp" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.097800" DurationMax="0.097800">
+				<Event Id="2575517534" Name="PlayPhoneProp" ObjectPath="\Events\Players\Gyaru\PlayPhoneProp" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.097800" DurationMax="0.097800">
 					<IncludedMemoryFiles>
 						<File Id="394513528" Language="SFX">
 							<ShortName>Player props\teclado.wav</ShortName>
@@ -713,7 +713,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1870077814" Name="PlayWardenDie" ObjectPath="\Events\Enemies\Warden\PlayWardenDie" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="1.035170" DurationMax="1.035170">
+				<Event Id="1870077814" Name="PlayWardenDie" ObjectPath="\Events\Enemies\Warden\PlayWardenDie" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.035170" DurationMax="1.035170">
 					<IncludedMemoryFiles>
 						<File Id="707779245" Language="SFX">
 							<ShortName>Shards\Vocalization\ImDie.wav</ShortName>
@@ -721,7 +721,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="933827407" Name="PlayWardenHurt" ObjectPath="\Events\Enemies\Warden\PlayWardenHurt" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.458502" DurationMax="0.545254">
+				<Event Id="933827407" Name="PlayWardenHurt" ObjectPath="\Events\Enemies\Warden\PlayWardenHurt" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.458502" DurationMax="0.545254">
 					<IncludedMemoryFiles>
 						<File Id="366868527" Language="SFX">
 							<ShortName>Shards\Vocalization\Hurt1.2.wav</ShortName>
@@ -733,7 +733,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2920750754" Name="PlayWardenIdle" ObjectPath="\Events\Enemies\Warden\PlayWardenIdle" MaxAttenuation="30.000000" DurationType="Infinite">
+				<Event Id="2920750754" Name="PlayWardenIdle" ObjectPath="\Events\Enemies\Warden\PlayWardenIdle" MaxAttenuation="40.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="535913784" Language="SFX">
 							<ShortName>Shards\warden idle.wav</ShortName>
@@ -741,7 +741,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3781044531" Name="PlayWardenMove" ObjectPath="\Events\Enemies\Warden\PlayWardenMove" MaxAttenuation="30.000000" DurationType="Infinite">
+				<Event Id="3781044531" Name="PlayWardenMove" ObjectPath="\Events\Enemies\Warden\PlayWardenMove" MaxAttenuation="40.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="731462982" Language="SFX">
 							<ShortName>Shards\warden move.wav</ShortName>
@@ -749,7 +749,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1171015393" Name="PlayWardenSpawn" ObjectPath="\Events\Enemies\Warden\PlayWardenSpawn" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="7.525202" DurationMax="7.525202">
+				<Event Id="1171015393" Name="PlayWardenSpawn" ObjectPath="\Events\Enemies\Warden\PlayWardenSpawn" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="7.525202" DurationMax="7.525202">
 					<IncludedMemoryFiles>
 						<File Id="832214079" Language="SFX">
 							<ShortName>Shards\warden spawn.wav</ShortName>
@@ -757,7 +757,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2951433145" Name="ShardsRise" ObjectPath="\Events\Enemies\Warden\ShardsRise" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="5.000000" DurationMax="8.500000">
+				<Event Id="2951433145" Name="ShardsRise" ObjectPath="\Events\Enemies\Warden\ShardsRise" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="5.000000" DurationMax="8.500000">
 					<IncludedMemoryFiles>
 						<File Id="784850670" Language="SFX">
 							<ShortName>Shards\shards rising 3.wav</ShortName>
@@ -773,7 +773,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="617402058" Name="ShardsThrow" ObjectPath="\Events\Enemies\Warden\ShardsThrow" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="3.303560" DurationMax="5.297316">
+				<Event Id="617402058" Name="ShardsThrow" ObjectPath="\Events\Enemies\Warden\ShardsThrow" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="3.303560" DurationMax="5.297316">
 					<IncludedMemoryFiles>
 						<File Id="243879499" Language="SFX">
 							<ShortName>Shards\shards throw5.wav</ShortName>
@@ -825,6 +825,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2779602813" Name="StopAllGameObject" ObjectPath="\Events\Others\StopAllGameObject" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1672325348" Name="StopExpDialogue" ObjectPath="\Events\Tests\DialogueExp\StopExpDialogue" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="4217165871" Name="StopMovementSound" ObjectPath="\Events\Enemies\Warden\StopMovementSound" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="3241046308" Name="TestBass" ObjectPath="\Events\Tests\TestBass" DurationType="Infinite">
@@ -835,7 +836,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1813814736" Name="WeirdAttack" ObjectPath="\Events\Tests\Chicken\WeirdAttack" MaxAttenuation="30.000000" DurationType="OneShot" DurationMin="0.677687" DurationMax="0.677687">
+				<Event Id="1813814736" Name="WeirdAttack" ObjectPath="\Events\Tests\Chicken\WeirdAttack" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.677687" DurationMax="0.677687">
 					<IncludedMemoryFiles>
 						<File Id="177710672" Language="SFX">
 							<ShortName>beartrap trigger.wav</ShortName>

@@ -34,7 +34,7 @@
 				<SoundcasterSession Name="switch test" ID="{E421B695-3AAC-4EDC-A7D3-D6B3C246EB28}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="PlayerHit" ID="{5BE8C486-7C82-4F3F-8124-CD1E0EBB35A5}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}"/>
+							<ObjectRef Name="PlayerHit" ID="{5BE8C486-7C82-4F3F-8124-CD1E0EBB35A5}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}"/>
 							<Position X="0" Y="0"/>
 						</Module>
 					</ModuleList>

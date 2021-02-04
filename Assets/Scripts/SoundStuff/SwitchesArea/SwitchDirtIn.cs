@@ -6,12 +6,18 @@ public class SwitchDirtIn : MonoBehaviour
 {
     public string SwitchGroup = "GroundMaterial";
     public string Switch = "Dirt";
+    public string ExitSwitch = "Sidewalk";
     public GameObject Player;
     public bool Debug_Enabled;
 
-    private void OnTriggerStay(Collider collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (Debug_Enabled) { Debug.Log(Switch + "switch set"); }
         AkSoundEngine.SetSwitch(SwitchGroup, Switch, Player);
+    }
+    private void OnTriggerExit(Collider collision)
+    {
+        if (Debug_Enabled) { Debug.Log(ExitSwitch + "switch set"); }
+        AkSoundEngine.SetSwitch(SwitchGroup, ExitSwitch, Player);
     }
 }

@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585893874980423607
+    m_lastTime: -8585892122445851954
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -410,6 +410,27 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+  - PhysicalPath: Events\Others.wwu
+    PathAndIcons:
+    - ElementName: Others
+      ObjectType: 12
+    ParentPath: Others
+    guid: efa640062964d54a8ffe7b161b1b8706
+    GuidInternal: 
+    m_lastTime: -8585892123191354160
+    List:
+    - name: StopAllGameObject
+      guid: 77ad11207275e442809cb4620c80ec05
+      id: 2779602813
+      PathAndIcons:
+      - ElementName: Others
+        ObjectType: 12
+      - ElementName: StopAllGameObject
+        ObjectType: 3
+      Path: Others\StopAllGameObject
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Players.wwu
     PathAndIcons:
     - ElementName: Players
@@ -417,7 +438,7 @@ MonoBehaviour:
     ParentPath: Players
     guid: 84878f6dc9542744bdce26203903b0f0
     GuidInternal: 
-    m_lastTime: -8585893874985434437
+    m_lastTime: -8585892122194857360
     List:
     - name: Gyaru
       guid: 474e1a04614f9f4fa20cfb27e9ca7c35
@@ -473,6 +494,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: PlayerHit
+      guid: 86c4e85b827c3f4f8124cd1e0ebb35a5
+      id: 3831688773
+      PathAndIcons:
+      - ElementName: Players
+        ObjectType: 12
+      - ElementName: PlayerHit
+        ObjectType: 3
+      Path: Players\PlayerHit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: PlayFootstepsPlayer
       guid: f9a85a5fb096654b92dfa60189849541
       id: 1241118191
@@ -520,7 +553,7 @@ MonoBehaviour:
     ParentPath: Tests
     guid: 7e1e99e9ec97634b9be4486f5e454591
     GuidInternal: 
-    m_lastTime: -8585900886290593520
+    m_lastTime: -8585892122445682390
     List:
     - name: Chicken
       guid: 90bf0756f07b41458e68dd708f9190ce
@@ -555,18 +588,6 @@ MonoBehaviour:
       - ElementName: Menu
         ObjectType: 4
       Path: Tests\Menu
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: PlayerHit
-      guid: 86c4e85b827c3f4f8124cd1e0ebb35a5
-      id: 3831688773
-      PathAndIcons:
-      - ElementName: Tests
-        ObjectType: 12
-      - ElementName: PlayerHit
-        ObjectType: 3
-      Path: Tests\PlayerHit
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1

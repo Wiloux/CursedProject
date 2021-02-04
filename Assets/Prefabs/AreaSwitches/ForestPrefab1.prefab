@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5268190484110749278}
   - component: {fileID: 4679128312279569401}
   - component: {fileID: 335684917214722098}
-  - component: {fileID: 7713210828810614946}
+  - component: {fileID: 154108465}
   m_Layer: 0
   m_Name: Forest1 (8)
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1262904478149225622}
   m_LocalRotation: {x: 0.044856638, y: -0.28141958, z: 0.0099558905, w: 0.9584842}
   m_LocalPosition: {x: -53.52, y: 9.83, z: -4.88}
-  m_LocalScale: {x: 1.0851629, y: 0.90000004, z: 6.637883}
+  m_LocalScale: {x: 1.0851629, y: 5.02, z: 6.637883}
   m_Children: []
   m_Father: {fileID: 560126406566603326}
   m_RootOrder: 0
@@ -108,7 +108,7 @@ TerrainCollider:
   m_Enabled: 0
   m_TerrainData: {fileID: 0}
   m_EnableTreeColliders: 1
---- !u!114 &7713210828810614946
+--- !u!114 &154108465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,13 +117,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1262904478149225622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae666c600e4b1fc409a037cf3bc7d8b3, type: 3}
+  m_Script: {fileID: 11500000, guid: c5c39d2a584379b43830a73a66fd4674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SwitchGroup: GroundMaterial
-  Switch: Dirt
+  Switch: Forest
+  ExitSwitch: Dirt
   Player: {fileID: 0}
-  Debug_Enabled: 1
+  Debug_Enabled: 0
 --- !u!1 &1524322462912253109
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +138,7 @@ GameObject:
   - component: {fileID: 7992710076817966528}
   - component: {fileID: 4740839335517476735}
   - component: {fileID: 4762325885262493230}
-  - component: {fileID: 3506098805024493324}
+  - component: {fileID: 1501624503}
   m_Layer: 0
   m_Name: Forest1 (10)
   m_TagString: Untagged
@@ -154,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 1524322462912253109}
   m_LocalRotation: {x: 0.04528886, y: -0.23433498, z: 0.007756178, w: 0.97106946}
   m_LocalPosition: {x: -56.37, y: 9.83, z: -5.36}
-  m_LocalScale: {x: 1.0851629, y: 0.90000004, z: 6.637883}
+  m_LocalScale: {x: 1.0851629, y: 5.02, z: 6.637883}
   m_Children: []
   m_Father: {fileID: 560126406566603326}
   m_RootOrder: 2
@@ -232,7 +233,7 @@ TerrainCollider:
   m_Enabled: 0
   m_TerrainData: {fileID: 0}
   m_EnableTreeColliders: 1
---- !u!114 &3506098805024493324
+--- !u!114 &1501624503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,13 +242,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1524322462912253109}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae666c600e4b1fc409a037cf3bc7d8b3, type: 3}
+  m_Script: {fileID: 11500000, guid: c5c39d2a584379b43830a73a66fd4674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SwitchGroup: GroundMaterial
-  Switch: Dirt
+  Switch: Forest
+  ExitSwitch: Dirt
   Player: {fileID: 0}
-  Debug_Enabled: 1
+  Debug_Enabled: 0
 --- !u!1 &2929133837276096826
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +263,7 @@ GameObject:
   - component: {fileID: 6950836301200597189}
   - component: {fileID: 8639603233043476895}
   - component: {fileID: 8889446445313542743}
-  - component: {fileID: 5849777014477640960}
+  - component: {fileID: 276793532}
   m_Layer: 0
   m_Name: Forest1 (9)
   m_TagString: Untagged
@@ -278,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 2929133837276096826}
   m_LocalRotation: {x: 0.044856638, y: -0.28141958, z: 0.0099558905, w: 0.9584842}
   m_LocalPosition: {x: -54.97, y: 9.83, z: -5.36}
-  m_LocalScale: {x: 1.5096784, y: 0.90000004, z: 6.637883}
+  m_LocalScale: {x: 1.5096784, y: 5.02, z: 6.637883}
   m_Children: []
   m_Father: {fileID: 560126406566603326}
   m_RootOrder: 1
@@ -356,7 +358,7 @@ TerrainCollider:
   m_Enabled: 0
   m_TerrainData: {fileID: 0}
   m_EnableTreeColliders: 1
---- !u!114 &5849777014477640960
+--- !u!114 &276793532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -365,13 +367,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2929133837276096826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae666c600e4b1fc409a037cf3bc7d8b3, type: 3}
+  m_Script: {fileID: 11500000, guid: c5c39d2a584379b43830a73a66fd4674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SwitchGroup: GroundMaterial
-  Switch: Dirt
+  Switch: Forest
+  ExitSwitch: Dirt
   Player: {fileID: 0}
-  Debug_Enabled: 1
+  Debug_Enabled: 0
 --- !u!1 &5454926692557503773
 GameObject:
   m_ObjectHideFlags: 0

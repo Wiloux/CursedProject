@@ -45,6 +45,7 @@ namespace AK
         static const AkUniqueID SHARDSRISE = 2951433145U;
         static const AkUniqueID SHARDSTHROW = 617402058U;
         static const AkUniqueID SHARDWALLHIT = 3796699282U;
+        static const AkUniqueID STOPALLGAMEOBJECT = 2779602813U;
         static const AkUniqueID STOPEXPDIALOGUE = 1672325348U;
         static const AkUniqueID STOPMOVEMENTSOUND = 4217165871U;
         static const AkUniqueID TESTBASS = 3241046308U;

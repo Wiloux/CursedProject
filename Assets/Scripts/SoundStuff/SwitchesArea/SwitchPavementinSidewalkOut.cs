@@ -15,6 +15,11 @@ public class SwitchPavementinSidewalkOut : MonoBehaviour
         if (Debug_Enabled) { Debug.Log(Switch + "switch set"); }
         AkSoundEngine.SetSwitch(SwitchGroup, Switch, Player);
     }
+    private void OnTriggerStay(Collider collision)
+    {
+        if (Debug_Enabled) { Debug.Log(Switch + "switch set"); }
+        AkSoundEngine.SetSwitch(SwitchGroup, Switch, Player);
+    }
     private void OnTriggerExit(Collider collision)
     {
         if (Debug_Enabled) { Debug.Log(ExitSwitch + "switch set"); }

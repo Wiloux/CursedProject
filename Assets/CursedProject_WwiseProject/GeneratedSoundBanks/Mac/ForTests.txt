@@ -22,6 +22,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2613825061	PlayGiggleChicken			\Tests\Chicken\PlayGiggleChicken	
 	2629272678	PlayBackstab			\Enemies\Chicken\PlayBackstab	
 	2650513656	PlayAmbiance1			\Ambiances\PlayAmbiance1	
+	2779602813	StopAllGameObject			\Others\StopAllGameObject	
 	2892866942	PlayChickenDie			\Enemies\Chicken\PlayChickenDie	
 	2920750754	PlayWardenIdle			\Enemies\Warden\PlayWardenIdle	
 	2951433145	ShardsRise			\Enemies\Warden\ShardsRise	
@@ -30,7 +31,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3302019815	GyaruStopAttackLong			\Players\Gyaru\GyaruStopAttackLong	
 	3781044531	PlayWardenMove			\Enemies\Warden\PlayWardenMove	
 	3796699282	ShardWallHit			\Enemies\Warden\ShardWallHit	
-	3831688773	PlayerHit			\Tests\PlayerHit	
+	3831688773	PlayerHit			\Players\PlayerHit	
 	4042026069	PlayChickenRunAway			\Enemies\Chicken\PlayChickenRunAway	
 	4106886787	PlayFSChicken			\Tests\Chicken\PlayFSChicken	
 	4217165871	StopMovementSound			\Enemies\Warden\StopMovementSound	
@@ -76,7 +77,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	128794003	Chase7	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\Chicken\Vocal\Chase\Chase7_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\Chase\Chase7		441064
 	134553406	chicken fs2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\Chicken\Footstep\chicken fs2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\ChickenFootsteps\chicken fs2		88264
 	153084191	Short	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\PlayerWeapons\Gyaru\Short_234839FD.wem		\Actor-Mixer Hierarchy\Players\Gyaru\Taser\Short		39304
-	155334950	SapatoFormalDirtBack1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\PlayerMovement\Gyaru\SapatoFormalDirtBack1_1AACC8C1.wem		\Actor-Mixer Hierarchy\Players\FootstepsPlayer\Gyaru\Dirt\Backwards\SapatoFormalDirtBack1		88264
+	155334950	SapatoFormalDirtBack1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\PlayerMovement\Gyaru\SapatoFormalDirtBack1_7D283704.wem		\Actor-Mixer Hierarchy\Players\FootstepsPlayer\Gyaru\Dirt\Backwards\SapatoFormalDirtBack1		88264
 	170623511	Die3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\Chicken\Vocal\Die\Die3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\Die\Die3		352864
 	177710672	beartrap trigger	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\beartrap trigger_10C4C929.wem		\Actor-Mixer Hierarchy\Tests\Galinha\beartrap trigger		119608
 	179151226	shard wall hit 5	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\Shards\shard wall hit 5_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Warden\Shards\ShardWallHit\shard wall hit 5		264664
