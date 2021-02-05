@@ -8,21 +8,21 @@ public class RTPC_SchoolReverb_Big : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 1);
         }
     }
     private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 1);
         }
     }
     private void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 1);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
         }
     }
 }

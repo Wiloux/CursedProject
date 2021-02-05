@@ -114,6 +114,8 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID RTPC_OCCLUSION_LOPASS = 222722569U;
+        static const AkUniqueID RTPC_OCCLUSION_VOLUME = 342905355U;
         static const AkUniqueID RTPC_REVERB = 4143461479U;
         static const AkUniqueID RTPC_REVERB_2 = 2627017276U;
         static const AkUniqueID SFXVOLUME = 988953028U;

@@ -8,7 +8,6 @@
 					<PropertyList>
 						<Property Name="InitialValue" Type="Real64" Value="0"/>
 						<Property Name="Max" Type="Real64" Value="1"/>
-						<Property Name="RTPCRamping" Type="int16" Value="1"/>
 						<Property Name="SlewRateDown" Type="Real64" Value="0.1"/>
 						<Property Name="SlewRateUp" Type="Real64" Value="0.1"/>
 					</PropertyList>
@@ -17,9 +16,20 @@
 					<PropertyList>
 						<Property Name="InitialValue" Type="Real64" Value="0"/>
 						<Property Name="Max" Type="Real64" Value="1"/>
-						<Property Name="RTPCRamping" Type="int16" Value="1"/>
 						<Property Name="SlewRateDown" Type="Real64" Value="0.1"/>
 						<Property Name="SlewRateUp" Type="Real64" Value="0.1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_Occlusion_Volume" ID="{69FCFFBE-9F40-479F-8731-106A8A8BACE4}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_Occlusion_LoPass" ID="{80BE260F-D165-4197-8710-898C20CF8EDE}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
 					</PropertyList>
 				</GameParameter>
 			</ChildrenList>

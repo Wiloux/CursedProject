@@ -112,8 +112,11 @@
 									<Custom CreatedFrom="{6F14AD1E-2B96-49D3-B00F-BF1325C39993}">
 										<Effect Name="RoomReverb_School2_(Custom)" ID="{A3A9507D-FEE5-4D5E-A6AD-40EF7AF8BA16}" ShortID="592412883" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 											<PropertyList>
+												<Property Name="DecayTime" Type="Real32" Value="10"/>
 												<Property Name="ERFrontBackDelay" Type="Real32" Value="32"/>
+												<Property Name="HFDamping" Type="Real32" Value="10"/>
 												<Property Name="PreDelay" Type="Real32" Value="0"/>
+												<Property Name="Quality" Type="int32" Value="16"/>
 												<Property Name="RoomSize" Type="Real32" Value="29"/>
 											</PropertyList>
 										</Effect>

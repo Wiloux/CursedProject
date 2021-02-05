@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5cf24529c5ae0c4fb7d461ec6430a707
     GuidInternal: 
-    m_lastTime: -8585890581894608167
+    m_lastTime: -8585890524279467579
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -723,8 +723,26 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3f87fc84d75f844293f581868cfb0aa6
     GuidInternal: 
-    m_lastTime: -8585890581894418667
+    m_lastTime: -8585890498298588202
     List:
+    - name: RTPC_Occlusion_LoPass
+      guid: 0f26be8065d197418710898c20cf8ede
+      id: 222722569
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_Occlusion_LoPass
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_Occlusion_LoPass
+    - name: RTPC_Occlusion_Volume
+      guid: befffc69409f9f478731106a8a8bace4
+      id: 342905355
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_Occlusion_Volume
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_Occlusion_Volume
     - name: RTPC_Reverb
       guid: d9e61cf79e7b324fb76b530094fe4dbc
       id: 4143461479
