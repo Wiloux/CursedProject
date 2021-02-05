@@ -4,6 +4,22 @@
 		<WorkUnit Name="Default Work Unit" ID="{84FC873F-5FD7-4284-93F5-81868CFB0AA6}" PersistMode="Standalone">
 			<ChildrenList>
 				<GameParameter Name="SFXVolume" ID="{D324A896-F96A-4EDB-927D-196920F86B9F}"/>
+				<GameParameter Name="RTPC_Occlusion_LoPass" ID="{6FEDA119-9FDD-4849-B883-4BD186395E77}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="0.4"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="0.4"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_Occlusion_Volume" ID="{57FF30BC-1ACB-4AC7-B2B6-CD2D9D32B2E4}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="0.4"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="0.4"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

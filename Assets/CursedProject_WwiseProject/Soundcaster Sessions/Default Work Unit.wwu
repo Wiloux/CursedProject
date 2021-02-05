@@ -69,6 +69,14 @@
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
+							<GameParameterRef Name="RTPC_Occlusion_LoPass" ID="{6FEDA119-9FDD-4849-B883-4BD186395E77}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Occlusion_Volume" ID="{57FF30BC-1ACB-4AC7-B2B6-CD2D9D32B2E4}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="SFXVolume" ID="{D324A896-F96A-4EDB-927D-196920F86B9F}"/>
 							<Value>50</Value>
 						</RTPCValue>

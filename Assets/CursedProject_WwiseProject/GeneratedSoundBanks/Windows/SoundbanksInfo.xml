@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3185529527">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2885728124">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -19,7 +19,7 @@
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="354492103">
+		<SoundBank Id="2879190521" Language="SFX" Hash="61609406">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -56,7 +56,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="204688551" Name="PlayAttack2" ObjectPath="\Events\Enemies\Chicken\PlayAttack2" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+				<Event Id="204688551" Name="PlayAttack2" ObjectPath="\Events\Enemies\Chicken\PlayAttack2" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>
 						<File Id="51034049" Language="SFX">
 							<ShortName>Chicken\Attack\atack 2.wav</ShortName>
@@ -64,7 +64,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="204688550" Name="PlayAttack3" ObjectPath="\Events\Enemies\Chicken\PlayAttack3" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+				<Event Id="204688550" Name="PlayAttack3" ObjectPath="\Events\Enemies\Chicken\PlayAttack3" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>
 						<File Id="856417953" Language="SFX">
 							<ShortName>Chicken\Attack\atack 3.1.wav</ShortName>
@@ -76,7 +76,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2629272678" Name="PlayBackstab" ObjectPath="\Events\Enemies\Chicken\PlayBackstab" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+				<Event Id="2629272678" Name="PlayBackstab" ObjectPath="\Events\Enemies\Chicken\PlayBackstab" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>
 						<File Id="1023060161" Language="SFX">
 							<ShortName>Chicken\Attack\Backstab2.wav</ShortName>
@@ -84,7 +84,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1470550983" Name="PlayChickenChasing" ObjectPath="\Events\Enemies\Chicken\PlayChickenChasing" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.076124" DurationMax="2.648658">
+				<Event Id="1470550983" Name="PlayChickenChasing" ObjectPath="\Events\Enemies\Chicken\PlayChickenChasing" DurationType="OneShot" DurationMin="1.076124" DurationMax="2.648658">
 					<IncludedMemoryFiles>
 						<File Id="128794003" Language="SFX">
 							<ShortName>Chicken\Vocal\Chase\Chase7.wav</ShortName>
@@ -116,7 +116,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2892866942" Name="PlayChickenDie" ObjectPath="\Events\Enemies\Chicken\PlayChickenDie" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.102966" DurationMax="1.781797">
+				<Event Id="2892866942" Name="PlayChickenDie" ObjectPath="\Events\Enemies\Chicken\PlayChickenDie" DurationType="OneShot" DurationMin="1.102966" DurationMax="1.781797">
 					<IncludedMemoryFiles>
 						<File Id="170623511" Language="SFX">
 							<ShortName>Chicken\Vocal\Die\Die3.wav</ShortName>
@@ -132,7 +132,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="196258217" Name="PlayChickenFootsteps" ObjectPath="\Events\Enemies\Chicken\PlayChickenFootsteps" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.485766" DurationMax="0.514651">
+				<Event Id="196258217" Name="PlayChickenFootsteps" ObjectPath="\Events\Enemies\Chicken\PlayChickenFootsteps" DurationType="OneShot" DurationMin="0.485766" DurationMax="0.514651">
 					<IncludedMemoryFiles>
 						<File Id="134553406" Language="SFX">
 							<ShortName>Chicken\Footstep\chicken fs2.wav</ShortName>
@@ -152,7 +152,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3029059251" Name="PlayChickenHit" ObjectPath="\Events\Enemies\Chicken\PlayChickenHit" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.345283" DurationMax="0.610952">
+				<Event Id="3029059251" Name="PlayChickenHit" ObjectPath="\Events\Enemies\Chicken\PlayChickenHit" DurationType="OneShot" DurationMin="0.345283" DurationMax="0.610952">
 					<IncludedMemoryFiles>
 						<File Id="203460149" Language="SFX">
 							<ShortName>Chicken\Vocal\Hit\Hit3.wav</ShortName>
@@ -168,7 +168,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2039287504" Name="PlayChickenOnSpawn" ObjectPath="\Events\Enemies\Chicken\PlayChickenOnSpawn" MaxAttenuation="40.000000" DurationType="Infinite">
+				<Event Id="2039287504" Name="PlayChickenOnSpawn" ObjectPath="\Events\Enemies\Chicken\PlayChickenOnSpawn" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="1876340" Language="SFX">
 							<ShortName>Chicken\Vocal\Eager\EagerFinal1.wav</ShortName>
@@ -232,7 +232,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4042026069" Name="PlayChickenRunAway" ObjectPath="\Events\Enemies\Chicken\PlayChickenRunAway" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.196269" DurationMax="2.118926">
+				<Event Id="4042026069" Name="PlayChickenRunAway" ObjectPath="\Events\Enemies\Chicken\PlayChickenRunAway" DurationType="OneShot" DurationMin="1.196269" DurationMax="2.118926">
 					<IncludedMemoryFiles>
 						<File Id="246445162" Language="SFX">
 							<ShortName>Chicken\Vocal\Run Away\RunAway1.wav</ShortName>
@@ -256,7 +256,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1378272331" Name="PlayChickenWatching" ObjectPath="\Events\Enemies\Chicken\PlayChickenWatching" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="2.442601" DurationMax="5.786951">
+				<Event Id="1378272331" Name="PlayChickenWatching" ObjectPath="\Events\Enemies\Chicken\PlayChickenWatching" DurationType="OneShot" DurationMin="2.442601" DurationMax="5.786951">
 					<IncludedMemoryFiles>
 						<File Id="1876340" Language="SFX">
 							<ShortName>Chicken\Vocal\Eager\EagerFinal1.wav</ShortName>
@@ -845,6 +845,10 @@
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="222722569" Name="RTPC_Occlusion_LoPass" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Occlusion_LoPass"/>
+				<GameParameter Id="342905355" Name="RTPC_Occlusion_Volume" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Occlusion_Volume"/>
+			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="690777561" Name="WalkRun" ObjectPath="\Switches\Default Work Unit\WalkRun">
 					<Switches>
