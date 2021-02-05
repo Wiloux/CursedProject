@@ -796,17 +796,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4308134389288796760, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4308134389288796762, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
       propertyPath: m_Name
       value: ChickenMonster
-      objectReference: {fileID: 0}
-    - target: {fileID: 4308134389288796762, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
@@ -1514,10 +1506,6 @@ PrefabInstance:
     - target: {fileID: 5570753806488649908, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8536683932730595807, guid: a190e9222e2f94e458b5fac796614412, type: 3}
-      propertyPath: health
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a190e9222e2f94e458b5fac796614412, type: 3}
@@ -4031,13 +4019,15 @@ GameObject:
   - component: {fileID: 1478669206265885216}
   - component: {fileID: 1478669206265885219}
   - component: {fileID: 1478669206265885229}
+  - component: {fileID: 1478669206265885221}
+  - component: {fileID: 1478669206265885220}
   m_Layer: 0
   m_Name: ChickenMonster (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!195 &1478669206265885219
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4060,6 +4050,44 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1478669206265885220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478669206265885218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e89f0cd4195c0814fa6a2f52d2e1bb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyProfile: {fileID: 11400000, guid: fd4d0e2d22262a641814f07d6bc659b3, type: 2}
+  animator: {fileID: 3408337242017690959}
+  agent: {fileID: 1478669206265885219}
+  rb: {fileID: 1478669206265885216}
+--- !u!114 &1478669206265885221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478669206265885218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff33bad44a2291045a85caec2d7fb245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyProfile: {fileID: 11400000, guid: fd4d0e2d22262a641814f07d6bc659b3, type: 2}
+  agent: {fileID: 1478669206265885219}
+  navMeshMask:
+    serializedVersion: 2
+    m_Bits: 1025
+  rb: {fileID: 1478669206265885216}
+  attackPoint: {fileID: 1478669208046023602}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &1478669206265885228
 Transform:
   m_ObjectHideFlags: 0
@@ -4068,7 +4096,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478669206265885218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.44, y: 1.53, z: -8.75}
+  m_LocalPosition: {x: 8.27, y: 1.53, z: -5.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1478669208046023602}

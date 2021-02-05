@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyBaseUnit : MonoBehaviour
+public class EnemyUnit : MonoBehaviour
 {
     private enum State
     {
@@ -12,17 +12,19 @@ public class EnemyBaseUnit : MonoBehaviour
         Looking,
         Chasing,
         Attacking,
-        Running, //
-        Watching, //
+        Running,
+        Watching, 
+        Staggered,
         Dead
     }
     private State state;
+    private State lastState;
 
     [SerializeField] private EnemyProfileSO enemyProfile;
 
-    [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private LayerMask navMeshMask;
-    [SerializeField] private Rigidbody rb;
+    public NavMeshAgent agent;
+    public LayerMask navMeshMask;
+    public Rigidbody rb;
 
     [SerializeField] private Transform attackPoint;
     [SerializeField] private LayerMask playerMask;
@@ -31,8 +33,12 @@ public class EnemyBaseUnit : MonoBehaviour
     private float stopDistance;
     private Action onActionFinished;
 
+    private bool stagerred;
     private float timer;
+    private bool attacking;
     private float attackTimer;
+    private bool running;
+    private Vector3 runStartPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -55,12 +61,16 @@ public class EnemyBaseUnit : MonoBehaviour
                 HandleLooking();
                 break;
             case State.Attacking:
+                HandleAttack();
                 break;
             case State.Running:
                 HandleRunning();
                 break;
             case State.Watching:
                 HandleWatching();
+                break;
+            case State.Staggered:
+                HandleStagger();
                 break;
         }
     }
@@ -83,10 +93,16 @@ public class EnemyBaseUnit : MonoBehaviour
 
     public void RunFromPlayer(float stopDistance,Action onStoppedRunning)
     {
-        agent.SetDestination(GetRunningPoint());
-        onActionFinished = onStoppedRunning;
-        this.stopDistance = stopDistance;
-        state = State.Running;
+        if (!running)
+        {
+            running = true;
+            runStartPosition = player.position;
+            agent.SetDestination(GetRunningPoint());
+            onActionFinished = onStoppedRunning;
+            onActionFinished += () => running = false;
+            this.stopDistance = stopDistance;
+            state = State.Running;
+        }
     }
 
     public void WatchThePlayer(Action onStoppedWatching)
@@ -99,7 +115,34 @@ public class EnemyBaseUnit : MonoBehaviour
         }
     }
 
-    public void Attack(Action onAttackFinished) { onActionFinished = onAttackFinished; state = State.Attacking; }
+    public void GetStaggered(float duration, Action onStaggerFinished)
+    {
+        if (!stagerred)
+        {
+            lastState = state;
+            stagerred = true;
+            timer = enemyProfile.staggerDuration;
+            onActionFinished = onStaggerFinished;
+            onActionFinished += () => stagerred = false;
+            state = State.Staggered;
+        }
+    }
+
+    public void Attack(float stationaryDuration ,Action onAttackFinished) 
+    {
+        if (!attacking)
+        {
+            attacking = true;
+            timer = stationaryDuration;
+            onActionFinished = onAttackFinished;
+            onActionFinished += () => attacking = false;
+            state = State.Attacking; 
+        }
+    }
+    public void Die()
+    {
+        state = State.Dead;
+    }
     #endregion
 
     #region Handle methods
@@ -123,6 +166,7 @@ public class EnemyBaseUnit : MonoBehaviour
                 if (onActionFinished != null)
                 {
                     state = State.Idle;
+                    agent.SetDestination(transform.position);
                     onActionFinished?.Invoke();
                     onActionFinished = null;
                 }
@@ -131,18 +175,33 @@ public class EnemyBaseUnit : MonoBehaviour
     }
     private void HandleRunning()
     {
-        if (GetDistanceFromPlayer() > enemyProfile.runningRange)
+        if (GetDistanceFromPosition(runStartPosition) > enemyProfile.runningRange)
         {
             state = State.Idle;
+            agent.SetDestination(transform.position);
             onActionFinished?.Invoke();
             onActionFinished = null;
         }
         else if (GetDistanceFromPosition(agent.destination) < stopDistance) { agent.SetDestination(GetRunningPoint()); }
     }
-    private void HandleWatching()
+    private void HandleWaiting()
     {
         timer -= Time.deltaTime;
         if (timer <= 0) { state = State.Idle; onActionFinished?.Invoke(); onActionFinished = null; }
+    }
+    private void HandleAttack()
+    {
+        HandleWaiting();
+    }
+    private void HandleWatching()
+    {
+        HandleWaiting();
+        // addd stgh
+    }
+    private void HandleStagger()
+    {
+        HandleWaiting();
+        if(timer < 0) { state = lastState; }
     }
     #endregion
 
