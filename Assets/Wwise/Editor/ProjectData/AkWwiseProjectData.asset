@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5cf24529c5ae0c4fb7d461ec6430a707
     GuidInternal: 
-    m_lastTime: -8585900886285976016
+    m_lastTime: -8585891187124463858
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585892122445851954
+    m_lastTime: -8585892059691094880
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -118,7 +118,7 @@ MonoBehaviour:
     ParentPath: Enemies
     guid: 7833dd357f5437458dde67e4bfd1d3f1
     GuidInternal: 
-    m_lastTime: -8585900886290623573
+    m_lastTime: -8585891187124294337
     List:
     - name: Chicken
       guid: b95c606dc42a5947bea9f0e934524f5d
@@ -417,7 +417,7 @@ MonoBehaviour:
     ParentPath: Others
     guid: efa640062964d54a8ffe7b161b1b8706
     GuidInternal: 
-    m_lastTime: -8585892123191354160
+    m_lastTime: -8585892059699502395
     List:
     - name: StopAllGameObject
       guid: 77ad11207275e442809cb4620c80ec05
@@ -438,7 +438,7 @@ MonoBehaviour:
     ParentPath: Players
     guid: 84878f6dc9542744bdce26203903b0f0
     GuidInternal: 
-    m_lastTime: -8585892122194857360
+    m_lastTime: -8585892059699492355
     List:
     - name: Gyaru
       guid: 474e1a04614f9f4fa20cfb27e9ca7c35
@@ -553,7 +553,7 @@ MonoBehaviour:
     ParentPath: Tests
     guid: 7e1e99e9ec97634b9be4486f5e454591
     GuidInternal: 
-    m_lastTime: -8585892122445682390
+    m_lastTime: -8585892059699482462
     List:
     - name: Chicken
       guid: 90bf0756f07b41458e68dd708f9190ce
@@ -723,8 +723,26 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3f87fc84d75f844293f581868cfb0aa6
     GuidInternal: 
-    m_lastTime: -8585900886290583690
+    m_lastTime: -8585891196232857925
     List:
+    - name: RTPC_Occlusion_LoPass
+      guid: 19a1ed6fdd9f4948b8834bd186395e77
+      id: 222722569
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_Occlusion_LoPass
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_Occlusion_LoPass
+    - name: RTPC_Occlusion_Volume
+      guid: bc30ff57cb1ac74ab2b6cd2d9d32b2e4
+      id: 342905355
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_Occlusion_Volume
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_Occlusion_Volume
     - name: SFXVolume
       guid: 96a824d36af9db4e927d196920f86b9f
       id: 988953028
