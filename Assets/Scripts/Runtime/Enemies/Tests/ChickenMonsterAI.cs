@@ -2,36 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChickenMonsterAI : MonoBehaviour
+public class ChickenMonsterAI : EnemyBaseAI
 {
-    private enum State
-    {
-        Idle,
-        Looking,
-        Chasing,
-        Attacking,
-        Running,
-        Watching
-    }
-    private State state;
-    private EnemyBaseUnit unit;
-    private Transform player;
-
-    [SerializeField] private EnemyProfileSO enemyProfile;
- //   private 
-    private int health;
-
-    private void Awake()
-    {
-        unit = GetComponent<EnemyBaseUnit>();
-        player = PlayerHelper.instance.transform;
-        health = enemyProfile.maxHealth;
-        state = State.Looking;
-    }
-    
-
     // Update is called once per frame
-    void Update()
+    public override void Start()
+    {
+        base.Start();
+
+        attackAnimation = () => {
+            float angle = Vector3.Angle(player.transform.forward, transform.forward);
+            if (angle < 90f)
+            {
+                animator.SetInteger("attackType", 2);
+            }
+            else
+            {
+                animator.SetInteger("attackType", UnityEngine.Random.Range(0, 2));
+            }
+            animator.SetTrigger("attack");
+        };
+
+        hitAnimation = () => { animator.SetInteger("randomHurt", UnityEngine.Random.Range(0, 3)); animator.SetTrigger("hit"); };
+    }
+
+    public override void LaunchActions()
     {
         switch (state)
         {
@@ -39,10 +33,16 @@ public class ChickenMonsterAI : MonoBehaviour
                 unit.LookForPlayer(() => state = State.Chasing);
                 break;
             case State.Chasing:
-                unit.ChaseThePlayer(0.25f, () => state = State.Attacking);
+                unit.ChaseThePlayer(1f, () => state = State.Attacking);
                 break;
             case State.Attacking:
-                unit.Attack(() => state = State.Running);
+                if (!attacking)
+                {
+                    attacking = true;
+                    unit.Attack(2f, () => { attacking = false; state = State.Chasing; });
+                    attackAnimation?.Invoke();
+                    //enemyProfile.attackWEvent?.Post(gameObject);
+                }
                 break;
             case State.Running:
                 unit.RunFromPlayer(0.25f, () => state = State.Watching);

@@ -1,9 +1,15 @@
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	988953028	SFXVolume			\Default Work Unit\SFXVolume	
+	2627017276	RTPC_Reverb_2			\Default Work Unit\RTPC_Reverb_2	
+	4143461479	RTPC_Reverb			\Default Work Unit\RTPC_Reverb	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Effect plug-ins	ID	Name	Type				Notes
+	38820295	RoomReverb_School_(Custom)	Wwise RoomVerb			
+	592412883	RoomReverb_School2_(Custom)	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

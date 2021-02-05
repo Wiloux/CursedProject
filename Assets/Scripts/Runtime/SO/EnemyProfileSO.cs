@@ -36,6 +36,7 @@ public class EnemyProfileSO : ScriptableObject
     [Tooltip("Is the enemy able to backstab the player")]
     public bool backstab;
 
+    public float staggerDuration;
 
     #region Wwwise events
     public AK.Wwise.Event attackWEvent;
@@ -82,6 +83,8 @@ public class EnemyProfileSOInspector : Editor
                 CreatePropertyField(nameof(so.attackRange));
                 CreatePropertyField(nameof(so.attackCooldown));
                 CreatePropertyField(nameof(so.backstab));
+
+                CreatePropertyField(nameof(so.staggerDuration));
 
                 GUILayout.Space(10);
 
