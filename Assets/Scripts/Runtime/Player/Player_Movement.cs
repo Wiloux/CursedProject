@@ -21,6 +21,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private float _verticalSpeedNeg = 5f;
     float rotX;
 
+    [HideInInspector] public bool dead;
     public bool isMoving;
     public bool isMovingBackwards;
     public bool isRunning;
@@ -29,7 +30,7 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameHandler.instance.IsPaused())
+        if (!GameHandler.instance.IsPaused() && !dead)
         {
             isMoving = false;
             isMovingBackwards = false;

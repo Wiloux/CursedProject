@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float secondaryAttackCooldown;
     private float timeToSecondaryAttack;
-    [SerializeField] private float attackRange;
 
     private bool isArmed;
     [SerializeField] private float beingArmedDuration;
@@ -179,7 +178,6 @@ public class Player : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(transform.position, attackRange);
         if (attackWeapon == null) return;
         Gizmos.DrawWireSphere(attackWeapon.position, attackPointRange);
     }
@@ -188,7 +186,7 @@ public class Player : MonoBehaviour
     #region Attack Methods
     public void SimpleAttack() // CALLED BY ANIMATION
     {
-        EnemyBase enemy = GetEnemyToAttack();
+        EnemyBaseAI enemy = GetEnemyToAttack();
         if (enemy == null)
         {
             Debug.Log("No enemy has been found");
@@ -202,7 +200,7 @@ public class Player : MonoBehaviour
     }
     public void SecondaryAttack() // CALLED BY ANIMATION
     {
-        EnemyBase enemy = GetEnemyToAttack();
+        EnemyBaseAI enemy = GetEnemyToAttack();
         if (enemy == null)
         {
             Debug.Log("No enemy has been found");
@@ -215,7 +213,7 @@ public class Player : MonoBehaviour
 
     }
 
-    private EnemyBase GetEnemyToAttack()
+    private EnemyBaseAI GetEnemyToAttack()
     {
         Collider[] hits = Physics.OverlapSphere(attackWeapon.position, attackPointRange, attackLayerMask);
         if (hits.Length > 0)
@@ -227,7 +225,7 @@ public class Player : MonoBehaviour
 
                 if (hit.CompareTag("Enemy"))
                 {
-                    EnemyBase enemy = hits[i].GetComponent<EnemyBase>();
+                    EnemyBaseAI enemy = hits[i].GetComponent<EnemyBaseAI>();
                     if (enemy != null){return enemy; }
                 }
                 //Debug.Log("---------------");
@@ -296,6 +294,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        DisableAttackWeaponParticles();
         if(health <= 0) { Die(); }
         else
         {
@@ -312,6 +311,7 @@ public class Player : MonoBehaviour
     private void Die()
     {
         dead = true;
+        controller.dead = true;
         DeathAnimation?.Invoke();
     }
     #endregion

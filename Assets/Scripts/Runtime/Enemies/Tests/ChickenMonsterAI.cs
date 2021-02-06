@@ -33,15 +33,14 @@ public class ChickenMonsterAI : EnemyBaseAI
                 unit.LookForPlayer(() => state = State.Chasing);
                 break;
             case State.Chasing:
-                unit.ChaseThePlayer(1f, () => state = State.Attacking);
+                unit.ChaseThePlayer(enemyProfile.rangeToAttack, () => state = State.Attacking);
                 break;
             case State.Attacking:
-                if (!attacking)
+                if (!unit.attacking)
                 {
-                    attacking = true;
-                    unit.Attack(2f, () => { attacking = false; state = State.Chasing; });
+                    unit.Attack(2f, () => { state = State.Running; });
                     attackAnimation?.Invoke();
-                    //enemyProfile.attackWEvent?.Post(gameObject);
+                    enemyProfile.attackWEvent?.Post(gameObject);
                 }
                 break;
             case State.Running:

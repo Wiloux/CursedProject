@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class EnemyUnit : MonoBehaviour
 {
@@ -20,14 +23,14 @@ public class EnemyUnit : MonoBehaviour
     private State state;
     private State lastState;
 
-    [SerializeField] private EnemyProfileSO enemyProfile;
+    public EnemyProfileSO enemyProfile;
 
     public NavMeshAgent agent;
     public LayerMask navMeshMask;
     public Rigidbody rb;
 
-    [SerializeField] private Transform attackPoint;
-    [SerializeField] private LayerMask playerMask;
+    public Transform attackPoint;
+    public LayerMask playerMask;
     private Transform player;
 
     private float stopDistance;
@@ -35,9 +38,11 @@ public class EnemyUnit : MonoBehaviour
 
     private bool stagerred;
     private float timer;
-    private bool attacking;
-    private float attackTimer;
+    public bool attacking;
+    public float attackTimer;
+    private bool chasing;
     private bool running;
+    private bool watching;
     private Vector3 runStartPosition;
 
     // Start is called before the first frame update
@@ -80,9 +85,15 @@ public class EnemyUnit : MonoBehaviour
     public bool IsIdle() { return state == State.Idle; }
     public void ChaseThePlayer(float stopDistance, Action onArrivedAtPosition)
     {
+        if (!chasing)
+        {
+            enemyProfile.chaseWEvent?.Post(gameObject);
+            chasing = true;
+        }
         agent.SetDestination(player.position);
         this.stopDistance = stopDistance;
-        this.onActionFinished = onArrivedAtPosition;
+        onActionFinished = onArrivedAtPosition;
+        onActionFinished += () => chasing = false;
         state = State.Chasing;
     }
     public void LookForPlayer(Action onPlayerFound)
@@ -96,6 +107,7 @@ public class EnemyUnit : MonoBehaviour
         if (!running)
         {
             running = true;
+            enemyProfile.runWEvent?.Post(gameObject);
             runStartPosition = player.position;
             agent.SetDestination(GetRunningPoint());
             onActionFinished = onStoppedRunning;
@@ -107,10 +119,12 @@ public class EnemyUnit : MonoBehaviour
 
     public void WatchThePlayer(Action onStoppedWatching)
     {
+        if (!watching) { enemyProfile.watchWEvent?.Post(gameObject); watching = true; }
         if(timer < 0)
         {
             timer = UnityEngine.Random.Range(enemyProfile.watchingDurationMinMax.x, enemyProfile.watchingDurationMinMax.y);
             onActionFinished = onStoppedWatching;
+            onActionFinished += () => watching = false;
             state = State.Watching;
         }
     }
@@ -120,7 +134,11 @@ public class EnemyUnit : MonoBehaviour
         if (!stagerred)
         {
             lastState = state;
+            attacking = false;
+            running = false;
             stagerred = true;
+            agent.SetDestination(transform.position);
+
             timer = enemyProfile.staggerDuration;
             onActionFinished = onStaggerFinished;
             onActionFinished += () => stagerred = false;
@@ -201,7 +219,7 @@ public class EnemyUnit : MonoBehaviour
     private void HandleStagger()
     {
         HandleWaiting();
-        if(timer < 0) { state = lastState; }
+        if(timer < 0) { state = State.Chasing; }
     }
     #endregion
 
@@ -249,12 +267,12 @@ public class EnemyUnit : MonoBehaviour
 
     #region GetDistance methods
     // GET DISTANCE METHOD --------------------------------------------------------------------
-    private float GetDistanceFromPlayer()
+    public float GetDistanceFromPlayer()
     {
         if (player == null) return 10 ^ 5;
         return Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.z), new Vector2(transform.position.x, transform.position.z));
     }
-    private float GetDistanceFromPosition(Vector3 target)
+    public float GetDistanceFromPosition(Vector3 target)
     {
         return Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(target.x, target.z));
     }
@@ -278,30 +296,15 @@ public class EnemyUnit : MonoBehaviour
         }
         return runningPointPos;
     }
-
-    public void DamagePlayerTouched()
+}
+#if UNITY_EDITOR
+[CustomEditor(typeof(EnemyUnit))] public class EnemyUnitInspector : Editor
+{
+    public override void OnInspectorGUI()
     {
-        Collider[] hits = Physics.OverlapSphere(attackPoint.position, enemyProfile.attackRange, playerMask);
-        if (hits.Length > 0)
-        {
-            if (hits[0].transform != null)
-            {
-                Debug.Log(hits[0].transform.name);
-                Player player = hits[0].transform.GetComponent<Player>();
-                if (player != null) player.OnHit(enemyProfile.hitPlayerWEventSwitch);
-                if (enemyProfile.backstab)
-                {
-                    float angle = Vector3.Angle(hits[0].transform.forward, transform.forward);
-
-                    if (angle < 90f) { } // faire truc de vies
-                }
-            }
-        }
-        else
-        {
-            Debug.Log("No gameobject touched with Player layer");
-        }
-
-        if (GetDistanceFromPlayer() >= 2.5f) attackTimer = enemyProfile.attackCooldown;
+        // Null
+        GUILayout.Space(10);
+        EditorGUILayout.HelpBox("Please refer the variables of the EnemyAI script", MessageType.Info);
     }
 }
+#endif
