@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class MonsterAnimationStuff : MonoBehaviour
 {
-    [SerializeField] private EnemyBase enemyBase;
-    public void MeleeAttack() { enemyBase.Attack(); }
+    public void MeleeAttack() { GetComponentInParent<EnemyBaseAI>().DamagePlayerTouched(); }
 
     public AK.Wwise.Event Footsteps;
     // Use this for initialization..

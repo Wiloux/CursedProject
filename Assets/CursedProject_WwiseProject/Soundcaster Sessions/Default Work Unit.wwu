@@ -69,8 +69,16 @@
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
+							<GameParameterRef Name="RTPC_Occlusion_LoPass" ID="{80BE260F-D165-4197-8710-898C20CF8EDE}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Occlusion_Volume" ID="{69FCFFBE-9F40-479F-8731-106A8A8BACE4}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="RTPC_Reverb_2" ID="{B840F614-4008-4E5C-A7A5-2CCAD8469304}"/>
-							<Value>1.19354964851903E-311</Value>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SFXVolume" ID="{D324A896-F96A-4EDB-927D-196920F86B9F}"/>
@@ -78,7 +86,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_Reverb" ID="{F71CE6D9-7B9E-4F32-B76B-530094FE4DBC}"/>
-							<Value>0</Value>
+							<Value>9.64388539930102E-312</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>

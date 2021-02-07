@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bee3f608efddb4494b847774e8f08a, type: 3}
   m_Name: ChickenMonsterProfile
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 3
   movementSpeed: 4
   chase: 1
   detectionRange: 15
@@ -23,10 +23,12 @@ MonoBehaviour:
   watchingDurationMinMax: {x: 1, y: 5}
   range: 0
   projectilePrefab: {fileID: 0}
-  rangeToAttack: 2
+  attackDamage: 1
+  rangeToAttack: 1.5
   attackRange: 2
-  attackCooldown: 0
+  attackCooldown: 2
   backstab: 1
+  staggerDuration: 5
   attackWEvent:
     idInternal: 0
     valueGuidInternal: 

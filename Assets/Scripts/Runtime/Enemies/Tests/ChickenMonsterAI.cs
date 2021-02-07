@@ -33,16 +33,19 @@ public class ChickenMonsterAI : EnemyBaseAI
                 unit.LookForPlayer(() => state = State.Chasing);
                 break;
             case State.Chasing:
-                unit.ChaseThePlayer(1f, () => state = State.Attacking);
+                unit.ChaseThePlayer(enemyProfile.rangeToAttack, () => state = State.Attacking);
                 break;
             case State.Attacking:
-                if (!attacking)
+                if (unit.GetDistanceFromPlayer() <= enemyProfile.rangeToAttack)
                 {
-                    attacking = true;
-                    unit.Attack(2f, () => { attacking = false; state = State.Chasing; });
-                    attackAnimation?.Invoke();
-                    //enemyProfile.attackWEvent?.Post(gameObject);
+                    if (!unit.attacking)
+                    {
+                        unit.Attack(2f, () => { state = State.Running; });
+                        attackAnimation?.Invoke();
+                        //enemyProfile.attackWEvent?.Post(gameObject);
+                    }
                 }
+                else { state = State.Chasing; }
                 break;
             case State.Running:
                 unit.RunFromPlayer(0.25f, () => state = State.Watching);
@@ -51,5 +54,10 @@ public class ChickenMonsterAI : EnemyBaseAI
                 unit.WatchThePlayer(() => state = State.Chasing);
                 break;
         }
+    }
+
+    public override void GetStaggered()
+    {
+        unit.GetStaggered(enemyProfile.staggerDuration, () => state = State.Running);
     }
 }

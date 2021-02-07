@@ -8,13 +8,15 @@ public class EnemyBaseAI : MonoBehaviour
 {
     protected enum State
     {
+        Spawning,
         Idle,
         Looking,
         Chasing,
+        Summoning,
         Attacking,
         Running,
         Watching,
-        Stagger, 
+        Stagger,
         Dead
     }
     protected State state;
@@ -27,7 +29,11 @@ public class EnemyBaseAI : MonoBehaviour
     [SerializeField] protected Rigidbody rb;
     protected int health;
 
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private LayerMask playerMask;
+
     protected bool attacking;
+    protected float attackTimer;
 
     #region Animations Actions
     protected Action attackAnimation;
@@ -37,9 +43,12 @@ public class EnemyBaseAI : MonoBehaviour
     public virtual void Awake()
     {
         unit = GetComponent<EnemyUnit>();
+        unit.enemyProfile = enemyProfile;
         unit.agent = agent;
         unit.rb = rb;
-        
+        unit.attackPoint = attackPoint;
+        unit.playerMask = playerMask;
+
         health = enemyProfile.maxHealth;
         state = State.Looking;
     }
@@ -47,6 +56,7 @@ public class EnemyBaseAI : MonoBehaviour
     public virtual void Start()
     {
         player = PlayerHelper.instance.transform;
+        enemyProfile.onSpawnWEvent?.Post(gameObject);
     }
 
     // Update is called once per frame
@@ -54,8 +64,9 @@ public class EnemyBaseAI : MonoBehaviour
     {
         if (agent.velocity != Vector3.zero) { animator.SetBool("moving", true); }
         else { animator.SetBool("moving", false); }
-        
+
         LaunchActions();
+        Debug.Log(state.ToString());
     }
 
     public virtual void LaunchActions()
@@ -66,16 +77,19 @@ public class EnemyBaseAI : MonoBehaviour
                 unit.LookForPlayer(() => state = State.Chasing);
                 break;
             case State.Chasing:
-                unit.ChaseThePlayer(1f, () => state = State.Attacking);
+                unit.ChaseThePlayer(enemyProfile.rangeToAttack, () => state = State.Attacking);
                 break;
             case State.Attacking:
-                if (!attacking)
+                if(unit.GetDistanceFromPlayer() <= enemyProfile.rangeToAttack)
                 {
-                    attacking = true;
-                    unit.Attack(2f, () => { attacking = false; state = State.Chasing; });
-                    attackAnimation?.Invoke();
-                    //enemyProfile.attackWEvent?.Post(gameObject);
+                    if (!unit.attacking)
+                    {
+                        unit.Attack(2f, () => { state = State.Chasing; });
+                        attackAnimation?.Invoke();
+                        //enemyProfile.attackWEvent?.Post(gameObject);
+                    }
                 }
+                else { state = State.Chasing; }
                 break;
         }
     }
@@ -87,10 +101,16 @@ public class EnemyBaseAI : MonoBehaviour
         if (health <= 0) { Die(); }
         else
         {
-            unit.GetStaggered(enemyProfile.staggerDuration, null);
+            GetStaggered();
+            state = State.Stagger;
             hitAnimation?.Invoke();
             enemyProfile.getHitWEvent?.Post(gameObject);
         }
+    }
+
+    public virtual void GetStaggered()
+    {
+        unit.GetStaggered(enemyProfile.staggerDuration, () => state = State.Chasing);
     }
 
     public virtual void Die()
@@ -105,5 +125,33 @@ public class EnemyBaseAI : MonoBehaviour
         animator.SetTrigger("dead");
         enemyProfile.deathWEvent?.Post(gameObject);
         //Destroy(gameObject);
+    }
+    public void DamagePlayerTouched()
+    {
+        Collider[] hits = Physics.OverlapSphere(attackPoint.position, enemyProfile.attackRange, playerMask);
+        if (hits.Length > 0)
+        {
+            if (hits[0].transform != null)
+            {
+                Debug.Log(hits[0].transform.name);
+                Player player = hits[0].transform.GetComponent<Player>();
+                if (player != null) player.OnHit(enemyProfile.hitPlayerWEventSwitch);
+                int damage = enemyProfile.attackDamage;
+                if (enemyProfile.backstab)
+                {
+                    float angle = Vector3.Angle(hits[0].transform.forward, transform.forward);
+                    Debug.Log(angle);
+
+                    if (angle < 90f) { damage *= 2; }
+                }
+                PlayerHelper.instance.TakeDamage(damage);
+            }
+        }
+        else
+        {
+            Debug.Log("No gameobject touched with Player layer");
+        }
+
+        if (unit.GetDistanceFromPlayer() >= 2.5f) unit.attackTimer = enemyProfile.attackCooldown;
     }
 }

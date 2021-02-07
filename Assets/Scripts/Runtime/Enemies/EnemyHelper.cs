@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class EnemyHelper
 {
-    public static void TakeDamage(EnemyBase enemy)
+    public static void TakeDamage(EnemyBaseAI enemy)
     {
         enemy.TakeDamage();
     }
