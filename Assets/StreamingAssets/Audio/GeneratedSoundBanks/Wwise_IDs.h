@@ -17,6 +17,7 @@ namespace AK
         static const AkUniqueID GYARUPLAYATTACKSHORT = 166469259U;
         static const AkUniqueID GYARUSTOPATTACKLONG = 3302019815U;
         static const AkUniqueID PLAYAMBIANCE1 = 2650513656U;
+        static const AkUniqueID PLAYAMBIANCEJANITORROOM = 3131532911U;
         static const AkUniqueID PLAYATTACK2 = 204688551U;
         static const AkUniqueID PLAYATTACK3 = 204688550U;
         static const AkUniqueID PLAYBACKSTAB = 2629272678U;
