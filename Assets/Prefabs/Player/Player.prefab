@@ -10837,7 +10837,7 @@ MonoBehaviour:
   health: 5
   stopControlls: 0
   attackWeapon: {fileID: 5387979087875665985}
-  attackPointRange: 1.32
+  attackPointRange: 1.75
   attackLayerMask:
     serializedVersion: 2
     m_Bits: 1

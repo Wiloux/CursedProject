@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TelekinesyGuyTrigger : MonoBehaviour
+public class WardenTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("Player"))
         {
-            transform.parent.GetComponent<TelekinesyGuy>().TriggerRise();
+            transform.parent.GetComponent<WardenAI>().StartSpawn();
             Destroy(gameObject);
         }
     }

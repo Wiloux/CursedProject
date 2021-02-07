@@ -14,6 +14,7 @@ public class EnemyUnit : MonoBehaviour
         Idle,
         Looking,
         Chasing,
+        Summoning,
         Attacking,
         Running,
         Watching, 
@@ -43,6 +44,7 @@ public class EnemyUnit : MonoBehaviour
     private bool chasing;
     private bool running;
     private bool watching;
+    public Action HandleSpawn;
     private Vector3 runStartPosition;
 
     // Start is called before the first frame update
@@ -78,6 +80,7 @@ public class EnemyUnit : MonoBehaviour
                 HandleStagger();
                 break;
         }
+        if(attackTimer >= 0) { attackTimer -= Time.deltaTime; }
     }
 
     #region Unit methods
@@ -100,6 +103,12 @@ public class EnemyUnit : MonoBehaviour
     {
         onActionFinished = onPlayerFound;
         state = State.Looking;
+    }
+
+    public void Summon(Action onSummonFinished)
+    {
+        onActionFinished = onSummonFinished;
+        state = State.Summoning;
     }
 
     public void RunFromPlayer(float stopDistance,Action onStoppedRunning)
@@ -151,6 +160,7 @@ public class EnemyUnit : MonoBehaviour
         if (!attacking)
         {
             attacking = true;
+            attackTimer = enemyProfile.attackCooldown;
             timer = stationaryDuration;
             onActionFinished = onAttackFinished;
             onActionFinished += () => attacking = false;

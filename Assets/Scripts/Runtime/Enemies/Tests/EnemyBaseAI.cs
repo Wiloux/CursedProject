@@ -8,9 +8,11 @@ public class EnemyBaseAI : MonoBehaviour
 {
     protected enum State
     {
+        Spawning,
         Idle,
         Looking,
         Chasing,
+        Summoning,
         Attacking,
         Running,
         Watching,
@@ -18,7 +20,6 @@ public class EnemyBaseAI : MonoBehaviour
         Dead
     }
     protected State state;
-    protected State lastState;
     protected EnemyUnit unit;
     protected Transform player;
 
@@ -32,6 +33,7 @@ public class EnemyBaseAI : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
 
     protected bool attacking;
+    protected float attackTimer;
 
     #region Animations Actions
     protected Action attackAnimation;
@@ -99,12 +101,16 @@ public class EnemyBaseAI : MonoBehaviour
         if (health <= 0) { Die(); }
         else
         {
-            lastState = state;
-            unit.GetStaggered(enemyProfile.staggerDuration, () => state = lastState) ;
+            GetStaggered();
             state = State.Stagger;
             hitAnimation?.Invoke();
             enemyProfile.getHitWEvent?.Post(gameObject);
         }
+    }
+
+    public virtual void GetStaggered()
+    {
+        unit.GetStaggered(enemyProfile.staggerDuration, () => state = State.Chasing);
     }
 
     public virtual void Die()
