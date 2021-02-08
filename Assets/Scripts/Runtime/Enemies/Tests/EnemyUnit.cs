@@ -235,7 +235,7 @@ public class EnemyUnit : MonoBehaviour
 
     #region Cast checks methods
     // CAST CHECKS ---------------------------------------------------------------------------
-    private bool isPlayerVisible(float range)
+    public bool isPlayerVisible(float range)
     {
         bool boolean = false;
         RaycastHit hit;
@@ -253,7 +253,7 @@ public class EnemyUnit : MonoBehaviour
         }
         return boolean;
     }
-    private bool isPlayerAimable()
+    public bool isPlayerAimable()
     {
         Vector3 dir = (player.transform.position - transform.position).normalized;
         RaycastHit[] hits;
