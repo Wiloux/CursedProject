@@ -30,13 +30,20 @@ public class WardenAI : EnemyBaseAI
     [SerializeField] private float shardRotationDuration;
     private Vector3 shardRotationAxis;
 
+    #region Wwise Events
+    [Space(10)][Header("Wwise Events")]
+    [SerializeField] private AK.Wwise.Event spawnWEvent;
+    [SerializeField] private AK.Wwise.Event onIdleEnterWEvent;
+    #endregion
+
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
 
-        attackAnimation = () => animator.SetTrigger("summon");
+        attackAnimation = () => animator.SetInteger("attackType", UnityEngine.Random.Range(0,2));
+        attackAnimation += () => animator.SetTrigger("attack");
 
         hitAnimation = () => animator.SetTrigger("hit");
         hitAnimation += () => animator.SetInteger("randomHurt", UnityEngine.Random.Range(0, 2));
@@ -60,15 +67,22 @@ public class WardenAI : EnemyBaseAI
             case State.Spawning:
                 transform.position += transform.up * spawnSpeed * Time.deltaTime;
                 if(transform.position.y > spawnPos.y) {
+                    //Activate behaviour
                     transform.position = spawnPos;
                     collider.enabled = true;
                     rb.useGravity = true;
                     agent.enabled = true;
+
+                    // Audio && animation gestion
+                    animator.SetTrigger("endSpawn");
+                    onIdleEnterWEvent?.Post(gameObject);
+
+                    // State gestion
                     state = State.Chasing; 
                 }
                 break;
             case State.Chasing:
-                unit.ChaseThePlayer(enemyProfile.rangeToAttack, () => state = State.Summoning);
+                unit.ChaseThePlayer(enemyProfile.rangeToAttack, () => { state = State.Summoning; animator.SetTrigger("summon"); });
                 break;
             case State.Summoning:
                 HandleShard();
@@ -121,7 +135,7 @@ public class WardenAI : EnemyBaseAI
                     while (shardRotationAxis == Vector3.zero) { shardRotationAxis = new Vector3(Random.Range(0, 2f), Random.Range(0, 2f), Random.Range(0, 2f)); }
                     return;
                 }
-                shard.transform.position = Vector3.Lerp(spawnPos, shardTargetPos, 1 - (timer / shardRisingDuration));
+                shard.transform.position = Vector3.Lerp(shardSpawnPos, shardTargetPos, 1 - (timer / shardRisingDuration));
                 shard.transform.rotation = Quaternion.Lerp(shardSpawnRot, Quaternion.LookRotation(PlayerHelper.instance.transform.position - shardTargetPos), 1 - (timer / shardRisingDuration));
                 break;
             case ShardState.Rotating:
@@ -131,6 +145,7 @@ public class WardenAI : EnemyBaseAI
                 {
                     shardState = ShardState.Launched;
                     shard.transform.rotation = shardTargetRot;
+                    attackAnimation?.Invoke();
                     return;
                 }
                 shard.transform.Rotate(shardRotationAxis, 360f * 2 * (Time.deltaTime / 0.5f));
@@ -141,6 +156,7 @@ public class WardenAI : EnemyBaseAI
                 shard.rb.AddForce(throwDir * 2f, ForceMode.Impulse);
                 shardState = ShardState.None;
                 timer = enemyProfile.attackCooldown;
+                onIdleEnterWEvent?.Post(gameObject);
                 state = State.Chasing;
                 break;
         }
@@ -149,6 +165,7 @@ public class WardenAI : EnemyBaseAI
     public void StartSpawn()
     {
         state = State.Spawning;
+        spawnWEvent?.Post(gameObject);
     }
     private void SpawnSpike()
     {
@@ -175,6 +192,7 @@ public class WardenAI : EnemyBaseAI
     {
         if(shard.gameObject != null)Destroy(shard.gameObject);
         shardState = ShardState.None;
+        
         unit.GetStaggered(enemyProfile.staggerDuration, () => state = State.Summoning);
     }
 

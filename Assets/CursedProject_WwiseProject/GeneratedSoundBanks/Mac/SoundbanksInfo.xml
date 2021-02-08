@@ -21,7 +21,7 @@
 				<GameParameter Id="4143461479" Name="RTPC_Reverb" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="128681346">
+		<SoundBank Id="2879190521" Language="SFX" Hash="641813902">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -55,6 +55,26 @@
 						<File Id="387338394" Language="SFX">
 							<ShortName>Ambiances\WindCity1.wav</ShortName>
 							<Path>SFX\Ambiances\WindCity1_77FE18DF.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3131532911" Name="PlayAmbianceJanitorRoom" ObjectPath="\Events\Ambiances\PlayAmbianceJanitorRoom" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="96390048" Language="SFX">
+							<ShortName>Ambiances\Janitor House\Air Vent 1.wav</ShortName>
+							<Path>SFX\Ambiances\Janitor House\Air Vent 1_D79FB2B7.wem</Path>
+						</File>
+						<File Id="285837040" Language="SFX">
+							<ShortName>Ambiances\Janitor House\MetalClang3.wav</ShortName>
+							<Path>SFX\Ambiances\Janitor House\MetalClang3_10C4C929.wem</Path>
+						</File>
+						<File Id="607129376" Language="SFX">
+							<ShortName>Ambiances\Janitor House\MetalClang2.wav</ShortName>
+							<Path>SFX\Ambiances\Janitor House\MetalClang2_10C4C929.wem</Path>
+						</File>
+						<File Id="780781574" Language="SFX">
+							<ShortName>Ambiances\Janitor House\MetalClang1.wav</ShortName>
+							<Path>SFX\Ambiances\Janitor House\MetalClang1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
