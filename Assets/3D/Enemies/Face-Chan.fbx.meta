@@ -1,38 +1,47 @@
 fileFormatVersion: 2
-guid: 55a02f4e0a7d83d47b393f13e3858a48
+guid: b496b70fa7aa6904cafc32d1d6633575
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 2625949983422293302
-    second: XD|ArmatureAction.001
+      74: 494588304729616438
+    second: 'XD| '
   - first:
-      74: 5371324967925880896
-    second: XD|metarigAction
+      74: -2200705522492732325
+    second: XD|PigTailAttack
   - first:
-      74: -6305277397115898052
-    second: XD|rigAction.002
+      74: 7250412091571537396
+    second: XD|PigtailIdle
   - first:
-      74: 9195285153495517907
-    second: metarig|ArmatureAction.001
+      74: 3954643104665693746
+    second: XD|PigTailWalk
   - first:
-      74: -887982601649841707
-    second: metarig|metarigAction
+      74: 9007549167241617231
+    second: metarig|Hurt1
   - first:
-      74: -7549185312224323087
-    second: rig|ArmatureAction.001
+      74: 6394785727354027343
+    second: rig|Death
   - first:
-      74: -6870869795339962711
-    second: rig|IdleBreak2
+      74: -5835766088492990237
+    second: rig|Hurt1
   - first:
-      74: 3516919039181775064
-    second: rig|metarigAction
+      74: -1336522625651305326
+    second: rig|Hurt2
   - first:
-      74: 9121768560578137977
-    second: rig|rigAction.003
+      74: -838562560217069231
+    second: rig|Hurt3
   - first:
-      74: -5480419611278045171
-    second: rig|Run
+      74: -7361427651036151181
+    second: rig|Idle
+  - first:
+      74: 4884684189173904822
+    second: rig|IdleAttack
+  - first:
+      74: 1023992570608409904
+    second: rig|Walk
+  - first:
+      74: -489497803930284470
+    second: rig|WalkAttack
   externalObjects: {}
   materials:
     materialImportMode: 2
