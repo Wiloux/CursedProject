@@ -5020,11 +5020,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db6e38c5192e53f439dff7c345834f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  PS: {fileID: 5259300731009141555}
-  isPaused: 0
-  preparationDuration: 2
-  hitWall:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 00af855cb9d10c444b23670070f6fd32, type: 2}
+  rb: {fileID: 2423237724493108290}

@@ -6392,7 +6392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2846674624756984861}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 22.722399, y: -2.8326137, z: 0.082999684}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 578.21027, y: 578.21027, z: 578.21027}
   m_Children:
   - {fileID: 4537166130508631044}
@@ -13925,7 +13925,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6587952987645366717}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 22.712183, y: 1.5844296, z: 0.30110896}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8.206841, y: 7.8431897, z: 7.8431897}
   m_Children: []
   m_Father: {fileID: 8334025050543383530}
@@ -18606,6 +18606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8334025050543383530}
   - component: {fileID: 4340058181923662683}
+  - component: {fileID: 1580290703}
   m_Layer: 0
   m_Name: Face-Chan_Prefab
   m_TagString: Untagged
@@ -18620,7 +18621,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8711007367042971984}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.13, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18641,7 +18642,7 @@ Animator:
   m_GameObject: {fileID: 8711007367042971984}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b57a37a17d56a9a4d9cec43947180d42, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1e12ab1a739ca7540a61708305a6fb3e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -18650,6 +18651,42 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1580290703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8711007367042971984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b108d445fd1aaad4dafec57db2ce237e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Footsteps:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  Attack1:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  Attack2Sound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  Attack3Sound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  Other1Sound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  Other2Sound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &8718350185019909811
 GameObject:
   m_ObjectHideFlags: 0

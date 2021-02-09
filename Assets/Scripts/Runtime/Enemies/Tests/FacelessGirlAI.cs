@@ -29,6 +29,12 @@ public class FacelessGirlAI : EnemyBaseAI
     public override void Start()
     {
         base.Start();
+
+        StartShowingFace = () => animator.SetBool("attack", true);
+        StopShowingFace = () => animator.SetBool("attack", false);
+
+        hitAnimation = () => { animator.SetInteger("randomHurt", UnityEngine.Random.Range(0, 3)); animator.SetTrigger("hit"); };
+
         HideFace();
     }
 
@@ -46,7 +52,7 @@ public class FacelessGirlAI : EnemyBaseAI
                 break;
             case State.Chasing:
                 if (faceState == FaceState.Hiding) { state = State.Running; return; }
-                unit.ChaseThePlayer(enemyProfile.rangeToAttack, null);
+                if(unit.GetDistanceFromPlayer() > enemyProfile.rangeToAttack) unit.ChaseThePlayer(enemyProfile.rangeToAttack, null);
                 break;
             case State.Running:
                 if(faceState == FaceState.Showing) { state = State.Chasing; return; }
@@ -73,7 +79,8 @@ public class FacelessGirlAI : EnemyBaseAI
             {
                 if (unit.isPlayerVisible(enemyProfile.rangeToAttack))
                 {
-                    float angle = Vector3.Angle(player.transform.forward, transform.forward);
+                    transform.rotation = Quaternion.LookRotation((player.transform.position - transform.position).normalized);
+                    float angle = Vector3.Angle(player.transform.forward, player.transform.position - transform.position);
                     if(angle > 90f) { Debug.Log("Stealing health"); }
                 }
             }

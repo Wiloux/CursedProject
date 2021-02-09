@@ -1751,7 +1751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AgentTypeID: -1372625422
+  m_AgentTypeID: 0
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
@@ -1765,7 +1765,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.25333333
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: f8b3417fc6d69c04783d81f84341952d, type: 2}
 --- !u!1 &1911095908
@@ -2252,15 +2252,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8217445490625157909, guid: e06806995570402498e1fca9a4cd2df6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.43
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8217445490625157909, guid: e06806995570402498e1fca9a4cd2df6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.53
+      value: 1.532
       objectReference: {fileID: 0}
     - target: {fileID: 8217445490625157909, guid: e06806995570402498e1fca9a4cd2df6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.99
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8217445490625157909, guid: e06806995570402498e1fca9a4cd2df6, type: 3}
       propertyPath: m_LocalRotation.w

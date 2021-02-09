@@ -289,22 +289,32 @@ public class EnemyUnit : MonoBehaviour
     #endregion
     private Vector3 GetRunningPoint()
     {
-        Vector3 runningPointPos = transform.position;
-        Vector2 direction = new Vector2(UnityEngine.Random.Range(-1f, 1.01f), UnityEngine.Random.Range(-1f, 1.01f)).normalized;
+        Vector3 runningPointPos = Vector3.zero;
 
         //Debug.Log(direction);
         //Debug.Log(transform.position + new Vector3(direction.x, 0, direction.y) * runningRange);
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(runningPointPos, out hit, enemyProfile.runningRange / 4, navMeshMask))
+        for(int i = 0; i <10;i++)
         {
-            runningPointPos = transform.position + new Vector3(direction.x, 0, direction.y) * enemyProfile.runningRange;
-            //Debug.Log("Running point found");
+            Vector3 direction = transform.position - player.transform.position;
+            direction.y = 0;
+            direction.Normalize();
+
+            direction = RandomizeDirection(direction);
+
+            runningPointPos = transform.position + direction * enemyProfile.runningRange;
+
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(runningPointPos, out hit, enemyProfile.runningRange / 4, navMeshMask))
+            {
+                return hit.position;
+            }
         }
-        else
-        {
-            //Debug.Log("Running point not found bruh");
-        }
-        return runningPointPos;
+        Debug.LogWarning("Running point not found");
+        return transform.position;
+    }
+    private Vector3 RandomizeDirection(Vector3 direction)
+    {
+        return new Vector3(direction.x + UnityEngine.Random.Range(-direction.x, direction.x), 0,direction.z + UnityEngine.Random.Range(-direction.z,direction.z));
     }
 }
 #if UNITY_EDITOR
