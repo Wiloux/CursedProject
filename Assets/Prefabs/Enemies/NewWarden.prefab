@@ -2340,7 +2340,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358276066269869510}
-  m_LocalRotation: {x: -0, y: 0.46547568, z: -0, w: 0.8850607}
+  m_LocalRotation: {x: 0, y: 0.46547544, z: 0, w: 0.8850608}
   m_LocalPosition: {x: -9.21, y: -3.84, z: -10.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2372,6 +2372,14 @@ MonoBehaviour:
   spawnDuration: 3
   shardRisingDuration: 2
   shardRotationDuration: 0.5
+  spawnWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0655ee6a33e855f40b824173c53d4f3a, type: 2}
+  onIdleEnterWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2b2b0634275f7d64fa5e6dd927c65ae3, type: 2}
 --- !u!114 &4957036160175238421
 MonoBehaviour:
   m_ObjectHideFlags: 0
