@@ -136,7 +136,7 @@ public class EnemyBaseAI : MonoBehaviour
                 Debug.Log(hits[0].transform.name);
                 Player player = hits[0].transform.GetComponent<Player>();
                 if (player != null) player.OnHit(enemyProfile.hitPlayerWEventSwitch);
-                int damage = enemyProfile.attackDamage;
+                float damage = enemyProfile.attackDamage;
                 if (enemyProfile.backstab)
                 {
                     float angle = Vector3.Angle(hits[0].transform.forward, transform.forward);

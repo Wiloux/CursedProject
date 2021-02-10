@@ -14,6 +14,8 @@ public class FacelessGirlAI : EnemyBaseAI
     [SerializeField] private float showingFaceDuration;
     [SerializeField] private float hidingFaceDuration;
 
+    [SerializeField] private Animator[] hairsAnimator;
+
     private float faceTimer;
 
     private Action StartShowingFace;
@@ -30,12 +32,19 @@ public class FacelessGirlAI : EnemyBaseAI
     {
         base.Start();
 
-        StartShowingFace = () => animator.SetBool("attack", true);
-        StopShowingFace = () => animator.SetBool("attack", false);
+        StartShowingFace = () => { animator.SetBool("attack", true); UpdateHairsAnimators("attack", true); };
+        StopShowingFace = () => { animator.SetBool("attack", false); UpdateHairsAnimators("attack", false); };
 
         hitAnimation = () => { animator.SetInteger("randomHurt", UnityEngine.Random.Range(0, 3)); animator.SetTrigger("hit"); };
 
         HideFace();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        if (agent.velocity != Vector3.zero) { UpdateHairsAnimators("moving", true); }
+        else { UpdateHairsAnimators("moving", false); }
     }
 
     // Start is called before the first frame update
@@ -81,7 +90,7 @@ public class FacelessGirlAI : EnemyBaseAI
                 {
                     transform.rotation = Quaternion.LookRotation((player.transform.position - transform.position).normalized);
                     float angle = Vector3.Angle(player.transform.forward, player.transform.position - transform.position);
-                    if(angle > 90f) { Debug.Log("Stealing health"); }
+                    if(angle > 90f) { PlayerHelper.instance.TakeDamage(enemyProfile.attackDamage * Time.deltaTime, false); }
                 }
             }
         }
@@ -100,5 +109,13 @@ public class FacelessGirlAI : EnemyBaseAI
         StopShowingFace?.Invoke();
         faceState = FaceState.Hiding;
         faceTimer = hidingFaceDuration;
+    }
+
+    private void UpdateHairsAnimators(string animatorParameter, bool newParameterState)
+    {
+        foreach(Animator hairAnimator in hairsAnimator)
+        {
+            hairAnimator.SetBool(animatorParameter, newParameterState);
+        }
     }
 }

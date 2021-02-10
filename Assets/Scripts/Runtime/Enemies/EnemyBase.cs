@@ -51,7 +51,7 @@ public class EnemyBase : MonoBehaviour
     private bool range;
     protected GameObject projectilePrefab;
 
-    private int attackDamage;
+    private float attackDamage;
     private float rangeToAttack = 2f;
     // The point where colliders will be detected for the attack
     [SerializeField] private Transform attackPoint;
@@ -334,14 +334,14 @@ public class EnemyBase : MonoBehaviour
                 Debug.Log(hits[0].transform.name);
                 Player player = hits[0].transform.GetComponent<Player>();
                 if(player!= null) player.OnHit(hitPlayerWEventSwitch);
-                int damage = attackDamage;
+                float damage = attackDamage;
                 if (backstab)
                 {
                     float angle = Vector3.Angle(hits[0].transform.forward, transform.forward);
 
                     if (angle < 90f) { damage *= 2; }
                 }
-                PlayerHelper.instance.TakeDamage(attackDamage);
+                PlayerHelper.instance.TakeDamage(attackDamage, true);
             }
         }
         else

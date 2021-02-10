@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public enum Character { gyaru, mysterious, officeworker };
     public Character character;
 
-    public int health = 3;
+    public float health = 3;
     private bool dead;
 
     public bool stopControlls;
@@ -291,14 +291,14 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Health related methods
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage, bool stagger)
     {
         health -= damage;
         DisableAttackWeaponParticles();
         if(health <= 0) { Die(); }
         else
         {
-            GetHitAnimation?.Invoke();
+            if(stagger) GetHitAnimation?.Invoke();
         }
     }
 
@@ -310,9 +310,12 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        dead = true;
-        controller.dead = true;
-        DeathAnimation?.Invoke();
+        if (!dead)
+        {
+            dead = true;
+            controller.dead = true;
+            DeathAnimation?.Invoke();
+        }
     }
     #endregion
 

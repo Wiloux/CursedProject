@@ -44,9 +44,9 @@ public class PlayerHelper : MonoBehaviour
         player.stopControlls = !player.stopControlls;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage, bool stagger = true)
     {
-        player.TakeDamage(damage);
+        player.TakeDamage(damage, stagger);
     }
     #endregion
 }

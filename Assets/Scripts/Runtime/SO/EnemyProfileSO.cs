@@ -26,7 +26,7 @@ public class EnemyProfileSO : ScriptableObject
     public bool range;
     public GameObject projectilePrefab;
 
-    public int attackDamage = 1;
+    public float attackDamage = 1;
     [Tooltip("The range at which the enemy starts to attack")]
     public float rangeToAttack = 2f;
     [Tooltip("Max range between attackPoint and hit colliders")]

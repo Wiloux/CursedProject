@@ -10834,7 +10834,7 @@ MonoBehaviour:
   controller: {fileID: 5570753806488649902}
   animator: {fileID: 6664270546565872518}
   character: 0
-  health: 5
+  health: 10
   stopControlls: 0
   attackWeapon: {fileID: 5387979087875665985}
   attackPointRange: 1.75
