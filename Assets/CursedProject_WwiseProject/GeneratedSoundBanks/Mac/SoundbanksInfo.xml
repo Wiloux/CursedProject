@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="906305766">
+		<SoundBank Id="1355168291" Language="SFX" Hash="919075903">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -21,7 +21,7 @@
 				<GameParameter Id="4143461479" Name="RTPC_Reverb" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="641813902">
+		<SoundBank Id="2879190521" Language="SFX" Hash="3997118592">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -679,22 +679,8 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="4106886787" Name="PlayFSChicken" ObjectPath="\Events\Tests\Chicken\PlayFSChicken" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
-					<IncludedMemoryFiles>
-						<File Id="254891926" Language="SFX">
-							<ShortName>1.wav</ShortName>
-							<Path>SFX\1_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="2613825061" Name="PlayGiggleChicken" ObjectPath="\Events\Tests\Chicken\PlayGiggleChicken" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.750771" DurationMax="1.750771">
-					<IncludedMemoryFiles>
-						<File Id="713697455" Language="SFX">
-							<ShortName>gf1.wav</ShortName>
-							<Path>SFX\gf1_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
+				<Event Id="4106886787" Name="PlayFSChicken" ObjectPath="\Events\Tests\Chicken\PlayFSChicken" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2613825061" Name="PlayGiggleChicken" ObjectPath="\Events\Tests\Chicken\PlayGiggleChicken" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="145167493" Name="PlayHighlight" ObjectPath="\Events\Tests\Menu\PlayHighlight" DurationType="OneShot" DurationMin="0.266259" DurationMax="0.266259">
 					<IncludedMemoryFiles>
 						<File Id="697333511" Language="SFX">
@@ -703,14 +689,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4251718543" Name="PlayHitChicken" ObjectPath="\Events\Tests\Chicken\PlayHitChicken" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.308390" DurationMax="0.308390">
-					<IncludedMemoryFiles>
-						<File Id="768588542" Language="SFX">
-							<ShortName>NotHittingPlayer.wav</ShortName>
-							<Path>SFX\NotHittingPlayer_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
+				<Event Id="4251718543" Name="PlayHitChicken" ObjectPath="\Events\Tests\Chicken\PlayHitChicken" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1168436793" Name="PlayKeypress" ObjectPath="\Events\Tests\Menu\PlayKeypress" DurationType="OneShot" DurationMin="0.149773" DurationMax="0.149773">
 					<IncludedMemoryFiles>
 						<File Id="26955166" Language="SFX">
@@ -858,14 +837,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1813814736" Name="WeirdAttack" ObjectPath="\Events\Tests\Chicken\WeirdAttack" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.677687" DurationMax="0.677687">
-					<IncludedMemoryFiles>
-						<File Id="177710672" Language="SFX">
-							<ShortName>beartrap trigger.wav</ShortName>
-							<Path>SFX\beartrap trigger_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
+				<Event Id="1813814736" Name="WeirdAttack" ObjectPath="\Events\Tests\Chicken\WeirdAttack" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 			<GameParameters>
 				<GameParameter Id="222722569" Name="RTPC_Occlusion_LoPass" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Occlusion_LoPass"/>
