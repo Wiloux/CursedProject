@@ -15,9 +15,19 @@
 					<ChildrenList>
 						<MusicSegment Name="chase bass" ID="{03CDE996-8FD2-4B41-BBDB-02015ED2EA43}" ShortID="459903504">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="EndPosition" Type="Real64" Value="25500"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="EnemyTest" ID="{D1E10BDB-7609-4C24-ADF6-A481FD3025B0}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
 								</Reference>

@@ -30,11 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5cf24529c5ae0c4fb7d461ec6430a707
     GuidInternal: 
-<<<<<<< HEAD
-    m_lastTime: -8585890560328459698
-=======
-    m_lastTime: -8585890383510295030
->>>>>>> main
+    m_lastTime: -8585890439955410959
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -64,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585890660735292722
+    m_lastTime: -8585885328410730538
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -92,7 +88,7 @@ MonoBehaviour:
     ParentPath: Ambiances
     guid: afe1d25d64bef34386b4f24de10966ec
     GuidInternal: 
-    m_lastTime: -8585893874985444404
+    m_lastTime: -8585888767089313929
     List:
     - name: PlayAmbiance1
       guid: 07d1cb22bf8926438f2cee98c6ba5edc
@@ -103,6 +99,18 @@ MonoBehaviour:
       - ElementName: PlayAmbiance1
         ObjectType: 3
       Path: Ambiances\PlayAmbiance1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayAmbianceJanitorRoom
+      guid: 4b0c68c90e86a941a33febc367bc467a
+      id: 3131532911
+      PathAndIcons:
+      - ElementName: Ambiances
+        ObjectType: 12
+      - ElementName: PlayAmbianceJanitorRoom
+        ObjectType: 3
+      Path: Ambiances\PlayAmbianceJanitorRoom
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -421,7 +429,7 @@ MonoBehaviour:
     ParentPath: Others
     guid: efa640062964d54a8ffe7b161b1b8706
     GuidInternal: 
-    m_lastTime: -8585890660740303815
+    m_lastTime: -8585892059699502395
     List:
     - name: StopAllGameObject
       guid: 77ad11207275e442809cb4620c80ec05
@@ -442,7 +450,7 @@ MonoBehaviour:
     ParentPath: Players
     guid: 84878f6dc9542744bdce26203903b0f0
     GuidInternal: 
-    m_lastTime: -8585890561816034750
+    m_lastTime: -8585885334303151662
     List:
     - name: Gyaru
       guid: 474e1a04614f9f4fa20cfb27e9ca7c35
@@ -557,7 +565,7 @@ MonoBehaviour:
     ParentPath: Tests
     guid: 7e1e99e9ec97634b9be4486f5e454591
     GuidInternal: 
-    m_lastTime: -8585890660740243959
+    m_lastTime: -8585885328410610844
     List:
     - name: Chicken
       guid: 90bf0756f07b41458e68dd708f9190ce
@@ -592,20 +600,6 @@ MonoBehaviour:
       - ElementName: Menu
         ObjectType: 4
       Path: Tests\Menu
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: PlayExpDialogue
-      guid: 19989124dbf6724a819c0173e6e8565c
-      id: 1701780106
-      PathAndIcons:
-      - ElementName: Tests
-        ObjectType: 12
-      - ElementName: DialogueExp
-        ObjectType: 4
-      - ElementName: PlayExpDialogue
-        ObjectType: 3
-      Path: Tests\DialogueExp\PlayExpDialogue
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -679,20 +673,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: StopExpDialogue
-      guid: e93ac821ed81354d8601723fe3b7377b
-      id: 1672325348
-      PathAndIcons:
-      - ElementName: Tests
-        ObjectType: 12
-      - ElementName: DialogueExp
-        ObjectType: 4
-      - ElementName: StopExpDialogue
-        ObjectType: 3
-      Path: Tests\DialogueExp\StopExpDialogue
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: TestBass
       guid: e93adf2b40c0ab47b6c29fd905dc8f76
       id: 3241046308
@@ -727,11 +707,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3f87fc84d75f844293f581868cfb0aa6
     GuidInternal: 
-<<<<<<< HEAD
-    m_lastTime: -8585890560349527449
-=======
-    m_lastTime: -8585890383516236218
->>>>>>> main
+    m_lastTime: -8585890439962661525
     List:
     - name: RTPC_Occlusion_LoPass
       guid: 0f26be8065d197418710898c20cf8ede
@@ -796,7 +772,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f528942bed683349be7cda8752e78d33
     GuidInternal: 
-    m_lastTime: -8585893874980413645
+    m_lastTime: -8585893989235490384
     List:
     - name: GroundMaterial
       guid: e125bcfacdffd045abfc9a9228b1f1bd
@@ -926,9 +902,6 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585906168817408006
     List: []
-  ExpandedItems:
-  - /CursedProject_WwiseProject
-  - /CursedProject_WwiseProject/Events
-  - /CursedProject_WwiseProject/Events/Ambiances
+  ExpandedItems: []
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
