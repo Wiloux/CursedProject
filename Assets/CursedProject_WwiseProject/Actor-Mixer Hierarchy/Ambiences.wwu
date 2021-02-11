@@ -101,7 +101,7 @@
 								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-27</Value>
+										<Value>-34</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -115,9 +115,22 @@
 							</ReferenceList>
 							<ChildrenList>
 								<RandomSequenceContainer Name="Clangs" ID="{3209E248-5633-4736-AFEB-F8E507CEA824}" ShortID="686254581">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="Effect0">
+											<Custom CreatedFrom="{D20F3717-EBA2-4E3A-84F8-C8BD431563FB}">
+												<Effect Name="Echoes_Linear_(Custom)" ID="{F01C8194-BBA3-4000-A930-7D3C66EF44F6}" ShortID="564411489" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
+													<PropertyList>
+														<Property Name="DelayTime" Type="Real32" Value="0.12"/>
+														<Property Name="Feedback" Type="Real32" Value="17"/>
+													</PropertyList>
+												</Effect>
+											</Custom>
 										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
