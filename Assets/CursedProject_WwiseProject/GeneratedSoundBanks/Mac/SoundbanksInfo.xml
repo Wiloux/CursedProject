@@ -21,7 +21,7 @@
 				<GameParameter Id="4143461479" Name="RTPC_Reverb" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="3997118592">
+		<SoundBank Id="2879190521" Language="SFX" Hash="452957018">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -396,30 +396,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1701780106" Name="PlayExpDialogue" ObjectPath="\Events\Tests\DialogueExp\PlayExpDialogue" DurationType="OneShot" DurationMin="4.500000" DurationMax="8.500000">
-					<IncludedMemoryFiles>
-						<File Id="223542517" Language="SFX">
-							<ShortName>voe player 2.wav</ShortName>
-							<Path>SFX\voe player 2_10C4C929.wem</Path>
-						</File>
-						<File Id="239106664" Language="SFX">
-							<ShortName>voe board 2.wav</ShortName>
-							<Path>SFX\voe board 2_10C4C929.wem</Path>
-						</File>
-						<File Id="711640135" Language="SFX">
-							<ShortName>voe board 3.wav</ShortName>
-							<Path>SFX\voe board 3_10C4C929.wem</Path>
-						</File>
-						<File Id="758882226" Language="SFX">
-							<ShortName>voe board 1.wav</ShortName>
-							<Path>SFX\voe board 1_10C4C929.wem</Path>
-						</File>
-						<File Id="957116134" Language="SFX">
-							<ShortName>voe player 1.wav</ShortName>
-							<Path>SFX\voe player 1_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
+				<Event Id="1701780106" Name="PlayExpDialogue" ObjectPath="\Events\Tests\DialogueExp\PlayExpDialogue" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1241118191" Name="PlayFootstepsPlayer" ObjectPath="\Events\Players\PlayFootstepsPlayer" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.142217" DurationMax="0.473162">
 					<IncludedMemoryFiles>
 						<File Id="47477698" Language="SFX">
