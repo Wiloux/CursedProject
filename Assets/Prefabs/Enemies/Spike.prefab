@@ -5021,3 +5021,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2423237724493108290}
+  damage: 0
+  particle: {fileID: 5259300731009141555}
+  shardWallHit:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 00af855cb9d10c444b23670070f6fd32, type: 2}

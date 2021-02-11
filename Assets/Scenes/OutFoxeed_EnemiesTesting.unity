@@ -291,8 +291,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318103460}
-  m_LocalRotation: {x: 0.38704857, y: -0.4781293, z: 0.2474368, w: 0.7485725}
-  m_LocalPosition: {x: 14.212715, y: 18.363325, z: -6.344918}
+  m_LocalRotation: {x: -0.32108706, y: 0.3633669, z: -0.13509478, w: -0.86407}
+  m_LocalPosition: {x: 4.2782574, y: 10.272188, z: -9.524348}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1250875318}
@@ -1402,13 +1402,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3728557137432105148, guid: a190e9222e2f94e458b5fac796614412, type: 3}
+      propertyPath: m_positionOffsetData.positionOffset.x
+      value: 3.905332
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728557137432105148, guid: a190e9222e2f94e458b5fac796614412, type: 3}
+      propertyPath: m_positionOffsetData.positionOffset.z
+      value: -1.1557757
+      objectReference: {fileID: 0}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.035454
+      value: 1.27
       objectReference: {fileID: 0}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1416,7 +1424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.92
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1450,6 +1458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8536683932730595807, guid: a190e9222e2f94e458b5fac796614412, type: 3}
+      propertyPath: bloodParticlesPrefab
+      value: 
+      objectReference: {fileID: 8138358216146207782, guid: edb40d6bdd55b9443a05e92e5941f727, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a190e9222e2f94e458b5fac796614412, type: 3}
 --- !u!1 &1630557118
@@ -2120,6 +2132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewChickenMonster
       objectReference: {fileID: 0}
+    - target: {fileID: 2434688321482483842, guid: 94de60ab5a9ec20448dcf06c2dba0d5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2434688321482483852, guid: 94de60ab5a9ec20448dcf06c2dba0d5f, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -2221,6 +2237,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4957036160175238420, guid: 00b7b7a31c6efe849af76c29d0e5d9f8, type: 3}
+      propertyPath: spawnDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957036160175238420, guid: 00b7b7a31c6efe849af76c29d0e5d9f8, type: 3}
+      propertyPath: shardRisingDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957036160175238420, guid: 00b7b7a31c6efe849af76c29d0e5d9f8, type: 3}
+      propertyPath: shardThrowWEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 279e2415394828f438ef629a678e1f58, type: 2}
+    - target: {fileID: 4957036160175238420, guid: 00b7b7a31c6efe849af76c29d0e5d9f8, type: 3}
+      propertyPath: shardRisingWEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: f0e611591f421b147bbc353fefb4d56f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00b7b7a31c6efe849af76c29d0e5d9f8, type: 3}
 --- !u!1001 &6035943911815247922
@@ -2277,6 +2309,10 @@ PrefabInstance:
     - target: {fileID: 8217445490625157915, guid: e06806995570402498e1fca9a4cd2df6, type: 3}
       propertyPath: m_Name
       value: FacelessGirl
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217445490625157915, guid: e06806995570402498e1fca9a4cd2df6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e06806995570402498e1fca9a4cd2df6, type: 3}

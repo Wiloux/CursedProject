@@ -34,6 +34,8 @@ public class WardenAI : EnemyBaseAI
     [Space(10)][Header("Wwise Events")]
     [SerializeField] private AK.Wwise.Event spawnWEvent;
     [SerializeField] private AK.Wwise.Event onIdleEnterWEvent;
+    [SerializeField] private AK.Wwise.Event shardRisingWEvent;
+    [SerializeField] private AK.Wwise.Event shardThrowWEvent;
     #endregion
 
 
@@ -82,7 +84,7 @@ public class WardenAI : EnemyBaseAI
                 }
                 break;
             case State.Chasing:
-                unit.ChaseThePlayer(enemyProfile.rangeToAttack, () => { state = State.Summoning; animator.SetTrigger("summon"); });
+                unit.ChaseThePlayer(enemyProfile.rangeToAttack, () => { state = State.Summoning; });
                 break;
             case State.Summoning:
                 HandleShard();
@@ -122,6 +124,8 @@ public class WardenAI : EnemyBaseAI
 
                 timer = shardRisingDuration;
                 shardState = ShardState.Rising;
+                shardRisingWEvent?.Post(gameObject);
+                animator.SetTrigger("summon");
                 break;
             case ShardState.Rising:
                 // move shard upward
@@ -152,6 +156,8 @@ public class WardenAI : EnemyBaseAI
                 break;
             case ShardState.Launched:
                 // launch shard
+                shard.GetComponent<Collider>().enabled = true;
+                shardThrowWEvent?.Post(gameObject);
                 Vector3 throwDir = (PlayerHelper.instance.transform.position - shard.transform.position).normalized;
                 shard.rb.AddForce(throwDir * 2f, ForceMode.Impulse);
                 shardState = ShardState.None;
@@ -185,6 +191,7 @@ public class WardenAI : EnemyBaseAI
         this.shardTargetPos = shardSpawnPos + Vector3.up * 6f;
         this.shardTargetRot = Quaternion.LookRotation(PlayerHelper.instance.transform.position - shardTargetPos);
         shard = go.GetComponent<Shard>();
+        shard.damage = enemyProfile.attackDamage;
         //spike.enemy = this;
     }
 

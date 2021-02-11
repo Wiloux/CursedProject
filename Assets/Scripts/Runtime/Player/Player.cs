@@ -68,6 +68,7 @@ public class Player : MonoBehaviour
     [Header("VFX")]
     [SerializeField] private GameObject attackWeaponParticles;
     [SerializeField] private GameObject weaponImpactParticles;
+    [SerializeField] private GameObject bloodParticlesPrefab;
     #endregion
     #endregion
 
@@ -99,7 +100,7 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-            else { StopWalkingAnimation?.Invoke(); if (!isIdle) { isIdle = true; idleTimer = UnityEngine.Random.Range(idleBreakTimerMinMax.x, idleBreakTimerMinMax.y); } }
+            else { StopWalkingAnimation?.Invoke(); if (!isIdle) { isIdle = true; ResetIdleTimer(); } }
 
             if (controller.canMove)
             {
@@ -170,7 +171,7 @@ public class Player : MonoBehaviour
                 else
                 {
                     if (idleTimer > 0) idleTimer -= Time.deltaTime;
-                    else { IdleBreakAnimation?.Invoke(); idleTimer = UnityEngine.Random.Range(idleBreakTimerMinMax.x, idleBreakTimerMinMax.y); }
+                    else { IdleBreakAnimation?.Invoke(); ResetIdleTimer(); }
                 }
             }
         }
@@ -256,6 +257,8 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Idle Breaks Objects gestion methods
+
+    private void ResetIdleTimer() { idleTimer = UnityEngine.Random.Range(idleBreakTimerMinMax.x, idleBreakTimerMinMax.y); }
     private void PutAndRemoveIdleBreakObject(int index)
     {
         PutIdleBreakObject(index);
@@ -295,6 +298,7 @@ public class Player : MonoBehaviour
     {
         health -= damage;
         DisableAttackWeaponParticles();
+        if (isIdle) ResetIdleTimer();
         if(health <= 0) { Die(); }
         else
         {
@@ -306,6 +310,8 @@ public class Player : MonoBehaviour
     {
         AkSoundEngine.SetSwitch("PlayerHitSwitch", hitBy, gameObject);
         PlayerHitEvent.Post(gameObject);
+        GameObject bloodParticles = Instantiate(bloodParticlesPrefab, transform.position, Quaternion.identity);
+        Destroy(bloodParticles, 2.5f);
     }
 
     private void Die()
