@@ -5,6 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public List<string> clues = new List<string>();
+    public ObjectSO[] items;
 
     private void Start()
     {

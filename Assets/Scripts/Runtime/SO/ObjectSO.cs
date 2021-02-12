@@ -19,6 +19,8 @@ public class ObjectSO : ScriptableObject
     {
         key,
         clue,
+        item,
+        useless,
     }
     public TypeOfObject type;
 }

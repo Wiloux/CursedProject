@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3804c761978048e48a673b2d315ef91b, type: 3}
-  m_Name: NewObject
+  m_Name: Trash
   m_EditorClassIdentifier: 
-  objectName: 
-  objectSprite: {fileID: 21300000, guid: c5d438bd5cedd634eba0353145fe708d, type: 3}
+  objectName: Trash
+  objectSprite: {fileID: 21300000, guid: f953c295e006b6e4fb791bd37c594857, type: 3}
   shortDescription: 
-  longDescription: 
-  type: 0
+  longDescription: Reflect the person reading this
+  type: 3
