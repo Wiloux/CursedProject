@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Trash
   objectSprite: {fileID: 21300000, guid: f953c295e006b6e4fb791bd37c594857, type: 3}
+  objectModel: {fileID: 5570753806488649908, guid: a190e9222e2f94e458b5fac796614412, type: 3}
   shortDescription: 
   longDescription: Reflect the person reading this
   type: 3

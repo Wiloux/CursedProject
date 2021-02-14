@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Pink Bush
   objectSprite: {fileID: 21300000, guid: 534da58f26f5c424a93e6ae556b80910, type: 3}
+  objectModel: {fileID: -927199367670048503, guid: 916a8fb579c63874394827cbec0773ae, type: 3}
   shortDescription: 
   longDescription: Can't hide in pink bushes you noob
   type: 3

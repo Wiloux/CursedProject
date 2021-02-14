@@ -10,6 +10,10 @@ public class ObjectSO : ScriptableObject
 {
     public string objectName;
     public Sprite objectSprite;
+    public GameObject objectModel;
+
+    public Vector3 previewPosition;
+    public Vector3 previewRotation;
 
 
     public string shortDescription;
@@ -29,7 +33,7 @@ public class ObjectSO : ScriptableObject
 [CustomEditor(typeof(ObjectSO))]
 public class ObjectSOInspector : Editor
 {
-    string longDescription;
+    Editor previewEditor;
     public override void OnInspectorGUI()
     {
         //base.OnInspectorGUI();
@@ -48,6 +52,18 @@ public class ObjectSOInspector : Editor
             Debug.Log(rect);
             EditorGUI.DrawPreviewTexture(new Rect(rect.x + EditorGUIUtility.currentViewWidth/2 - so.objectSprite.texture.width/2, rect.y + 0.1f * so.objectSprite.texture.height, so.objectSprite.texture.width, so.objectSprite.texture.height), so.objectSprite.texture);
             GUILayout.Space(so.objectSprite.texture.height * 1.2f);
+        }
+
+        CreatePropertyField(nameof(so.objectModel));
+        if(so.objectModel != null)
+        {
+            GUILayout.Space(10);
+
+            GUIStyle bgColor = new GUIStyle();
+            bgColor.normal.background = EditorGUIUtility.whiteTexture;
+
+            previewEditor = Editor.CreateEditor(so.objectModel);
+            previewEditor.OnInteractivePreviewGUI(GUILayoutUtility.GetRect(256, 256), bgColor);
         }
 
         CreatePropertyField(nameof(so.shortDescription));
