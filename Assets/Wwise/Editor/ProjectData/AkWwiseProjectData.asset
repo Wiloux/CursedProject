@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585883503086190143
+    m_lastTime: -8585882836541626278
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -121,7 +121,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585894043119473228
+    m_lastTime: -8585882838387037943
     List: []
   - PhysicalPath: Events\Enemies.wwu
     PathAndIcons:
@@ -130,7 +130,7 @@ MonoBehaviour:
     ParentPath: Enemies
     guid: 7833dd357f5437458dde67e4bfd1d3f1
     GuidInternal: 
-    m_lastTime: -8585891187124294337
+    m_lastTime: -8585882830048913093
     List:
     - name: Chicken
       guid: b95c606dc42a5947bea9f0e934524f5d
@@ -141,6 +141,18 @@ MonoBehaviour:
       - ElementName: Chicken
         ObjectType: 4
       Path: Enemies\Chicken
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: FacelessGirl
+      guid: 5970db5d5c08074cba6f7fd85a436a68
+      id: 427701775
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: FacelessGirl
+        ObjectType: 4
+      Path: Enemies\FacelessGirl
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -284,6 +296,34 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: PlayFacelessAttack
+      guid: d87df795c61fe047ac7e7275e2b6b681
+      id: 1603074503
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: FacelessGirl
+        ObjectType: 4
+      - ElementName: PlayFacelessAttack
+        ObjectType: 3
+      Path: Enemies\FacelessGirl\PlayFacelessAttack
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayFacelessMoan
+      guid: 1c1254e8b6674f468b91fca468b80abb
+      id: 2474406794
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: FacelessGirl
+        ObjectType: 4
+      - ElementName: PlayFacelessMoan
+        ObjectType: 3
+      Path: Enemies\FacelessGirl\PlayFacelessMoan
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: PlayWardenDie
       guid: 4e50a3b392de354483ec0574e547aff4
       id: 1870077814
@@ -393,6 +433,20 @@ MonoBehaviour:
       - ElementName: ShardWallHit
         ObjectType: 3
       Path: Enemies\Warden\ShardWallHit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: StopFacelessAttack
+      guid: e548f0635efe8a47babb488014a439d3
+      id: 4052641749
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: FacelessGirl
+        ObjectType: 4
+      - ElementName: StopFacelessAttack
+        ObjectType: 3
+      Path: Enemies\FacelessGirl\StopFacelessAttack
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -902,6 +956,11 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585906168817408006
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /CursedProject_WwiseProject
+  - /CursedProject_WwiseProject/Events
+  - /CursedProject_WwiseProject/Events/Ambiances
+  - /CursedProject_WwiseProject/Events/Enemies
+  - /CursedProject_WwiseProject/Events/Enemies/FacelessGirl
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -3377,6 +3377,171 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="FacelessGirl" ID="{C106E176-97D4-4A65-85A5-371EF1173D11}" ShortID="1019579048">
+					<ChildrenList>
+						<ActorMixer Name="FacelessGirl" ID="{3EAA3CF5-A6B2-490C-9A6C-B02E4C5A9753}" ShortID="32129950">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="FacelessGirl" ID="{3FC128C7-94A8-486F-8F9A-031670A8E57F}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Attack1" ID="{43D62C40-2540-4958-8FF6-BA3A00C47D40}" ShortID="871658715">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Attack1" ID="{8838B197-9C4F-495A-BB28-14793264A7FE}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="197.368"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0.41036308623298"/>
+												<Property Name="LoopEnd" Type="Real64" Value="2.25416036308623"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Faceless girl\Attack1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="275463776"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Attack1" ID="{8838B197-9C4F-495A-BB28-14793264A7FE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="AttackTail" ID="{6F6CBB4F-0A03-4BF6-BFF9-6B372E69FBE1}" ShortID="453791769">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AttackTail" ID="{4B3F05B6-6CAF-42AF-BC16-F2692C4BC828}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0123449319213313"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Faceless girl\AttackTail.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="698868433"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="AttackTail" ID="{4B3F05B6-6CAF-42AF-BC16-F2692C4BC828}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<RandomSequenceContainer Name="FacelessMoan" ID="{29F31D25-0680-402A-9D83-30BA4E4F960E}" ShortID="1065963411">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-28</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Moan1" ID="{84770DFB-EED4-4CAC-B85C-0B8EC02CB0F6}" ShortID="78657574">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Moan1" ID="{8A36AFC6-95BB-46B7-B4F6-0EA99572FE1D}">
+													<Language>SFX</Language>
+													<AudioFile>Faceless girl\Moan1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="843313399"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Moan1" ID="{8A36AFC6-95BB-46B7-B4F6-0EA99572FE1D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Moan2" ID="{B8265361-0B0D-4A4A-BC18-B8D48340917F}" ShortID="1053444165">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Moan2" ID="{67DE4D77-DCF6-44E6-AB44-DF261F603105}">
+													<Language>SFX</Language>
+													<AudioFile>Faceless girl\Moan2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="220696934"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Moan2" ID="{67DE4D77-DCF6-44E6-AB44-DF261F603105}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MoanSilence" ID="{C8409B65-F394-490F-B92F-D9D71A113E5A}" ShortID="1038616322">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<SourcePlugin Name="Wwise Silence" ID="{C9A43601-A649-44D2-BF65-47DE62A8972F}" ShortID="427967461" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+													<PropertyList>
+														<Property Name="Length" Type="Real32" Value="2"/>
+														<Property Name="LengthMax" Type="Real32" Value="0.3"/>
+														<Property Name="LengthMin" Type="Real32" Value="-0.2"/>
+													</PropertyList>
+													<Language>SFX</Language>
+												</SourcePlugin>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Wwise Silence" ID="{C9A43601-A649-44D2-BF65-47DE62A8972F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</ActorMixer>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

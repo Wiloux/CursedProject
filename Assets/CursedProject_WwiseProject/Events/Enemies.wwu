@@ -357,6 +357,97 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="FacelessGirl" ID="{5DDB7059-085C-4C07-BA6F-7FD85A436A68}" ShortID="141722282">
+					<ChildrenList>
+						<Event Name="PlayFacelessAttack" ID="{95F77DD8-1FC6-47E0-AC7E-7275E2B6B681}">
+							<ChildrenList>
+								<Action Name="" ID="{2100D570-8AAD-447D-9A7C-374902D85E2E}" ShortID="150120473">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FacelessMoan" ID="{29F31D25-0680-402A-9D83-30BA4E4F960E}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{7E7E3ADA-A442-449D-A79C-BC1F42FBB545}" ShortID="730523087">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Attack1" ID="{43D62C40-2540-4958-8FF6-BA3A00C47D40}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="StopFacelessAttack" ID="{63F048E5-FE5E-478A-BABB-488014A439D3}">
+							<ChildrenList>
+								<Action Name="" ID="{E4F180C4-975D-4E96-9DF4-699C63E9C478}" ShortID="104365869">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Attack1" ID="{43D62C40-2540-4958-8FF6-BA3A00C47D40}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{1E8F1221-2C32-4A24-A2D0-0B2F2CA6681E}" ShortID="337359018">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AttackTail" ID="{6F6CBB4F-0A03-4BF6-BFF9-6B372E69FBE1}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayFacelessMoan" ID="{E854121C-67B6-464F-8B91-FCA468B80ABB}">
+							<ChildrenList>
+								<Action Name="" ID="{3196BFF2-2B6E-40D6-925F-E197CDF420DA}" ShortID="701779544">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FacelessMoan" ID="{29F31D25-0680-402A-9D83-30BA4E4F960E}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{2BB5928C-7457-4DF4-B0DC-1226EB492778}" ShortID="903645580">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Attack1" ID="{43D62C40-2540-4958-8FF6-BA3A00C47D40}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{19AE4F6D-8961-4174-BA07-5F93789F3EEF}" ShortID="455122659">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AttackTail" ID="{6F6CBB4F-0A03-4BF6-BFF9-6B372E69FBE1}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A8C65664-66B6-4FA2-B728-DA1ACF2177ED}" ShortID="50769004">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FacelessMoan" ID="{29F31D25-0680-402A-9D83-30BA4E4F960E}" WorkUnitID="{7F9DC61E-D63F-4B54-A0D5-FB71EEB273AA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

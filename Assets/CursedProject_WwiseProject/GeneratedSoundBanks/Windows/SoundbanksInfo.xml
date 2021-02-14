@@ -21,7 +21,7 @@
 				<GameParameter Id="4143461479" Name="RTPC_Reverb" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="452957018">
+		<SoundBank Id="2879190521" Language="SFX" Hash="1484011693">
 			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
 			<ShortName>ForTests</ShortName>
 			<Path>ForTests.bnk</Path>
@@ -396,7 +396,26 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1701780106" Name="PlayExpDialogue" ObjectPath="\Events\Tests\DialogueExp\PlayExpDialogue" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1603074503" Name="PlayFacelessAttack" ObjectPath="\Events\Enemies\FacelessGirl\PlayFacelessAttack" MaxAttenuation="40.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="275463776" Language="SFX">
+							<ShortName>Faceless girl\Attack1.wav</ShortName>
+							<Path>SFX\Faceless girl\Attack1_EA834667.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2474406794" Name="PlayFacelessMoan" ObjectPath="\Events\Enemies\FacelessGirl\PlayFacelessMoan" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.800000" DurationMax="3.000000">
+					<IncludedMemoryFiles>
+						<File Id="220696934" Language="SFX">
+							<ShortName>Faceless girl\Moan2.wav</ShortName>
+							<Path>SFX\Faceless girl\Moan2_10C4C929.wem</Path>
+						</File>
+						<File Id="843313399" Language="SFX">
+							<ShortName>Faceless girl\Moan1.wav</ShortName>
+							<Path>SFX\Faceless girl\Moan1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1241118191" Name="PlayFootstepsPlayer" ObjectPath="\Events\Players\PlayFootstepsPlayer" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.142217" DurationMax="0.473162">
 					<IncludedMemoryFiles>
 						<File Id="47477698" Language="SFX">
@@ -804,9 +823,16 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2779602813" Name="StopAllGameObject" ObjectPath="\Events\Others\StopAllGameObject" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1672325348" Name="StopExpDialogue" ObjectPath="\Events\Tests\DialogueExp\StopExpDialogue" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="4052641749" Name="StopFacelessAttack" ObjectPath="\Events\Enemies\FacelessGirl\StopFacelessAttack" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.680000" DurationMax="0.680000">
+					<IncludedMemoryFiles>
+						<File Id="698868433" Language="SFX">
+							<ShortName>Faceless girl\AttackTail.wav</ShortName>
+							<Path>SFX\Faceless girl\AttackTail_63C012F9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="4217165871" Name="StopMovementSound" ObjectPath="\Events\Enemies\Warden\StopMovementSound" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="3241046308" Name="TestBass" ObjectPath="\Events\Tests\TestBass" DurationType="Infinite">
+				<Event Id="3241046308" Name="TestBass" ObjectPath="\Events\Tests\TestBass" MaxAttenuation="40.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="479465834" Language="SFX">
 							<ShortName>chase bass.wav</ShortName>
