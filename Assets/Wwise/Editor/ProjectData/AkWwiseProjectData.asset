@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5cf24529c5ae0c4fb7d461ec6430a707
     GuidInternal: 
-    m_lastTime: -8585890439955410959
+    m_lastTime: -8585883503088946088
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585885328410730538
+    m_lastTime: -8585882836541626278
     List:
     - name: ForTests
       guid: 930a1ef764e1044faf693e72ae63be23
@@ -88,7 +88,7 @@ MonoBehaviour:
     ParentPath: Ambiances
     guid: afe1d25d64bef34386b4f24de10966ec
     GuidInternal: 
-    m_lastTime: -8585888767089313929
+    m_lastTime: -8585883503103954357
     List:
     - name: PlayAmbiance1
       guid: 07d1cb22bf8926438f2cee98c6ba5edc
@@ -121,7 +121,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585894043119473228
+    m_lastTime: -8585882838387037943
     List: []
   - PhysicalPath: Events\Enemies.wwu
     PathAndIcons:
@@ -130,7 +130,7 @@ MonoBehaviour:
     ParentPath: Enemies
     guid: 7833dd357f5437458dde67e4bfd1d3f1
     GuidInternal: 
-    m_lastTime: -8585891187124294337
+    m_lastTime: -8585882830048913093
     List:
     - name: Chicken
       guid: b95c606dc42a5947bea9f0e934524f5d
@@ -141,6 +141,18 @@ MonoBehaviour:
       - ElementName: Chicken
         ObjectType: 4
       Path: Enemies\Chicken
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: FacelessGirl
+      guid: 5970db5d5c08074cba6f7fd85a436a68
+      id: 427701775
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: FacelessGirl
+        ObjectType: 4
+      Path: Enemies\FacelessGirl
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -284,6 +296,34 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: PlayFacelessAttack
+      guid: d87df795c61fe047ac7e7275e2b6b681
+      id: 1603074503
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: FacelessGirl
+        ObjectType: 4
+      - ElementName: PlayFacelessAttack
+        ObjectType: 3
+      Path: Enemies\FacelessGirl\PlayFacelessAttack
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayFacelessMoan
+      guid: 1c1254e8b6674f468b91fca468b80abb
+      id: 2474406794
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: FacelessGirl
+        ObjectType: 4
+      - ElementName: PlayFacelessMoan
+        ObjectType: 3
+      Path: Enemies\FacelessGirl\PlayFacelessMoan
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: PlayWardenDie
       guid: 4e50a3b392de354483ec0574e547aff4
       id: 1870077814
@@ -396,6 +436,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: StopFacelessAttack
+      guid: e548f0635efe8a47babb488014a439d3
+      id: 4052641749
+      PathAndIcons:
+      - ElementName: Enemies
+        ObjectType: 12
+      - ElementName: FacelessGirl
+        ObjectType: 4
+      - ElementName: StopFacelessAttack
+        ObjectType: 3
+      Path: Enemies\FacelessGirl\StopFacelessAttack
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: StopMovementSound
       guid: ef37217e09b82249849ceef35b498afd
       id: 4217165871
@@ -429,7 +483,7 @@ MonoBehaviour:
     ParentPath: Others
     guid: efa640062964d54a8ffe7b161b1b8706
     GuidInternal: 
-    m_lastTime: -8585892059699502395
+    m_lastTime: -8585883503103944383
     List:
     - name: StopAllGameObject
       guid: 77ad11207275e442809cb4620c80ec05
@@ -450,7 +504,7 @@ MonoBehaviour:
     ParentPath: Players
     guid: 84878f6dc9542744bdce26203903b0f0
     GuidInternal: 
-    m_lastTime: -8585885334303151662
+    m_lastTime: -8585883503103934411
     List:
     - name: Gyaru
       guid: 474e1a04614f9f4fa20cfb27e9ca7c35
@@ -565,7 +619,7 @@ MonoBehaviour:
     ParentPath: Tests
     guid: 7e1e99e9ec97634b9be4486f5e454591
     GuidInternal: 
-    m_lastTime: -8585885328410610844
+    m_lastTime: -8585883503103934411
     List:
     - name: Chicken
       guid: 90bf0756f07b41458e68dd708f9190ce
@@ -707,7 +761,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3f87fc84d75f844293f581868cfb0aa6
     GuidInternal: 
-    m_lastTime: -8585890439962661525
+    m_lastTime: -8585883503103924432
     List:
     - name: RTPC_Occlusion_LoPass
       guid: 0f26be8065d197418710898c20cf8ede
@@ -772,7 +826,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f528942bed683349be7cda8752e78d33
     GuidInternal: 
-    m_lastTime: -8585893989235490384
+    m_lastTime: -8585893874980413645
     List:
     - name: GroundMaterial
       guid: e125bcfacdffd045abfc9a9228b1f1bd
@@ -902,6 +956,11 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585906168817408006
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /CursedProject_WwiseProject
+  - /CursedProject_WwiseProject/Events
+  - /CursedProject_WwiseProject/Events/Ambiances
+  - /CursedProject_WwiseProject/Events/Enemies
+  - /CursedProject_WwiseProject/Events/Enemies/FacelessGirl
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

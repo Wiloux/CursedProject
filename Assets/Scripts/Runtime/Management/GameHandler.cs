@@ -10,9 +10,11 @@ public class GameHandler : MonoBehaviour
 
     public bool isPaused;
     private bool isSaveMenuOpen;
+    private bool isInventoryMenuOpen;
 
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject saveMenu;
+    [SerializeField] private GameObject inventoryMenu;
 
     private void Awake()
     {
@@ -27,8 +29,13 @@ public class GameHandler : MonoBehaviour
         {
             TogglePause();
             if (isSaveMenuOpen){ToggleSaveMenu();}
+            if (isInventoryMenuOpen) ToggleInventoryMenu();
             else { TogglePauseMenu(); }
             if(MouseManagement.instance != null) MouseManagement.instance.ToggleMouseLock();
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ToggleInventoryMenu();
         }
     }
 
@@ -72,4 +79,6 @@ public class GameHandler : MonoBehaviour
 
     public void TogglePauseMenu() { pauseMenu.SetActive(!pauseMenu.activeSelf);}
     public void ToggleSaveMenu() { saveMenu.SetActive(!saveMenu.activeSelf); isSaveMenuOpen = !isSaveMenuOpen; }
+    public void ToggleInventoryMenu() { inventoryMenu.SetActive(!inventoryMenu.activeSelf); isInventoryMenuOpen = !isInventoryMenuOpen; TogglePause(); }
+    private void ToggleMouseLock() { if (MouseManagement.instance != null) MouseManagement.instance.ToggleMouseLock(); }
 }

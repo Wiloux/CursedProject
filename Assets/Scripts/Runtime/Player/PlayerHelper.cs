@@ -37,6 +37,10 @@ public class PlayerHelper : MonoBehaviour
         }
         return false;
     }
+    public ObjectSO[] GetPlayerInventory()
+    {
+        return inventory.items;
+    }
     #endregion
 
     #region Player

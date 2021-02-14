@@ -29,7 +29,8 @@ namespace AK
         static const AkUniqueID PLAYCHICKENRUNAWAY = 4042026069U;
         static const AkUniqueID PLAYCHICKENWATCHING = 1378272331U;
         static const AkUniqueID PLAYERHIT = 3831688773U;
-        static const AkUniqueID PLAYEXPDIALOGUE = 1701780106U;
+        static const AkUniqueID PLAYFACELESSATTACK = 1603074503U;
+        static const AkUniqueID PLAYFACELESSMOAN = 2474406794U;
         static const AkUniqueID PLAYFOOTSTEPSPLAYER = 1241118191U;
         static const AkUniqueID PLAYFSCHICKEN = 4106886787U;
         static const AkUniqueID PLAYGIGGLECHICKEN = 2613825061U;
@@ -47,7 +48,7 @@ namespace AK
         static const AkUniqueID SHARDSTHROW = 617402058U;
         static const AkUniqueID SHARDWALLHIT = 3796699282U;
         static const AkUniqueID STOPALLGAMEOBJECT = 2779602813U;
-        static const AkUniqueID STOPEXPDIALOGUE = 1672325348U;
+        static const AkUniqueID STOPFACELESSATTACK = 4052641749U;
         static const AkUniqueID STOPMOVEMENTSOUND = 4217165871U;
         static const AkUniqueID TESTBASS = 3241046308U;
         static const AkUniqueID WEIRDATTACK = 1813814736U;
