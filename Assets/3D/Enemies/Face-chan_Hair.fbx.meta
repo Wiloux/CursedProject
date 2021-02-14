@@ -1,8 +1,23 @@
 fileFormatVersion: 2
-guid: 072c940bccd618649b6106c36654ef66
+guid: dbb6496a783ef8e41bc835b20994e949
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 7620115605951104286
+    second: rig|ArmatureAction
+  - first:
+      74: 8655693790389537516
+    second: rig|PigTailAttack
+  - first:
+      74: -5880190241706797003
+    second: rig|PigtailIdle
+  - first:
+      74: 6772365421723611835
+    second: rig|PigTailWalk
+  - first:
+      74: 3374748389425109202
+    second: rig|rigAction
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -65,8 +80,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 79
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
