@@ -191,9 +191,9 @@ public class Player : MonoBehaviour
         if (enemy == null)
         {
             Debug.Log("No enemy has been found");
-
             return;
         }
+        Debug.Log("hrgrhogr");
 
         ToggleImpactParticles();
         EnemyHelper.TakeDamage(enemy); 
@@ -343,11 +343,11 @@ public class Player : MonoBehaviour
         switch (character)
         {
             case Character.gyaru:
-                SimpleAttackAnimation = () => { animator.SetTrigger("Attack"); animator.SetInteger("AttackAnim", UnityEngine.Random.Range(1, 4)); Debug.Log("Gyaru attack animation"); };
+                SimpleAttackAnimation = () => { animator.SetTrigger("Attack"); animator.SetInteger("AttackAnim", UnityEngine.Random.Range(1, 4));};
                 SecondaryAttackAnimation = () => { animator.SetTrigger("BigAttack");  Debug.Log("Gyaru big attack animation"); };
-                GetHitAnimation = () => { animator.SetTrigger("Hurt"); animator.SetInteger("HurtAnim", UnityEngine.Random.Range(1, 4)); Debug.Log("Gyaru get hit animation"); };
+                GetHitAnimation = () => { animator.SetTrigger("Hurt"); animator.SetInteger("HurtAnim", UnityEngine.Random.Range(1, 4));};
                 DeathAnimation = () => { animator.SetTrigger("Hurt"); animator.SetFloat("HP", -1); Debug.Log("Gyaru death animation"); };
-                RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); animator.SetBool("Backwards", false); Debug.Log("Gyaru running animation");  };
+                RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); animator.SetBool("Backwards", false);};
                 AbilityAnimation = () => Debug.Log("Gyaru ability use animation");
                 InteractAnimation = () => { animator.SetTrigger("Action"); Debug.Log("Gyaru interact animation"); };
                 WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("Backwards", false); };

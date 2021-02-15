@@ -15,6 +15,7 @@ public class FacelessGirlAI : EnemyBaseAI
     [SerializeField] private float hidingFaceDuration;
 
     [SerializeField] private Animator[] hairsAnimator;
+    [SerializeField] private Animator[] attackHairsAnimator;
 
     private float faceTimer;
 
@@ -37,7 +38,13 @@ public class FacelessGirlAI : EnemyBaseAI
 
         hitAnimation = () => { animator.SetInteger("randomHurt", UnityEngine.Random.Range(0, 3)); animator.SetTrigger("hit"); };
 
-        HideFace();
+        faceState = FaceState.Hiding;
+
+        foreach(Animator hair in attackHairsAnimator)
+        {
+            hair.SetBool("attack", true);
+            hair.gameObject.SetActive(false);
+        }
     }
 
     public override void Update()
@@ -86,11 +93,12 @@ public class FacelessGirlAI : EnemyBaseAI
             //}
             if(faceState == FaceState.Showing)
             {
+                SetAttackHairs();
                 if (unit.isPlayerVisible(enemyProfile.rangeToAttack))
                 {
                     transform.rotation = Quaternion.LookRotation((player.transform.position - transform.position).normalized);
                     float angle = Vector3.Angle(player.transform.forward, player.transform.position - transform.position);
-                    if(angle > 90f) { PlayerHelper.instance.TakeDamage(enemyProfile.attackDamage * Time.deltaTime, false); }
+                    if(angle > 90f) { PlayerHelper.instance.TakeDamage(enemyProfile.attackDamage * Time.deltaTime, false); GameHandler.instance.DisplayFacelessGirlDamageIndicator(); } // Here wiloux
                 }
             }
         }
@@ -102,6 +110,7 @@ public class FacelessGirlAI : EnemyBaseAI
         StartShowingFace?.Invoke();
         faceState = FaceState.Showing;
         faceTimer = showingFaceDuration;
+        ToggleAttackHairs();
     }
     private void HideFace()
     {
@@ -109,13 +118,53 @@ public class FacelessGirlAI : EnemyBaseAI
         StopShowingFace?.Invoke();
         faceState = FaceState.Hiding;
         faceTimer = hidingFaceDuration;
+        ToggleAttackHairs();
     }
 
+    #region Hairs gestion
+        #region Hairs Animator
     private void UpdateHairsAnimators(string animatorParameter, bool newParameterState)
     {
         foreach(Animator hairAnimator in hairsAnimator)
         {
             hairAnimator.SetBool(animatorParameter, newParameterState);
         }
+    }
+    private void DisableHairsAnimators() {
+        foreach (Animator hairAnimator in hairsAnimator)
+        {
+            hairAnimator.enabled = false;
+        }
+    }
+        #endregion
+        #region Attack Hairs gestion
+    private void ToggleAttackHairs()
+    {
+        foreach(Animator hair in attackHairsAnimator)
+        {
+            hair.gameObject.SetActive(!hair.gameObject.activeSelf);
+        }
+    }
+    private void SetAttackHairs()
+    {
+        foreach (Animator hair in attackHairsAnimator)
+        {
+            hair.SetBool("attack", true);
+        }
+    }
+        #endregion
+    #endregion
+
+    public override void GetStaggered()
+    {
+        unit.GetStaggered(enemyProfile.staggerDuration, () => state = State.Running);
+    }
+
+    public override void Die()
+    {
+        base.Die();
+
+        UpdateHairsAnimators("attack", false);
+        DisableHairsAnimators();
     }
 }

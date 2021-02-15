@@ -16,6 +16,10 @@ public class GameHandler : MonoBehaviour
     [SerializeField] private GameObject saveMenu;
     [SerializeField] private GameObject inventoryMenu;
 
+
+    [SerializeField] private GameObject facelessGirlDamageIndicator;
+    private float damageIndicatorTimer;
+
     private void Awake()
     {
         if (instance != null) Destroy(gameObject);
@@ -36,6 +40,15 @@ public class GameHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             ToggleInventoryMenu();
+        }
+
+        if(damageIndicatorTimer > 0)
+        {
+            damageIndicatorTimer -= Time.deltaTime;
+            if(damageIndicatorTimer < 0)
+            {
+                facelessGirlDamageIndicator.SetActive(false); // here wiloux, l'image s'éteind
+            }
         }
     }
 
@@ -81,4 +94,10 @@ public class GameHandler : MonoBehaviour
     public void ToggleSaveMenu() { saveMenu.SetActive(!saveMenu.activeSelf); isSaveMenuOpen = !isSaveMenuOpen; }
     public void ToggleInventoryMenu() { inventoryMenu.SetActive(!inventoryMenu.activeSelf); isInventoryMenuOpen = !isInventoryMenuOpen; TogglePause(); }
     private void ToggleMouseLock() { if (MouseManagement.instance != null) MouseManagement.instance.ToggleMouseLock(); }
+
+    public void DisplayFacelessGirlDamageIndicator()
+    {
+        facelessGirlDamageIndicator.SetActive(true);
+        damageIndicatorTimer = 0.5f;
+    }
 }

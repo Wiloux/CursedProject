@@ -189,12 +189,15 @@ public class EnemyUnit : MonoBehaviour
     {
         if (GetDistanceFromPlayer() < stopDistance)
         {
+            Debug.Log("try to aim");
             if (isPlayerAimable())
             {
+                Debug.Log("aimable");
+                state = State.Idle;
+                agent.SetDestination(transform.position);
+
                 if (onActionFinished != null)
                 {
-                    state = State.Idle;
-                    agent.SetDestination(transform.position);
                     onActionFinished?.Invoke();
                     onActionFinished = null;
                 }
@@ -260,16 +263,22 @@ public class EnemyUnit : MonoBehaviour
         hits = Physics.SphereCastAll(transform.position, 0.2f, dir, enemyProfile.rangeToAttack);
         if (hits.Length > 0)
         {
+            Debug.LogWarning(hits.Length);
             foreach (RaycastHit hit in hits)
             {
-                string tag = hit.transform.tag;
-                if (tag == "Player")
+                if (!hit.collider.isTrigger)
                 {
-                    //Debug.Log("aimable"); 
-                    return true;
+                    Debug.LogWarning(hit.transform.name + " :  " + hit.transform.tag +"----");
+                    string tag = hit.transform.tag;
+                    if (tag == "Player")
+                    {
+                        //Debug.Log("aimable"); 
+                        return true;
+                    }
+                    else return false;
                 }
-                else if (tag != "Ground" && tag != "Enemy") { return false; }
             }
+            Debug.LogWarning("hits finished");
         }
         return false;
     }

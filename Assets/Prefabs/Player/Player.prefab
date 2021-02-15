@@ -10840,7 +10840,7 @@ MonoBehaviour:
   attackPointRange: 1.75
   attackLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 128
   attackCooldown: 3
   idleBreaksObjects:
   - go: {fileID: 1451321414}
@@ -10872,6 +10872,7 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 34ba6947f9194e44e8f945ba74ee4e52, type: 2}
   attackWeaponParticles: {fileID: 438958040}
   weaponImpactParticles: {fileID: 5644249320780305048, guid: 1c7916de1381af340a419f9bba17511e, type: 3}
+  bloodParticlesPrefab: {fileID: 8138358216146207782, guid: edb40d6bdd55b9443a05e92e5941f727, type: 3}
 --- !u!114 &5570753806488649902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10915,6 +10916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clues:
   - 
+  items: []
 --- !u!114 &5570753806488649900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11055,7 +11057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1daca1fce8567a04b9b0e767def50dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioListener: {fileID: 0}
+  audioListener: {fileID: 0}
   RTPC_Volume: RTPC_Occlusion_Volume
   RTPC_LoPass: RTPC_Occlusion_LoPass
 --- !u!1 &5570753806531694815

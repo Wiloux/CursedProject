@@ -36,12 +36,13 @@ public class SquareMirror : MonoBehaviour
         //{
             Vector3 mainCamDir = (mainCam.transform.position - transform.position).normalized;
             Quaternion rot = Quaternion.LookRotation(mainCamDir);
-            Debug.Log("mainCamDir : " + mainCamDir);
+            //Debug.Log("mainCamDir : " + mainCamDir);
 
             rot.eulerAngles = transform.eulerAngles - rot.eulerAngles;
 
             cameraRotation.localRotation = rot;
-            Debug.Log("ahahhaha");
+            //Debug.Log("ahahhaha");
+
             //Vector3 dir = new Vector3(mainCamDir.x * -1f, mainCamDir.y, mainCamDir.z);
             //Debug.Log("dir = " + dir);
             //transform.rotation = Quaternion.LookRotation(dir);

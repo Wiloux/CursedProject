@@ -62,10 +62,13 @@ public class EnemyBaseAI : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        if (agent.velocity != Vector3.zero) { animator.SetBool("moving", true); }
-        else { animator.SetBool("moving", false); }
+        if(state != State.Dead)
+        {
+            if (agent.velocity != Vector3.zero) { animator.SetBool("moving", true); }
+            else { animator.SetBool("moving", false); }
 
-        LaunchActions();
+            LaunchActions();
+        }
         Debug.Log(state.ToString());
     }
 
