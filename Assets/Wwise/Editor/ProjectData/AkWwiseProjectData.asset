@@ -60,19 +60,10 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585882159608493545
+    m_lastTime: -8585881820540594336
     List:
-    - name: ForTests
-      guid: 930a1ef764e1044faf693e72ae63be23
-      id: 2879190521
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: ForTests
-        ObjectType: 7
-      Path: Default Work Unit\ForTests
     - name: Main
-      guid: 2b67b24938a2954eaa924fe230ea6eac
+      guid: 3e1cacb96421c24d992f8e9dfee00897
       id: 3161908922
       PathAndIcons:
       - ElementName: Default Work Unit
@@ -1000,9 +991,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /CursedProject_WwiseProject
-  - /CursedProject_WwiseProject/Events
-  - /CursedProject_WwiseProject/Events/Ambiances
-  - /CursedProject_WwiseProject/Events/Enemies
-  - /CursedProject_WwiseProject/Events/Enemies/FacelessGirl
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

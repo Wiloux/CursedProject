@@ -21,10 +21,10 @@
 				<GameParameter Id="4143461479" Name="RTPC_Reverb" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2879190521" Language="SFX" Hash="1386416949">
-			<ObjectPath>\SoundBanks\Default Work Unit\ForTests</ObjectPath>
-			<ShortName>ForTests</ShortName>
-			<Path>ForTests.bnk</Path>
+		<SoundBank Id="3161908922" Language="SFX" Hash="783070346">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
 			<IncludedEvents>
 				<Event Id="369930381" Name="GyaruPlayAttackLong" ObjectPath="\Events\Players\Gyaru\GyaruPlayAttackLong" MaxAttenuation="40.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -707,8 +707,6 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="4106886787" Name="PlayFSChicken" ObjectPath="\Events\Tests\Chicken\PlayFSChicken" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2613825061" Name="PlayGiggleChicken" ObjectPath="\Events\Tests\Chicken\PlayGiggleChicken" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="145167493" Name="PlayHighlight" ObjectPath="\Events\Tests\Menu\PlayHighlight" DurationType="OneShot" DurationMin="0.266259" DurationMax="0.266259">
 					<IncludedMemoryFiles>
 						<File Id="697333511" Language="SFX">
@@ -717,7 +715,6 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4251718543" Name="PlayHitChicken" ObjectPath="\Events\Tests\Chicken\PlayHitChicken" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1168436793" Name="PlayKeypress" ObjectPath="\Events\Tests\Menu\PlayKeypress" DurationType="OneShot" DurationMin="0.149773" DurationMax="0.149773">
 					<IncludedMemoryFiles>
 						<File Id="26955166" Language="SFX">
@@ -855,11 +852,11 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2779602813" Name="StopAllGameObject" ObjectPath="\Events\Others\StopAllGameObject" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="4052641749" Name="StopFacelessAttack" ObjectPath="\Events\Enemies\FacelessGirl\StopFacelessAttack" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000">
+				<Event Id="4052641749" Name="StopFacelessAttack" ObjectPath="\Events\Enemies\FacelessGirl\StopFacelessAttack" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>
 						<File Id="698868433" Language="SFX">
 							<ShortName>Faceless girl\AttackTail.wav</ShortName>
-							<Path>SFX\Faceless girl\AttackTail_63C012F9.wem</Path>
+							<Path>SFX\Faceless girl\AttackTail_B0B4EB5A.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -872,7 +869,6 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1813814736" Name="WeirdAttack" ObjectPath="\Events\Tests\Chicken\WeirdAttack" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 			</IncludedEvents>
 			<GameParameters>
 				<GameParameter Id="222722569" Name="RTPC_Occlusion_LoPass" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Occlusion_LoPass"/>
@@ -907,11 +903,6 @@
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>
-		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="2348770020">
-			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
-			<ShortName>Main</ShortName>
-			<Path>Main.bnk</Path>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

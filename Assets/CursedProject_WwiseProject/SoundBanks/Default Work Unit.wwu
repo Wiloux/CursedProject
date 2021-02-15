@@ -3,7 +3,7 @@
 	<SoundBanks>
 		<WorkUnit Name="Default Work Unit" ID="{003F9EC7-A5D8-4089-B8E9-9A0BB69EEFDE}" PersistMode="Standalone">
 			<ChildrenList>
-				<SoundBank Name="ForTests" ID="{F71E0A93-E164-4F04-AF69-3E72AE63BE23}">
+				<SoundBank Name="Main" ID="{B9AC1C3E-2164-4DC2-992F-8E9DFEE00897}">
 					<ObjectInclusionList>
 						<ObjectRef Name="ShardsThrow" ID="{338398C4-8993-413F-9E59-9D502244B811}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="GyaruPlayAttackLong" ID="{13E86C1F-DA32-414C-9E16-B97CB7862D5E}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}" Origin="Manual" Filter="7"/>
@@ -21,7 +21,6 @@
 						<ObjectRef Name="PlayHighlight" ID="{CF4A09C0-A989-449D-8511-3213A5CE61AA}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayAttack3" ID="{02BC7C02-0409-4580-AE17-63395674C15E}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayFacelessMoan" ID="{E854121C-67B6-464F-8B91-FCA468B80ABB}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="WeirdAttack" ID="{6684B1AD-88B3-471E-8C65-91C8F828D3CB}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ShardsRise" ID="{B4749122-34EF-4754-8624-049814B67E77}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="StopFacelessAttack" ID="{63F048E5-FE5E-478A-BABB-488014A439D3}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TestBass" ID="{2BDF3AE9-C040-47AB-B6C2-9FD905DC8F76}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
@@ -32,7 +31,6 @@
 						<ObjectRef Name="PlayFacelessHurt" ID="{D89E4302-B7B1-4945-9A53-D56296DAD940}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenRunAway" ID="{86820FAC-14FB-494D-AC08-317EA4595E8F}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenDie" ID="{39815A2B-9229-49D7-90E0-0B87BBBB94E7}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="PlayHitChicken" ID="{0888F6E2-E055-4B00-B2AE-2C045D7C5B2B}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayFootstepsPlayer" ID="{5F5AA8F9-96B0-4B65-92DF-A60189849541}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayWardenSpawn" ID="{58827486-2E57-4B87-B9AD-FD376816EC6A}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayBackstab" ID="{9982C33B-092F-4BF3-8E8E-17921D652E90}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
@@ -43,16 +41,9 @@
 						<ObjectRef Name="PlayFacelessFootsteps" ID="{02B42921-E3B9-4CE1-A979-9A4E159F5712}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayWardenHurt" ID="{1A17A08F-3700-4DAE-A247-4E1C9ED93C95}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenChasing" ID="{108AE46C-3F7B-4DDB-9105-00FB2FC4E86B}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="PlayGiggleChicken" ID="{9CB0E16E-B2A0-4E69-80F2-1AD854124C64}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="GyaruPlayAttackShort" ID="{4DA006D0-1C77-4F05-A0B2-32D800F0FD33}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="PlayFSChicken" ID="{2244B6BA-6555-4F2C-8FFC-F9C95CBDE82D}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayerHit" ID="{5BE8C486-7C82-4F3F-8124-CD1E0EBB35A5}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
-					<ObjectExclusionList/>
-					<GameSyncExclusionList/>
-				</SoundBank>
-				<SoundBank Name="Main" ID="{49B2672B-A238-4E95-AA92-4FE230EA6EAC}">
-					<ObjectInclusionList/>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>

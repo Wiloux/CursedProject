@@ -544,8 +544,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &25827896
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -631,18 +631,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8772132267876333585, guid: 469194195ff1b3741a1437d78bf2f572, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 9.786957
-      objectReference: {fileID: 0}
-    - target: {fileID: 8772132267876333585, guid: 469194195ff1b3741a1437d78bf2f572, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 9.786957
-      objectReference: {fileID: 0}
-    - target: {fileID: 8772132267876333585, guid: 469194195ff1b3741a1437d78bf2f572, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 9.786957
-      objectReference: {fileID: 0}
-    - target: {fileID: 8772132267876333585, guid: 469194195ff1b3741a1437d78bf2f572, type: 3}
       propertyPath: m_LocalPosition.x
       value: -34.807
       objectReference: {fileID: 0}
@@ -685,10 +673,6 @@ PrefabInstance:
     - target: {fileID: 8772132267876333587, guid: 469194195ff1b3741a1437d78bf2f572, type: 3}
       propertyPath: m_Name
       value: Square_mirror
-      objectReference: {fileID: 0}
-    - target: {fileID: 8772132267876333587, guid: 469194195ff1b3741a1437d78bf2f572, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 469194195ff1b3741a1437d78bf2f572, type: 3}
@@ -1031,7 +1015,7 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Pavement
   ExitSwitch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!1 &215552047
 GameObject:
@@ -1299,8 +1283,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &273034998
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -1925,7 +1909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SwitchGroup: GroundMaterial
   Switch: Pavement
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!1 &390932596
 GameObject:
@@ -2825,7 +2809,7 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Pavement
   ExitSwitch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!1 &402396995 stripped
 GameObject:
@@ -2972,7 +2956,7 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Dirt
   ExitSwitch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!1 &410522632
 GameObject:
@@ -3172,7 +3156,7 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Dirt
   ExitSwitch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!154 &460594475
 TerrainCollider:
@@ -3604,8 +3588,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &524818732
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -3729,8 +3713,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &529950657
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -3991,8 +3975,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &601862917
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -4325,6 +4309,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1408996904}
     m_Modifications:
+    - target: {fileID: 273792063, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 273792063, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127034901, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 1127034901, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047906342, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 2047906342, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 79653182391080155, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -4696,6 +4704,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &702547251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5570753806488649908, guid: a190e9222e2f94e458b5fac796614412, type: 3}
+  m_PrefabInstance: {fileID: 1515274485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &738698175
 GameObject:
   m_ObjectHideFlags: 0
@@ -4746,8 +4759,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &738698178
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -4966,8 +4979,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &834348437
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -5091,6 +5104,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1408996904}
     m_Modifications:
+    - target: {fileID: 273792063, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 273792063, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127034901, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 1127034901, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047906342, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 2047906342, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 79653182391080155, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -5254,8 +5291,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &947993039
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -5379,7 +5416,7 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Dirt
   ExitSwitch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!154 &949511055
 TerrainCollider:
@@ -5661,8 +5698,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &1009933893
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -5814,7 +5851,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 0b83db3308a0c9048bd1e787fa089671, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: d12db3b8654acfd49b3df952ec0cd726, type: 2}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
@@ -5926,8 +5963,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &1051762483
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -6051,8 +6088,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &1088859060
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -6331,7 +6368,7 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Dirt
   ExitSwitch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!154 &1139869929
 TerrainCollider:
@@ -14732,8 +14769,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &1432105180
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -14901,8 +14938,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &1444946367
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -15260,22 +15297,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5570753806488649891, guid: a190e9222e2f94e458b5fac796614412, type: 3}
-      propertyPath: items.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5570753806488649891, guid: a190e9222e2f94e458b5fac796614412, type: 3}
-      propertyPath: items.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 330da1dc4dfd48f44b18bff11e9120e2, type: 2}
-    - target: {fileID: 5570753806488649891, guid: a190e9222e2f94e458b5fac796614412, type: 3}
-      propertyPath: items.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4124cc51a75c01f4bb9540324f3efaf0, type: 2}
-    - target: {fileID: 5570753806488649891, guid: a190e9222e2f94e458b5fac796614412, type: 3}
-      propertyPath: items.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 362c886cd4a2f414ca5e7785cedcbcbd, type: 2}
     - target: {fileID: 5570753806488649903, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -15449,7 +15470,7 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Pavement
   ExitSwitch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!1 &1534663443
 GameObject:
@@ -15703,7 +15724,7 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Dirt
   ExitSwitch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!154 &1585408074
 TerrainCollider:
@@ -16481,7 +16502,7 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Dirt
   ExitSwitch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!1 &1685062765
 GameObject:
@@ -18982,8 +19003,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &1708642453
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -19107,8 +19128,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &1714845569
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -19232,8 +19253,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &1739890129
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -19357,6 +19378,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1408996904}
     m_Modifications:
+    - target: {fileID: 154108465, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 154108465, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 276793532, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 276793532, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501624503, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 1501624503, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 560126406566603326, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -19611,7 +19656,7 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Dirt
   ExitSwitch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!154 &1784534399
 TerrainCollider:
@@ -19736,8 +19781,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &1799123218
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -19818,6 +19863,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1408996904}
     m_Modifications:
+    - target: {fileID: 154108465, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 154108465, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 276793532, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 276793532, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501624503, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 1501624503, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 560126406566603326, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -20037,7 +20106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SwitchGroup: GroundMaterial
   Switch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!1 &1837178377
 GameObject:
@@ -20089,8 +20158,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &1837178380
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -20214,8 +20283,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &1841376971
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -20631,14 +20700,26 @@ PrefabInstance:
     - target: {fileID: 154108465, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
       propertyPath: Player
       value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 154108465, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 276793532, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
       propertyPath: Player
       value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 276793532, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1501624503, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
       propertyPath: Player
       value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 1501624503, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 560126406566603326, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
       propertyPath: m_RootOrder
@@ -20745,7 +20826,7 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Dirt
   ExitSwitch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!154 &1904694936
 TerrainCollider:
@@ -21133,7 +21214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SwitchGroup: GroundMaterial
   Switch: Pavement
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!1 &1945626227 stripped
 GameObject:
@@ -21207,7 +21288,7 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Dirt
   ExitSwitch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!154 &1961255796
 TerrainCollider:
@@ -21526,8 +21607,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &2056134034
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -21673,7 +21754,7 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Dirt
   ExitSwitch: Sidewalk
-  Player: {fileID: 0}
+  Player: {fileID: 702547251}
   Debug_Enabled: 1
 --- !u!154 &2078372643
 TerrainCollider:
@@ -21798,8 +21879,8 @@ MonoBehaviour:
   SwitchGroup: GroundMaterial
   Switch: Forest
   ExitSwitch: Dirt
-  Player: {fileID: 0}
-  Debug_Enabled: 0
+  Player: {fileID: 702547251}
+  Debug_Enabled: 1
 --- !u!154 &2092384876
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -22061,6 +22142,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1408996904}
     m_Modifications:
+    - target: {fileID: 154108465, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 154108465, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 276793532, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 276793532, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501624503, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 1501624503, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 560126406566603326, guid: f714f306ae4be25498a15146d9a5786b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -22437,10 +22542,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7770043024507580035, guid: e06806995570402498e1fca9a4cd2df6, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 1440
-      objectReference: {fileID: 0}
     - target: {fileID: 8217445490625157909, guid: e06806995570402498e1fca9a4cd2df6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -22791,7 +22892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5539579007769714836, guid: 522c3ad2491a76243b4f76c690cf39fe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -40.000015
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 5539579007769714841, guid: 522c3ad2491a76243b4f76c690cf39fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -22831,14 +22932,26 @@ PrefabInstance:
     - target: {fileID: 273792063, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
       propertyPath: Player
       value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 273792063, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1127034901, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
       propertyPath: Player
       value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 1127034901, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2047906342, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
       propertyPath: Player
       value: 
+      objectReference: {fileID: 702547251}
+    - target: {fileID: 2047906342, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
+      propertyPath: Debug_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 79653182391080155, guid: 620cab0d5ee12e7439ce8add06047000, type: 3}
       propertyPath: m_RootOrder

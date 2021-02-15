@@ -35,10 +35,7 @@ namespace AK
         static const AkUniqueID PLAYFACELESSHURT = 3273151456U;
         static const AkUniqueID PLAYFACELESSMOAN = 2474406794U;
         static const AkUniqueID PLAYFOOTSTEPSPLAYER = 1241118191U;
-        static const AkUniqueID PLAYFSCHICKEN = 4106886787U;
-        static const AkUniqueID PLAYGIGGLECHICKEN = 2613825061U;
         static const AkUniqueID PLAYHIGHLIGHT = 145167493U;
-        static const AkUniqueID PLAYHITCHICKEN = 4251718543U;
         static const AkUniqueID PLAYKEYPRESS = 1168436793U;
         static const AkUniqueID PLAYMIRRORPROP = 539806209U;
         static const AkUniqueID PLAYPHONEPROP = 2575517534U;
@@ -54,7 +51,6 @@ namespace AK
         static const AkUniqueID STOPFACELESSATTACK = 4052641749U;
         static const AkUniqueID STOPMOVEMENTSOUND = 4217165871U;
         static const AkUniqueID TESTBASS = 3241046308U;
-        static const AkUniqueID WEIRDATTACK = 1813814736U;
     } // namespace EVENTS
 
     namespace SWITCHES
@@ -129,7 +125,6 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID FORTESTS = 2879190521U;
         static const AkUniqueID MAIN = 3161908922U;
     } // namespace BANKS
 

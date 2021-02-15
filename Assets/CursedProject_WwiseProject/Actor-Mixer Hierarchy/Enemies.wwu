@@ -3439,6 +3439,7 @@
 										<AudioFileSource Name="AttackTail" ID="{4B3F05B6-6CAF-42AF-BC16-F2692C4BC828}">
 											<PropertyList>
 												<Property Name="FadeInDuration" Type="Real64" Value="0.0123449319213313"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.117624810892587"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 											</PropertyList>
 											<Language>SFX</Language>
