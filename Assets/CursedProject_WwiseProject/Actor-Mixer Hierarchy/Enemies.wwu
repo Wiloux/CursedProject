@@ -3453,13 +3453,6 @@
 									</ActiveSourceList>
 								</Sound>
 								<RandomSequenceContainer Name="FacelessMoan" ID="{29F31D25-0680-402A-9D83-30BA4E4F960E}" ShortID="1065963411">
-									<PropertyList>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-28</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -3536,7 +3529,244 @@
 												<ActiveSource Name="Wwise Silence" ID="{C9A43601-A649-44D2-BF65-47DE62A8972F}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<Sound Name="Moan3" ID="{51306932-437D-4382-A8A6-3C71F113788E}" ShortID="614764496">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Moan3" ID="{CDDB8A9F-1756-4481-887D-D1B72DC081DB}">
+													<Language>SFX</Language>
+													<AudioFile>Faceless girl\Moan3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="599470771"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Moan3" ID="{CDDB8A9F-1756-4481-887D-D1B72DC081DB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
+								</RandomSequenceContainer>
+								<ActorMixer Name="Hurt" ID="{D3B466A5-F6A8-46D6-AD5D-6148E8DEBE88}" ShortID="1023174731">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<RandomSequenceContainer Name="Hurt" ID="{0C7BC179-279F-4E69-881D-7BA1354163EB}" ShortID="159811509">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="Hurt1" ID="{0CBEE02F-059B-4109-82FA-E20ADE99A2A6}" ShortID="122080551">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="2"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="FacelessGirl" ID="{3FC128C7-94A8-486F-8F9A-031670A8E57F}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Hurt1" ID="{61AC9E96-7106-415C-88D2-E0B3A9DCEB8F}">
+															<Language>SFX</Language>
+															<AudioFile>Faceless girl\Hurt1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="144922140"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Hurt1" ID="{61AC9E96-7106-415C-88D2-E0B3A9DCEB8F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Hurt2" ID="{2C28ED77-2200-4620-A907-644310DDC601}" ShortID="644772186">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="2"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="FacelessGirl" ID="{3FC128C7-94A8-486F-8F9A-031670A8E57F}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Hurt2" ID="{431E47B6-DA97-4BBB-8D30-7AF923F10002}">
+															<Language>SFX</Language>
+															<AudioFile>Faceless girl\Hurt2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="92459625"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Hurt2" ID="{431E47B6-DA97-4BBB-8D30-7AF923F10002}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Hurt3" ID="{47B2DF99-927C-43E3-A783-35CE18F91925}" ShortID="305515873">
+													<PropertyList>
+														<Property Name="3DSpatialization" Type="int16" Value="2"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Attenuation">
+															<ObjectRef Name="FacelessGirl" ID="{3FC128C7-94A8-486F-8F9A-031670A8E57F}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+														</Reference>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="Hurt3" ID="{EFD9D2C6-CD03-4A49-8119-CD39AF5A3B6D}">
+															<Language>SFX</Language>
+															<AudioFile>Faceless girl\Hurt3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="906046684"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Hurt3" ID="{EFD9D2C6-CD03-4A49-8119-CD39AF5A3B6D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+									</ChildrenList>
+								</ActorMixer>
+								<Sound Name="Die1" ID="{C80060F2-DD88-4E4A-AA85-9C96D1256439}" ShortID="357084747">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Die1" ID="{BB987037-9ADC-4A2F-A264-D34D361502DC}">
+											<Language>SFX</Language>
+											<AudioFile>Faceless girl\Die1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="511328350"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Die1" ID="{BB987037-9ADC-4A2F-A264-D34D361502DC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<RandomSequenceContainer Name="Footsteps" ID="{995C7B06-D4F2-4A7E-AF50-7A9AE83E125C}" ShortID="947272702">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>54</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-8</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Footsteps1" ID="{4056FECA-3C62-418C-BFDB-6E07B4517F39}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="footsteps 3_1" ID="{9196109F-3F03-4F1F-A2DF-51DC1507558F}" ShortID="446069061">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="footsteps 3_1" ID="{436E2CAF-E26A-4F21-93BB-4B4C3E648F2E}">
+													<Language>SFX</Language>
+													<AudioFile>Faceless girl\footsteps 3.1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="475944744"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="footsteps 3_1" ID="{436E2CAF-E26A-4F21-93BB-4B4C3E648F2E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="footsteps 3_2" ID="{E23C9769-B2FF-4352-8D1C-5062BF4595BE}" ShortID="444310107">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="footsteps 3_2" ID="{6552E60D-C946-4F90-AE8A-D47960813FF6}">
+													<Language>SFX</Language>
+													<AudioFile>Faceless girl\footsteps 3.2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="838426061"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="footsteps 3_2" ID="{6552E60D-C946-4F90-AE8A-D47960813FF6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="footsteps 3_1" ID="{9196109F-3F03-4F1F-A2DF-51DC1507558F}"/>
+										<ItemRef Name="footsteps 3_2" ID="{E23C9769-B2FF-4352-8D1C-5062BF4595BE}"/>
+									</Playlist>
 								</RandomSequenceContainer>
 							</ChildrenList>
 						</ActorMixer>

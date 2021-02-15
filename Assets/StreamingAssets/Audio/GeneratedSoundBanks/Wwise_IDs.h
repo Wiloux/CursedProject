@@ -30,6 +30,9 @@ namespace AK
         static const AkUniqueID PLAYCHICKENWATCHING = 1378272331U;
         static const AkUniqueID PLAYERHIT = 3831688773U;
         static const AkUniqueID PLAYFACELESSATTACK = 1603074503U;
+        static const AkUniqueID PLAYFACELESSDIE = 740851443U;
+        static const AkUniqueID PLAYFACELESSFOOTSTEPS = 1103033384U;
+        static const AkUniqueID PLAYFACELESSHURT = 3273151456U;
         static const AkUniqueID PLAYFACELESSMOAN = 2474406794U;
         static const AkUniqueID PLAYFOOTSTEPSPLAYER = 1241118191U;
         static const AkUniqueID PLAYFSCHICKEN = 4106886787U;
