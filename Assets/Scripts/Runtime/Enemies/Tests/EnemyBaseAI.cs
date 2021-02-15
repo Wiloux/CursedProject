@@ -69,7 +69,7 @@ public class EnemyBaseAI : MonoBehaviour
 
             LaunchActions();
         }
-        Debug.Log(state.ToString());
+        //Debug.Log(state.ToString());
     }
 
     public virtual void LaunchActions()

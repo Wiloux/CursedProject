@@ -263,12 +263,12 @@ public class EnemyUnit : MonoBehaviour
         hits = Physics.SphereCastAll(transform.position, 0.2f, dir, enemyProfile.rangeToAttack);
         if (hits.Length > 0)
         {
-            Debug.LogWarning(hits.Length);
+            //Debug.LogWarning(hits.Length);
             foreach (RaycastHit hit in hits)
             {
                 if (!hit.collider.isTrigger)
                 {
-                    Debug.LogWarning(hit.transform.name + " :  " + hit.transform.tag +"----");
+                    //Debug.LogWarning(hit.transform.name + " :  " + hit.transform.tag +"----");
                     string tag = hit.transform.tag;
                     if (tag == "Player")
                     {
@@ -278,7 +278,7 @@ public class EnemyUnit : MonoBehaviour
                     else return false;
                 }
             }
-            Debug.LogWarning("hits finished");
+            //Debug.LogWarning("hits finished");
         }
         return false;
     }

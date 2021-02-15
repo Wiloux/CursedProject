@@ -6,8 +6,7 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
-    [SerializeField] private MeshFilter[] itemsRenderers = new MeshFilter[3];
-    [SerializeField] private Image[] itemsImages = new Image[3];
+    [SerializeField] private Transform[] itemsIconParents = new Transform[3];
     [SerializeField] private TMP_Text nameDisplayer;
     [SerializeField] private TMP_Text descriptionDisplayer;
 
@@ -32,11 +31,14 @@ public class InventoryUI : MonoBehaviour
 
     private void UpdateDisplay()
     {
+        foreach (Transform itemIconParent in itemsIconParents)
+        {
+            for(int i =0; i < itemIconParent.childCount;i++) { Destroy(itemIconParent.GetChild(0).gameObject); }
+        }
+
         ObjectSO currentItem = items[currentItemIndex];
-        //itemsRenderers[1].sharedMesh = currentItem.objectModel.GetComponent<MeshFilter>().sharedMesh;
-        //itemsRenderers[1].GetComponent<MeshRenderer>().sharedMaterials = currentItem.objectModel.GetComponent<MeshRenderer>().sharedMaterials;
+
         SetObjectRenderToCase(currentItem, 1);
-        //itemsImages[1].sprite = currentItem.objectSprite;
         nameDisplayer.text = currentItem.objectName;
         descriptionDisplayer.text = currentItem.longDescription;
         
@@ -47,38 +49,47 @@ public class InventoryUI : MonoBehaviour
             bool temp = false;
             if(0 <= index && index < items.Length)
             {
-                ////itemsImages[i].sprite = items[index].objectSprite;
-                //itemsRenderers[i].sharedMesh = currentItem.objectModel.GetComponent<MeshFilter>().sharedMesh;
-                //itemsRenderers[i].GetComponent<MeshRenderer>().sharedMaterials = currentItem.objectModel.GetComponent<MeshRenderer>().sharedMaterials;
                 SetObjectRenderToCase(items[index], i);
                 temp = true;
             }
-            itemsImages[i].gameObject.SetActive(temp);
+            itemsIconParents[i].gameObject.SetActive(temp);
             index = currentItemIndex + 1;
         }
     }
 
     private void SetObjectRenderToCase(ObjectSO currentItem, int index)
     {
-        // Mesh part
-        MeshFilter meshFilter;
-        Mesh sharedMesh = null;
+        //// Mesh part
+        //MeshFilter meshFilter;
+        //Mesh sharedMesh = null;
 
-        if(currentItem.objectModel.TryGetComponent<MeshFilter>(out meshFilter)) sharedMesh = meshFilter.sharedMesh;
-        else sharedMesh = currentItem.objectModel.GetComponentInChildren<MeshFilter>().sharedMesh;
+        //if(currentItem.objectModel.TryGetComponent<MeshFilter>(out meshFilter)) sharedMesh = meshFilter.sharedMesh;
+        //else sharedMesh = currentItem.objectModel.GetComponentInChildren<MeshFilter>().sharedMesh;
 
-        if (sharedMesh != null) itemsRenderers[index].sharedMesh = sharedMesh;
-        else Debug.LogWarning("SharedMesh of the " + currentItem.objectName + " object profile are not found");
+        //if (sharedMesh != null) itemsRenderers[index].sharedMesh = sharedMesh;
+        //else Debug.LogWarning("SharedMesh of the " + currentItem.objectName + " object profile are not found");
 
-        // Material(s) part
+        //// Rotation/Scale part
+        //itemsRenderers[index].transform.localRotation = Quaternion.Euler(currentItem.previewStartRotation);
 
-        MeshRenderer meshRenderer;
-        Material[] sharedMaterials;
 
-        if (currentItem.objectModel.TryGetComponent<MeshRenderer>(out meshRenderer)) sharedMaterials = meshRenderer.sharedMaterials;
-        else sharedMaterials = currentItem.objectModel.GetComponentInChildren<MeshRenderer>().sharedMaterials;
+        //// Material(s) part
 
-        if (sharedMaterials != null) itemsRenderers[index].GetComponent<MeshRenderer>().sharedMaterials = sharedMaterials;
-        else Debug.LogWarning("SharedMaterials of the " + currentItem.objectName + " object profile are not found");
+        //MeshRenderer meshRenderer;
+        //Material[] sharedMaterials;
+
+        //if (currentItem.objectModel.TryGetComponent<MeshRenderer>(out meshRenderer)) sharedMaterials = meshRenderer.sharedMaterials;
+        //else sharedMaterials = currentItem.objectModel.GetComponentInChildren<MeshRenderer>().sharedMaterials;
+
+        //if (sharedMaterials != null) itemsRenderers[index].GetComponent<MeshRenderer>().sharedMaterials = sharedMaterials;
+        //else Debug.LogWarning("SharedMaterials of the " + currentItem.objectName + " object profile are not found");
+
+        GameObject preview = Instantiate(currentItem.objectModel, Vector3.zero, Quaternion.identity);
+        preview.transform.SetParent(itemsIconParents[index].transform);
+
+        preview.transform.localPosition = Vector3.zero;
+        float scale = currentItem.scaleValue;
+        preview.transform.localScale = new Vector3(scale, scale, scale);
+        preview.transform.localRotation = Quaternion.Euler(currentItem.previewStartRotation);
     }
 }

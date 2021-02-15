@@ -32,14 +32,18 @@ public class GameHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
+            ToggleMouseLock();
             if (isSaveMenuOpen){ToggleSaveMenu();}
-            if (isInventoryMenuOpen) ToggleInventoryMenu();
+            else if (isInventoryMenuOpen) ToggleInventoryMenu();
             else { TogglePauseMenu(); }
-            if(MouseManagement.instance != null) MouseManagement.instance.ToggleMouseLock();
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ToggleInventoryMenu();
+            if (isInventoryMenuOpen && !isPaused)
+            {
+                TogglePause();
+                ToggleInventoryMenu();
+            }
         }
 
         if(damageIndicatorTimer > 0)
@@ -92,7 +96,7 @@ public class GameHandler : MonoBehaviour
 
     public void TogglePauseMenu() { pauseMenu.SetActive(!pauseMenu.activeSelf);}
     public void ToggleSaveMenu() { saveMenu.SetActive(!saveMenu.activeSelf); isSaveMenuOpen = !isSaveMenuOpen; }
-    public void ToggleInventoryMenu() { inventoryMenu.SetActive(!inventoryMenu.activeSelf); isInventoryMenuOpen = !isInventoryMenuOpen; TogglePause(); }
+    public void ToggleInventoryMenu() { inventoryMenu.SetActive(!inventoryMenu.activeSelf); isInventoryMenuOpen = !isInventoryMenuOpen; }
     private void ToggleMouseLock() { if (MouseManagement.instance != null) MouseManagement.instance.ToggleMouseLock(); }
 
     public void DisplayFacelessGirlDamageIndicator()
