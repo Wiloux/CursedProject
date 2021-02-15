@@ -18,6 +18,7 @@ public class FacelessGirlAI : EnemyBaseAI
     [SerializeField] private Animator[] attackHairsAnimator;
 
     private float faceTimer;
+    private bool canMoan;
 
     private Action StartShowingFace;
     private Action StopShowingFace;
@@ -72,7 +73,7 @@ public class FacelessGirlAI : EnemyBaseAI
                 break;
             case State.Running:
                 if(faceState == FaceState.Showing) { state = State.Chasing; return; }
-                if(unit.GetDistanceFromPlayer() < enemyProfile.runningRange) unit.RunFromPlayer(0.25f, () => state = State.Idle);
+                if(unit.GetDistanceFromPlayer() < enemyProfile.runningRange) unit.RunFromPlayer(0.25f, () => { state = State.Idle; if (canMoan) { canMoan = false; enemyProfile.onSpawnWEvent?.Post(gameObject); } });
                 break;
         }
 
@@ -111,6 +112,7 @@ public class FacelessGirlAI : EnemyBaseAI
         faceState = FaceState.Showing;
         faceTimer = showingFaceDuration;
         ToggleAttackHairs();
+        canMoan = true;
     }
     private void HideFace()
     {
