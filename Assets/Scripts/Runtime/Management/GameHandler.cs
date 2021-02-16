@@ -8,6 +8,21 @@ public class GameHandler : MonoBehaviour
 {
     public static GameHandler instance;
 
+    #region Sanity vars
+    // Sanity vars
+    private float sanity = 0f;
+    public float Sanity {
+        get => sanity;
+        set { sanity = value; sanityDecreaseTimer = timeToDecreaseSanity; }
+    }
+
+    private float sanityDecreaseTimer;
+    [SerializeField] private float sanityDecreaseRate;
+    [SerializeField] private float timeToDecreaseSanity;
+    #endregion
+
+    #region UI vars
+    // UI vars
     public bool isPaused;
     private bool isSaveMenuOpen;
     private bool isInventoryMenuOpen;
@@ -20,6 +35,8 @@ public class GameHandler : MonoBehaviour
     [SerializeField] private GameObject facelessGirlDamageIndicator;
     private float damageIndicatorTimer;
 
+    #endregion
+
     private void Awake()
     {
         if (instance != null) Destroy(gameObject);
@@ -29,6 +46,22 @@ public class GameHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        #region Sanity gestion
+        if(sanity > 0)
+        {
+            if (sanityDecreaseTimer > 0) 
+            { 
+                sanityDecreaseTimer -= Time.deltaTime;
+                if (sanity >= 150) PlayerHelper.instance.Die();
+            }
+            else
+            {
+                sanity -= sanityDecreaseRate * Time.deltaTime;
+            }
+        }
+        #endregion
+
+        #region UI gestion
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
@@ -52,6 +85,17 @@ public class GameHandler : MonoBehaviour
                 facelessGirlDamageIndicator.SetActive(false); // here wiloux, l'image s'éteind
             }
         }
+        #endregion
+    }
+
+    private void OnGUI()
+    {
+        GUIStyle style = new GUIStyle();
+        style.fontSize = 50;
+        style.normal.textColor = Color.white;
+
+        GUILayout.Label("Sanity : " + sanity.ToString(), style);
+        
     }
 
     public bool IsPaused() { return isPaused; }
