@@ -132,7 +132,6 @@ public class FacelessGirlAI : EnemyBaseAI
         faceState = FaceState.Showing;
         faceTimer = showingFaceDuration;
         ToggleAttackHairs();
-        canMoan = true;
     }
     private void HideFace()
     {
