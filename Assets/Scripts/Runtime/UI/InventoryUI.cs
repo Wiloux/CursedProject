@@ -9,27 +9,41 @@ public class InventoryUI : MonoBehaviour
     [Range(0, 9999999)]
     public float temp = 50f;
 
+    // UI elements
     [SerializeField] private Transform[] itemsIconParents = new Transform[3];
     [SerializeField] private TMP_Text nameDisplayer;
     [SerializeField] private TMP_Text descriptionDisplayer;
-
-    private int currentItemIndex;
+    
+    // Items and previews
     private ObjectSO[] items;
+    private int currentItemIndex;
     private List<GameObject> previewItems = new List<GameObject>() { null, null, null};
 
+    // Wwise
     #region Wwise EVents
     [Space(10)]
     [Header("Wwise Events")]
     [SerializeField] private AK.Wwise.Event openingWEvent;
+    [SerializeField] private AK.Wwise.Event closingWEvent;
     [SerializeField] private AK.Wwise.Event swipingWEvent;
+    private GameObject cam;
     #endregion
+
+    private void Awake()
+    {
+        cam = Camera.main.gameObject;
+    }
 
     private void OnEnable()
     {
         items = PlayerHelper.instance.GetPlayerInventory();
         currentItemIndex = 0;
-        openingWEvent?.Post(gameObject);
+        openingWEvent?.Post(cam);
         UpdateDisplay();
+    }
+    private void OnDisable()
+    {
+        closingWEvent?.Post(cam);
     }
 
     // Update is called once per frame
@@ -66,7 +80,7 @@ public class InventoryUI : MonoBehaviour
 
     private void Swipe()
     {
-        swipingWEvent?.Post(gameObject);
+        swipingWEvent?.Post(cam);
         UpdateDisplay();
     }
 
