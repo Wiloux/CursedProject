@@ -52,6 +52,11 @@ public class PlayerHelper : MonoBehaviour
     {
         player.TakeDamage(damage, stagger);
     }
+
+    public void Die()
+    {
+        player.Die();
+    }
     #endregion
 
     #region UI

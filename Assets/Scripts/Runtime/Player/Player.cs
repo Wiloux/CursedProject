@@ -38,6 +38,10 @@ public class Player : MonoBehaviour
     private float idleTimer;
 
     private Action UseAbility;
+    [SerializeField] private KeyCode specialAbilityKey = KeyCode.F;
+    [SerializeField] private float abilityCooldown;
+    private float abilityTimer;
+
     #region Animator related Actions
     private Action SimpleAttackAnimation;
     private Action SecondaryAttackAnimation;
@@ -147,16 +151,21 @@ public class Player : MonoBehaviour
                         }
                     }
                 }
-                else if (Input.GetKeyDown(KeyCode.F))
+                else if (Input.GetKey(specialAbilityKey))
                 {
-                    Debug.Log("Player use his ability");
-                    AbilityAnimation?.Invoke();
-                    UseAbility?.Invoke();
+                    if(abilityTimer < 0)
+                    {
+                        Debug.Log("Player use his ability");
+                        AbilityAnimation?.Invoke();
+                        UseAbility?.Invoke();
+                        abilityTimer = abilityCooldown;
+                    }
                 }
             }
 
             if (timeToAttack >= 0) timeToAttack -= Time.deltaTime;
             if (timeToSecondaryAttack >= 0) timeToSecondaryAttack -= Time.deltaTime;
+            if (abilityTimer >= 0) abilityTimer -= Time.deltaTime;
             if (isArmed)
             {
                 if (unarmTimer > 0) unarmTimer -= Time.deltaTime;
@@ -314,7 +323,7 @@ public class Player : MonoBehaviour
         Destroy(bloodParticles, 2.5f);
     }
 
-    private void Die()
+    public void Die()
     {
         if (!dead)
         {
@@ -360,6 +369,7 @@ public class Player : MonoBehaviour
                     PutAndRemoveIdleBreakObject(random);
                     Debug.Log("Gyaru idle break"); 
                 };
+                UseAbility = () => { GameHandler.instance.Sanity += 30f * Time.deltaTime; };
                 break;
             case Character.mysterious:
                 SimpleAttackAnimation = () => Debug.Log("mysterious attack animation");
