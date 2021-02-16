@@ -18,7 +18,9 @@ public class FacelessGirlAI : EnemyBaseAI
     [SerializeField] private Animator[] attackHairsAnimator;
 
     private float faceTimer;
-    private bool canMoan;
+
+    public static float idleAnimationDuration;
+    private float moanTimer;
 
     private Action StartShowingFace;
     private Action StopShowingFace;
@@ -40,6 +42,7 @@ public class FacelessGirlAI : EnemyBaseAI
         hitAnimation = () => { animator.SetInteger("randomHurt", UnityEngine.Random.Range(0, 3)); animator.SetTrigger("hit"); };
 
         faceState = FaceState.Hiding;
+        moanTimer = idleAnimationDuration;
 
         foreach(Animator hair in attackHairsAnimator)
         {
@@ -61,19 +64,35 @@ public class FacelessGirlAI : EnemyBaseAI
         switch (state)
         {
             case State.Idle:
-                if(faceState == FaceState.Showing) { state = State.Chasing; return; }
+                // Loop moan sound
+                LoopMoan();
+
+                // If showing face
+                if (faceState == FaceState.Showing) { state = State.Chasing; return; }
+                // else if player is visible by raycast, start running
                 else if (unit.isPlayerVisible(enemyProfile.runningRange)) { state = State.Running; }
                 break;
             case State.Looking:
+                // Loop Moan sound
+                LoopMoan();
+
+                // Look for player and chase if player found
                 unit.LookForPlayer(() => { ShowFace(); state = State.Chasing; });
                 break;
             case State.Chasing:
+                // If hiding face then run
                 if (faceState == FaceState.Hiding) { state = State.Running; return; }
+                // Else chase the player unitil a certain range 
                 if(unit.GetDistanceFromPlayer() > enemyProfile.rangeToAttack) unit.ChaseThePlayer(enemyProfile.rangeToAttack, null);
                 break;
             case State.Running:
+                // Loop moan sound
+                LoopMoan();
+
+                // If showing face, chase
                 if(faceState == FaceState.Showing) { state = State.Chasing; return; }
-                if(unit.GetDistanceFromPlayer() < enemyProfile.runningRange) unit.RunFromPlayer(0.25f, () => { state = State.Idle; if (canMoan) { canMoan = false; enemyProfile.onSpawnWEvent?.Post(gameObject); } });
+                // Else if run from the player to a certain distance, when far enough : "moan" and idle state 
+                if(unit.GetDistanceFromPlayer() < enemyProfile.runningRange) unit.RunFromPlayer(0.25f, () => { state = State.Idle; moanTimer = idleAnimationDuration; enemyProfile.onSpawnWEvent?.Post(gameObject); });
                 break;
         }
 
@@ -105,6 +124,7 @@ public class FacelessGirlAI : EnemyBaseAI
         }
     }
 
+    #region Face Gestion
     private void ShowFace()
     {
         startShowingFaceWEvent?.Post(gameObject);
@@ -122,8 +142,10 @@ public class FacelessGirlAI : EnemyBaseAI
         faceTimer = hidingFaceDuration;
         ToggleAttackHairs();
     }
+    #endregion
 
     #region Hairs gestion
+
         #region Hairs Animator
     private void UpdateHairsAnimators(string animatorParameter, bool newParameterState)
     {
@@ -139,6 +161,7 @@ public class FacelessGirlAI : EnemyBaseAI
         }
     }
         #endregion
+
         #region Attack Hairs gestion
     private void ToggleAttackHairs()
     {
@@ -154,7 +177,18 @@ public class FacelessGirlAI : EnemyBaseAI
             hair.SetBool("attack", true);
         }
     }
-        #endregion
+    #endregion
+
+    #endregion
+
+    #region Moan Sound Gestion
+    private void LoopMoan()
+    {
+        // Loop moan sound
+        if (moanTimer > 0) moanTimer -= Time.deltaTime;
+        else { moanTimer = idleAnimationDuration; enemyProfile.onSpawnWEvent?.Post(gameObject); }
+    }
+
     #endregion
 
     public override void GetStaggered()
