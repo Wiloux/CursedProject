@@ -28,6 +28,7 @@ namespace AK
         static const AkUniqueID PLAYCHICKENONSPAWN = 2039287504U;
         static const AkUniqueID PLAYCHICKENRUNAWAY = 4042026069U;
         static const AkUniqueID PLAYCHICKENWATCHING = 1378272331U;
+        static const AkUniqueID PLAYCLOSEINVENTORY = 2692587287U;
         static const AkUniqueID PLAYERHIT = 3831688773U;
         static const AkUniqueID PLAYFACELESSATTACK = 1603074503U;
         static const AkUniqueID PLAYFACELESSDIE = 740851443U;
@@ -38,6 +39,8 @@ namespace AK
         static const AkUniqueID PLAYHIGHLIGHT = 145167493U;
         static const AkUniqueID PLAYKEYPRESS = 1168436793U;
         static const AkUniqueID PLAYMIRRORPROP = 539806209U;
+        static const AkUniqueID PLAYMOVEINVENTORY = 3203531352U;
+        static const AkUniqueID PLAYOPENINVENTORY = 322586785U;
         static const AkUniqueID PLAYPHONEPROP = 2575517534U;
         static const AkUniqueID PLAYWARDENDIE = 1870077814U;
         static const AkUniqueID PLAYWARDENHURT = 933827407U;

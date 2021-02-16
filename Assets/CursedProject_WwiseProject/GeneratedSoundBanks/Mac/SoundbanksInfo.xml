@@ -21,7 +21,7 @@
 				<GameParameter Id="4143461479" Name="RTPC_Reverb" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3708382820">
+		<SoundBank Id="3161908922" Language="SFX" Hash="3306171826">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -342,6 +342,14 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2692587287" Name="PlayCloseInventory" ObjectPath="\Events\UI\PlayCloseInventory" DurationType="OneShot" DurationMin="0.645578" DurationMax="0.645578">
+					<IncludedMemoryFiles>
+						<File Id="1014960550" Language="SFX">
+							<ShortName>UI STUFF\Inventory\CloseInventory1.wav</ShortName>
+							<Path>SFX\UI STUFF\Inventory\CloseInventory1_8513627B.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3831688773" Name="PlayerHit" ObjectPath="\Events\Players\PlayerHit" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.334966" DurationMax="1.500000">
 					<IncludedMemoryFiles>
 						<File Id="44541559" Language="SFX">
@@ -400,15 +408,15 @@
 					<IncludedMemoryFiles>
 						<File Id="275463776" Language="SFX">
 							<ShortName>Faceless girl\Attack1.wav</ShortName>
-							<Path>SFX\Faceless girl\Attack1_A9BF57C9.wem</Path>
+							<Path>SFX\Faceless girl\Attack1_48D71C91.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="740851443" Name="PlayFacelessDie" ObjectPath="\Events\Enemies\FacelessGirl\PlayFacelessDie" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="3.367959" DurationMax="3.367959">
+				<Event Id="740851443" Name="PlayFacelessDie" ObjectPath="\Events\Enemies\FacelessGirl\PlayFacelessDie" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="2.853339" DurationMax="2.853339">
 					<IncludedMemoryFiles>
 						<File Id="511328350" Language="SFX">
 							<ShortName>Faceless girl\Die1.wav</ShortName>
-							<Path>SFX\Faceless girl\Die1_10C4C929.wem</Path>
+							<Path>SFX\Faceless girl\Die1_5BF4AD25.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -728,6 +736,22 @@
 						<File Id="434715277" Language="SFX">
 							<ShortName>Player props\espelho.wav</ShortName>
 							<Path>SFX\Player props\espelho_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3203531352" Name="PlayMoveInventory" ObjectPath="\Events\UI\PlayMoveInventory" DurationType="OneShot" DurationMin="0.277302" DurationMax="0.277302">
+					<IncludedMemoryFiles>
+						<File Id="816357834" Language="SFX">
+							<ShortName>UI STUFF\Inventory\MoveInventory1.wav</ShortName>
+							<Path>SFX\UI STUFF\Inventory\MoveInventory1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="322586785" Name="PlayOpenInventory" ObjectPath="\Events\UI\PlayOpenInventory" DurationType="OneShot" DurationMin="0.721791" DurationMax="0.721791">
+					<IncludedMemoryFiles>
+						<File Id="79721549" Language="SFX">
+							<ShortName>UI STUFF\Inventory\OpenInventory1.wav</ShortName>
+							<Path>SFX\UI STUFF\Inventory\OpenInventory1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

@@ -22896,7 +22896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5539579007769714836, guid: 522c3ad2491a76243b4f76c690cf39fe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -40.00003
+      value: -40.000015
       objectReference: {fileID: 0}
     - target: {fileID: 5539579007769714841, guid: 522c3ad2491a76243b4f76c690cf39fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -23975,6 +23975,18 @@ PrefabInstance:
       propertyPath: temp
       value: 0.21
       objectReference: {fileID: 0}
+    - target: {fileID: 8714181837688623671, guid: 69d2607f4f6b7054db8d3efa792273a3, type: 3}
+      propertyPath: closingWEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: d12dbf86bdfe73b4ba77bd2d460271cd, type: 2}
+    - target: {fileID: 8714181837688623671, guid: 69d2607f4f6b7054db8d3efa792273a3, type: 3}
+      propertyPath: openingWEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 3afb8495f4f28e344a9b253a75ab70a3, type: 2}
+    - target: {fileID: 8714181837688623671, guid: 69d2607f4f6b7054db8d3efa792273a3, type: 3}
+      propertyPath: swipingWEvent.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 370ebef7ec98ab246994da62496034c4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69d2607f4f6b7054db8d3efa792273a3, type: 3}
 --- !u!4 &5698653705590468231

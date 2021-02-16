@@ -60,7 +60,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585881319304734705
+    m_lastTime: -8585881051765739696
     List:
     - name: Main
       guid: 3e1cacb96421c24d992f8e9dfee00897
@@ -112,7 +112,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585882599000244146
+    m_lastTime: -8585881051765839125
     List: []
   - PhysicalPath: Events\Enemies.wwu
     PathAndIcons:
@@ -786,6 +786,51 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+  - PhysicalPath: Events\UI.wwu
+    PathAndIcons:
+    - ElementName: UI
+      ObjectType: 12
+    ParentPath: UI
+    guid: a096ec4092a2224ca5c1df7d5d24ea39
+    GuidInternal: 
+    m_lastTime: -8585881051766058667
+    List:
+    - name: PlayCloseInventory
+      guid: 803f59d2f214f643bf8a4b0c44e7d330
+      id: 2692587287
+      PathAndIcons:
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: PlayCloseInventory
+        ObjectType: 3
+      Path: UI\PlayCloseInventory
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayMoveInventory
+      guid: 0499c92f0d75274b966681a1d1c7742d
+      id: 3203531352
+      PathAndIcons:
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: PlayMoveInventory
+        ObjectType: 3
+      Path: UI\PlayMoveInventory
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayOpenInventory
+      guid: 8d518c9327c7664fa6d7938a78316bd9
+      id: 322586785
+      PathAndIcons:
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: PlayOpenInventory
+        ObjectType: 3
+      Path: UI\PlayOpenInventory
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -993,7 +1038,6 @@ MonoBehaviour:
   - /CursedProject_WwiseProject
   - /CursedProject_WwiseProject/Events
   - /CursedProject_WwiseProject/Events/Ambiances
-  - /CursedProject_WwiseProject/Events/Enemies
-  - /CursedProject_WwiseProject/Events/Enemies/FacelessGirl
+  - /CursedProject_WwiseProject/Events/UI
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
