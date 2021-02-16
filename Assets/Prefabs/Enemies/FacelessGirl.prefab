@@ -21143,6 +21143,7 @@ MonoBehaviour:
   - {fileID: 59543230613949375}
   - {fileID: 2587771316319696601}
   - {fileID: 1234698900595923101}
+  idleAnimationDuration: 2
   startShowingFaceWEvent:
     idInternal: 0
     valueGuidInternal: 

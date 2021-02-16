@@ -19,7 +19,7 @@ public class FacelessGirlAI : EnemyBaseAI
 
     private float faceTimer;
 
-    public static float idleAnimationDuration;
+    public float idleAnimationDuration = 2f;
     private float moanTimer;
 
     private Action StartShowingFace;

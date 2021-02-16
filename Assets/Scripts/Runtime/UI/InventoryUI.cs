@@ -12,6 +12,7 @@ public class InventoryUI : MonoBehaviour
 
     private int currentItemIndex;
     private ObjectSO[] items;
+    private List<GameObject> previewItems = new List<GameObject>() { null, null, null};
 
     private void OnEnable()
     {
@@ -26,70 +27,65 @@ public class InventoryUI : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) { if (currentItemIndex > 0) currentItemIndex--; UpdateDisplay(); }
         else if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) { if (currentItemIndex < items.Length - 1) currentItemIndex++; UpdateDisplay(); }
 
-
+        // Rotate the preview items
+        for(int i = 0; i < 3;i++)
+        {
+            int index = currentItemIndex - 1 + i;
+            if (currentItemIndex == 0) index += 1;
+            if(previewItems[i] != null) previewItems[i].transform.Rotate(items[index].previewRotation * Time.deltaTime);
+        }
     }
 
     private void UpdateDisplay()
     {
+        // Destroy all preview Items
         foreach (Transform itemIconParent in itemsIconParents)
         {
             for(int i =0; i < itemIconParent.childCount;i++) { Destroy(itemIconParent.GetChild(0).gameObject); }
         }
-
-        ObjectSO currentItem = items[currentItemIndex];
-
-        SetObjectRenderToCase(currentItem, 1);
-        nameDisplayer.text = currentItem.objectName;
-        descriptionDisplayer.text = currentItem.longDescription;
-        
-
-        int index = currentItemIndex - 1; 
-        for(int i = 0; i < 3; i+= 2)
+        // Destroy the previewItems list's elements
+        for(int i = 0; i < 3; i++)
         {
-            bool temp = false;
+            previewItems[i] = null;
+        }
+
+
+        // Check which case need a preview, if doesn't we disabled them
+        for (int i = 0; i < 3; i++)
+        {
+            int index = currentItemIndex - 1 + i;
+            bool show = false;
             if(0 <= index && index < items.Length)
             {
-                SetObjectRenderToCase(items[index], i);
-                temp = true;
+                CreatePreviewInCase(items[index], i);
+                show = true;
             }
-            itemsIconParents[i].gameObject.SetActive(temp);
-            index = currentItemIndex + 1;
+            itemsIconParents[i].gameObject.SetActive(show);
+
+            // We change the text ui with the object profile displayed on the central case
+            if(i == 1)
+            {
+                nameDisplayer.text = items[index].objectName;
+                descriptionDisplayer.text = items[index].longDescription;
+            }
         }
     }
 
-    private void SetObjectRenderToCase(ObjectSO currentItem, int index)
+    private void CreatePreviewInCase(ObjectSO currentItem, int index)
     {
-        //// Mesh part
-        //MeshFilter meshFilter;
-        //Mesh sharedMesh = null;
-
-        //if(currentItem.objectModel.TryGetComponent<MeshFilter>(out meshFilter)) sharedMesh = meshFilter.sharedMesh;
-        //else sharedMesh = currentItem.objectModel.GetComponentInChildren<MeshFilter>().sharedMesh;
-
-        //if (sharedMesh != null) itemsRenderers[index].sharedMesh = sharedMesh;
-        //else Debug.LogWarning("SharedMesh of the " + currentItem.objectName + " object profile are not found");
-
-        //// Rotation/Scale part
-        //itemsRenderers[index].transform.localRotation = Quaternion.Euler(currentItem.previewStartRotation);
-
-
-        //// Material(s) part
-
-        //MeshRenderer meshRenderer;
-        //Material[] sharedMaterials;
-
-        //if (currentItem.objectModel.TryGetComponent<MeshRenderer>(out meshRenderer)) sharedMaterials = meshRenderer.sharedMaterials;
-        //else sharedMaterials = currentItem.objectModel.GetComponentInChildren<MeshRenderer>().sharedMaterials;
-
-        //if (sharedMaterials != null) itemsRenderers[index].GetComponent<MeshRenderer>().sharedMaterials = sharedMaterials;
-        //else Debug.LogWarning("SharedMaterials of the " + currentItem.objectName + " object profile are not found");
-
+        // Create the "preview object"
         GameObject preview = Instantiate(currentItem.objectModel, Vector3.zero, Quaternion.identity);
-        preview.transform.SetParent(itemsIconParents[index].transform);
 
+        // Place it 
+        preview.transform.SetParent(itemsIconParents[index].transform);
         preview.transform.localPosition = Vector3.zero;
+        // Scale it
         float scale = currentItem.scaleValue;
         preview.transform.localScale = new Vector3(scale, scale, scale);
+        // Rotate it
         preview.transform.localRotation = Quaternion.Euler(currentItem.previewStartRotation);
+
+        // Add it to the preview Items list to rotate them later
+        previewItems[index] = preview;
     }
 }

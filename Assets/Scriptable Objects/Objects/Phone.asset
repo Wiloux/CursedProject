@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Phone
   objectModel: {fileID: 919132149155446097, guid: 2d7f8c83ebf9d53408a3044b8bb8b0e5, type: 3}
-  previewStartRotation: {x: 0, y: 0, z: 0}
+  previewStartRotation: {x: 0, y: 180, z: 0}
   previewRotation: {x: 0, y: 0, z: 0}
-  scaleValue: 1
+  scaleValue: 15
   shortDescription: 
   longDescription: 'Phonehfugfir
 

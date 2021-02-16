@@ -39,11 +39,9 @@ public class GameHandler : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (isInventoryMenuOpen && !isPaused)
-            {
-                TogglePause();
-                ToggleInventoryMenu();
-            }
+            TogglePause();
+            ToggleMouseLock();
+            ToggleInventoryMenu();
         }
 
         if(damageIndicatorTimer > 0)

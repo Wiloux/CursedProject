@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3804c761978048e48a673b2d315ef91b, type: 3}
-  m_Name: Trash
+  m_Name: Table
   m_EditorClassIdentifier: 
-  objectName: Trash
-  objectModel: {fileID: 5570753806488649908, guid: a190e9222e2f94e458b5fac796614412, type: 3}
-  previewStartRotation: {x: 0, y: 0, z: 0}
+  objectName: Table
+  objectModel: {fileID: 8547844028207840679, guid: cac28057e6804de4f808f114b8b6bf56, type: 3}
+  previewStartRotation: {x: -45, y: 0, z: 0}
   previewRotation: {x: 0, y: 0, z: 0}
-  scaleValue: 1
+  scaleValue: 50
   shortDescription: 
-  longDescription: Reflect the person reading this
+  longDescription: Because... why not have a table ?
   type: 3
