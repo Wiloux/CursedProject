@@ -15,7 +15,7 @@ MonoBehaviour:
   objectName: Table
   objectModel: {fileID: 8547844028207840679, guid: cac28057e6804de4f808f114b8b6bf56, type: 3}
   previewStartRotation: {x: -45, y: 0, z: 0}
-  previewRotation: {x: 0, y: 0, z: 0}
+  previewRotation: {x: 0, y: 0, z: 180}
   scaleValue: 50
   shortDescription: 
   longDescription: Because... why not have a table ?

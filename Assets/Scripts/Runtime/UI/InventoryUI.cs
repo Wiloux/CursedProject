@@ -6,6 +6,9 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
+    [Range(0, 9999999)]
+    public float temp = 50f;
+
     [SerializeField] private Transform[] itemsIconParents = new Transform[3];
     [SerializeField] private TMP_Text nameDisplayer;
     [SerializeField] private TMP_Text descriptionDisplayer;
@@ -14,26 +17,57 @@ public class InventoryUI : MonoBehaviour
     private ObjectSO[] items;
     private List<GameObject> previewItems = new List<GameObject>() { null, null, null};
 
+    #region Wwise EVents
+    [Space(10)]
+    [Header("Wwise Events")]
+    [SerializeField] private AK.Wwise.Event openingWEvent;
+    [SerializeField] private AK.Wwise.Event swipingWEvent;
+    #endregion
+
     private void OnEnable()
     {
         items = PlayerHelper.instance.GetPlayerInventory();
         currentItemIndex = 0;
+        openingWEvent?.Post(gameObject);
         UpdateDisplay();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) { if (currentItemIndex > 0) currentItemIndex--; UpdateDisplay(); }
-        else if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) { if (currentItemIndex < items.Length - 1) currentItemIndex++; UpdateDisplay(); }
+        if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) { 
+            if (currentItemIndex > 0) 
+            {
+                currentItemIndex--;
+                Swipe();
+            } 
+        }
+        else if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) 
+        {
+            if (currentItemIndex < items.Length - 1) 
+            { 
+                currentItemIndex++;
+                Swipe();
+            } 
+        }
 
         // Rotate the preview items
         for(int i = 0; i < 3;i++)
         {
             int index = currentItemIndex - 1 + i;
-            if (currentItemIndex == 0) index += 1;
-            if(previewItems[i] != null) previewItems[i].transform.Rotate(items[index].previewRotation * Time.deltaTime);
+            if (currentItemIndex == 0 && i == 0) continue;
+            if (previewItems[i] != null)
+            {
+                previewItems[i].transform.Rotate(items[index].previewRotation * Time.unscaledDeltaTime * temp, Space.Self);
+                //previewItems[i].transform.localRotation = Quaternion.
+            }
         }
+    }
+
+    private void Swipe()
+    {
+        swipingWEvent?.Post(gameObject);
+        UpdateDisplay();
     }
 
     private void UpdateDisplay()

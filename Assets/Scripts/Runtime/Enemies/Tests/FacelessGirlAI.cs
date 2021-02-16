@@ -133,9 +133,9 @@ public class FacelessGirlAI : EnemyBaseAI
         faceTimer = showingFaceDuration;
         ToggleAttackHairs();
     }
-    private void HideFace()
+    private void HideFace(bool needStopShowingFaceWEvent = true)
     {
-        stopShowingFaceWEvent?.Post(gameObject);
+        if(needStopShowingFaceWEvent) stopShowingFaceWEvent?.Post(gameObject);
         StopShowingFace?.Invoke();
         faceState = FaceState.Hiding;
         faceTimer = hidingFaceDuration;
@@ -192,6 +192,7 @@ public class FacelessGirlAI : EnemyBaseAI
 
     public override void GetStaggered()
     {
+        HideFace(false);
         unit.GetStaggered(enemyProfile.staggerDuration, () => state = State.Running);
     }
 
@@ -201,5 +202,6 @@ public class FacelessGirlAI : EnemyBaseAI
 
         UpdateHairsAnimators("attack", false);
         DisableHairsAnimators();
+        if (attackHairsAnimator[0].gameObject.activeSelf) ToggleAttackHairs();
     }
 }

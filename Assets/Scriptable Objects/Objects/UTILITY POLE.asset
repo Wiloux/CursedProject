@@ -15,7 +15,7 @@ MonoBehaviour:
   objectName: Utility pole
   objectModel: {fileID: 2444553496441337033, guid: bebf5f00996efdd4690e36b70cdfaac1, type: 3}
   previewStartRotation: {x: -90, y: -90, z: 0}
-  previewRotation: {x: 0, y: 0, z: 0}
+  previewRotation: {x: 90, y: 0, z: 0}
   scaleValue: 300
   shortDescription: 
   longDescription: losing mind
