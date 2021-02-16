@@ -100,7 +100,15 @@
 				<SoundcasterSession Name="Janitor" ID="{84A4224E-4400-473C-829F-0FDA2F50AFED}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="PlayAmbianceJanitorRoom" ID="{C9680C4B-860E-41A9-A33F-EBC367BC467A}" WorkUnitID="{5DD2E1AF-BE64-43F3-86B4-F24DE10966EC}"/>
+							<ObjectRef Name="PlayFacelessAttack" ID="{95F77DD8-1FC6-47E0-AC7E-7275E2B6B681}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="StopFacelessAttack" ID="{63F048E5-FE5E-478A-BABB-488014A439D3}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="PlayFacelessHurt" ID="{D89E4302-B7B1-4945-9A53-D56296DAD940}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}"/>
 							<Position X="2" Y="0"/>
 						</Module>
 					</ModuleList>

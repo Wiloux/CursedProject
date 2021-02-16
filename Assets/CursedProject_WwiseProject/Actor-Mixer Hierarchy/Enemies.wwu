@@ -3398,6 +3398,11 @@
 								<Sound Name="Attack1" ID="{43D62C40-2540-4958-8FF6-BA3A00C47D40}" ShortID="871658715">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -3411,7 +3416,7 @@
 										<AudioFileSource Name="Attack1" ID="{8838B197-9C4F-495A-BB28-14793264A7FE}">
 											<PropertyList>
 												<Property Name="CrossfadeDuration" Type="Real64" Value="197.368"/>
-												<Property Name="LoopBegin" Type="Real64" Value="0.41036308623298"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0.323373676248109"/>
 												<Property Name="LoopEnd" Type="Real64" Value="2.25416036308623"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 											</PropertyList>
@@ -3427,6 +3432,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="AttackTail" ID="{6F6CBB4F-0A03-4BF6-BFF9-6B372E69FBE1}" ShortID="453791769">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -3454,6 +3466,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<RandomSequenceContainer Name="FacelessMoan" ID="{29F31D25-0680-402A-9D83-30BA4E4F960E}" ShortID="1065963411">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-9</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -3507,30 +3526,14 @@
 												<ActiveSource Name="Moan2" ID="{67DE4D77-DCF6-44E6-AB44-DF261F603105}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="MoanSilence" ID="{C8409B65-F394-490F-B92F-D9D71A113E5A}" ShortID="1038616322">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<SourcePlugin Name="Wwise Silence" ID="{C9A43601-A649-44D2-BF65-47DE62A8972F}" ShortID="427967461" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
-													<PropertyList>
-														<Property Name="Length" Type="Real32" Value="2"/>
-														<Property Name="LengthMax" Type="Real32" Value="0.3"/>
-														<Property Name="LengthMin" Type="Real32" Value="-0.2"/>
-													</PropertyList>
-													<Language>SFX</Language>
-												</SourcePlugin>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Wwise Silence" ID="{C9A43601-A649-44D2-BF65-47DE62A8972F}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
 										<Sound Name="Moan3" ID="{51306932-437D-4382-A8A6-3C71F113788E}" ShortID="614764496">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-7</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
@@ -3666,7 +3669,7 @@
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>6</Value>
+												<Value>12</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -3680,6 +3683,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Die1" ID="{BB987037-9ADC-4A2F-A264-D34D361502DC}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.2636215999259"/>
+												<Property Name="FadeOutShape" Type="int16" Value="6"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.85333909660687"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Faceless girl\Die1.wav</AudioFile>
 											<MediaIDList>

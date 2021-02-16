@@ -991,5 +991,9 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /CursedProject_WwiseProject
+  - /CursedProject_WwiseProject/Events
+  - /CursedProject_WwiseProject/Events/Ambiances
+  - /CursedProject_WwiseProject/Events/Enemies
+  - /CursedProject_WwiseProject/Events/Enemies/FacelessGirl
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
