@@ -242,64 +242,10 @@
 				<SwitchContainer Name="FootstepsPlayer" ID="{B9148C28-E300-4A9B-8E29-EF47C7818ED2}" ShortID="63908252">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
-						<Property Name="Lowpass" Type="int16">
-							<RTPCList>
-								<RTPC Name="" ID="{4CFB6F1F-E327-4F53-AE03-7CD5270570D3}" ShortID="148584116">
-									<ReferenceList>
-										<Reference Name="ControlInput">
-											<ObjectRef Name="RTPC_Occlusion_LoPass" ID="{80BE260F-D165-4197-8710-898C20CF8EDE}" WorkUnitID="{84FC873F-5FD7-4284-93F5-81868CFB0AA6}"/>
-										</Reference>
-									</ReferenceList>
-									<Curve Name="" ID="{69250044-B221-45E7-8988-0E4B07FD4732}">
-										<PropertyList>
-											<Property Name="Flags" Type="int32" Value="65537"/>
-										</PropertyList>
-										<PointList>
-											<Point>
-												<XPos>0</XPos>
-												<YPos>0</YPos>
-												<Flags>5</Flags>
-											</Point>
-											<Point>
-												<XPos>1</XPos>
-												<YPos>52</YPos>
-												<Flags>37</Flags>
-											</Point>
-										</PointList>
-									</Curve>
-								</RTPC>
-							</RTPCList>
-						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-7</Value>
 							</ValueList>
-							<RTPCList>
-								<RTPC Name="" ID="{FF9B006A-4569-406D-991D-BF6AEFB7E8ED}" ShortID="736218689">
-									<ReferenceList>
-										<Reference Name="ControlInput">
-											<ObjectRef Name="RTPC_Occlusion_Volume" ID="{69FCFFBE-9F40-479F-8731-106A8A8BACE4}" WorkUnitID="{84FC873F-5FD7-4284-93F5-81868CFB0AA6}"/>
-										</Reference>
-									</ReferenceList>
-									<Curve Name="" ID="{B639CB74-D607-4470-88C2-90DF76A58DC9}">
-										<PropertyList>
-											<Property Name="Flags" Type="int32" Value="3"/>
-										</PropertyList>
-										<PointList>
-											<Point>
-												<XPos>0</XPos>
-												<YPos>0</YPos>
-												<Flags>5</Flags>
-											</Point>
-											<Point>
-												<XPos>1</XPos>
-												<YPos>-200</YPos>
-												<Flags>37</Flags>
-											</Point>
-										</PointList>
-									</Curve>
-								</RTPC>
-							</RTPCList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
@@ -383,6 +329,7 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="Walk" ID="{51B6CB34-F92F-4B4D-8C09-D4836721015A}" ShortID="486027140">
 											<PropertyList>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>

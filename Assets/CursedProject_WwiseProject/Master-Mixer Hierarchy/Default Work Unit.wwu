@@ -38,6 +38,30 @@
 												</PointList>
 											</Curve>
 										</RTPC>
+										<RTPC Name="" ID="{E928B688-854A-416E-A60A-D36134B7BCDF}" ShortID="986147801">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="RTPC_Occlusion_Volume" ID="{69FCFFBE-9F40-479F-8731-106A8A8BACE4}" WorkUnitID="{84FC873F-5FD7-4284-93F5-81868CFB0AA6}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{190BE408-7297-4277-81E3-611224E7E556}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0.04608</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>-12.46503</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
 									</RTPCList>
 								</Property>
 								<Property Name="BypassEffect0" Type="bool">
@@ -96,6 +120,34 @@
 										</RTPC>
 									</RTPCList>
 								</Property>
+								<Property Name="OutputBusLowpass" Type="int16">
+									<RTPCList>
+										<RTPC Name="" ID="{7A4A3747-01B0-4128-8156-0AB311BD1BAE}" ShortID="328759655">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="RTPC_Occlusion_Volume" ID="{69FCFFBE-9F40-479F-8731-106A8A8BACE4}" WorkUnitID="{84FC873F-5FD7-4284-93F5-81868CFB0AA6}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{B313F313-67FE-46FE-8DF8-E631A3778ABE}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>64</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Effect0">
@@ -112,18 +164,25 @@
 									<Custom CreatedFrom="{6F14AD1E-2B96-49D3-B00F-BF1325C39993}">
 										<Effect Name="RoomReverb_School2_(Custom)" ID="{A3A9507D-FEE5-4D5E-A6AD-40EF7AF8BA16}" ShortID="592412883" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 											<PropertyList>
-												<Property Name="DecayTime" Type="Real32" Value="10"/>
-												<Property Name="ERFrontBackDelay" Type="Real32" Value="32"/>
+												<Property Name="DecayTime" Type="Real32" Value="0.7"/>
+												<Property Name="Density" Type="Real32" Value="100"/>
+												<Property Name="Diffusion" Type="Real32" Value="0"/>
+												<Property Name="DryLevel" Type="Real32" Value="-0.3"/>
+												<Property Name="ERFrontBackDelay" Type="Real32" Value="1"/>
+												<Property Name="ERLevel" Type="Real32" Value="-18"/>
 												<Property Name="HFDamping" Type="Real32" Value="10"/>
 												<Property Name="PreDelay" Type="Real32" Value="0"/>
 												<Property Name="Quality" Type="int32" Value="16"/>
-												<Property Name="RoomSize" Type="Real32" Value="29"/>
+												<Property Name="RoomShape" Type="Real32" Value="54"/>
+												<Property Name="RoomSize" Type="Real32" Value="6"/>
+												<Property Name="StereoWidth" Type="Real32" Value="0"/>
 											</PropertyList>
 										</Effect>
 									</Custom>
 								</Reference>
 							</ReferenceList>
 						</Bus>
+						<Bus Name="UI" ID="{0D3E7D2E-C377-4A86-A271-798ECFDA8BB5}"/>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

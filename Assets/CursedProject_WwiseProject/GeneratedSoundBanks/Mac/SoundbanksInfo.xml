@@ -11,17 +11,18 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="919075903">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2404325013">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<GameParameters>
+				<GameParameter Id="342905355" Name="RTPC_Occlusion_Volume" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Occlusion_Volume"/>
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 				<GameParameter Id="2627017276" Name="RTPC_Reverb_2" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb_2"/>
 				<GameParameter Id="4143461479" Name="RTPC_Reverb" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3306171826">
+		<SoundBank Id="3161908922" Language="SFX" Hash="2914494104">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -346,7 +347,7 @@
 					<IncludedMemoryFiles>
 						<File Id="1014960550" Language="SFX">
 							<ShortName>UI STUFF\Inventory\CloseInventory1.wav</ShortName>
-							<Path>SFX\UI STUFF\Inventory\CloseInventory1_8513627B.wem</Path>
+							<Path>SFX\UI STUFF\Inventory\CloseInventory1_AD1DD8E7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -894,10 +895,6 @@
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
-			<GameParameters>
-				<GameParameter Id="222722569" Name="RTPC_Occlusion_LoPass" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Occlusion_LoPass"/>
-				<GameParameter Id="342905355" Name="RTPC_Occlusion_Volume" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Occlusion_Volume"/>
-			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="690777561" Name="WalkRun" ObjectPath="\Switches\Default Work Unit\WalkRun">
 					<Switches>

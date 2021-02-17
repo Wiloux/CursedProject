@@ -119,11 +119,11 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_Occlusion_Volume" ID="{69FCFFBE-9F40-479F-8731-106A8A8BACE4}"/>
-							<Value>0</Value>
+							<Value>1</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_Reverb_2" ID="{B840F614-4008-4E5C-A7A5-2CCAD8469304}"/>
-							<Value>0</Value>
+							<Value>1</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SFXVolume" ID="{D324A896-F96A-4EDB-927D-196920F86B9F}"/>

@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5cf24529c5ae0c4fb7d461ec6430a707
     GuidInternal: 
-    m_lastTime: -8585883503088946088
+    m_lastTime: -8585880014845892154
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -52,6 +52,17 @@ MonoBehaviour:
       - ElementName: SFX
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus\SFX
+    - name: UI
+      guid: 2e7d3e0d77c3864aa271798ecfda8bb5
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: UI
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\UI
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -1036,8 +1047,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /CursedProject_WwiseProject
-  - /CursedProject_WwiseProject/Events
-  - /CursedProject_WwiseProject/Events/Ambiances
-  - /CursedProject_WwiseProject/Events/UI
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

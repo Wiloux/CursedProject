@@ -32,21 +32,21 @@ public class RTPC_Occlusion_Test : MonoBehaviour
             {
                 Debug.DrawRay(transform.position, Direction, Color.blue);
                 print("Is being occluded");
-                AkSoundEngine.SetRTPCValue("RTPC_Occlusion_Volume", 1, gameObject);
-                AkSoundEngine.SetRTPCValue("RTPC_Occlusion_LoPass", 1, gameObject);
+                AkSoundEngine.SetRTPCValue("RTPC_Occlusion_Volume", 1);
+                AkSoundEngine.SetRTPCValue("RTPC_Occlusion_LoPass", 1);
             }
             if (outInfo.collider.gameObject.layer == LayerMask.NameToLayer("Ignore_Occlude"))
             {
                 Debug.DrawRay(transform.position, Direction, Color.green);
-                AkSoundEngine.SetRTPCValue("RTPC_Occlusion_Volume", 0, gameObject);
-                AkSoundEngine.SetRTPCValue("RTPC_Occlusion_LoPass", 0, gameObject);
+                AkSoundEngine.SetRTPCValue("RTPC_Occlusion_Volume", 0);
+                AkSoundEngine.SetRTPCValue("RTPC_Occlusion_LoPass", 0);
             }
         }     
         else
         {
             Debug.DrawRay(transform.position, Direction, Color.red);
-            AkSoundEngine.SetRTPCValue("RTPC_Occlusion_Volume", 0, gameObject);
-            AkSoundEngine.SetRTPCValue("RTPC_Occlusion_LoPass", 0, gameObject);
+            AkSoundEngine.SetRTPCValue("RTPC_Occlusion_Volume", 0);
+            AkSoundEngine.SetRTPCValue("RTPC_Occlusion_LoPass", 0);
         }
     }
 }

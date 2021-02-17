@@ -60,10 +60,6 @@ Switch	ID	Name	Switch Group			Notes
 	2986888339	Shard	PlayerHitSwitch			
 	4251222990	Chicken	PlayerHitSwitch			
 
-Game Parameter	ID	Name			Wwise Object Path	Notes
-	222722569	RTPC_Occlusion_LoPass			\Default Work Unit\RTPC_Occlusion_LoPass	
-	342905355	RTPC_Occlusion_Volume			\Default Work Unit\RTPC_Occlusion_Volume	
-
 Effect plug-ins	ID	Name	Type				Notes
 	564411489	Echoes_Linear_(Custom)	Wwise Delay			
 
@@ -196,7 +192,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	986628007	RunAway2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\Run Away\RunAway2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\RunAway\RunAway2		273104
 	990394786	SapatoFormalSidewalkBack1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\PlayerMovement\Gyaru\SapatoFormalSidewalkBack1_10C4C929.wem		\Actor-Mixer Hierarchy\Players\FootstepsPlayer\Gyaru\Sidewalk\Backwards\SapatoFormalSidewalkBack1		88264
 	1003048111	shard wall hit 6	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Shards\shard wall hit 6_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Warden\Shards\ShardWallHit\shard wall hit 6		264664
-	1014960550	CloseInventory1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\UI STUFF\Inventory\CloseInventory1_8513627B.wem		\Actor-Mixer Hierarchy\UI\Inventory\CloseInventory1		113944
+	1014960550	CloseInventory1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\UI STUFF\Inventory\CloseInventory1_AD1DD8E7.wem		\Actor-Mixer Hierarchy\UI\Inventory\CloseInventory1		113944
 	1023060161	Backstab2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Attack\Backstab2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Attack\Backstab2		88264
 	1023437812	Eager6	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\Eager\Eager6_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\Eager\EagerStart\Eager6		208520
 	1030892577	Chase2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Windows\SFX\Chicken\Vocal\Chase\Chase2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\Chase\Chase2		264664
