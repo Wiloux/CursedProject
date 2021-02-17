@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameHandler : MonoBehaviour
 {
     public static GameHandler instance;
 
-    #region Sanity vars
     // Sanity vars
+    #region Sanity vars
     private float sanity = 0f;
     public float Sanity {
         get => sanity;
@@ -19,8 +20,14 @@ public class GameHandler : MonoBehaviour
     private float sanityDecreaseTimer;
     [SerializeField] private float sanityDecreaseRate;
     [SerializeField] private float timeToDecreaseSanity;
+
+    #region Sanity UI
+    [SerializeField] private Image glitchyRender;
+    public GlitchSanityLevel[] glitchyMaterials;
+        #endregion
     #endregion
 
+    // UI Vars
     #region UI vars
     // UI vars
     public bool isPaused;
@@ -53,12 +60,38 @@ public class GameHandler : MonoBehaviour
             { 
                 sanityDecreaseTimer -= Time.deltaTime;
                 if (sanity >= 150) PlayerHelper.instance.Die();
+
             }
             else
             {
                 sanity -= sanityDecreaseRate * Time.deltaTime;
             }
         }
+
+        AkSoundEngine.SetRTPCValue("HallucinationsRTPC", Mathf.Clamp(sanity, 0f, 100f), gameObject); // Here Wwise stuffs
+
+        //// Glitchy renders gestion
+        //for(int i = glitchyMaterials.Length - 1; i >= 0; i--)
+        //{
+        //    GlitchSanityLevel glitchSanityLevel = glitchyMaterials[i];
+        //    if(sanity >= glitchSanityLevel.sanityLevel)
+        //    {
+        //        Debug.Log(i);
+        //        glitchyRender.material.CopyPropertiesFromMaterial(glitchSanityLevel.material);
+        //        break;
+        //    }
+        //}   
+        // Glitchy renders gestion
+        for(int i = glitchyMaterials.Length - 1; i >= 0; i--)
+        {
+            GlitchSanityLevel glitchSanityLevel = glitchyMaterials[i];
+            if(sanity >= glitchSanityLevel.sanityLevel)
+            {
+                Debug.Log(i);
+                glitchyRender.material.CopyPropertiesFromMaterial(glitchSanityLevel.material);
+                break;
+            }
+        }   
         #endregion
 
         #region UI gestion
@@ -145,5 +178,17 @@ public class GameHandler : MonoBehaviour
     {
         facelessGirlDamageIndicator.SetActive(true);
         damageIndicatorTimer = 0.5f;
+    }
+}
+
+[Serializable] public class GlitchSanityLevel
+{
+    public Material material;
+    public float sanityLevel;
+
+    public GlitchSanityLevel(Material material, float sanityLevel)
+    {
+        this.material = material;
+        this.sanityLevel = sanityLevel;
     }
 }

@@ -8,36 +8,36 @@ using UnityEditor;
 
 public class HallucinationObject : MonoBehaviour
 {
-    [SerializeField] private bool interactible;
-
-    private enum InteractibleType
+    public float sanityLevelRequired;
+    public bool interactible;
+    public enum InteractibleType
     {
         Door,
         Dialogue,
-        IDK,
+        EnemyBaseAiTEST,
     }
-    [SerializeField] private InteractibleType interactibleType;
+    public InteractibleType interactibleType;
 
     private Action EnableInteractivity;
     private Action DisableInteractivity;
-    private MonoBehaviour compo;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         if (interactible)
         {
+            
             switch (interactibleType)
             {
                 case InteractibleType.Dialogue:
+                    SetToggleInteractivityActions<DialogInteraction>();
                     break;
                 case InteractibleType.Door:
-                    compo = GetComponent<DoorScript>();
+                    SetToggleInteractivityActions<DoorScript>();
                     break;
-                case InteractibleType.IDK:
-                    //compo = GetComponent<EnemyBaseAI>();
-                    EnableInteractivity = () => GetComponent<EnemyBaseAI>().enabled = true;
-                    DisableInteractivity = () => GetComponent<EnemyBaseAI>().enabled = false;
+                case InteractibleType.EnemyBaseAiTEST:
+                    SetToggleInteractivityActions<EnemyBaseAI>();
                     break;
             }
             DisableInteractivity();
@@ -56,6 +56,12 @@ public class HallucinationObject : MonoBehaviour
             else { DisableInteractivity(); }
         }
     }
+
+    private void SetToggleInteractivityActions<T>() where T : MonoBehaviour
+    {
+        EnableInteractivity = () => GetComponent<T>().enabled = true;
+        DisableInteractivity = () => GetComponent<T>().enabled = false;
+    }
 }
 
 #if UNITY_EDITOR
@@ -64,9 +70,26 @@ public class HallucinationObjectInspector : Editor
 {
     public override void OnInspectorGUI()
     {
-        base.OnInspectorGUI();
+        HallucinationObject hallu = target as HallucinationObject;
 
+        serializedObject.Update();
 
+        CreatePropertyField(nameof(hallu.sanityLevelRequired));
+
+        GUILayout.Space(10);
+
+        CreatePropertyField(nameof(hallu.interactible));
+        if (hallu.interactible)
+        {
+            CreatePropertyField(nameof(hallu.interactibleType));
+        }
+
+        serializedObject.ApplyModifiedProperties();
+    }
+    private void CreatePropertyField(string propertyName)
+    {
+        SerializedProperty sp = serializedObject.FindProperty(propertyName);
+        EditorGUILayout.PropertyField(sp);
     }
 }
 #endif
