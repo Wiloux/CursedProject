@@ -9,7 +9,7 @@ public class SwitchNormalStay : MonoBehaviour
     public GameObject Player;
     public bool Debug_Enabled;
 
-    private void OnTriggerStay(Collider collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (Debug_Enabled) { Debug.Log(Switch + "switch set"); }
         AkSoundEngine.SetSwitch(SwitchGroup, Switch, Player);
