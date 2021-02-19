@@ -44,10 +44,18 @@ public class GameHandler : MonoBehaviour
 
     #endregion
 
+    // Wwise vars
+    #region Wwise events
+    private GameObject listener;
+    [SerializeField] private AK.Wwise.Event openingSavëPauseMenu;
+    [SerializeField] private AK.Wwise.Event closingSavePauseMenu;
+    #endregion
+
     private void Awake()
     {
         if (instance != null) Destroy(gameObject);
         else instance = this;
+        listener = Camera.main.gameObject;
     }
 
     // Update is called once per frame
@@ -169,8 +177,8 @@ public class GameHandler : MonoBehaviour
         //}
     }
 
-    public void TogglePauseMenu() { pauseMenu.SetActive(!pauseMenu.activeSelf);}
-    public void ToggleSaveMenu() { saveMenu.SetActive(!saveMenu.activeSelf); isSaveMenuOpen = !isSaveMenuOpen; }
+    public void TogglePauseMenu() { PlayCloseOrOpenMenuSound(pauseMenu); pauseMenu.SetActive(!pauseMenu.activeSelf);}
+    public void ToggleSaveMenu() { PlayCloseOrOpenMenuSound(pauseMenu); saveMenu.SetActive(!saveMenu.activeSelf); isSaveMenuOpen = !isSaveMenuOpen; }
     public void ToggleInventoryMenu() { inventoryMenu.SetActive(!inventoryMenu.activeSelf); isInventoryMenuOpen = !isInventoryMenuOpen; }
     private void ToggleMouseLock() { if (MouseManagement.instance != null) MouseManagement.instance.ToggleMouseLock(); }
 
@@ -178,6 +186,12 @@ public class GameHandler : MonoBehaviour
     {
         facelessGirlDamageIndicator.SetActive(true);
         damageIndicatorTimer = 0.5f;
+    }
+
+    private void PlayCloseOrOpenMenuSound(GameObject menu)
+    {
+        if (menu.activeSelf) closingSavePauseMenu?.Post(listener);
+        else openingSavëPauseMenu?.Post(listener);
     }
 }
 
