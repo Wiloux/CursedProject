@@ -35,9 +35,11 @@ public class GameHandler : MonoBehaviour
     private bool isInventoryMenuOpen;
 
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject optionsMenu;
     [SerializeField] private GameObject saveMenu;
     [SerializeField] private GameObject inventoryMenu;
 
+    [SerializeField] private Slider volumeSlider;
 
     [SerializeField] private GameObject facelessGirlDamageIndicator;
     private float damageIndicatorTimer;
@@ -47,10 +49,12 @@ public class GameHandler : MonoBehaviour
     // Wwise vars
     #region Wwise events
     private GameObject listener;
-    [SerializeField] private AK.Wwise.Event openingSavëPauseMenu;
+    [SerializeField] private AK.Wwise.Event openingSavePauseMenu;
     [SerializeField] private AK.Wwise.Event closingSavePauseMenu;
     #endregion
 
+    // Monobehaviours methods
+    #region Monobehaviours methods
     private void Awake()
     {
         if (instance != null) Destroy(gameObject);
@@ -135,12 +139,13 @@ public class GameHandler : MonoBehaviour
         style.fontSize = 50;
         style.normal.textColor = Color.white;
 
-        GUILayout.Label("Sanity : " + sanity.ToString(), style);
-        
+        GUILayout.Label("Sanity : " + sanity.ToString(), style);   
     }
+    #endregion
 
     public bool IsPaused() { return isPaused; }
 
+    #region Toggle functions
     public void TogglePause()
     {
         if (isPaused) Time.timeScale = 1f;
@@ -176,12 +181,24 @@ public class GameHandler : MonoBehaviour
         //    if (shard != null) { shard.TogglePause(); continue; }
         //}
     }
+    private void ToggleMouseLock() { if (MouseManagement.instance != null) MouseManagement.instance.ToggleMouseLock(); }
 
+    #endregion
+
+    #region UI functions
+    #region Toggle menus
     public void TogglePauseMenu() { PlayCloseOrOpenMenuSound(pauseMenu); pauseMenu.SetActive(!pauseMenu.activeSelf);}
     public void ToggleSaveMenu() { PlayCloseOrOpenMenuSound(pauseMenu); saveMenu.SetActive(!saveMenu.activeSelf); isSaveMenuOpen = !isSaveMenuOpen; }
     public void ToggleInventoryMenu() { inventoryMenu.SetActive(!inventoryMenu.activeSelf); isInventoryMenuOpen = !isInventoryMenuOpen; }
-    private void ToggleMouseLock() { if (MouseManagement.instance != null) MouseManagement.instance.ToggleMouseLock(); }
+        #endregion
 
+    #region Func for UI buttons
+    public void LeftPauseMenu() { ToggleMouseLock(); TogglePause(); TogglePauseMenu(); }
+    public void QuitApplication() { Application.Quit(); }
+
+    public void OpenOptionsFromPauseMenu() { pauseMenu.SetActive(false); optionsMenu.SetActive(true); }
+    public void OpenPauseMenuFromOptions() { pauseMenu.SetActive(true); optionsMenu.SetActive(false);}
+    #endregion
     public void DisplayFacelessGirlDamageIndicator()
     {
         facelessGirlDamageIndicator.SetActive(true);
@@ -191,8 +208,11 @@ public class GameHandler : MonoBehaviour
     private void PlayCloseOrOpenMenuSound(GameObject menu)
     {
         if (menu.activeSelf) closingSavePauseMenu?.Post(listener);
-        else openingSavëPauseMenu?.Post(listener);
+        else openingSavePauseMenu?.Post(listener);
     }
+    #endregion
+
+    public void SetVolume() { float volume = volumeSlider.value;  } // the value is between 0 and 10 miguel ^^
 }
 
 [Serializable] public class GlitchSanityLevel
