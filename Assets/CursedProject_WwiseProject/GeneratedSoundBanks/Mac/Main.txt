@@ -5,6 +5,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	204688550	PlayAttack3			\Enemies\Chicken\PlayAttack3	
 	204688551	PlayAttack2			\Enemies\Chicken\PlayAttack2	
 	322586785	PlayOpenInventory			\UI\PlayOpenInventory	
+	340506981	PlayBuzz1			\Ambiances\PlayBuzz1	
 	369930381	GyaruPlayAttackLong			\Players\Gyaru\GyaruPlayAttackLong	
 	539806209	PlayMirrorProp			\Players\Gyaru\PlayMirrorProp	
 	617402058	ShardsThrow			\Enemies\Warden\ShardsThrow	
@@ -163,6 +164,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	784850670	shards rising 3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\Shards\shards rising 3_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Warden\Shards\ShardsRise\shards rising 3		1499464
 	788155044	Hit2	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\Chicken\Vocal\Hit\Hit2_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Chicken\Vocalizations\ChickenHit\Hit2		88264
 	792448310	shard wall hit 4	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\Shards\shard wall hit 4_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Warden\Shards\ShardWallHit\shard wall hit 4		264664
+	795421119	Buzz1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\Ambiances\Buzz1_0A22999B.wem		\Actor-Mixer Hierarchy\Ambiences\Buzz1		264728
 	795602171	shards rising	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\Shards\shards rising_10C4C929.wem		\Actor-Mixer Hierarchy\Enemies\Warden\Shards\ShardsRise\shards rising		882064
 	802531233	SapatoFormalGrassRun3	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\PlayerMovement\Gyaru\SapatoFormalGrassRun3_10C4C929.wem		\Actor-Mixer Hierarchy\Players\FootstepsPlayer\Gyaru\Forest\Run\SapatoFormalGrassRun3		89124
 	816357834	MoveInventory1	C:\Users\migue\Desktop\Projetos\CursedProject\Assets\CursedProject_WwiseProject\.cache\Mac\SFX\UI STUFF\Inventory\MoveInventory1_10C4C929.wem		\Actor-Mixer Hierarchy\UI\Inventory\MoveInventory1		48980

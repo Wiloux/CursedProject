@@ -71,7 +71,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585880219315145687
+    m_lastTime: -8585878601824532695
     List:
     - name: Main
       guid: 3e1cacb96421c24d992f8e9dfee00897
@@ -90,7 +90,7 @@ MonoBehaviour:
     ParentPath: Ambiances
     guid: afe1d25d64bef34386b4f24de10966ec
     GuidInternal: 
-    m_lastTime: -8585883503103954357
+    m_lastTime: -8585878601824368120
     List:
     - name: PlayAmbiance1
       guid: 07d1cb22bf8926438f2cee98c6ba5edc
@@ -116,6 +116,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: PlayBuzz1
+      guid: 30cc84ef6eced1469d153294cdc312a8
+      id: 340506981
+      PathAndIcons:
+      - ElementName: Ambiances
+        ObjectType: 12
+      - ElementName: PlayBuzz1
+        ObjectType: 3
+      Path: Ambiances\PlayBuzz1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
@@ -123,7 +135,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585881051765839125
+    m_lastTime: -8585878601824632486
     List: []
   - PhysicalPath: Events\Enemies.wwu
     PathAndIcons:

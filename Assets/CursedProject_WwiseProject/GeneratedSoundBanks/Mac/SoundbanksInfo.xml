@@ -22,7 +22,7 @@
 				<GameParameter Id="4143461479" Name="RTPC_Reverb" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="2914494104">
+		<SoundBank Id="3161908922" Language="SFX" Hash="2896672707">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -104,6 +104,14 @@
 						<File Id="1023060161" Language="SFX">
 							<ShortName>Chicken\Attack\Backstab2.wav</ShortName>
 							<Path>SFX\Chicken\Attack\Backstab2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="340506981" Name="PlayBuzz1" ObjectPath="\Events\Ambiances\PlayBuzz1" MaxAttenuation="1.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="795421119" Language="SFX">
+							<ShortName>Ambiances\Buzz1.wav</ShortName>
+							<Path>SFX\Ambiances\Buzz1_0A22999B.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
