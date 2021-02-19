@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{64F0878F-2662-4761-A084-F8C42986EFF7}" SchemaVersion="97">
+	<AudioObjects>
+		<WorkUnit Name="Ambiences+Environment Stuff" ID="{64F0878F-2662-4761-A084-F8C42986EFF7}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="2"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Sound Name="WindCity1" ID="{618A7913-B276-4358-A0ED-4723947EF610}" ShortID="129926262">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{7DFED55D-31DB-4D27-90F6-ECE3ED9D7EBB}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="WindCity1" ID="{85592EA5-5FF6-46DE-86AB-92330BCDB4CD}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="1330.316"/>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.743411764705882"/>
+								<Property Name="LoopBegin" Type="Real64" Value="3.36721799307958"/>
+								<Property Name="LoopEnd" Type="Real64" Value="61.3970657439446"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Ambiances\WindCity1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="387338394"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="WindCity1" ID="{85592EA5-5FF6-46DE-86AB-92330BCDB4CD}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<ActorMixer Name="JanitorHouse" ID="{0053521D-0676-430F-8A01-A77F1D90E5EB}" ShortID="544907897">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{7DFED55D-31DB-4D27-90F6-ECE3ED9D7EBB}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Air Vent 1" ID="{225A3604-116E-44FE-840B-047CE8B6872E}" ShortID="506574986">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Air Vent 1" ID="{F53FD719-1371-4658-AD87-E5A29B18BA06}">
+									<Language>SFX</Language>
+									<AudioFile>Ambiances\Janitor House\Air Vent 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="96390048"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Air Vent 1" ID="{F53FD719-1371-4658-AD87-E5A29B18BA06}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="WaterHeater" ID="{F8508BD4-AA81-4510-A8B8-7043D0513DC1}" ShortID="853930911">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>150</Value>
+									</ValueList>
+								</Property>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-34</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Clangs" ID="{3209E248-5633-4736-AFEB-F8E507CEA824}" ShortID="686254581">
+									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="Effect0">
+											<Custom CreatedFrom="{D20F3717-EBA2-4E3A-84F8-C8BD431563FB}">
+												<Effect Name="Echoes_Linear_(Custom)" ID="{F01C8194-BBA3-4000-A930-7D3C66EF44F6}" ShortID="564411489" PluginName="Wwise Delay" CompanyID="0" PluginID="106" PluginType="3">
+													<PropertyList>
+														<Property Name="DelayTime" Type="Real32" Value="0.12"/>
+														<Property Name="Feedback" Type="Real32" Value="17"/>
+													</PropertyList>
+												</Effect>
+											</Custom>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="MetalClang1" ID="{4E7E7411-FBA1-4FBC-986E-5114592C065E}" ShortID="500825290">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MetalClang1" ID="{D6D04D1A-5873-46BE-BD7E-FD287AEC02C5}">
+													<Language>SFX</Language>
+													<AudioFile>Ambiances\Janitor House\MetalClang1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="780781574"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MetalClang1" ID="{D6D04D1A-5873-46BE-BD7E-FD287AEC02C5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MetalClang2" ID="{2729F8E2-4F3D-4C2F-A4CA-A0E613EA0723}" ShortID="970982974">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MetalClang2" ID="{160264EF-F6EA-4F75-BE6E-9367F4350144}">
+													<Language>SFX</Language>
+													<AudioFile>Ambiances\Janitor House\MetalClang2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="607129376"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MetalClang2" ID="{160264EF-F6EA-4F75-BE6E-9367F4350144}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MetalClang3" ID="{245F2EEE-2D59-4582-AC5B-CBFEFB981505}" ShortID="464240541">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MetalClang3" ID="{90F69255-D78F-4BF9-AB97-71116F4AF77F}">
+													<Language>SFX</Language>
+													<AudioFile>Ambiances\Janitor House\MetalClang3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="285837040"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MetalClang3" ID="{90F69255-D78F-4BF9-AB97-71116F4AF77F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Silence" ID="{79FCD51D-C0E2-4A4B-8906-8EA0EA8F1D23}" ShortID="395825045">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="New Sound SFX" ID="{C0D3F8FF-FD9C-410F-B855-7D2F3170981F}" ShortID="191291437">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<SourcePlugin Name="Wwise Silence" ID="{2B26B934-1A05-4B0F-A66A-AA6353FF985A}" ShortID="974365561" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+													<PropertyList>
+														<Property Name="LengthMax" Type="Real32" Value="0.5"/>
+														<Property Name="LengthMin" Type="Real32" Value="-0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+												</SourcePlugin>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Wwise Silence" ID="{2B26B934-1A05-4B0F-A66A-AA6353FF985A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="New Sound SFX_01" ID="{112734FB-9D71-4358-945A-57C13103E3CF}" ShortID="887894948">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<SourcePlugin Name="Wwise Silence" ID="{30F55516-6481-4002-B879-78CC054A0B7A}" ShortID="871052325" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+													<PropertyList>
+														<Property Name="Length" Type="Real32" Value="2"/>
+														<Property Name="LengthMax" Type="Real32" Value="0.5"/>
+														<Property Name="LengthMin" Type="Real32" Value="-0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+												</SourcePlugin>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Wwise Silence" ID="{30F55516-6481-4002-B879-78CC054A0B7A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="New Sound SFX_02" ID="{220C794C-D907-45F1-9542-28C882E2BFEE}" ShortID="375129857">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<SourcePlugin Name="Wwise Silence" ID="{CE98DF96-7CC5-4A6B-82C3-32288DF6648C}" ShortID="461933479" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+													<PropertyList>
+														<Property Name="Length" Type="Real32" Value="3"/>
+														<Property Name="LengthMax" Type="Real32" Value="0.5"/>
+														<Property Name="LengthMin" Type="Real32" Value="-0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+												</SourcePlugin>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Wwise Silence" ID="{CE98DF96-7CC5-4A6B-82C3-32288DF6648C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="New Sound SFX_03" ID="{CBA002D9-84DE-45A8-8B45-6D37B832DB6A}" ShortID="25211694">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<SourcePlugin Name="Wwise Silence" ID="{93CD73A2-8B61-4C0A-BE92-6C5EFD063405}" ShortID="894898400" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+													<PropertyList>
+														<Property Name="Length" Type="Real32" Value="4"/>
+														<Property Name="LengthMax" Type="Real32" Value="5"/>
+														<Property Name="LengthMin" Type="Real32" Value="-0.5"/>
+													</PropertyList>
+													<Language>SFX</Language>
+												</SourcePlugin>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Wwise Silence" ID="{93CD73A2-8B61-4C0A-BE92-6C5EFD063405}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<Playlist>
+								<ItemRef Name="Silence" ID="{79FCD51D-C0E2-4A4B-8906-8EA0EA8F1D23}"/>
+								<ItemRef Name="Clangs" ID="{3209E248-5633-4736-AFEB-F8E507CEA824}"/>
+							</Playlist>
+						</RandomSequenceContainer>
+					</ChildrenList>
+				</ActorMixer>
+				<Sound Name="Buzz1" ID="{FA530B1F-88AF-4291-AC1D-F025D8C0B0E5}" ShortID="733374375">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-58</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Buzz" ID="{7193665E-A281-479C-A968-7E91E2845B72}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{7DFED55D-31DB-4D27-90F6-ECE3ED9D7EBB}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Buzz1" ID="{1498A91B-A2F7-4DB1-9BCC-22A9A971C245}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0.0737518910741301"/>
+								<Property Name="LoopEnd" Type="Real64" Value="1.40809379727685"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Ambiances\Buzz1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="795421119"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Buzz1" ID="{1498A91B-A2F7-4DB1-9BCC-22A9A971C245}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<ActorMixer Name="Faucet" ID="{A2A83F1E-E780-40F7-A7FC-F49D1334620D}" ShortID="597644734">
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Buzz" ID="{7193665E-A281-479C-A968-7E91E2845B72}" WorkUnitID="{7BCA171D-4555-4C5E-B350-894A9A36E3E8}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{7DFED55D-31DB-4D27-90F6-ECE3ED9D7EBB}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="WaterFaucet1" ID="{C14B5F8C-3DFD-4A0D-A1CD-0502253AC779}" ShortID="379633893">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="WaterFaucet1" ID="{7E710498-94F5-4A13-9783-DFA9AE76B927}">
+									<PropertyList>
+										<Property Name="CrossfadeDuration" Type="Real64" Value="773.684"/>
+										<Property Name="LoopBegin" Type="Real64" Value="0.875945537065053"/>
+										<Property Name="LoopEnd" Type="Real64" Value="2.82753403933434"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.394856278366112"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Ambiances\WaterFaucet1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="70714110"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="WaterFaucet1" ID="{7E710498-94F5-4A13-9783-DFA9AE76B927}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="WaterFaucet1End" ID="{A3519D13-82DE-49E8-BC22-8E37715F41B2}" ShortID="818941389">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="WaterFaucet1End" ID="{3FF03D0A-1C76-4F82-A5D7-7D08637E4102}">
+									<PropertyList>
+										<Property Name="CrossfadeShape" Type="int16" Value="8"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.39901664145235"/>
+										<Property Name="FadeOutShape" Type="int16" Value="1"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Ambiances\WaterFaucet1End.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="416882542"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="WaterFaucet1End" ID="{3FF03D0A-1C76-4F82-A5D7-7D08637E4102}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

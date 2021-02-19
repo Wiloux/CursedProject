@@ -1,3 +1,14 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	3092587493	Pause			\Default Work Unit\Pause	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Pause			
+	979470758	Yes	Pause			
+	1668749452	No	Pause			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	605003655	Yes	Pause	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music		
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	342905355	RTPC_Occlusion_Volume			\Default Work Unit\RTPC_Occlusion_Volume	
 	988953028	SFXVolume			\Default Work Unit\SFXVolume	
@@ -8,6 +19,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
 	1551306167	UI			\Default Work Unit\Master Audio Bus\UI	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 
 Effect plug-ins	ID	Name	Type				Notes
 	38820295	RoomReverb_School_(Custom)	Wwise RoomVerb			

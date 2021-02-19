@@ -104,12 +104,28 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="PlayWaterFaucet1" ID="{9C74B7B7-EF44-4436-8B58-1FFF8F784EB4}" WorkUnitID="{5DD2E1AF-BE64-43F3-86B4-F24DE10966EC}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="StopFacelessAttack" ID="{63F048E5-FE5E-478A-BABB-488014A439D3}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}"/>
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="PlayWaterFaucet1End" ID="{FD822044-4BC8-4842-A781-C08E03F6E401}" WorkUnitID="{5DD2E1AF-BE64-43F3-86B4-F24DE10966EC}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="PlayFacelessHurt" ID="{D89E4302-B7B1-4945-9A53-D56296DAD940}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}"/>
 							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="EnterPause" ID="{F3449DAC-656A-48EC-BA8C-C9CB91405C78}" WorkUnitID="{40EC96A0-A292-4C22-A5C1-DF7D5D24EA39}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="ExitPause" ID="{FF919856-23F2-4CA1-B988-42A11DC02E7D}" WorkUnitID="{40EC96A0-A292-4C22-A5C1-DF7D5D24EA39}"/>
+							<Position X="3" Y="1"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -119,7 +135,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_Occlusion_Volume" ID="{69FCFFBE-9F40-479F-8731-106A8A8BACE4}"/>
-							<Value>1</Value>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_Reverb_2" ID="{B840F614-4008-4E5C-A7A5-2CCAD8469304}"/>
@@ -134,7 +150,9 @@
 							<Value>0</Value>
 						</RTPCValue>
 					</RTPCValueList>
-					<CurrentStateList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Yes" ID="{71450C47-EE77-4C05-BA63-FBE25A7BDC96}"/>
+					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Dirt" ID="{8EDADF13-DE69-4F1A-AF53-F9DAFFB4EA70}"/>
 						<CurrentSwitchRef Name="Backwards" ID="{6F7D7988-C6AF-4AE1-9021-9D0E65AEDBB8}"/>

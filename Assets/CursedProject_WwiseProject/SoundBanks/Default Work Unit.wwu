@@ -29,6 +29,7 @@
 						<ObjectRef Name="PlayFacelessAttack" ID="{95F77DD8-1FC6-47E0-AC7E-7275E2B6B681}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayKeypress" ID="{EE2E3C1A-40A0-487A-B481-15E994166494}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ShardWallHit" ID="{B6FA27F7-C0CF-48D6-92BA-20AE1166934E}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="EnterPause" ID="{F3449DAC-656A-48EC-BA8C-C9CB91405C78}" WorkUnitID="{40EC96A0-A292-4C22-A5C1-DF7D5D24EA39}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="StopMovementSound" ID="{7E2137EF-B809-4922-849C-EEF35B498AFD}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayFacelessHurt" ID="{D89E4302-B7B1-4945-9A53-D56296DAD940}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenRunAway" ID="{86820FAC-14FB-494D-AC08-317EA4595E8F}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
@@ -40,6 +41,7 @@
 						<ObjectRef Name="PlayWardenMove" ID="{AF9437F2-78F0-4C2F-9721-441450A833C1}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayPhoneProp" ID="{49557B09-E10D-4C7C-9A1B-196C6ECD59AA}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayFacelessDie" ID="{A5CCB265-BB6D-4C85-B06F-72A7E66DEFA9}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ExitPause" ID="{FF919856-23F2-4CA1-B988-42A11DC02E7D}" WorkUnitID="{40EC96A0-A292-4C22-A5C1-DF7D5D24EA39}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenWatching" ID="{8E4C7547-3554-4CBB-B24B-C93BEEFB76B9}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayFacelessFootsteps" ID="{02B42921-E3B9-4CE1-A979-9A4E159F5712}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayWardenHurt" ID="{1A17A08F-3700-4DAE-A247-4E1C9ED93C95}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>

@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5cf24529c5ae0c4fb7d461ec6430a707
     GuidInternal: 
-    m_lastTime: -8585879348524685133
+    m_lastTime: -8585878549109194215
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -41,6 +41,17 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: e7af378149e5944986610a2b229932de
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Music
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Music
     - name: SFX
       guid: 5dd5fe7ddb31274d90f6ece3ed9d7ebb
       id: 393239870
@@ -71,7 +82,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585878601824532695
+    m_lastTime: -8585878549108745021
     List:
     - name: Main
       guid: 3e1cacb96421c24d992f8e9dfee00897
@@ -83,24 +94,24 @@ MonoBehaviour:
         ObjectType: 7
       Path: Default Work Unit\Main
   EventWwu:
-  - PhysicalPath: Events\Ambiances.wwu
+  - PhysicalPath: Events\Ambiances+Environment Stuff.wwu
     PathAndIcons:
-    - ElementName: Ambiances
+    - ElementName: Ambiances+Environment Stuff
       ObjectType: 12
-    ParentPath: Ambiances
+    ParentPath: Ambiances+Environment Stuff
     guid: afe1d25d64bef34386b4f24de10966ec
     GuidInternal: 
-    m_lastTime: -8585878601824368120
+    m_lastTime: -8585878560858606872
     List:
     - name: PlayAmbiance1
       guid: 07d1cb22bf8926438f2cee98c6ba5edc
       id: 2650513656
       PathAndIcons:
-      - ElementName: Ambiances
+      - ElementName: Ambiances+Environment Stuff
         ObjectType: 12
       - ElementName: PlayAmbiance1
         ObjectType: 3
-      Path: Ambiances\PlayAmbiance1
+      Path: Ambiances+Environment Stuff\PlayAmbiance1
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -108,11 +119,11 @@ MonoBehaviour:
       guid: 4b0c68c90e86a941a33febc367bc467a
       id: 3131532911
       PathAndIcons:
-      - ElementName: Ambiances
+      - ElementName: Ambiances+Environment Stuff
         ObjectType: 12
       - ElementName: PlayAmbianceJanitorRoom
         ObjectType: 3
-      Path: Ambiances\PlayAmbianceJanitorRoom
+      Path: Ambiances+Environment Stuff\PlayAmbianceJanitorRoom
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -120,11 +131,35 @@ MonoBehaviour:
       guid: 30cc84ef6eced1469d153294cdc312a8
       id: 340506981
       PathAndIcons:
-      - ElementName: Ambiances
+      - ElementName: Ambiances+Environment Stuff
         ObjectType: 12
       - ElementName: PlayBuzz1
         ObjectType: 3
-      Path: Ambiances\PlayBuzz1
+      Path: Ambiances+Environment Stuff\PlayBuzz1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayWaterFaucet1
+      guid: b7b7749c44ef36448b581fff8f784eb4
+      id: 3294814117
+      PathAndIcons:
+      - ElementName: Ambiances+Environment Stuff
+        ObjectType: 12
+      - ElementName: PlayWaterFaucet1
+        ObjectType: 3
+      Path: Ambiances+Environment Stuff\PlayWaterFaucet1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayWaterFaucet1End
+      guid: 442082fdc84b4248a781c08e03f6e401
+      id: 2748901796
+      PathAndIcons:
+      - ElementName: Ambiances+Environment Stuff
+        ObjectType: 12
+      - ElementName: PlayWaterFaucet1End
+        ObjectType: 3
+      Path: Ambiances+Environment Stuff\PlayWaterFaucet1End
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -135,7 +170,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585878601824632486
+    m_lastTime: -8585878560858517514
     List: []
   - PhysicalPath: Events\Enemies.wwu
     PathAndIcons:
@@ -816,17 +851,71 @@ MonoBehaviour:
     ParentPath: UI
     guid: a096ec4092a2224ca5c1df7d5d24ea39
     GuidInternal: 
-    m_lastTime: -8585880219321518630
+    m_lastTime: -8585878549108954787
     List:
+    - name: EnterPause
+      guid: ac9d44f36a65ec48ba8cc9cb91405c78
+      id: 1884873521
+      PathAndIcons:
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: Pause
+        ObjectType: 4
+      - ElementName: EnterPause
+        ObjectType: 3
+      Path: UI\Pause\EnterPause
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ExitPause
+      guid: 569891fff223a14cb98842a11dc02e7d
+      id: 3167535205
+      PathAndIcons:
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: Pause
+        ObjectType: 4
+      - ElementName: ExitPause
+        ObjectType: 3
+      Path: UI\Pause\ExitPause
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Inventory
+      guid: 6f795fea46628849acc00590f77becaa
+      id: 203281819
+      PathAndIcons:
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: Inventory
+        ObjectType: 4
+      Path: UI\Inventory
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Pause
+      guid: 6b98bc206bd7644981d81d77ff914573
+      id: 3092587493
+      PathAndIcons:
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: Pause
+        ObjectType: 4
+      Path: UI\Pause
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: PlayCloseInventory
       guid: 803f59d2f214f643bf8a4b0c44e7d330
       id: 2692587287
       PathAndIcons:
       - ElementName: UI
         ObjectType: 12
+      - ElementName: Inventory
+        ObjectType: 4
       - ElementName: PlayCloseInventory
         ObjectType: 3
-      Path: UI\PlayCloseInventory
+      Path: UI\Inventory\PlayCloseInventory
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -836,9 +925,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: UI
         ObjectType: 12
+      - ElementName: Inventory
+        ObjectType: 4
       - ElementName: PlayMoveInventory
         ObjectType: 3
-      Path: UI\PlayMoveInventory
+      Path: UI\Inventory\PlayMoveInventory
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -848,9 +939,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: UI
         ObjectType: 12
+      - ElementName: Inventory
+        ObjectType: 4
       - ElementName: PlayOpenInventory
         ObjectType: 3
-      Path: UI\PlayOpenInventory
+      Path: UI\Inventory\PlayOpenInventory
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -917,8 +1010,39 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5600d4ec28ebe74084a4c24ece5ac1b5
     GuidInternal: 
-    m_lastTime: -8585906168819033258
-    List: []
+    m_lastTime: -8585878549108845358
+    List:
+    - name: Pause
+      guid: 249f2536261d5f4d9aed0b342414a3f5
+      id: 3092587493
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Pause
+        ObjectType: 9
+      Path: Default Work Unit\Pause
+      values:
+      - name: No
+        guid: a5c24d38ce59ff45a5ff45d5caeab8c6
+        id: 1668749452
+        PathAndIcons:
+        - ElementName: No
+          ObjectType: 8
+      - name: None
+        guid: 9a7907d155255a4b84ec43944fc8ed10
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Yes
+        guid: 470c457177ee054cba63fbe25a7bdc96
+        id: 979470758
+        PathAndIcons:
+        - ElementName: Yes
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:

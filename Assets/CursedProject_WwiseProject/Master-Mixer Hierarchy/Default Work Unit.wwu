@@ -183,6 +183,30 @@
 							</ReferenceList>
 						</Bus>
 						<Bus Name="UI" ID="{0D3E7D2E-C377-4A86-A271-798ECFDA8BB5}"/>
+						<Bus Name="Music" ID="{8137AFE7-E549-4994-8661-0A2B229932DE}">
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="Pause" ID="{36259F24-1D26-4D5F-9AED-0B342414A3F5}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="No" ID="{384DC2A5-59CE-45FF-A5FF-45D5CAEAB8C6}"/>
+										<CustomState Name="" ID="{1CD29A60-D3DF-4BF7-9B2A-0B2BBC98DB96}" ShortID="733842056"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="Yes" ID="{71450C47-EE77-4C05-BA63-FBE25A7BDC96}"/>
+										<CustomState Name="" ID="{9637615C-150C-4B8D-A7A0-798C066A39CA}" ShortID="605003655">
+											<PropertyList>
+												<Property Name="BusVolume" Type="Real64" Value="-8"/>
+												<Property Name="Lowpass" Type="int16" Value="-34"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+						</Bus>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

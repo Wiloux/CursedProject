@@ -3,39 +3,95 @@
 	<Events>
 		<WorkUnit Name="UI" ID="{40EC96A0-A292-4C22-A5C1-DF7D5D24EA39}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="PlayMoveInventory" ID="{2FC99904-750D-4B27-9666-81A1D1C7742D}">
+				<Folder Name="Inventory" ID="{EA5F796F-6246-4988-ACC0-0590F77BECAA}" ShortID="569398572">
 					<ChildrenList>
-						<Action Name="" ID="{894B6046-F23A-4700-88B6-9E527A015C28}" ShortID="931551076">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="MoveInventory1" ID="{C8F88552-85B9-4F7B-BC05-F672AB11BE70}" WorkUnitID="{0140340D-C359-4E68-908D-0DDB2BA7EA49}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="PlayCloseInventory" ID="{D2593F80-14F2-43F6-BF8A-4B0C44E7D330}">
+							<ChildrenList>
+								<Action Name="" ID="{C98A9A00-54AB-4EC7-9CBB-1C5506ECABBA}" ShortID="365472902">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="CloseInventory1" ID="{20C0C392-C966-40C6-957B-DA76DCBB69FF}" WorkUnitID="{0140340D-C359-4E68-908D-0DDB2BA7EA49}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayOpenInventory" ID="{938C518D-C727-4F66-A6D7-938A78316BD9}">
+							<ChildrenList>
+								<Action Name="" ID="{42665262-6D56-452A-A227-9A4B3F2E823D}" ShortID="609190378">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="OpenInventory1" ID="{F7D8DDB3-29DB-48AE-824B-49B4C061ECE9}" WorkUnitID="{0140340D-C359-4E68-908D-0DDB2BA7EA49}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayMoveInventory" ID="{2FC99904-750D-4B27-9666-81A1D1C7742D}">
+							<ChildrenList>
+								<Action Name="" ID="{894B6046-F23A-4700-88B6-9E527A015C28}" ShortID="931551076">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MoveInventory1" ID="{C8F88552-85B9-4F7B-BC05-F672AB11BE70}" WorkUnitID="{0140340D-C359-4E68-908D-0DDB2BA7EA49}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="PlayCloseInventory" ID="{D2593F80-14F2-43F6-BF8A-4B0C44E7D330}">
+				</Folder>
+				<Folder Name="Pause" ID="{20BC986B-D76B-4964-81D8-1D77FF914573}" ShortID="547015929">
 					<ChildrenList>
-						<Action Name="" ID="{C98A9A00-54AB-4EC7-9CBB-1C5506ECABBA}" ShortID="365472902">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="CloseInventory1" ID="{20C0C392-C966-40C6-957B-DA76DCBB69FF}" WorkUnitID="{0140340D-C359-4E68-908D-0DDB2BA7EA49}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="EnterPause" ID="{F3449DAC-656A-48EC-BA8C-C9CB91405C78}">
+							<ChildrenList>
+								<Action Name="" ID="{873F83AF-A7CB-41A0-863F-C737D58EFDCE}" ShortID="572158573">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="7"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX" ID="{7DFED55D-31DB-4D27-90F6-ECE3ED9D7EBB}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A7BC13E3-826E-4103-9BC4-B67ECE35351F}" ShortID="457009623">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Yes" ID="{71450C47-EE77-4C05-BA63-FBE25A7BDC96}" WorkUnitID="{ECD40056-EB28-40E7-84A4-C24ECE5AC1B5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ExitPause" ID="{FF919856-23F2-4CA1-B988-42A11DC02E7D}">
+							<ChildrenList>
+								<Action Name="" ID="{34948C4D-29CE-4D3B-ADDC-348B200E6472}" ShortID="652292350">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="9"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX" ID="{7DFED55D-31DB-4D27-90F6-ECE3ED9D7EBB}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{9A0F818C-47FD-4EBC-9C4A-2DFAD45428B7}" ShortID="650675129">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="No" ID="{384DC2A5-59CE-45FF-A5FF-45D5CAEAB8C6}" WorkUnitID="{ECD40056-EB28-40E7-84A4-C24ECE5AC1B5}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="PlayOpenInventory" ID="{938C518D-C727-4F66-A6D7-938A78316BD9}">
-					<ChildrenList>
-						<Action Name="" ID="{42665262-6D56-452A-A227-9A4B3F2E823D}" ShortID="609190378">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="OpenInventory1" ID="{F7D8DDB3-29DB-48AE-824B-49B4C061ECE9}" WorkUnitID="{0140340D-C359-4E68-908D-0DDB2BA7EA49}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

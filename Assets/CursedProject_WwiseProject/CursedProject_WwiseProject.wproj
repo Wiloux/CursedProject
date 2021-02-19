@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="Project" SchemaVersion="97" WwiseVersion="v2019.2.7" WwiseBuild="7402">
+<WwiseDocument Type="Project" SchemaVersion="97" WwiseVersion="v2019.2.8" WwiseBuild="7432">
 	<ProjectInfo>
 		<Project Name="CursedProject_WwiseProject" ID="{318F191C-7E9C-4E67-AF48-1F7FB23CE627}">
 			<Platforms>
@@ -9011,7 +9011,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="" PluginType="3" CompanyID="0" PluginID="186">
+				<SharedPropertyList ClassName="Mastering Suite" PluginType="3" CompanyID="0" PluginID="186">
 					<PropertyList>
 						<Property Name="Color" Type="int16">
 							<ValueList>

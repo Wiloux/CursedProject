@@ -13,6 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID ENTERPAUSE = 1884873521U;
+        static const AkUniqueID EXITPAUSE = 3167535205U;
         static const AkUniqueID GYARUPLAYATTACKLONG = 369930381U;
         static const AkUniqueID GYARUPLAYATTACKSHORT = 166469259U;
         static const AkUniqueID GYARUSTOPATTACKLONG = 3302019815U;
@@ -56,6 +58,22 @@ namespace AK
         static const AkUniqueID STOPMOVEMENTSOUND = 4217165871U;
         static const AkUniqueID TESTBASS = 3241046308U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace PAUSE
+        {
+            static const AkUniqueID GROUP = 3092587493U;
+
+            namespace STATE
+            {
+                static const AkUniqueID NO = 1668749452U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID YES = 979470758U;
+            } // namespace STATE
+        } // namespace PAUSE
+
+    } // namespace STATES
 
     namespace SWITCHES
     {
@@ -135,6 +153,7 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID SFX = 393239870U;
         static const AkUniqueID UI = 1551306167U;
     } // namespace BUSSES

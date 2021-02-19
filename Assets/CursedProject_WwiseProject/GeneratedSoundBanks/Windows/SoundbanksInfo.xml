@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="1337476975">
+		<SoundBank Id="1355168291" Language="SFX" Hash="3347130259">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -21,12 +21,31 @@
 				<GameParameter Id="2627017276" Name="RTPC_Reverb_2" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb_2"/>
 				<GameParameter Id="4143461479" Name="RTPC_Reverb" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="3092587493" Name="Pause" ObjectPath="\States\Default Work Unit\Pause">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Pause\None"/>
+						<State Id="979470758" Name="Yes" ObjectPath="\States\Default Work Unit\Pause\Yes"/>
+						<State Id="1668749452" Name="No" ObjectPath="\States\Default Work Unit\Pause\No"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="2896672707">
+		<SoundBank Id="3161908922" Language="SFX" Hash="3560340400">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="1884873521" Name="EnterPause" ObjectPath="\Events\UI\Pause\EnterPause" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="979470758" Name="Yes" ObjectPath="\States\Default Work Unit\Pause\Yes"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3167535205" Name="ExitPause" ObjectPath="\Events\UI\Pause\ExitPause" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="1668749452" Name="No" ObjectPath="\States\Default Work Unit\Pause\No"/>
+					</ActionSetState>
+				</Event>
 				<Event Id="369930381" Name="GyaruPlayAttackLong" ObjectPath="\Events\Players\Gyaru\GyaruPlayAttackLong" MaxAttenuation="40.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="321833020" Language="SFX">
@@ -51,7 +70,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2650513656" Name="PlayAmbiance1" ObjectPath="\Events\Ambiances\PlayAmbiance1" DurationType="Infinite">
+				<Event Id="2650513656" Name="PlayAmbiance1" ObjectPath="\Events\Ambiances+Environment Stuff\PlayAmbiance1" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="387338394" Language="SFX">
 							<ShortName>Ambiances\WindCity1.wav</ShortName>
@@ -59,7 +78,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3131532911" Name="PlayAmbianceJanitorRoom" ObjectPath="\Events\Ambiances\PlayAmbianceJanitorRoom" DurationType="Infinite">
+				<Event Id="3131532911" Name="PlayAmbianceJanitorRoom" ObjectPath="\Events\Ambiances+Environment Stuff\PlayAmbianceJanitorRoom" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="96390048" Language="SFX">
 							<ShortName>Ambiances\Janitor House\Air Vent 1.wav</ShortName>
@@ -107,39 +126,23 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="340506981" Name="PlayBuzz1" ObjectPath="\Events\Ambiances\PlayBuzz1" MaxAttenuation="1.000000" DurationType="Infinite">
+				<Event Id="340506981" Name="PlayBuzz1" ObjectPath="\Events\Ambiances+Environment Stuff\PlayBuzz1" MaxAttenuation="1.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="795421119" Language="SFX">
 							<ShortName>Ambiances\Buzz1.wav</ShortName>
-							<Path>SFX\Ambiances\Buzz1_0A22999B.wem</Path>
+							<Path>SFX\Ambiances\Buzz1_940A9CFE.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1470550983" Name="PlayChickenChasing" ObjectPath="\Events\Enemies\Chicken\PlayChickenChasing" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.076124" DurationMax="2.648658">
+				<Event Id="1470550983" Name="PlayChickenChasing" ObjectPath="\Events\Enemies\Chicken\PlayChickenChasing" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.415811" DurationMax="2.648658">
 					<IncludedMemoryFiles>
 						<File Id="128794003" Language="SFX">
 							<ShortName>Chicken\Vocal\Chase\Chase7.wav</ShortName>
 							<Path>SFX\Chicken\Vocal\Chase\Chase7_10C4C929.wem</Path>
 						</File>
-						<File Id="405905271" Language="SFX">
-							<ShortName>Chicken\Vocal\Chase\Chase4.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Chase\Chase4_10C4C929.wem</Path>
-						</File>
 						<File Id="406351538" Language="SFX">
 							<ShortName>Chicken\Vocal\Chase\Chase3.wav</ShortName>
 							<Path>SFX\Chicken\Vocal\Chase\Chase3_10C4C929.wem</Path>
-						</File>
-						<File Id="525871147" Language="SFX">
-							<ShortName>Chicken\Vocal\Chase\Chase1.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Chase\Chase1_10C4C929.wem</Path>
-						</File>
-						<File Id="551745069" Language="SFX">
-							<ShortName>Chicken\Vocal\Chase\Chase5.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Chase\Chase5_10C4C929.wem</Path>
-						</File>
-						<File Id="557898274" Language="SFX">
-							<ShortName>Chicken\Vocal\Chase\Chase6.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Chase\Chase6_10C4C929.wem</Path>
 						</File>
 						<File Id="1030892577" Language="SFX">
 							<ShortName>Chicken\Vocal\Chase\Chase2.wav</ShortName>
@@ -173,22 +176,10 @@
 							<ShortName>Chicken\Footstep\chicken fs1.wav</ShortName>
 							<Path>SFX\Chicken\Footstep\chicken fs1_10C4C929.wem</Path>
 						</File>
-						<File Id="747551622" Language="SFX">
-							<ShortName>Chicken\Footstep\chicken fs4.wav</ShortName>
-							<Path>SFX\Chicken\Footstep\chicken fs4_10C4C929.wem</Path>
-						</File>
-						<File Id="864817520" Language="SFX">
-							<ShortName>Chicken\Footstep\chicken fs3.wav</ShortName>
-							<Path>SFX\Chicken\Footstep\chicken fs3_10C4C929.wem</Path>
-						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3029059251" Name="PlayChickenHit" ObjectPath="\Events\Enemies\Chicken\PlayChickenHit" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.345283" DurationMax="0.610952">
+				<Event Id="3029059251" Name="PlayChickenHit" ObjectPath="\Events\Enemies\Chicken\PlayChickenHit" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.610952">
 					<IncludedMemoryFiles>
-						<File Id="203460149" Language="SFX">
-							<ShortName>Chicken\Vocal\Hit\Hit3.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Hit\Hit3_10C4C929.wem</Path>
-						</File>
 						<File Id="528793756" Language="SFX">
 							<ShortName>Chicken\Vocal\Hit\Hit1.wav</ShortName>
 							<Path>SFX\Chicken\Vocal\Hit\Hit1_10C4C929.wem</Path>
@@ -209,14 +200,6 @@
 							<ShortName>Chicken\Vocal\Eager\EagerFinal3.wav</ShortName>
 							<Path>SFX\Chicken\Vocal\Eager\EagerFinal3_10C4C929.wem</Path>
 						</File>
-						<File Id="25723946" Language="SFX">
-							<ShortName>Chicken\Vocal\Eager\Eager5.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Eager\Eager5_10C4C929.wem</Path>
-						</File>
-						<File Id="230421140" Language="SFX">
-							<ShortName>Chicken\Vocal\Eager\Eager10.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Eager\Eager10_10C4C929.wem</Path>
-						</File>
 						<File Id="234818940" Language="SFX">
 							<ShortName>Chicken\Vocal\Eager\Eager4.wav</ShortName>
 							<Path>SFX\Chicken\Vocal\Eager\Eager4_10C4C929.wem</Path>
@@ -228,18 +211,6 @@
 						<File Id="436521656" Language="SFX">
 							<ShortName>Chicken\Vocal\Eager\Eager12.wav</ShortName>
 							<Path>SFX\Chicken\Vocal\Eager\Eager12_10C4C929.wem</Path>
-						</File>
-						<File Id="476393637" Language="SFX">
-							<ShortName>Chicken\Vocal\Eager\Eager7.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Eager\Eager7_10C4C929.wem</Path>
-						</File>
-						<File Id="562183493" Language="SFX">
-							<ShortName>Chicken\Vocal\Eager\Eager11.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Eager\Eager11_10C4C929.wem</Path>
-						</File>
-						<File Id="697692854" Language="SFX">
-							<ShortName>Chicken\Vocal\Eager\Eager9.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Eager\Eager9_10C4C929.wem</Path>
 						</File>
 						<File Id="701243151" Language="SFX">
 							<ShortName>Chicken\Vocal\Eager\EagerFinal2.wav</ShortName>
@@ -263,16 +234,8 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4042026069" Name="PlayChickenRunAway" ObjectPath="\Events\Enemies\Chicken\PlayChickenRunAway" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.196269" DurationMax="2.118926">
+				<Event Id="4042026069" Name="PlayChickenRunAway" ObjectPath="\Events\Enemies\Chicken\PlayChickenRunAway" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="1.378974" DurationMax="2.118926">
 					<IncludedMemoryFiles>
-						<File Id="246445162" Language="SFX">
-							<ShortName>Chicken\Vocal\Run Away\RunAway1.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Run Away\RunAway1_10C4C929.wem</Path>
-						</File>
-						<File Id="312019833" Language="SFX">
-							<ShortName>Chicken\Vocal\Run Away\RunAway4.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Run Away\RunAway4_10C4C929.wem</Path>
-						</File>
 						<File Id="540739948" Language="SFX">
 							<ShortName>Chicken\Vocal\Run Away\RunAway3.wav</ShortName>
 							<Path>SFX\Chicken\Vocal\Run Away\RunAway3_10C4C929.wem</Path>
@@ -287,7 +250,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1378272331" Name="PlayChickenWatching" ObjectPath="\Events\Enemies\Chicken\PlayChickenWatching" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="2.442601" DurationMax="5.786951">
+				<Event Id="1378272331" Name="PlayChickenWatching" ObjectPath="\Events\Enemies\Chicken\PlayChickenWatching" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="2.571019" DurationMax="5.285232">
 					<IncludedMemoryFiles>
 						<File Id="1876340" Language="SFX">
 							<ShortName>Chicken\Vocal\Eager\EagerFinal1.wav</ShortName>
@@ -296,14 +259,6 @@
 						<File Id="15091794" Language="SFX">
 							<ShortName>Chicken\Vocal\Eager\EagerFinal3.wav</ShortName>
 							<Path>SFX\Chicken\Vocal\Eager\EagerFinal3_10C4C929.wem</Path>
-						</File>
-						<File Id="25723946" Language="SFX">
-							<ShortName>Chicken\Vocal\Eager\Eager5.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Eager\Eager5_10C4C929.wem</Path>
-						</File>
-						<File Id="230421140" Language="SFX">
-							<ShortName>Chicken\Vocal\Eager\Eager10.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Eager\Eager10_10C4C929.wem</Path>
 						</File>
 						<File Id="234818940" Language="SFX">
 							<ShortName>Chicken\Vocal\Eager\Eager4.wav</ShortName>
@@ -316,18 +271,6 @@
 						<File Id="436521656" Language="SFX">
 							<ShortName>Chicken\Vocal\Eager\Eager12.wav</ShortName>
 							<Path>SFX\Chicken\Vocal\Eager\Eager12_10C4C929.wem</Path>
-						</File>
-						<File Id="476393637" Language="SFX">
-							<ShortName>Chicken\Vocal\Eager\Eager7.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Eager\Eager7_10C4C929.wem</Path>
-						</File>
-						<File Id="562183493" Language="SFX">
-							<ShortName>Chicken\Vocal\Eager\Eager11.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Eager\Eager11_10C4C929.wem</Path>
-						</File>
-						<File Id="697692854" Language="SFX">
-							<ShortName>Chicken\Vocal\Eager\Eager9.wav</ShortName>
-							<Path>SFX\Chicken\Vocal\Eager\Eager9_10C4C929.wem</Path>
 						</File>
 						<File Id="701243151" Language="SFX">
 							<ShortName>Chicken\Vocal\Eager\EagerFinal2.wav</ShortName>
@@ -351,7 +294,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2692587287" Name="PlayCloseInventory" ObjectPath="\Events\UI\PlayCloseInventory" DurationType="OneShot" DurationMin="0.645578" DurationMax="0.645578">
+				<Event Id="2692587287" Name="PlayCloseInventory" ObjectPath="\Events\UI\Inventory\PlayCloseInventory" DurationType="OneShot" DurationMin="0.645578" DurationMax="0.645578">
 					<IncludedMemoryFiles>
 						<File Id="1014960550" Language="SFX">
 							<ShortName>UI STUFF\Inventory\CloseInventory1.wav</ShortName>
@@ -748,7 +691,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3203531352" Name="PlayMoveInventory" ObjectPath="\Events\UI\PlayMoveInventory" DurationType="OneShot" DurationMin="0.277302" DurationMax="0.277302">
+				<Event Id="3203531352" Name="PlayMoveInventory" ObjectPath="\Events\UI\Inventory\PlayMoveInventory" DurationType="OneShot" DurationMin="0.277302" DurationMax="0.277302">
 					<IncludedMemoryFiles>
 						<File Id="816357834" Language="SFX">
 							<ShortName>UI STUFF\Inventory\MoveInventory1.wav</ShortName>
@@ -756,7 +699,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="322586785" Name="PlayOpenInventory" ObjectPath="\Events\UI\PlayOpenInventory" DurationType="OneShot" DurationMin="0.721791" DurationMax="0.721791">
+				<Event Id="322586785" Name="PlayOpenInventory" ObjectPath="\Events\UI\Inventory\PlayOpenInventory" DurationType="OneShot" DurationMin="0.721791" DurationMax="0.721791">
 					<IncludedMemoryFiles>
 						<File Id="79721549" Language="SFX">
 							<ShortName>UI STUFF\Inventory\OpenInventory1.wav</ShortName>
@@ -903,6 +846,14 @@
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+			<StateGroups>
+				<StateGroup Id="979470758" Name="Yes" ObjectPath="\States\Default Work Unit\Pause\Yes">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="1668749452" Name="No" ObjectPath="\States\Default Work Unit\Pause\No">
+					<States/>
+				</StateGroup>
+			</StateGroups>
 			<SwitchGroups>
 				<SwitchGroup Id="690777561" Name="WalkRun" ObjectPath="\Switches\Default Work Unit\WalkRun">
 					<Switches>
