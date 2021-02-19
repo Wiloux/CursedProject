@@ -25,6 +25,9 @@ public class FacelessGirlAI : EnemyBaseAI
     private Action StartShowingFace;
     private Action StopShowingFace;
 
+    public Material DmgIndacatorMat;
+    public float MaxAlphaIndMat;
+
     #region Wwise Events
     [Space(10)]
     [Header("Wwise Events")]
@@ -118,7 +121,7 @@ public class FacelessGirlAI : EnemyBaseAI
                 {
                     transform.rotation = Quaternion.LookRotation((player.transform.position - transform.position).normalized);
                     float angle = Vector3.Angle(player.transform.forward, player.transform.position - transform.position);
-                    if(angle > 90f) { PlayerHelper.instance.TakeDamage(enemyProfile.attackDamage * Time.deltaTime, false); GameHandler.instance.DisplayFacelessGirlDamageIndicator(); } // Here wiloux
+                    if(angle > 90f) { PlayerHelper.instance.TakeDamage(enemyProfile.attackDamage * Time.deltaTime, false); GameHandler.instance.DisplayFacelessGirlDamageIndicator(DmgIndacatorMat, MaxAlphaIndMat); } // Here wiloux
                 }
             }
         }
