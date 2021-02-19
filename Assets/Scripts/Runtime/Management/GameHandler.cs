@@ -51,6 +51,14 @@ public class GameHandler : MonoBehaviour
     [SerializeField] private AK.Wwise.Event closingSavePauseMenu;
     #endregion
 
+
+    //DmgIndEffectFacelessVars
+    private float maxAlphaDmgInd = 2.28f;
+    private float currentAlphaDmgInd;
+    private Material dmgIndMat;
+
+
+
     private void Awake()
     {
         if (instance != null) Destroy(gameObject);
@@ -126,6 +134,21 @@ public class GameHandler : MonoBehaviour
                 facelessGirlDamageIndicator.SetActive(false); // here wiloux, l'image s'éteind
             }
         }
+
+
+      
+
+        if(damageIndicatorTimer < 0 && currentAlphaDmgInd > 0)
+        {
+            currentAlphaDmgInd -= Time.deltaTime;
+            dmgIndMat.SetFloat("Vector1_98c453588a654653b7765100bbc55cf4", currentAlphaDmgInd);
+        } else if (damageIndicatorTimer > 0 && currentAlphaDmgInd < maxAlphaDmgInd)
+        {
+            currentAlphaDmgInd += 0.5f;
+            dmgIndMat.SetFloat("Vector1_98c453588a654653b7765100bbc55cf4", currentAlphaDmgInd);
+        }
+
+
         #endregion
     }
 
@@ -182,9 +205,12 @@ public class GameHandler : MonoBehaviour
     public void ToggleInventoryMenu() { inventoryMenu.SetActive(!inventoryMenu.activeSelf); isInventoryMenuOpen = !isInventoryMenuOpen; }
     private void ToggleMouseLock() { if (MouseManagement.instance != null) MouseManagement.instance.ToggleMouseLock(); }
 
-    public void DisplayFacelessGirlDamageIndicator()
+    public void DisplayFacelessGirlDamageIndicator(Material DmgIndMat, float MaxAlpha)
     {
         facelessGirlDamageIndicator.SetActive(true);
+        currentAlphaDmgInd = 0f;
+        maxAlphaDmgInd = MaxAlpha;
+        dmgIndMat = DmgIndMat;
         damageIndicatorTimer = 0.5f;
     }
 
