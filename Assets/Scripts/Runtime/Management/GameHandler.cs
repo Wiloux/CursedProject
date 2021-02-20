@@ -44,6 +44,9 @@ public class GameHandler : MonoBehaviour
     [SerializeField] private GameObject facelessGirlDamageIndicator;
     private float damageIndicatorTimer;
 
+    private Material DmgIndMat;
+    private float DmgIndMax;
+
     #endregion
 
     // Wwise vars
@@ -125,21 +128,27 @@ public class GameHandler : MonoBehaviour
         if(damageIndicatorTimer > 0)
         {
             damageIndicatorTimer -= Time.deltaTime;
-            if(damageIndicatorTimer < 0)
+
+
+            if (damageIndicatorTimer < 0)
             {
                 facelessGirlDamageIndicator.SetActive(false); // here wiloux, l'image s'éteind
             }
         }
+
+        DmgIndMat.SetFloat("Vector1_98c453588a654653b7765100bbc55cf4", Mathf.Lerp(0, DmgIndMax, damageIndicatorTimer));
         #endregion
     }
 
     private void OnGUI()
     {
-        GUIStyle style = new GUIStyle();
-        style.fontSize = 50;
-        style.normal.textColor = Color.white;
+        //GUIStyle style = new GUIStyle();
+        //style.fontSize = 50;
+        //style.normal.textColor = Color.white;
 
-        GUILayout.Label("Sanity : " + sanity.ToString(), style);   
+        //GUILayout.Label("Sanity : " + sanity.ToString(), style);   
+
+        // c'est moche sa mere
     }
     #endregion
 
@@ -199,8 +208,10 @@ public class GameHandler : MonoBehaviour
     public void OpenOptionsFromPauseMenu() { pauseMenu.SetActive(false); optionsMenu.SetActive(true); }
     public void OpenPauseMenuFromOptions() { pauseMenu.SetActive(true); optionsMenu.SetActive(false);}
     #endregion
-    public void DisplayFacelessGirlDamageIndicator()
+    public void DisplayFacelessGirlDamageIndicator(Material _DmgIndMat, float _MaxDmgInd)
     {
+        DmgIndMat = _DmgIndMat;
+        DmgIndMax = _MaxDmgInd;
         facelessGirlDamageIndicator.SetActive(true);
         damageIndicatorTimer = 0.5f;
     }

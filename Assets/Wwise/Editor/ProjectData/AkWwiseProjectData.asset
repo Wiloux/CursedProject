@@ -179,7 +179,7 @@ MonoBehaviour:
     ParentPath: Enemies
     guid: 7833dd357f5437458dde67e4bfd1d3f1
     GuidInternal: 
-    m_lastTime: -8585881885808717030
+    m_lastTime: -8585881726801888138
     List:
     - name: Chicken
       guid: b95c606dc42a5947bea9f0e934524f5d
@@ -851,7 +851,7 @@ MonoBehaviour:
     ParentPath: UI
     guid: a096ec4092a2224ca5c1df7d5d24ea39
     GuidInternal: 
-    m_lastTime: -8585878460709722312
+    m_lastTime: -8585878412571918111
     List:
     - name: EnterPause
       guid: ac9d44f36a65ec48ba8cc9cb91405c78
