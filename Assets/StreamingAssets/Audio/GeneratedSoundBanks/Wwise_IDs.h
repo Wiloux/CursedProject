@@ -18,6 +18,7 @@ namespace AK
         static const AkUniqueID GYARUPLAYATTACKLONG = 369930381U;
         static const AkUniqueID GYARUPLAYATTACKSHORT = 166469259U;
         static const AkUniqueID GYARUSTOPATTACKLONG = 3302019815U;
+        static const AkUniqueID MUSICTEST = 4195921398U;
         static const AkUniqueID PLAYAMBIANCE1 = 2650513656U;
         static const AkUniqueID PLAYAMBIANCEJANITORROOM = 3131532911U;
         static const AkUniqueID PLAYATTACK2 = 204688551U;
@@ -137,10 +138,12 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID MUSICSLIDERVOLUME = 202931747U;
         static const AkUniqueID RTPC_OCCLUSION_LOPASS = 222722569U;
         static const AkUniqueID RTPC_OCCLUSION_VOLUME = 342905355U;
         static const AkUniqueID RTPC_REVERB = 4143461479U;
         static const AkUniqueID RTPC_REVERB_2 = 2627017276U;
+        static const AkUniqueID SFXSLIDERVOLUME = 560434043U;
         static const AkUniqueID SFXVOLUME = 988953028U;
     } // namespace GAME_PARAMETERS
 

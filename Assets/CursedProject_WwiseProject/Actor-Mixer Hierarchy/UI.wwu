@@ -19,6 +19,7 @@
 					<ChildrenList>
 						<Sound Name="CloseInventory1" ID="{20C0C392-C966-40C6-957B-DA76DCBB69FF}" ShortID="995649514">
 							<PropertyList>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-12</Value>
@@ -30,7 +31,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+									<ObjectRef Name="UI" ID="{0D3E7D2E-C377-4A86-A271-798ECFDA8BB5}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -52,6 +53,7 @@
 						</Sound>
 						<Sound Name="MoveInventory1" ID="{C8F88552-85B9-4F7B-BC05-F672AB11BE70}" ShortID="1026587169">
 							<PropertyList>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-7</Value>
@@ -63,7 +65,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+									<ObjectRef Name="UI" ID="{0D3E7D2E-C377-4A86-A271-798ECFDA8BB5}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -81,6 +83,7 @@
 						</Sound>
 						<Sound Name="OpenInventory1" ID="{F7D8DDB3-29DB-48AE-824B-49B4C061ECE9}" ShortID="610954961">
 							<PropertyList>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>12</Value>
@@ -92,7 +95,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+									<ObjectRef Name="UI" ID="{0D3E7D2E-C377-4A86-A271-798ECFDA8BB5}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>

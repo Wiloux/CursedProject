@@ -134,6 +134,14 @@
 							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="SFXSliderVolume" ID="{EDADBDC8-EFFD-4493-BB7B-BDEC5DE5EC66}"/>
+							<Value>10</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="MusicSliderVolume" ID="{A1D88B4E-8081-4769-A33B-FCE349BC7AC2}"/>
+							<Value>8</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="RTPC_Occlusion_Volume" ID="{69FCFFBE-9F40-479F-8731-106A8A8BACE4}"/>
 							<Value>0</Value>
 						</RTPCValue>
@@ -151,7 +159,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Yes" ID="{71450C47-EE77-4C05-BA63-FBE25A7BDC96}"/>
+						<CurrentStateRef Name="None" ID="{D107799A-2555-4B5A-84EC-43944FC8ED10}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Dirt" ID="{8EDADF13-DE69-4F1A-AF53-F9DAFFB4EA70}"/>

@@ -34,6 +34,7 @@
 						<ObjectRef Name="PlayFacelessHurt" ID="{D89E4302-B7B1-4945-9A53-D56296DAD940}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenRunAway" ID="{86820FAC-14FB-494D-AC08-317EA4595E8F}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenDie" ID="{39815A2B-9229-49D7-90E0-0B87BBBB94E7}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MusicTest" ID="{88874E71-8832-4A51-BFF8-B0B98BA39497}" WorkUnitID="{CB632102-A8C5-4EBC-80A7-4D3B369C93CA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayMoveInventory" ID="{2FC99904-750D-4B27-9666-81A1D1C7742D}" WorkUnitID="{40EC96A0-A292-4C22-A5C1-DF7D5D24EA39}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayFootstepsPlayer" ID="{5F5AA8F9-96B0-4B65-92DF-A60189849541}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayWardenSpawn" ID="{58827486-2E57-4B87-B9AD-FD376816EC6A}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>

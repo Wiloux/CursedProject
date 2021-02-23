@@ -10,7 +10,9 @@ Custom State	ID	Name	State Group	Owner		Notes
 	605003655	Yes	Pause	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music		
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	202931747	MusicSliderVolume			\Default Work Unit\MusicSliderVolume	
 	342905355	RTPC_Occlusion_Volume			\Default Work Unit\RTPC_Occlusion_Volume	
+	560434043	SFXSliderVolume			\Default Work Unit\SFXSliderVolume	
 	988953028	SFXVolume			\Default Work Unit\SFXVolume	
 	2627017276	RTPC_Reverb_2			\Default Work Unit\RTPC_Reverb_2	
 	4143461479	RTPC_Reverb			\Default Work Unit\RTPC_Reverb	

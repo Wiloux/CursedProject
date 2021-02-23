@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5cf24529c5ae0c4fb7d461ec6430a707
     GuidInternal: 
-    m_lastTime: -8585875849772194422
+    m_lastTime: -8585874889721668885
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -82,7 +82,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585875849769627162
+    m_lastTime: -8585874892616394880
     List:
     - name: Main
       guid: 3e1cacb96421c24d992f8e9dfee00897
@@ -170,8 +170,20 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585878560858517514
-    List: []
+    m_lastTime: -8585874892616175440
+    List:
+    - name: MusicTest
+      guid: 714e87883288514abff8b0b98ba39497
+      id: 4195921398
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MusicTest
+        ObjectType: 3
+      Path: Default Work Unit\MusicTest
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Enemies.wwu
     PathAndIcons:
     - ElementName: Enemies
@@ -955,8 +967,17 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3f87fc84d75f844293f581868cfb0aa6
     GuidInternal: 
-    m_lastTime: -8585883503103924432
+    m_lastTime: -8585874892859237926
     List:
+    - name: MusicSliderVolume
+      guid: 4e8bd8a181806947a33bfce349bc7ac2
+      id: 202931747
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MusicSliderVolume
+        ObjectType: 13
+      Path: Default Work Unit\MusicSliderVolume
     - name: RTPC_Occlusion_LoPass
       guid: 0f26be8065d197418710898c20cf8ede
       id: 222722569
@@ -993,6 +1014,15 @@ MonoBehaviour:
       - ElementName: RTPC_Reverb_2
         ObjectType: 13
       Path: Default Work Unit\RTPC_Reverb_2
+    - name: SFXSliderVolume
+      guid: c8bdadedfdef9344bb7bbdec5de5ec66
+      id: 560434043
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFXSliderVolume
+        ObjectType: 13
+      Path: Default Work Unit\SFXSliderVolume
     - name: SFXVolume
       guid: 96a824d36af9db4e927d196920f86b9f
       id: 988953028
@@ -1185,6 +1215,6 @@ MonoBehaviour:
   - /CursedProject_WwiseProject
   - /CursedProject_WwiseProject/Events
   - /CursedProject_WwiseProject/Events/Ambiances+Environment Stuff
-  - /CursedProject_WwiseProject/Events/UI
+  - /CursedProject_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

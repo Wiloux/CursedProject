@@ -8,7 +8,7 @@ public class Music_Volume_Controls : MonoBehaviour
     public Slider thisSlider;
     public float musicVolume;
 
-    public void SetSpecificVolume(string whatValue)
+    public void SetMusicVolume(string whatValue)
     {
         float sliderValue = thisSlider.value;
 
