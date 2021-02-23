@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class GameHandler : MonoBehaviour
 {
@@ -12,36 +15,34 @@ public class GameHandler : MonoBehaviour
     // Sanity vars
     #region Sanity vars
     private float sanity = 0f;
-    public float Sanity {
+    public float Sanity
+    {
         get => sanity;
         set { sanity = value; sanityDecreaseTimer = timeToDecreaseSanity; }
     }
 
     private float sanityDecreaseTimer;
-    [SerializeField] private float sanityDecreaseRate;
-    [SerializeField] private float timeToDecreaseSanity;
+    public float sanityDecreaseRate;
+    public float timeToDecreaseSanity;
 
-    #region Sanity UI
-    [SerializeField] private Image glitchyRender;
-    public GlitchSanityLevel[] glitchyMaterials;
-        #endregion
     #endregion
 
     // UI Vars
     #region UI vars
-    // UI vars
     public bool isPaused;
     private bool isSaveMenuOpen;
     private bool isInventoryMenuOpen;
 
-    [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject optionsMenu;
-    [SerializeField] private GameObject saveMenu;
-    [SerializeField] private GameObject inventoryMenu;
+    [Space(5)]
+    public GameObject pauseMenu;
+    public GameObject optionsMenu;
+    public GameObject saveMenu;
+    public GameObject inventoryMenu;
 
-    [SerializeField] private Slider volumeSlider;
+    public Slider musicVolumeSlider;
+    public Slider sfxVolumeSlider;
 
-    [SerializeField] private GameObject facelessGirlDamageIndicator;
+    public GameObject facelessGirlDamageIndicator;
     private float damageIndicatorTimer;
 
     private Material DmgIndMat;
@@ -52,8 +53,8 @@ public class GameHandler : MonoBehaviour
     // Wwise vars
     #region Wwise events
     private GameObject listener;
-    [SerializeField] private AK.Wwise.Event openingSavePauseMenu;
-    [SerializeField] private AK.Wwise.Event closingSavePauseMenu;
+    public AK.Wwise.Event openingSavePauseMenu;
+    public AK.Wwise.Event closingSavePauseMenu;
     #endregion
 
     // Monobehaviours methods
@@ -69,10 +70,10 @@ public class GameHandler : MonoBehaviour
     void Update()
     {
         #region Sanity gestion
-        if(sanity > 0)
+        if (sanity > 0)
         {
-            if (sanityDecreaseTimer > 0) 
-            { 
+            if (sanityDecreaseTimer > 0)
+            {
                 sanityDecreaseTimer -= Time.deltaTime;
                 if (sanity >= 150) PlayerHelper.instance.Die();
 
@@ -84,29 +85,6 @@ public class GameHandler : MonoBehaviour
         }
 
         AkSoundEngine.SetRTPCValue("HallucinationsRTPC", Mathf.Clamp(sanity, 0f, 100f), gameObject); // Here Wwise stuffs
-
-        //// Glitchy renders gestion
-        //for(int i = glitchyMaterials.Length - 1; i >= 0; i--)
-        //{
-        //    GlitchSanityLevel glitchSanityLevel = glitchyMaterials[i];
-        //    if(sanity >= glitchSanityLevel.sanityLevel)
-        //    {
-        //        Debug.Log(i);
-        //        glitchyRender.material.CopyPropertiesFromMaterial(glitchSanityLevel.material);
-        //        break;
-        //    }
-        //}   
-        // Glitchy renders gestion
-        for(int i = glitchyMaterials.Length - 1; i >= 0; i--)
-        {
-            GlitchSanityLevel glitchSanityLevel = glitchyMaterials[i];
-            if(sanity >= glitchSanityLevel.sanityLevel)
-            {
-                Debug.Log(i);
-                glitchyRender.material.CopyPropertiesFromMaterial(glitchSanityLevel.material);
-                break;
-            }
-        }   
         #endregion
 
         #region UI gestion
@@ -114,7 +92,7 @@ public class GameHandler : MonoBehaviour
         {
             TogglePause();
             ToggleMouseLock();
-            if (isSaveMenuOpen){ToggleSaveMenu();}
+            if (isSaveMenuOpen) { ToggleSaveMenu(); }
             else if (isInventoryMenuOpen) ToggleInventoryMenu();
             else { TogglePauseMenu(); }
         }
@@ -125,7 +103,7 @@ public class GameHandler : MonoBehaviour
             ToggleInventoryMenu();
         }
 
-        if(damageIndicatorTimer > 0)
+        if (damageIndicatorTimer > 0)
         {
             damageIndicatorTimer -= Time.deltaTime;
 
@@ -142,13 +120,13 @@ public class GameHandler : MonoBehaviour
 
     private void OnGUI()
     {
-        //GUIStyle style = new GUIStyle();
-        //style.fontSize = 50;
-        //style.normal.textColor = Color.white;
+        GUIStyle style = new GUIStyle();
+        style.fontSize = 50;
+        style.normal.textColor = Color.white;
 
-        //GUILayout.Label("Sanity : " + sanity.ToString(), style);   
+        GUILayout.Label("Sanity : " + sanity.ToString(), style);
 
-        // c'est moche sa mere
+        // on s'en blc c pour le debug
     }
     #endregion
 
@@ -196,17 +174,17 @@ public class GameHandler : MonoBehaviour
 
     #region UI functions
     #region Toggle menus
-    public void TogglePauseMenu() { PlayCloseOrOpenMenuSound(pauseMenu); pauseMenu.SetActive(!pauseMenu.activeSelf);}
+    public void TogglePauseMenu() { PlayCloseOrOpenMenuSound(pauseMenu); pauseMenu.SetActive(!pauseMenu.activeSelf); }
     public void ToggleSaveMenu() { PlayCloseOrOpenMenuSound(pauseMenu); saveMenu.SetActive(!saveMenu.activeSelf); isSaveMenuOpen = !isSaveMenuOpen; }
     public void ToggleInventoryMenu() { inventoryMenu.SetActive(!inventoryMenu.activeSelf); isInventoryMenuOpen = !isInventoryMenuOpen; }
-        #endregion
+    #endregion
 
     #region Func for UI buttons
     public void LeftPauseMenu() { ToggleMouseLock(); TogglePause(); TogglePauseMenu(); }
     public void QuitApplication() { Application.Quit(); }
 
     public void OpenOptionsFromPauseMenu() { pauseMenu.SetActive(false); optionsMenu.SetActive(true); }
-    public void OpenPauseMenuFromOptions() { pauseMenu.SetActive(true); optionsMenu.SetActive(false);}
+    public void OpenPauseMenuFromOptions() { pauseMenu.SetActive(true); optionsMenu.SetActive(false); }
     #endregion
     public void DisplayFacelessGirlDamageIndicator(Material _DmgIndMat, float _MaxDmgInd)
     {
@@ -223,17 +201,68 @@ public class GameHandler : MonoBehaviour
     }
     #endregion
 
-    public void SetVolume() { float volume = volumeSlider.value;  } // the value is between 0 and 10 miguel ^^
-}
-
-[Serializable] public class GlitchSanityLevel
-{
-    public Material material;
-    public float sanityLevel;
-
-    public GlitchSanityLevel(Material material, float sanityLevel)
+    public void SetVolume() //
     {
-        this.material = material;
-        this.sanityLevel = sanityLevel;
+        float musicVolume = musicVolumeSlider.value; // the values are between 0 and 10 miguel ^^
+        float sfxVolume = sfxVolumeSlider.value;
     }
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(GameHandler))] public class GameHandlerInspector : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        //base.OnInspectorGUI();
+
+        GUIStyle groupStyle = new GUIStyle();
+        groupStyle.normal.textColor = Color.white;
+        groupStyle.fontSize = 20;
+
+        GUIStyle titleStyle = new GUIStyle();
+        titleStyle.normal.textColor = Color.black;
+        titleStyle.fontSize = 17;
+
+        GameHandler handler = target as GameHandler;
+
+        serializedObject.Update();
+
+
+        GUILayout.Label("Sanity Gestion", groupStyle);
+        GUILayout.Label("Decrease vars", titleStyle);
+        GUILayout.Space(5);
+        CreatePropertyField(nameof(handler.sanityDecreaseRate));
+        CreatePropertyField(nameof(handler.timeToDecreaseSanity));
+        GUILayout.Space(20);
+
+        GUILayout.Label("UI gestion", groupStyle);
+        GUILayout.Label("UI menus vars", titleStyle);
+        GUILayout.Space(5);
+        CreatePropertyField(nameof(handler.pauseMenu));
+        CreatePropertyField(nameof(handler.optionsMenu));
+        CreatePropertyField(nameof(handler.saveMenu));
+        CreatePropertyField(nameof(handler.inventoryMenu));
+        GUILayout.Space(10);
+        GUILayout.Label("Options UI vars", titleStyle);
+        GUILayout.Space(5);
+        CreatePropertyField(nameof(handler.musicVolumeSlider));
+        CreatePropertyField(nameof(handler.sfxVolumeSlider));
+        GUILayout.Space(10);
+        GUILayout.Label("Others", titleStyle);
+        CreatePropertyField(nameof(handler.facelessGirlDamageIndicator));
+        GUILayout.Space(5);
+        GUILayout.Label("UI sounds", titleStyle);
+        CreatePropertyField(nameof(handler.openingSavePauseMenu));
+        CreatePropertyField(nameof(handler.closingSavePauseMenu));
+        GUILayout.Space(5);
+
+        serializedObject.ApplyModifiedProperties();
+    }
+
+    private void CreatePropertyField(string propertyName)
+    {
+        SerializedProperty sp = serializedObject.FindProperty(propertyName);
+        EditorGUILayout.PropertyField(sp);
+    }
+}
+#endif
