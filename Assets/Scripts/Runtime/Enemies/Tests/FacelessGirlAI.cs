@@ -80,7 +80,7 @@ public class FacelessGirlAI : EnemyBaseAI
                 LoopMoan();
 
                 // Look for player and chase if player found
-                unit.LookForPlayer(() => { ShowFace(); state = State.Chasing; });
+                unit.LookForPlayer(() => { ShowFace(); StartCoroutine(IncreaseGraduallyTimer()); state = State.Chasing; });
                 break;
             case State.Chasing:
                 // If hiding face then run
@@ -137,6 +137,15 @@ public class FacelessGirlAI : EnemyBaseAI
         faceState = FaceState.Showing;
         faceTimer = showingFaceDuration;
         ToggleAttackHairs();
+    }
+    private IEnumerator IncreaseGraduallyTimer()
+    {
+        faceTimer = 0.2f;
+        while(faceTimer < showingFaceDuration)
+        {
+            faceTimer += 2 * Time.deltaTime;
+            yield return null;
+        }
     }
     private void HideFace(bool needStopShowingFaceWEvent = true)
     {
