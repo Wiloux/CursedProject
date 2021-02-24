@@ -73,7 +73,7 @@ public class FacelessGirlAI : EnemyBaseAI
                 // If showing face
                 if (faceState == FaceState.Showing) { state = State.Chasing; return; }
                 // else if player is visible by raycast, start running
-                else if (unit.isPlayerVisible(enemyProfile.runningRange)) { state = State.Running; }
+                else if (unit.isPlayerVisible(enemyProfile.runningRange)) { state = State.Running; Debug.Log("I was idle and the player is visible"); }
                 break;
             case State.Looking:
                 // Loop Moan sound
@@ -93,7 +93,8 @@ public class FacelessGirlAI : EnemyBaseAI
                 LoopMoan();
 
                 // If showing face, chase
-                if(faceState == FaceState.Showing) { state = State.Chasing; return; }
+                if(faceState == FaceState.Showing) { unit.StopRunningFromPlayer(); state = State.Chasing; return; }
+
                 // Else if run from the player to a certain distance, when far enough : "moan" and idle state 
                 if(unit.GetDistanceFromPlayer() < enemyProfile.runningRange) unit.RunFromPlayer(0.25f, () => { state = State.Idle; moanTimer = idleAnimationDuration; enemyProfile.onSpawnWEvent?.Post(gameObject); });
                 break;
@@ -119,6 +120,7 @@ public class FacelessGirlAI : EnemyBaseAI
                 SetAttackHairs();
                 if (unit.isPlayerVisible(enemyProfile.rangeToAttack))
                 {
+                    Debug.Log(true);
                     transform.rotation = Quaternion.LookRotation((player.transform.position - transform.position).normalized);
                     float angle = Vector3.Angle(player.transform.forward, player.transform.position - transform.position);
                     if(angle > 90f) { PlayerHelper.instance.TakeDamage(enemyProfile.attackDamage * Time.deltaTime, false); GameHandler.instance.DisplayFacelessGirlDamageIndicator(DmgIndacatorMat, MaxAlphaIndMat); } // Here wiloux

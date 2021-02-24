@@ -114,7 +114,7 @@ public class GameHandler : MonoBehaviour
             }
         }
 
-        DmgIndMat.SetFloat("Vector1_98c453588a654653b7765100bbc55cf4", Mathf.Lerp(0, DmgIndMax, damageIndicatorTimer));
+        if (DmgIndMat != null) DmgIndMat.SetFloat("Vector1_98c453588a654653b7765100bbc55cf4", Mathf.Lerp(0, DmgIndMax, damageIndicatorTimer/0.5f));
         #endregion
     }
 

@@ -115,16 +115,20 @@ public class EnemyUnit : MonoBehaviour
     {
         if (!running)
         {
+            Vector3 runningPoint = GetRunningPoint();
+            if(runningPoint == transform.position) { return; }
+            agent.SetDestination(runningPoint);
+
             running = true;
             enemyProfile.runWEvent?.Post(gameObject);
             runStartPosition = player.position;
-            agent.SetDestination(GetRunningPoint());
             onActionFinished = onStoppedRunning;
             onActionFinished += () => running = false;
             this.stopDistance = stopDistance;
             state = State.Running;
         }
     }
+    public void StopRunningFromPlayer() { running = false; }
 
     public void WatchThePlayer(Action onStoppedWatching)
     {
@@ -243,14 +247,14 @@ public class EnemyUnit : MonoBehaviour
         bool boolean = false;
         RaycastHit hit;
         Vector3 dir = (player.transform.position - transform.position).normalized;
-        Physics.Raycast(transform.position, dir, out hit, range);
+        Physics.Raycast(transform.position, dir, out hit, range, ~0, QueryTriggerInteraction.Ignore);
         Debug.DrawRay(transform.position, dir * range, Color.red, 0.1f);
         if (hit.transform != null)
         {
-            //Debug.Log("Object hit by is : " + hit.transform.name);
+            Debug.Log("Object hit by is : " + hit.transform.name);
             if (hit.transform.CompareTag("Player"))
             {
-                //Debug.Log("The player is visible");
+                Debug.Log("The player is visible");
                 boolean = true;
             }
         }
