@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Inventory))]
 public class Player : MonoBehaviour
 {
     #region Vars
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour
 
     public float health = 3;
     private bool dead;
+
+    private Inventory inventory;
 
     public bool stopControlls;
 
@@ -79,6 +82,7 @@ public class Player : MonoBehaviour
     #region Monobehaviours Methods
     private void Start()
     {
+        inventory = GetComponent<Inventory>();
         SwitchCharacter(character);
     }
 
@@ -142,7 +146,8 @@ public class Player : MonoBehaviour
                     Physics.Raycast(transform.position, transform.forward, out hit, 5f);
                     if (hit.transform != null)
                     {
-                        if (hit.transform.GetComponent<DoorScript>() != null) { hit.transform.GetComponent<DoorScript>().UseDoor(transform); InteractAnimation?.Invoke(); }
+                        if (hit.transform.GetComponent<DoorScript>() != null) { hit.transform.GetComponent<DoorScript>().TryUseDoor(transform); InteractAnimation?.Invoke(); }
+                        else if(hit.transform.GetComponent<Collectible>() != null) { inventory.AddObjectToInv(hit.transform.GetComponent<Collectible>().so); Destroy(hit.transform.gameObject); }
                         else if (hit.transform.CompareTag("SavePoint"))
                         {
                             GameHandler.instance.TogglePause();

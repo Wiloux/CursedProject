@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-[CreateAssetMenu(menuName = "Scriptable Objects/ObjectInfos")]
+[CreateAssetMenu(menuName = "Scriptable Objects/Items/Object")]
 public class ObjectSO : ScriptableObject
 {
     public string objectName;
@@ -27,6 +27,8 @@ public class ObjectSO : ScriptableObject
         useless,
     }
     public TypeOfObject type;
+
+    public KeySO key;
 }
 
 #if UNITY_EDITOR
@@ -66,6 +68,10 @@ public class ObjectSOInspector : Editor
         GUILayout.Space(20);
 
         CreatePropertyField(nameof(so.type));
+        if(so.type == ObjectSO.TypeOfObject.key)
+        {
+            CreatePropertyField(nameof(so.key));
+        }
         GUILayout.Space(250);
         GUILayout.Label(" ");
 

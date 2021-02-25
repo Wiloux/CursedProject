@@ -16,6 +16,7 @@ public class PlayerHelper : MonoBehaviour
 
 
     #region Inventory
+        #region clues
     public void AddClueToInventory(string clue)
     {
         inventory.clues.Add(clue);
@@ -37,10 +38,15 @@ public class PlayerHelper : MonoBehaviour
         }
         return false;
     }
-    public ObjectSO[] GetPlayerInventory()
+        #endregion
+        #region inv
+    public List<ObjectSO> GetPlayerInventory()
     {
         return inventory.items;
     }
+    public List<KeySO> GetPlayerKeys() { return inventory.GetInventoryKeys(); }
+    public void AddObjectToPlayerInventory(ObjectSO objectToAdd) { inventory.AddObjectToInv(objectToAdd); }
+        #endregion
     #endregion
 
     #region Player

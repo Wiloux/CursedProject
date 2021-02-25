@@ -13,9 +13,9 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private Transform[] itemsIconParents = new Transform[3];
     [SerializeField] private TMP_Text nameDisplayer;
     [SerializeField] private TMP_Text descriptionDisplayer;
-    
+
     // Items and previews
-    private ObjectSO[] items;
+    private List<ObjectSO> items = new List<ObjectSO>();
     private int currentItemIndex;
     private List<GameObject> previewItems = new List<GameObject>() { null, null, null};
 
@@ -58,7 +58,7 @@ public class InventoryUI : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) 
         {
-            if (currentItemIndex < items.Length - 1) 
+            if (currentItemIndex < items.Count - 1) 
             { 
                 currentItemIndex++;
                 Swipe();
@@ -103,7 +103,7 @@ public class InventoryUI : MonoBehaviour
         {
             int index = currentItemIndex - 1 + i;
             bool show = false;
-            if(0 <= index && index < items.Length)
+            if(0 <= index && index < items.Count)
             {
                 CreatePreviewInCase(items[index], i);
                 show = true;

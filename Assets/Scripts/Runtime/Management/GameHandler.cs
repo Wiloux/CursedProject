@@ -98,7 +98,7 @@ public class GameHandler : MonoBehaviour
             else if (isInventoryMenuOpen) ToggleInventoryMenu();
             else { TogglePauseMenu(); }
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             TogglePause();
             ToggleMouseLock();
