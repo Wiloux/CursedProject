@@ -44,6 +44,8 @@ public class GameHandler : MonoBehaviour
 
     public GameObject facelessGirlDamageIndicator;
     private float damageIndicatorTimer;
+    private IEnumerator gradualIncreaseCoroutine;
+    private bool graduallyIncreasing;
 
     private Material DmgIndMat;
     private float DmgIndMax;
@@ -107,6 +109,7 @@ public class GameHandler : MonoBehaviour
         {
             damageIndicatorTimer -= Time.deltaTime;
 
+            if (DmgIndMat != null) DmgIndMat.SetFloat("Vector1_98c453588a654653b7765100bbc55cf4", Mathf.Lerp(0, DmgIndMax, damageIndicatorTimer));
 
             if (damageIndicatorTimer < 0)
             {
@@ -114,7 +117,6 @@ public class GameHandler : MonoBehaviour
             }
         }
 
-        if (DmgIndMat != null) DmgIndMat.SetFloat("Vector1_98c453588a654653b7765100bbc55cf4", Mathf.Lerp(0, DmgIndMax, damageIndicatorTimer/0.5f));
         #endregion
     }
 
@@ -124,7 +126,8 @@ public class GameHandler : MonoBehaviour
         style.fontSize = 50;
         style.normal.textColor = Color.white;
 
-        GUILayout.Label("Sanity : " + sanity.ToString(), style);
+        //GUILayout.Label("Sanity : " + sanity.ToString(), style);
+        GUILayout.Label("Faceless girl DamageIndicatorTimer : " + damageIndicatorTimer.ToString(), style);
 
         // on s'en blc c pour le debug
     }
@@ -191,7 +194,22 @@ public class GameHandler : MonoBehaviour
         DmgIndMat = _DmgIndMat;
         DmgIndMax = _MaxDmgInd;
         facelessGirlDamageIndicator.SetActive(true);
-        damageIndicatorTimer = 0.5f;
+        if (damageIndicatorTimer >= 0.45f) { damageIndicatorTimer = 0.5f; StopCoroutine(gradualIncreaseCoroutine); }
+        else
+        {
+            if (gradualIncreaseCoroutine == null) gradualIncreaseCoroutine = IncreaseGraduallyTimer();
+            StopCoroutine(gradualIncreaseCoroutine);
+            StartCoroutine(gradualIncreaseCoroutine);
+        }
+        graduallyIncreasing = true;
+    }
+    private IEnumerator IncreaseGraduallyTimer()
+    {
+        while (damageIndicatorTimer < 0.7f)
+        {
+            damageIndicatorTimer += 2 * Time.deltaTime;
+            yield return null;
+        }
     }
 
     private void PlayCloseOrOpenMenuSound(GameObject menu)
