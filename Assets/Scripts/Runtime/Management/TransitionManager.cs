@@ -23,7 +23,7 @@ public class TransitionManager : MonoBehaviour
     {
         if (Fading == null)
         {
-            target.position = new Vector3(DestinationDoor.SpawnPoint.position.x, (Using.transform.position.y - DestinationDoor.SpawnPoint.position.y) + DestinationDoor.SpawnPoint.position.y, DestinationDoor.SpawnPoint.position.z);
+            target.position = new Vector3(DestinationDoor.spawnPoint.position.x, (Using.transform.position.y - DestinationDoor.spawnPoint.position.y) + DestinationDoor.spawnPoint.position.y, DestinationDoor.spawnPoint.position.z);
             Fading = StartCoroutine(FadeTo(Using, dur, DestinationDoor, CurrentDoor));
         }
     }
@@ -50,7 +50,7 @@ public class TransitionManager : MonoBehaviour
             yield return null;
         }
 
-        target.position = new Vector3(DestinationDoor.SpawnPoint.position.x, DestinationDoor.SpawnPoint.position.y, DestinationDoor.SpawnPoint.position.z);
+        target.position = new Vector3(DestinationDoor.spawnPoint.position.x, DestinationDoor.spawnPoint.position.y, DestinationDoor.spawnPoint.position.z);
         Vector3 relativePos = target.position - DestinationDoor.transform.position;
         target.LookAt(-relativePos);
         target.rotation = Quaternion.Euler(0, target.rotation.y, target.rotation.z);

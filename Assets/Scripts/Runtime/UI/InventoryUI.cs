@@ -113,7 +113,7 @@ public class InventoryUI : MonoBehaviour
             // We change the text ui with the object profile displayed on the central case
             if(i == 1)
             {
-                nameDisplayer.text = items[index].objectName;
+                nameDisplayer.text = items[index].name;
                 descriptionDisplayer.text = items[index].longDescription;
             }
         }

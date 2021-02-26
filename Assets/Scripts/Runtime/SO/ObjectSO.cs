@@ -8,7 +8,7 @@ using UnityEditor;
 [CreateAssetMenu(menuName = "Scriptable Objects/Items/Object")]
 public class ObjectSO : ScriptableObject
 {
-    public string objectName;
+    public new string name;
     public GameObject objectModel;
 
     public Vector3 previewStartRotation;
@@ -44,7 +44,7 @@ public class ObjectSOInspector : Editor
 
         serializedObject.Update();
 
-        CreatePropertyField(nameof(so.objectName));
+        CreatePropertyField(nameof(so.name));
 
         CreatePropertyField(nameof(so.objectModel));
         if(so.objectModel != null)

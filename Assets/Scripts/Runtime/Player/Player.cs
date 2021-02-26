@@ -146,8 +146,8 @@ public class Player : MonoBehaviour
                     Physics.Raycast(transform.position, transform.forward, out hit, 5f);
                     if (hit.transform != null)
                     {
-                        if (hit.transform.GetComponent<DoorScript>() != null) { hit.transform.GetComponent<DoorScript>().TryUseDoor(transform); InteractAnimation?.Invoke(); }
-                        else if(hit.transform.GetComponent<Collectible>() != null) { inventory.AddObjectToInv(hit.transform.GetComponent<Collectible>().so); Destroy(hit.transform.gameObject); }
+                        if (hit.transform.GetComponent<DoorScript>() != null) { InteractAnimation?.Invoke();  hit.transform.GetComponent<DoorScript>().TryUseDoor(transform);  }
+                        else if(hit.transform.GetComponent<Collectible>() != null) { InteractAnimation?.Invoke(); inventory.AddObjectToInv(hit.transform.GetComponent<Collectible>().so); Destroy(hit.transform.gameObject); }
                         else if (hit.transform.CompareTag("SavePoint"))
                         {
                             GameHandler.instance.TogglePause();
@@ -363,7 +363,7 @@ public class Player : MonoBehaviour
                 DeathAnimation = () => { animator.SetTrigger("Hurt"); animator.SetFloat("HP", -1); Debug.Log("Gyaru death animation"); };
                 RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); animator.SetBool("Backwards", false);};
                 AbilityAnimation = () => Debug.Log("Gyaru ability use animation");
-                InteractAnimation = () => { animator.SetTrigger("Action"); Debug.Log("Gyaru interact animation"); };
+                InteractAnimation = () => { animator.SetTrigger("Action"); Debug.Log("Gyaru interact animation"); StartCoroutine(BlockMovementForPeriod(2f)); };
                 WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("Backwards", false); };
                 WalkBackwardsAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("Backwards", true); };
                 StopWalkingAnimation = () => { animator.SetBool("isMoving", false); animator.SetBool("isRunning", false); animator.SetBool("Backwards", false); };

@@ -25,4 +25,9 @@ public class Inventory : MonoBehaviour
         }
         return keys;
     }
+    public void RemoveObjectFromInv(ObjectSO objectToRemove)
+    {
+        if (items.Contains(objectToRemove)) items.Remove(objectToRemove);
+        else Debug.LogError("Custom error: Object to remove is not found in the player invenotry");
+    }
 }

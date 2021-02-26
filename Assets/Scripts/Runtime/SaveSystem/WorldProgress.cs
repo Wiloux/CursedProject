@@ -18,7 +18,12 @@ public class WorldProgress : MonoBehaviour
 
     #region Monobehaviours Methods
     // --------------------------------------- Monobehaviours Methods --------------------------------------- //
-    private void Awake(){instance = this; DontDestroyOnLoad(this.gameObject); Initialize(); }
+    private void Awake(){instance = this; DontDestroyOnLoad(this.gameObject); }
+
+    private void Start()
+    {
+        Initialize();
+    }
 
     private void Update() 
     { 
@@ -33,11 +38,11 @@ public class WorldProgress : MonoBehaviour
     {
         playerLife = 1;
         gameTime = 0;
-        locationName = "Spawn";
-        characterName = "Nerd";
+        locationName = RoomsManager.instance.AllRooms[0].roomName;
+        characterName = "Gyaru";
 
         isCutscenesPlayed = new bool[5];
-}
+    }
 
     #region Save Functions
     // --------------------------------------- SAVE METHODS ---------------------------------------- //

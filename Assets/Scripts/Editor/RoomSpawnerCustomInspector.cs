@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(RoomManager))]
+[CustomEditor(typeof(RoomsManager))]
 public class RoomSpawnerCustomInspector : Editor
 {
     public int CurrentRoom;
@@ -14,7 +14,7 @@ public class RoomSpawnerCustomInspector : Editor
 
         serializedObject.Update();
 
-        RoomManager roomSpawner = target as RoomManager;
+        RoomsManager roomSpawner = target as RoomsManager;
 
         EditorGUILayout.BeginHorizontal();
         CurrentRoom = EditorGUILayout.IntField(CurrentRoom);

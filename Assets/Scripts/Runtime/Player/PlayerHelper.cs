@@ -46,6 +46,7 @@ public class PlayerHelper : MonoBehaviour
     }
     public List<KeySO> GetPlayerKeys() { return inventory.GetInventoryKeys(); }
     public void AddObjectToPlayerInventory(ObjectSO objectToAdd) { inventory.AddObjectToInv(objectToAdd); }
+    public void RemoveObjectFromPlayerInvenotry(ObjectSO objectToRemove) { inventory.RemoveObjectFromInv(objectToRemove); }
         #endregion
     #endregion
 

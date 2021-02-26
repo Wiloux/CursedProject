@@ -10,23 +10,30 @@ public class DoorScript : MonoBehaviour
     public bool needKey;
     public KeySO neededKey;
 
-    public DoorScript otherDoorScript;
-    public Transform SpawnPoint;
-    public RoomManager roomManager;
-    public int nextRoomInt;
-    public int currentRoomInt;
+    public Transform spawnPoint;
 
+    public DoorScript otherDoorScript;
+    public string otherDoorRoomName;
+
+    public string currentRoomName;
+
+    private RoomsManager roomsManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        SpawnPoint = transform.Find("Spawn").transform;
+        spawnPoint = transform.GetChild(0);
         if(otherDoorScript != null)
         {
             otherDoorScript.otherDoorScript = this;
         }
-        roomManager = RoomManager.instance;
+        roomsManager = RoomsManager.instance;
+
+        roomsManager.CheckIfRoomNameExists(currentRoomName);
+        roomsManager.CheckIfRoomNameExists(otherDoorRoomName);
     }
+
+
 
     public void TryUseDoor(Transform Using)
     {
@@ -35,9 +42,11 @@ public class DoorScript : MonoBehaviour
             List<KeySO> keys = PlayerHelper.instance.GetPlayerKeys();
             foreach(KeySO key in keys)
             {
+                Debug.Log(key.name);
                 if(key.name == neededKey.name)
                 {
                     needKey = false;
+                    PlayerHelper.instance.RemoveObjectFromPlayerInvenotry(neededKey);
 
                     UseDoor(Using);
 
@@ -49,17 +58,17 @@ public class DoorScript : MonoBehaviour
     }
     private void UseDoor(Transform Using)
     {
-        otherDoorScript.currentRoomInt = nextRoomInt;
+        otherDoorScript.currentRoomName = otherDoorRoomName;
 
-        WorldProgress.instance.locationName = roomManager.AllRooms[nextRoomInt].RoomName;
+        WorldProgress.instance.locationName = otherDoorRoomName;
 
         // Destroy enemies of the current room
-        RoomManager.instance.DestroyEnemies(currentRoomInt);
+        RoomsManager.instance.DestroyEnemiesOfRoom(currentRoomName);
 
-        TransitionManager.instance.StartFade(Using, otherDoorScript.SpawnPoint, 1, otherDoorScript, this);
+        TransitionManager.instance.StartFade(Using, otherDoorScript.spawnPoint, 1, otherDoorScript, this);
 
         // Spawn enemies of the new room
-        RoomManager.instance.SpawnEnemies(nextRoomInt);
+        RoomsManager.instance.SpawnEnemiesOfRoom(otherDoorRoomName);
     }
 }
 
@@ -69,7 +78,7 @@ public class DoorScriptInspector : Editor
 {
     public override void OnInspectorGUI()
     {
-        base.OnInspectorGUI();
+        //base.OnInspectorGUI();
 
         DoorScript door = target as DoorScript;
 
@@ -89,16 +98,8 @@ public class DoorScriptInspector : Editor
 
         GUILayout.Space(10);
 
-        CreatePropertyField(nameof(door.SpawnPoint));
-
-        GUILayout.Space(10);
-
-        CreatePropertyField(nameof(door.roomManager));
-
-        GUILayout.Space(10);
-
-        CreatePropertyField(nameof(door.nextRoomInt));
-        CreatePropertyField(nameof(door.currentRoomInt));
+        CreatePropertyField(nameof(door.otherDoorRoomName));
+        CreatePropertyField(nameof(door.currentRoomName));
 
 
         serializedObject.ApplyModifiedProperties();

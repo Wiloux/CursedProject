@@ -17,5 +17,9 @@ public class SaveConfirmationCheck : MonoBehaviour
         WorldProgress.instance.SaveWorldProgress(indexToSaveOn);
         Debug.Log("saved");
         gameObject.SetActive(false);
+
+        string roomName = WorldProgress.instance.locationName;
+        RoomsManager.instance.DestroyEnemiesOfRoom(roomName);
+        RoomsManager.instance.SpawnEnemiesOfRoom(roomName);
     }
 }

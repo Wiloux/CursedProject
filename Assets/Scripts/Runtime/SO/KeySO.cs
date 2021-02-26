@@ -7,6 +7,5 @@ public class KeySO : ObjectSO
 {
     public enum KeyColor { red, green, blue, white, black};
 
-    public new string name;
     public KeyColor color;
 }
