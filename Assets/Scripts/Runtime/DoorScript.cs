@@ -46,13 +46,14 @@ public class DoorScript : MonoBehaviour
                 if(key.name == neededKey.name)
                 {
                     needKey = false;
-                    PlayerHelper.instance.RemoveObjectFromPlayerInvenotry(neededKey);
+                    GameHandler.instance.DisplayCustomMessage("You opened the door using " + key.name, 3f);
 
                     UseDoor(Using);
 
                     return;
                 }
             }
+            GameHandler.instance.DisplayCustomMessage("Door is locked", 1.5f);
         }
         else { UseDoor(Using); }
     }

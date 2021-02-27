@@ -47,6 +47,9 @@ public class GameHandler : MonoBehaviour
     private IEnumerator gradualIncreaseCoroutine;
     private bool graduallyIncreasing;
 
+    public TMPro.TMP_Text messageDisplayer;
+    private IEnumerator messageDisplayerFadeCoroutine;
+
     private Material DmgIndMat;
     private float DmgIndMax;
 
@@ -127,7 +130,8 @@ public class GameHandler : MonoBehaviour
         style.normal.textColor = Color.white;
 
         //GUILayout.Label("Sanity : " + sanity.ToString(), style);
-        GUILayout.Label("Faceless girl DamageIndicatorTimer : " + damageIndicatorTimer.ToString(), style);
+        //GUILayout.Label("Faceless girl DamageIndicatorTimer : " + damageIndicatorTimer.ToString(), style);
+        GUILayout.Label("Color : " + messageDisplayer.color.a, style);
 
         // on s'en blc c pour le debug
     }
@@ -176,19 +180,21 @@ public class GameHandler : MonoBehaviour
     #endregion
 
     #region UI functions
-    #region Toggle menus
+        #region Toggle menus
     public void TogglePauseMenu() { PlayCloseOrOpenMenuSound(pauseMenu); pauseMenu.SetActive(!pauseMenu.activeSelf); }
     public void ToggleSaveMenu() { PlayCloseOrOpenMenuSound(pauseMenu); saveMenu.SetActive(!saveMenu.activeSelf); isSaveMenuOpen = !isSaveMenuOpen; }
     public void ToggleInventoryMenu() { inventoryMenu.SetActive(!inventoryMenu.activeSelf); isInventoryMenuOpen = !isInventoryMenuOpen; }
-    #endregion
+        #endregion
 
-    #region Func for UI buttons
+        #region Func for UI buttons
     public void LeftPauseMenu() { ToggleMouseLock(); TogglePause(); TogglePauseMenu(); }
     public void QuitApplication() { Application.Quit(); }
 
     public void OpenOptionsFromPauseMenu() { pauseMenu.SetActive(false); optionsMenu.SetActive(true); }
     public void OpenPauseMenuFromOptions() { pauseMenu.SetActive(true); optionsMenu.SetActive(false); }
-    #endregion
+        #endregion
+
+        #region Faceless Girl Damage Indicator functions
     public void DisplayFacelessGirlDamageIndicator(Material _DmgIndMat, float _MaxDmgInd)
     {
         DmgIndMat = _DmgIndMat;
@@ -211,6 +217,39 @@ public class GameHandler : MonoBehaviour
             yield return null;
         }
     }
+        #endregion
+
+        #region Custom Message Displayer
+    public void DisplayCustomMessage(string message, float waitDuration)
+    {
+        messageDisplayer.gameObject.SetActive(true);
+        messageDisplayer.text = message;
+        if(messageDisplayerFadeCoroutine != null) StopCoroutine(messageDisplayerFadeCoroutine);
+        messageDisplayerFadeCoroutine = FadeMessageDisplayer(waitDuration);
+        StartCoroutine(messageDisplayerFadeCoroutine);
+    }
+    private IEnumerator FadeMessageDisplayer(float waitDuration)
+    {
+        Color textColor = messageDisplayer.color;
+        textColor.a = 0;
+        while(textColor.a < 1f)
+        {
+            textColor.a += Time.unscaledDeltaTime * 4;
+            if (textColor.a > 1) textColor.a = 1;
+            messageDisplayer.color = textColor;
+            yield return null;
+        }
+        yield return new WaitForSecondsRealtime(waitDuration);
+        while(textColor.a > 0)
+        {
+            textColor.a -= Time.unscaledDeltaTime;
+            if (textColor.a < 0) textColor.a = 0;
+            messageDisplayer.color = textColor;
+            yield return null;
+        }
+        messageDisplayer.gameObject.SetActive(false);
+    }
+        #endregion
 
     private void PlayCloseOrOpenMenuSound(GameObject menu)
     {
@@ -267,6 +306,7 @@ public class GameHandler : MonoBehaviour
         CreatePropertyField(nameof(handler.sfxVolumeSlider));
         GUILayout.Space(10);
         GUILayout.Label("Others", titleStyle);
+        CreatePropertyField(nameof(handler.messageDisplayer));
         CreatePropertyField(nameof(handler.facelessGirlDamageIndicator));
         GUILayout.Space(5);
         GUILayout.Label("UI sounds", titleStyle);
