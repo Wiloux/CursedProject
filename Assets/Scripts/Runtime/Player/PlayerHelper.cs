@@ -38,22 +38,33 @@ public class PlayerHelper : MonoBehaviour
         }
         return false;
     }
-        #endregion
+    #endregion
+
         #region inv
     public List<ObjectSO> GetPlayerInventory()
     {
         return inventory.items;
     }
     public List<KeySO> GetPlayerKeys() { return inventory.GetInventoryKeys(); }
+            #region Add/Remove Inventory
     public void AddObjectToPlayerInventory(ObjectSO objectToAdd) { inventory.AddObjectToInv(objectToAdd); }
     public void RemoveObjectFromPlayerInvenotry(ObjectSO objectToRemove) { inventory.RemoveObjectFromInv(objectToRemove); }
-        #endregion
+    #endregion 
+
+            #region Healing Items gestion
+
+    public int GetNumberOfHealingItems() { return inventory.healingItem; }
+    public void AdjustNumberOfHealingItem(int adjustment) { inventory.healingItem += adjustment; }
+    #endregion
+    #endregion
     #endregion
 
     #region Player
     public void ToggleControls() {
         player.stopControlls = !player.stopControlls;
     }
+
+    public float GetPlayerLife() { return player.health; }
 
     public void TakeDamage(float damage, bool stagger = true)
     {

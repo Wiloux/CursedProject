@@ -2229,6 +2229,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 109114421441754889}
     m_Modifications:
+    - target: {fileID: 3882304946370307983, guid: 69d2607f4f6b7054db8d3efa792273a3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737036507582207136, guid: 69d2607f4f6b7054db8d3efa792273a3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30.999756
+      objectReference: {fileID: 0}
     - target: {fileID: 5425486989803820516, guid: 69d2607f4f6b7054db8d3efa792273a3, type: 3}
       propertyPath: m_Name
       value: InventoryUI
@@ -2315,6 +2323,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5425486989803820539, guid: 69d2607f4f6b7054db8d3efa792273a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5939626357674917795, guid: 69d2607f4f6b7054db8d3efa792273a3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947534271815734798, guid: 69d2607f4f6b7054db8d3efa792273a3, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

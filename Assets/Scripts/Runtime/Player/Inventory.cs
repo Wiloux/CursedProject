@@ -6,6 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public List<string> clues = new List<string>();
     public List<ObjectSO> items = new List<ObjectSO>();
+    public int healingItem;
 
     private void Start()
     {

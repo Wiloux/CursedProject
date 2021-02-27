@@ -10,9 +10,15 @@ public class InventoryUI : MonoBehaviour
     public float temp = 50f;
 
     // UI elements
+    [Header("Sliding Inventory needs")]
     [SerializeField] private Transform[] itemsIconParents = new Transform[3];
     [SerializeField] private TMP_Text nameDisplayer;
     [SerializeField] private TMP_Text descriptionDisplayer;
+
+    [Space(10)]
+    [Header("Healing Items UI")]
+    [SerializeField] private Slider lifeBar;
+    [SerializeField] private TMPro.TMP_Text healingItemsCounter;
 
     // Items and previews
     private List<ObjectSO> items = new List<ObjectSO>();
@@ -21,7 +27,7 @@ public class InventoryUI : MonoBehaviour
 
     // Wwise
     #region Wwise EVents
-    [Space(10)]
+    [Space(20)]
     [Header("Wwise Events")]
     [SerializeField] private AK.Wwise.Event openingWEvent;
     [SerializeField] private AK.Wwise.Event closingWEvent;
@@ -39,6 +45,7 @@ public class InventoryUI : MonoBehaviour
         items = PlayerHelper.instance.GetPlayerInventory();
         currentItemIndex = 0;
         openingWEvent?.Post(cam);
+        UpdateLifeUI();
         UpdateDisplay();
     }
     private void OnDisable()
@@ -117,6 +124,11 @@ public class InventoryUI : MonoBehaviour
                 descriptionDisplayer.text = items[index].longDescription;
             }
         }
+    }
+    private void UpdateLifeUI()
+    {
+        healingItemsCounter.text = PlayerHelper.instance.GetNumberOfHealingItems().ToString();
+        lifeBar.value = PlayerHelper.instance.GetPlayerLife();
     }
 
     private void CreatePreviewInCase(ObjectSO currentItem, int index)
