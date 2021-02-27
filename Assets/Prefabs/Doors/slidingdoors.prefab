@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7388712405865576219}
   m_LocalRotation: {x: -0, y: 0.7071067, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -0.0036669401, y: 0.076, z: 0.056}
+  m_LocalPosition: {x: 0.0066, y: -0.125, z: 0.1155}
   m_LocalScale: {x: 0.121171266, y: 0.22033535, z: 0.06111429}
   m_Children: []
   m_Father: {fileID: 6990505488553141450}
@@ -140,8 +140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f125b16a545ad0a48b9aaf7d3d0a15a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  needKey: 0
+  neededKey: {fileID: 0}
+  spawnPoint: {fileID: 0}
   otherDoorScript: {fileID: 0}
-  SpawnPoint: {fileID: 7388712405865576212}
-  roomManager: {fileID: 0}
-  nextRoomInt: 1
-  currentRoomInt: 0
+  currentRoomName: 
+  doorInteractionWEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: bdfbe76e48f5d144ea69e43489a1b23d, type: 2}

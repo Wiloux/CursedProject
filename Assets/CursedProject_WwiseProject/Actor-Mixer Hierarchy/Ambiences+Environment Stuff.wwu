@@ -430,6 +430,32 @@
 						</Sound>
 					</ChildrenList>
 				</ActorMixer>
+				<Folder Name="Doors" ID="{0ED7D5B8-6978-4812-BDBF-D8E193100773}" ShortID="628284769">
+					<ChildrenList>
+						<Sound Name="Sliding Door 1" ID="{A2AFE5CA-AE81-4620-987B-F78FA69FB2D4}" ShortID="275593630">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{059AE8F4-31DF-4F76-AFF5-AFC249A6B6D6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX" ID="{7DFED55D-31DB-4D27-90F6-ECE3ED9D7EBB}" WorkUnitID="{2945F25C-AEC5-4F0C-B7D4-61EC6430A707}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sliding Door 1" ID="{C986AD55-15DB-4183-8CEF-0611BA9516B2}">
+									<Language>SFX</Language>
+									<AudioFile>Ambiances\Doors\Sliding Door 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="303978786"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sliding Door 1" ID="{C986AD55-15DB-4183-8CEF-0611BA9516B2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

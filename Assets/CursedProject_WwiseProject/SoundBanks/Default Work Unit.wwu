@@ -10,6 +10,7 @@
 						<ObjectRef Name="PlayAmbianceJanitorRoom" ID="{C9680C4B-860E-41A9-A33F-EBC367BC467A}" WorkUnitID="{5DD2E1AF-BE64-43F3-86B4-F24DE10966EC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayAttack2" ID="{20A101CE-2670-41D9-9766-D9EB52D0F555}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="GyaruStopAttackLong" ID="{4E6123C1-E06F-4204-8E2E-3DB435CC83DB}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlaySlidingDoor1" ID="{6A283816-C5B0-4233-AD70-DF3E1AB731AD}" WorkUnitID="{5DD2E1AF-BE64-43F3-86B4-F24DE10966EC}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenOnSpawn" ID="{08A682DA-87B4-4292-83B3-291CF26245BA}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayChickenFootsteps" ID="{377CB89E-1AD2-42D0-A801-74917BE099BA}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="StopAllGameObject" ID="{2011AD77-7572-42E4-809C-B4620C80EC05}" WorkUnitID="{0640A6EF-6429-4AD5-8FFE-7B161B1B8706}" Origin="Manual" Filter="7"/>

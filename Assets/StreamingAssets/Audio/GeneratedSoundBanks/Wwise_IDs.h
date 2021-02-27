@@ -46,6 +46,7 @@ namespace AK
         static const AkUniqueID PLAYMOVEINVENTORY = 3203531352U;
         static const AkUniqueID PLAYOPENINVENTORY = 322586785U;
         static const AkUniqueID PLAYPHONEPROP = 2575517534U;
+        static const AkUniqueID PLAYSLIDINGDOOR1 = 2493115428U;
         static const AkUniqueID PLAYWARDENDIE = 1870077814U;
         static const AkUniqueID PLAYWARDENHURT = 933827407U;
         static const AkUniqueID PLAYWARDENIDLE = 2920750754U;
