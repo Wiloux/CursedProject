@@ -13,11 +13,12 @@ public class DoorScript : MonoBehaviour
     public Transform spawnPoint;
 
     public DoorScript otherDoorScript;
-    public string otherDoorRoomName;
 
     public string currentRoomName;
 
     private RoomsManager roomsManager;
+
+    public AK.Wwise.Event doorInteractionWEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,6 @@ public class DoorScript : MonoBehaviour
         roomsManager = RoomsManager.instance;
 
         roomsManager.CheckIfRoomNameExists(currentRoomName);
-        roomsManager.CheckIfRoomNameExists(otherDoorRoomName);
     }
 
 
@@ -58,7 +58,10 @@ public class DoorScript : MonoBehaviour
     }
     private void UseDoor(Transform Using)
     {
-        otherDoorScript.currentRoomName = otherDoorRoomName;
+        // Play sound
+        doorInteractionWEvent?.Post(gameObject);
+
+        string otherDoorRoomName = otherDoorScript.currentRoomName;
 
         WorldProgress.instance.locationName = otherDoorRoomName;
 
@@ -98,9 +101,12 @@ public class DoorScriptInspector : Editor
 
         GUILayout.Space(10);
 
-        CreatePropertyField(nameof(door.otherDoorRoomName));
         CreatePropertyField(nameof(door.currentRoomName));
 
+        GUILayout.Space(20);
+        GUILayout.Label("Wwise");
+        GUILayout.Space(5);
+        CreatePropertyField(nameof(door.doorInteractionWEvent));
 
         serializedObject.ApplyModifiedProperties();
     }

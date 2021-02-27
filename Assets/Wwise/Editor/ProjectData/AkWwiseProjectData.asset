@@ -1215,6 +1215,7 @@ MonoBehaviour:
   - /CursedProject_WwiseProject
   - /CursedProject_WwiseProject/Events
   - /CursedProject_WwiseProject/Events/Ambiances+Environment Stuff
-  - /CursedProject_WwiseProject/Events/Default Work Unit
+  - /CursedProject_WwiseProject/Events/Tests
+  - /CursedProject_WwiseProject/Events/Tests/Chicken
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
