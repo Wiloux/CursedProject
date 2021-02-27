@@ -46,10 +46,13 @@ public class RoomsManager : MonoBehaviour
     }
     private void SpawnEnemiesOfRoom(Room room)
     {
-        foreach(EnemyToSpawn enemyToSpawn in room.enemiesToSpawn)
+        if (room != null &&room.enemiesToSpawn.Count != 0)
         {
-            EnemyBaseAI enemy = Instantiate(enemyToSpawn.enemy, enemyToSpawn.spawnPos, Quaternion.Euler(enemyToSpawn.spawnRot));
-            room.enemies.Add(enemy);
+            foreach (EnemyToSpawn enemyToSpawn in room.enemiesToSpawn)
+            {
+                EnemyBaseAI enemy = Instantiate(enemyToSpawn.enemy, enemyToSpawn.spawnPos, Quaternion.Euler(enemyToSpawn.spawnRot));
+                room.enemies.Add(enemy);
+            }
         }
     }
         #endregion
@@ -90,7 +93,7 @@ public class RoomsManager : MonoBehaviour
         {
             if (roomName == room.roomName) return;
         }
-        Debug.LogError("Custom error: Room name doesn't exists in the rooms manager");
+        Debug.LogError("Custom error: Room name : " + roomName + " doesn't exists in the rooms manager");
     }
 
 }

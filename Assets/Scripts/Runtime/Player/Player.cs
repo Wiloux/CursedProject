@@ -142,11 +142,14 @@ public class Player : MonoBehaviour
                 }
                 else if (Input.GetKeyDown(KeyCode.E))
                 {
+                    Debug.Log("e");
                     RaycastHit hit;
-                    Physics.Raycast(transform.position, transform.forward, out hit, 5f);
+                    LayerMask ignoreOcclusioneRaycastCheck = 1<<14;
+                    Physics.Raycast(transform.position, transform.forward, out hit, 5f, ~ignoreOcclusioneRaycastCheck);
                     if (hit.transform != null)
                     {
-                        if (hit.transform.GetComponent<DoorScript>() != null) { InteractAnimation?.Invoke();  hit.transform.GetComponent<DoorScript>().TryUseDoor(transform);  }
+                        Debug.Log(hit.transform);
+                        if (hit.transform.GetComponent<DoorScript>() != null) {/* InteractAnimation?.Invoke();*/  hit.transform.GetComponent<DoorScript>().TryUseDoor(transform);  }
                         else if(hit.transform.GetComponent<Collectible>() != null) { InteractAnimation?.Invoke(); inventory.AddObjectToInv(hit.transform.GetComponent<Collectible>().so); Destroy(hit.transform.gameObject); }
                         else if (hit.transform.CompareTag("SavePoint"))
                         {
