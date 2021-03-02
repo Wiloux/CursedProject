@@ -198,7 +198,7 @@ public class FacelessGirlAI : EnemyBaseAI
 
     public override void GetStaggered()
     {
-        HideFace(false);
+        if(faceState == FaceState.Showing)HideFace(false);
         unit.GetStaggered(enemyProfile.staggerDuration, () => state = State.Running);
     }
 

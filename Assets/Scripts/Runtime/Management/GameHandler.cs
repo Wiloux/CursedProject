@@ -131,7 +131,7 @@ public class GameHandler : MonoBehaviour
 
         //GUILayout.Label("Sanity : " + sanity.ToString(), style);
         //GUILayout.Label("Faceless girl DamageIndicatorTimer : " + damageIndicatorTimer.ToString(), style);
-        GUILayout.Label("Color : " + messageDisplayer.color.a, style);
+        //GUILayout.Label("Color : " + messageDisplayer.color.a, style);
 
         // on s'en blc c pour le debug
     }
