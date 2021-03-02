@@ -150,7 +150,7 @@ public class Player : MonoBehaviour
                     {
                         Debug.Log(hit.transform);
                         if (hit.transform.GetComponent<DoorScript>() != null) {/* InteractAnimation?.Invoke();*/  hit.transform.GetComponent<DoorScript>().TryUseDoor(transform);  }
-                        else if(hit.transform.GetComponent<Collectible>() != null) { InteractAnimation?.Invoke(); inventory.AddObjectToInv(hit.transform.GetComponent<Collectible>().so); Destroy(hit.transform.gameObject); }
+                        else if(hit.transform.GetComponent<Collectible>() != null) { InteractAnimation?.Invoke(); GameHandler.instance.DisplayCustomMessage("You have found " + hit.transform.GetComponent<Collectible>().so.name, 3f); inventory.AddObjectToInv(hit.transform.GetComponent<Collectible>().so); Destroy(hit.transform.gameObject); }
                         else if (hit.transform.CompareTag("SavePoint"))
                         {
                             GameHandler.instance.TogglePause();
