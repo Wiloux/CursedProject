@@ -144,6 +144,34 @@
 										</RTPC>
 									</RTPCList>
 								</Property>
+								<Property Name="BypassEffect2" Type="bool">
+									<RTPCList>
+										<RTPC Name="" ID="{6F6FA33F-E7A9-41D3-B532-EE0F0E29B27D}" ShortID="415861934">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="RTPC_Reverb_Bathroom" ID="{1D9645E0-35AB-4AF7-AA93-1B7FA4B02820}" WorkUnitID="{84FC873F-5FD7-4284-93F5-81868CFB0AA6}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{64C19CDD-2E08-4F58-B16E-67AE1226AF01}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>1</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
 								<Property Name="OutputBusLowpass" Type="int16">
 									<RTPCList>
 										<RTPC Name="" ID="{7A4A3747-01B0-4128-8156-0AB311BD1BAE}" ShortID="328759655">
@@ -203,6 +231,9 @@
 											</PropertyList>
 										</Effect>
 									</Custom>
+								</Reference>
+								<Reference Name="Effect2" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="ReverbBathroom" ID="{A3047CA8-6C29-4950-916D-E0CEAEDC8404}" WorkUnitID="{F9E1749B-0215-4D25-B747-90A52D4F8E11}"/>
 								</Reference>
 							</ReferenceList>
 						</Bus>

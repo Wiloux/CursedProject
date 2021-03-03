@@ -146,6 +146,10 @@
 							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="RTPC_Reverb_Bathroom" ID="{1D9645E0-35AB-4AF7-AA93-1B7FA4B02820}"/>
+							<Value>1</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="RTPC_Reverb_2" ID="{B840F614-4008-4E5C-A7A5-2CCAD8469304}"/>
 							<Value>1</Value>
 						</RTPCValue>

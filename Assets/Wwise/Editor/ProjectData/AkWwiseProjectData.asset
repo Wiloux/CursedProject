@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5cf24529c5ae0c4fb7d461ec6430a707
     GuidInternal: 
-    m_lastTime: -8585874315334808243
+    m_lastTime: -8585868026580891819
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -979,7 +979,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3f87fc84d75f844293f581868cfb0aa6
     GuidInternal: 
-    m_lastTime: -8585874315375176268
+    m_lastTime: -8585868026580742474
     List:
     - name: MusicSliderVolume
       guid: 4e8bd8a181806947a33bfce349bc7ac2
@@ -1026,6 +1026,15 @@ MonoBehaviour:
       - ElementName: RTPC_Reverb_2
         ObjectType: 13
       Path: Default Work Unit\RTPC_Reverb_2
+    - name: RTPC_Reverb_Bathroom
+      guid: e045961dab35f74aaa931b7fa4b02820
+      id: 3804925172
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_Reverb_Bathroom
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_Reverb_Bathroom
     - name: SFXSliderVolume
       guid: c8bdadedfdef9344bb7bbdec5de5ec66
       id: 560434043
