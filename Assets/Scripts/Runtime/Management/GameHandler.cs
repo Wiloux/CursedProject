@@ -45,10 +45,10 @@ public class GameHandler : MonoBehaviour
     public GameObject facelessGirlDamageIndicator;
     private float damageIndicatorTimer;
     private IEnumerator gradualIncreaseCoroutine;
-    private bool graduallyIncreasing;
 
     public TMPro.TMP_Text messageDisplayer;
     private IEnumerator messageDisplayerFadeCoroutine;
+    public string pickupItemsMessageColor = "green";
 
     private Material DmgIndMat;
     private float DmgIndMax;
@@ -207,7 +207,6 @@ public class GameHandler : MonoBehaviour
             StopCoroutine(gradualIncreaseCoroutine);
             StartCoroutine(gradualIncreaseCoroutine);
         }
-        graduallyIncreasing = true;
     }
     private IEnumerator IncreaseGraduallyTimer()
     {
@@ -227,6 +226,10 @@ public class GameHandler : MonoBehaviour
         if(messageDisplayerFadeCoroutine != null) StopCoroutine(messageDisplayerFadeCoroutine);
         messageDisplayerFadeCoroutine = FadeMessageDisplayer(waitDuration);
         StartCoroutine(messageDisplayerFadeCoroutine);
+    }
+    public void DisplayPickupItemMessage(string itemName, float waitDuration)
+    {
+        DisplayCustomMessage("You have found <color=" + pickupItemsMessageColor + "> " + itemName, waitDuration);
     }
     private IEnumerator FadeMessageDisplayer(float waitDuration)
     {
@@ -308,6 +311,7 @@ public class GameHandler : MonoBehaviour
         GUILayout.Label("Others", titleStyle);
         CreatePropertyField(nameof(handler.messageDisplayer));
         CreatePropertyField(nameof(handler.facelessGirlDamageIndicator));
+        CreatePropertyField(nameof(handler.pickupItemsMessageColor));
         GUILayout.Space(5);
         GUILayout.Label("UI sounds", titleStyle);
         CreatePropertyField(nameof(handler.openingSavePauseMenu));

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3804c761978048e48a673b2d315ef91b, type: 3}
   m_Name: Table
   m_EditorClassIdentifier: 
-  objectName: Table
+  name: Table
   objectModel: {fileID: 8547844028207840679, guid: cac28057e6804de4f808f114b8b6bf56, type: 3}
   previewStartRotation: {x: -45, y: 0, z: 0}
   previewRotation: {x: 0, y: 0, z: 180}
@@ -20,3 +20,4 @@ MonoBehaviour:
   shortDescription: 
   longDescription: Because... why not have a table ?
   type: 3
+  key: {fileID: 0}

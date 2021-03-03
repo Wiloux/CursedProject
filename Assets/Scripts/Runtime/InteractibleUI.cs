@@ -39,12 +39,13 @@ public class InteractibleUI : MonoBehaviour
 
         for(int i = 0; i < currentInteractibleImages.Count; i++)
         {
+            if(currentInteractibleImages[i].gameObject == null) { DestroyInteractibleImage(currentInteractibleImages[i]); i--; continue; }
             if (!isInteractibleImageInColliders(currentInteractibleImages[i], colliders))
             {
                 if (!currentInteractibleImages[i].autoDestructing)
                 {
                     Debug.Log("destroy");
-                    StartCoroutine(DestroyInteractibleImage(currentInteractibleImages[i], disappearTimer));
+                    StartCoroutine(DestroyInteractibleImageCoroutine(currentInteractibleImages[i], disappearTimer));
                     currentInteractibleImages[i].autoDestructing = true;
                 }
             }
@@ -106,7 +107,7 @@ public class InteractibleUI : MonoBehaviour
         image.sprite = sprite;
         currentInteractibleImages.Add(new InteractibleImage(interactibleObject.gameObject, image));
     }
-    private IEnumerator DestroyInteractibleImage(InteractibleImage interactibleImage, float seconds)
+    private IEnumerator DestroyInteractibleImageCoroutine(InteractibleImage interactibleImage, float seconds)
     {
         Debug.Log("1");
         float timer = seconds;
@@ -118,11 +119,15 @@ public class InteractibleUI : MonoBehaviour
             if(timer < 0)
             {
                 Debug.Log("2");
-                currentInteractibleImages.Remove(interactibleImage);
-                if(interactibleImage.image != null) Destroy(interactibleImage.image.gameObject);
+                DestroyInteractibleImage(interactibleImage);
                 break;
             }
         }
+    }
+    private void DestroyInteractibleImage(InteractibleImage interactibleImage)
+    {
+        currentInteractibleImages.Remove(interactibleImage);
+        if(interactibleImage.image != null) Destroy(interactibleImage.image.gameObject);
     }
 
     private bool isInteractibleInCurrentInteractible(GameObject interactibleObject)
