@@ -29,7 +29,8 @@ public class WorldProgress : MonoBehaviour
     { 
         if(SceneManager.GetActiveScene().buildIndex != 0)
         {
-            if (!GameHandler.instance.isPaused) gameTime += Time.deltaTime; 
+            GameHandler gameHandler = GameHandler.instance;
+            if(gameHandler != null) if (!gameHandler.isPaused) gameTime += Time.deltaTime; 
         }
     }
     #endregion
@@ -38,7 +39,8 @@ public class WorldProgress : MonoBehaviour
     {
         playerLife = 1;
         gameTime = 0;
-        locationName = RoomsManager.instance.AllRooms[0].roomName;
+        if (RoomsManager.instance != null) locationName = RoomsManager.instance.AllRooms[0].roomName;
+        else locationName = "default";
         characterName = "Gyaru";
 
         isCutscenesPlayed = new bool[5];

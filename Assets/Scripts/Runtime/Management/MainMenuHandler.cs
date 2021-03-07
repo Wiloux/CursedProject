@@ -11,6 +11,9 @@ public class MainMenuHandler : MonoBehaviour
     [SerializeField] private GameObject loadSavesMenu;
     [SerializeField] private GameObject newGameMenu;
 
+    [Space(10)]
+    [SerializeField] private AK.Wwise.Event onKeyPressedWEvent;
+
     private bool hasPressed;
 
     private void Awake(){ instance = this; }
@@ -29,6 +32,7 @@ public class MainMenuHandler : MonoBehaviour
             {
                 OpenMainMenu();
                 hasPressed = true;
+                onKeyPressedWEvent?.Post(gameObject);
             }
         }
         else

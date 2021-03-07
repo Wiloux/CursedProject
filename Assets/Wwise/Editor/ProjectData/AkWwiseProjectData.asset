@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5cf24529c5ae0c4fb7d461ec6430a707
     GuidInternal: 
-    m_lastTime: -8585867997962117581
+    m_lastTime: -8585865219091693548
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -979,7 +979,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3f87fc84d75f844293f581868cfb0aa6
     GuidInternal: 
-    m_lastTime: -8585867997969986833
+    m_lastTime: -8585865219091892764
     List:
     - name: MusicSliderVolume
       guid: 4e8bd8a181806947a33bfce349bc7ac2
@@ -1236,5 +1236,7 @@ MonoBehaviour:
   - /CursedProject_WwiseProject
   - /CursedProject_WwiseProject/Events
   - /CursedProject_WwiseProject/Events/Ambiances+Environment Stuff
+  - /CursedProject_WwiseProject/Events/Enemies
+  - /CursedProject_WwiseProject/Events/Enemies/FacelessGirl
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
