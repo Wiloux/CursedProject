@@ -2549,7 +2549,7 @@ PrefabInstance:
     - target: {fileID: 7388712405462516540, guid: da1988b08e5851247b7fd646d048ffd6, type: 3}
       propertyPath: otherDoorScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1792035082}
     - target: {fileID: 7388712405462516540, guid: da1988b08e5851247b7fd646d048ffd6, type: 3}
       propertyPath: otherDoorRoomName
       value: Corridor2ndFloor
