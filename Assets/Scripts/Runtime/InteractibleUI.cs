@@ -80,6 +80,8 @@ public class InteractibleUI : MonoBehaviour
         Gizmos.DrawWireSphere(debugObject.transform.position, interactiveRange);
     }
 
+    public float size;
+
     private void CreateImageForInteraction(Transform interactibleObject,Sprite sprite)
     {
         Debug.Log("create");
@@ -93,7 +95,7 @@ public class InteractibleUI : MonoBehaviour
         // Set its parent and reset his rect transform
         go.transform.SetParent(canvas.transform);
         RectTransform rectTransform = go.AddComponent<RectTransform>();
-        rectTransform.localScale = Vector3.one;
+        rectTransform.localScale = Vector3.one *size;
         rectTransform.localRotation = Quaternion.identity;
         rectTransform.anchorMin = Vector2.zero;
         rectTransform.anchorMax = Vector2.zero;

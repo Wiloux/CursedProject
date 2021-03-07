@@ -10841,7 +10841,7 @@ MonoBehaviour:
   attackLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  attackCooldown: 3
+  attackCooldown: 0
   idleBreaksObjects:
   - go: {fileID: 1451321414}
     duration: 4.2
@@ -10922,6 +10922,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 330da1dc4dfd48f44b18bff11e9120e2, type: 2}
   - {fileID: 11400000, guid: 4124cc51a75c01f4bb9540324f3efaf0, type: 2}
   - {fileID: 11400000, guid: 362c886cd4a2f414ca5e7785cedcbcbd, type: 2}
+  healingItem: 0
 --- !u!114 &5570753806488649900
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -69,11 +69,12 @@ public class RoomsManager : MonoBehaviour
     }
     private void DestroyEnemiesOfRoom(Room room)
     {
-        foreach(EnemyBaseAI enemy in room.enemies)
-        {
-            Destroy(enemy.gameObject);
-        }
-        room.enemies.Clear();
+        Debug.Log(room.roomName);
+            foreach (EnemyBaseAI enemy in room.enemies)
+            {
+                Destroy(enemy.gameObject);
+            }
+            room.enemies.Clear();
     }
         #endregion
     #endregion

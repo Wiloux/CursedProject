@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8554db59d92fa5249b7048052d77a609
   - enabled: 1
-    path: Assets/Scenes/OutFoxeed_wiloux_copy.unity
-    guid: 8350e446ccccbe743b06f1a94a2ce8d0
+    path: Assets/Scenes/Wiloux.unity
+    guid: 477949a7529d2ee43b16f20fde1f0eda
   m_configObjects: {}
