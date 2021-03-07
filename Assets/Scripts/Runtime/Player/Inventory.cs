@@ -31,4 +31,8 @@ public class Inventory : MonoBehaviour
         if (items.Contains(objectToRemove)) items.Remove(objectToRemove);
         else Debug.LogError("Custom error: Object to remove is not found in the player invenotry");
     }
+
+    public void AddHealingItem() { healingItem++; }
+    public void RemoveHealingItem() { healingItem--; }
+
 }

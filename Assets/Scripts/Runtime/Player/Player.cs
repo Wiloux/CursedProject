@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public Character character;
 
     public float health = 3;
+    public float healthMax = 3;
     private bool dead;
 
     private Inventory inventory;
@@ -44,6 +45,9 @@ public class Player : MonoBehaviour
     [SerializeField] private KeyCode specialAbilityKey = KeyCode.F;
     [SerializeField] private float abilityCooldown;
     private float abilityTimer;
+
+    [Space(5)]
+    [SerializeField] private KeyCode healKey = KeyCode.H;
 
     #region Animator related Actions
     private Action SimpleAttackAnimation;
@@ -150,7 +154,7 @@ public class Player : MonoBehaviour
                     {
                         Debug.Log(hit.transform);
                         if (hit.transform.GetComponent<DoorScript>() != null) {/* InteractAnimation?.Invoke();*/  hit.transform.GetComponent<DoorScript>().TryUseDoor(transform);  }
-                        else if(hit.transform.GetComponent<Collectible>() != null) { InteractAnimation?.Invoke(); GameHandler.instance.DisplayPickupItemMessage(hit.transform.GetComponent<Collectible>().so.name, 3f); inventory.AddObjectToInv(hit.transform.GetComponent<Collectible>().so); Destroy(hit.transform.gameObject); }
+                        else if(hit.transform.GetComponent<Collectible>() != null) { InteractAnimation?.Invoke(); Collect(hit.transform.GetComponent<Collectible>()); Destroy(hit.transform.gameObject); }
                         else if (hit.transform.CompareTag("SavePoint"))
                         {
                             GameHandler.instance.TogglePause();
@@ -167,6 +171,17 @@ public class Player : MonoBehaviour
                         AbilityAnimation?.Invoke();
                         UseAbility?.Invoke();
                         abilityTimer = abilityCooldown;
+                    }
+                }
+                else if (Input.GetKey(healKey))
+                {
+                    if (inventory.healingItem > 0 && health < healthMax)
+                    {
+                        // Heal Player
+                        Heal();
+
+                        // remove a stack from healing items
+                        inventory.RemoveHealingItem();
                     }
                 }
             }
@@ -292,6 +307,20 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+    private void Collect(Collectible collectible)
+    {
+        if (collectible.healingItem)
+        {
+            inventory.healingItem += collectible.healValues;
+            GameHandler.instance.DisplayPickupItemMessage("Healing Item", 3f);
+        }
+        else
+        {
+            GameHandler.instance.DisplayPickupItemMessage(collectible.so.name, 3f); 
+            inventory.AddObjectToInv(collectible.so);
+        }
+    }
+
     private IEnumerator BlockMovementForPeriod(float seconds)
     {
         controller.canMove = false;
@@ -311,6 +340,10 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Health related methods
+        #region Heal
+    public void Heal() { if (health < healthMax) health++; }
+        #endregion
+    #region Take Damage
     public void TakeDamage(float damage, bool stagger)
     {
         health -= damage;
@@ -330,6 +363,7 @@ public class Player : MonoBehaviour
         GameObject bloodParticles = Instantiate(bloodParticlesPrefab, transform.position, Quaternion.identity);
         Destroy(bloodParticles, 2.5f);
     }
+        #endregion
 
     public void Die()
     {
