@@ -18,6 +18,7 @@ namespace AK
         static const AkUniqueID GYARUPLAYATTACKLONG = 369930381U;
         static const AkUniqueID GYARUPLAYATTACKSHORT = 166469259U;
         static const AkUniqueID GYARUSTOPATTACKLONG = 3302019815U;
+        static const AkUniqueID MAINMENUTRANSITION = 3348981106U;
         static const AkUniqueID MUSICTEST = 4195921398U;
         static const AkUniqueID PLAYAMBIANCE1 = 2650513656U;
         static const AkUniqueID PLAYAMBIANCEJANITORROOM = 3131532911U;
@@ -42,6 +43,7 @@ namespace AK
         static const AkUniqueID PLAYFOOTSTEPSPLAYER = 1241118191U;
         static const AkUniqueID PLAYHIGHLIGHT = 145167493U;
         static const AkUniqueID PLAYKEYPRESS = 1168436793U;
+        static const AkUniqueID PLAYMAINMENU = 3998606525U;
         static const AkUniqueID PLAYMIRRORPROP = 539806209U;
         static const AkUniqueID PLAYMOVEINVENTORY = 3203531352U;
         static const AkUniqueID PLAYOPENINVENTORY = 322586785U;
@@ -56,6 +58,7 @@ namespace AK
         static const AkUniqueID SHARDSTHROW = 617402058U;
         static const AkUniqueID SHARDWALLHIT = 3796699282U;
         static const AkUniqueID STOPALLGAMEOBJECT = 2779602813U;
+        static const AkUniqueID STOPALLGLOBALFADE = 1185465929U;
         static const AkUniqueID STOPFACELESSATTACK = 4052641749U;
         static const AkUniqueID STOPMOVEMENTSOUND = 4217165871U;
         static const AkUniqueID TESTBASS = 3241046308U;
@@ -63,6 +66,18 @@ namespace AK
 
     namespace STATES
     {
+        namespace MAINMENUMUSIC
+        {
+            static const AkUniqueID GROUP = 1991862712U;
+
+            namespace STATE
+            {
+                static const AkUniqueID FIRST = 998496889U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID SECOND = 3476314365U;
+            } // namespace STATE
+        } // namespace MAINMENUMUSIC
+
         namespace PAUSE
         {
             static const AkUniqueID GROUP = 3092587493U;
@@ -144,9 +159,15 @@ namespace AK
         static const AkUniqueID RTPC_OCCLUSION_VOLUME = 342905355U;
         static const AkUniqueID RTPC_REVERB = 4143461479U;
         static const AkUniqueID RTPC_REVERB_2 = 2627017276U;
+        static const AkUniqueID RTPC_REVERB_BATHROOM = 3804925172U;
         static const AkUniqueID SFXSLIDERVOLUME = 560434043U;
         static const AkUniqueID SFXVOLUME = 988953028U;
     } // namespace GAME_PARAMETERS
+
+    namespace TRIGGERS
+    {
+        static const AkUniqueID MAINMENUTRANSITION = 3348981106U;
+    } // namespace TRIGGERS
 
     namespace BANKS
     {

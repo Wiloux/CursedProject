@@ -14,6 +14,64 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="MainMenuTransition" ID="{4B9D3D6B-2553-4B3A-A481-F04F00A1A0C4}">
+					<ChildrenList>
+						<Action Name="" ID="{AFF6674E-63AF-4AFF-8737-DD474E02998C}" ShortID="823119186">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Second" ID="{175A25CE-E250-4297-8212-9D009CEC586D}" WorkUnitID="{ECD40056-EB28-40E7-84A4-C24ECE5AC1B5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{87815F7B-1D1C-46CA-ACFD-120A62498271}" ShortID="968007322">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="35"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MainMenuTransition" ID="{CC4E4F00-4AEF-4AD5-A9DA-9E54BC90F18D}" WorkUnitID="{531CBCCB-C76A-4D33-B81B-E44AFD780643}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{298DD7FB-11CC-4EA2-9305-AB6AB62FA49C}" ShortID="906361638">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Transition" ID="{31B81B09-D569-4C8A-99C9-1CE3BB192FA8}" WorkUnitID="{A444B2F0-0F7C-4F41-998C-FFF4BDBC4410}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayMainMenu" ID="{49E57BC6-3186-451F-98CB-3B234A81D5E6}">
+					<ChildrenList>
+						<Action Name="" ID="{902A3EEC-8826-4204-85E4-DCE7699D6178}" ShortID="296694488">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="First" ID="{DDBC2403-BE6F-4C29-84DB-B802A13D0989}" WorkUnitID="{ECD40056-EB28-40E7-84A4-C24ECE5AC1B5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{85AF3355-2F2D-4AAE-954F-7F82AEB0D421}" ShortID="67942226">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Main Menu" ID="{17621FDF-EE87-4F13-A414-5C2DC05BC0FD}" WorkUnitID="{A444B2F0-0F7C-4F41-998C-FFF4BDBC4410}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -14,6 +14,18 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="StopAllGlobalFade" ID="{F0226502-14A9-4790-B249-AEDC822B13DB}">
+					<ChildrenList>
+						<Action Name="" ID="{B2AF8B77-BAF2-44AA-82A3-074F3EFC288C}" ShortID="184823704">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

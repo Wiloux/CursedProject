@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{531CBCCB-C76A-4D33-B81B-E44AFD780643}" SchemaVersion="97">
 	<Triggers>
-		<WorkUnit Name="Default Work Unit" ID="{531CBCCB-C76A-4D33-B81B-E44AFD780643}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{531CBCCB-C76A-4D33-B81B-E44AFD780643}" PersistMode="Standalone">
+			<ChildrenList>
+				<Trigger Name="MainMenuTransition" ID="{CC4E4F00-4AEF-4AD5-A9DA-9E54BC90F18D}"/>
+			</ChildrenList>
+		</WorkUnit>
 	</Triggers>
 </WwiseDocument>

@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="376813592">
+		<SoundBank Id="1355168291" Language="SFX" Hash="46254984">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -21,6 +21,7 @@
 				<GameParameter Id="560434043" Name="SFXSliderVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXSliderVolume"/>
 				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\SFXVolume"/>
 				<GameParameter Id="2627017276" Name="RTPC_Reverb_2" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb_2"/>
+				<GameParameter Id="3804925172" Name="RTPC_Reverb_Bathroom" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb_Bathroom"/>
 				<GameParameter Id="4143461479" Name="RTPC_Reverb" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Reverb"/>
 			</GameParameters>
 			<StateGroups>
@@ -33,7 +34,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="3643648049">
+		<SoundBank Id="3161908922" Language="SFX" Hash="1810146267">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -71,6 +72,17 @@
 							<Path>SFX\PlayerWeapons\Gyaru\LongTail_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3348981106" Name="MainMenuTransition" ObjectPath="\Events\Default Work Unit\MainMenuTransition" DurationType="OneShot" DurationMin="18.198639" DurationMax="18.198639">
+					<IncludedMemoryFiles>
+						<File Id="933725841" Language="SFX">
+							<ShortName>Transition.wav</ShortName>
+							<Path>SFX\Transition_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionSetState>
+						<ActionSetStateEntry Id="3476314365" Name="Second" ObjectPath="\States\Default Work Unit\MainMenuMusic\Second"/>
+					</ActionSetState>
 				</Event>
 				<Event Id="4195921398" Name="MusicTest" ObjectPath="\Events\Default Work Unit\MusicTest" MaxAttenuation="40.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
@@ -693,6 +705,41 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="3998606525" Name="PlayMainMenu" ObjectPath="\Events\Default Work Unit\PlayMainMenu" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="4229081" Language="SFX">
+							<ShortName>Piano_AC.wav</ShortName>
+							<Path>SFX\Piano_AC_9EDFC787.wem</Path>
+						</File>
+						<File Id="6169246" Language="SFX">
+							<ShortName>Pizzicato_AC.wav</ShortName>
+							<Path>SFX\Pizzicato_AC_9EDFC787.wem</Path>
+						</File>
+						<File Id="47674136" Language="SFX">
+							<ShortName>Tremolo_AC.wav</ShortName>
+							<Path>SFX\Tremolo_AC_9EDFC787.wem</Path>
+						</File>
+						<File Id="194655802" Language="SFX">
+							<ShortName>Piano_BC.wav</ShortName>
+							<Path>SFX\Piano_BC_9EDFC787.wem</Path>
+						</File>
+						<File Id="724715024" Language="SFX">
+							<ShortName>Pad_AC.wav</ShortName>
+							<Path>SFX\Pad_AC_9EDFC787.wem</Path>
+						</File>
+						<File Id="933725841" Language="SFX">
+							<ShortName>Transition.wav</ShortName>
+							<Path>SFX\Transition_D79FB2B7.wem</Path>
+						</File>
+						<File Id="971143893" Language="SFX">
+							<ShortName>Pad_BC.wav</ShortName>
+							<Path>SFX\Pad_BC_9EDFC787.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionSetState>
+						<ActionSetStateEntry Id="998496889" Name="First" ObjectPath="\States\Default Work Unit\MainMenuMusic\First"/>
+					</ActionSetState>
+				</Event>
 				<Event Id="539806209" Name="PlayMirrorProp" ObjectPath="\Events\Players\Gyaru\PlayMirrorProp" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
 					<IncludedMemoryFiles>
 						<File Id="434715277" Language="SFX">
@@ -846,6 +893,7 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2779602813" Name="StopAllGameObject" ObjectPath="\Events\Others\StopAllGameObject" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1185465929" Name="StopAllGlobalFade" ObjectPath="\Events\Others\StopAllGlobalFade" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="4052641749" Name="StopFacelessAttack" ObjectPath="\Events\Enemies\FacelessGirl\StopFacelessAttack" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="0.212653" DurationMax="0.212653">
 					<IncludedMemoryFiles>
 						<File Id="698868433" Language="SFX">
@@ -868,7 +916,20 @@
 				<StateGroup Id="979470758" Name="Yes" ObjectPath="\States\Default Work Unit\Pause\Yes">
 					<States/>
 				</StateGroup>
+				<StateGroup Id="998496889" Name="First" ObjectPath="\States\Default Work Unit\MainMenuMusic\First">
+					<States/>
+				</StateGroup>
 				<StateGroup Id="1668749452" Name="No" ObjectPath="\States\Default Work Unit\Pause\No">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="1991862712" Name="MainMenuMusic" ObjectPath="\States\Default Work Unit\MainMenuMusic">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\MainMenuMusic\None"/>
+						<State Id="998496889" Name="First" ObjectPath="\States\Default Work Unit\MainMenuMusic\First"/>
+						<State Id="3476314365" Name="Second" ObjectPath="\States\Default Work Unit\MainMenuMusic\Second"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="3476314365" Name="Second" ObjectPath="\States\Default Work Unit\MainMenuMusic\Second">
 					<States/>
 				</StateGroup>
 			</StateGroups>
@@ -901,6 +962,9 @@
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>
+			<Triggers>
+				<Trigger Id="3348981106" Name="MainMenuTransition" ObjectPath="\Triggers\Default Work Unit\MainMenuTransition"/>
+			</Triggers>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

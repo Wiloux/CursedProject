@@ -82,7 +82,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: c79e3f00d8a58940b8e99a0bb69eefde
     GuidInternal: 
-    m_lastTime: -8585867997962087583
+    m_lastTime: -8585865194756846665
     List:
     - name: Main
       guid: 3e1cacb96421c24d992f8e9dfee00897
@@ -182,8 +182,20 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 022163cbc5a8bc4e80a74d3b369c93ca
     GuidInternal: 
-    m_lastTime: -8585871732860643604
+    m_lastTime: -8585865181214400999
     List:
+    - name: MainMenuTransition
+      guid: 6b3d9d4b53253a4ba481f04f00a1a0c4
+      id: 3348981106
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MainMenuTransition
+        ObjectType: 3
+      Path: Default Work Unit\MainMenuTransition
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: MusicTest
       guid: 714e87883288514abff8b0b98ba39497
       id: 4195921398
@@ -193,6 +205,18 @@ MonoBehaviour:
       - ElementName: MusicTest
         ObjectType: 3
       Path: Default Work Unit\MusicTest
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PlayMainMenu
+      guid: c67be54986311f4598cb3b234a81d5e6
+      id: 3998606525
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PlayMainMenu
+        ObjectType: 3
+      Path: Default Work Unit\PlayMainMenu
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -598,7 +622,7 @@ MonoBehaviour:
     ParentPath: Others
     guid: efa640062964d54a8ffe7b161b1b8706
     GuidInternal: 
-    m_lastTime: -8585883503103944383
+    m_lastTime: -8585865194873691688
     List:
     - name: StopAllGameObject
       guid: 77ad11207275e442809cb4620c80ec05
@@ -609,6 +633,18 @@ MonoBehaviour:
       - ElementName: StopAllGameObject
         ObjectType: 3
       Path: Others\StopAllGameObject
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: StopAllGlobalFade
+      guid: 026522f0a9149047b249aedc822b13db
+      id: 1185465929
+      PathAndIcons:
+      - ElementName: Others
+        ObjectType: 12
+      - ElementName: StopAllGlobalFade
+        ObjectType: 3
+      Path: Others\StopAllGlobalFade
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1061,8 +1097,39 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5600d4ec28ebe74084a4c24ece5ac1b5
     GuidInternal: 
-    m_lastTime: -8585875849769607332
+    m_lastTime: -8585866279838067377
     List:
+    - name: MainMenuMusic
+      guid: 4825423a5528874bb3ef9a1b825c2269
+      id: 1991862712
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MainMenuMusic
+        ObjectType: 9
+      Path: Default Work Unit\MainMenuMusic
+      values:
+      - name: First
+        guid: 0324bcdd6fbe294c84dbb802a13d0989
+        id: 998496889
+        PathAndIcons:
+        - ElementName: First
+          ObjectType: 8
+      - name: None
+        guid: 95c55b0c3c2d6245a6280d598d1b2848
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Second
+        guid: ce255a1750e2974282129d009cec586d
+        id: 3476314365
+        PathAndIcons:
+        - ElementName: Second
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: Pause
       guid: 249f2536261d5f4d9aed0b342414a3f5
       id: 3092587493
@@ -1230,8 +1297,17 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: cbbc1c536ac7334db81be44afd780643
     GuidInternal: 
-    m_lastTime: -8585906168817408006
-    List: []
+    m_lastTime: -8585865251919177959
+    List:
+    - name: MainMenuTransition
+      guid: 004f4eccef4ad54aa9da9e54bc90f18d
+      id: 3348981106
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MainMenuTransition
+        ObjectType: 14
+      Path: Default Work Unit\MainMenuTransition
   ExpandedItems:
   - /CursedProject_WwiseProject
   - /CursedProject_WwiseProject/Events

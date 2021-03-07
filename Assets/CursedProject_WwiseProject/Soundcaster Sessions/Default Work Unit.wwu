@@ -172,6 +172,62 @@
 						<CurrentSwitchRef Name="Chicken" ID="{A938E3BF-7195-4CAF-8DD8-F2B12A66A2AD}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
+				<SoundcasterSession Name="MainMenuMusic" ID="{690E5541-E107-4AF0-848F-E9F9F85A8DF4}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="PlayMainMenu" ID="{49E57BC6-3186-451F-98CB-3B234A81D5E6}" WorkUnitID="{CB632102-A8C5-4EBC-80A7-4D3B369C93CA}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="MainMenuTransition" ID="{4B9D3D6B-2553-4B3A-A481-F04F00A1A0C4}" WorkUnitID="{CB632102-A8C5-4EBC-80A7-4D3B369C93CA}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Occlusion_LoPass" ID="{80BE260F-D165-4197-8710-898C20CF8EDE}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="SFXSliderVolume" ID="{EDADBDC8-EFFD-4493-BB7B-BDEC5DE5EC66}"/>
+							<Value>10</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="MusicSliderVolume" ID="{A1D88B4E-8081-4769-A33B-FCE349BC7AC2}"/>
+							<Value>10</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Occlusion_Volume" ID="{69FCFFBE-9F40-479F-8731-106A8A8BACE4}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Reverb_Bathroom" ID="{1D9645E0-35AB-4AF7-AA93-1B7FA4B02820}"/>
+							<Value>1</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Reverb_2" ID="{B840F614-4008-4E5C-A7A5-2CCAD8469304}"/>
+							<Value>1</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="SFXVolume" ID="{D324A896-F96A-4EDB-927D-196920F86B9F}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Reverb" ID="{F71CE6D9-7B9E-4F32-B76B-530094FE4DBC}"/>
+							<Value>0</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="First" ID="{DDBC2403-BE6F-4C29-84DB-B802A13D0989}"/>
+						<CurrentStateRef Name="Yes" ID="{71450C47-EE77-4C05-BA63-FBE25A7BDC96}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Dirt" ID="{8EDADF13-DE69-4F1A-AF53-F9DAFFB4EA70}"/>
+						<CurrentSwitchRef Name="Backwards" ID="{6F7D7988-C6AF-4AE1-9021-9D0E65AEDBB8}"/>
+						<CurrentSwitchRef Name="Gyaru" ID="{FE874951-659B-4E08-AC9B-A2268D72415F}"/>
+						<CurrentSwitchRef Name="Chicken" ID="{A938E3BF-7195-4CAF-8DD8-F2B12A66A2AD}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>

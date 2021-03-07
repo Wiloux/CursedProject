@@ -1,7 +1,11 @@
 State Group	ID	Name			Wwise Object Path	Notes
+	1991862712	MainMenuMusic			\Default Work Unit\MainMenuMusic	
 	3092587493	Pause			\Default Work Unit\Pause	
 
 State	ID	Name	State Group			Notes
+	748895195	None	MainMenuMusic			
+	998496889	First	MainMenuMusic			
+	3476314365	Second	MainMenuMusic			
 	748895195	None	Pause			
 	979470758	Yes	Pause			
 	1668749452	No	Pause			
@@ -15,6 +19,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	560434043	SFXSliderVolume			\Default Work Unit\SFXSliderVolume	
 	988953028	SFXVolume			\Default Work Unit\SFXVolume	
 	2627017276	RTPC_Reverb_2			\Default Work Unit\RTPC_Reverb_2	
+	3804925172	RTPC_Reverb_Bathroom			\Default Work Unit\RTPC_Reverb_Bathroom	
 	4143461479	RTPC_Reverb			\Default Work Unit\RTPC_Reverb	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
@@ -26,6 +31,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 Effect plug-ins	ID	Name	Type				Notes
 	38820295	RoomReverb_School_(Custom)	Wwise RoomVerb			
 	592412883	RoomReverb_School2_(Custom)	Wwise RoomVerb			
+	2178132375	ReverbBathroom	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			
