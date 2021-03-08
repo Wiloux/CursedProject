@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 109114420460814124}
   - component: {fileID: 109114420460814127}
   - component: {fileID: 109114420460814126}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: ImageFade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -809,7 +809,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109114420460814121}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00044598937}
+  m_LocalPosition: {x: 0, y: 0, z: -224}
   m_LocalScale: {x: 29.996796, y: 6.803999, z: 6.8040004}
   m_Children: []
   m_Father: {fileID: 109114419465207790}
@@ -1037,8 +1037,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109114421330332750}
-  m_LocalRotation: {x: 0.010198868, y: -0.9974069, z: 0.0074776276, w: -0.07084928}
-  m_LocalPosition: {x: 0.11021423, y: 0.06204605, z: 0.3846655}
+  m_LocalRotation: {x: -0.00048002123, y: -0.9219212, z: 0.001142419, w: -0.38737562}
+  m_LocalPosition: {x: 129.31021, y: 0.92204666, z: 106.36466}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 109114420097686732}
@@ -1071,9 +1071,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
+  near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 26
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
