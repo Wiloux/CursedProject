@@ -95,25 +95,6 @@ public class Player : MonoBehaviour
     {
         if (!stopControlls && !dead && !GameHandler.instance.IsPaused())
         {
-            if (controller.isMoving) 
-            { 
-                if(controller.isRunning){ SetRunningSound(); RunAnimation?.Invoke();}
-                else 
-                {
-                    if (!controller.isMovingBackwards)
-                    {
-                        SetWalkingSound();
-                        WalkAnimation?.Invoke();
-                    }
-                    else
-                    {
-                        SetWalkingBackwardSound();
-                        WalkBackwardsAnimation?.Invoke();
-                    }
-                }
-            }
-            else { StopWalkingAnimation?.Invoke(); if (!isIdle) { isIdle = true; ResetIdleTimer(); } }
-
             if (controller.canMove)
             {
                 if (Input.GetMouseButtonDown(0) && timeToAttack < 0)
@@ -206,6 +187,32 @@ public class Player : MonoBehaviour
                     else { IdleBreakAnimation?.Invoke(); ResetIdleTimer(); }
                 }
             }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (!stopControlls && !dead && !GameHandler.instance.IsPaused())
+        {
+            animator.SetBool("isMoving", controller.isMoving);
+            if (controller.movement != 0)
+            {
+                if (controller.movement > 0)
+                {
+                    if (controller.isRunning) { SetRunningSound(); RunAnimation?.Invoke(); }
+                    else
+                    {
+                        SetWalkingSound();
+                        WalkAnimation?.Invoke();
+                    }
+                }
+                else
+                {
+                    SetWalkingBackwardSound();
+                    WalkBackwardsAnimation?.Invoke();
+                }
+            }
+            else { StopWalkingAnimation?.Invoke(); if (!isIdle) { isIdle = true; ResetIdleTimer(); } }
         }
     }
 
@@ -398,12 +405,12 @@ public class Player : MonoBehaviour
                 SecondaryAttackAnimation = () => { animator.SetTrigger("BigAttack");  Debug.Log("Gyaru big attack animation"); };
                 GetHitAnimation = () => { animator.SetTrigger("Hurt"); animator.SetInteger("HurtAnim", UnityEngine.Random.Range(1, 4));};
                 DeathAnimation = () => { animator.SetTrigger("Hurt"); animator.SetFloat("HP", -1); Debug.Log("Gyaru death animation"); };
-                RunAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", true); animator.SetBool("Backwards", false);};
+                RunAnimation = () => { animator.SetFloat("movement", 1); animator.SetBool("isRunning", true); };
                 AbilityAnimation = () => Debug.Log("Gyaru ability use animation");
                 InteractAnimation = () => { animator.SetTrigger("Action"); Debug.Log("Gyaru interact animation"); StartCoroutine(BlockMovementForPeriod(2f)); };
-                WalkAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("Backwards", false); };
-                WalkBackwardsAnimation = () => { animator.SetBool("isMoving", true); animator.SetBool("isRunning", false); animator.SetBool("Backwards", true); };
-                StopWalkingAnimation = () => { animator.SetBool("isMoving", false); animator.SetBool("isRunning", false); animator.SetBool("Backwards", false); };
+                WalkAnimation = () => { animator.SetFloat("movement", 1); animator.SetBool("isRunning", false);  };
+                WalkBackwardsAnimation = () => { animator.SetFloat("movement", -1); animator.SetBool("isRunning", false); };
+                StopWalkingAnimation = () => { animator.SetFloat("movement", 0); animator.SetBool("isRunning", false); };
                 IdleBreakAnimation = () => { 
                     animator.SetTrigger("IdleBreak");
                     int random = UnityEngine.Random.Range(0, 2);

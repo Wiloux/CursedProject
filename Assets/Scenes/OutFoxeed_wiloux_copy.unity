@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57acc69430e8b1f47a1f2889198ccf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 4308134389288796762, guid: 8b1e99c1656f5484686223e3966d51e6, type: 3}
+  Enemies: []
 --- !u!65 &215552049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5363,6 +5363,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 109114421330332748, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 109114421330332748, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
       propertyPath: near clip plane
       value: 0.001
@@ -15238,6 +15242,10 @@ PrefabInstance:
     - target: {fileID: 5570753806488649908, guid: a190e9222e2f94e458b5fac796614412, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664270546565872518, guid: a190e9222e2f94e458b5fac796614412, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a190e9222e2f94e458b5fac796614412, type: 3}

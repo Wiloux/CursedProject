@@ -22,25 +22,46 @@ public class Player_Movement : MonoBehaviour
     float rotX;
 
     [HideInInspector] public bool dead;
+    private float lastMovement;
+    public float movement;
     public bool isMoving;
-    public bool isMovingBackwards;
     public bool isRunning;
     public bool isRotating;
     public bool canMove = true;
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(Input.GetAxis("Vertical"));
+        //Debug.Log("Raw :" + Input.GetAxisRaw("Vertical"));
+
+        //if (!GameHandler.instance.IsPaused() && !dead)
+        //{
+        //    isRunning = false;
+        //    isRotating = false;
+        //    if (!player.stopControlls && canMove)
+        //    {
+        //        RotatePlayerWithMouse();
+        //        Movement();
+        //        movement = Input.GetAxis("Vertical");
+        //        if (movement == 0) isMoving = false; else isMoving = true;
+        //        if (Input.GetAxis("Mouse X") != 0) { isRotating = true; }
+        //    }
+        //}
+    }
+
+    private void FixedUpdate()
+    {
         if (!GameHandler.instance.IsPaused() && !dead)
         {
-            isMoving = false;
-            isMovingBackwards = false;
             isRunning = false;
             isRotating = false;
             if (!player.stopControlls && canMove)
             {
                 RotatePlayerWithMouse();
                 Movement();
-                if (Input.GetAxis("Vertical") != 0) { isMoving = true; }
+                lastMovement = movement;
+                movement = Input.GetAxis("Vertical");
+                if (movement == 0 && lastMovement == 0) isMoving = false; else isMoving = true;
                 if (Input.GetAxis("Mouse X") != 0) { isRotating = true; }
             }
         }
@@ -61,7 +82,6 @@ public class Player_Movement : MonoBehaviour
         }
         else if (Input.GetAxis("Vertical") < -0.1)
         {
-            isMovingBackwards = true;
             verticalMove = Input.GetAxis("Vertical") * Time.deltaTime * _verticalSpeedNeg;
             moveDirection = transform.TransformDirection(Vector3.forward) * verticalMove;
         }

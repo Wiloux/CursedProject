@@ -71,6 +71,11 @@ public class GameHandler : MonoBehaviour
         listener = Camera.main.gameObject;
     }
 
+    //private void Start()
+    //{
+    //    Time.timeScale = 0.1f;
+    //}
+
     // Update is called once per frame
     void Update()
     {
