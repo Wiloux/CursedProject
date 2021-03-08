@@ -218,7 +218,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="First" ID="{DDBC2403-BE6F-4C29-84DB-B802A13D0989}"/>
+						<CurrentStateRef Name="Second" ID="{175A25CE-E250-4297-8212-9D009CEC586D}"/>
 						<CurrentStateRef Name="Yes" ID="{71450C47-EE77-4C05-BA63-FBE25A7BDC96}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">

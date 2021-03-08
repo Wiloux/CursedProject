@@ -20,7 +20,7 @@
 						<ObjectRef Name="PlayWardenIdle" ID="{0948A326-8F64-4403-A61C-B406400E343B}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayMirrorProp" ID="{B3C5B342-4659-4428-B2BB-3AC2ACF03C6F}" WorkUnitID="{6D8F8784-54C9-4427-BDCE-26203903B0F0}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayWardenDie" ID="{B3A3504E-DE92-4435-83EC-0574E547AFF4}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="PlayHighlight" ID="{CF4A09C0-A989-449D-8511-3213A5CE61AA}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayHighlight" ID="{CF4A09C0-A989-449D-8511-3213A5CE61AA}" WorkUnitID="{40EC96A0-A292-4C22-A5C1-DF7D5D24EA39}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayMainMenu" ID="{49E57BC6-3186-451F-98CB-3B234A81D5E6}" WorkUnitID="{CB632102-A8C5-4EBC-80A7-4D3B369C93CA}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayAttack3" ID="{02BC7C02-0409-4580-AE17-63395674C15E}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayFacelessMoan" ID="{E854121C-67B6-464F-8B91-FCA468B80ABB}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
@@ -30,7 +30,7 @@
 						<ObjectRef Name="StopAllGlobalFade" ID="{F0226502-14A9-4790-B249-AEDC822B13DB}" WorkUnitID="{0640A6EF-6429-4AD5-8FFE-7B161B1B8706}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TestBass" ID="{2BDF3AE9-C040-47AB-B6C2-9FD905DC8F76}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayFacelessAttack" ID="{95F77DD8-1FC6-47E0-AC7E-7275E2B6B681}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="PlayKeypress" ID="{EE2E3C1A-40A0-487A-B481-15E994166494}" WorkUnitID="{E9991E7E-97EC-4B63-9BE4-486F5E454591}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayKeypress" ID="{EE2E3C1A-40A0-487A-B481-15E994166494}" WorkUnitID="{40EC96A0-A292-4C22-A5C1-DF7D5D24EA39}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ShardWallHit" ID="{B6FA27F7-C0CF-48D6-92BA-20AE1166934E}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="EnterPause" ID="{F3449DAC-656A-48EC-BA8C-C9CB91405C78}" WorkUnitID="{40EC96A0-A292-4C22-A5C1-DF7D5D24EA39}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="StopMovementSound" ID="{7E2137EF-B809-4922-849C-EEF35B498AFD}" WorkUnitID="{35DD3378-547F-4537-8DDE-67E4BFD1D3F1}" Origin="Manual" Filter="7"/>

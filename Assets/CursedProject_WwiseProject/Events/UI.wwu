@@ -94,6 +94,32 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Menu" ID="{B1489B17-D9F3-4242-A0EE-12C8B76FBDDF}" ShortID="583981948">
+					<ChildrenList>
+						<Event Name="PlayHighlight" ID="{CF4A09C0-A989-449D-8511-3213A5CE61AA}">
+							<ChildrenList>
+								<Action Name="" ID="{9FF61734-FA58-491D-A42D-85F0F0E07144}" ShortID="719376752">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Hover2" ID="{6DFFDB69-1797-484A-9C50-514C6A6F682E}" WorkUnitID="{0140340D-C359-4E68-908D-0DDB2BA7EA49}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayKeypress" ID="{EE2E3C1A-40A0-487A-B481-15E994166494}">
+							<ChildrenList>
+								<Action Name="" ID="{44151B19-A2CE-4293-A0EB-886221D7F99C}" ShortID="150835905">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Click2" ID="{2ADC8F3E-AD3D-4FC9-8EA5-8144735A0A37}" WorkUnitID="{0140340D-C359-4E68-908D-0DDB2BA7EA49}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

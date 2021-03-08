@@ -34,7 +34,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1810146267">
+		<SoundBank Id="3161908922" Language="SFX" Hash="243839467">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
@@ -689,19 +689,19 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="145167493" Name="PlayHighlight" ObjectPath="\Events\Tests\Menu\PlayHighlight" DurationType="OneShot" DurationMin="0.266259" DurationMax="0.266259">
+				<Event Id="145167493" Name="PlayHighlight" ObjectPath="\Events\UI\Menu\PlayHighlight" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000">
 					<IncludedMemoryFiles>
-						<File Id="697333511" Language="SFX">
-							<ShortName>Main Menu Highlight.wav</ShortName>
-							<Path>SFX\Main Menu Highlight_10C4C929.wem</Path>
+						<File Id="597587272" Language="SFX">
+							<ShortName>UI STUFF\Menus\Hover2.wav</ShortName>
+							<Path>SFX\UI STUFF\Menus\Hover2_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1168436793" Name="PlayKeypress" ObjectPath="\Events\Tests\Menu\PlayKeypress" DurationType="OneShot" DurationMin="0.149773" DurationMax="0.149773">
+				<Event Id="1168436793" Name="PlayKeypress" ObjectPath="\Events\UI\Menu\PlayKeypress" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000">
 					<IncludedMemoryFiles>
-						<File Id="26955166" Language="SFX">
-							<ShortName>Main Menu Keypress.wav</ShortName>
-							<Path>SFX\Main Menu Keypress_10C4C929.wem</Path>
+						<File Id="86211345" Language="SFX">
+							<ShortName>UI STUFF\Menus\Click2.wav</ShortName>
+							<Path>SFX\UI STUFF\Menus\Click2_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
