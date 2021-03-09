@@ -6,7 +6,9 @@ public class Inventory : MonoBehaviour
 {
     public List<string> clues = new List<string>();
     public List<ObjectSO> items = new List<ObjectSO>();
-    public int healingItem;
+
+    public int healingItemCapacity;
+    public int healingItemInInv;
 
     private void Start()
     {
@@ -32,7 +34,7 @@ public class Inventory : MonoBehaviour
         else Debug.LogError("Custom error: Object to remove is not found in the player invenotry");
     }
 
-    public void AddHealingItem() { healingItem++; }
-    public void RemoveHealingItem() { healingItem--; }
+    public void AddHealingItem() { healingItemInInv++; }
+    public void RemoveHealingItem() { healingItemInInv--; }
 
 }

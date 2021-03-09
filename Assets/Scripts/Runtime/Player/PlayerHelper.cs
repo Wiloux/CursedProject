@@ -53,8 +53,9 @@ public class PlayerHelper : MonoBehaviour
 
             #region Healing Items gestion
 
-    public int GetNumberOfHealingItems() { return inventory.healingItem; }
-    public void AdjustNumberOfHealingItem(int adjustment) { inventory.healingItem += adjustment; }
+    public int GetNumberOfHealingItems() { return inventory.healingItemInInv; }
+    public void AdjustNumberOfHealingItem(int adjustment) { inventory.healingItemInInv += adjustment; if (inventory.healingItemInInv > inventory.healingItemCapacity) FillUpHealInBag(); }
+    public void FillUpHealInBag() { inventory.healingItemInInv = inventory.healingItemCapacity; }
     #endregion
     #endregion
     #endregion

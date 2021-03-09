@@ -21,5 +21,7 @@ public class SaveConfirmationCheck : MonoBehaviour
         string roomName = WorldProgress.instance.locationName;
         RoomsManager.instance.DestroyEnemiesOfRoom(roomName);
         RoomsManager.instance.SpawnEnemiesOfRoom(roomName);
+
+        PlayerHelper.instance.FillUpHealInBag();
     }
 }

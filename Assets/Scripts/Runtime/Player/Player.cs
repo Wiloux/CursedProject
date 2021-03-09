@@ -7,8 +7,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     #region Vars
-    [SerializeField] private Player_Movement controller;
-    [SerializeField] private Animator animator;
+    public Player_Movement controller;
+    public Animator animator;
 
     public enum Character { gyaru, mysterious, officeworker };
     public Character character;
@@ -22,32 +22,31 @@ public class Player : MonoBehaviour
     public bool stopControlls;
 
     // Attack vars
-    [SerializeField] private Transform attackWeapon;
-    [SerializeField] private float attackPointRange;
-    [SerializeField] private LayerMask attackLayerMask;
-    [SerializeField] private float attackCooldown;
+    public Transform attackWeapon;
+    public float attackPointRange;
+    public LayerMask attackLayerMask;
+    public float attackCooldown;
     private float timeToAttack;
 
-    [SerializeField] private ObjectDuration[] idleBreaksObjects;
+    public ObjectDuration[] idleBreaksObjects;
 
-    [SerializeField] private float secondaryAttackCooldown;
+    public float secondaryAttackCooldown;
     private float timeToSecondaryAttack;
 
     private bool isArmed;
-    [SerializeField] private float beingArmedDuration;
+    public float beingArmedDuration;
     private float unarmTimer;
 
     private bool isIdle;
-    [SerializeField] private Vector2 idleBreakTimerMinMax;
+    public Vector2 idleBreakTimerMinMax;
     private float idleTimer;
 
     private Action UseAbility;
-    [SerializeField] private KeyCode specialAbilityKey = KeyCode.F;
-    [SerializeField] private float abilityCooldown;
+    public KeyCode specialAbilityKey = KeyCode.F;
+    public float abilityCooldown;
     private float abilityTimer;
 
-    [Space(5)]
-    [SerializeField] private KeyCode healKey = KeyCode.H;
+    public KeyCode healKey = KeyCode.H;
 
     #region Animator related Actions
     private Action SimpleAttackAnimation;
@@ -59,27 +58,24 @@ public class Player : MonoBehaviour
     private Action StopWalkingAnimation;
     private Action RunAnimation;
     private Action AbilityAnimation;
+    private Action HealingAnimation;
     private Action InteractAnimation;
     private Action IdleBreakAnimation;
     #endregion
 
     #region Wwise Events
-    [Header("Wwise Events")]
-    [SerializeField] private AK.Wwise.Event playerAttackWEvent;
-    [SerializeField] private AK.Wwise.Event PlayerHitEvent;
-    [Space(10)]
-    [SerializeField] private AK.Wwise.Event WalkRunWSwitch;
-    [Header("Charged Attack")] 
-    //[SerializeField] private AK.Wwise.Event startChargingAttackWEvent;
-    [SerializeField] private AK.Wwise.Event secondaryAttackWEvent;
-    [SerializeField] private AK.Wwise.Event simpleAttackWEvent;
+    public AK.Wwise.Event playerAttackWEvent;
+    public AK.Wwise.Event PlayerHitEvent;
+    public AK.Wwise.Event WalkRunWSwitch;
+    //public AK.Wwise.Event startChargingAttackWEvent;
+    public AK.Wwise.Event secondaryAttackWEvent;
+    public AK.Wwise.Event simpleAttackWEvent;
     #endregion
 
     #region VFX
-    [Header("VFX")]
-    [SerializeField] private GameObject attackWeaponParticles;
-    [SerializeField] private GameObject weaponImpactParticles;
-    [SerializeField] private GameObject bloodParticlesPrefab;
+    public GameObject attackWeaponParticles;
+    public GameObject weaponImpactParticles;
+    public GameObject bloodParticlesPrefab;
     #endregion
     #endregion
 
@@ -154,15 +150,12 @@ public class Player : MonoBehaviour
                         abilityTimer = abilityCooldown;
                     }
                 }
-                else if (Input.GetKey(healKey))
+                else if (Input.GetKeyDown(healKey))
                 {
-                    if (inventory.healingItem > 0 && health < healthMax)
+                    if (inventory.healingItemInInv > 0 && health < healthMax)
                     {
                         // Heal Player
                         Heal();
-
-                        // remove a stack from healing items
-                        inventory.RemoveHealingItem();
                     }
                 }
             }
@@ -318,7 +311,7 @@ public class Player : MonoBehaviour
     {
         if (collectible.healingItem)
         {
-            inventory.healingItem += collectible.healValues;
+            inventory.healingItemInInv += collectible.healValues;
             GameHandler.instance.DisplayPickupItemMessage("Healing Item", 3f);
         }
         else
@@ -348,7 +341,7 @@ public class Player : MonoBehaviour
 
     #region Health related methods
         #region Heal
-    public void Heal() { if (health < healthMax) health++; }
+    public void Heal() { if (health < healthMax) health++; inventory.RemoveHealingItem(); }
         #endregion
     #region Take Damage
     public void TakeDamage(float damage, bool stagger)

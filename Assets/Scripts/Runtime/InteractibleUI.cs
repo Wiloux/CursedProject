@@ -44,7 +44,7 @@ public class InteractibleUI : MonoBehaviour
             {
                 if (!currentInteractibleImages[i].autoDestructing)
                 {
-                    Debug.Log("destroy");
+                    //Debug.Log("destroy");
                     StartCoroutine(DestroyInteractibleImageCoroutine(currentInteractibleImages[i], disappearTimer));
                     currentInteractibleImages[i].autoDestructing = true;
                 }
@@ -84,10 +84,11 @@ public class InteractibleUI : MonoBehaviour
 
     private void CreateImageForInteraction(Transform interactibleObject,Sprite sprite)
     {
-        Debug.Log("create");
+        //Debug.Log("create");
 
         // Get the wanted anchored pos of the sprite
         Vector3 pos = cam.WorldToScreenPoint(interactibleObject.position) * 2f;
+        pos.z = 0;
         //Debug.Log(pos);
 
         // Create UI GameObject
@@ -111,7 +112,7 @@ public class InteractibleUI : MonoBehaviour
     }
     private IEnumerator DestroyInteractibleImageCoroutine(InteractibleImage interactibleImage, float seconds)
     {
-        Debug.Log("1");
+        //Debug.Log("1");
         float timer = seconds;
         while(true)
         {
@@ -120,7 +121,7 @@ public class InteractibleUI : MonoBehaviour
             timer -= Time.deltaTime;
             if(timer < 0)
             {
-                Debug.Log("2");
+                //Debug.Log("2");
                 DestroyInteractibleImage(interactibleImage);
                 break;
             }

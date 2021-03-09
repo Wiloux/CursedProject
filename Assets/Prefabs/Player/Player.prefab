@@ -10835,6 +10835,7 @@ MonoBehaviour:
   animator: {fileID: 6664270546565872518}
   character: 0
   health: 10
+  healthMax: 10
   stopControlls: 0
   attackWeapon: {fileID: 5387979087875665985}
   attackPointRange: 1.75
@@ -10852,6 +10853,7 @@ MonoBehaviour:
   idleBreakTimerMinMax: {x: 10, y: 15}
   specialAbilityKey: 102
   abilityCooldown: 0
+  healKey: 104
   playerAttackWEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -10899,8 +10901,8 @@ MonoBehaviour:
   _verticalSpeed: 3
   _verticalSpeedNeg: 1.5
   dead: 0
+  movement: 0
   isMoving: 0
-  isMovingBackwards: 0
   isRunning: 0
   isRotating: 0
   canMove: 1
@@ -10921,8 +10923,9 @@ MonoBehaviour:
   items:
   - {fileID: 11400000, guid: 330da1dc4dfd48f44b18bff11e9120e2, type: 2}
   - {fileID: 11400000, guid: 4124cc51a75c01f4bb9540324f3efaf0, type: 2}
-  - {fileID: 11400000, guid: 362c886cd4a2f414ca5e7785cedcbcbd, type: 2}
-  healingItem: 0
+  - {fileID: 11400000, guid: 79e19cc7dafdddc4180fb93297b27e5f, type: 2}
+  healingItemCapacity: 5
+  healingItemInInv: 0
 --- !u!114 &5570753806488649900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11044,7 +11047,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5bf8f453226fd844fb3a95034bd543ac, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
