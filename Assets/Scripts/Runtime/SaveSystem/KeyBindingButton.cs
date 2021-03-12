@@ -22,7 +22,7 @@ public class KeyBindingButton : MonoBehaviour
         swipeRightInv
     };
     public KeyBindingAction keyBindingAction;
-    public KeyCode keyCode;
+    public KeyBind keybind = new KeyBind(KeyCode.None);
 
     private void Awake()
     {
@@ -30,7 +30,8 @@ public class KeyBindingButton : MonoBehaviour
     }
     private void OnEnable()
     {
-        textDisplayer.text = keyCode.ToString();
+        if (keybind.type == KeyBind.KeyBindingType.keyboard) textDisplayer.text = keybind.keycode.ToString();
+        else textDisplayer.text = keybind.mouseButton;
     }
 
     public void GetInputKey()
@@ -45,12 +46,12 @@ public class KeyBindingButton : MonoBehaviour
             if (Event.current.isKey && Event.current.type == EventType.KeyDown)
             {
                 if (Event.current.keyCode == KeyCode.Escape) break;
-                else { keyCode = Event.current.keyCode; break; }
+                else { keybind = new KeyBind(Event.current.keyCode); break; }
             }
             else if (Event.current.isMouse)
             {
-                if(Event.current.type == EventType.ContextClick) { }
-                
+                if (Event.current.type == EventType.ContextClick) { keybind = new KeyBind("RMB"); break; }
+                else { keybind = new KeyBind("LMB"); break; }
             }
             yield return null;
         }

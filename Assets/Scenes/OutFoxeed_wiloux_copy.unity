@@ -521,6 +521,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46887412}
   m_Mesh: {fileID: 4493585093827132993, guid: 2d7f8c83ebf9d53408a3044b8bb8b0e5, type: 3}
+--- !u!224 &59929691 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6066706747606853465, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
+  m_PrefabInstance: {fileID: 1018493620}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &130639507
 GameObject:
   m_ObjectHideFlags: 0
@@ -5535,6 +5540,10 @@ PrefabInstance:
       propertyPath: AllRooms.Array.data[1].place
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 87113338641323938, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
+      propertyPath: keyBindingButtonsParent
+      value: 
+      objectReference: {fileID: 59929691}
     - target: {fileID: 109114421330332748, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
       propertyPath: near clip plane
       value: 0.001
@@ -5615,13 +5624,29 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 3.7998047
       objectReference: {fileID: 0}
+    - target: {fileID: 3404340976879292226, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -246.00002
+      objectReference: {fileID: 0}
     - target: {fileID: 4875793987617181521, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
       propertyPath: m_Name
       value: SceneNeeds
       objectReference: {fileID: 0}
+    - target: {fileID: 6066706747606853465, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6954171975952365966, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -38.399902
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573335873315770035, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -99.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733812400607631493, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -40.000015
       objectReference: {fileID: 0}
     - target: {fileID: 7777240657122264784, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
       propertyPath: debugObject
@@ -5630,6 +5655,10 @@ PrefabInstance:
     - target: {fileID: 8889809755927340022, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.2998047
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162611447176722814, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -50.000015
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
@@ -14485,7 +14514,7 @@ MonoBehaviour:
   neededKey: {fileID: 11400000, guid: 8547b00f3d39ddb4995aa5732d98eb61, type: 2}
   spawnPoint: {fileID: 0}
   otherDoorScript: {fileID: 1292229109}
-  currentRoomName: Road
+  currentRoomName: Garden
   doorInteractionWEvent:
     idInternal: 0
     valueGuidInternal: 
