@@ -13,9 +13,9 @@ public class CutsceneTrigger : MonoBehaviour
     private void Awake()
     {
         // check if cutscene already played
-        if(WorldProgress.instance != null)
+        if(WorldProgressSaver.instance != null)
         {
-            if (WorldProgress.instance.isCutscenesPlayed[cutsceneSaveIndex]) gameObject.SetActive(false);
+            if (WorldProgressSaver.instance.isCutscenesPlayed[cutsceneSaveIndex]) gameObject.SetActive(false);
         }
     }
 
@@ -28,7 +28,7 @@ public class CutsceneTrigger : MonoBehaviour
             mainCam.gameObject.SetActive(false);
             Cutscene_timeline.SetActive(true);
             StartCoroutine(StopCutscene(cutscene_duration));
-            WorldProgress.instance.isCutscenesPlayed[cutsceneSaveIndex] = true;
+            WorldProgressSaver.instance.isCutscenesPlayed[cutsceneSaveIndex] = true;
         }
     }
 

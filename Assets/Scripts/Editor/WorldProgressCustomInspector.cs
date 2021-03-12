@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(WorldProgress))]
+[CustomEditor(typeof(WorldProgressSaver))]
 public class WorldProgressCustomInspector : Editor
 {
     private int indexSaveToLoad = 1;
@@ -15,7 +15,7 @@ public class WorldProgressCustomInspector : Editor
     {
         base.OnInspectorGUI();
 
-        WorldProgress worldProgress = target as WorldProgress;
+        WorldProgressSaver worldProgress = target as WorldProgressSaver;
 
         #region Load Index Save
         EditorGUILayout.BeginHorizontal();
@@ -46,18 +46,18 @@ public class WorldProgressCustomInspector : Editor
         indexSaveToRemove = EditorGUILayout.IntField(indexSaveToRemove);
         if(GUILayout.Button("Remove index save"))
         {
-            SaveData data = SaveSystem.LoadWorldData(indexSaveToRemove-1);
+            WorldProgressData data = SaveSystem.LoadWorldData(indexSaveToRemove-1);
 
             data.playerLife = 1;
             data.gameTime = 0;
             data.locationName = "Spawn";
 
             BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(SaveSystem.paths[indexSaveToRemove - 1], FileMode.Create);
+            FileStream stream = new FileStream(SaveSystem.worldProgressPaths[indexSaveToRemove - 1], FileMode.Create);
             formatter.Serialize(stream, data);
             stream.Close();
 
-            if (File.Exists(SaveSystem.paths[indexSaveToRemove - 1])) { File.Delete(SaveSystem.paths[indexSaveToRemove - 1]); }
+            if (File.Exists(SaveSystem.worldProgressPaths[indexSaveToRemove - 1])) { File.Delete(SaveSystem.worldProgressPaths[indexSaveToRemove - 1]); }
         }
         EditorGUILayout.EndHorizontal();
         #endregion

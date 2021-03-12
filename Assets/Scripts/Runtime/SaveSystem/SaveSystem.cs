@@ -6,7 +6,7 @@ using UnityEngine;
 
 public static class SaveSystem
 {
-    public static string[] paths =
+    public static string[] worldProgressPaths =
     {
         Application.persistentDataPath + "/Save01.data",
         Application.persistentDataPath + "/Save02.data",
@@ -15,38 +15,72 @@ public static class SaveSystem
         Application.persistentDataPath + "/Save05.data",
         Application.persistentDataPath + "/Save06.data"
     };
+    public static string optionsSavePath = Application.persistentDataPath + "/options.data";
 
-    public static void SaveWorldData(WorldProgress progress, int saveIndex){
+    #region World Progress
+    public static void SaveWorldData(WorldProgressSaver progress, int saveIndex){
         BinaryFormatter formatter = new BinaryFormatter();
         
-        FileStream stream = new FileStream(paths[saveIndex], FileMode.Create);
+        FileStream stream = new FileStream(worldProgressPaths[saveIndex], FileMode.Create);
 
-        SaveData data = new SaveData(progress);
+        WorldProgressData data = new WorldProgressData(progress);
 
         formatter.Serialize(stream, data);
         stream.Close();
     }
 
-    public static SaveData LoadWorldData(int saveIndex){
-        if(File.Exists(paths[saveIndex])){
+    public static WorldProgressData LoadWorldData(int saveIndex){
+        if(File.Exists(worldProgressPaths[saveIndex])){
             BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(paths[saveIndex], FileMode.Open);
+            FileStream stream = new FileStream(worldProgressPaths[saveIndex], FileMode.Open);
 
-            SaveData data = formatter.Deserialize(stream) as SaveData;
+            WorldProgressData data = formatter.Deserialize(stream) as WorldProgressData;
             stream.Close();
             return data;
         }
         else{
-            Debug.LogError("File not found in " + paths[saveIndex]);
+            Debug.LogError("World progress data file not found in " + worldProgressPaths[saveIndex]);
             return null;
         }
     }
 
     public static void DeleteWorldData(int saveIndex)
     {
-        if (File.Exists(paths[saveIndex]))
+        if (File.Exists(worldProgressPaths[saveIndex]))
         {
-            File.Delete(paths[saveIndex]);
+            File.Delete(worldProgressPaths[saveIndex]);
         }
     }
+    #endregion
+
+    #region Options
+    public static void SaveOptionsData(OptionsSaver options)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+
+        FileStream stream = new FileStream(optionsSavePath, FileMode.Create);
+
+        OptionsData data = new OptionsData(options);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+    public static OptionsData LoadOptionsData()
+    {
+        if (File.Exists(optionsSavePath))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(optionsSavePath, FileMode.Open);
+
+            OptionsData data = formatter.Deserialize(stream) as OptionsData;
+            stream.Close();
+            return data;
+        }
+        else
+        {
+            Debug.LogError("Options data file not found in " + optionsSavePath);
+            return null;
+        }
+    }
+    #endregion
 }

@@ -14,7 +14,7 @@ public class RoomsManager : MonoBehaviour
 
     private void Start()
     {
-        SpawnEnemiesOfRoom(WorldProgress.instance.locationName);
+        SpawnEnemiesOfRoom(WorldProgressSaver.instance.locationName);
     }
 
     #region Custom Inspector Method
@@ -97,6 +97,27 @@ public class RoomsManager : MonoBehaviour
         Debug.LogError("Custom error: Room name : " + roomName + " doesn't exists in the rooms manager");
     }
 
+    public void ChangeRTCPOcclusionForRoom(string roomName)
+    {
+        if(roomName == "School hallways")
+        {
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 1);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
+        }
+        else if(roomName == "Girls bathroom")
+        {
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 1);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
+        }
+        else
+        {
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 1);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
+        }
+    }
 }
 
 [Serializable]public class Room

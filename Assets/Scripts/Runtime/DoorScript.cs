@@ -64,7 +64,7 @@ public class DoorScript : MonoBehaviour
 
         string otherDoorRoomName = otherDoorScript.currentRoomName;
 
-        WorldProgress.instance.locationName = otherDoorRoomName;
+        WorldProgressSaver.instance.locationName = otherDoorRoomName;
 
         // Destroy enemies of the current room
         RoomsManager.instance.DestroyEnemiesOfRoom(currentRoomName);
@@ -73,6 +73,9 @@ public class DoorScript : MonoBehaviour
 
         // Spawn enemies of the new room
         RoomsManager.instance.SpawnEnemiesOfRoom(otherDoorRoomName);
+
+        // Change RTCP Occlusion variables
+        RoomsManager.instance.ChangeRTCPOcclusionForRoom(otherDoorRoomName);
     }
 }
 

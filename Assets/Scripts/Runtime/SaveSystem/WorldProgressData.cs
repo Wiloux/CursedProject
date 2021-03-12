@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SaveData
+public class WorldProgressData
 {
     public float playerLife;
     public float gameTime;
@@ -12,7 +12,7 @@ public class SaveData
 
     public bool[] isCutscenesPlayed;
 
-    public SaveData(WorldProgress progress){
+    public WorldProgressData(WorldProgressSaver progress){
         playerLife = progress.playerLife;
         gameTime = progress.gameTime;
         locationName = progress.locationName;

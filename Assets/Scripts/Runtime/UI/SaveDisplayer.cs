@@ -34,9 +34,9 @@ public class SaveDisplayer : MonoBehaviour
     {
         indexDisplayer.text = "0" + indexSaveToDisplay.ToString() + ".";
 
-        if (File.Exists(SaveSystem.paths[indexSaveToDisplay - 1]))
+        if (File.Exists(SaveSystem.worldProgressPaths[indexSaveToDisplay - 1]))
         {
-            SaveData data = SaveSystem.LoadWorldData(indexSaveToDisplay - 1);
+            WorldProgressData data = SaveSystem.LoadWorldData(indexSaveToDisplay - 1);
             
             int characterIconIndex = 0;
             switch (data.characterName)

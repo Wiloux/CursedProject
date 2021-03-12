@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WorldProgress : MonoBehaviour
+public class WorldProgressSaver : MonoBehaviour
 {
-    public static WorldProgress instance;
+    public static WorldProgressSaver instance;
     public bool isInventoryLoaded = false;
 
     // ------------------------------- VARS ----------------------------------------- //
@@ -57,7 +57,7 @@ public class WorldProgress : MonoBehaviour
 
     public void LoadProgressData(int saveIndex){
         isInventoryLoaded = true;
-        SaveData data = SaveSystem.LoadWorldData(saveIndex);
+        WorldProgressData data = SaveSystem.LoadWorldData(saveIndex);
 
         playerLife = data.playerLife;
         gameTime = data.gameTime;
