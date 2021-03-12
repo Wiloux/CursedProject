@@ -10,7 +10,7 @@ public class DoorScript : MonoBehaviour
     public bool needKey;
     public KeySO neededKey;
 
-    public Transform spawnPoint;
+    public Vector3 spawnPoint;
 
     public DoorScript otherDoorScript;
 
@@ -23,7 +23,11 @@ public class DoorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnPoint = transform.GetChild(0);
+        RaycastHit hit;
+        if(Physics.Raycast(transform.GetChild(0).position, transform.TransformDirection(Vector3.back), out hit)){
+            spawnPoint = hit.point;
+        }
+      //  spawnPoint = transform.GetChild(0);
         if(otherDoorScript != null)
         {
             otherDoorScript.otherDoorScript = this;
@@ -32,7 +36,6 @@ public class DoorScript : MonoBehaviour
 
         roomsManager.CheckIfRoomNameExists(currentRoomName);
     }
-
 
 
     public void TryUseDoor(Transform Using)
@@ -57,6 +60,8 @@ public class DoorScript : MonoBehaviour
         }
         else { UseDoor(Using); }
     }
+
+    
     private void UseDoor(Transform Using)
     {
         // Play sound
@@ -69,13 +74,13 @@ public class DoorScript : MonoBehaviour
         // Destroy enemies of the current room
         RoomsManager.instance.DestroyEnemiesOfRoom(currentRoomName);
 
-        TransitionManager.instance.StartFade(Using, otherDoorScript.spawnPoint, 1, otherDoorScript, this);
+        TransitionManager.instance.StartFade(Using, 1, otherDoorScript, this);
 
         // Spawn enemies of the new room
         RoomsManager.instance.SpawnEnemiesOfRoom(otherDoorRoomName);
 
-        // Change RTCP Occlusion variables
-        RoomsManager.instance.ChangeRTCPOcclusionForRoom(otherDoorRoomName);
+        // Change RTCP Reverb variables
+        RoomsManager.instance.ChangeRTCPReverbForRoom(otherDoorRoomName);
     }
 }
 
@@ -83,6 +88,7 @@ public class DoorScript : MonoBehaviour
 [CustomEditor(typeof(DoorScript))]
 public class DoorScriptInspector : Editor
 {
+    string localRoomName;
     public override void OnInspectorGUI()
     {
         //base.OnInspectorGUI();
@@ -107,6 +113,15 @@ public class DoorScriptInspector : Editor
 
         CreatePropertyField(nameof(door.currentRoomName));
 
+        if (localRoomName != door.currentRoomName)
+        {
+            localRoomName = door.currentRoomName;
+            RoomsManager roomsManager = GameObject.FindObjectOfType<RoomsManager>();
+            if (roomsManager.DoesRoomExists(localRoomName))
+            {
+                Debug.Log("Custom log: dear game designer, this room exists in the RoomsManager x)");
+            }
+        }
         GUILayout.Space(20);
         GUILayout.Label("Wwise");
         GUILayout.Space(5);
