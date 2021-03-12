@@ -26,6 +26,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="StartSettingsGyaru" ID="{79888462-8787-4E76-AA14-B1287B73278A}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

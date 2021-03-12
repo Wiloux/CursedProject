@@ -232,8 +232,18 @@
 										</Effect>
 									</Custom>
 								</Reference>
-								<Reference Name="Effect2" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
-									<ObjectRef Name="ReverbBathroom" ID="{A3047CA8-6C29-4950-916D-E0CEAEDC8404}" WorkUnitID="{F9E1749B-0215-4D25-B747-90A52D4F8E11}"/>
+								<Reference Name="Effect2">
+									<Custom CreatedFrom="{A3047CA8-6C29-4950-916D-E0CEAEDC8404}">
+										<Effect Name="ReverbBathroom_(Custom)" ID="{F6700798-6EF6-4C95-826A-1E34A568B88A}" ShortID="1470594" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<PropertyList>
+												<Property Name="DecayTime" Type="Real32" Value="0.3"/>
+												<Property Name="ERFrontBackDelay" Type="Real32" Value="3"/>
+												<Property Name="ERPattern" Type="int32" Value="22"/>
+												<Property Name="PreDelay" Type="Real32" Value="0"/>
+												<Property Name="RoomSize" Type="Real32" Value="-66"/>
+											</PropertyList>
+										</Effect>
+									</Custom>
 								</Reference>
 							</ReferenceList>
 						</Bus>

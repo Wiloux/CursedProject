@@ -29,9 +29,9 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
 
 Effect plug-ins	ID	Name	Type				Notes
+	1470594	ReverbBathroom_(Custom)	Wwise RoomVerb			
 	38820295	RoomReverb_School_(Custom)	Wwise RoomVerb			
 	592412883	RoomReverb_School2_(Custom)	Wwise RoomVerb			
-	2178132375	ReverbBathroom	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

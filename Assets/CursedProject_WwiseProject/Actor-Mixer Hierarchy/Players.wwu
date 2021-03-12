@@ -1201,6 +1201,7 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Run" ID="{6CFF0F2D-5A03-47A7-8A1C-2D7D94559AEE}" ShortID="413096698">
 											<PropertyList>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 											</PropertyList>
 											<ReferenceList>

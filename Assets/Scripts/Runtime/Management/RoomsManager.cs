@@ -109,6 +109,12 @@ public class RoomsManager : MonoBehaviour
                     AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
                     AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
                 }
+                else if (roomName == "Corridor2ndFloor")
+                {
+                    AkSoundEngine.SetRTPCValue("RTPC_Reverb", 1);
+                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
+                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
+                }
                 else if(roomName == "Girls bathroom")
                 {
                     AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 1);

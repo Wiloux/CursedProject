@@ -10,7 +10,13 @@
 					</PropertyList>
 				</Effect>
 				<Effect Name="RoomReverb_School2" ID="{6F14AD1E-2B96-49D3-B00F-BF1325C39993}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3"/>
-				<Effect Name="ReverbBathroom" ID="{A3047CA8-6C29-4950-916D-E0CEAEDC8404}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3"/>
+				<Effect Name="ReverbBathroom" ID="{A3047CA8-6C29-4950-916D-E0CEAEDC8404}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+					<PropertyList>
+						<Property Name="ERFrontBackDelay" Type="Real32" Value="100"/>
+						<Property Name="PreDelay" Type="Real32" Value="200"/>
+						<Property Name="RoomSize" Type="Real32" Value="100"/>
+					</PropertyList>
+				</Effect>
 			</ChildrenList>
 		</WorkUnit>
 	</Effects>

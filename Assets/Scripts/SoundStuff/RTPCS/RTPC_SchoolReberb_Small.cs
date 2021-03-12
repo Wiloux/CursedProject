@@ -9,6 +9,8 @@ public class RTPC_SchoolReberb_Small : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 1);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
         }
     }
     private void OnTriggerExit(Collider collision)
