@@ -52,9 +52,10 @@ public class TransitionManager : MonoBehaviour
         }
 
         target.position = new Vector3(DestinationDoor.spawnPoint.x, (DestinationDoor.spawnPoint.y + 1.1f), DestinationDoor.spawnPoint.z);
-        Vector3 relativePos = target.position - DestinationDoor.transform.position;
-        target.LookAt(-relativePos);
-        target.localRotation = Quaternion.Euler(0, target.rotation.y, target.rotation.z);
+       // Vector3 relativePos =  DestinationDoor.transform.position - DestinationDoor.spawnPoint;
+      //  target.LookAt(-relativePos);
+     //   Debug.Log(-relativePos);
+       
 
         t = 0;
 
