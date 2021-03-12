@@ -15,6 +15,7 @@ public class RoomsManager : MonoBehaviour
     private void Start()
     {
         SpawnEnemiesOfRoom(WorldProgressSaver.instance.locationName);
+        ChangeRTCPReverbForRoom(WorldProgressSaver.instance.locationName);
     }
 
     #region Custom Inspector Method
@@ -96,58 +97,62 @@ public class RoomsManager : MonoBehaviour
         }
         Debug.LogError("Custom error: Room name : " + roomName + " doesn't exists in the rooms manager");
     }
+    public bool DoesRoomExists(string roomName)
+    {
+        foreach (Room room in AllRooms)
+        {
+            if (roomName == room.roomName) return true;
+        }
+        return false;
+    }
 
-    public void ChangeRTCPOcclusionForRoom(string roomName)
+    public void ChangeRTCPReverbForRoom(string roomName)
     {
         Room room = GetRoomByName(roomName);
-        switch (room.place)
+        if(room != null)
         {
-            case Room.PlaceType.school:
-                if(roomName == "School hallways")
+            if(room.place == Room.PlaceType.school)
+            {
+                switch (room.size)
                 {
-                    AkSoundEngine.SetRTPCValue("RTPC_Reverb", 1);
-                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
-                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
+                    case Room.RoomSize.small:
+                        AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 1);
+                        AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
+                        AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
+                        break;
+                    case Room.RoomSize.medium:
+                        AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 1);
+                        AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
+                        AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
+                        break;
+                    case Room.RoomSize.large:
+                        AkSoundEngine.SetRTPCValue("RTPC_Reverb", 1);
+                        AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
+                        AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
+                        break;
                 }
-                else if (roomName == "Corridor2ndFloor")
-                {
-                    AkSoundEngine.SetRTPCValue("RTPC_Reverb", 1);
-                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
-                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
-                }
-                else if(roomName == "Girls bathroom")
-                {
-                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 1);
-                    AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
-                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
-                }
-                else
-                {
-                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 1);
-                    AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
-                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
-                }
-                break;
-            case Room.PlaceType.city:
-                break;
-            case Room.PlaceType.forest:
-                break;
+            }
         }
     }
 }
 
-[Serializable]public class Room
+[Serializable] public class Room
 {
+    public string roomName;
+
     public enum PlaceType { school, city, forest};
     public PlaceType place;
-    public string roomName;
+
+    public enum RoomSize { small, medium, large};
+    public RoomSize size;
+
     public List<EnemyToSpawn> enemiesToSpawn;
     [HideInInspector]
     public List<EnemyBaseAI> enemies = new List<EnemyBaseAI>();
 
 }
 
-[Serializable]public class EnemyToSpawn 
+[Serializable] public class EnemyToSpawn 
 {
     public EnemyBaseAI enemy;
     public Vector3 spawnPos;

@@ -19,19 +19,45 @@ public class OptionsData
 [System.Serializable]
 public class KeyBindings
 {
-    public KeyCode simpleAttackKey;
-    public KeyCode secondaryAttackKey;
+    public KeyBind simpleAttackKey = new KeyBind("LMB");
+    public KeyBind secondaryAttackKey = new KeyBind("RMB");
 
-    public KeyCode interactKey = KeyCode.E;
-    public KeyCode abilityKey = KeyCode.F;
-    public KeyCode healKey = KeyCode.H;
+    public KeyBind interactKey = new KeyBind(KeyCode.E);
+    public KeyBind abilityKey = new KeyBind(KeyCode.F);
+    public KeyBind healKey = new KeyBind(KeyCode.H);
 
-    public KeyCode forwardKey = KeyCode.W;
-    public KeyCode backwardKey = KeyCode.S;
+    public KeyBind forwardKey = new KeyBind(KeyCode.W);
+    public KeyBind backwardKey = new KeyBind(KeyCode.S);
 
-    public KeyCode menuKey = KeyCode.Escape;
-    public KeyCode inventoryKey = KeyCode.Tab;
+    public KeyBind menuKey = new KeyBind(KeyCode.Escape);
+    public KeyBind inventoryKey = new KeyBind(KeyCode.Tab);
 
-    public KeyCode swipeLeftInventoryKey = KeyCode.A;
-    public KeyCode swipeRightInventoryKey = KeyCode.D;
+    public KeyBind swipeLeftInventoryKey = new KeyBind(KeyCode.A);
+    public KeyBind swipeRightInventoryKey = new KeyBind(KeyCode.D);
+}
+[System.Serializable] public class KeyBind
+{
+    public enum KeyBindingType { mouse, keyboard};
+    public KeyBindingType type = KeyBindingType.keyboard;
+    public KeyCode keycode;
+    public string mouseButton;
+
+    public KeyBind(KeyCode keyCode = KeyCode.None)
+    {
+        this.type = KeyBindingType.keyboard;
+        this.keycode = keyCode;
+        this.mouseButton = "";
+    }
+    public KeyBind(string mouseButton)
+    {
+        this.type = KeyBindingType.mouse;
+        this.keycode = KeyCode.None;
+        this.mouseButton = mouseButton;
+    }
+    public KeyBind(KeyBind keybind)
+    {
+        this.type = keybind.type;
+        this.keycode = keybind.keycode;
+        this.mouseButton = keybind.mouseButton;
+    }
 }

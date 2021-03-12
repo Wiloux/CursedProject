@@ -29,7 +29,7 @@ public class OptionsSaver : MonoBehaviour
 
     [SerializeField] private TMPro.TMP_InputField mouseSensitivitySlider;
 
-    [SerializeField] private List<KeyBindingButton> keyBindingButtons = new List<KeyBindingButton>();
+    [SerializeField] private Transform keyBindingButtonsParent;
 
     [SerializeField] private GameObject generalOptionsMenu;
     [SerializeField] private GameObject keyBindingsMenu;
@@ -37,6 +37,7 @@ public class OptionsSaver : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log(SaveSystem.optionsSavePath);
         SetButtonsKey();
     }
 
@@ -51,6 +52,7 @@ public class OptionsSaver : MonoBehaviour
             mouseSensitivity = data.mouseSensitivity;
             keyBindings = data.keyBindings;
         }
+        else SaveSystem.SaveOptionsData(this);
     }
 
     public void UpdateChanges()
@@ -68,37 +70,37 @@ public class OptionsSaver : MonoBehaviour
         switch (keyBindingButton.keyBindingAction)
         {
             case KeyBindingButton.KeyBindingAction.simpleAttack:
-                keyBindings.simpleAttackKey = keyBindingButton.keyCode;
+                keyBindings.simpleAttackKey = keyBindingButton.keybind;
                 break;
             case KeyBindingButton.KeyBindingAction.secondaryAttack:
-                keyBindings.secondaryAttackKey = keyBindingButton.keyCode;
+                keyBindings.secondaryAttackKey = keyBindingButton.keybind;
                 break;
             case KeyBindingButton.KeyBindingAction.interact:
-                keyBindings.interactKey = keyBindingButton.keyCode;
+                keyBindings.interactKey = keyBindingButton.keybind;
                 break;
             case KeyBindingButton.KeyBindingAction.ability:
-                keyBindings.abilityKey = keyBindingButton.keyCode;
+                keyBindings.abilityKey = keyBindingButton.keybind;
                 break;
             case KeyBindingButton.KeyBindingAction.heal:
-                keyBindings.healKey = keyBindingButton.keyCode;
+                keyBindings.healKey = keyBindingButton.keybind;
                 break;
             case KeyBindingButton.KeyBindingAction.forward:
-                keyBindings.forwardKey = keyBindingButton.keyCode;
+                keyBindings.forwardKey = keyBindingButton.keybind;
                 break;
             case KeyBindingButton.KeyBindingAction.backwards:
-                keyBindings.backwardKey = keyBindingButton.keyCode;
+                keyBindings.backwardKey = keyBindingButton.keybind;
                 break;
             case KeyBindingButton.KeyBindingAction.menu:
-                keyBindings.menuKey = keyBindingButton.keyCode;
+                keyBindings.menuKey = keyBindingButton.keybind;
                 break;
             case KeyBindingButton.KeyBindingAction.inventory:
-                keyBindings.inventoryKey = keyBindingButton.keyCode;
+                keyBindings.inventoryKey = keyBindingButton.keybind;
                 break;
             case KeyBindingButton.KeyBindingAction.swipeLeftInv:
-                keyBindings.swipeLeftInventoryKey = keyBindingButton.keyCode;
+                keyBindings.swipeLeftInventoryKey = keyBindingButton.keybind;
                 break;
             case KeyBindingButton.KeyBindingAction.swipeRightInv:
-                keyBindings.swipeRightInventoryKey = keyBindingButton.keyCode;
+                keyBindings.swipeRightInventoryKey = keyBindingButton.keybind;
                 break;
         }
     }
@@ -112,43 +114,50 @@ public class OptionsSaver : MonoBehaviour
     }
     private void SetButtonsKey()
     {
-        foreach (KeyBindingButton keyBindingButton in keyBindingButtons)
+        for(int i = 0; i < keyBindingButtonsParent.childCount; i++)
         {
-            switch (keyBindingButton.keyBindingAction)
+            KeyBindingButton keyBindingButton = keyBindingButtonsParent.GetChild(i).GetComponent<KeyBindingButton>();
+            if(keyBindingButton != null)
             {
-                case KeyBindingButton.KeyBindingAction.simpleAttack:
-                    keyBindingButton.keyCode = keyBindings.simpleAttackKey;
-                    break;
-                case KeyBindingButton.KeyBindingAction.secondaryAttack:
-                    keyBindingButton.keyCode = keyBindings.secondaryAttackKey;
-                    break;
-                case KeyBindingButton.KeyBindingAction.interact:
-                    keyBindingButton.keyCode = keyBindings.interactKey;
-                    break;
-                case KeyBindingButton.KeyBindingAction.ability:
-                    keyBindingButton.keyCode = keyBindings.abilityKey;
-                    break;
-                case KeyBindingButton.KeyBindingAction.heal:
-                    keyBindingButton.keyCode = keyBindings.healKey;
-                    break;
-                case KeyBindingButton.KeyBindingAction.forward:
-                    keyBindingButton.keyCode = keyBindings.forwardKey;
-                    break;
-                case KeyBindingButton.KeyBindingAction.backwards:
-                    keyBindingButton.keyCode = keyBindings.backwardKey;
-                    break;
-                case KeyBindingButton.KeyBindingAction.menu:
-                    keyBindingButton.keyCode = keyBindings.menuKey;
-                    break;
-                case KeyBindingButton.KeyBindingAction.inventory:
-                    keyBindingButton.keyCode = keyBindings.inventoryKey;
-                    break;
-                case KeyBindingButton.KeyBindingAction.swipeLeftInv:
-                    keyBindingButton.keyCode = keyBindings.swipeLeftInventoryKey;
-                    break;
-                case KeyBindingButton.KeyBindingAction.swipeRightInv:
-                    keyBindingButton.keyCode = keyBindings.swipeRightInventoryKey;
-                    break;
+                Debug.Log(keyBindingButton.keybind.keycode.ToString());
+                if(keyBindingButton.keybind == null) { Debug.Log("cyke"); }
+                switch (keyBindingButton.keyBindingAction)
+                {
+                    case KeyBindingButton.KeyBindingAction.simpleAttack:
+                        keyBindingButton.keybind = 
+                            new KeyBind(keyBindings.simpleAttackKey);
+                        break;
+                    case KeyBindingButton.KeyBindingAction.secondaryAttack:
+                        keyBindingButton.keybind = keyBindings.secondaryAttackKey;
+                        break;
+                    case KeyBindingButton.KeyBindingAction.interact:
+                        keyBindingButton.keybind = keyBindings.interactKey;
+                        break;
+                    case KeyBindingButton.KeyBindingAction.ability:
+                        keyBindingButton.keybind = keyBindings.abilityKey;
+                        break;
+                    case KeyBindingButton.KeyBindingAction.heal:
+                        keyBindingButton.keybind = keyBindings.healKey;
+                        break;
+                    case KeyBindingButton.KeyBindingAction.forward:
+                        keyBindingButton.keybind = keyBindings.forwardKey;
+                        break;
+                    case KeyBindingButton.KeyBindingAction.backwards:
+                        keyBindingButton.keybind = keyBindings.backwardKey;
+                        break;
+                    case KeyBindingButton.KeyBindingAction.menu:
+                        keyBindingButton.keybind = keyBindings.menuKey;
+                        break;
+                    case KeyBindingButton.KeyBindingAction.inventory:
+                        keyBindingButton.keybind = keyBindings.inventoryKey;
+                        break;
+                    case KeyBindingButton.KeyBindingAction.swipeLeftInv:
+                        keyBindingButton.keybind = keyBindings.swipeLeftInventoryKey;
+                        break;
+                    case KeyBindingButton.KeyBindingAction.swipeRightInv:
+                        keyBindingButton.keybind = keyBindings.swipeRightInventoryKey;
+                        break;
+                }
             }
         }
     }
