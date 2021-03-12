@@ -99,29 +99,41 @@ public class RoomsManager : MonoBehaviour
 
     public void ChangeRTCPOcclusionForRoom(string roomName)
     {
-        if(roomName == "School hallways")
+        Room room = GetRoomByName(roomName);
+        switch (room.place)
         {
-            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 1);
-            AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
-            AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
-        }
-        else if(roomName == "Girls bathroom")
-        {
-            AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 1);
-            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
-            AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
-        }
-        else
-        {
-            AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 1);
-            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
-            AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
+            case Room.PlaceType.school:
+                if(roomName == "School hallways")
+                {
+                    AkSoundEngine.SetRTPCValue("RTPC_Reverb", 1);
+                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
+                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
+                }
+                else if(roomName == "Girls bathroom")
+                {
+                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 1);
+                    AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
+                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
+                }
+                else
+                {
+                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 1);
+                    AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
+                    AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
+                }
+                break;
+            case Room.PlaceType.city:
+                break;
+            case Room.PlaceType.forest:
+                break;
         }
     }
 }
 
 [Serializable]public class Room
 {
+    public enum PlaceType { school, city, forest};
+    public PlaceType place;
     public string roomName;
     public List<EnemyToSpawn> enemiesToSpawn;
     [HideInInspector]
