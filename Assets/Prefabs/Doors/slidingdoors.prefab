@@ -23,8 +23,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7388712405865576219}
-  m_LocalRotation: {x: -0, y: 0.7071067, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0.0066, y: -0.125, z: 0.1155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.03, z: 0.1009}
   m_LocalScale: {x: 0.121171266, y: 0.22033535, z: 0.06111429}
   m_Children: []
   m_Father: {fileID: 6990505488553141450}
@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 7658532900971789936}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1.1219, y: -3.42, z: 0.61353}
-  m_LocalScale: {x: 17.912348, y: 17.912346, z: 17.912346}
+  m_LocalScale: {x: 17.912352, y: 17.912346, z: 17.912346}
   m_Children:
   - {fileID: 7388712405865576212}
   m_Father: {fileID: 0}
@@ -142,9 +142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   needKey: 0
   neededKey: {fileID: 0}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {x: 0, y: 0, z: 0}
   otherDoorScript: {fileID: 0}
-  currentRoomName: 
+  currentRoomName: ClassroomGyaru
   doorInteractionWEvent:
     idInternal: 0
     valueGuidInternal: 

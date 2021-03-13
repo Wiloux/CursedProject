@@ -22,7 +22,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 3.45
+    m_Value: 1.62
     min: 0
     max: 4
   directLightingStrength:
@@ -209,7 +209,7 @@ MonoBehaviour:
     showEyeDropper: 1
   middle:
     m_OverrideState: 1
-    m_Value: {r: 0.16981131, g: 0, b: 0, a: 1}
+    m_Value: {r: 0.18867922, g: 0.064969726, b: 0.064969726, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
@@ -460,8 +460,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   color:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.24528301, g: 0.09140263, b: 0.09140263, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
@@ -496,7 +496,7 @@ MonoBehaviour:
     m_Value: 50
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 80.09
+    m_Value: 40.29
     min: 1
   enableVolumetricFog:
     m_OverrideState: 1
