@@ -34,7 +34,7 @@ public class DoorScript : MonoBehaviour
         }
         roomsManager = RoomsManager.instance;
 
-        roomsManager.CheckIfRoomNameExists(currentRoomName);
+        if (!roomsManager.DoesRoomExists(currentRoomName)) { Debug.LogError("The room named '" + currentRoomName + "' in the " + gameObject.name + " script doesn't exist in the Rooms Manager instance"); }
     }
 
 

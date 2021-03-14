@@ -2,32 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class OptionsSaver : MonoBehaviour
 {
     public static OptionsSaver instance;
     private void Awake()
     {
+        keyBindings = new KeyBindings();
+
+        LoadFromOptionsSaveFile();
+
         if (instance != null) Destroy(this);
         else
         {
             instance = this;
-
-            LoadFromOptionsSaveFile();
+            generalOptionsMenu.SetActive(true);
+            keyBindingsMenu.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 
-    private float sfxVolume = 7.5f;
-    private float musicVolume = 7.5f;
+    //private void Start()
+    //{
+    //    keyBindings = new KeyBindings();
+    //}
 
-    private float mouseSensitivity;
+    public float sfxVolume = 7.5f;
+    public float musicVolume = 7.5f;
 
-    private KeyBindings keyBindings = new KeyBindings();
+    public float mouseSensitivity;
+
+    public KeyBindings keyBindings = new KeyBindings();
 
     [SerializeField] private Slider sfxVolumeSlider;
     [SerializeField] private Slider musicVolumeSlider;
 
-    [SerializeField] private TMPro.TMP_InputField mouseSensitivitySlider;
+    [SerializeField] private TMPro.TMP_InputField mouseSensitivityInputField;
 
     [SerializeField] private Transform keyBindingButtonsParent;
 
@@ -37,31 +50,48 @@ public class OptionsSaver : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log(SaveSystem.optionsSavePath);
-        SetButtonsKey();
+        if (keyBindings == null) keyBindings = new KeyBindings();
+
+        SetParamatersValue();
     }
 
     #region Save / Load / Change
-    private void LoadFromOptionsSaveFile()
+    public void CreateStandartOptionsSave()
+    {
+        sfxVolume = 7.5f;
+        musicVolume = 7.5f;
+        mouseSensitivity = 1f;
+        keyBindings = new KeyBindings();
+
+        SaveSystem.SaveOptionsData(this);
+        Debug.Log("Standart options save created.");
+    }
+    public void LoadFromOptionsSaveFile()
     {
         OptionsData data = SaveSystem.LoadOptionsData();
-        if (data != null)
+        if(data == null)
         {
-            sfxVolume = data.sfxVolume;
-            musicVolume = data.musicVolume;
-            mouseSensitivity = data.mouseSensitivity;
-            keyBindings = data.keyBindings;
+            CreateStandartOptionsSave();
+            data = SaveSystem.LoadOptionsData();
         }
-        else SaveSystem.SaveOptionsData(this);
+        sfxVolume = data.sfxVolume;
+        musicVolume = data.musicVolume;
+        mouseSensitivity = data.mouseSensitivity;
+        keyBindings = data.keyBindings;
+
+        SaveSystem.SaveOptionsData(this);
+        GameHandler.instance.UseCurrentOptions(this);
+        Debug.Log("Options loaded from save file.");
     }
 
-    public void UpdateChanges()
+    public void SaveCurrentOptions()
     {
         sfxVolume = sfxVolumeSlider.value;
         musicVolume = musicVolumeSlider.value;
 
-        mouseSensitivity = System.Convert.ToInt32(mouseSensitivitySlider.text);
+        mouseSensitivity = System.Convert.ToInt32(mouseSensitivityInputField.text);
 
+        GameHandler.instance.UseCurrentOptions(this);
         SaveSystem.SaveOptionsData(this);
     }
 
@@ -70,39 +100,43 @@ public class OptionsSaver : MonoBehaviour
         switch (keyBindingButton.keyBindingAction)
         {
             case KeyBindingButton.KeyBindingAction.simpleAttack:
-                keyBindings.simpleAttackKey = keyBindingButton.keybind;
+                keyBindings.simpleAttackKey = keyBindingButton.keyCode;
                 break;
             case KeyBindingButton.KeyBindingAction.secondaryAttack:
-                keyBindings.secondaryAttackKey = keyBindingButton.keybind;
+                keyBindings.secondaryAttackKey = keyBindingButton.keyCode;
                 break;
             case KeyBindingButton.KeyBindingAction.interact:
-                keyBindings.interactKey = keyBindingButton.keybind;
+                keyBindings.interactKey = keyBindingButton.keyCode;
                 break;
             case KeyBindingButton.KeyBindingAction.ability:
-                keyBindings.abilityKey = keyBindingButton.keybind;
+                keyBindings.abilityKey = keyBindingButton.keyCode;
                 break;
             case KeyBindingButton.KeyBindingAction.heal:
-                keyBindings.healKey = keyBindingButton.keybind;
+                keyBindings.healKey = keyBindingButton.keyCode;
                 break;
             case KeyBindingButton.KeyBindingAction.forward:
-                keyBindings.forwardKey = keyBindingButton.keybind;
+                keyBindings.forwardKey = keyBindingButton.keyCode;
                 break;
             case KeyBindingButton.KeyBindingAction.backwards:
-                keyBindings.backwardKey = keyBindingButton.keybind;
+                keyBindings.backwardKey = keyBindingButton.keyCode;
+                break;
+            case KeyBindingButton.KeyBindingAction.sprint:
+                keyBindings.sprintKey = keyBindingButton.keyCode;
                 break;
             case KeyBindingButton.KeyBindingAction.menu:
-                keyBindings.menuKey = keyBindingButton.keybind;
+                keyBindings.menuKey = keyBindingButton.keyCode;
                 break;
             case KeyBindingButton.KeyBindingAction.inventory:
-                keyBindings.inventoryKey = keyBindingButton.keybind;
+                keyBindings.inventoryKey = keyBindingButton.keyCode;
                 break;
             case KeyBindingButton.KeyBindingAction.swipeLeftInv:
-                keyBindings.swipeLeftInventoryKey = keyBindingButton.keybind;
+                keyBindings.swipeLeftInventoryKey = keyBindingButton.keyCode;
                 break;
             case KeyBindingButton.KeyBindingAction.swipeRightInv:
-                keyBindings.swipeRightInventoryKey = keyBindingButton.keybind;
+                keyBindings.swipeRightInventoryKey = keyBindingButton.keyCode;
                 break;
         }
+        SaveCurrentOptions();
     }
     #endregion
 
@@ -119,56 +153,90 @@ public class OptionsSaver : MonoBehaviour
             KeyBindingButton keyBindingButton = keyBindingButtonsParent.GetChild(i).GetComponent<KeyBindingButton>();
             if(keyBindingButton != null)
             {
-                Debug.Log(keyBindingButton.keybind.type);
-
-
-                keyBindingButton.keybind.type = KeyBind.KeyBindingType.keyboard;
-                Debug.Log(keyBindings.simpleAttackKey.type);
-                keyBindingButton.keybind.CopyFrom(keyBindings.simpleAttackKey);
-                keyBindingButton.keybind.mouseButton = "LMB";
-                keyBindingButton.keybind.keycode = KeyCode.A;
-
-                //keyBindingButton.keybind.CopyFrom(keyBindings.simpleAttackKey);
-                if(keyBindingButton.keybind == null) { Debug.Log("cyke"); }
                 switch (keyBindingButton.keyBindingAction)
                 {
                     case KeyBindingButton.KeyBindingAction.simpleAttack:
-                        if(keyBindings.simpleAttackKey == null)
-                        keyBindingButton.SetButtonKeyBind(keyBindings.simpleAttackKey);
+                        keyBindingButton.SetButtonKeyCode(keyBindings.simpleAttackKey);
                         break;
                     case KeyBindingButton.KeyBindingAction.secondaryAttack:
-                        keyBindingButton.keybind = keyBindings.secondaryAttackKey;
+                        keyBindingButton.SetButtonKeyCode(keyBindings.secondaryAttackKey);
                         break;
                     case KeyBindingButton.KeyBindingAction.interact:
-                        keyBindingButton.keybind = keyBindings.interactKey;
+                        keyBindingButton.SetButtonKeyCode(keyBindings.interactKey);
                         break;
                     case KeyBindingButton.KeyBindingAction.ability:
-                        keyBindingButton.keybind = keyBindings.abilityKey;
+                        keyBindingButton.SetButtonKeyCode(keyBindings.abilityKey);
                         break;
                     case KeyBindingButton.KeyBindingAction.heal:
-                        keyBindingButton.keybind = keyBindings.healKey;
+                        keyBindingButton.SetButtonKeyCode(keyBindings.healKey);
                         break;
                     case KeyBindingButton.KeyBindingAction.forward:
-                        keyBindingButton.keybind = keyBindings.forwardKey;
+                        keyBindingButton.SetButtonKeyCode(keyBindings.forwardKey);
                         break;
                     case KeyBindingButton.KeyBindingAction.backwards:
-                        keyBindingButton.keybind = keyBindings.backwardKey;
+                        keyBindingButton.SetButtonKeyCode(keyBindings.backwardKey);
+                        break;
+                    case KeyBindingButton.KeyBindingAction.sprint:
+                        keyBindingButton.SetButtonKeyCode(keyBindings.sprintKey);
                         break;
                     case KeyBindingButton.KeyBindingAction.menu:
-                        keyBindingButton.keybind = keyBindings.menuKey;
+                        keyBindingButton.SetButtonKeyCode(keyBindings.menuKey);
                         break;
                     case KeyBindingButton.KeyBindingAction.inventory:
-                        keyBindingButton.keybind = keyBindings.inventoryKey;
+                        keyBindingButton.SetButtonKeyCode(keyBindings.inventoryKey);
                         break;
                     case KeyBindingButton.KeyBindingAction.swipeLeftInv:
-                        keyBindingButton.keybind = keyBindings.swipeLeftInventoryKey;
+                        keyBindingButton.SetButtonKeyCode(keyBindings.swipeLeftInventoryKey);
                         break;
                     case KeyBindingButton.KeyBindingAction.swipeRightInv:
-                        keyBindingButton.keybind = keyBindings.swipeRightInventoryKey;
+                        keyBindingButton.SetButtonKeyCode(keyBindings.swipeRightInventoryKey);
                         break;
                 }
             }
         }
     }
+
+    private void SetParamatersValue()
+    {
+        musicVolumeSlider.value = musicVolume;
+        sfxVolumeSlider.value = sfxVolume;
+        mouseSensitivityInputField.text = mouseSensitivity.ToString();
+
+        SetButtonsKey();
+    }
     #endregion
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(OptionsSaver))] public class OptionsSaverInspector: Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+
+        OptionsSaver saver = target as OptionsSaver;
+
+        serializedObject.Update();
+
+        GUILayout.Space(20);
+
+        GUILayout.BeginHorizontal();
+        if(GUILayout.Button("Load options"))
+        {
+            saver.LoadFromOptionsSaveFile();
+        }
+        if(GUILayout.Button("Delete options"))
+        {
+            SaveSystem.DeleteOptionsData();
+        }
+        GUILayout.EndHorizontal();
+
+        if(GUILayout.Button("Create new options")) 
+        {
+            saver.CreateStandartOptionsSave();
+        }
+
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+#endif

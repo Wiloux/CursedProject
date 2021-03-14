@@ -179,12 +179,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllRooms:
   - roomName: Road
+    place: 0
+    size: 0
     enemiesToSpawn:
     - enemy: {fileID: 7770043024507580039, guid: e06806995570402498e1fca9a4cd2df6, type: 3}
       spawnPos: {x: -67.784454, y: 11.43, z: -21.248877}
       spawnRot: {x: -0, y: 0, z: 0}
     enemies: []
   - roomName: Garden
+    place: 0
+    size: 0
     enemiesToSpawn: []
     enemies: []
 --- !u!1 &109114419465207785
@@ -2430,7 +2434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 746031519894753201, guid: a834a7556a13f34488f123b6dbfca113, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.30004883
+      value: 0.2998047
       objectReference: {fileID: 0}
     - target: {fileID: 746031519894753201, guid: a834a7556a13f34488f123b6dbfca113, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2466,7 +2470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1262894626039551433, guid: a834a7556a13f34488f123b6dbfca113, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38.399994
+      value: -38.399902
       objectReference: {fileID: 0}
     - target: {fileID: 1268677808122729466, guid: a834a7556a13f34488f123b6dbfca113, type: 3}
       propertyPath: m_Value
@@ -2510,6 +2514,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1653424545171831082, guid: a834a7556a13f34488f123b6dbfca113, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681287530293873438, guid: a834a7556a13f34488f123b6dbfca113, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4574495790390150908, guid: a834a7556a13f34488f123b6dbfca113, type: 3}
@@ -2618,7 +2626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6696353541760704599, guid: a834a7556a13f34488f123b6dbfca113, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 3.8000488
+      value: 3.7998047
       objectReference: {fileID: 0}
     - target: {fileID: 6696353541760704599, guid: a834a7556a13f34488f123b6dbfca113, type: 3}
       propertyPath: m_AnchoredPosition.y

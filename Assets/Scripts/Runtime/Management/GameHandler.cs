@@ -39,9 +39,6 @@ public class GameHandler : MonoBehaviour
     public GameObject saveMenu;
     public GameObject inventoryMenu;
 
-    public Slider musicVolumeSlider;
-    public Slider sfxVolumeSlider;
-
     public GameObject facelessGirlDamageIndicator;
     private float damageIndicatorTimer;
     private IEnumerator gradualIncreaseCoroutine;
@@ -54,6 +51,7 @@ public class GameHandler : MonoBehaviour
     private float DmgIndMax;
 
     #endregion
+    public bool locking;
 
     // Wwise vars
     #region Wwise events
@@ -98,33 +96,35 @@ public class GameHandler : MonoBehaviour
         #endregion
 
         #region UI gestion
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!locking)
         {
-            TogglePause();
-            ToggleMouseLock();
-            if (isSaveMenuOpen) { ToggleSaveMenu(); }
-            else if (isInventoryMenuOpen) ToggleInventoryMenu();
-            else { TogglePauseMenu(); }
-        }
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            TogglePause();
-            ToggleMouseLock();
-            ToggleInventoryMenu();
-        }
-
-        if (damageIndicatorTimer > 0)
-        {
-            damageIndicatorTimer -= Time.deltaTime;
-
-            if (DmgIndMat != null) DmgIndMat.SetFloat("Vector1_98c453588a654653b7765100bbc55cf4", Mathf.Lerp(0, DmgIndMax, damageIndicatorTimer));
-
-            if (damageIndicatorTimer < 0)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                facelessGirlDamageIndicator.SetActive(false); // here wiloux, l'image s'éteind
+                TogglePause();
+                ToggleMouseLock();
+                if (isSaveMenuOpen) { ToggleSaveMenu(); }
+                else if (isInventoryMenuOpen) ToggleInventoryMenu();
+                else { TogglePauseMenu(); }
+            }
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                TogglePause();
+                ToggleMouseLock();
+                ToggleInventoryMenu();
+            }
+
+            if (damageIndicatorTimer > 0)
+            {
+                damageIndicatorTimer -= Time.deltaTime;
+
+                if (DmgIndMat != null) DmgIndMat.SetFloat("Vector1_98c453588a654653b7765100bbc55cf4", Mathf.Lerp(0, DmgIndMax, damageIndicatorTimer));
+
+                if (damageIndicatorTimer < 0)
+                {
+                    facelessGirlDamageIndicator.SetActive(false); // here wiloux, l'image s'éteind
+                }
             }
         }
-
         #endregion
     }
 
@@ -266,10 +266,15 @@ public class GameHandler : MonoBehaviour
     }
     #endregion
 
-    public void SetVolume() //
+    public void UseCurrentOptions(OptionsSaver options)
     {
-        float musicVolume = musicVolumeSlider.value; // the values are between 0 and 10 miguel ^^
-        float sfxVolume = sfxVolumeSlider.value;
+        SetVolumes(options.musicVolume, options.sfxVolume);
+        PlayerHelper.instance.SetMouseSensivity(options.mouseSensitivity);
+        PlayerHelper.instance.SetKeyBindings(options.keyBindings);
+    }
+    public void SetVolumes(float musicVolume, float sfxVolume) //
+    {
+        // the values are between 0 and 10 miguel ^^
     }
 }
 
@@ -307,11 +312,6 @@ public class GameHandler : MonoBehaviour
         CreatePropertyField(nameof(handler.optionsMenu));
         CreatePropertyField(nameof(handler.saveMenu));
         CreatePropertyField(nameof(handler.inventoryMenu));
-        GUILayout.Space(10);
-        GUILayout.Label("Options UI vars", titleStyle);
-        GUILayout.Space(5);
-        CreatePropertyField(nameof(handler.musicVolumeSlider));
-        CreatePropertyField(nameof(handler.sfxVolumeSlider));
         GUILayout.Space(10);
         GUILayout.Label("Others", titleStyle);
         CreatePropertyField(nameof(handler.messageDisplayer));

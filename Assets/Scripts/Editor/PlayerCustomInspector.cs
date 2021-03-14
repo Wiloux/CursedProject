@@ -58,9 +58,6 @@ public class PlayerCustomInspector : Editor
                         GUILayout.Label("Ability", titleStyle);
                         GUILayout.Space(10);
                         CreatePropertyField(nameof(player.abilityCooldown));
-                        CreatePropertyField(nameof(player.specialAbilityKey));
-                        GUILayout.Space(10);
-                        CreatePropertyField(nameof(player.healKey));
                         break;
                     case 2:
                         GUILayout.Label("Idle Breaks", titleStyle);

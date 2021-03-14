@@ -12,68 +12,63 @@ public class OptionsData
 
     public KeyBindings keyBindings;
 
-    public OptionsData(OptionsSaver progress){
-
+    public OptionsData(OptionsSaver saver){
+        this.sfxVolume = saver.sfxVolume;
+        this.musicVolume = saver.musicVolume;
+        this.mouseSensitivity = saver.mouseSensitivity;
+        this.keyBindings = saver.keyBindings;
     }
 }
 [System.Serializable]
 public class KeyBindings
 {
-    public KeyBind simpleAttackKey = new KeyBind("LMB");
-    public KeyBind secondaryAttackKey = new KeyBind("RMB");
+    public KeyCode simpleAttackKey = KeyCode.Mouse0;
+    public KeyCode secondaryAttackKey = KeyCode.Mouse1;
+    public KeyCode interactKey = KeyCode.E;
+    public KeyCode abilityKey = KeyCode.F;
+    public KeyCode healKey = KeyCode.H;
+    public KeyCode forwardKey = KeyCode.W;
+    public KeyCode backwardKey = KeyCode.S;
+    public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode menuKey = KeyCode.Escape;
+    public KeyCode inventoryKey = KeyCode.Tab;
+    public KeyCode swipeLeftInventoryKey = KeyCode.A;
+    public KeyCode swipeRightInventoryKey = KeyCode.D;
 
-    public KeyBind interactKey = new KeyBind(KeyCode.E);
-    public KeyBind abilityKey = new KeyBind(KeyCode.F);
-    public KeyBind healKey = new KeyBind(KeyCode.H);
 
-    public KeyBind forwardKey = new KeyBind(KeyCode.W);
-    public KeyBind backwardKey = new KeyBind(KeyCode.S);
-
-    public KeyBind menuKey = new KeyBind(KeyCode.Escape);
-    public KeyBind inventoryKey = new KeyBind(KeyCode.Tab);
-
-    public KeyBind swipeLeftInventoryKey = new KeyBind(KeyCode.A);
-    public KeyBind swipeRightInventoryKey = new KeyBind(KeyCode.D);
-}
-[System.Serializable] public class KeyBind
-{
-    public enum KeyBindingType { mouse, keyboard};
-    public KeyBindingType type = KeyBindingType.keyboard;
-    public KeyCode keycode;
-    public string mouseButton;
-
-    public KeyBind(KeyCode keyCode = KeyCode.None)
+    public KeyBindings()
     {
-        this.type = KeyBindingType.keyboard;
-        this.keycode = keyCode;
-        this.mouseButton = "";
-    }
-    public KeyBind(string mouseButton)
-    {
-        this.type = KeyBindingType.mouse;
-        this.keycode = KeyCode.None;
-        this.mouseButton = mouseButton;
-    }
-    public KeyBind(KeyBind keybind)
-    {
-        this.type = keybind.type;
-        this.keycode = keybind.keycode;
-        this.mouseButton = keybind.mouseButton;
-    }
-    public void CopyFrom(KeyBind keybind)
-    {
-        if (keybind.type == KeyBindingType.keyboard) this.type = KeyBindingType.keyboard;
-        else this.type = KeyBindingType.mouse;
+        this.simpleAttackKey = KeyCode.Mouse0;
+        this.secondaryAttackKey = KeyCode.Mouse1;
 
-        this.keycode = keybind.keycode;
-        this.mouseButton = keybind.mouseButton;
+        this.interactKey = KeyCode.E;
+        this.abilityKey = KeyCode.F;
+        this.healKey = KeyCode.H;
+
+        this.forwardKey = KeyCode.W;
+        this.backwardKey = KeyCode.S;
+        this.sprintKey = KeyCode.LeftShift;
+
+        this.menuKey = KeyCode.Escape;
+        this.inventoryKey = KeyCode.Tab;
+
+        this.swipeLeftInventoryKey = KeyCode.A;
+        this.swipeRightInventoryKey = KeyCode.D;
     }
 
-    new public string ToString()
+    public KeyBindings(KeyCode simpleAttackKey, KeyCode secondaryAttackKey, KeyCode interactKey, KeyCode abilityKey, KeyCode healKey, KeyCode forwardKey, KeyCode backwardKey, KeyCode sprintKey,KeyCode menuKey, KeyCode inventoryKey, KeyCode swipeLeftInventoryKey, KeyCode swipeRightInventoryKey)
     {
-        string message = "Type: " + type.ToString() + "\t|| ";
-        if (type == KeyBindingType.keyboard) { message += "Keycode: " + keycode.ToString(); }
-        else message += "Mouse button: " + mouseButton;
-        return message;
+        this.simpleAttackKey = simpleAttackKey;
+        this.secondaryAttackKey = secondaryAttackKey;
+        this.interactKey = interactKey;
+        this.abilityKey = abilityKey;
+        this.healKey = healKey;
+        this.forwardKey = forwardKey;
+        this.backwardKey = backwardKey;
+        this.sprintKey = sprintKey;
+        this.menuKey = menuKey;
+        this.inventoryKey = inventoryKey;
+        this.swipeLeftInventoryKey = swipeLeftInventoryKey;
+        this.swipeRightInventoryKey = swipeRightInventoryKey;
     }
 }

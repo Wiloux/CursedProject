@@ -35,40 +35,49 @@ public class InteractibleUI : MonoBehaviour
 
     private void Update()
     {
-        Collider[] colliders = Physics.OverlapSphere(player.position, interactiveRange, ~notInteractibleLayerMask);
-
-        for(int i = 0; i < currentInteractibleImages.Count; i++)
+        if (!GameHandler.instance.IsPaused())
         {
-            if(currentInteractibleImages[i].gameObject == null) { DestroyInteractibleImage(currentInteractibleImages[i]); i--; continue; }
-            if (!isInteractibleImageInColliders(currentInteractibleImages[i], colliders))
-            {
-                if (!currentInteractibleImages[i].autoDestructing)
-                {
-                    //Debug.Log("destroy");
-                    StartCoroutine(DestroyInteractibleImageCoroutine(currentInteractibleImages[i], disappearTimer));
-                    currentInteractibleImages[i].autoDestructing = true;
-                }
-            }
-            else currentInteractibleImages[i].autoDestructing = false;
+            Collider[] colliders = Physics.OverlapSphere(player.position, interactiveRange, ~notInteractibleLayerMask);
 
-            Vector2 wantedPos = cam.WorldToScreenPoint(currentInteractibleImages[i].gameObject.transform.position) * 2f;
-            if (currentInteractibleImages[i].rectTransform.anchoredPosition != wantedPos) currentInteractibleImages[i].rectTransform.anchoredPosition = wantedPos;
+            for(int i = 0; i < currentInteractibleImages.Count; i++)
+            {
+                if(currentInteractibleImages[i].gameObject == null) { DestroyInteractibleImage(currentInteractibleImages[i]); i--; continue; }
+                if (!IsInteractibleImageInColliders(currentInteractibleImages[i], colliders))
+                {
+                    if (!currentInteractibleImages[i].autoDestructing)
+                    {
+                        //Debug.Log("destroy");
+                        StartCoroutine(DestroyInteractibleImageCoroutine(currentInteractibleImages[i], disappearTimer));
+                        currentInteractibleImages[i].autoDestructing = true;
+                    }
+                }
+                else currentInteractibleImages[i].autoDestructing = false;
+
+                Vector2 wantedPos = cam.WorldToScreenPoint(currentInteractibleImages[i].gameObject.transform.position) * 2f;
+                if (currentInteractibleImages[i].rectTransform.anchoredPosition != wantedPos) currentInteractibleImages[i].rectTransform.anchoredPosition = wantedPos;
             
-        }
+            }
 
-        foreach(Collider collider in colliders)
-        {
-            if (!isInteractibleInCurrentInteractible(collider.gameObject))
+            foreach(Collider collider in colliders)
             {
-                if(collider.GetComponent<DoorScript>() != null)
+                if (!IsInteractibleInCurrentInteractible(collider.gameObject))
                 {
-                    CreateImageForInteraction(collider.transform, doorSprite);
-                }
-                else if(collider.GetComponent<Collectible>() != null)
-                {
-                    CreateImageForInteraction(collider.transform, itemSprite);
+                    if(collider.GetComponent<DoorScript>() != null)
+                    {
+                        CreateImageForInteraction(collider.transform, doorSprite);
+                    }
+                    else if(collider.GetComponent<Collectible>() != null)
+                    {
+                        CreateImageForInteraction(collider.transform, itemSprite);
+                    }
                 }
             }
+        }
+        else { 
+            for(int i = 0; i < currentInteractibleImages.Count; i++) 
+            {
+                DestroyInteractibleImage(currentInteractibleImages[0]);
+            } 
         }
     }
 
@@ -133,7 +142,7 @@ public class InteractibleUI : MonoBehaviour
         if(interactibleImage.image != null) Destroy(interactibleImage.image.gameObject);
     }
 
-    private bool isInteractibleInCurrentInteractible(GameObject interactibleObject)
+    private bool IsInteractibleInCurrentInteractible(GameObject interactibleObject)
     {
         foreach(InteractibleImage interactibleImage in currentInteractibleImages)
         {
@@ -141,7 +150,7 @@ public class InteractibleUI : MonoBehaviour
         }
         return false;
     }
-    private bool isInteractibleImageInColliders(InteractibleImage interactibleImage, Collider[] colliders)
+    private bool IsInteractibleImageInColliders(InteractibleImage interactibleImage, Collider[] colliders)
     {
         foreach(Collider collider in colliders)
         {

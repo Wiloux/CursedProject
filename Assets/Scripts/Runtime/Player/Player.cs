@@ -42,11 +42,11 @@ public class Player : MonoBehaviour
     private float idleTimer;
 
     private Action UseAbility;
-    public KeyCode specialAbilityKey = KeyCode.F;
     public float abilityCooldown;
     private float abilityTimer;
 
-    public KeyCode healKey = KeyCode.H;
+    public KeyBindings keyBindings;
+
 
     #region Animator related Actions
     private Action SimpleAttackAnimation;
@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
         {
             if (controller.canMove)
             {
-                if (Input.GetMouseButtonDown(0) && timeToAttack < 0)
+                if (Input.GetKeyDown(keyBindings.simpleAttackKey) && timeToAttack < 0)
                 {
                     // Cooldown gestion
                     timeToAttack = attackCooldown;
@@ -107,7 +107,7 @@ public class Player : MonoBehaviour
                     //controller.canRotate = false;
                     Debug.Log("starting simple attack");
                 }
-                else if (Input.GetMouseButtonDown(1) && timeToSecondaryAttack < 0 && timeToAttack < 0)
+                else if (Input.GetKeyDown(keyBindings.secondaryAttackKey) && timeToSecondaryAttack < 0 && timeToAttack < 0)
                 {
                     // Cooldown gestion
                     timeToSecondaryAttack = secondaryAttackCooldown;
@@ -121,7 +121,7 @@ public class Player : MonoBehaviour
 
                     Debug.Log("starting charged attack");
                 }
-                else if (Input.GetKeyDown(KeyCode.E))
+                else if (Input.GetKeyDown(keyBindings.interactKey))
                 {
                     Debug.Log("e");
                     RaycastHit hit;
@@ -140,7 +140,7 @@ public class Player : MonoBehaviour
                         }
                     }
                 }
-                else if (Input.GetKey(specialAbilityKey))
+                else if (Input.GetKey(keyBindings.abilityKey))
                 {
                     if(abilityTimer < 0)
                     {
@@ -150,7 +150,7 @@ public class Player : MonoBehaviour
                         abilityTimer = abilityCooldown;
                     }
                 }
-                else if (Input.GetKeyDown(healKey))
+                else if (Input.GetKeyDown(keyBindings.healKey))
                 {
                     if (inventory.healingItemInInv > 0 && health < healthMax)
                     {

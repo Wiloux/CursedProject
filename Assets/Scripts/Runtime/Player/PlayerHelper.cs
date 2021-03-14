@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHelper : MonoBehaviour
 {
-    public Player_Movement playerMovement;
+    public Player_Movement controller;
     public Player player;
     public Inventory inventory;
     public static PlayerHelper instance;
@@ -64,6 +64,8 @@ public class PlayerHelper : MonoBehaviour
     public void ToggleControls() {
         player.stopControlls = !player.stopControlls;
     }
+    public void SetMouseSensivity(float newSensivity) { controller.sensivity = newSensivity * 20f; }
+    public void SetKeyBindings(KeyBindings keyBindings) { controller.keyBindings = keyBindings; player.keyBindings = keyBindings; }
 
     public float GetPlayerLife() { return player.health; }
 

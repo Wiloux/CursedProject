@@ -15,8 +15,10 @@ public class Player_Movement : MonoBehaviour
     private bool isGrounded;
     private Vector3 moveDirection;
 
+    public KeyBindings keyBindings;
+
     [Header("Rotation vars")]
-    [SerializeField] private float _rotSpeed = 20;
+    public float sensivity = 20;
     [SerializeField] private float _verticalSpeed = 10f;
     [SerializeField] private float _verticalSpeedNeg = 5f;
     float rotX;
@@ -59,8 +61,12 @@ public class Player_Movement : MonoBehaviour
             {
                 RotatePlayerWithMouse();
                 Movement();
+
                 lastMovement = movement;
-                movement = Input.GetAxis("Vertical");
+                if (Input.GetKey(keyBindings.forwardKey)) movement = 1;
+                else if (Input.GetKey(keyBindings.backwardKey)) movement = -1;
+                else movement = 0;
+
                 if (movement == 0 && lastMovement == 0) isMoving = false; else isMoving = true;
                 if (Input.GetAxis("Mouse X") != 0) { isRotating = true; }
             }
@@ -74,15 +80,15 @@ public class Player_Movement : MonoBehaviour
         moveDirection.z = 0;
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded && moveDirection.y < 0) { moveDirection.y = -2f; }
-        if (Input.GetAxis("Vertical") > 0.1)
+        if (Input.GetKey(keyBindings.forwardKey))
         {
-            verticalMove = Input.GetAxis("Vertical") * Time.deltaTime * _verticalSpeed;
-            if (Input.GetKey(KeyCode.LeftShift)) { isRunning = true; verticalMove *= 2;  }
+            verticalMove = Time.deltaTime * _verticalSpeed;
+            if (Input.GetKey(keyBindings.sprintKey)) { isRunning = true; verticalMove *= 2;  }
             moveDirection = transform.TransformDirection(Vector3.forward) * verticalMove;
         }
-        else if (Input.GetAxis("Vertical") < -0.1)
+        else if (Input.GetKey(keyBindings.backwardKey))
         {
-            verticalMove = Input.GetAxis("Vertical") * Time.deltaTime * _verticalSpeedNeg;
+            verticalMove =  - Time.deltaTime * _verticalSpeedNeg;
             moveDirection = transform.TransformDirection(Vector3.forward) * verticalMove;
         }
         moveDirection.y += gravity * Time.deltaTime;
@@ -91,7 +97,7 @@ public class Player_Movement : MonoBehaviour
 
     void RotatePlayerWithMouse()
     {
-        rotX = Input.GetAxis("Mouse X") * _rotSpeed * Mathf.Deg2Rad;
+        rotX = Input.GetAxis("Mouse X") * sensivity * Mathf.Deg2Rad;
         transform.Rotate(Vector3.up, rotX);
     }
 }

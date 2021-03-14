@@ -82,5 +82,13 @@ public static class SaveSystem
             return null;
         }
     }
+    public static void DeleteOptionsData()
+    {
+        if (File.Exists(optionsSavePath))
+        {
+            File.Delete(optionsSavePath);
+            Debug.Log("Options data save deleted");
+        }
+    }
     #endregion
 }
