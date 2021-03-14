@@ -22,7 +22,7 @@ public class KeyBindingButton : MonoBehaviour
         swipeRightInv
     };
     public KeyBindingAction keyBindingAction;
-    public KeyBind keybind = new KeyBind(KeyCode.None);
+    public KeyBind keybind;
 
     private void Awake()
     {
@@ -37,7 +37,7 @@ public class KeyBindingButton : MonoBehaviour
     public void GetInputKey()
     {
         StartCoroutine(WaitAndGetForInputKey(
-            () => SetKey()
+            () => SetKeyBindingsParameter()
         ));
     }
     private IEnumerator WaitAndGetForInputKey(Action onKeyGotten)
@@ -58,8 +58,13 @@ public class KeyBindingButton : MonoBehaviour
         onKeyGotten?.Invoke();
     }
 
-    private void SetKey()
+    private void SetKeyBindingsParameter()
     {
         OptionsSaver.instance.ChangeAKeyBinding(this);
+    }
+
+    public void SetButtonKeyBind(KeyBind keybind)
+    {
+        this.keybind = keybind;
     }
 }

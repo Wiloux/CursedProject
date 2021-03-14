@@ -22,7 +22,7 @@ public class OptionsSaver : MonoBehaviour
 
     private float mouseSensitivity;
 
-    private KeyBindings keyBindings;
+    private KeyBindings keyBindings = new KeyBindings();
 
     [SerializeField] private Slider sfxVolumeSlider;
     [SerializeField] private Slider musicVolumeSlider;
@@ -119,13 +119,22 @@ public class OptionsSaver : MonoBehaviour
             KeyBindingButton keyBindingButton = keyBindingButtonsParent.GetChild(i).GetComponent<KeyBindingButton>();
             if(keyBindingButton != null)
             {
-                Debug.Log(keyBindingButton.keybind.keycode.ToString());
+                Debug.Log(keyBindingButton.keybind.type);
+
+
+                keyBindingButton.keybind.type = KeyBind.KeyBindingType.keyboard;
+                Debug.Log(keyBindings.simpleAttackKey.type);
+                keyBindingButton.keybind.CopyFrom(keyBindings.simpleAttackKey);
+                keyBindingButton.keybind.mouseButton = "LMB";
+                keyBindingButton.keybind.keycode = KeyCode.A;
+
+                //keyBindingButton.keybind.CopyFrom(keyBindings.simpleAttackKey);
                 if(keyBindingButton.keybind == null) { Debug.Log("cyke"); }
                 switch (keyBindingButton.keyBindingAction)
                 {
                     case KeyBindingButton.KeyBindingAction.simpleAttack:
-                        keyBindingButton.keybind = 
-                            new KeyBind(keyBindings.simpleAttackKey);
+                        if(keyBindings.simpleAttackKey == null)
+                        keyBindingButton.SetButtonKeyBind(keyBindings.simpleAttackKey);
                         break;
                     case KeyBindingButton.KeyBindingAction.secondaryAttack:
                         keyBindingButton.keybind = keyBindings.secondaryAttackKey;

@@ -2610,7 +2610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   needKey: 0
   neededKey: {fileID: 0}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {x: 0, y: 0, z: 0}
   otherDoorScript: {fileID: 0}
   currentRoomName: 
   doorInteractionWEvent:
@@ -3335,7 +3335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   needKey: 0
   neededKey: {fileID: 0}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {x: 0, y: 0, z: 0}
   otherDoorScript: {fileID: 508159335}
   currentRoomName: 
   doorInteractionWEvent:
@@ -5642,11 +5642,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7573335873315770035, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -99.000015
+      value: -99
       objectReference: {fileID: 0}
     - target: {fileID: 7733812400607631493, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -40.000015
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 7777240657122264784, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
       propertyPath: debugObject
@@ -5658,7 +5658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9162611447176722814, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -50.000015
+      value: -50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 476fc7f1eaa0c7749862efb16eac540a, type: 3}
@@ -11409,7 +11409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   needKey: 0
   neededKey: {fileID: 0}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {x: 0, y: 0, z: 0}
   otherDoorScript: {fileID: 1382984491}
   currentRoomName: Garden
   doorInteractionWEvent:
@@ -14512,7 +14512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   needKey: 1
   neededKey: {fileID: 11400000, guid: 8547b00f3d39ddb4995aa5732d98eb61, type: 2}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {x: 0, y: 0, z: 0}
   otherDoorScript: {fileID: 1292229109}
   currentRoomName: Garden
   doorInteractionWEvent:

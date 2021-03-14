@@ -60,4 +60,20 @@ public class KeyBindings
         this.keycode = keybind.keycode;
         this.mouseButton = keybind.mouseButton;
     }
+    public void CopyFrom(KeyBind keybind)
+    {
+        if (keybind.type == KeyBindingType.keyboard) this.type = KeyBindingType.keyboard;
+        else this.type = KeyBindingType.mouse;
+
+        this.keycode = keybind.keycode;
+        this.mouseButton = keybind.mouseButton;
+    }
+
+    new public string ToString()
+    {
+        string message = "Type: " + type.ToString() + "\t|| ";
+        if (type == KeyBindingType.keyboard) { message += "Keycode: " + keycode.ToString(); }
+        else message += "Mouse button: " + mouseButton;
+        return message;
+    }
 }
