@@ -40,7 +40,11 @@ public class WorldProgressSaver : MonoBehaviour
         playerLife = 1;
         gameTime = 0;
         if (RoomsManager.instance != null) locationName = RoomsManager.instance.AllRooms[0].roomName;
-        else locationName = "default";
+        else
+        {
+            if (RoomsManager.instance != null) locationName = RoomsManager.instance.GetRoomName(0);
+            else locationName = "default";
+        }
         characterName = "Gyaru";
 
         isCutscenesPlayed = new bool[5];

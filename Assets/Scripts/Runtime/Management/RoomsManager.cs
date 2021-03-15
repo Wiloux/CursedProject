@@ -89,6 +89,13 @@ public class RoomsManager : MonoBehaviour
         return null;
     }
 
+    public string GetRoomName(int index) 
+    {
+        if (index > AllRooms.Count - 1) { Debug.LogError("Custom error: index is too high"); return ""; } 
+        else return AllRooms[index].roomName; 
+    }
+
+    #region Check room existence
     public void CheckIfRoomNameExists(string roomName)
     {
         foreach (Room room in AllRooms)
@@ -105,6 +112,7 @@ public class RoomsManager : MonoBehaviour
         }
         return false;
     }
+    #endregion
 
     public void ChangeRTCPReverbForRoom(string roomName)
     {
