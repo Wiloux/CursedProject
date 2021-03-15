@@ -77,7 +77,10 @@ public class GameHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        #region Sanity gestion
+
+        if (!locking)
+        {
+            #region Sanity gestion
         if (sanity > 0)
         {
             if (sanityDecreaseTimer > 0)
@@ -95,9 +98,7 @@ public class GameHandler : MonoBehaviour
         AkSoundEngine.SetRTPCValue("HallucinationsRTPC", Mathf.Clamp(sanity, 0f, 100f), gameObject); // Here Wwise stuffs
         #endregion
 
-        #region UI gestion
-        if (!locking)
-        {
+            #region UI gestion
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 TogglePause();
@@ -124,8 +125,8 @@ public class GameHandler : MonoBehaviour
                     facelessGirlDamageIndicator.SetActive(false); // here wiloux, l'image s'éteind
                 }
             }
+            #endregion
         }
-        #endregion
     }
 
     private void OnGUI()

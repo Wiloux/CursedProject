@@ -13,12 +13,6 @@ public class TransitionManager : MonoBehaviour
         instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void StartFade(Transform Using, float dur, DoorScript DestinationDoor = null, DoorScript CurrentDoor = null)
     {
         if (Fading == null)
@@ -36,6 +30,7 @@ public class TransitionManager : MonoBehaviour
         var tempColor = FadeImage.color;
         float t = 0;
         target.GetComponent<CharacterController>().enabled = false;
+        GameHandler.instance.locking = true;
         PlayerHelper.instance.ToggleControls();
 
         while (t < dur)
@@ -74,6 +69,7 @@ public class TransitionManager : MonoBehaviour
             yield return null;
         }
         PlayerHelper.instance.ToggleControls();
+        GameHandler.instance.locking = false;
         Fading = null;
         target.GetComponent<CharacterController>().enabled = true;
         Time.timeScale = 1;

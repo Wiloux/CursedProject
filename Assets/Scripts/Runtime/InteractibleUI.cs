@@ -20,7 +20,9 @@ public class InteractibleUI : MonoBehaviour
 
     [SerializeField] private Canvas canvas;
     [SerializeField] private Sprite doorSprite;
+    public float doorSpriteSize;
     [SerializeField] private Sprite itemSprite;
+    public float itemSpriteSize;
 
     private Transform player;
     private Camera cam;
@@ -64,11 +66,11 @@ public class InteractibleUI : MonoBehaviour
                 {
                     if(collider.GetComponent<DoorScript>() != null)
                     {
-                        CreateImageForInteraction(collider.transform, doorSprite);
+                        CreateImageForInteraction(collider.transform, doorSprite, doorSpriteSize);
                     }
                     else if(collider.GetComponent<Collectible>() != null)
                     {
-                        CreateImageForInteraction(collider.transform, itemSprite);
+                        CreateImageForInteraction(collider.transform, itemSprite, itemSpriteSize);
                     }
                 }
             }
@@ -89,9 +91,8 @@ public class InteractibleUI : MonoBehaviour
         Gizmos.DrawWireSphere(debugObject.transform.position, interactiveRange);
     }
 
-    public float size;
 
-    private void CreateImageForInteraction(Transform interactibleObject,Sprite sprite)
+    private void CreateImageForInteraction(Transform interactibleObject,Sprite sprite, float spriteSize)
     {
         //Debug.Log("create");
 
@@ -105,7 +106,7 @@ public class InteractibleUI : MonoBehaviour
         // Set its parent and reset his rect transform
         go.transform.SetParent(canvas.transform);
         RectTransform rectTransform = go.AddComponent<RectTransform>();
-        rectTransform.localScale = Vector3.one *size;
+        rectTransform.localScale = Vector3.one * spriteSize;
         rectTransform.localRotation = Quaternion.identity;
         rectTransform.anchorMin = Vector2.zero;
         rectTransform.anchorMax = Vector2.zero;
