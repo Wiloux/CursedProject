@@ -102,7 +102,6 @@ public class GameHandler : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 TogglePause();
-                ToggleMouseLock();
                 if (isSaveMenuOpen) { ToggleSaveMenu(); }
                 else if (isInventoryMenuOpen) ToggleInventoryMenu();
                 else { TogglePauseMenu(); }
@@ -110,7 +109,6 @@ public class GameHandler : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 TogglePause();
-                ToggleMouseLock();
                 ToggleInventoryMenu();
             }
 
@@ -148,9 +146,11 @@ public class GameHandler : MonoBehaviour
     #region Toggle functions
     public void TogglePause()
     {
-        if (isPaused) Time.timeScale = 1f;
-        else Time.timeScale = 0f;
         isPaused = !isPaused;
+        if (isPaused) Time.timeScale = 0f;
+        else Time.timeScale = 1f;
+
+        MouseManagement.instance.SetMouseLock(!pauseMenu);
         //isPaused = !isPaused;
         //GameObject[] objects = SceneManager.GetActiveScene().GetRootGameObjects();
         //foreach(GameObject go in objects)
@@ -181,7 +181,7 @@ public class GameHandler : MonoBehaviour
         //    if (shard != null) { shard.TogglePause(); continue; }
         //}
     }
-    private void ToggleMouseLock() { if (MouseManagement.instance != null) MouseManagement.instance.ToggleMouseLock(); }
+    public void SetPause(bool pause) { isPaused = pause; if (pause) Time.timeScale = 0; else Time.timeScale = 1; MouseManagement.instance.SetMouseLock(!pause); }
 
     #endregion
 
@@ -193,7 +193,7 @@ public class GameHandler : MonoBehaviour
         #endregion
 
         #region Func for UI buttons
-    public void LeftPauseMenu() { ToggleMouseLock(); TogglePause(); TogglePauseMenu(); }
+    public void LeftPauseMenu() { SetPause(false); TogglePauseMenu(); }
     public void QuitApplication() { Application.Quit(); }
 
     public void OpenOptionsFromPauseMenu() { pauseMenu.SetActive(false); optionsMenu.SetActive(true); }

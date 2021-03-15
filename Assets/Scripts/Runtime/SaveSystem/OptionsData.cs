@@ -18,6 +18,11 @@ public class OptionsData
         this.mouseSensitivity = saver.mouseSensitivity;
         this.keyBindings = saver.keyBindings;
     }
+
+    public new string ToString()
+    {
+        return "Sfx volume = " + sfxVolume.ToString() + " || music volume = " + musicVolume.ToString() + " || mouseSensitivity = " + mouseSensitivity.ToString();
+    }
 }
 [System.Serializable]
 public class KeyBindings

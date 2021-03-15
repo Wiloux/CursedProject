@@ -33,7 +33,7 @@ public class OptionsSaver : MonoBehaviour
     public float sfxVolume = 7.5f;
     public float musicVolume = 7.5f;
 
-    public float mouseSensitivity;
+    public float mouseSensitivity = 1f;
 
     public KeyBindings keyBindings = new KeyBindings();
 
@@ -52,7 +52,10 @@ public class OptionsSaver : MonoBehaviour
     {
         if (keyBindings == null) keyBindings = new KeyBindings();
 
-        SetParamatersValue();
+        generalOptionsMenu.SetActive(true);
+        keyBindingsMenu.SetActive(false);
+
+        SetParametersValueUI();
     }
 
     #region Save / Load / Change
@@ -64,7 +67,7 @@ public class OptionsSaver : MonoBehaviour
         keyBindings = new KeyBindings();
 
         SaveSystem.SaveOptionsData(this);
-        Debug.Log("Standart options save created.");
+        Debug.Log("Standard options save created.");
     }
     public void LoadFromOptionsSaveFile()
     {
@@ -74,17 +77,23 @@ public class OptionsSaver : MonoBehaviour
             CreateStandartOptionsSave();
             data = SaveSystem.LoadOptionsData();
         }
+
+        LoadFromData(data);
+
+        SaveSystem.SaveOptionsData(this);
+        Debug.Log(SaveSystem.LoadOptionsData().ToString());
+        GameHandler.instance.UseCurrentOptions(this);
+        Debug.Log("Options loaded from save file.");
+    }
+    private void LoadFromData(OptionsData data)
+    {
         sfxVolume = data.sfxVolume;
         musicVolume = data.musicVolume;
         mouseSensitivity = data.mouseSensitivity;
         keyBindings = data.keyBindings;
-
-        SaveSystem.SaveOptionsData(this);
-        GameHandler.instance.UseCurrentOptions(this);
-        Debug.Log("Options loaded from save file.");
     }
 
-    public void SaveCurrentOptions()
+    public void SaveCurrentOptionsInUI()
     {
         sfxVolume = sfxVolumeSlider.value;
         musicVolume = musicVolumeSlider.value;
@@ -136,7 +145,7 @@ public class OptionsSaver : MonoBehaviour
                 keyBindings.swipeRightInventoryKey = keyBindingButton.keyCode;
                 break;
         }
-        SaveCurrentOptions();
+        SaveCurrentOptionsInUI();
     }
     #endregion
 
@@ -196,13 +205,17 @@ public class OptionsSaver : MonoBehaviour
         }
     }
 
-    private void SetParamatersValue()
+    private void SetParametersValueUI()
     {
-        musicVolumeSlider.value = musicVolume;
-        sfxVolumeSlider.value = sfxVolume;
-        mouseSensitivityInputField.text = mouseSensitivity.ToString();
+        OptionsData data = new OptionsData(this);
+
+        sfxVolumeSlider.value = data.sfxVolume;
+        musicVolumeSlider.value = data.musicVolume;
+        mouseSensitivityInputField.text = data.mouseSensitivity.ToString();
 
         SetButtonsKey();
+
+        LoadFromData(data);
     }
     #endregion
 }

@@ -105,7 +105,7 @@ public class Player : MonoBehaviour
                     //simpleAttackWEvent?.Post(gameObject);  // DONE BY ANIMATION
 
                     //controller.canRotate = false;
-                    Debug.Log("starting simple attack");
+                    //Debug.Log("starting simple attack");
                 }
                 else if (Input.GetKeyDown(keyBindings.secondaryAttackKey) && timeToSecondaryAttack < 0 && timeToAttack < 0)
                 {
@@ -119,7 +119,7 @@ public class Player : MonoBehaviour
                     // Sound
                     //secondaryAttackWEvent?.Post(gameObject); // DONE BY ANIMATION
 
-                    Debug.Log("starting charged attack");
+                    //Debug.Log("starting charged attack");
                 }
                 else if (Input.GetKeyDown(keyBindings.interactKey))
                 {
@@ -222,28 +222,26 @@ public class Player : MonoBehaviour
         EnemyBaseAI enemy = GetEnemyToAttack();
         if (enemy == null)
         {
-            Debug.Log("No enemy has been found");
+            //Debug.Log("No enemy has been found");
             return;
         }
-        Debug.Log("hrgrhogr");
 
         ToggleImpactParticles();
         EnemyHelper.TakeDamage(enemy); 
-        Debug.Log("Simple attack consideration");
+        //Debug.Log("Simple attack consideration");
     }
     public void SecondaryAttack() // CALLED BY ANIMATION
     {
         EnemyBaseAI enemy = GetEnemyToAttack();
         if (enemy == null)
         {
-            Debug.Log("No enemy has been found");
+            //Debug.Log("No enemy has been found");
             return; }
 
         ToggleImpactParticles();
         // Do more damage to the enemy
         EnemyHelper.TakeDamage(enemy); // temp
-        Debug.Log("Charged attack consideration");
-
+        //Debug.Log("Charged attack consideration");
     }
 
     private EnemyBaseAI GetEnemyToAttack()
@@ -276,7 +274,7 @@ public class Player : MonoBehaviour
         animator.SetBool("isArmed", true);
         isArmed = true;
         unarmTimer = beingArmedDuration;
-        Debug.Log("player is armed now");
+        //Debug.Log("player is armed now");
     }
     private void UnarmPlayer()
     {
@@ -284,7 +282,7 @@ public class Player : MonoBehaviour
         if (animator == null) return;
         animator.SetBool("isArmed", false);
         isArmed = false;
-        Debug.Log("player is unarmed now");
+        //Debug.Log("player is unarmed now");
     }
     #endregion
 

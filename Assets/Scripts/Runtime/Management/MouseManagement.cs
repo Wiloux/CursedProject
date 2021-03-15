@@ -24,4 +24,10 @@ public class MouseManagement : MonoBehaviour
         if (Cursor.lockState == CursorLockMode.Locked) { Cursor.lockState = CursorLockMode.None; }
         else Cursor.lockState = CursorLockMode.Locked;
     }
+
+    public void SetMouseLock(bool locked)
+    {
+        if (locked) Cursor.lockState = CursorLockMode.Locked;
+        else Cursor.lockState = CursorLockMode.None;
+    }
 }

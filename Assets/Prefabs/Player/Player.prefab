@@ -10851,9 +10851,20 @@ MonoBehaviour:
   secondaryAttackCooldown: 7
   beingArmedDuration: 5
   idleBreakTimerMinMax: {x: 10, y: 15}
-  specialAbilityKey: 102
   abilityCooldown: 0
-  healKey: 104
+  keyBindings:
+    simpleAttackKey: 323
+    secondaryAttackKey: 324
+    interactKey: 101
+    abilityKey: 102
+    healKey: 104
+    forwardKey: 119
+    backwardKey: 115
+    sprintKey: 304
+    menuKey: 27
+    inventoryKey: 9
+    swipeLeftInventoryKey: 97
+    swipeRightInventoryKey: 100
   playerAttackWEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -10897,7 +10908,20 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 1024
-  _rotSpeed: 70
+  keyBindings:
+    simpleAttackKey: 323
+    secondaryAttackKey: 324
+    interactKey: 101
+    abilityKey: 102
+    healKey: 104
+    forwardKey: 119
+    backwardKey: 115
+    sprintKey: 304
+    menuKey: 27
+    inventoryKey: 9
+    swipeLeftInventoryKey: 97
+    swipeRightInventoryKey: 100
+  sensivity: 20
   _verticalSpeed: 3
   _verticalSpeedNeg: 1.5
   dead: 0
@@ -10950,7 +10974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca161c4eb5994e488be5bbaea1f9a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 5570753806488649902}
+  controller: {fileID: 5570753806488649902}
   player: {fileID: 8536683932730595807}
   inventory: {fileID: 5570753806488649891}
 --- !u!114 &3728557137432105148

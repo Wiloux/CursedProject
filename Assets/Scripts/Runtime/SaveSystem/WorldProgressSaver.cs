@@ -18,7 +18,7 @@ public class WorldProgressSaver : MonoBehaviour
 
     #region Monobehaviours Methods
     // --------------------------------------- Monobehaviours Methods --------------------------------------- //
-    private void Awake(){instance = this; DontDestroyOnLoad(this.gameObject); }
+    private void Awake(){instance = this; DontDestroyOnLoad(transform.root.gameObject); }
 
     private void Start()
     {

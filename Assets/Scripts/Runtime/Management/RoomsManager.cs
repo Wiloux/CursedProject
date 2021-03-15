@@ -116,30 +116,25 @@ public class RoomsManager : MonoBehaviour
 
     public void ChangeRTCPReverbForRoom(string roomName)
     {
-        Room room = GetRoomByName(roomName);
-        if(room != null)
+        if (!DoesRoomExists(roomName)) return;
+
+        if (roomName == "School hallways" || roomName == "Corridor2ndFloor")
         {
-            if(room.place == Room.PlaceType.school)
-            {
-                switch (room.size)
-                {
-                    case Room.RoomSize.small:
-                        AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 1);
-                        AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
-                        AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
-                        break;
-                    case Room.RoomSize.medium:
-                        AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 1);
-                        AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
-                        AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
-                        break;
-                    case Room.RoomSize.large:
-                        AkSoundEngine.SetRTPCValue("RTPC_Reverb", 1);
-                        AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
-                        AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
-                        break;
-                }
-            }
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 1);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
+        }
+        else if (roomName == "Girls bathroom")
+        {
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 1);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 0);
+        }
+        else
+        {
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb_2", 1);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb", 0);
+            AkSoundEngine.SetRTPCValue("RTPC_Reverb_Bathroom", 0);
         }
     }
 }
@@ -151,8 +146,6 @@ public class RoomsManager : MonoBehaviour
     public enum PlaceType { school, city, forest};
     public PlaceType place;
 
-    public enum RoomSize { small, medium, large};
-    public RoomSize size;
 
     public List<EnemyToSpawn> enemiesToSpawn;
     [HideInInspector]
