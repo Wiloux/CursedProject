@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-public class HallucinationObject : MonoBehaviour
+public class InteractibleHallucination : MonoBehaviour
 {
     public float sanityLevelRequired;
     public bool interactible;
@@ -65,12 +65,12 @@ public class HallucinationObject : MonoBehaviour
 }
 
 #if UNITY_EDITOR
-[CustomEditor(typeof(HallucinationObject))]
+[CustomEditor(typeof(InteractibleHallucination))]
 public class HallucinationObjectInspector : Editor
 {
     public override void OnInspectorGUI()
     {
-        HallucinationObject hallu = target as HallucinationObject;
+        InteractibleHallucination hallu = target as InteractibleHallucination;
 
         serializedObject.Update();
 

@@ -14,6 +14,12 @@ public class GameHandler : MonoBehaviour
 
     // Sanity vars
     #region Sanity vars
+    public enum OxygenState { high, medium, low};
+    public OxygenState oxygenState;
+    public OxygenState GetOxygenState() { return oxygenState; }
+    public bool IsOxgenLow() { return oxygenState == OxygenState.low; }
+    private bool interactibleHallucinationsSpawned = false;
+
     private float sanity = 0f;
     public float Sanity
     {
@@ -81,21 +87,37 @@ public class GameHandler : MonoBehaviour
         if (!locking)
         {
             #region Sanity gestion
-        if (sanity > 0)
-        {
-            if (sanityDecreaseTimer > 0)
+            if (sanity > 0)
             {
-                sanityDecreaseTimer -= Time.deltaTime;
-                if (sanity >= 150) PlayerHelper.instance.Die();
-
+                if (sanityDecreaseTimer > 0)
+                {
+                    sanityDecreaseTimer -= Time.deltaTime;
+                    if (sanity >= 150) PlayerHelper.instance.Die();
+                }
+                else
+                {
+                    sanity -= sanityDecreaseRate * Time.deltaTime;
+                }
             }
-            else
+
+            if(sanity > 99) 
+            { 
+                oxygenState = OxygenState.low;
+                if (!interactibleHallucinationsSpawned)
+                {
+                    // Spawn interactible hallucinations object
+                    SpawnInteractibleHallucinations();
+                    interactibleHallucinationsSpawned = true;
+                }
+            }
+            else if(sanity > 50) 
             {
-                sanity -= sanityDecreaseRate * Time.deltaTime;
+                if (interactibleHallucinationsSpawned) { interactibleHallucinationsSpawned = false; DespawnInteractibleHallucinations(); } // despawn hallucinations objects
+                oxygenState = OxygenState.medium; 
             }
-        }
+            else{ oxygenState = OxygenState.high; }
 
-        AkSoundEngine.SetRTPCValue("HallucinationsRTPC", Mathf.Clamp(sanity, 0f, 100f), gameObject); // Here Wwise stuffs
+            AkSoundEngine.SetRTPCValue("HallucinationsRTPC", Mathf.Clamp(sanity, 0f, 100f), gameObject); // Here Wwise stuffs
         #endregion
 
             #region UI gestion
@@ -143,7 +165,7 @@ public class GameHandler : MonoBehaviour
 
     public bool IsPaused() { return isPaused; }
 
-    #region Toggle functions
+    #region Pause functions
     public void TogglePause()
     {
         isPaused = !isPaused;
@@ -267,6 +289,7 @@ public class GameHandler : MonoBehaviour
     }
     #endregion
 
+    #region Options/Parameters
     public void UseCurrentOptions(OptionsSaver options)
     {
         SetVolumes(options.musicVolume, options.sfxVolume);
@@ -277,6 +300,30 @@ public class GameHandler : MonoBehaviour
     {
         // the values are between 0 and 10 miguel ^^
     }
+    #endregion
+
+    #region InteratcibleHallucinations
+    private InteractibleHallucination[] GetAllInteractibleHallucinations()
+    {
+        return FindObjectsOfType<InteractibleHallucination>();
+    }
+
+    public void SpawnInteractibleHallucinations()
+    {
+        foreach(InteractibleHallucination interactibleHallucination in GetAllInteractibleHallucinations())
+        {
+            interactibleHallucination.gameObject.SetActive(true);
+        }
+    }
+    public void DespawnInteractibleHallucinations()
+    {
+        foreach(InteractibleHallucination interactibleHallucination in GetAllInteractibleHallucinations())
+        {
+            interactibleHallucination.gameObject.SetActive(false);
+        }
+    }
+
+    #endregion
 }
 
 #if UNITY_EDITOR
