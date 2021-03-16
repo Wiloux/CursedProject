@@ -144,7 +144,7 @@ public class Player : MonoBehaviour
                 {
                     if(abilityTimer < 0)
                     {
-                        Debug.Log("Player use his ability");
+                        //Debug.Log("Player use his ability");
                         AbilityAnimation?.Invoke();
                         UseAbility?.Invoke();
                         abilityTimer = abilityCooldown;
@@ -407,9 +407,9 @@ public class Player : MonoBehaviour
                     int random = UnityEngine.Random.Range(0, 2);
                     animator.SetInteger("IdleBreakAnim", random);
                     PutAndRemoveIdleBreakObject(random);
-                    Debug.Log("Gyaru idle break"); 
+                    Debug.Log("Gyaru idle break");
                 };
-                UseAbility = () => { GameHandler.instance.Sanity += 30f * Time.deltaTime; };
+                UseAbility = () => { GameHandler.instance.Oxygen -= 30f * Time.deltaTime; };
                 break;
             case Character.mysterious:
                 SimpleAttackAnimation = () => Debug.Log("mysterious attack animation");

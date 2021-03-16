@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FacelessGirl (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8217445490625157915, guid: e06806995570402498e1fca9a4cd2df6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e06806995570402498e1fca9a4cd2df6, type: 3}
 --- !u!1 &85516887 stripped
@@ -1423,11 +1427,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e4ae075487dd540a79d7472a65f71b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oxygenState: 0
+  hallucinationsFadeDuration: 0
+  oxygenIncreaseRate: 0
+  timeToIncreaseSanity: 0
   isPaused: 0
   pauseMenu: {fileID: 905575502}
+  optionsMenu: {fileID: 0}
   saveMenu: {fileID: 0}
   inventoryMenu: {fileID: 0}
   facelessGirlDamageIndicator: {fileID: 0}
+  messageDisplayer: {fileID: 0}
+  pickupItemsMessageColor: green
+  locking: 0
+  openingSavePauseMenu:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  closingSavePauseMenu:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!4 &1575919938
 Transform:
   m_ObjectHideFlags: 0
@@ -2181,7 +2201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2434688321482483842, guid: 94de60ab5a9ec20448dcf06c2dba0d5f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2434688321482483852, guid: 94de60ab5a9ec20448dcf06c2dba0d5f, type: 3}
       propertyPath: m_RootOrder

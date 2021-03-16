@@ -8,7 +8,7 @@ using UnityEditor;
 
 public class InteractibleHallucination : MonoBehaviour
 {
-    public float sanityLevelRequired;
+    public GameHandler.OxygenState stateRequired;
     public bool interactible;
     public enum InteractibleType
     {
@@ -18,9 +18,8 @@ public class InteractibleHallucination : MonoBehaviour
     }
     public InteractibleType interactibleType;
 
-    private Action EnableInteractivity;
-    private Action DisableInteractivity;
-    
+    public Action EnableInteractivity;
+    public Action DisableInteractivity;
 
     // Start is called before the first frame update
     void Start()
@@ -44,19 +43,6 @@ public class InteractibleHallucination : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (interactible)
-        {
-            if(GameHandler.instance.Sanity >= 100)
-            {
-                EnableInteractivity();
-            }
-            else { DisableInteractivity(); }
-        }
-    }
-
     private void SetToggleInteractivityActions<T>() where T : MonoBehaviour
     {
         EnableInteractivity = () => GetComponent<T>().enabled = true;
@@ -74,7 +60,7 @@ public class HallucinationObjectInspector : Editor
 
         serializedObject.Update();
 
-        CreatePropertyField(nameof(hallu.sanityLevelRequired));
+        CreatePropertyField(nameof(hallu.stateRequired));
 
         GUILayout.Space(10);
 

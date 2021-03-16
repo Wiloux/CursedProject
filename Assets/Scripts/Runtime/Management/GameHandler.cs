@@ -13,23 +13,24 @@ public class GameHandler : MonoBehaviour
     public static GameHandler instance;
 
     // Sanity vars
-    #region Sanity vars
+    #region Oxygen vars
     public enum OxygenState { high, medium, low};
     public OxygenState oxygenState;
     public OxygenState GetOxygenState() { return oxygenState; }
     public bool IsOxgenLow() { return oxygenState == OxygenState.low; }
     private bool interactibleHallucinationsSpawned = false;
+    public float hallucinationsFadeDuration;
 
-    private float sanity = 0f;
-    public float Sanity
+    private float oxygen = 100f;
+    public float Oxygen
     {
-        get => sanity;
-        set { sanity = value; sanityDecreaseTimer = timeToDecreaseSanity; }
+        get => oxygen;
+        set { oxygen = value; oxygenIncreaseTimer = timeToIncreaseSanity; }
     }
 
-    private float sanityDecreaseTimer;
-    public float sanityDecreaseRate;
-    public float timeToDecreaseSanity;
+    private float oxygenIncreaseTimer;
+    public float oxygenIncreaseRate;
+    public float timeToIncreaseSanity;
 
     #endregion
 
@@ -87,20 +88,20 @@ public class GameHandler : MonoBehaviour
         if (!locking)
         {
             #region Sanity gestion
-            if (sanity > 0)
+            if (oxygen < 100)
             {
-                if (sanityDecreaseTimer > 0)
+                if (oxygenIncreaseTimer > 0)
                 {
-                    sanityDecreaseTimer -= Time.deltaTime;
-                    if (sanity >= 150) PlayerHelper.instance.Die();
+                    oxygenIncreaseTimer -= Time.deltaTime;
+                    if (oxygen <= -50f) PlayerHelper.instance.Die();
                 }
                 else
                 {
-                    sanity -= sanityDecreaseRate * Time.deltaTime;
+                    oxygen += oxygenIncreaseRate * Time.deltaTime;
                 }
             }
 
-            if(sanity > 99) 
+            if(oxygen < 0) 
             { 
                 oxygenState = OxygenState.low;
                 if (!interactibleHallucinationsSpawned)
@@ -110,14 +111,14 @@ public class GameHandler : MonoBehaviour
                     interactibleHallucinationsSpawned = true;
                 }
             }
-            else if(sanity > 50) 
+            else if(oxygen < 50) 
             {
                 if (interactibleHallucinationsSpawned) { interactibleHallucinationsSpawned = false; DespawnInteractibleHallucinations(); } // despawn hallucinations objects
                 oxygenState = OxygenState.medium; 
             }
             else{ oxygenState = OxygenState.high; }
 
-            AkSoundEngine.SetRTPCValue("HallucinationsRTPC", Mathf.Clamp(sanity, 0f, 100f), gameObject); // Here Wwise stuffs
+            AkSoundEngine.SetRTPCValue("HallucinationsRTPC", Mathf.Clamp(oxygen, 0f, 100f), gameObject); // Here Wwise stuffs
         #endregion
 
             #region UI gestion
@@ -155,7 +156,7 @@ public class GameHandler : MonoBehaviour
         style.fontSize = 50;
         style.normal.textColor = Color.white;
 
-        //GUILayout.Label("Sanity : " + sanity.ToString(), style);
+        GUILayout.Label("Oxygen : " + oxygen.ToString(), style);
         //GUILayout.Label("Faceless girl DamageIndicatorTimer : " + damageIndicatorTimer.ToString(), style);
         //GUILayout.Label("Color : " + messageDisplayer.color.a, style);
 
@@ -303,26 +304,86 @@ public class GameHandler : MonoBehaviour
     #endregion
 
     #region InteratcibleHallucinations
-    private InteractibleHallucination[] GetAllInteractibleHallucinations()
+    private UnityEngine.Object[] GetAllInteractibleHallucinations()
     {
-        return FindObjectsOfType<InteractibleHallucination>();
+        return Resources.FindObjectsOfTypeAll(typeof(InteractibleHallucination));
     }
 
     public void SpawnInteractibleHallucinations()
     {
         foreach(InteractibleHallucination interactibleHallucination in GetAllInteractibleHallucinations())
         {
-            interactibleHallucination.gameObject.SetActive(true);
+            StartCoroutine(FadeInInteractibleHallucination(interactibleHallucination));
         }
     }
     public void DespawnInteractibleHallucinations()
     {
         foreach(InteractibleHallucination interactibleHallucination in GetAllInteractibleHallucinations())
         {
-            interactibleHallucination.gameObject.SetActive(false);
+            StartCoroutine(FadeOutInteractibleHallucination(interactibleHallucination));
         }
     }
 
+    private IEnumerator FadeInInteractibleHallucination(InteractibleHallucination hallucination)
+    {
+        hallucination.gameObject.SetActive(true);
+
+        Renderer[] renderers = hallucination.GetComponentsInChildren<Renderer>();
+        Color[] colors = new Color[renderers.Length];
+
+        for(int i = 0; i < renderers.Length; i++)
+        {
+            Color color = renderers[i].material.color;
+            color.a = 0;
+
+            colors[i] = color;
+        }
+
+        while (true)
+        {
+            for(int i = 0; i < renderers.Length; i++)
+            {
+                colors[i].a += (1 / hallucinationsFadeDuration) * Time.deltaTime;
+                Debug.Log(colors[i].a);
+                renderers[i].material.color = colors[i];
+            }
+
+            if(colors[0].a >= 1) { break; }
+
+            yield return null;
+        }
+        if(hallucination.interactible) hallucination.EnableInteractivity?.Invoke();
+    }
+    private IEnumerator FadeOutInteractibleHallucination(InteractibleHallucination hallucination)
+    {
+        if(hallucination.interactible) hallucination.DisableInteractivity?.Invoke();
+
+        Renderer[] renderers = hallucination.GetComponentsInChildren<Renderer>();
+        Color[] colors = new Color[renderers.Length];
+
+        for(int i = 0; i < renderers.Length; i++)
+        {
+            Color color = renderers[i].material.color;
+            color.a = 1;
+
+            colors[i] = color;
+        }
+
+        while (true)
+        {
+            for(int i = 0; i < renderers.Length; i++)
+            {
+                colors[i].a -= (1 / hallucinationsFadeDuration) * Time.deltaTime;
+                renderers[i].material.color = colors[i];
+            }
+
+            if(colors[0].a <= 0) { break; }
+
+            yield return null;
+        }
+
+        hallucination.gameObject.SetActive(false);
+    }
     #endregion
 }
 
@@ -349,8 +410,9 @@ public class GameHandler : MonoBehaviour
         GUILayout.Label("Sanity Gestion", groupStyle);
         GUILayout.Label("Decrease vars", titleStyle);
         GUILayout.Space(5);
-        CreatePropertyField(nameof(handler.sanityDecreaseRate));
-        CreatePropertyField(nameof(handler.timeToDecreaseSanity));
+        CreatePropertyField(nameof(handler.oxygenIncreaseRate));
+        CreatePropertyField(nameof(handler.timeToIncreaseSanity));
+        CreatePropertyField(nameof(handler.hallucinationsFadeDuration));
         GUILayout.Space(20);
 
         GUILayout.Label("UI gestion", groupStyle);

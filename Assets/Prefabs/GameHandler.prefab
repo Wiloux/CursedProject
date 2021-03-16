@@ -47,8 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e4ae075487dd540a79d7472a65f71b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityDecreaseRate: 15
-  timeToDecreaseSanity: 5
+  oxygenState: 0
+  hallucinationsFadeDuration: 2
+  oxygenIncreaseRate: 15
+  timeToIncreaseSanity: 2
   isPaused: 0
   pauseMenu: {fileID: 0}
   optionsMenu: {fileID: 0}
