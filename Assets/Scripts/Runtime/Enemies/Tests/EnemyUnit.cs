@@ -210,7 +210,7 @@ public class EnemyUnit : MonoBehaviour
     }
     private void HandleRunning()
     {
-        if (GetDistanceFromPosition(runStartPosition) > enemyProfile.runningRange)
+        if (GetDistanceFromPosition(runStartPosition) > enemyProfile.runningRange || GetDistanceFromPlayer() > enemyProfile.runningRange * 1.5f)
         {
             state = State.Idle;
             agent.SetDestination(transform.position);
@@ -251,7 +251,7 @@ public class EnemyUnit : MonoBehaviour
         Debug.DrawRay(transform.position, dir * range, Color.red, 0.1f);
         if (hit.transform != null)
         {
-            Debug.Log("Object hit by is : " + hit.transform.name);
+            Debug.Log("Object hit by raycast is : " + hit.transform.name);
             if (hit.transform.CompareTag("Player"))
             {
                 Debug.Log("The player is visible");

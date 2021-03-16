@@ -36,16 +36,17 @@ public class ChickenMonsterAI : EnemyBaseAI
                 unit.ChaseThePlayer(enemyProfile.rangeToAttack, () => state = State.Attacking);
                 break;
             case State.Attacking:
+                //Debug.Log(unit.GetDistanceFromPlayer() + " || " + enemyProfile.rangeToAttack);
                 if (unit.GetDistanceFromPlayer() <= enemyProfile.rangeToAttack)
                 {
-                    if (!unit.attacking)
+                    if (!unit.attacking && unit.attackTimer < 0)
                     {
                         unit.Attack(2f, () => { state = State.Running; });
                         attackAnimation?.Invoke();
                         //enemyProfile.attackWEvent?.Post(gameObject);
                     }
                 }
-                else { state = State.Chasing; }
+                else if(!unit.attacking){ state = State.Chasing; }
                 break;
             case State.Running:
                 unit.RunFromPlayer(0.25f, () => state = State.Watching);
